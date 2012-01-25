@@ -9,22 +9,21 @@ using System.Windows.Forms;
 
 namespace Los_Alamos_Timeclock
 {
-    public partial class Login : UserControl
+    public partial class Schedule : UserControl
     {
-        public Login()
+        public Schedule()
         {
             InitializeComponent();
         }
 
-        private void B_login_Click(object sender, EventArgs e)
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            Main.maininstance.Login.Hide();
-            Main.maininstance.menu1.Show();
+
         }
 
-        private void IN_USER_TextChanged(object sender, EventArgs e)
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-
+            
         }
     }
 }

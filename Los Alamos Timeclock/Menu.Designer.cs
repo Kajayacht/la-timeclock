@@ -46,8 +46,9 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(202, 46);
             this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
+            this.button1.Text = "Clock in";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Clockin_Click);
             // 
             // button2
             // 
@@ -58,8 +59,9 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(202, 46);
             this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
+            this.button2.Text = "Clock Out";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.Clockout_Click);
             // 
             // button3
             // 
@@ -70,8 +72,9 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(202, 46);
             this.button3.TabIndex = 2;
-            this.button3.Text = "button3";
+            this.button3.Text = "Schedule";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.Schedule_Click);
             // 
             // button4
             // 
@@ -110,18 +113,18 @@
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
-            // button7
+            // B_Logout
             // 
             this.B_Logout.AutoSize = true;
             this.B_Logout.Dock = System.Windows.Forms.DockStyle.Top;
             this.B_Logout.Location = new System.Drawing.Point(0, 276);
             this.B_Logout.Margin = new System.Windows.Forms.Padding(0);
-            this.B_Logout.Name = "button7";
+            this.B_Logout.Name = "B_Logout";
             this.B_Logout.Size = new System.Drawing.Size(202, 46);
             this.B_Logout.TabIndex = 6;
             this.B_Logout.Text = "Logout";
             this.B_Logout.UseVisualStyleBackColor = true;
-            this.B_Logout.Click += new System.EventHandler(this.button7_Click);
+            this.B_Logout.Click += new System.EventHandler(this.Logout_Click);
             // 
             // Menu
             // 

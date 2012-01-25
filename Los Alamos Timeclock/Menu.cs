@@ -21,12 +21,34 @@ namespace Los_Alamos_Timeclock
 
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void Logout_Click(object sender, EventArgs e)
         {
-            Application.Restart();
+            Main.maininstance.menu1.Hide();
+            Main.maininstance.Login.IN_USER.ResetText();
+            Main.maininstance.Login.IN_PASS.ResetText();
+            Main.maininstance.Login.Show();
+            Main.maininstance.Login.BringToFront();
+            
         }
 
         private void button6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Clockin_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Schedule_Click(object sender, EventArgs e)
+        {
+            
+            Main.maininstance.Schedule.BringToFront();
+            Main.maininstance.Schedule.Show();
+        }
+
+        private void Clockout_Click(object sender, EventArgs e)
         {
 
         }
