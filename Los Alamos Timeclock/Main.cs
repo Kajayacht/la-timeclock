@@ -32,12 +32,17 @@ namespace Los_Alamos_Timeclock
 
         private void menu1_Load(object sender, EventArgs e)
         {
-            
+            menu1.timer1.Start();
         }
 
         private void loginControl1_Load(object sender, EventArgs e)
         {
           
+        }
+
+        private void clock1_Load(object sender, EventArgs e)
+        {
+            clock1.timer1.Start();
         }
 
     }

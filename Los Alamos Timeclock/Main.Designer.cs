@@ -29,10 +29,23 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
+            this.clock1 = new Los_Alamos_Timeclock.Clock();
             this.menu1 = new Los_Alamos_Timeclock.Menu();
             this.Login = new Los_Alamos_Timeclock.Login();
             this.Schedule = new Los_Alamos_Timeclock.Schedule();
             this.SuspendLayout();
+            // 
+            // clock1
+            // 
+            this.clock1.AutoSize = true;
+            this.clock1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.clock1.BackColor = System.Drawing.Color.Transparent;
+            this.clock1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.clock1.Location = new System.Drawing.Point(145, 84);
+            this.clock1.Name = "clock1";
+            this.clock1.Size = new System.Drawing.Size(152, 39);
+            this.clock1.TabIndex = 4;
+            this.clock1.Load += new System.EventHandler(this.clock1_Load);
             // 
             // menu1
             // 
@@ -78,9 +91,10 @@
             this.BackgroundImage = global::Los_Alamos_Timeclock.Properties.Resources._1287421014661;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(484, 362);
-            this.Controls.Add(this.Schedule);
             this.Controls.Add(this.menu1);
+            this.Controls.Add(this.clock1);
             this.Controls.Add(this.Login);
+            this.Controls.Add(this.Schedule);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.DoubleBuffered = true;
             this.Name = "Main";
@@ -97,6 +111,7 @@
         public Menu menu1;
         public Login Login;
         public Schedule Schedule;
+        private Clock clock1;
 
 
 

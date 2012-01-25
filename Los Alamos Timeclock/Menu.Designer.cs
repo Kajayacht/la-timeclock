@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -35,6 +36,8 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.B_Logout = new System.Windows.Forms.Button();
+            this.Menuclock = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // button1
@@ -126,12 +129,28 @@
             this.B_Logout.UseVisualStyleBackColor = true;
             this.B_Logout.Click += new System.EventHandler(this.Logout_Click);
             // 
+            // Menuclock
+            // 
+            this.Menuclock.AutoSize = true;
+            this.Menuclock.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.Menuclock.Location = new System.Drawing.Point(0, 322);
+            this.Menuclock.Name = "Menuclock";
+            this.Menuclock.Size = new System.Drawing.Size(60, 13);
+            this.Menuclock.TabIndex = 7;
+            this.Menuclock.Text = "Menuclock";
+            this.Menuclock.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.Controls.Add(this.Menuclock);
             this.Controls.Add(this.B_Logout);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
@@ -141,7 +160,7 @@
             this.Controls.Add(this.button1);
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "Menu";
-            this.Size = new System.Drawing.Size(202, 491);
+            this.Size = new System.Drawing.Size(202, 335);
             this.Load += new System.EventHandler(this.Menu_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -157,6 +176,8 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button B_Logout;
+        private System.Windows.Forms.Label Menuclock;
+        public System.Windows.Forms.Timer timer1;
 
 
 
