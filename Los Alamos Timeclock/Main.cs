@@ -19,8 +19,10 @@ namespace Los_Alamos_Timeclock
             SetStyle(ControlStyles.OptimizedDoubleBuffer |
                                     ControlStyles.UserPaint |
                                     ControlStyles.AllPaintingInWmPaint, true);
-
             maininstance = this;
+            panel1.Controls.Clear();
+            panel1.Controls.Add(new Login());
+            panel1.Controls[0].Dock = DockStyle.Fill;
         }
 
 
@@ -34,15 +36,15 @@ namespace Los_Alamos_Timeclock
         {
             menu1.timer1.Start();
         }
-
+        
         private void loginControl1_Load(object sender, EventArgs e)
         {
           
         }
 
-        private void clock1_Load(object sender, EventArgs e)
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            clock1.timer1.Start();
+
         }
 
     }

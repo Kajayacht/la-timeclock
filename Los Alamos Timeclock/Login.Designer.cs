@@ -33,6 +33,7 @@
             this.IN_USER = new System.Windows.Forms.TextBox();
             this.IN_PASS = new System.Windows.Forms.TextBox();
             this.B_login = new System.Windows.Forms.Button();
+            this.clock1 = new Los_Alamos_Timeclock.Clock();
             this.SuspendLayout();
             // 
             // L_Pass
@@ -89,12 +90,26 @@
             this.B_login.UseVisualStyleBackColor = true;
             this.B_login.Click += new System.EventHandler(this.B_login_Click);
             // 
+            // clock1
+            // 
+            this.clock1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.clock1.AutoSize = true;
+            this.clock1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.clock1.BackColor = System.Drawing.Color.Transparent;
+            this.clock1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.clock1.Location = new System.Drawing.Point(149, 117);
+            this.clock1.Name = "clock1";
+            this.clock1.Size = new System.Drawing.Size(193, 37);
+            this.clock1.TabIndex = 10;
+            this.clock1.Load += new System.EventHandler(this.clock1_Load);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Los_Alamos_Timeclock.Properties.Resources._1287421014661;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.clock1);
             this.Controls.Add(this.L_Pass);
             this.Controls.Add(this.L_User);
             this.Controls.Add(this.IN_USER);
@@ -115,5 +130,6 @@
         private System.Windows.Forms.Button B_login;
         public System.Windows.Forms.TextBox IN_USER;
         public System.Windows.Forms.TextBox IN_PASS;
+        private Clock clock1;
     }
 }

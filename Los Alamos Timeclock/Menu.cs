@@ -24,11 +24,9 @@ namespace Los_Alamos_Timeclock
         private void Logout_Click(object sender, EventArgs e)
         {
             Main.maininstance.menu1.Hide();
-            Main.maininstance.Login.IN_USER.ResetText();
-            Main.maininstance.Login.IN_PASS.ResetText();
-            Main.maininstance.Login.Show();
-            Main.maininstance.Login.BringToFront();
-            
+            Main.maininstance.panel1.Controls.Clear();
+            Main.maininstance.panel1.Controls.Add(new Login());
+            Main.maininstance.panel1.Controls[0].Dock = DockStyle.Fill;
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -43,9 +41,8 @@ namespace Los_Alamos_Timeclock
 
         private void Schedule_Click(object sender, EventArgs e)
         {
-            
-            Main.maininstance.Schedule.BringToFront();
-            Main.maininstance.Schedule.Show();
+            Main.maininstance.panel1.Controls.Add(new Schedule());
+            Main.maininstance.panel1.Controls[0].Dock = DockStyle.Fill;
         }
 
         private void Clockout_Click(object sender, EventArgs e)

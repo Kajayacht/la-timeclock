@@ -28,24 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
-            this.clock1 = new Los_Alamos_Timeclock.Clock();
-            this.menu1 = new Los_Alamos_Timeclock.Menu();
-            this.Login = new Los_Alamos_Timeclock.Login();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.Schedule = new Los_Alamos_Timeclock.Schedule();
+            this.menu1 = new Los_Alamos_Timeclock.Menu();
             this.SuspendLayout();
             // 
-            // clock1
+            // panel1
             // 
-            this.clock1.AutoSize = true;
-            this.clock1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.clock1.BackColor = System.Drawing.Color.Transparent;
-            this.clock1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.clock1.Location = new System.Drawing.Point(145, 84);
-            this.clock1.Name = "clock1";
-            this.clock1.Size = new System.Drawing.Size(152, 39);
-            this.clock1.TabIndex = 4;
-            this.clock1.Load += new System.EventHandler(this.clock1_Load);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(70, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(414, 362);
+            this.panel1.TabIndex = 6;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // Schedule
+            // 
+            this.Schedule.AutoSize = true;
+            this.Schedule.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Schedule.Location = new System.Drawing.Point(70, 0);
+            this.Schedule.Margin = new System.Windows.Forms.Padding(0);
+            this.Schedule.Name = "Schedule";
+            this.Schedule.Size = new System.Drawing.Size(414, 362);
+            this.Schedule.TabIndex = 5;
             // 
             // menu1
             // 
@@ -61,29 +66,6 @@
             this.menu1.Visible = false;
             this.menu1.Load += new System.EventHandler(this.menu1_Load);
             // 
-            // Login
-            // 
-            this.Login.AutoSize = true;
-            this.Login.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Login.BackgroundImage")));
-            this.Login.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Login.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Login.Location = new System.Drawing.Point(0, 0);
-            this.Login.Name = "Login";
-            this.Login.Size = new System.Drawing.Size(484, 362);
-            this.Login.TabIndex = 2;
-            this.Login.Load += new System.EventHandler(this.loginControl1_Load);
-            // 
-            // Schedule
-            // 
-            this.Schedule.AutoScroll = true;
-            this.Schedule.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.Schedule.Location = new System.Drawing.Point(70, 0);
-            this.Schedule.Margin = new System.Windows.Forms.Padding(0);
-            this.Schedule.Name = "Schedule";
-            this.Schedule.Size = new System.Drawing.Size(414, 362);
-            this.Schedule.TabIndex = 3;
-            this.Schedule.Visible = false;
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -91,10 +73,9 @@
             this.BackgroundImage = global::Los_Alamos_Timeclock.Properties.Resources._1287421014661;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(484, 362);
-            this.Controls.Add(this.menu1);
-            this.Controls.Add(this.clock1);
-            this.Controls.Add(this.Login);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.Schedule);
+            this.Controls.Add(this.menu1);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.DoubleBuffered = true;
             this.Name = "Main";
@@ -109,9 +90,8 @@
         #endregion
 
         public Menu menu1;
-        public Login Login;
         public Schedule Schedule;
-        private Clock clock1;
+        public System.Windows.Forms.Panel panel1;
 
 
 

@@ -18,13 +18,18 @@ namespace Los_Alamos_Timeclock
 
         private void B_login_Click(object sender, EventArgs e)
         {
-            Main.maininstance.Login.Hide();
+            Main.maininstance.panel1.Controls.Clear();
             Main.maininstance.menu1.Show();
         }
 
         private void IN_USER_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void clock1_Load(object sender, EventArgs e)
+        {
+            clock1.timer1.Start();
         }
     }
 }

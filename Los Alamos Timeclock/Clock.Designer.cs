@@ -41,9 +41,10 @@
             this.Bigclock.ForeColor = System.Drawing.Color.Lime;
             this.Bigclock.Location = new System.Drawing.Point(-7, 0);
             this.Bigclock.Name = "Bigclock";
-            this.Bigclock.Size = new System.Drawing.Size(100, 37);
+            this.Bigclock.Size = new System.Drawing.Size(198, 37);
             this.Bigclock.TabIndex = 0;
-            this.Bigclock.Text = "label1";
+            this.Bigclock.Text = "12:00:00 AM";
+            this.Bigclock.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.Bigclock.Click += new System.EventHandler(this.label1_Click);
             // 
             // timer1
@@ -60,7 +61,7 @@
             this.Controls.Add(this.Bigclock);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Name = "Clock";
-            this.Size = new System.Drawing.Size(96, 37);
+            this.Size = new System.Drawing.Size(194, 37);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -37,6 +37,7 @@
             this.Friday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Saturday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sunday = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Totalhours = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.Table1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,81 +55,81 @@
             this.Thursday,
             this.Friday,
             this.Saturday,
-            this.Sunday});
+            this.Sunday,
+            this.Totalhours});
             this.Table1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Table1.Location = new System.Drawing.Point(0, 0);
             this.Table1.Margin = new System.Windows.Forms.Padding(0);
             this.Table1.Name = "Table1";
             this.Table1.RowHeadersVisible = false;
             this.Table1.RowHeadersWidth = 4;
-            this.Table1.Size = new System.Drawing.Size(627, 394);
+            this.Table1.Size = new System.Drawing.Size(654, 308);
             this.Table1.TabIndex = 2;
-            this.Table1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
+            this.Table1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Table1_CellContentClick);
             // 
             // Employee
             // 
-            this.Employee.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Employee.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Employee.HeaderText = "Employee";
             this.Employee.Name = "Employee";
             this.Employee.ReadOnly = true;
-            this.Employee.Width = 78;
             // 
             // Monday
             // 
-            this.Monday.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Monday.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Monday.HeaderText = "Monday";
             this.Monday.Name = "Monday";
-            this.Monday.Width = 70;
             // 
             // Tuesday
             // 
-            this.Tuesday.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Tuesday.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Tuesday.HeaderText = "Tuesday";
             this.Tuesday.Name = "Tuesday";
-            this.Tuesday.Width = 73;
             // 
             // Wed
             // 
-            this.Wed.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Wed.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Wed.HeaderText = "Wedsday";
             this.Wed.Name = "Wed";
-            this.Wed.Width = 77;
             // 
             // Thursday
             // 
-            this.Thursday.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Thursday.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Thursday.HeaderText = "Thursday";
             this.Thursday.Name = "Thursday";
-            this.Thursday.Width = 76;
             // 
             // Friday
             // 
-            this.Friday.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Friday.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Friday.HeaderText = "Friday";
             this.Friday.Name = "Friday";
-            this.Friday.Width = 60;
             // 
             // Saturday
             // 
-            this.Saturday.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Saturday.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Saturday.HeaderText = "Saturday";
             this.Saturday.Name = "Saturday";
-            this.Saturday.Width = 74;
             // 
             // Sunday
             // 
-            this.Sunday.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Sunday.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Sunday.HeaderText = "Sunday";
             this.Sunday.Name = "Sunday";
-            this.Sunday.Width = 68;
+            // 
+            // Totalhours
+            // 
+            this.Totalhours.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Totalhours.HeaderText = "Total";
+            this.Totalhours.Name = "Totalhours";
             // 
             // Schedule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.Controls.Add(this.Table1);
             this.Name = "Schedule";
-            this.Size = new System.Drawing.Size(627, 394);
+            this.Size = new System.Drawing.Size(654, 308);
             ((System.ComponentModel.ISupportInitialize)(this.Table1)).EndInit();
             this.ResumeLayout(false);
 
@@ -136,6 +137,7 @@
 
         #endregion
 
+        public System.Windows.Forms.DataGridView Table1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Employee;
         private System.Windows.Forms.DataGridViewTextBoxColumn Monday;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tuesday;
@@ -144,7 +146,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Friday;
         private System.Windows.Forms.DataGridViewTextBoxColumn Saturday;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sunday;
-        public System.Windows.Forms.DataGridView Table1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Totalhours;
 
     }
 }

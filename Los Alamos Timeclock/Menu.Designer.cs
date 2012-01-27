@@ -88,7 +88,7 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(202, 46);
             this.button4.TabIndex = 3;
-            this.button4.Text = "button4";
+            this.button4.Text = "Contact Information";
             this.button4.UseVisualStyleBackColor = true;
             // 
             // button5
@@ -112,7 +112,7 @@
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(202, 46);
             this.button6.TabIndex = 5;
-            this.button6.Text = "button6";
+            this.button6.Text = "Manager";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
@@ -135,9 +135,9 @@
             this.Menuclock.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.Menuclock.Location = new System.Drawing.Point(0, 322);
             this.Menuclock.Name = "Menuclock";
-            this.Menuclock.Size = new System.Drawing.Size(60, 13);
+            this.Menuclock.Size = new System.Drawing.Size(68, 13);
             this.Menuclock.TabIndex = 7;
-            this.Menuclock.Text = "Menuclock";
+            this.Menuclock.Text = "12:00:00 AM";
             this.Menuclock.Click += new System.EventHandler(this.label1_Click);
             // 
             // timer1

@@ -21,9 +21,10 @@ namespace Los_Alamos_Timeclock
 
         }
 
-        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        private void Table1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
+
     }
 }
