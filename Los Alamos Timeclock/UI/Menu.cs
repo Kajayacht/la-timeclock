@@ -23,15 +23,33 @@ namespace Los_Alamos_Timeclock
 
         private void Logout_Click(object sender, EventArgs e)
         {
+            Main.permissions = 0;
             Main.maininstance.menu1.Hide();
             Main.maininstance.panel1.Controls.Clear();
             Main.maininstance.panel1.Controls.Add(new Login());
             Main.maininstance.panel1.Controls[0].Dock = DockStyle.Fill;
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void Manager_Click(object sender, EventArgs e)
         {
 
+            if (Main.permissions == 2)
+            {
+                Main.maininstance.panel1.Controls.Clear();
+                Main.maininstance.panel1.Controls.Add(new Admin());
+                Main.maininstance.panel1.Controls[0].Dock = DockStyle.Fill;
+            }
+            else if (Main.permissions == 1)
+            {
+                //no manager user control currently
+                //Main.maininstance.panel1.Controls.Clear();
+                //Main.maininstance.panel1.Controls.Add(new Manager());
+                //Main.maininstance.panel1.Controls[0].Dock = DockStyle.Fill;
+            }
+            else
+            {
+                MessageBox.Show("You are not a Manager");
+            }
         }
 
         private void Clockin_Click(object sender, EventArgs e)
@@ -41,6 +59,7 @@ namespace Los_Alamos_Timeclock
 
         private void Schedule_Click(object sender, EventArgs e)
         {
+            Main.maininstance.panel1.Controls.Clear();
             Main.maininstance.panel1.Controls.Add(new Schedule());
             Main.maininstance.panel1.Controls[0].Dock = DockStyle.Fill;
         }

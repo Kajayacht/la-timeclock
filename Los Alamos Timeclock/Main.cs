@@ -13,6 +13,11 @@ namespace Los_Alamos_Timeclock
     public partial class Main : Form
     {
         public static Main maininstance = null;
+        public static int permissions = 0;  
+        //used to track user permissions
+        //0=employee
+        //1=manager
+        //2=admin
         public Main()
         {
             InitializeComponent();

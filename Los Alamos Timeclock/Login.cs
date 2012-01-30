@@ -18,6 +18,18 @@ namespace Los_Alamos_Timeclock
 
         private void B_login_Click(object sender, EventArgs e)
         {
+            if (IN_USER.Text.ToLower()== "admin" && IN_PASS.Text.ToLower() == "pass")
+            {
+                Main.permissions = 2;
+            }
+            else if (IN_USER.Text.ToLower() == "manager" && IN_PASS.Text.ToLower() == "pass")
+            {
+                Main.permissions = 2;
+            }
+            else
+            {
+                Main.permissions = 0;
+            }
             Main.maininstance.panel1.Controls.Clear();
             Main.maininstance.menu1.Show();
         }

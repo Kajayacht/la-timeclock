@@ -66,7 +66,7 @@
             this.IN_USER.Location = new System.Drawing.Point(194, 160);
             this.IN_USER.Name = "IN_USER";
             this.IN_USER.Size = new System.Drawing.Size(100, 20);
-            this.IN_USER.TabIndex = 7;
+            this.IN_USER.TabIndex = 1;
             this.IN_USER.TextChanged += new System.EventHandler(this.IN_USER_TextChanged);
             // 
             // IN_PASS
@@ -76,7 +76,7 @@
             this.IN_PASS.Name = "IN_PASS";
             this.IN_PASS.PasswordChar = '*';
             this.IN_PASS.Size = new System.Drawing.Size(100, 20);
-            this.IN_PASS.TabIndex = 6;
+            this.IN_PASS.TabIndex = 2;
             // 
             // B_login
             // 
@@ -85,7 +85,7 @@
             this.B_login.MaximumSize = new System.Drawing.Size(200, 100);
             this.B_login.Name = "B_login";
             this.B_login.Size = new System.Drawing.Size(100, 25);
-            this.B_login.TabIndex = 5;
+            this.B_login.TabIndex = 3;
             this.B_login.Text = "Login";
             this.B_login.UseVisualStyleBackColor = true;
             this.B_login.Click += new System.EventHandler(this.B_login_Click);
@@ -99,7 +99,7 @@
             this.clock1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.clock1.Location = new System.Drawing.Point(149, 117);
             this.clock1.Name = "clock1";
-            this.clock1.Size = new System.Drawing.Size(193, 37);
+            this.clock1.Size = new System.Drawing.Size(194, 37);
             this.clock1.TabIndex = 10;
             this.clock1.Load += new System.EventHandler(this.clock1_Load);
             // 

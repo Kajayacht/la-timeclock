@@ -35,6 +35,8 @@
             // 
             // panel1
             // 
+            this.panel1.BackgroundImage = global::Los_Alamos_Timeclock.Properties.Resources._1287421014661;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(70, 0);
             this.panel1.Name = "panel1";
@@ -79,7 +81,7 @@
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.DoubleBuffered = true;
             this.Name = "Main";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Los Alamos Timeclock";
             this.Load += new System.EventHandler(this.Main_Load);
             this.ResumeLayout(false);
