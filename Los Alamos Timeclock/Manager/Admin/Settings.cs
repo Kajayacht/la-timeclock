@@ -35,5 +35,20 @@ namespace Los_Alamos_Timeclock
         {
             MessageBox.Show("Password is the password that is used to login to the database server.");
         }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ipaddress_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Apply_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

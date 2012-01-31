@@ -14,6 +14,7 @@ namespace Los_Alamos_Timeclock
         public Schedule()
         {
             InitializeComponent();
+            
         }
 
         private void Table1_CellContentClick(object sender, DataGridViewCellEventArgs e)

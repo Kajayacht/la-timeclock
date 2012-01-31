@@ -37,6 +37,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
+            this.Apply = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -114,6 +115,7 @@
             this.ipaddress.Size = new System.Drawing.Size(153, 26);
             this.ipaddress.TabIndex = 5;
             this.ipaddress.Text = "localhost";
+            this.ipaddress.TextChanged += new System.EventHandler(this.ipaddress_TextChanged);
             // 
             // textBox1
             // 
@@ -133,6 +135,8 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(153, 26);
             this.textBox2.TabIndex = 7;
+            this.textBox2.Text = "admin";
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // textBox3
             // 
@@ -140,8 +144,20 @@
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox3.Location = new System.Drawing.Point(202, 260);
             this.textBox3.Name = "textBox3";
+            this.textBox3.PasswordChar = '*';
             this.textBox3.Size = new System.Drawing.Size(153, 26);
             this.textBox3.TabIndex = 8;
+            this.textBox3.Text = "password";
+            // 
+            // Apply
+            // 
+            this.Apply.Location = new System.Drawing.Point(280, 292);
+            this.Apply.Name = "Apply";
+            this.Apply.Size = new System.Drawing.Size(75, 23);
+            this.Apply.TabIndex = 9;
+            this.Apply.Text = "Apply";
+            this.Apply.UseVisualStyleBackColor = true;
+            this.Apply.Click += new System.EventHandler(this.Apply_Click);
             // 
             // Settings
             // 
@@ -149,6 +165,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Los_Alamos_Timeclock.Properties.Resources._1287421014661;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.Apply);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
@@ -177,6 +194,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Button Apply;
 
     }
 }
