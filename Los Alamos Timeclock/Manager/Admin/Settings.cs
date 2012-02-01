@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Los_Alamos_Timeclock
 {
@@ -36,7 +37,7 @@ namespace Los_Alamos_Timeclock
             MessageBox.Show("Password is the password that is used to login to the database server.");
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        private void user_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -48,7 +49,24 @@ namespace Los_Alamos_Timeclock
 
         private void Apply_Click(object sender, EventArgs e)
         {
-            
+            Main.myConnection = new SqlConnection(
+                "user id="+user+";" +
+                               "password=" + pass + ";server=" + ipaddress +";" +
+                               "Trusted_Connection=yes;" +
+                               "database=database; " +
+                               "connection timeout=30");
+            try
+            {
+                Main.myConnection.Open();
+            }
+            catch (Exception f)
+            {
+                Console.WriteLine(f.ToString());
+            }
+            SqlCommand mycommand=new SqlCommand("SELECT * FROM `Employee` WHERE 1",Main.myConnection);
+            //mycommand.ExecuteNonQuery().ToString();
+
+            //MessageBox.Show(mycommand.ExecuteNonQuery().ToString());
         }
     }
 }

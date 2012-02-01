@@ -31,13 +31,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel3 = new System.Windows.Forms.LinkLabel();
+            this.userlabel = new System.Windows.Forms.LinkLabel();
             this.linkLabel4 = new System.Windows.Forms.LinkLabel();
             this.ipaddress = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.port = new System.Windows.Forms.TextBox();
+            this.user = new System.Windows.Forms.TextBox();
+            this.pass = new System.Windows.Forms.TextBox();
             this.Apply = new System.Windows.Forms.Button();
+            this.database = new System.Windows.Forms.TextBox();
+            this.databaselabel = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // label1
@@ -78,26 +80,26 @@
             this.linkLabel2.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.portlabel_LinkClicked);
             // 
-            // linkLabel3
+            // userlabel
             // 
-            this.linkLabel3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.linkLabel3.AutoSize = true;
-            this.linkLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel3.Location = new System.Drawing.Point(149, 228);
-            this.linkLabel3.Name = "linkLabel3";
-            this.linkLabel3.Size = new System.Drawing.Size(47, 20);
-            this.linkLabel3.TabIndex = 3;
-            this.linkLabel3.TabStop = true;
-            this.linkLabel3.Text = "User:";
-            this.linkLabel3.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.linkLabel3.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.userlabel_LinkClicked);
+            this.userlabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.userlabel.AutoSize = true;
+            this.userlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userlabel.Location = new System.Drawing.Point(147, 260);
+            this.userlabel.Name = "userlabel";
+            this.userlabel.Size = new System.Drawing.Size(47, 20);
+            this.userlabel.TabIndex = 3;
+            this.userlabel.TabStop = true;
+            this.userlabel.Text = "User:";
+            this.userlabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.userlabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.userlabel_LinkClicked);
             // 
             // linkLabel4
             // 
             this.linkLabel4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.linkLabel4.AutoSize = true;
             this.linkLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel4.Location = new System.Drawing.Point(114, 260);
+            this.linkLabel4.Location = new System.Drawing.Point(112, 292);
             this.linkLabel4.Name = "linkLabel4";
             this.linkLabel4.Size = new System.Drawing.Size(82, 20);
             this.linkLabel4.TabIndex = 4;
@@ -117,41 +119,42 @@
             this.ipaddress.Text = "localhost";
             this.ipaddress.TextChanged += new System.EventHandler(this.ipaddress_TextChanged);
             // 
-            // textBox1
+            // port
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(202, 196);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(153, 26);
-            this.textBox1.TabIndex = 6;
-            this.textBox1.Text = "3306";
+            this.port.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.port.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.port.Location = new System.Drawing.Point(202, 196);
+            this.port.Name = "port";
+            this.port.Size = new System.Drawing.Size(153, 26);
+            this.port.TabIndex = 6;
+            this.port.Text = "3306";
             // 
-            // textBox2
+            // user
             // 
-            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(202, 228);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(153, 26);
-            this.textBox2.TabIndex = 7;
-            this.textBox2.Text = "admin";
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.user.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.user.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.user.Location = new System.Drawing.Point(200, 260);
+            this.user.Name = "user";
+            this.user.Size = new System.Drawing.Size(153, 26);
+            this.user.TabIndex = 7;
+            this.user.Text = "root";
+            this.user.TextChanged += new System.EventHandler(this.user_TextChanged);
             // 
-            // textBox3
+            // pass
             // 
-            this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(202, 260);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.PasswordChar = '*';
-            this.textBox3.Size = new System.Drawing.Size(153, 26);
-            this.textBox3.TabIndex = 8;
-            this.textBox3.Text = "password";
+            this.pass.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pass.Location = new System.Drawing.Point(200, 292);
+            this.pass.Name = "pass";
+            this.pass.PasswordChar = '*';
+            this.pass.Size = new System.Drawing.Size(153, 26);
+            this.pass.TabIndex = 8;
+            this.pass.Text = "chrono";
             // 
             // Apply
             // 
-            this.Apply.Location = new System.Drawing.Point(280, 292);
+            this.Apply.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Apply.Location = new System.Drawing.Point(280, 324);
             this.Apply.Name = "Apply";
             this.Apply.Size = new System.Drawing.Size(75, 23);
             this.Apply.TabIndex = 9;
@@ -159,19 +162,44 @@
             this.Apply.UseVisualStyleBackColor = true;
             this.Apply.Click += new System.EventHandler(this.Apply_Click);
             // 
+            // database
+            // 
+            this.database.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.database.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.database.Location = new System.Drawing.Point(200, 228);
+            this.database.Name = "database";
+            this.database.Size = new System.Drawing.Size(153, 26);
+            this.database.TabIndex = 11;
+            this.database.Text = "teamchro_LATSQL";
+            // 
+            // databaselabel
+            // 
+            this.databaselabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.databaselabel.AutoSize = true;
+            this.databaselabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.databaselabel.Location = new System.Drawing.Point(113, 228);
+            this.databaselabel.Name = "databaselabel";
+            this.databaselabel.Size = new System.Drawing.Size(83, 20);
+            this.databaselabel.TabIndex = 10;
+            this.databaselabel.TabStop = true;
+            this.databaselabel.Text = "Database:";
+            this.databaselabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Los_Alamos_Timeclock.Properties.Resources._1287421014661;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.database);
+            this.Controls.Add(this.databaselabel);
             this.Controls.Add(this.Apply);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.pass);
+            this.Controls.Add(this.user);
+            this.Controls.Add(this.port);
             this.Controls.Add(this.ipaddress);
             this.Controls.Add(this.linkLabel4);
-            this.Controls.Add(this.linkLabel3);
+            this.Controls.Add(this.userlabel);
             this.Controls.Add(this.linkLabel2);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label1);
@@ -188,13 +216,15 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.LinkLabel linkLabel2;
-        private System.Windows.Forms.LinkLabel linkLabel3;
+        private System.Windows.Forms.LinkLabel userlabel;
         private System.Windows.Forms.LinkLabel linkLabel4;
         private System.Windows.Forms.TextBox ipaddress;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox port;
+        private System.Windows.Forms.TextBox user;
+        private System.Windows.Forms.TextBox pass;
         private System.Windows.Forms.Button Apply;
+        private System.Windows.Forms.TextBox database;
+        private System.Windows.Forms.LinkLabel databaselabel;
 
     }
 }
