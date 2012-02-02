@@ -150,6 +150,7 @@
             this.pass.Size = new System.Drawing.Size(153, 26);
             this.pass.TabIndex = 8;
             this.pass.Text = "chrono";
+            this.pass.TextChanged += new System.EventHandler(this.pass_TextChanged);
             // 
             // Apply
             // 

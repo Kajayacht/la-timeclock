@@ -7,6 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
+
+
+
 
 namespace Los_Alamos_Timeclock
 {
@@ -49,24 +53,39 @@ namespace Los_Alamos_Timeclock
 
         private void Apply_Click(object sender, EventArgs e)
         {
-            Main.myConnection = new SqlConnection(
-                "user id="+user+";" +
-                               "password=" + pass + ";server=" + ipaddress +";" +
-                               "Trusted_Connection=yes;" +
-                               "database=database; " +
-                               "connection timeout=30");
+
+            Main.myConnection = new MySqlConnection(
+                "SERVER="+ipaddress.Text+
+                ";PORT="+port.Text+
+				";DATABASE="+database.Text+
+				";UID="+user.Text+";" +
+				";PASSWORD="+pass.Text+";");
+            MySqlDataReader reader;
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `Employee` WHERE 1", Main.myConnection);
+
+
             try
             {
                 Main.myConnection.Open();
             }
             catch (Exception f)
             {
-                Console.WriteLine(f.ToString());
+                MessageBox.Show(f.ToString());
             }
-            SqlCommand mycommand=new SqlCommand("SELECT * FROM `Employee` WHERE 1",Main.myConnection);
-            //mycommand.ExecuteNonQuery().ToString();
+            reader = command.ExecuteReader();
+            string test="";
+            while (reader.Read())
+            {
+                test=test+reader["LName"].ToString()+"\n";
+            }
+            Main.myConnection.Close();
+            MessageBox.Show(test);
 
-            //MessageBox.Show(mycommand.ExecuteNonQuery().ToString());
+        }
+
+        private void pass_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
