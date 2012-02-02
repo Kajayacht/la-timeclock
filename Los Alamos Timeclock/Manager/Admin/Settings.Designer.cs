@@ -116,7 +116,7 @@
             this.ipaddress.Name = "ipaddress";
             this.ipaddress.Size = new System.Drawing.Size(153, 26);
             this.ipaddress.TabIndex = 5;
-            this.ipaddress.Text = "localhost";
+            this.ipaddress.Text = "184.154.225.11";
             this.ipaddress.TextChanged += new System.EventHandler(this.ipaddress_TextChanged);
             // 
             // port
@@ -137,7 +137,7 @@
             this.user.Name = "user";
             this.user.Size = new System.Drawing.Size(153, 26);
             this.user.TabIndex = 7;
-            this.user.Text = "root";
+            this.user.Text = "teamchro_user";
             this.user.TextChanged += new System.EventHandler(this.user_TextChanged);
             // 
             // pass
