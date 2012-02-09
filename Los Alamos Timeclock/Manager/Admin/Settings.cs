@@ -19,6 +19,18 @@ namespace Los_Alamos_Timeclock
         public Settings()
         {
             InitializeComponent();
+            try
+            {
+                ipaddress.Text = Properties.Settings.Default.IP;
+                port.Text = Properties.Settings.Default.Port;
+                database.Text = Properties.Settings.Default.Database;
+                user.Text = Properties.Settings.Default.User;
+                pass.Text = Properties.Settings.Default.Password;
+            }
+            catch
+            {
+
+            }
         }
 
         private void iplabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -53,6 +65,13 @@ namespace Los_Alamos_Timeclock
 
         private void Apply_Click(object sender, EventArgs e)
         {
+            Main.myConnection.Close();
+            Properties.Settings.Default.IP=ipaddress.Text;
+            Properties.Settings.Default.Port=port.Text;
+            Properties.Settings.Default.Database=database.Text;
+            Properties.Settings.Default.User = user.Text;
+            Properties.Settings.Default.Password = pass.Text;
+            Properties.Settings.Default.Save();
 
             Main.myConnection = new MySqlConnection(
                 "SERVER="+ipaddress.Text+
@@ -63,27 +82,37 @@ namespace Los_Alamos_Timeclock
             MySqlDataReader reader;
             MySqlCommand command = new MySqlCommand("SELECT * FROM `Employee` WHERE 1", Main.myConnection);
 
-
+            Main.myConnection.Close();
             try
             {
                 Main.myConnection.Open();
+                reader = command.ExecuteReader();
+                string test = "Connection Successful\n";
+                while (reader.Read())
+                {
+                    test = test + reader["LName"].ToString() + "\n";
+                }
+                Main.myConnection.Close();
+                MessageBox.Show(test);
             }
             catch (Exception f)
             {
                 MessageBox.Show(f.ToString());
             }
-            reader = command.ExecuteReader();
-            string test="";
-            while (reader.Read())
-            {
-                test=test+reader["LName"].ToString()+"\n";
-            }
-            Main.myConnection.Close();
-            MessageBox.Show(test);
 
         }
 
         private void pass_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void port_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void database_TextChanged(object sender, EventArgs e)
         {
 
         }

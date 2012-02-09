@@ -38,7 +38,9 @@
             this.Saturday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sunday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Totalhours = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.eventLog1 = new System.Diagnostics.EventLog();
             ((System.ComponentModel.ISupportInitialize)(this.Table1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eventLog1)).BeginInit();
             this.SuspendLayout();
             // 
             // Table1
@@ -122,6 +124,10 @@
             this.Totalhours.HeaderText = "Total";
             this.Totalhours.Name = "Totalhours";
             // 
+            // eventLog1
+            // 
+            this.eventLog1.SynchronizingObject = this;
+            // 
             // Schedule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -131,6 +137,7 @@
             this.Name = "Schedule";
             this.Size = new System.Drawing.Size(654, 308);
             ((System.ComponentModel.ISupportInitialize)(this.Table1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eventLog1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -147,6 +154,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Saturday;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sunday;
         private System.Windows.Forms.DataGridViewTextBoxColumn Totalhours;
+        private System.Diagnostics.EventLog eventLog1;
 
     }
 }

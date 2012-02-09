@@ -56,6 +56,7 @@
     <Compile Include="Manager\Admin\Admin.Designer.cs">
       <DependentUpon>Admin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Settings.cs" />
     <Compile Include="UI\Clock.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -125,9 +126,7 @@
     <EmbeddedResource Include="Manager\Admin\Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="App.config">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

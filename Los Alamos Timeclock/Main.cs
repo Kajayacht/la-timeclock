@@ -15,8 +15,11 @@ namespace Los_Alamos_Timeclock
     public partial class Main : Form
     {
         public static Main maininstance = null;
+        public static string ID;
         public static MySqlConnection myConnection= new MySqlConnection();
-        public static int permissions = 0;  
+        public static MySqlDataReader reader;
+
+        public static string permissions = "0";  
         //used to track user permissions
         //0=employee
         //1=manager
@@ -31,6 +34,50 @@ namespace Los_Alamos_Timeclock
             panel1.Controls.Clear();
             panel1.Controls.Add(new Login());
             panel1.Controls[0].Dock = DockStyle.Fill;
+
+
+            
+            try
+            {
+                connect();
+
+            }
+            catch (Exception f)
+            {
+                MessageBox.Show("Failed to connect to database, make sure apache is running or change settings");
+                //MessageBox.Show(f.ToString());
+
+                //Main.maininstance.panel1.Controls.Clear();
+                //Main.maininstance.panel1.Controls.Add(new Schedule());
+                //Main.maininstance.panel1.Controls[0].Dock = DockStyle.Fill;
+            }
+            
+            /*
+            string test = "";
+            while (reader.Read())
+            {
+                test = test + reader["LName"].ToString() + "\n";
+            }
+            myConnection.Close();
+            MessageBox.Show(test);
+            */
+        }
+
+        public void connect()
+        {
+            Main.myConnection = new MySqlConnection(
+                "SERVER=" + Properties.Settings.Default.IP +
+                ";PORT=" + Properties.Settings.Default.Port +
+                ";DATABASE=" + Properties.Settings.Default.Database +
+                ";UID=" + Properties.Settings.Default.User + ";" +
+                ";PASSWORD=" + Properties.Settings.Default.Password + ";");
+            myConnection.Open();
+        }
+
+        public void changeconnection()
+        {
+            
+            
         }
 
 

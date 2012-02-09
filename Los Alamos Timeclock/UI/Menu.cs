@@ -23,7 +23,7 @@ namespace Los_Alamos_Timeclock
 
         private void Logout_Click(object sender, EventArgs e)
         {
-            Main.permissions = 0;
+            Main.permissions = "0";
             Main.maininstance.menu1.Hide();
             Main.maininstance.panel1.Controls.Clear();
             Main.maininstance.panel1.Controls.Add(new Login());
@@ -33,13 +33,13 @@ namespace Los_Alamos_Timeclock
         private void Manager_Click(object sender, EventArgs e)
         {
 
-            if (Main.permissions == 2)
+            if (Main.permissions == "1")
             {
                 Main.maininstance.panel1.Controls.Clear();
                 Main.maininstance.panel1.Controls.Add(new Admin());
                 Main.maininstance.panel1.Controls[0].Dock = DockStyle.Fill;
             }
-            else if (Main.permissions == 1)
+            else if (Main.permissions == "2")
             {
                 //no manager user control currently
                 //Main.maininstance.panel1.Controls.Clear();
