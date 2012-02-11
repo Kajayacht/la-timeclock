@@ -14,16 +14,17 @@ namespace Los_Alamos_Timeclock
     
     public partial class Main : Form
     {
+        public static string week;
         public static Main maininstance = null;
         public static string ID;
         public static MySqlConnection myConnection= new MySqlConnection();
         public static MySqlDataReader reader;
-
         public static string permissions = "0";  
         //used to track user permissions
         //0=employee
         //1=manager
         //2=admin
+
         public Main()
         {
             InitializeComponent();
@@ -31,16 +32,24 @@ namespace Los_Alamos_Timeclock
                                     ControlStyles.UserPaint |
                                     ControlStyles.AllPaintingInWmPaint, true);
             maininstance = this;
+            DateTime t = DateTime.Now.Date;
+            while (t.DayOfWeek != DayOfWeek.Monday)
+            {
+                t = t.AddDays(-1);
+            }
+            t = t.Date;
+            week = t.Date.ToShortDateString();
+            
             panel1.Controls.Clear();
             panel1.Controls.Add(new Login());
             panel1.Controls[0].Dock = DockStyle.Fill;
+
 
 
             
             try
             {
                 connect();
-
             }
             catch (Exception f)
             {

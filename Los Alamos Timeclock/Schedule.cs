@@ -16,16 +16,16 @@ namespace Los_Alamos_Timeclock
         public Schedule()
         {
             InitializeComponent();
-            string query = "SELECT * FROM Employee ";
+            string query = "SELECT * FROM Schedule Where ID='" + Main.ID + "'";
             MySqlDataAdapter mySqlDataAdapter;
             MySqlCommandBuilder mySqlCommandBuilder;
             if (Main.myConnection.State==ConnectionState.Open)
             {
                 mySqlDataAdapter = new MySqlDataAdapter(query, Main.myConnection);
                 mySqlCommandBuilder = new MySqlCommandBuilder(mySqlDataAdapter);
-                mySqlDataAdapter.UpdateCommand = mySqlCommandBuilder.GetUpdateCommand();
-                mySqlDataAdapter.DeleteCommand = mySqlCommandBuilder.GetDeleteCommand();
-                mySqlDataAdapter.InsertCommand = mySqlCommandBuilder.GetInsertCommand();
+                //mySqlDataAdapter.UpdateCommand = mySqlCommandBuilder.GetUpdateCommand();
+                //mySqlDataAdapter.DeleteCommand = mySqlCommandBuilder.GetDeleteCommand();
+                //mySqlDataAdapter.InsertCommand = mySqlCommandBuilder.GetInsertCommand();
 
                 dataTable = new DataTable();
                 mySqlDataAdapter.Fill(dataTable);

@@ -34,10 +34,10 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.Break = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
             this.B_Logout = new System.Windows.Forms.Button();
             this.Menuclock = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.button6 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -103,19 +103,6 @@
             this.Break.Text = "Break";
             this.Break.UseVisualStyleBackColor = true;
             // 
-            // button6
-            // 
-            this.button6.AutoSize = true;
-            this.button6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button6.Location = new System.Drawing.Point(0, 230);
-            this.button6.Margin = new System.Windows.Forms.Padding(0);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(202, 46);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "Manager";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.Manager_Click);
-            // 
             // B_Logout
             // 
             this.B_Logout.AutoSize = true;
@@ -143,6 +130,20 @@
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // button6
+            // 
+            this.button6.AutoSize = true;
+            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button6.Location = new System.Drawing.Point(0, 230);
+            this.button6.Margin = new System.Windows.Forms.Padding(0);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(202, 46);
+            this.button6.TabIndex = 5;
+            this.button6.Text = "Manager";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.Manager_Click);
             // 
             // Menu
             // 

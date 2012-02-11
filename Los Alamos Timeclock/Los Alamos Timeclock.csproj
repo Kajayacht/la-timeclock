@@ -50,6 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clockin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Clockin.Designer.cs">
+      <DependentUpon>Clockin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Manager\Admin\Admin.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -95,6 +101,9 @@
     <Compile Include="Manager\Admin\Settings.Designer.cs">
       <DependentUpon>Settings.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Clockin.resx">
+      <DependentUpon>Clockin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Manager\Admin\Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>
