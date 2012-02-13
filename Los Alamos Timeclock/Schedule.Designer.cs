@@ -44,6 +44,7 @@
             this.Table1.Location = new System.Drawing.Point(0, 0);
             this.Table1.Margin = new System.Windows.Forms.Padding(0);
             this.Table1.Name = "Table1";
+            this.Table1.ReadOnly = true;
             this.Table1.RowHeadersVisible = false;
             this.Table1.RowHeadersWidth = 4;
             this.Table1.Size = new System.Drawing.Size(654, 308);

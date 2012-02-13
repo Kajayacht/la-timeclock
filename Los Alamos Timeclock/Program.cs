@@ -8,7 +8,7 @@ using MySql.Data.MySqlClient;
 
 namespace Los_Alamos_Timeclock
 {
-    //this is a comment 
+
     static class Program
     {
         /// <summary>
