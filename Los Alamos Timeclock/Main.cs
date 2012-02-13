@@ -19,7 +19,8 @@ namespace Los_Alamos_Timeclock
         public static string ID;
         public static MySqlConnection myConnection= new MySqlConnection();
         public static MySqlDataReader reader;
-        public static string permissions = "0";  
+        public static DateTime w;
+        public static string permissions = "";  
         //used to track user permissions
         //0=employee
         //1=manager
@@ -32,13 +33,14 @@ namespace Los_Alamos_Timeclock
                                     ControlStyles.UserPaint |
                                     ControlStyles.AllPaintingInWmPaint, true);
             maininstance = this;
-            DateTime t = DateTime.Now.Date;
-            while (t.DayOfWeek != DayOfWeek.Monday)
+            w = DateTime.Now.Date;
+            while (w.DayOfWeek != DayOfWeek.Monday)
             {
-                t = t.AddDays(-1);
+                w = w.AddDays(-1);
             }
-            t = t.Date;
-            week = t.Date.ToShortDateString();
+            w = w.Date;
+            week = w.Date.ToShortDateString();
+            
             
             panel1.Controls.Clear();
             panel1.Controls.Add(new Login());
@@ -55,21 +57,8 @@ namespace Los_Alamos_Timeclock
             {
                 MessageBox.Show("Failed to connect to database, make sure apache is running or change settings");
                 //MessageBox.Show(f.ToString());
-
-                //Main.maininstance.panel1.Controls.Clear();
-                //Main.maininstance.panel1.Controls.Add(new Schedule());
-                //Main.maininstance.panel1.Controls[0].Dock = DockStyle.Fill;
             }
             
-            /*
-            string test = "";
-            while (reader.Read())
-            {
-                test = test + reader["LName"].ToString() + "\n";
-            }
-            myConnection.Close();
-            MessageBox.Show(test);
-            */
         }
 
         public void connect()
@@ -93,11 +82,11 @@ namespace Los_Alamos_Timeclock
         private void Main_Load(object sender, EventArgs e)
         {
             menu1.Hide();
-            
         }
 
         private void menu1_Load(object sender, EventArgs e)
         {
+            
             menu1.timer1.Start();
         }
         

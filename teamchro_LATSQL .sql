@@ -77,43 +77,6 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `teamchro_LATSQL`.`Hours Worked`
--- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `teamchro_LATSQL`.`Hours Worked` (
-  `ID` INT NOT NULL ,
-  `Week` DATE NOT NULL ,
-  `MStime` TIME NULL ,
-  `MEtime` TIME NULL ,
-  `Mjid` VARCHAR(50) NULL ,
-  `TStime` TIME NULL ,
-  `TEtime` TIME NULL ,
-  `Tjid` VARCHAR(50) NULL ,
-  `WStime` TIME NULL ,
-  `WEtime` TIME NULL ,
-  `Wjid` VARCHAR(50) NULL ,
-  `TrStime` TIME NULL ,
-  `TrEtime` TIME NULL ,
-  `Trjid` VARCHAR(50) NULL ,
-  `FStime` TIME NULL ,
-  `FEtime` TIME NULL ,
-  `Fjid` VARCHAR(50) NULL ,
-  `SStime` TIME NULL ,
-  `SEtime` TIME NULL ,
-  `Sjid` VARCHAR(50) NULL ,
-  `SuStime` TIME NULL ,
-  `SuEtime` TIME NULL ,
-  `Sujid` VARCHAR(50) NULL ,
-  `Earnings` DECIMAL(10,2) NULL ,
-  INDEX `HWID` (`ID` ASC) ,
-  CONSTRAINT `HWID`
-    FOREIGN KEY (`ID` )
-    REFERENCES `teamchro_LATSQL`.`Employee` (`ID` )
-    ON DELETE CASCADE
-    ON UPDATE CASCADE)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
 -- Table `teamchro_LATSQL`.`Late`
 -- -----------------------------------------------------
 CREATE  TABLE IF NOT EXISTS `teamchro_LATSQL`.`Late` (
@@ -152,34 +115,52 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE  TABLE IF NOT EXISTS `teamchro_LATSQL`.`Schedule` (
   `ID` INT NOT NULL ,
-  `Week` DATE NOT NULL ,
-  `MStime` TIME NULL ,
-  `MEtime` TIME NULL ,
-  `Mjid` VARCHAR(50) NULL ,
-  `TStime` TIME NULL ,
-  `TEtime` TIME NULL ,
-  `Tjid` VARCHAR(50) NULL ,
-  `WStime` TIME NULL ,
-  `WEtime` TIME NULL ,
-  `Wjid` VARCHAR(50) NULL ,
-  `TrStime` TIME NULL ,
-  `TrEtime` TIME NULL ,
-  `Trjid` VARCHAR(50) NULL ,
-  `FStime` TIME NULL ,
-  `FEtime` TIME NULL ,
-  `Fjid` VARCHAR(50) NULL ,
-  `SStime` TIME NULL ,
-  `SEtime` TIME NULL ,
-  `Sjid` VARCHAR(50) NULL ,
-  `SuStime` TIME NULL ,
-  `SuEtime` TIME NULL ,
-  `Sujid` VARCHAR(50) NULL ,
+  `Date` DATE NOT NULL ,
+  `Start` TIME NOT NULL ,
+  `End` TIME NOT NULL ,
+  `JID` VARCHAR(50) NOT NULL ,
   INDEX `SID` (`ID` ASC) ,
+  INDEX `SJID` (`JID` ASC) ,
   CONSTRAINT `SID`
     FOREIGN KEY (`ID` )
     REFERENCES `teamchro_LATSQL`.`Employee` (`ID` )
     ON DELETE CASCADE
-    ON UPDATE CASCADE)
+    ON UPDATE CASCADE,
+  CONSTRAINT `SJID`
+    FOREIGN KEY (`JID` )
+    REFERENCES `teamchro_LATSQL`.`Jobs` (`JID` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `teamchro_LATSQL`.`Hours Worked`
+-- -----------------------------------------------------
+CREATE  TABLE IF NOT EXISTS `teamchro_LATSQL`.`Hours Worked` (
+  `ID` INT NOT NULL ,
+  `Date` DATE NOT NULL ,
+  `Start` TIME NULL ,
+  `End` TIME NULL ,
+  `JID` VARCHAR(50) NOT NULL ,
+  `B1out` TIME NULL ,
+  `B1in` TIME NULL ,
+  `B2out` TIME NULL ,
+  `B2in` TIME NULL ,
+  `Lout` TIME NULL ,
+  `Lin` TIME NULL ,
+  INDEX `HWID` (`ID` ASC) ,
+  INDEX `HWJID` (`JID` ASC) ,
+  CONSTRAINT `HWID`
+    FOREIGN KEY (`ID` )
+    REFERENCES `teamchro_LATSQL`.`Employee` (`ID` )
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  CONSTRAINT `HWJID`
+    FOREIGN KEY (`JID` )
+    REFERENCES `teamchro_LATSQL`.`Jobs` (`JID` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
@@ -193,7 +174,7 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 SET AUTOCOMMIT=0;
 USE `teamchro_LATSQL`;
-INSERT INTO `teamchro_LATSQL`.`Employee` (`ID`, `Priv`, `LName`, `FName`, `SSN`, `Phone`, `Address1`, `Address2`, `State`, `Email`, `Zip`) VALUES ('1', NULL, 'Chavez', 'Jenn', '123456789', '0123456789', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `teamchro_LATSQL`.`Employee` (`ID`, `Priv`, `LName`, `FName`, `SSN`, `Phone`, `Address1`, `Address2`, `State`, `Email`, `Zip`) VALUES ('1', 'Admin', 'Chavez', 'Jenn', '123456789', '0123456789', NULL, NULL, NULL, NULL, NULL);
 
 COMMIT;
 
@@ -217,5 +198,14 @@ COMMIT;
 SET AUTOCOMMIT=0;
 USE `teamchro_LATSQL`;
 INSERT INTO `teamchro_LATSQL`.`Users` (`ID`, `User`, `Password`) VALUES ('1', 'test', 'test');
+
+COMMIT;
+
+-- -----------------------------------------------------
+-- Data for table `teamchro_LATSQL`.`Schedule`
+-- -----------------------------------------------------
+SET AUTOCOMMIT=0;
+USE `teamchro_LATSQL`;
+INSERT INTO `teamchro_LATSQL`.`Schedule` (`ID`, `Date`, `Start`, `End`, `JID`) VALUES ('1', '2/13/2012', '3:00', '4:00', 'Manager');
 
 COMMIT;

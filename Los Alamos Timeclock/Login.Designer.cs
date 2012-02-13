@@ -118,6 +118,7 @@
             this.DoubleBuffered = true;
             this.Name = "Login";
             this.Size = new System.Drawing.Size(500, 400);
+            this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

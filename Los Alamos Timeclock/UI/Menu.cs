@@ -35,9 +35,12 @@ namespace Los_Alamos_Timeclock
 
             if (Main.permissions == "Admin")
             {
-                Main.maininstance.panel1.Controls.Clear();
-                Main.maininstance.panel1.Controls.Add(new Admin());
-                Main.maininstance.panel1.Controls[0].Dock = DockStyle.Fill;
+                if (Main.maininstance.panel1.HasChildren == false || Main.maininstance.panel1.Controls[0].Name != "Admin")
+                {
+                    Main.maininstance.panel1.Controls.Clear();
+                    Main.maininstance.panel1.Controls.Add(new Admin());
+                    Main.maininstance.panel1.Controls[0].Dock = DockStyle.Fill;
+                }
             }
             else if (Main.permissions == "Manager")
             {
@@ -54,14 +57,23 @@ namespace Los_Alamos_Timeclock
 
         private void Clockin_Click(object sender, EventArgs e)
         {
+            if (Main.maininstance.panel1.HasChildren == false || Main.maininstance.panel1.Controls[0].Name != "Clockinout")
+            {
+                Main.maininstance.panel1.Controls.Clear();
+                Main.maininstance.panel1.Controls.Add(new Clockinout());
+                Main.maininstance.panel1.Controls[0].Dock = DockStyle.Fill;
+            }
 
         }
 
         private void Schedule_Click(object sender, EventArgs e)
         {
-            Main.maininstance.panel1.Controls.Clear();
-            Main.maininstance.panel1.Controls.Add(new Schedule());
-            Main.maininstance.panel1.Controls[0].Dock = DockStyle.Fill;
+            if (Main.maininstance.panel1.HasChildren==false||Main.maininstance.panel1.Controls[0].Name != "Schedule")
+            {
+                Main.maininstance.panel1.Controls.Clear();
+                Main.maininstance.panel1.Controls.Add(new Schedule());
+                Main.maininstance.panel1.Controls[0].Dock = DockStyle.Fill;
+            }
         }
 
         private void Clockout_Click(object sender, EventArgs e)

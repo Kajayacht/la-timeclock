@@ -14,8 +14,7 @@ namespace Los_Alamos_Timeclock
     {
         public Login()
         {
-            InitializeComponent();          
-
+            InitializeComponent();       
         }
 
         private void B_login_Click(object sender, EventArgs e)
@@ -49,15 +48,15 @@ namespace Los_Alamos_Timeclock
 
                 if (IN_USER.Text.ToLower() == "admin" && IN_PASS.Text.ToLower() == "pass")
                 {
-                    Main.permissions = "2";
+                    Main.permissions = "admin";
                 }
                 else if (IN_USER.Text.ToLower() == "manager" && IN_PASS.Text.ToLower() == "pass")
                 {
-                    Main.permissions = "2";
+                    Main.permissions = "manager";
                 }
                 else
                 {
-                    Main.permissions = "0";
+                    Main.permissions = "none";
                 }
                 Main.maininstance.panel1.Controls.Clear();
                 Main.maininstance.menu1.Show();
@@ -78,6 +77,11 @@ namespace Los_Alamos_Timeclock
         private void label1_Click(object sender, EventArgs e)
         {
            
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

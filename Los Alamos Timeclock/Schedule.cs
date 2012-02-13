@@ -12,27 +12,26 @@ namespace Los_Alamos_Timeclock
 {
     public partial class Schedule : UserControl
     {
+        MySqlDataAdapter mySqlDataAdapter;
+        MySqlCommandBuilder mySqlCommandBuilder;
         DataTable dataTable;
         public Schedule()
         {
             InitializeComponent();
             string query = "SELECT * FROM Schedule Where ID='" + Main.ID + "'";
-            MySqlDataAdapter mySqlDataAdapter;
-            MySqlCommandBuilder mySqlCommandBuilder;
+            //string query = "SELECT Week,MStime As 'M In',MEtime As 'M Out', Mjid As 'M Job',TStime As 'T In',TEtime As 'T Out', Tjid As 'T Job',WStime As 'W In',WEtime As 'W Out', Wjid As 'W Job',TrStime As 'Tr In',TrEtime As 'Tr Out', Trjid As 'Tr Job',FStime As 'F In',FEtime As 'F Out', Mjid As 'F Job',MStime As 'S In',SEtime As 'S Out', Sjid As 'S Job',SuStime As 'Su In',SuEtime As 'Su Out', Sujid As 'Su Job' FROM Schedule Where ID='" + Main.ID + "'";
             if (Main.myConnection.State==ConnectionState.Open)
             {
                 mySqlDataAdapter = new MySqlDataAdapter(query, Main.myConnection);
                 mySqlCommandBuilder = new MySqlCommandBuilder(mySqlDataAdapter);
-                //mySqlDataAdapter.UpdateCommand = mySqlCommandBuilder.GetUpdateCommand();
-                //mySqlDataAdapter.DeleteCommand = mySqlCommandBuilder.GetDeleteCommand();
-                //mySqlDataAdapter.InsertCommand = mySqlCommandBuilder.GetInsertCommand();
-
+                
                 dataTable = new DataTable();
                 mySqlDataAdapter.Fill(dataTable);
 
                 BindingSource bind = new BindingSource();
                 bind.DataSource = dataTable;
                 Table1.DataSource = bind;
+                
             }
         }
         public DataRowCollection Rows
@@ -42,7 +41,6 @@ namespace Los_Alamos_Timeclock
 
         private void Table1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
 
         }
 

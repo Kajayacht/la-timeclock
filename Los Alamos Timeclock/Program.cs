@@ -11,9 +11,6 @@ namespace Los_Alamos_Timeclock
 
     static class Program
     {
-
-        
-        
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
