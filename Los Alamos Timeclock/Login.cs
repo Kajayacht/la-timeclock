@@ -14,52 +14,38 @@ namespace Los_Alamos_Timeclock
     {
         public Login()
         {
-            InitializeComponent();       
+            InitializeComponent();
         }
 
         private void B_login_Click(object sender, EventArgs e)
         {
-            
-            if (Main.myConnection.State == ConnectionState.Open)
+            try
             {
-                try
+                Main.myConnection.Open();
+                Main.maininstance.sqlreader("SELECT Users.ID,Employee.FName, Employee.Priv FROM Users, Employee WHERE Users.ID = Employee.ID AND Users.User='" + IN_USER.Text + "' AND Users.Password='" + IN_PASS.Text + "'");
+
+                if (Main.reader.HasRows)
                 {
-                    //MySqlCommand command = new MySqlCommand("SELECT `ID` FROM `Users` WHERE User='" + IN_USER.Text + "' AND Password='" + IN_PASS.Text + "'", Main.myConnection);
-                    MySqlCommand command = new MySqlCommand("SELECT Users.ID, Employee.Priv FROM Users JOIN Employee ON Users.ID = Employee.ID WHERE Users.User='"+IN_USER.Text+"' AND Users.Password='"+IN_PASS.Text+"'", Main.myConnection);
-                    Main.reader = command.ExecuteReader();
-                    Main.reader.Read();
                     Main.ID = Main.reader["ID"].ToString();
                     Main.permissions = Main.reader["Priv"].ToString();
+                    Main.EName = Main.reader["FName"].ToString();
                     Main.reader.Close();
+                    Main.myConnection.Close();
 
                     Main.maininstance.menu1.Show();
                     Main.maininstance.panel1.Controls.Clear();
-                }
-                catch(Exception f)
-                {
-                    //MessageBox.Show(f.ToString());
-                    Main.reader.Close();
-                    MessageBox.Show("Incorrect Login");
-                }
-
-            }
-            else
-            {
-
-                if (IN_USER.Text.ToLower() == "admin" && IN_PASS.Text.ToLower() == "pass")
-                {
-                    Main.permissions = "admin";
-                }
-                else if (IN_USER.Text.ToLower() == "manager" && IN_PASS.Text.ToLower() == "pass")
-                {
-                    Main.permissions = "manager";
+                    Main.maininstance.panel1.Controls.Add(new Clockinout());
+                    Main.maininstance.panel1.Controls[0].Dock = DockStyle.Fill;
                 }
                 else
                 {
-                    Main.permissions = "none";
+                    Main.myConnection.Close();
+                    MessageBox.Show("Incorrect Login");
                 }
-                Main.maininstance.panel1.Controls.Clear();
-                Main.maininstance.menu1.Show();
+            }
+            catch
+            {
+                MessageBox.Show("Failed to connect to SQL database");
             }
 
         }
@@ -76,7 +62,7 @@ namespace Los_Alamos_Timeclock
 
         private void label1_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void Login_Load(object sender, EventArgs e)

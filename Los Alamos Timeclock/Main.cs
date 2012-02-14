@@ -17,14 +17,12 @@ namespace Los_Alamos_Timeclock
         public static string week;
         public static Main maininstance = null;
         public static string ID;
+        public static string EName;
         public static MySqlConnection myConnection= new MySqlConnection();
         public static MySqlDataReader reader;
         public static DateTime w;
         public static string permissions = "";  
-        //used to track user permissions
-        //0=employee
-        //1=manager
-        //2=admin
+
 
         public Main()
         {
@@ -45,32 +43,28 @@ namespace Los_Alamos_Timeclock
             panel1.Controls.Clear();
             panel1.Controls.Add(new Login());
             panel1.Controls[0].Dock = DockStyle.Fill;
-
-
-
-            
-            try
-            {
-                connect();
-            }
-            catch (Exception f)
-            {
-                MessageBox.Show("Failed to connect to database, make sure apache is running or change settings");
-                //MessageBox.Show(f.ToString());
-            }
-            
-        }
-
-        public void connect()
-        {
             Main.myConnection = new MySqlConnection(
                 "SERVER=" + Properties.Settings.Default.IP +
                 ";PORT=" + Properties.Settings.Default.Port +
                 ";DATABASE=" + Properties.Settings.Default.Database +
                 ";UID=" + Properties.Settings.Default.User + ";" +
                 ";PASSWORD=" + Properties.Settings.Default.Password + ";");
-            myConnection.Open();
+
+            
+            try
+            {
+                myConnection.Open();
+                myConnection.Close();
+            }
+            catch (Exception f)
+            {
+                MessageBox.Show("Failed to connect to database, make sure apache is running or change settings");
+
+                changeconnection(); //allows changing of database info, method not done yet
+            }
+            
         }
+
 
         public void changeconnection()
         {
@@ -79,6 +73,31 @@ namespace Los_Alamos_Timeclock
         }
 
 
+        public void sqlinsert(String c)
+        {
+            try
+            {
+                myConnection.Open();
+                MySqlCommand command = new MySqlCommand(c, myConnection);
+                command.ExecuteNonQuery();
+                myConnection.Close();
+            }
+            catch (Exception e)
+            {
+                if (myConnection.State == ConnectionState.Open)
+                {
+                    myConnection.Close();
+                }
+                MessageBox.Show(e.ToString());
+            }
+        }
+        public void sqlreader(String c)
+        {
+            MySqlCommand command = new MySqlCommand(c, myConnection);
+            reader = command.ExecuteReader();
+            reader.Read();
+        }
+
         private void Main_Load(object sender, EventArgs e)
         {
             menu1.Hide();
@@ -86,7 +105,6 @@ namespace Los_Alamos_Timeclock
 
         private void menu1_Load(object sender, EventArgs e)
         {
-            
             menu1.timer1.Start();
         }
         
@@ -99,6 +117,5 @@ namespace Los_Alamos_Timeclock
         {
 
         }
-
     }
 }

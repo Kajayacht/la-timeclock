@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.Schedule = new Los_Alamos_Timeclock.Schedule();
             this.menu1 = new Los_Alamos_Timeclock.Menu();
             this.SuspendLayout();
             // 
@@ -40,19 +39,9 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(70, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(414, 362);
+            this.panel1.Size = new System.Drawing.Size(484, 362);
             this.panel1.TabIndex = 6;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // Schedule
-            // 
-            this.Schedule.AutoSize = true;
-            this.Schedule.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Schedule.Location = new System.Drawing.Point(70, 0);
-            this.Schedule.Margin = new System.Windows.Forms.Padding(0);
-            this.Schedule.Name = "Schedule";
-            this.Schedule.Size = new System.Drawing.Size(414, 362);
-            this.Schedule.TabIndex = 5;
             // 
             // menu1
             // 
@@ -74,9 +63,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Los_Alamos_Timeclock.Properties.Resources._1287421014661;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(484, 362);
+            this.ClientSize = new System.Drawing.Size(554, 362);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.Schedule);
             this.Controls.Add(this.menu1);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.DoubleBuffered = true;
@@ -92,7 +80,6 @@
         #endregion
 
         public Menu menu1;
-        public Schedule Schedule;
         public System.Windows.Forms.Panel panel1;
 
 
