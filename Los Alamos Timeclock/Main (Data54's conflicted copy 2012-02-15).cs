@@ -16,7 +16,6 @@ namespace Los_Alamos_Timeclock
     {
         public static string week;
         public static Main maininstance = null;
-        public static string status;
         public static string ID;
         public static string EName;
         public static MySqlConnection myConnection= new MySqlConnection();

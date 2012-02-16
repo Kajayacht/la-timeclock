@@ -22,10 +22,11 @@ namespace Los_Alamos_Timeclock
             try
             {
                 Main.myConnection.Open();
-                Main.maininstance.sqlreader("SELECT Users.ID,Employee.FName, Employee.Priv FROM Users, Employee WHERE Users.ID = Employee.ID AND Users.User='" + IN_USER.Text + "' AND Users.Password='" + IN_PASS.Text + "'");
+                Main.maininstance.sqlreader("SELECT Users.ID,Employee.FName, Employee.Priv, Employee.Status FROM Users, Employee WHERE Users.ID = Employee.ID AND Users.User='" + IN_USER.Text + "' AND Users.Password='" + IN_PASS.Text + "'");
 
                 if (Main.reader.HasRows)
                 {
+                    Main.status = Main.reader["Status"].ToString();
                     Main.ID = Main.reader["ID"].ToString();
                     Main.permissions = Main.reader["Priv"].ToString();
                     Main.EName = Main.reader["FName"].ToString();

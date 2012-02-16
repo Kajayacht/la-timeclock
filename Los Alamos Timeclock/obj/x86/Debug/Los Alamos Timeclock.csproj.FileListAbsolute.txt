@@ -15,3 +15,4 @@ C:\Users\Nate\Dropbox\Visual Studio Projects\Projects\Los Alamos Timeclock\Los A
 C:\Users\Nate\Dropbox\Visual Studio Projects\Projects\Los Alamos Timeclock\Los Alamos Timeclock\obj\x86\Debug\Los_Alamos_Timeclock.Settings.resources
 C:\Users\Nate\Dropbox\Visual Studio Projects\Projects\Los Alamos Timeclock\Los Alamos Timeclock\bin\Debug\Los Alamos Timeclock.exe.config
 C:\Users\Nate\Dropbox\Visual Studio Projects\Projects\Los Alamos Timeclock\Los Alamos Timeclock\obj\x86\Debug\Los_Alamos_Timeclock.Clockinout.resources
+C:\Users\Nate\Dropbox\Visual Studio Projects\Projects\Los Alamos Timeclock\Los Alamos Timeclock\obj\x86\Debug\GenerateResource.read.1 (Data54's conflicted copy 2012-02-15).tlog

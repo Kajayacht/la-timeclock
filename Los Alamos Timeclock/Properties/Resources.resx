@@ -118,18 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Manager" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Manager.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1287421014661" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1287421014661.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Bartender" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Bartender.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Cook" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Cook.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Dishwasher" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Dishwasher.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -138,5 +126,20 @@
   </data>
   <data name="Server" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Server.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Manager" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Manager.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Bartender" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Bartender.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1287421014661" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1287421014661.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Cook" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Cook.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="none" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\none.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

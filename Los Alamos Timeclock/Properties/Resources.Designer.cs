@@ -95,6 +95,13 @@ namespace Los_Alamos_Timeclock.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap none {
+            get {
+                object obj = ResourceManager.GetObject("none", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap Security {
             get {
                 object obj = ResourceManager.GetObject("Security", resourceCulture);
