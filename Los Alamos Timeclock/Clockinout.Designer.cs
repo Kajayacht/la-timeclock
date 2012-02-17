@@ -84,6 +84,7 @@
             this.Clockout.TabIndex = 3;
             this.Clockout.Text = "Clock Out";
             this.Clockout.UseVisualStyleBackColor = true;
+            this.Clockout.Click += new System.EventHandler(this.Clockout_Click);
             // 
             // jobimg
             // 
@@ -131,6 +132,7 @@
             this.Lunch.TabIndex = 7;
             this.Lunch.Text = "Lunch In/Out";
             this.Lunch.UseVisualStyleBackColor = true;
+            this.Lunch.Click += new System.EventHandler(this.Lunch_Click);
             // 
             // Clockinout
             // 
@@ -149,6 +151,7 @@
             this.DoubleBuffered = true;
             this.Name = "Clockinout";
             this.Size = new System.Drawing.Size(500, 400);
+            this.Load += new System.EventHandler(this.Clockinout_Load);
             ((System.ComponentModel.ISupportInitialize)(this.jobimg)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
