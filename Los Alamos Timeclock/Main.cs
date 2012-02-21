@@ -135,6 +135,32 @@ namespace Los_Alamos_Timeclock
             reader.Read();
         }
 
+        public DateTime roundtime(DateTime t)
+        {
+            TimeSpan a = TimeSpan.ParseExact(t.ToString("HH:mm:ss"), "g", null);
+            int q = 0;
+            while (a.Minutes > 15)
+            {
+                a = a.Subtract(TimeSpan.FromMinutes(15));
+                q++;
+            }
+            if (a.Minutes >= 8)
+            {
+                a = a.Subtract(TimeSpan.FromMinutes(a.Minutes));
+                a = a.Add(TimeSpan.FromMinutes((q * 15) + 15));
+            }
+            else
+            {
+                a = a.Subtract(TimeSpan.FromMinutes(a.Minutes));
+                a = a.Add(TimeSpan.FromMinutes(q * 15));
+            }
+            a = a.Subtract(TimeSpan.FromSeconds(a.Seconds));
+            //return a;
+            t = DateTime.ParseExact(a.ToString(), "HH:mm:ss", null);
+            return t;
+        }
+
+
         private void Main_Load(object sender, EventArgs e)
         {
             menu1.Hide();

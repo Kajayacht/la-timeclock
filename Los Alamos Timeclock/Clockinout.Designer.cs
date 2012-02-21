@@ -36,13 +36,14 @@
             this.statusmessage = new System.Windows.Forms.Label();
             this.Break = new System.Windows.Forms.Button();
             this.Lunch = new System.Windows.Forms.Button();
+            this.Manager = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.jobimg)).BeginInit();
             this.SuspendLayout();
             // 
             // clockin
             // 
             this.clockin.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.clockin.Location = new System.Drawing.Point(94, 293);
+            this.clockin.Location = new System.Drawing.Point(64, 291);
             this.clockin.Name = "clockin";
             this.clockin.Size = new System.Drawing.Size(75, 75);
             this.clockin.TabIndex = 0;
@@ -61,7 +62,7 @@
             this.shiftinfo.Size = new System.Drawing.Size(77, 29);
             this.shiftinfo.TabIndex = 1;
             this.shiftinfo.Text = "TEST";
-            this.shiftinfo.Click += new System.EventHandler(this.label1_Click);
+            
             // 
             // welcome
             // 
@@ -73,12 +74,12 @@
             this.welcome.Size = new System.Drawing.Size(500, 37);
             this.welcome.TabIndex = 2;
             this.welcome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.welcome.Click += new System.EventHandler(this.label1_Click_1);
+            
             // 
             // Clockout
             // 
             this.Clockout.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Clockout.Location = new System.Drawing.Point(337, 293);
+            this.Clockout.Location = new System.Drawing.Point(307, 291);
             this.Clockout.Name = "Clockout";
             this.Clockout.Size = new System.Drawing.Size(75, 75);
             this.Clockout.TabIndex = 3;
@@ -97,7 +98,7 @@
             this.jobimg.Size = new System.Drawing.Size(150, 150);
             this.jobimg.TabIndex = 4;
             this.jobimg.TabStop = false;
-            this.jobimg.Click += new System.EventHandler(this.jobimg_Click);
+            
             // 
             // statusmessage
             // 
@@ -110,12 +111,11 @@
             this.statusmessage.TabIndex = 5;
             this.statusmessage.Text = "Clocked Out";
             this.statusmessage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.statusmessage.Click += new System.EventHandler(this.label1_Click_2);
             // 
             // Break
             // 
             this.Break.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Break.Location = new System.Drawing.Point(175, 293);
+            this.Break.Location = new System.Drawing.Point(145, 291);
             this.Break.Name = "Break";
             this.Break.Size = new System.Drawing.Size(75, 75);
             this.Break.TabIndex = 6;
@@ -126,7 +126,7 @@
             // Lunch
             // 
             this.Lunch.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Lunch.Location = new System.Drawing.Point(256, 293);
+            this.Lunch.Location = new System.Drawing.Point(226, 291);
             this.Lunch.Name = "Lunch";
             this.Lunch.Size = new System.Drawing.Size(75, 75);
             this.Lunch.TabIndex = 7;
@@ -134,12 +134,24 @@
             this.Lunch.UseVisualStyleBackColor = true;
             this.Lunch.Click += new System.EventHandler(this.Lunch_Click);
             // 
+            // Manager
+            // 
+            this.Manager.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Manager.Location = new System.Drawing.Point(388, 291);
+            this.Manager.Name = "Manager";
+            this.Manager.Size = new System.Drawing.Size(75, 75);
+            this.Manager.TabIndex = 8;
+            this.Manager.Text = "Manager Override";
+            this.Manager.UseVisualStyleBackColor = true;
+            this.Manager.Click += new System.EventHandler(this.Manager_Click);
+            // 
             // Clockinout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Los_Alamos_Timeclock.Properties.Resources._1287421014661;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.Manager);
             this.Controls.Add(this.Lunch);
             this.Controls.Add(this.Break);
             this.Controls.Add(this.statusmessage);
@@ -168,5 +180,6 @@
         private System.Windows.Forms.Label statusmessage;
         private System.Windows.Forms.Button Break;
         private System.Windows.Forms.Button Lunch;
+        private System.Windows.Forms.Button Manager;
     }
 }

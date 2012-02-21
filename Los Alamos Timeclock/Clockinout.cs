@@ -12,9 +12,6 @@ using Los_Alamos_Timeclock.Properties;
 
 namespace Los_Alamos_Timeclock
 {
-    //Generic SQL commands
-    //Start:    "INSERT INTO `teamchro_LATSQL`.`Hours Worked` (`ID`, `Date`, `Start`, `JID`) VALUES ('1', '2/13/2012', '3:00', 'Manager');"
-    //Set end:  "Update `teamchro_LATSQL`.`Hours Worked` set `End`='7:00' where `ID`='1' and `Date`='2012-02-13' and `End` IS NULL"
 
     public partial class Clockinout : UserControl
     {
@@ -40,6 +37,9 @@ namespace Los_Alamos_Timeclock
 
                 if (Main.reader.HasRows)
                 {
+                    job = Main.reader["JID"].ToString();
+                    jobimg.BackgroundImage = (Bitmap)Resources.ResourceManager.GetObject(job);
+
                     if (Main.reader["B1in"].ToString() == "")
                     {
                         n = 1;
@@ -62,6 +62,7 @@ namespace Los_Alamos_Timeclock
                 {
                     date = DateTime.Today.ToString("yyyy-MM-dd");
                 }
+                
                 Main.reader.Close();
                 Main.maininstance.sqlreader("Select Employee.FName, Schedule.Date, Schedule.Start, Schedule.End, Schedule.JID from Employee,Schedule Where Employee.ID='" + Main.ID + "' AND Employee.ID=Schedule.ID AND Schedule.Date='" + date + "'");
 
@@ -132,38 +133,13 @@ namespace Los_Alamos_Timeclock
             }
         }
 
-        public DateTime roundtime(DateTime t)
-        {
-            TimeSpan a = TimeSpan.ParseExact(t.ToString("HH:mm:ss"), "g", null);
-            int q = 0;
-            while (a.Minutes > 15)
-            {
-                a = a.Subtract(TimeSpan.FromMinutes(15));
-                q++;
-            }
-            if (a.Minutes >= 8)
-            {
-                a = a.Subtract(TimeSpan.FromMinutes(a.Minutes));
-                a = a.Add(TimeSpan.FromMinutes((q * 15) + 15));
-            }
-            else
-            {
-                a = a.Subtract(TimeSpan.FromMinutes(a.Minutes));
-                a = a.Add(TimeSpan.FromMinutes(q * 15));
-            }
-            a = a.Subtract(TimeSpan.FromSeconds(a.Seconds));
-            //return a;
-            t = DateTime.ParseExact(a.ToString(), "HH:mm:ss", null);
-            return t;
-        }
-
         private void clockin_Click(object sender, EventArgs e)
         {
             if (scheduled)
             {
-                if (start == roundtime(DateTime.Now) && status != "IN" && status != "BREAK" && status != "LUNCH")
+                if (start == Main.maininstance.roundtime(DateTime.Now) && status != "IN" && status != "BREAK" && status != "LUNCH")
                 {
-                    Main.maininstance.sqlinsert("INSERT INTO `Hours Worked` (`ID`, `Date`, `Start`, `JID`,`Status`) VALUES ('" + Main.ID + "', '" + DateTime.Today.ToString("yyyy-MM-dd") + "' , '" + roundtime(DateTime.Now).ToString("HH:mm:ss") + "', '" + job + "', 'IN')");
+                    Main.maininstance.sqlinsert("INSERT INTO `Hours Worked` (`ID`, `Date`, `Start`, `JID`,`Status`) VALUES ('" + Main.ID + "', '" + DateTime.Today.ToString("yyyy-MM-dd") + "' , '" + Main.maininstance.roundtime(DateTime.Now).ToString("HH:mm:ss") + "', '" + job + "', 'IN')");
                     status = "IN";
                     supdate();
                 }
@@ -217,6 +193,7 @@ namespace Los_Alamos_Timeclock
                 Main.maininstance.sqlinsert("UPDATE `Hours Worked` SET Lout='" + DateTime.Now.ToString("HH:mm:ss") + "', Status='LUNCH' WHERE ID='" + Main.ID + "' AND Date='" + date + "'");
                 status = "LUNCH";
                 supdate();
+                lunch = false;
             }
             else
             {
@@ -242,31 +219,19 @@ namespace Los_Alamos_Timeclock
 
         }
 
-
-        private void label1_Click(object sender, EventArgs e)
+        private void Manager_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void jobimg_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_2(object sender, EventArgs e)
-        {
-
+            Override o = new Override();
+            o.Show();
         }
 
         private void Clockinout_Load(object sender, EventArgs e)
         {
 
         }
+
+
 
     }
 }
