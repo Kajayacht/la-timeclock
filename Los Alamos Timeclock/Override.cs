@@ -29,7 +29,6 @@ namespace Los_Alamos_Timeclock
                 Main.reader.Close();
                 Main.myConnection.Close();
                 Main.maininstance.sqlinsert("INSERT INTO `Hours Worked` (`ID`, `Date`, `Start`, `JID`,`Status`) VALUES ('" + Main.ID + "', '" + DateTime.Today.ToString("yyyy-MM-dd") + "' , '" + Main.maininstance.roundtime(DateTime.Now).ToString("HH:mm:ss") + "', '" + jobs.Text + "', 'IN')");
-                MessageBox.Show(jobs.Text);
                 //status = "IN";
                 //supdate();
                 this.Close();
@@ -48,6 +47,11 @@ namespace Los_Alamos_Timeclock
         private void cancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Override_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

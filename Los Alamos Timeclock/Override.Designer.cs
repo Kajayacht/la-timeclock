@@ -142,6 +142,7 @@
             this.Name = "Override";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manager Override";
+            this.Load += new System.EventHandler(this.Override_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
