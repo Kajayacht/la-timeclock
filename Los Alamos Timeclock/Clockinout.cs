@@ -199,10 +199,6 @@ namespace Los_Alamos_Timeclock
             {
                 MessageBox.Show("Ring Restricted, contact manager");
             }
-
-
-
-
         }
         private void Clockout_Click(object sender, EventArgs e)
         {

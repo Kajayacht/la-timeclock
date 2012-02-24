@@ -56,6 +56,7 @@
             this.Editschedule.TabIndex = 1;
             this.Editschedule.Text = "Edit Schedule";
             this.Editschedule.UseVisualStyleBackColor = true;
+            this.Editschedule.Click += new System.EventHandler(this.Editschedule_Click);
             // 
             // viewlog
             // 

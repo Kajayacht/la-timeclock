@@ -39,20 +39,20 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(70, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(484, 362);
+            this.panel1.Size = new System.Drawing.Size(500, 400);
             this.panel1.TabIndex = 6;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // menu1
             // 
             this.menu1.AutoSize = true;
             this.menu1.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.menu1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.menu1.Dock = System.Windows.Forms.DockStyle.Left;
             this.menu1.Location = new System.Drawing.Point(0, 0);
             this.menu1.Margin = new System.Windows.Forms.Padding(0);
             this.menu1.MinimumSize = new System.Drawing.Size(70, 0);
             this.menu1.Name = "menu1";
-            this.menu1.Size = new System.Drawing.Size(70, 362);
+            this.menu1.Size = new System.Drawing.Size(70, 400);
             this.menu1.TabIndex = 1;
             this.menu1.Visible = false;
             this.menu1.Load += new System.EventHandler(this.menu1_Load);
@@ -63,7 +63,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Los_Alamos_Timeclock.Properties.Resources._1287421014661;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(554, 362);
+            this.ClientSize = new System.Drawing.Size(570, 400);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menu1);
             this.Cursor = System.Windows.Forms.Cursors.Default;

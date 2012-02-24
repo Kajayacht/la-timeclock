@@ -63,6 +63,12 @@
     <Compile Include="Manager\Admin\Admin.Designer.cs">
       <DependentUpon>Admin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Manager\Admin\Makesched.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Manager\Admin\Makesched.Designer.cs">
+      <DependentUpon>Makesched.cs</DependentUpon>
+    </Compile>
     <Compile Include="Override.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +119,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Manager\Admin\Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager\Admin\Makesched.resx">
+      <DependentUpon>Makesched.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Override.resx">
       <DependentUpon>Override.cs</DependentUpon>

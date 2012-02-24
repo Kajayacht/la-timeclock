@@ -37,6 +37,7 @@ namespace Los_Alamos_Timeclock
             {
                 Main.reader.Close();
                 Main.myConnection.Close();
+                MessageBox.Show("Incorrect Login");
             }
 
 

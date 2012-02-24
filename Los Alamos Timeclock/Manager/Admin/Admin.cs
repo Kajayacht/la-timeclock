@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Los_Alamos_Timeclock.Manager.Admin;
 
 namespace Los_Alamos_Timeclock
 {
@@ -31,6 +32,13 @@ namespace Los_Alamos_Timeclock
                 Main.maininstance.panel1.Controls.Clear();
                 Main.maininstance.panel1.Controls.Add(new Settings());
                 Main.maininstance.panel1.Controls[0].Dock = DockStyle.Fill;
+        }
+
+        private void Editschedule_Click(object sender, EventArgs e)
+        {
+            Main.maininstance.panel1.Controls.Clear();
+            Main.maininstance.panel1.Controls.Add(new Makesched());
+            Main.maininstance.panel1.Controls[0].Dock = DockStyle.Fill;
         }
     }
 }

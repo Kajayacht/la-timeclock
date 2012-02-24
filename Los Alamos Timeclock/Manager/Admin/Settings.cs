@@ -101,20 +101,5 @@ namespace Los_Alamos_Timeclock
             }
 
         }
-
-        private void pass_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void port_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void database_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

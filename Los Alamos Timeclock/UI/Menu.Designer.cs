@@ -49,7 +49,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(202, 46);
             this.button1.TabIndex = 0;
-            this.button1.Text = "Clock in";
+            this.button1.Text = "Clock";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Clockin_Click);
             // 
@@ -62,7 +62,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(202, 46);
             this.button2.TabIndex = 1;
-            this.button2.Text = "Clock Out";
+            this.button2.Text = "...";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.Clockout_Click);
             // 
@@ -100,7 +100,7 @@
             this.Break.Name = "Break";
             this.Break.Size = new System.Drawing.Size(202, 46);
             this.Break.TabIndex = 4;
-            this.Break.Text = "Break";
+            this.Break.Text = "...";
             this.Break.UseVisualStyleBackColor = true;
             // 
             // B_Logout

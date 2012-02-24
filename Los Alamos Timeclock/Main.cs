@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using MySql.Data.MySqlClient;
+using Los_Alamos_Timeclock;
 
 namespace Los_Alamos_Timeclock
 {
@@ -169,16 +170,6 @@ namespace Los_Alamos_Timeclock
         private void menu1_Load(object sender, EventArgs e)
         {
             menu1.timer1.Start();
-        }
-
-        private void loginControl1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

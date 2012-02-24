@@ -66,6 +66,7 @@
             "Bartender",
             "Cook",
             "Dishwasher",
+            "Manager",
             "Security",
             "Server"});
             this.jobs.Location = new System.Drawing.Point(234, 30);
