@@ -34,6 +34,5 @@ C:\Users\Kajayacht\Desktop\chrono\la-timeclock\Los Alamos Timeclock\obj\x86\Debu
 C:\Users\Kajayacht\Desktop\chrono\la-timeclock\Los Alamos Timeclock\obj\x86\Debug\GenerateResource.write.1.tlog
 C:\Users\Kajayacht\Desktop\chrono\la-timeclock\Los Alamos Timeclock\obj\x86\Debug\Los Alamos Timeclock.exe
 C:\Users\Kajayacht\Desktop\chrono\la-timeclock\Los Alamos Timeclock\obj\x86\Debug\Los Alamos Timeclock.pdb
-C:\Users\Nate\Dropbox\Visual Studio Projects\Projects\Los Alamos Timeclock\Los Alamos Timeclock\bin\Debug\MySql.Data.dll
 C:\Users\Nate\Dropbox\Visual Studio Projects\Projects\Los Alamos Timeclock\Los Alamos Timeclock\obj\x86\Debug\Los_Alamos_Timeclock.Override.resources
 C:\Users\Nate\Dropbox\Visual Studio Projects\Projects\Los Alamos Timeclock\Los Alamos Timeclock\obj\x86\Debug\Los_Alamos_Timeclock.Manager.Admin.Makesched.resources

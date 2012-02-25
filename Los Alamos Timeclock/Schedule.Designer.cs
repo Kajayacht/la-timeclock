@@ -38,7 +38,7 @@
             // 
             this.Table1.AllowUserToAddRows = false;
             this.Table1.AllowUserToDeleteRows = false;
-            this.Table1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.Table1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.Table1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Table1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Table1.Location = new System.Drawing.Point(0, 0);
