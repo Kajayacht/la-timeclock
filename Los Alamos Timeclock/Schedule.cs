@@ -18,9 +18,13 @@ namespace Los_Alamos_Timeclock
         public Schedule()
         {
             InitializeComponent();
+            if (Main.myConnection.State == ConnectionState.Open)
+            {
+                Main.reader.Close();
+                Main.myConnection.Close();
+            }
             string query = "SELECT Date, LName AS Last, FName AS First, Start, End, JID AS Job FROM Schedule JOIN Employee Where Schedule.ID='" + Main.ID + "' AND Schedule.ID=Employee.ID";
-            //string query = "SELECT Date, LName AS Last, FName as First, Start, End, JID AS Job FROM Schedule JOIN Employee Where ID='" + Main.ID + "'";
-
+            
             try
             {
                 Main.myConnection.Open();

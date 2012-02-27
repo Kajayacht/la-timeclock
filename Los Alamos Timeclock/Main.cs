@@ -69,7 +69,7 @@ namespace Los_Alamos_Timeclock
             }
 
            //If connection fails, give user the option to reenter settings or exit the program
-            catch (Exception f)
+            catch
             {
                 DialogResult result = MessageBox.Show("Failed to connect to database, make sure apache is running or change settings. \n Do you Want to change connection settings?",
                     "Database Error", MessageBoxButtons.YesNo);

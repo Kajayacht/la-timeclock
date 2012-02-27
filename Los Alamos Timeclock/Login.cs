@@ -43,7 +43,7 @@ namespace Los_Alamos_Timeclock
                     MessageBox.Show("Incorrect Login");
                 }
             }
-            catch(Exception f)
+            catch
             {
                 MessageBox.Show("Failed to connect to SQL database");
             }
