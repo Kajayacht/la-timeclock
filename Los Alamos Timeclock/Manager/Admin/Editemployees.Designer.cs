@@ -64,11 +64,11 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.jobs = new System.Windows.Forms.ListBox();
             this.label22 = new System.Windows.Forms.Label();
             this.Pass2 = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.pay = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
             this.Savepay = new System.Windows.Forms.Button();
             this.SSN = new System.Windows.Forms.MaskedTextBox();
@@ -485,20 +485,21 @@
             this.label21.TabIndex = 64;
             this.label21.Text = "Contact";
             // 
-            // listBox2
+            // jobs
             // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Items.AddRange(new object[] {
+            this.jobs.FormattingEnabled = true;
+            this.jobs.Items.AddRange(new object[] {
             "Bartender",
             "Cook",
             "Dishwasher",
             "Manager",
             "Security",
             "Server"});
-            this.listBox2.Location = new System.Drawing.Point(118, 706);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(120, 108);
-            this.listBox2.TabIndex = 15;
+            this.jobs.Location = new System.Drawing.Point(118, 706);
+            this.jobs.Name = "jobs";
+            this.jobs.Size = new System.Drawing.Size(120, 108);
+            this.jobs.TabIndex = 15;
+            this.jobs.SelectedIndexChanged += new System.EventHandler(this.Jobs_SelectedIndexChanged);
             // 
             // label22
             // 
@@ -528,13 +529,13 @@
             this.label23.TabIndex = 72;
             this.label23.Text = "Confirm Password:";
             // 
-            // textBox1
+            // pay
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(289, 703);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(173, 26);
-            this.textBox1.TabIndex = 16;
+            this.pay.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pay.Location = new System.Drawing.Point(289, 703);
+            this.pay.Name = "pay";
+            this.pay.Size = new System.Drawing.Size(173, 26);
+            this.pay.TabIndex = 16;
             // 
             // label24
             // 
@@ -555,6 +556,7 @@
             this.Savepay.TabIndex = 17;
             this.Savepay.Text = "Save Pay Change";
             this.Savepay.UseVisualStyleBackColor = true;
+            this.Savepay.Click += new System.EventHandler(this.Savepay_Click);
             // 
             // SSN
             // 
@@ -590,10 +592,10 @@
             this.Controls.Add(this.Az);
             this.Controls.Add(this.Phone);
             this.Controls.Add(this.SSN);
-            this.Controls.Add(this.listBox2);
+            this.Controls.Add(this.jobs);
             this.Controls.Add(this.Savepay);
             this.Controls.Add(this.label24);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.pay);
             this.Controls.Add(this.Pass2);
             this.Controls.Add(this.label23);
             this.Controls.Add(this.label22);
@@ -679,11 +681,11 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.ListBox jobs;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.TextBox Pass2;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox pay;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Button Savepay;
         private System.Windows.Forms.MaskedTextBox SSN;

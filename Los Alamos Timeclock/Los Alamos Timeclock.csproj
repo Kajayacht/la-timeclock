@@ -81,6 +81,12 @@
     <Compile Include="Manager\Admin\Newemployee.Designer.cs">
       <DependentUpon>Newemployee.cs</DependentUpon>
     </Compile>
+    <Compile Include="Manager\Admin\Paychecks.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Manager\Admin\Paychecks.Designer.cs">
+      <DependentUpon>Paychecks.cs</DependentUpon>
+    </Compile>
     <Compile Include="Override.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +146,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Manager\Admin\Newemployee.resx">
       <DependentUpon>Newemployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager\Admin\Paychecks.resx">
+      <DependentUpon>Paychecks.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Override.resx">
       <DependentUpon>Override.cs</DependentUpon>

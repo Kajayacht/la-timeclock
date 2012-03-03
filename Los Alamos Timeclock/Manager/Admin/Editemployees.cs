@@ -144,13 +144,18 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             {
                 Main.maininstance.sqlinsert("UPDATE Employee SET Priv='" + Priv.Text + "', LName='" + Lname.Text + "', MName='" + Mname.Text + "', FName='" + Fname.Text + "', SSN='" + SSN.Text + "', Phone='" + Phone.Text + "', Email='" + Email.Text + "', Address1='" + Al1.Text + "', Address2='" + Al2.Text + "', State='" + As.Text + "', Zip='" + Az.Text + "' WHERE ID='" + ID + "'");
                 MessageBox.Show("Employee Updated");
-            
+
             }
         }
 
         public Boolean validateinfo()
         {
-            if(Fname.Text=="")
+            if (ID == Main.ID && Main.permissions != Priv.Text)
+            {
+                MessageBox.Show("You cannot change your own privileges");
+                return false;
+            }
+            else if (Fname.Text == "")
             {
                 MessageBox.Show("First Name cannot be empty");
                 return false;
@@ -195,7 +200,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                 Main.reader.Close();
                 Main.myConnection.Close();
             }
-            if (Pass1.Text == Pass2.Text && User.Text!="")
+            if (Pass1.Text == Pass2.Text && User.Text != "")
             {
                 Main.myConnection.Open();
                 Main.maininstance.sqlreader("Select * FROM Users WHERE ID='" + ID + "'");
@@ -209,7 +214,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                 }
                 else
                 {
-                    Main.maininstance.sqlinsert("INSERT INTO Users (`ID`,`User`,`Password`) Values('"+ID+"', '"+User.Text+"', '"+Pass1.Text+"')");
+                    Main.maininstance.sqlinsert("INSERT INTO Users (`ID`,`User`,`Password`) Values('" + ID + "', '" + User.Text + "', '" + Pass1.Text + "')");
                 }
                 MessageBox.Show("Login Updated");
             }
@@ -218,13 +223,85 @@ namespace Los_Alamos_Timeclock.Manager.Admin
 
         private void Delete_Click(object sender, EventArgs e)
         {
-
-            Main.maininstance.sqlinsert("DELETE FROM Employee WHERE ID='"+ID+"'");
-            getEmployees();
+            if (ID == Main.ID)
+            {
+                MessageBox.Show("You cannot delete your own account");
+            }
+            else
+            {
+                Main.maininstance.sqlinsert("DELETE FROM Employee WHERE ID='" + ID + "'");
+                getEmployees();
+            }
 
         }
 
-        
+        private void Jobs_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Main.myConnection.Open();
+            Main.maininstance.sqlreader("SELECT JPay FROM `Employee Jobs` WHERE ID='" + ID + "' AND JID='" + jobs.Text + "'");
+            if (!Main.reader.HasRows)
+            {
+
+                Main.reader.Close();
+                Main.maininstance.sqlreader("SELECT JSPay FROM `Jobs` WHERE JID='" + jobs.Text + "'");
+                pay.Text = Main.reader["JSPay"].ToString();
+            }
+            else
+            {
+                pay.Text = Main.reader["JPay"].ToString();
+            }
+
+            Main.reader.Close();
+            Main.myConnection.Close();
+        }
+
+        private void Savepay_Click(object sender, EventArgs e)
+        {
+            Decimal a;
+            if (jobs.Text == ""|| !Decimal.TryParse(pay.Text, out a))//also needs to check if pay is empty
+            {
+                if (jobs.Text == "")
+                {
+                    MessageBox.Show("Please select a job");
+                }
+                else
+                {
+                    MessageBox.Show("Please enter valid pay ammount");
+                }
+            }
+            else
+            {
+                Main.myConnection.Open();
+                Main.maininstance.sqlreader("SELECT JSPay FROM Jobs WHERE JID='" + jobs.Text + "'");
+                Decimal opay = Decimal.Parse(Main.reader["JSPay"].ToString());
+                Main.reader.Close();
+                Decimal npay = Decimal.Parse(pay.Text);
+
+                if (opay > npay)
+                {
+                    MessageBox.Show("Entered pay is below " + jobs.Text + "'s minimum wage");
+                }
+                else
+                {
+                    Main.maininstance.sqlreader("SELECT * FROM `Employee Jobs` WHERE ID='" + ID + "' AND JID='" + jobs.Text + "'");
+
+                    if (Main.reader.HasRows)
+                    {
+                        Main.reader.Close();
+                        Main.myConnection.Close();
+                        Main.maininstance.sqlinsert("UPDATE `Employee Jobs` SET JPay='" + pay.Text + "' WHERE ID='" + ID + "' AND JID='" + jobs.Text + "'");
+                    }
+                    else
+                    {
+                        Main.myConnection.Close();
+                        Main.maininstance.sqlinsert("INSERT INTO `Employee Jobs` Values('" + ID + "','" + jobs.Text + "', '" + pay.Text + "')");
+
+                    }
+                }
+            }
+        }
+
+
 
 
     }
