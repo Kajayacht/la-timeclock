@@ -55,26 +55,26 @@
             // 
             this.shiftinfo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.shiftinfo.AutoSize = true;
+            this.shiftinfo.BackColor = System.Drawing.Color.Transparent;
             this.shiftinfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.shiftinfo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.shiftinfo.ForeColor = System.Drawing.Color.Transparent;
             this.shiftinfo.Location = new System.Drawing.Point(3, 90);
             this.shiftinfo.Name = "shiftinfo";
             this.shiftinfo.Size = new System.Drawing.Size(77, 29);
             this.shiftinfo.TabIndex = 1;
             this.shiftinfo.Text = "TEST";
-            
             // 
             // welcome
             // 
+            this.welcome.BackColor = System.Drawing.Color.Transparent;
             this.welcome.Dock = System.Windows.Forms.DockStyle.Top;
             this.welcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.welcome.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.welcome.ForeColor = System.Drawing.Color.White;
             this.welcome.Location = new System.Drawing.Point(0, 0);
             this.welcome.Name = "welcome";
             this.welcome.Size = new System.Drawing.Size(500, 37);
             this.welcome.TabIndex = 2;
             this.welcome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            
             // 
             // Clockout
             // 
@@ -98,7 +98,6 @@
             this.jobimg.Size = new System.Drawing.Size(150, 150);
             this.jobimg.TabIndex = 4;
             this.jobimg.TabStop = false;
-            
             // 
             // statusmessage
             // 

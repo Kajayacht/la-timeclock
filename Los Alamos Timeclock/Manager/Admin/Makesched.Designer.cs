@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.calander = new System.Windows.Forms.DateTimePicker();
             this.Update = new System.Windows.Forms.Button();
             this.dg = new System.Windows.Forms.DataGridView();
-            this.Job = new System.Windows.Forms.ComboBox();
+            this.jobs = new System.Windows.Forms.ComboBox();
             this.Delete = new System.Windows.Forms.Button();
             this.sh = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -61,6 +62,8 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(20, 269);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 13);
@@ -91,6 +94,8 @@
             // 
             this.dg.AllowUserToAddRows = false;
             this.dg.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            this.dg.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dg.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -99,25 +104,19 @@
             this.dg.Location = new System.Drawing.Point(0, 0);
             this.dg.Name = "dg";
             this.dg.ReadOnly = true;
+            this.dg.RowHeadersVisible = false;
             this.dg.Size = new System.Drawing.Size(500, 261);
             this.dg.TabIndex = 6;
             // 
-            // Job
+            // jobs
             // 
-            this.Job.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.Job.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.Job.FormattingEnabled = true;
-            this.Job.Items.AddRange(new object[] {
-            "Bartender",
-            "Cook",
-            "Dishwasher",
-            "Manager",
-            "Security",
-            "Server"});
-            this.Job.Location = new System.Drawing.Point(79, 368);
-            this.Job.Name = "Job";
-            this.Job.Size = new System.Drawing.Size(190, 21);
-            this.Job.TabIndex = 6;
+            this.jobs.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.jobs.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.jobs.FormattingEnabled = true;
+            this.jobs.Location = new System.Drawing.Point(79, 368);
+            this.jobs.Name = "jobs";
+            this.jobs.Size = new System.Drawing.Size(190, 21);
+            this.jobs.TabIndex = 6;
             // 
             // Delete
             // 
@@ -171,6 +170,8 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(20, 297);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(32, 13);
@@ -181,6 +182,8 @@
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(20, 324);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(29, 13);
@@ -191,6 +194,8 @@
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(20, 368);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(27, 13);
@@ -272,7 +277,9 @@
             // 
             this.Length.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.Length.AutoSize = true;
+            this.Length.BackColor = System.Drawing.Color.Transparent;
             this.Length.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Length.ForeColor = System.Drawing.Color.White;
             this.Length.Location = new System.Drawing.Point(75, 345);
             this.Length.Name = "Length";
             this.Length.Size = new System.Drawing.Size(67, 20);
@@ -294,7 +301,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.sh);
             this.Controls.Add(this.Delete);
-            this.Controls.Add(this.Job);
+            this.Controls.Add(this.jobs);
             this.Controls.Add(this.Update);
             this.Controls.Add(this.calander);
             this.Controls.Add(this.label1);
@@ -316,7 +323,7 @@
         private System.Windows.Forms.DateTimePicker calander;
         private System.Windows.Forms.Button Update;
         private System.Windows.Forms.DataGridView dg;
-        private System.Windows.Forms.ComboBox Job;
+        private System.Windows.Forms.ComboBox jobs;
         private System.Windows.Forms.Button Delete;
         private System.Windows.Forms.ComboBox sh;
         private System.Windows.Forms.Label label2;

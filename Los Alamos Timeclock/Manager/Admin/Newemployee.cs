@@ -46,7 +46,8 @@ namespace Los_Alamos_Timeclock.Manager.Admin
 
                     Main.maininstance.sqlinsert("INSERT INTO Employee (`ID`, `Priv`, `LName`, `MName`, `FName`, `SSN`, `Phone`, `Email`, `Address1`, `Address2`, `State`, `Zip`) VALUES ('"+ID+"', 'None', '"+Lname.Text+"', '"+Mname.Text+"', '"+Fname.Text+"', '"+SSN.Text+"', '"+Phone.Text+"', '"+Email.Text+"', '"+Al1.Text+"', '"+Al2.Text+"', '"+As.Text+"', '"+Az.Text+"')");
                     Main.maininstance.sqlinsert("INSERT INTO Users (`ID`, `User`, `Password`) VALUES ('" + ID + "', '"+User.Text+"', '"+Pass1.Text+"')");
-
+                    
+                    Main.EmployeeList = Main.maininstance.getEmployees();
 
                     Main.maininstance.panel1.Controls.Clear();
                     Main.maininstance.panel1.Controls.Add(new Editemployees());
@@ -109,6 +110,56 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             {
                 return true;
             }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

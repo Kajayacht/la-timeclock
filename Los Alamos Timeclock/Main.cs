@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using MySql.Data.MySqlClient;
 using Los_Alamos_Timeclock;
+using System.Collections;
 
 namespace Los_Alamos_Timeclock
 {
@@ -19,6 +20,8 @@ namespace Los_Alamos_Timeclock
         public static Main maininstance = null;
         public static string ID;
         public static string EName;
+        public static List<string> Joblist;
+        public static ArrayList EmployeeList;
         public static MySqlConnection myConnection = new MySqlConnection();
         public static MySqlDataReader reader;
         public static DateTime w;
@@ -50,8 +53,93 @@ namespace Los_Alamos_Timeclock
                 ";DATABASE=" + Properties.Settings.Default.Database +
                 ";UID=" + Properties.Settings.Default.User + ";" +
                 ";PASSWORD=" + Properties.Settings.Default.Password + ";");
-
             connectDB(myConnection);
+
+            Joblist = getJobs();
+            EmployeeList = getEmployees();
+        }
+
+        public ArrayList getEmployees()
+        {
+            ArrayList Employees = new ArrayList();
+            try
+            {
+
+                Main.myConnection.Open();
+                MySqlCommand command = new MySqlCommand("Select ID, LName,FName From Employee ORDER BY LName", Main.myConnection);
+                Main.reader = command.ExecuteReader();
+
+                while (Main.reader.Read())
+                {
+                    Employees.Add(new Employee(Main.reader["LName"].ToString() + ", " + Main.reader["FName"].ToString(), int.Parse(Main.reader["ID"].ToString())));
+                }
+
+                //comboBox1.DisplayMember = "getname";
+                //comboBox1.ValueMember = "gid";
+                //comboBox1.DataSource = Employees;
+
+                Main.reader.Close();
+                Main.myConnection.Close();
+                return Employees;
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+
+                if (Main.myConnection.State == ConnectionState.Open)
+                {
+                    Main.reader.Close();
+                    Main.myConnection.Close();
+                }
+                return Employees;
+            }
+
+        }
+        public class Employee
+        {
+            private string Name;
+            private int ID;
+
+
+            public Employee(string stringName, int intID)
+            {
+                this.Name = stringName;
+                this.ID = intID;
+            }
+
+            public string getname
+            {
+                get
+                {
+                    return Name;
+                }
+            }
+            public int gid
+            {
+                get
+                {
+                    return ID;
+                }
+            }
+        }
+
+        public List<String> getJobs()
+        {
+            List<String> joblist = new List<String>();
+
+            Main.myConnection.Open();
+            MySqlCommand command = new MySqlCommand("Select JID From Jobs ORDER BY JID", Main.myConnection);
+            Main.reader = command.ExecuteReader();
+
+            while (Main.reader.Read())
+            {
+                joblist.Add(Main.reader["JID"].ToString());
+            }
+
+            Main.reader.Close();
+            Main.myConnection.Close();
+            return joblist;
         }
 
         /* Method to connect to the database 
@@ -131,6 +219,7 @@ namespace Los_Alamos_Timeclock
         }
         public void sqlreader(String c)
         {
+            c = c + " LIMIT 0,1000";
             MySqlCommand command = new MySqlCommand(c, myConnection);
             reader = command.ExecuteReader();
             reader.Read();

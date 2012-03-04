@@ -17,7 +17,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
         public Paychecks()
         {
             InitializeComponent();
-            mon=getmon(mon);
+            mon = getmon(mon);
             Week.Value = mon;
             sun = mon.AddDays(6);
             weeklabel.Text = "Pay for " + mon.ToShortDateString() + "-" + sun.ToShortDateString();
@@ -28,11 +28,11 @@ namespace Los_Alamos_Timeclock.Manager.Admin
         {
             if (Week.Value.DayOfWeek != DayOfWeek.Monday)
             {
-                Week.Value=getmon(Week.Value.Date);
+                Week.Value = getmon(Week.Value.Date);
             }
             mon = Week.Value;
             sun = mon.AddDays(6);
-            weeklabel.Text = "Pay for "+mon.ToShortDateString()+"-"+sun.ToShortDateString();
+            weeklabel.Text = "Pay for " + mon.ToShortDateString() + "-" + sun.ToShortDateString();
             calculate();
         }
 
@@ -42,7 +42,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             {
                 a = a.AddDays(-1);
             }
-            Grosspay.Text = "Pay:\n";
+            Grosspay.Text = "";
             return a;
 
         }
@@ -52,56 +52,70 @@ namespace Los_Alamos_Timeclock.Manager.Admin
 
 
             MySqlDataReader misc;
-            string ID="";
+            string ID = "";
             TimeSpan hours = TimeSpan.FromHours(0);
             TimeSpan Totalhours = TimeSpan.FromHours(0);
             Double hourlyrate = 0.00;
-            Double pay  = 0.00;
+            Double pay = 0.00;
             Double Totalpay = 0.00;
             Main.myConnection.Open();
 
 
-            String c="SELECT * FROM `Hours Worked` WHERE Date>='"+mon.ToString("yyyy-MM-dd")+"' AND '"+sun.ToString("yyyy-MM-dd")+"' AND Status='OUT' ORDER BY ID";
+            String c = "SELECT d.LName, d.FName, d.MName, a.*,b.JSPay, c.JPay " +
+            "FROM `Hours Worked` a " +
+            "LEFT OUTER JOIN `Jobs` b " +
+            "ON a.JID=b.JID "+
+            "LEFT OUTER JOIN `Employee Jobs` c " +
+            "ON b.JID=c.JID AND a.ID = c.ID " +
+            "JOIN `Employee` d "+
+            "ON a.ID=d.ID "+
+            "WHERE a.Date>='" + mon.ToString("yyyy-MM-dd") +
+            "' AND a.Date<='" + sun.ToString("yyyy-MM-dd") + 
+            "' AND a.Status='OUT'"+
+            "ORDER BY d.LName "+
+            "LIMIT 0,1000";
+
+            string output = "";
             MySqlCommand command = new MySqlCommand(c, Main.myConnection);
             Main.reader = command.ExecuteReader();
 
-            while(Main.reader.Read())
+            while (Main.reader.Read())
             {
                 if (Main.reader["ID"].ToString() != ID)
                 {
+                    if (ID != "")
+                    {
+                        output = output + "    Total Hours: "+Totalhours.Hours+":"+Totalhours.Minutes+"\n"+
+                                          "      Gross Pay: $"+Totalpay+"\n\n";
+                    }
                     ID = Main.reader["ID"].ToString();
+                    output = output + Main.reader["LName"].ToString() + ", " + Main.reader["FName"].ToString()+" "+ Main.reader["MName"].ToString()+"\n";
                     Totalhours = TimeSpan.FromHours(0);
+                    Totalpay = 0.00;
                 }
-                if (Main.reader["Start"].ToString()!="" && Main.reader["End"].ToString() != "")
+                if (Main.reader["Start"].ToString() != "" && Main.reader["End"].ToString() != "")
                 {
                     hours = Main.maininstance.roundtime(DateTime.Parse(Main.reader["End"].ToString())).Subtract(Main.maininstance.roundtime(DateTime.Parse(Main.reader["Start"].ToString())));
-                    
+
                     if (Main.reader["Lout"].ToString() != "" && Main.reader["Lin"].ToString() != "")
                     {
                         hours = hours.Subtract(roundtime(DateTime.Parse(Main.reader["Lin"].ToString()).Subtract(DateTime.Parse(Main.reader["Lout"].ToString()))));
                     }
-                    
-                    string d = "SELECT JPay FROM `Employee Jobs` WHERE ID='" + ID + "' AND JID='" + Main.reader["JID"].ToString() + "'";
-                    MySqlCommand c2 = new MySqlCommand(d, Main.myConnection);
-                    misc = command.ExecuteReader();//currently throws error, can't have 2 readers on 1 connection
-                    misc.Read();
-                    if (misc.HasRows)
+
+
+                    if (Main.reader["JPay"].ToString()=="")
                     {
-                        hourlyrate = Double.Parse(Main.reader["JPay"].ToString());
+                        hourlyrate = Double.Parse(Main.reader["JSPay"].ToString());
                     }
                     else
                     {
-                        misc.Close();
-                        d = "SELECT JSPay FROM `Jobs` WHERE JID='" + Main.reader["JID"].ToString() + "'";
-                        hourlyrate = Double.Parse(Main.reader["JSPay"].ToString());
+                        hourlyrate = Double.Parse(Main.reader["JPay"].ToString());
                     }
-                    misc.Close();
 
                     if (Totalhours.Hours > 40)
                     {
                         hourlyrate *= 1.5;
-                        pay = hourlyrate*(hours.Hours + (hours.Minutes / 15 * .25));
-                        Totalpay += pay;
+                        pay = hourlyrate * (hours.Hours + (hours.Minutes / 15 * .25));
 
                     }
                     else if (Totalhours.Add(hours).Hours > 40)
@@ -109,16 +123,15 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                         TimeSpan a = TimeSpan.FromHours(40);
                         a = a.Subtract(Totalhours);
                         hours = hours.Subtract(a);
-
                         pay = (hourlyrate * (a.Hours + (a.Minutes / 15 * .25))) + ((hourlyrate * 1.5) * (a.Hours + (a.Minutes / 15 * .25)));
-                        Totalpay += pay;
+                        hours = hours.Add(a);
                     }
                     else
                     {
                         pay = hourlyrate * (hours.Hours + (hours.Minutes / 15 * .25));
-                        Totalpay += pay;
                     }
-
+                    Totalpay += pay;
+                    pay = 0.00;
                     Totalhours = Totalhours.Add(hours);
                     hours = TimeSpan.FromHours(0);
                 }
@@ -127,6 +140,13 @@ namespace Los_Alamos_Timeclock.Manager.Admin
 
 
             }
+            if (ID != "")
+            {
+                output = output + "    Total Hours: " + Totalhours.Hours + ":" + Totalhours.Minutes + "\n" +
+                                  "      Gross Pay: $" + Totalpay + "\n\n";
+            }
+            ID = "";
+            Grosspay.Text = output;
 
 
             Main.myConnection.Close();

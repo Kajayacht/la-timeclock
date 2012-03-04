@@ -62,18 +62,12 @@
             // jobs
             // 
             this.jobs.FormattingEnabled = true;
-            this.jobs.Items.AddRange(new object[] {
-            "Bartender",
-            "Cook",
-            "Dishwasher",
-            "Manager",
-            "Security",
-            "Server"});
             this.jobs.Location = new System.Drawing.Point(234, 30);
             this.jobs.Name = "jobs";
             this.jobs.Size = new System.Drawing.Size(101, 95);
             this.jobs.Sorted = true;
             this.jobs.TabIndex = 2;
+            this.jobs.SelectedIndexChanged += new System.EventHandler(this.jobs_SelectedIndexChanged);
             // 
             // label1
             // 

@@ -44,7 +44,9 @@
             // weeklabel
             // 
             this.weeklabel.AutoSize = true;
+            this.weeklabel.BackColor = System.Drawing.Color.Transparent;
             this.weeklabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.weeklabel.ForeColor = System.Drawing.Color.White;
             this.weeklabel.Location = new System.Drawing.Point(102, 26);
             this.weeklabel.Name = "weeklabel";
             this.weeklabel.Size = new System.Drawing.Size(299, 25);
@@ -54,16 +56,18 @@
             // Grosspay
             // 
             this.Grosspay.AutoSize = true;
-            this.Grosspay.Location = new System.Drawing.Point(55, 160);
+            this.Grosspay.BackColor = System.Drawing.Color.Transparent;
+            this.Grosspay.ForeColor = System.Drawing.Color.White;
+            this.Grosspay.Location = new System.Drawing.Point(26, 100);
             this.Grosspay.Name = "Grosspay";
-            this.Grosspay.Size = new System.Drawing.Size(28, 13);
+            this.Grosspay.Size = new System.Drawing.Size(0, 13);
             this.Grosspay.TabIndex = 2;
-            this.Grosspay.Text = "Pay:";
             // 
             // Paychecks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackgroundImage = global::Los_Alamos_Timeclock.Properties.Resources._1287421014661;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.Grosspay);

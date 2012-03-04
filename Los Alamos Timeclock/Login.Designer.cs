@@ -41,7 +41,7 @@
             this.L_Pass.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.L_Pass.AutoSize = true;
             this.L_Pass.BackColor = System.Drawing.Color.Transparent;
-            this.L_Pass.ForeColor = System.Drawing.Color.Red;
+            this.L_Pass.ForeColor = System.Drawing.Color.White;
             this.L_Pass.Location = new System.Drawing.Point(132, 183);
             this.L_Pass.Name = "L_Pass";
             this.L_Pass.Size = new System.Drawing.Size(56, 13);
@@ -53,7 +53,7 @@
             this.L_User.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.L_User.AutoSize = true;
             this.L_User.BackColor = System.Drawing.Color.Transparent;
-            this.L_User.ForeColor = System.Drawing.Color.Red;
+            this.L_User.ForeColor = System.Drawing.Color.White;
             this.L_User.Location = new System.Drawing.Point(132, 160);
             this.L_User.Name = "L_User";
             this.L_User.Size = new System.Drawing.Size(32, 13);

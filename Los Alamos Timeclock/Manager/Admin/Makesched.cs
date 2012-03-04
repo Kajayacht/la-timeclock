@@ -21,82 +21,18 @@ namespace Los_Alamos_Timeclock.Manager.Admin
         {
             InitializeComponent();
             calander.MaxDate = DateTime.Today.AddYears(1);
-            getEmployees();
             popdg();
-            
+            jobs.DataSource = Main.Joblist;
+            comboBox1.DisplayMember = "getname";
+            comboBox1.ValueMember = "gid";
+            comboBox1.DataSource = Main.EmployeeList;
         }
+
 
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
         {
-
+            popdg();
         }
-
-        public void getEmployees()
-        {
-            ArrayList Employees = new ArrayList();
-
-            try
-            {
-
-                Main.myConnection.Open();
-                MySqlCommand command = new MySqlCommand("Select ID, LName,FName From Employee ORDER BY LName", Main.myConnection);
-                Main.reader = command.ExecuteReader();
-                
-                while (Main.reader.Read())
-                {
-                    Employees.Add(new Employee(Main.reader["LName"].ToString() + ", " + Main.reader["FName"].ToString(), int.Parse(Main.reader["ID"].ToString())));
-                    
-                }
-
-                comboBox1.DisplayMember = "getname";
-                comboBox1.ValueMember = "gid";
-                comboBox1.DataSource = Employees;
-
-                Main.reader.Close();
-                Main.myConnection.Close();
-
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.ToString());
-
-                if (Main.myConnection.State == ConnectionState.Open)
-                {
-                    Main.reader.Close();
-                    Main.myConnection.Close();
-                }
-            }
-            
-        }
-        public class Employee
-        {
-            private string Name;
-            private int ID;
-
-
-            public Employee(string stringName, int intID)
-            {
-                this.Name = stringName;
-                this.ID = intID;
-            }
-
-            public string getname
-            {
-                get
-                {
-                    return Name;
-                }
-            }
-            public int gid
-            {
-                get
-                {
-                    return ID;
-                }
-            }
-        }
-
-
 
         private void Update_Click(object sender, EventArgs e)
         {
@@ -104,11 +40,11 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             {
                 if (scheduled)
                 {
-                    Main.maininstance.sqlinsert("UPDATE Schedule SET Start='" + sh.Text + ":" + sm.Text + "', End='" + eh.Text + ":" + em.Text + "', JID='" + Job.Text + "' WHERE Date='" + date + "' AND ID='" + ID + "'");
+                    Main.maininstance.sqlinsert("UPDATE Schedule SET Start='" + sh.Text + ":" + sm.Text + "', End='" + eh.Text + ":" + em.Text + "', JID='" + jobs.Text + "' WHERE Date='" + date + "' AND ID='" + ID + "'");
                 }
                 else
                 {
-                    Main.maininstance.sqlinsert("INSERT INTO Schedule (`ID`, `Date`, `Start`, `End`, `JID`) VALUES ('" + ID + "', '" + date + "', '" + sh.Text + ":" + sm.Text + "', '" + eh.Text + ":" + em.Text + "', '" + Job.Text + "')");
+                    Main.maininstance.sqlinsert("INSERT INTO Schedule (`ID`, `Date`, `Start`, `End`, `JID`) VALUES ('" + ID + "', '" + date + "', '" + sh.Text + ":" + sm.Text + "', '" + eh.Text + ":" + em.Text + "', '" + jobs.Text + "')");
                     scheduled = true;
                 }
                 popdg();
@@ -164,7 +100,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                 a = TimeSpan.Parse(Main.reader["End"].ToString());
                 eh.Text = a.Hours.ToString();
                 em.Text = a.Minutes.ToString();
-                Job.Text = Main.reader["JID"].ToString();
+                jobs.Text = Main.reader["JID"].ToString();
             }
             else
             {
@@ -173,7 +109,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                 sm.Text = "";
                 eh.Text = "";
                 em.Text = "";
-                Job.Text = "";
+                jobs.Text = "";
             }
             clength();
             Main.reader.Close();
@@ -214,7 +150,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
 
         public void clength()
         {
-            if (sh.Text == "" || sm.Text == "" || eh.Text == "" || em.Text == "" || Job.Text == "")
+            if (sh.Text == "" || sm.Text == "" || eh.Text == "" || em.Text == "" || jobs.Text == "")
             {
                 Length.Text = "";
             }
@@ -241,7 +177,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
         public Boolean validate()
         {
 
-            if (sh.Text == "" || sm.Text == "" || eh.Text == "" || em.Text == ""||Job.Text=="")
+            if (sh.Text == "" || sm.Text == "" || eh.Text == "" || em.Text == ""||jobs.Text=="")
             {
                 MessageBox.Show("Fill in all fields");
                 return false;

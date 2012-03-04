@@ -46,7 +46,9 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(196, 92);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(159, 24);
@@ -57,7 +59,10 @@
             // 
             this.linkLabel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.linkLabel1.AutoSize = true;
+            this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
             this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.ForeColor = System.Drawing.Color.White;
+            this.linkLabel1.LinkColor = System.Drawing.Color.White;
             this.linkLabel1.Location = new System.Drawing.Point(105, 164);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(91, 20);
@@ -70,7 +75,10 @@
             // 
             this.linkLabel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.linkLabel2.AutoSize = true;
+            this.linkLabel2.BackColor = System.Drawing.Color.Transparent;
             this.linkLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel2.ForeColor = System.Drawing.Color.White;
+            this.linkLabel2.LinkColor = System.Drawing.Color.White;
             this.linkLabel2.Location = new System.Drawing.Point(154, 199);
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.Size = new System.Drawing.Size(42, 20);
@@ -84,7 +92,10 @@
             // 
             this.userlabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.userlabel.AutoSize = true;
+            this.userlabel.BackColor = System.Drawing.Color.Transparent;
             this.userlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userlabel.ForeColor = System.Drawing.Color.White;
+            this.userlabel.LinkColor = System.Drawing.Color.White;
             this.userlabel.Location = new System.Drawing.Point(147, 260);
             this.userlabel.Name = "userlabel";
             this.userlabel.Size = new System.Drawing.Size(47, 20);
@@ -98,7 +109,10 @@
             // 
             this.linkLabel4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.linkLabel4.AutoSize = true;
+            this.linkLabel4.BackColor = System.Drawing.Color.Transparent;
             this.linkLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel4.ForeColor = System.Drawing.Color.White;
+            this.linkLabel4.LinkColor = System.Drawing.Color.White;
             this.linkLabel4.Location = new System.Drawing.Point(112, 292);
             this.linkLabel4.Name = "linkLabel4";
             this.linkLabel4.Size = new System.Drawing.Size(82, 20);
@@ -176,7 +190,10 @@
             // 
             this.databaselabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.databaselabel.AutoSize = true;
+            this.databaselabel.BackColor = System.Drawing.Color.Transparent;
             this.databaselabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.databaselabel.ForeColor = System.Drawing.Color.White;
+            this.databaselabel.LinkColor = System.Drawing.Color.White;
             this.databaselabel.Location = new System.Drawing.Point(113, 228);
             this.databaselabel.Name = "databaselabel";
             this.databaselabel.Size = new System.Drawing.Size(83, 20);

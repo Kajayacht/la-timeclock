@@ -22,75 +22,13 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                 Main.reader.Close();
                 Main.myConnection.Close();
             }
-            getEmployees();
+            comboBox1.DisplayMember = "getname";
+            comboBox1.ValueMember = "gid";
+            comboBox1.DataSource = Main.EmployeeList;
             fieldupdate();
             SSN.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             Phone.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
-        }
-
-        public void getEmployees()
-        {
-
-            ArrayList Employees = new ArrayList();
-
-            try
-            {
-                Main.myConnection.Open();
-                MySqlCommand command = new MySqlCommand("Select ID, LName,FName From Employee ORDER BY LName", Main.myConnection);
-                Main.reader = command.ExecuteReader();
-
-                while (Main.reader.Read())
-                {
-                    Employees.Add(new Employee(Main.reader["LName"].ToString() + ", " + Main.reader["FName"].ToString(), int.Parse(Main.reader["ID"].ToString())));
-
-                }
-
-                comboBox1.DisplayMember = "getname";
-                comboBox1.ValueMember = "gid";
-                comboBox1.DataSource = Employees;
-
-                Main.reader.Close();
-                Main.myConnection.Close();
-
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.ToString());
-
-                if (Main.myConnection.State == ConnectionState.Open)
-                {
-                    Main.reader.Close();
-                    Main.myConnection.Close();
-                }
-            }
-
-        }
-        public class Employee
-        {
-            private string Name;
-            private int ID;
-
-
-            public Employee(string stringName, int intID)
-            {
-                this.Name = stringName;
-                this.ID = intID;
-            }
-
-            public string getname
-            {
-                get
-                {
-                    return Name;
-                }
-            }
-            public int gid
-            {
-                get
-                {
-                    return ID;
-                }
-            }
+            jobs.DataSource = Main.Joblist;
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -230,7 +168,8 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             else
             {
                 Main.maininstance.sqlinsert("DELETE FROM Employee WHERE ID='" + ID + "'");
-                getEmployees();
+                Main.EmployeeList = Main.maininstance.getEmployees();
+                comboBox1.DataSource = Main.EmployeeList;
             }
 
         }
@@ -299,6 +238,16 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                     }
                 }
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label17_Click(object sender, EventArgs e)
+        {
+
         }
 
 
