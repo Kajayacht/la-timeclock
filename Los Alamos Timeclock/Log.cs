@@ -66,7 +66,7 @@ namespace Los_Alamos_Timeclock
                 }
             }
 
-            catch (Exception e)
+            catch
             {
                 // Let the user know what went wrong.
 

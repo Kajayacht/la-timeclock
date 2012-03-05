@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.calander = new System.Windows.Forms.DateTimePicker();
-            this.Update = new System.Windows.Forms.Button();
+            this.Updateschedule = new System.Windows.Forms.Button();
             this.dg = new System.Windows.Forms.DataGridView();
             this.jobs = new System.Windows.Forms.ComboBox();
             this.Delete = new System.Windows.Forms.Button();
@@ -79,23 +79,23 @@
             this.calander.TabIndex = 4;
             this.calander.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
-            // Update
+            // Updateschedule
             // 
-            this.Update.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.Update.Location = new System.Drawing.Point(275, 293);
-            this.Update.Name = "Update";
-            this.Update.Size = new System.Drawing.Size(97, 95);
-            this.Update.TabIndex = 7;
-            this.Update.Text = "Update";
-            this.Update.UseVisualStyleBackColor = true;
-            this.Update.Click += new System.EventHandler(this.Update_Click);
+            this.Updateschedule.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.Updateschedule.Location = new System.Drawing.Point(275, 293);
+            this.Updateschedule.Name = "Updateschedule";
+            this.Updateschedule.Size = new System.Drawing.Size(97, 95);
+            this.Updateschedule.TabIndex = 7;
+            this.Updateschedule.Text = "Update";
+            this.Updateschedule.UseVisualStyleBackColor = true;
+            this.Updateschedule.Click += new System.EventHandler(this.Update_Click);
             // 
             // dg
             // 
             this.dg.AllowUserToAddRows = false;
             this.dg.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            this.dg.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dg.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dg.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -302,7 +302,7 @@
             this.Controls.Add(this.sh);
             this.Controls.Add(this.Delete);
             this.Controls.Add(this.jobs);
-            this.Controls.Add(this.Update);
+            this.Controls.Add(this.Updateschedule);
             this.Controls.Add(this.calander);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
@@ -321,7 +321,7 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker calander;
-        private System.Windows.Forms.Button Update;
+        private System.Windows.Forms.Button Updateschedule;
         private System.Windows.Forms.DataGridView dg;
         private System.Windows.Forms.ComboBox jobs;
         private System.Windows.Forms.Button Delete;

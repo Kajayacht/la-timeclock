@@ -33,7 +33,7 @@
             this.plabel = new System.Windows.Forms.Label();
             this.jname = new System.Windows.Forms.TextBox();
             this.jpay = new System.Windows.Forms.TextBox();
-            this.Update = new System.Windows.Forms.Button();
+            this.Updatejob = new System.Windows.Forms.Button();
             this.New = new System.Windows.Forms.Button();
             this.Delete = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -83,15 +83,15 @@
             this.jpay.Size = new System.Drawing.Size(100, 20);
             this.jpay.TabIndex = 4;
             // 
-            // Update
+            // Updatejob
             // 
-            this.Update.Location = new System.Drawing.Point(156, 284);
-            this.Update.Name = "Update";
-            this.Update.Size = new System.Drawing.Size(75, 75);
-            this.Update.TabIndex = 5;
-            this.Update.Text = "Update";
-            this.Update.UseVisualStyleBackColor = true;
-            this.Update.Click += new System.EventHandler(this.Update_Click);
+            this.Updatejob.Location = new System.Drawing.Point(156, 284);
+            this.Updatejob.Name = "Updatejob";
+            this.Updatejob.Size = new System.Drawing.Size(75, 75);
+            this.Updatejob.TabIndex = 5;
+            this.Updatejob.Text = "Update";
+            this.Updatejob.UseVisualStyleBackColor = true;
+            this.Updatejob.Click += new System.EventHandler(this.Updatejob_Click);
             // 
             // New
             // 
@@ -121,7 +121,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.Delete);
             this.Controls.Add(this.New);
-            this.Controls.Add(this.Update);
+            this.Controls.Add(this.Updatejob);
             this.Controls.Add(this.jpay);
             this.Controls.Add(this.jname);
             this.Controls.Add(this.plabel);
@@ -141,7 +141,7 @@
         private System.Windows.Forms.Label plabel;
         private System.Windows.Forms.TextBox jname;
         private System.Windows.Forms.TextBox jpay;
-        private System.Windows.Forms.Button Update;
+        private System.Windows.Forms.Button Updatejob;
         private System.Windows.Forms.Button New;
         private System.Windows.Forms.Button Delete;
     }

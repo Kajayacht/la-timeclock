@@ -49,7 +49,16 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             try
             {
                 Main.myConnection.Open();
-                Main.maininstance.sqlreader("SELECT * FROM Employee, Users WHERE Employee.ID='" + ID + "' AND Employee.ID=Users.ID");
+                Main.maininstance.sqlreader("SELECT a.*,b.*,c.ID AS Admin, d.ID AS Manager "+
+                    "FROM Employee a "+
+                    "JOIN Users b "+
+                    "ON a.ID=b.ID "+
+                    "LEFT JOIN Admin c "+
+                    "ON a.ID=c.ID "+
+                    "LEFT JOIN Manager d "+
+                    "ON a.ID=d.ID "+
+                    "WHERE a.ID='" + ID + "'");
+
                 Fname.Text = Main.reader["FName"].ToString();
                 Mname.Text = Main.reader["MName"].ToString();
                 Lname.Text = Main.reader["LName"].ToString();
@@ -63,7 +72,19 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                 Phone.Text = Main.reader["Phone"].ToString();
                 Email.Text = Main.reader["Email"].ToString();
 
-                Priv.SelectedItem = Main.reader["Priv"].ToString();
+
+                if (Main.reader["Admin"].ToString() != "")
+                {
+                    Priv.SelectedItem = "Admin";
+                }
+                else if (Main.reader["Manager"].ToString() != "")
+                {
+                    Priv.SelectedItem = "Manager";
+                }
+                else
+                {
+                    Priv.SelectedItem = "None";
+                }
 
                 User.Text = Main.reader["User"].ToString();
                 Pass1.Text = "";
@@ -82,7 +103,32 @@ namespace Los_Alamos_Timeclock.Manager.Admin
         {
             if (validateinfo())
             {
-                Main.maininstance.sqlinsert("UPDATE Employee SET Priv='" + Priv.Text + "', LName='" + Lname.Text + "', MName='" + Mname.Text + "', FName='" + Fname.Text + "', SSN='" + SSN.Text + "', Phone='" + Phone.Text + "', Email='" + Email.Text + "', Address1='" + Al1.Text + "', Address2='" + Al2.Text + "', State='" + As.Text + "', Zip='" + Az.Text + "' WHERE ID='" + ID + "'");
+                if (Priv.Text == "Admin")
+                {
+                    try
+                    {
+                        Main.maininstance.sqlinsert("INSERT INTO Admin Values('" + ID + "')");
+                    }
+                    catch
+                    { }
+                }
+                else if (Priv.Text == "Manager")
+                {
+                    Main.maininstance.sqlinsert("DELETE FROM Admin WHERE ID='" + ID + "'");
+                    try
+                    {
+                        Main.maininstance.sqlinsert("INSERT INTO Manager Values('" + ID + "')");
+                    }
+                    catch
+                    { }
+                }
+                else if (Priv.Text == "None")
+                {
+                    Main.maininstance.sqlinsert("DELETE FROM Admin WHERE ID='"+ID+"'");
+                    Main.maininstance.sqlinsert("DELETE FROM Manager WHERE ID='" + ID + "'");
+                }
+
+                Main.maininstance.sqlinsert("UPDATE Employee SET LName='" + Lname.Text + "', MName='" + Mname.Text + "', FName='" + Fname.Text + "', SSN='" + SSN.Text + "', Phone='" + Phone.Text + "', Email='" + Email.Text + "', Address1='" + Al1.Text + "', Address2='" + Al2.Text + "', State='" + As.Text + "', Zip='" + Az.Text + "' WHERE ID='" + ID + "'");
                 MessageBox.Show("Employee Updated");
 
             }
