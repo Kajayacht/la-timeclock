@@ -107,20 +107,30 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                 {
                     try
                     {
-                        Main.maininstance.sqlinsert("INSERT INTO Admin Values('" + ID + "')");
+                        Main.myConnection.Open();
+                        MySqlCommand command = new MySqlCommand("INSERT INTO Admin Values('" + ID + "')", Main.myConnection);
+                        command.ExecuteNonQuery();
+                        Main.myConnection.Close();
                     }
                     catch
-                    { }
+                    {
+                        Main.myConnection.Close();
+                    }
                 }
                 else if (Priv.Text == "Manager")
                 {
                     Main.maininstance.sqlinsert("DELETE FROM Admin WHERE ID='" + ID + "'");
                     try
                     {
-                        Main.maininstance.sqlinsert("INSERT INTO Manager Values('" + ID + "')");
+                        Main.myConnection.Open();
+                        MySqlCommand command = new MySqlCommand("INSERT INTO Manager Values('" + ID + "')", Main.myConnection);
+                        command.ExecuteNonQuery();
+                        Main.myConnection.Close();
                     }
                     catch
-                    { }
+                    {
+                        Main.myConnection.Close();
+                    }
                 }
                 else if (Priv.Text == "None")
                 {

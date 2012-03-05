@@ -67,7 +67,6 @@
             this.IN_USER.Name = "IN_USER";
             this.IN_USER.Size = new System.Drawing.Size(100, 20);
             this.IN_USER.TabIndex = 1;
-            this.IN_USER.TextChanged += new System.EventHandler(this.IN_USER_TextChanged);
             // 
             // IN_PASS
             // 
@@ -118,7 +117,6 @@
             this.DoubleBuffered = true;
             this.Name = "Login";
             this.Size = new System.Drawing.Size(500, 400);
-            this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
