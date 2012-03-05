@@ -86,6 +86,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                     Priv.SelectedItem = "None";
                 }
 
+
                 User.Text = Main.reader["User"].ToString();
                 Pass1.Text = "";
                 Pass2.Text = "";
@@ -222,7 +223,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
         private void Delete_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Are you sure you want to delete " + Fname.Text + " " + Mname.Text + " " + Lname.Text + "? All information related to " + Fname.Text + " " + Mname.Text + " " + Lname.Text + " will also be removed.",
-        "Delete Job?", MessageBoxButtons.YesNo);
+        "Delete Employee?", MessageBoxButtons.YesNo);
 
             if (result == DialogResult.Yes)
             {
@@ -261,7 +262,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
         private void Savepay_Click(object sender, EventArgs e)
         {
             Decimal a;
-            if (jobs.Text == ""|| !Decimal.TryParse(pay.Text, out a))//also needs to check if pay is empty
+            if (jobs.Text == ""|| !Decimal.TryParse(pay.Text, out a))
             {
                 if (jobs.Text == "")
                 {
@@ -274,10 +275,8 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             }
             else
             {
-                Main.myConnection.Open();
-                Main.maininstance.sqlreader("SELECT JSPay FROM Jobs WHERE JID='" + jobs.Text + "'");
-                Decimal opay = Decimal.Parse(Main.reader["JSPay"].ToString());
-                Main.reader.Close();
+                
+                Decimal opay = Decimal.Parse(jobs.SelectedValue.ToString());
                 Decimal npay = Decimal.Parse(pay.Text);
 
                 if (opay > npay)
@@ -286,6 +285,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                 }
                 else
                 {
+                    Main.myConnection.Open();
                     Main.maininstance.sqlreader("SELECT * FROM `Employee Jobs` WHERE ID='" + ID + "' AND JID='" + jobs.Text + "'");
 
                     if (Main.reader.HasRows)

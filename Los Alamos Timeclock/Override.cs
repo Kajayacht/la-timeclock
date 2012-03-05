@@ -28,9 +28,18 @@ namespace Los_Alamos_Timeclock
 
 
             Main.myConnection.Open();
-            Main.maininstance.sqlreader("SELECT Users.ID,Employee.FName, Employee.Priv FROM Users, Employee WHERE Users.ID = Employee.ID AND Users.User='" + user.Text + "' AND Users.Password='" + password.Text + "' AND (Priv='Admin' OR Priv='Manager')");
+            //Main.maininstance.sqlreader("SELECT Users.ID,Employee.FName, Employee.Priv FROM Users, Employee WHERE Users.ID = Employee.ID AND Users.User='" + user.Text + "' AND Users.Password='" + password.Text + "' AND (Priv='Admin' OR Priv='Manager')");
+            Main.maininstance.sqlreader("SELECT a.ID, b.ID AS Admin, c.ID AS Manager " +
+                                            "FROM Users a " +
+                                            "LEFT JOIN Admin b " +
+                                            "ON a.ID=b.ID " +
+                                            "LEFT JOIN Manager c " +
+                                            "ON a.ID=c.ID " +
+                                            "Where a.User='" + user.Text + "' " +
+                                            "And a.Password='" + password.Text + "'");
 
-            if (Main.reader.HasRows&&jobs.Text!="")
+
+            if (Main.reader["Admin"].ToString() != "" || Main.reader["Manager"].ToString() != "")
             {
                 Main.reader.Close();
                 Main.myConnection.Close();
