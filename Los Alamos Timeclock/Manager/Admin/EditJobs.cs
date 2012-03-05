@@ -59,7 +59,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             jobs.DataSource = Main.Joblist;
         }
 
-        private void Update_Click(object sender, EventArgs e)
+        private void Updatejob_Click(object sender, EventArgs e)
         {
             if (validate())
             {

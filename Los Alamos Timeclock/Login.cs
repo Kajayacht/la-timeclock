@@ -22,12 +22,34 @@ namespace Los_Alamos_Timeclock
             try
             {
                 Main.myConnection.Open();
-                Main.maininstance.sqlreader("SELECT Users.ID,Employee.FName, Employee.Priv FROM Users, Employee WHERE Users.ID = Employee.ID AND Users.User='" + IN_USER.Text + "' AND Users.Password='" + IN_PASS.Text + "'");
+                Main.maininstance.sqlreader("SELECT a.ID,b.FName, c.ID AS Admin, d.ID AS Manager " +
+                                            "FROM Users a " +
+                                            "Join Employee b " +
+                                            "ON a.ID=b.ID " +
+                                            "Left Join Admin c " +
+                                            "ON a.ID=c.ID " +
+                                            "Left Join Manager d " +
+                                            "ON a.ID=d.ID " +
+                                            "Where a.User='" + IN_USER.Text + "' " +
+                                            "And a.Password='" + IN_PASS.Text + "'");
 
                 if (Main.reader.HasRows)
                 {
                     Main.ID = Main.reader["ID"].ToString();
-                    Main.permissions = Main.reader["Priv"].ToString();
+                    //Main.permissions = Main.reader["Priv"].ToString();
+
+                    if (Main.reader["Admin"].ToString() != "")
+                    {
+                        Main.permissions = "Admin";
+                    }
+                    else if (Main.reader["Manager"].ToString() != "")
+                    {
+                        Main.permissions = "Manager";
+                    }
+                    else
+                    {
+                        Main.permissions = "None";
+                    }
                     Main.EName = Main.reader["FName"].ToString();
                     Main.reader.Close();
                     Main.myConnection.Close();
@@ -43,31 +65,17 @@ namespace Los_Alamos_Timeclock
                     MessageBox.Show("Incorrect Login");
                 }
             }
-            catch
+            catch (Exception d)
             {
+                MessageBox.Show(d.ToString());
                 MessageBox.Show("Failed to connect to SQL database");
             }
-
-        }
-
-        private void IN_USER_TextChanged(object sender, EventArgs e)
-        {
 
         }
 
         private void clock1_Load(object sender, EventArgs e)
         {
             clock1.timer1.Start();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Login_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -33,7 +33,7 @@ namespace Los_Alamos_Timeclock
         private void Manager_Click(object sender, EventArgs e)
         {
 
-            if (Main.permissions == "Admin")
+            if (Main.permissions == "Admin" || Main.permissions == "Manager")
             {
                 if (Main.maininstance.panel1.HasChildren == false || Main.maininstance.panel1.Controls[0].Name != "Admin")
                 {
@@ -41,13 +41,6 @@ namespace Los_Alamos_Timeclock
                     Main.maininstance.panel1.Controls.Add(new Admin());
                     Main.maininstance.panel1.Controls[0].Dock = DockStyle.Fill;
                 }
-            }
-            else if (Main.permissions == "Manager")
-            {
-                //no manager user control currently
-                //Main.maininstance.panel1.Controls.Clear();
-                //Main.maininstance.panel1.Controls.Add(new Manager());
-                //Main.maininstance.panel1.Controls[0].Dock = DockStyle.Fill;
             }
             else
             {

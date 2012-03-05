@@ -49,9 +49,6 @@ namespace Los_Alamos_Timeclock.Manager.Admin
 
         public void calculate()
         {
-
-
-            MySqlDataReader misc;
             string ID = "";
             TimeSpan hours = TimeSpan.FromHours(0);
             //TimeSpan Totalhours = TimeSpan.FromHours(0);
