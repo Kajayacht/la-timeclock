@@ -34,8 +34,8 @@ namespace Los_Alamos_Timeclock
 
                 Main.myConnection.Open();
                 Main.maininstance.sqlreader("Select * From `Hours Worked` WHERE ID='" + Main.ID + "' AND Status!='OUT'");
-
-                if (Main.reader.HasRows)
+                Boolean clockedin = Main.reader.HasRows;
+                if (clockedin)
                 {
                     job = Main.reader["JID"].ToString();
                     jobimg.BackgroundImage = (Bitmap)Resources.ResourceManager.GetObject(job);
@@ -57,48 +57,54 @@ namespace Los_Alamos_Timeclock
                     date = Main.reader["Date"].ToString();
                     date = DateTime.Parse(date).ToString("yyyy-MM-dd");
                     status = Main.reader["Status"].ToString();
+                    job = Main.reader["JID"].ToString();
+                    jobimg.BackgroundImage = (Bitmap)Resources.ResourceManager.GetObject(job);  //sets image to job image
+
                 }
                 else
                 {
                     date = DateTime.Today.ToString("yyyy-MM-dd");
                 }
-                
-                Main.reader.Close();
-                Main.maininstance.sqlreader("Select Employee.FName, Schedule.Date, Schedule.Start, Schedule.End, Schedule.JID from Employee,Schedule Where Employee.ID='" + Main.ID + "' AND Employee.ID=Schedule.ID AND Schedule.Date='" + date + "'");
+                    Main.reader.Close();
+                    Main.maininstance.sqlreader("Select Employee.FName, Schedule.Date, Schedule.Start, Schedule.End, Schedule.JID from Employee,Schedule Where Employee.ID='" + Main.ID + "' AND Employee.ID=Schedule.ID AND Schedule.Date='" + date + "'");
 
-                scheduled = Main.reader.HasRows;
+                    scheduled = Main.reader.HasRows;
 
-                if (Main.reader.HasRows)
-                {
-                    start = DateTime.ParseExact(Main.reader["Start"].ToString(), "HH:mm:ss", null);
-                    end = DateTime.ParseExact(Main.reader["End"].ToString(), "HH:mm:ss", null);
-                    job = Main.reader["JID"].ToString();
-
-                    if (start > end)
+                    if (Main.reader.HasRows)
                     {
-                        end = end.AddDays(1); //handles late shift length
+                        start = DateTime.ParseExact(Main.reader["Start"].ToString(), "HH:mm:ss", null);
+                        end = DateTime.ParseExact(Main.reader["End"].ToString(), "HH:mm:ss", null);
+                        if (!clockedin)
+                        {
+                            job = Main.reader["JID"].ToString();
+                            jobimg.BackgroundImage = (Bitmap)Resources.ResourceManager.GetObject(job);
+                        }
+                        if (start > end)
+                        {
+                            end = end.AddDays(1); //handles late shift length
+                        }
+
+                        Main.reader.Close();
+                        Main.myConnection.Close();
+                        shiftinfo.Text =
+                            "Today's Schedule:\n" +
+                            "Start: " + start.ToString("hh:mm tt") + "\n" +
+                            "End:  " + end.ToString("hh:mm tt") + "\n" +
+                            "Job:  " + job + "\n" +
+                            "Length: " + end.Subtract(start).ToString();
                     }
-
-
-                    Main.reader.Close();
-                    Main.myConnection.Close();
-                    shiftinfo.Text =
-                        "Today's Schedule:\n" +
-                        "Start: " + start.ToString("hh:mm tt") + "\n" +
-                        "End:  " + end.ToString("hh:mm tt") + "\n" +
-                        "Job:  " + job + "\n" +
-                        "Length: " + end.Subtract(start).ToString();
-                    //sets message
-
-
-                    jobimg.BackgroundImage = (Bitmap)Resources.ResourceManager.GetObject(job);  //sets image to job image
-                }
-                else
+                    else
+                    {
+                        shiftinfo.Text =
+                            "You are not Scheduled\n" +
+                            "Please see a manager";
+                        Main.reader.Close();
+                        Main.myConnection.Close();
+                    }
+                    //jobimg.BackgroundImage = (Bitmap)Resources.ResourceManager.GetObject(job);
+                //}
+                if (Main.myConnection.State == ConnectionState.Open)
                 {
-                    shiftinfo.Text =
-                        "You are not Scheduled\n" +
-                        "Please see a manager";
-                    Main.reader.Close();
                     Main.myConnection.Close();
                 }
             }
