@@ -22,6 +22,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             InitializeComponent();
             calander.MaxDate = DateTime.Today.AddYears(1);
             popdg();
+            jobs.DisplayMember = "getname";
             jobs.DataSource = Main.Joblist;
             comboBox1.DisplayMember = "getname";
             comboBox1.ValueMember = "gid";

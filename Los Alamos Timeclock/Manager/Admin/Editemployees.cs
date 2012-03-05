@@ -28,6 +28,8 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             fieldupdate();
             SSN.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             Phone.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            jobs.DisplayMember = "getname";
+            jobs.ValueMember = "getpay";
             jobs.DataSource = Main.Joblist;
         }
 
@@ -161,15 +163,21 @@ namespace Los_Alamos_Timeclock.Manager.Admin
 
         private void Delete_Click(object sender, EventArgs e)
         {
-            if (ID == Main.ID)
+            DialogResult result = MessageBox.Show("Are you sure you want to delete " + Fname.Text + " " + Mname.Text + " " + Lname.Text + "? All information related to " + Fname.Text + " " + Mname.Text + " " + Lname.Text + " will also be removed.",
+        "Delete Job?", MessageBoxButtons.YesNo);
+
+            if (result == DialogResult.Yes)
             {
-                MessageBox.Show("You cannot delete your own account");
-            }
-            else
-            {
-                Main.maininstance.sqlinsert("DELETE FROM Employee WHERE ID='" + ID + "'");
-                Main.EmployeeList = Main.maininstance.getEmployees();
-                comboBox1.DataSource = Main.EmployeeList;
+                if (ID == Main.ID)
+                {
+                    MessageBox.Show("You cannot delete your own account");
+                }
+                else
+                {
+                    Main.maininstance.sqlinsert("DELETE FROM Employee WHERE ID='" + ID + "'");
+                    Main.EmployeeList = Main.maininstance.getEmployees();
+                    comboBox1.DataSource = Main.EmployeeList;
+                }
             }
 
         }
@@ -180,10 +188,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             Main.maininstance.sqlreader("SELECT JPay FROM `Employee Jobs` WHERE ID='" + ID + "' AND JID='" + jobs.Text + "'");
             if (!Main.reader.HasRows)
             {
-
-                Main.reader.Close();
-                Main.maininstance.sqlreader("SELECT JSPay FROM `Jobs` WHERE JID='" + jobs.Text + "'");
-                pay.Text = Main.reader["JSPay"].ToString();
+                pay.Text = jobs.SelectedValue.ToString();
             }
             else
             {

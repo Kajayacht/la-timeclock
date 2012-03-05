@@ -18,27 +18,10 @@ namespace Los_Alamos_Timeclock
         {
             InitializeComponent();
 
-            getjobs();
+            jobs.DisplayMember = "getname";
+            jobs.DataSource = Main.Joblist;
+            
         }
-
-        public void getjobs()
-        {
-            List<String> joblist=new List<String>();
-
-            Main.myConnection.Open();
-            MySqlCommand command = new MySqlCommand("Select JID From Jobs ORDER BY JID", Main.myConnection);
-            Main.reader = command.ExecuteReader();
-
-            while (Main.reader.Read())
-            {
-                joblist.Add(Main.reader["JID"].ToString());
-            }
-
-            Main.reader.Close();
-            Main.myConnection.Close();
-            jobs.DataSource = joblist;
-        }
-
 
         private void ok_Click(object sender, EventArgs e)
         {

@@ -70,6 +70,12 @@
     <Compile Include="Manager\Admin\Editemployees.Designer.cs">
       <DependentUpon>Editemployees.cs</DependentUpon>
     </Compile>
+    <Compile Include="Manager\Admin\EditJobs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Manager\Admin\EditJobs.Designer.cs">
+      <DependentUpon>EditJobs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Manager\Admin\Makesched.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -141,6 +147,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Manager\Admin\Editemployees.resx">
       <DependentUpon>Editemployees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager\Admin\EditJobs.resx">
+      <DependentUpon>EditJobs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manager\Admin\Makesched.resx">
       <DependentUpon>Makesched.cs</DependentUpon>

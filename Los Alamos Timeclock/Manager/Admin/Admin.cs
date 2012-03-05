@@ -47,7 +47,9 @@ namespace Los_Alamos_Timeclock
 
         private void editjobs_Click(object sender, EventArgs e)
         {
-
+            Main.maininstance.panel1.Controls.Clear();
+            Main.maininstance.panel1.Controls.Add(new EditJobs());
+            Main.maininstance.panel1.Controls[0].Dock = DockStyle.Fill;
         }
     }
 }

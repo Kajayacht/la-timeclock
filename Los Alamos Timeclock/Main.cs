@@ -20,7 +20,7 @@ namespace Los_Alamos_Timeclock
         public static Main maininstance = null;
         public static string ID;
         public static string EName;
-        public static List<string> Joblist;
+        public static ArrayList Joblist;
         public static ArrayList EmployeeList;
         public static MySqlConnection myConnection = new MySqlConnection();
         public static MySqlDataReader reader;
@@ -124,23 +124,51 @@ namespace Los_Alamos_Timeclock
             }
         }
 
-        public List<String> getJobs()
+        public ArrayList getJobs()
         {
-            List<String> joblist = new List<String>();
+            ArrayList joblist = new ArrayList();
 
             Main.myConnection.Open();
-            MySqlCommand command = new MySqlCommand("Select JID From Jobs ORDER BY JID", Main.myConnection);
+            MySqlCommand command = new MySqlCommand("Select * From Jobs ORDER BY JID", Main.myConnection);
             Main.reader = command.ExecuteReader();
 
             while (Main.reader.Read())
             {
-                joblist.Add(Main.reader["JID"].ToString());
+                joblist.Add(new Job(Main.reader["JID"].ToString(), Decimal.Parse(Main.reader["JSPay"].ToString())));
             }
 
             Main.reader.Close();
             Main.myConnection.Close();
             return joblist;
         }
+        public class Job
+        {
+            private string Jobname;
+            private decimal Pay;
+
+
+            public Job(string stringName, decimal jpay)
+            {
+                this.Jobname = stringName;
+                this.Pay = jpay;
+            }
+
+            public string getname
+            {
+                get
+                {
+                    return Jobname;
+                }
+            }
+            public decimal getpay
+            {
+                get
+                {
+                    return Pay;
+                }
+            }
+        }
+
 
         /* Method to connect to the database 
          * @author Nate Rush

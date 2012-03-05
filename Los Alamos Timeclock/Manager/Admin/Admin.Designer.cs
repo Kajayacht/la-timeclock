@@ -75,7 +75,7 @@
             this.calculatepay.Name = "calculatepay";
             this.calculatepay.Size = new System.Drawing.Size(75, 75);
             this.calculatepay.TabIndex = 3;
-            this.calculatepay.Text = "Calculate Paycheck";
+            this.calculatepay.Text = "Calculate Paychecks";
             this.calculatepay.UseVisualStyleBackColor = true;
             this.calculatepay.Click += new System.EventHandler(this.button1_Click);
             // 
