@@ -54,7 +54,8 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             MySqlDataReader misc;
             string ID = "";
             TimeSpan hours = TimeSpan.FromHours(0);
-            TimeSpan Totalhours = TimeSpan.FromHours(0);
+            //TimeSpan Totalhours = TimeSpan.FromHours(0);
+            Double Totalhours = 0;
             Double hourlyrate = 0.00;
             Double pay = 0.00;
             Double Totalpay = 0.00;
@@ -85,12 +86,12 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                 {
                     if (ID != "")
                     {
-                        output = output + "    Total Hours: "+Totalhours.Hours+":"+Totalhours.Minutes+"\n"+
+                        output = output + "    Total Hours: " + Totalhours + "\n" +
                                           "      Gross Pay: $"+Totalpay+"\n\n";
                     }
                     ID = Main.reader["ID"].ToString();
                     output = output + Main.reader["LName"].ToString() + ", " + Main.reader["FName"].ToString()+" "+ Main.reader["MName"].ToString()+"\n";
-                    Totalhours = TimeSpan.FromHours(0);
+                    Totalhours = 0;//TimeSpan.FromHours(0);
                     Totalpay = 0.00;
                 }
                 if (Main.reader["Start"].ToString() != "" && Main.reader["End"].ToString() != "")
@@ -112,16 +113,16 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                         hourlyrate = Double.Parse(Main.reader["JPay"].ToString());
                     }
 
-                    if (Totalhours.Hours > 40)
+                    if (Totalhours > 40)
                     {
                         hourlyrate *= 1.5;
                         pay = hourlyrate * (hours.Hours + (hours.Minutes / 15 * .25));
 
                     }
-                    else if (Totalhours.Add(hours).Hours > 40)
+                    else if (Totalhours + (hours.Hours + (hours.Minutes / 15) * .25) > 40)
                     {
                         TimeSpan a = TimeSpan.FromHours(40);
-                        a = a.Subtract(Totalhours);
+                        a = a.Subtract(TimeSpan.FromHours(Totalhours));
                         hours = hours.Subtract(a);
                         pay = (hourlyrate * (a.Hours + (a.Minutes / 15 * .25))) + ((hourlyrate * 1.5) * (a.Hours + (a.Minutes / 15 * .25)));
                         hours = hours.Add(a);
@@ -132,7 +133,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                     }
                     Totalpay += pay;
                     pay = 0.00;
-                    Totalhours = Totalhours.Add(hours);
+                    Totalhours = Totalhours+(hours.Hours+(hours.Minutes/15)*.25);
                     hours = TimeSpan.FromHours(0);
                 }
 
@@ -142,7 +143,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             }
             if (ID != "")
             {
-                output = output + "    Total Hours: " + Totalhours.Hours + ":" + Totalhours.Minutes + "\n" +
+                output = output + "    Total Hours: " + Totalhours +"\n" +
                                   "      Gross Pay: $" + Totalpay + "\n\n";
             }
             ID = "";
