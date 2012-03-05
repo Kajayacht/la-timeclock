@@ -44,5 +44,10 @@ namespace Los_Alamos_Timeclock
             Main.maininstance.panel1.Controls.Add(new Makesched());
             Main.maininstance.panel1.Controls[0].Dock = DockStyle.Fill;
         }
+
+        private void editjobs_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

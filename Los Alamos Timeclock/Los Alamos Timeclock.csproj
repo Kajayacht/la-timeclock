@@ -57,6 +57,7 @@
     <Compile Include="Clockinout.Designer.cs">
       <DependentUpon>Clockinout.cs</DependentUpon>
     </Compile>
+    <Compile Include="Log.cs" />
     <Compile Include="Manager\Admin\Admin.cs">
       <SubType>UserControl</SubType>
     </Compile>

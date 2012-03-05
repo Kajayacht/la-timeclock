@@ -88,6 +88,7 @@
             this.editjobs.TabIndex = 4;
             this.editjobs.Text = "Edit Jobs";
             this.editjobs.UseVisualStyleBackColor = true;
+            this.editjobs.Click += new System.EventHandler(this.editjobs_Click);
             // 
             // config
             // 
