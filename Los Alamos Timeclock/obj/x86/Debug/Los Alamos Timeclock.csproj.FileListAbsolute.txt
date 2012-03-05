@@ -39,3 +39,6 @@ C:\Users\Nate\Dropbox\Visual Studio Projects\Projects\Los Alamos Timeclock\Los A
 C:\Users\Nate\Dropbox\Visual Studio Projects\Projects\Los Alamos Timeclock\Los Alamos Timeclock\obj\x86\Debug\Los_Alamos_Timeclock.Manager.Admin.Editemployees.resources
 C:\Users\Nate\Dropbox\Visual Studio Projects\Projects\Los Alamos Timeclock\Los Alamos Timeclock\obj\x86\Debug\Los_Alamos_Timeclock.Manager.Admin.Newemployee.resources
 C:\Users\Nate\Dropbox\Visual Studio Projects\Projects\Los Alamos Timeclock\Los Alamos Timeclock\obj\x86\Debug\Los_Alamos_Timeclock.Manager.Admin.Paychecks.resources
+C:\Users\Kajayacht\Desktop\chrono\la-timeclock\la-timeclock\Los Alamos Timeclock\bin\Debug\Los Alamos Timeclock.exe.config
+C:\Users\Kajayacht\Desktop\chrono\la-timeclock\la-timeclock\Los Alamos Timeclock\obj\x86\Debug\Los Alamos Timeclock.exe
+C:\Users\Kajayacht\Desktop\chrono\la-timeclock\la-timeclock\Los Alamos Timeclock\obj\x86\Debug\Los Alamos Timeclock.pdb

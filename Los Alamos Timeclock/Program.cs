@@ -20,6 +20,7 @@ namespace Los_Alamos_Timeclock
             
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            Log.createLog();
             Application.Run(new Main());
         }
 
