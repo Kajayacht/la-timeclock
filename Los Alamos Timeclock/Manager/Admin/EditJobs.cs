@@ -65,6 +65,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             {
                 Main.maininstance.sqlinsert("UPDATE Jobs SET JID='"+jname.Text+"',JSPay='"+Decimal.Parse(jpay.Text)+"' WHERE JID='"+jobs.Text+"'");
                 MessageBox.Show("Update successful");
+                Log.writeLog(Main.EName + " updated job: " + "\n Job= " + jname.Text + "\n Starting Pay= " + Decimal.Parse(jpay.Text));
                 refreshjobs();
             }
       
@@ -78,6 +79,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                 {
                     MessageBox.Show("Insert successful");
                     Main.maininstance.sqlinsert("INSERT INTO Jobs Values('" + jname.Text + "','" + Decimal.Parse(jpay.Text) + "')");
+                    Log.writeLog(Main.EName + " added job: " + "\n Job= " + jname.Text + "\n Starting Pay= " + Decimal.Parse(jpay.Text));
                     refreshjobs();
                 }
             }
@@ -95,6 +97,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                 if (result == DialogResult.Yes)
                 {
                     Main.maininstance.sqlinsert("DELETE FROM Jobs WHERE JID='"+jobs.Text+"'");
+                    Log.writeLog(Main.EName + " deleted job: " + "\n Job= " + jname.Text);
                     refreshjobs();
                 }
         }
