@@ -67,6 +67,7 @@
             this.viewlog.TabIndex = 2;
             this.viewlog.Text = "View Log";
             this.viewlog.UseVisualStyleBackColor = true;
+            this.viewlog.Click += new System.EventHandler(this.viewlog_Click);
             // 
             // calculatepay
             // 

@@ -64,3 +64,4 @@ C:\Users\Kajayacht\Desktop\chrono\la-timeclock\la-timeclock\Los Alamos Timeclock
 C:\Users\Kajayacht\Desktop\chrono\la-timeclock\la-timeclock\Los Alamos Timeclock\obj\x86\Debug\GenerateResource.read.1 (Data54's conflicted copy 2012-02-15).tlog
 C:\Users\Kajayacht\Desktop\chrono\la-timeclock\la-timeclock\Los Alamos Timeclock\obj\x86\Debug\GenerateResource.read.1.tlog
 C:\Users\Kajayacht\Desktop\chrono\la-timeclock\la-timeclock\Los Alamos Timeclock\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Kajayacht\Desktop\chrono\la-timeclock\la-timeclock\Los Alamos Timeclock\obj\x86\Debug\Los_Alamos_Timeclock.Manager.Admin.ViewLog.resources

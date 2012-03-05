@@ -63,5 +63,15 @@ namespace Los_Alamos_Timeclock
                 Main.maininstance.panel1.Controls[0].Dock = DockStyle.Fill;
             }
         }
+
+        private void viewlog_Click(object sender, EventArgs e)
+        {
+            if (Main.permissions == "Admin")
+            {
+                Main.maininstance.panel1.Controls.Clear();
+                Main.maininstance.panel1.Controls.Add(new ViewLog());
+                Main.maininstance.panel1.Controls[0].Dock = DockStyle.Fill;
+            }
+        }
     }
 }

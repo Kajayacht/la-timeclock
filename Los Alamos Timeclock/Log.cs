@@ -55,13 +55,10 @@ namespace Los_Alamos_Timeclock
                 // The using statement also closes the StreamReader.
                 using (StreamReader r = new StreamReader("/log.txt"))
                 {
-                    String line;
-                    // Read and display lines from the file until the end of 
-                    // the file is reached.
-                    while ((line = r.ReadLine()) != null)
-                    {
-                        line = (line + r.ReadLine());
-                    }
+                    
+                    //Create a string from the text file and return it
+                    String line = r.ReadToEnd();
+                    r.Close();
                     return line;
                 }
             }
@@ -72,6 +69,7 @@ namespace Los_Alamos_Timeclock
 
                 return "The file could not be read:";
             }
+            
         }
 
         //clear log file? work in progress, although not much work has been done
