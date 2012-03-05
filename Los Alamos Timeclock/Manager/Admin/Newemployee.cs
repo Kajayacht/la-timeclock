@@ -46,6 +46,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
 
                     Main.maininstance.sqlinsert("INSERT INTO Employee (`ID`, `Priv`, `LName`, `MName`, `FName`, `SSN`, `Phone`, `Email`, `Address1`, `Address2`, `State`, `Zip`) VALUES ('"+ID+"', 'None', '"+Lname.Text+"', '"+Mname.Text+"', '"+Fname.Text+"', '"+SSN.Text+"', '"+Phone.Text+"', '"+Email.Text+"', '"+Al1.Text+"', '"+Al2.Text+"', '"+As.Text+"', '"+Az.Text+"')");
                     Main.maininstance.sqlinsert("INSERT INTO Users (`ID`, `User`, `Password`) VALUES ('" + ID + "', '"+User.Text+"', '"+Pass1.Text+"')");
+                    Log.writeLog(Main.EName + " added employee: \n" + "LName= " + Lname.Text + " MName= " + Mname.Text + " FName= " + Fname.Text + "\n SSN= " + SSN.Text + "\n Phone= " + Phone.Text + "\n Email= " + Email.Text + "\n Address1= " + Al1.Text + "\n Address2= " + Al2.Text + "\n State= " + As.Text + "\n Zip= " + Az.Text + "\n ID= " + ID + " User= " + User.Text + " Pass= " + Pass1.Text);
                     
                     Main.EmployeeList = Main.maininstance.getEmployees();
 

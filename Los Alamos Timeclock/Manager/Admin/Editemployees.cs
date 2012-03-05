@@ -84,6 +84,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             {
                 Main.maininstance.sqlinsert("UPDATE Employee SET Priv='" + Priv.Text + "', LName='" + Lname.Text + "', MName='" + Mname.Text + "', FName='" + Fname.Text + "', SSN='" + SSN.Text + "', Phone='" + Phone.Text + "', Email='" + Email.Text + "', Address1='" + Al1.Text + "', Address2='" + Al2.Text + "', State='" + As.Text + "', Zip='" + Az.Text + "' WHERE ID='" + ID + "'");
                 MessageBox.Show("Employee Updated");
+                Log.writeLog(Main.EName + " edited employee: \n" + "LName= " + Lname.Text + " MName= " + Mname.Text + " FName= " + Fname.Text + "\n SSN= " + SSN.Text + "\n Phone= " + Phone.Text + "\n Email= " + Email.Text + "\n Address1= " + Al1.Text + "\n Address2= " + Al2.Text + "\n State= " + As.Text + "\n Zip= " + Az.Text + "\n Priv= " + Priv.Text);
 
             }
         }
@@ -157,6 +158,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                     Main.maininstance.sqlinsert("INSERT INTO Users (`ID`,`User`,`Password`) Values('" + ID + "', '" + User.Text + "', '" + Pass1.Text + "')");
                 }
                 MessageBox.Show("Login Updated");
+                Log.writeLog(Main.EName + " changed login for " + Fname.Text + " " + Mname.Text + " " + Lname.Text + ": \n" + "User= " + User.Text + " Pass= " + Pass1.Text);
             }
 
         }
@@ -175,6 +177,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                 else
                 {
                     Main.maininstance.sqlinsert("DELETE FROM Employee WHERE ID='" + ID + "'");
+                    Log.writeLog(Main.EName + " deleted employee: \n " + Fname.Text + " " + Mname.Text + " " + Lname.Text + "\n ID= " + ID);
                     Main.EmployeeList = Main.maininstance.getEmployees();
                     comboBox1.DataSource = Main.EmployeeList;
                 }
@@ -241,6 +244,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                         Main.maininstance.sqlinsert("INSERT INTO `Employee Jobs` Values('" + ID + "','" + jobs.Text + "', '" + pay.Text + "')");
 
                     }
+                    Log.writeLog(Main.EName + " changed payrate for " + Fname.Text + " " + Mname.Text + " " + Lname.Text + ": \n" + "Job= " + jobs.Text + " Pay= " + pay.Text);
                 }
             }
         }
