@@ -65,3 +65,4 @@ C:\Users\Kajayacht\Desktop\chrono\la-timeclock\la-timeclock\Los Alamos Timeclock
 C:\Users\Kajayacht\Desktop\chrono\la-timeclock\la-timeclock\Los Alamos Timeclock\obj\x86\Debug\GenerateResource.read.1.tlog
 C:\Users\Kajayacht\Desktop\chrono\la-timeclock\la-timeclock\Los Alamos Timeclock\obj\x86\Debug\GenerateResource.write.1.tlog
 C:\Users\Kajayacht\Desktop\chrono\la-timeclock\la-timeclock\Los Alamos Timeclock\obj\x86\Debug\Los_Alamos_Timeclock.Manager.Admin.ViewLog.resources
+C:\Users\Nate\Dropbox\Visual Studio Projects\Projects\Los Alamos Timeclock\Los Alamos Timeclock\obj\x86\Debug\Los_Alamos_Timeclock.Manager.Admin.ViewLog.resources

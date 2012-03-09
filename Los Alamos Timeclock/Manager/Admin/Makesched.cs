@@ -123,7 +123,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
         {
             //string query = "SELECT * FROM Schedule Where Date='" + date + "'";
 
-            string query = "SELECT LName AS Last, FName AS First, Start, End, JID AS Job FROM Schedule JOIN Employee Where Date='" + date + "' AND Schedule.ID=Employee.ID";
+            string query = "SELECT Date, LName AS Last, FName AS First, Start, End, JID AS Job FROM Schedule JOIN Employee Where Date='" + date + "' AND Schedule.ID=Employee.ID ORDER BY Date, Start";
             try
             {
                 Main.myConnection.Open();
