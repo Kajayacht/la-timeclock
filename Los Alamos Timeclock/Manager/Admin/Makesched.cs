@@ -13,13 +13,15 @@ namespace Los_Alamos_Timeclock.Manager.Admin
 {
     public partial class Makesched : UserControl
     {
-
+        DateTime mon, sun;
         public string date = DateTime.Today.ToString("yyyy-MM-dd");
         public string ID = "0";
         public Boolean scheduled = false;
         public Makesched()
         {
             InitializeComponent();
+            mon = getmon(DateTime.Today.Date);
+            sun = mon.AddDays(6);
             calander.MaxDate = DateTime.Today.AddYears(1);
             popdg();
             jobs.DisplayMember = "getname";
@@ -74,6 +76,8 @@ namespace Los_Alamos_Timeclock.Manager.Admin
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
             date = calander.Value.ToString("yyyy-MM-dd");
+            mon = getmon(calander.Value);
+            sun = mon.AddDays(6);
             popdg();
             Eupdate();
 
@@ -123,7 +127,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
         {
             //string query = "SELECT * FROM Schedule Where Date='" + date + "'";
 
-            string query = "SELECT Date, LName AS Last, FName AS First, Start, End, JID AS Job FROM Schedule JOIN Employee Where Date='" + date + "' AND Schedule.ID=Employee.ID ORDER BY Date, Start";
+            string query = "SELECT Date, LName AS Last, FName AS First, Start, End, JID AS Job FROM Schedule JOIN Employee ON Schedule.ID=Employee.ID Where Date>='" + mon.ToString("yyyy-MM-dd") + "' AND Date<='" + sun.ToString("yyyy-MM-dd") + "' ORDER BY Date, Start";
             try
             {
                 Main.myConnection.Open();
@@ -209,6 +213,15 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             {
                 return true;
             }
+        }
+
+        public DateTime getmon(DateTime a)
+        {
+            while (a.DayOfWeek != DayOfWeek.Monday)
+            {
+                a = a.AddDays(-1);
+            }
+            return a;
         }
 
         private void Start_SelectedIndexChanged(object sender, EventArgs e)
