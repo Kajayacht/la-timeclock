@@ -40,7 +40,7 @@
             // editemployees
             // 
             this.editemployees.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.editemployees.Location = new System.Drawing.Point(117, 78);
+            this.editemployees.Location = new System.Drawing.Point(136, 155);
             this.editemployees.Name = "editemployees";
             this.editemployees.Size = new System.Drawing.Size(75, 75);
             this.editemployees.TabIndex = 0;
@@ -51,7 +51,7 @@
             // Editschedule
             // 
             this.Editschedule.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Editschedule.Location = new System.Drawing.Point(198, 78);
+            this.Editschedule.Location = new System.Drawing.Point(217, 74);
             this.Editschedule.Name = "Editschedule";
             this.Editschedule.Size = new System.Drawing.Size(75, 75);
             this.Editschedule.TabIndex = 1;
@@ -62,7 +62,7 @@
             // viewlog
             // 
             this.viewlog.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.viewlog.Location = new System.Drawing.Point(198, 159);
+            this.viewlog.Location = new System.Drawing.Point(217, 236);
             this.viewlog.Name = "viewlog";
             this.viewlog.Size = new System.Drawing.Size(75, 75);
             this.viewlog.TabIndex = 2;
@@ -73,7 +73,7 @@
             // calculatepay
             // 
             this.calculatepay.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.calculatepay.Location = new System.Drawing.Point(117, 159);
+            this.calculatepay.Location = new System.Drawing.Point(136, 236);
             this.calculatepay.Name = "calculatepay";
             this.calculatepay.Size = new System.Drawing.Size(75, 75);
             this.calculatepay.TabIndex = 3;
@@ -84,7 +84,7 @@
             // editjobs
             // 
             this.editjobs.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.editjobs.Location = new System.Drawing.Point(279, 159);
+            this.editjobs.Location = new System.Drawing.Point(217, 155);
             this.editjobs.Name = "editjobs";
             this.editjobs.Size = new System.Drawing.Size(75, 75);
             this.editjobs.TabIndex = 4;
@@ -95,7 +95,7 @@
             // config
             // 
             this.config.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.config.Location = new System.Drawing.Point(279, 78);
+            this.config.Location = new System.Drawing.Point(298, 236);
             this.config.Name = "config";
             this.config.Size = new System.Drawing.Size(75, 75);
             this.config.TabIndex = 5;
@@ -106,7 +106,7 @@
             // button1
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.Location = new System.Drawing.Point(117, 240);
+            this.button1.Location = new System.Drawing.Point(136, 74);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 75);
             this.button1.TabIndex = 6;

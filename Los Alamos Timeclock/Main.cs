@@ -13,7 +13,7 @@ using System.Collections;
 
 namespace Los_Alamos_Timeclock
 {
-
+    
     public partial class Main : Form
     {
         public static string week;

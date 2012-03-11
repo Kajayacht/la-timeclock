@@ -57,6 +57,12 @@
     <Compile Include="Clockinout.Designer.cs">
       <DependentUpon>Clockinout.cs</DependentUpon>
     </Compile>
+    <Compile Include="Contactinfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Contactinfo.Designer.cs">
+      <DependentUpon>Contactinfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Log.cs" />
     <Compile Include="Manager\Admin\Admin.cs">
       <SubType>UserControl</SubType>
@@ -99,6 +105,12 @@
     </Compile>
     <Compile Include="Manager\Admin\ViewLog.Designer.cs">
       <DependentUpon>ViewLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\Status.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Manager\Status.Designer.cs">
+      <DependentUpon>Status.cs</DependentUpon>
     </Compile>
     <Compile Include="Override.cs">
       <SubType>Form</SubType>
@@ -148,6 +160,9 @@
     <EmbeddedResource Include="Clockinout.resx">
       <DependentUpon>Clockinout.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Contactinfo.resx">
+      <DependentUpon>Contactinfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Manager\Admin\Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>
@@ -168,6 +183,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Manager\Admin\ViewLog.resx">
       <DependentUpon>ViewLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager\Status.resx">
+      <DependentUpon>Status.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Override.resx">
       <DependentUpon>Override.cs</DependentUpon>

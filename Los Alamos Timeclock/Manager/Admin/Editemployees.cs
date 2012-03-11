@@ -139,9 +139,9 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                     Main.maininstance.sqlinsert("DELETE FROM Manager WHERE ID='" + ID + "'");
                 }
 
-                Main.maininstance.sqlinsert("UPDATE Employee SET LName='" + Lname.Text + "', MName='" + Mname.Text + "', FName='" + Fname.Text + "', SSN='" + SSN.Text + "', Phone='" + Phone.Text + "', Email='" + Email.Text + "', Address1='" + Al1.Text + "', Address2='" + Al2.Text + "', State='" + As.Text + "', Zip='" + Az.Text + "' WHERE ID='" + ID + "'");
+                Main.maininstance.sqlinsert("UPDATE Employee SET LName='" + Lname.Text + "', MName='" + Mname.Text + "', FName='" + Fname.Text + "', SSN='" + SSN.Text + "', Phone='" + Phone.Text + "', Email='" + Email.Text + "', Address1='" + Al1.Text + "', Address2='" + Al2.Text + "', City='" + Ac.Text + "', State='" + As.Text + "', Zip='" + Az.Text + "' WHERE ID='" + ID + "'");
                 MessageBox.Show("Employee Updated");
-                Log.writeLog(Main.EName + " edited employee: \n" + "LName= " + Lname.Text + " MName= " + Mname.Text + " FName= " + Fname.Text + "\n SSN= " + SSN.Text + "\n Phone= " + Phone.Text + "\n Email= " + Email.Text + "\n Address1= " + Al1.Text + "\n Address2= " + Al2.Text + "\n State= " + As.Text + "\n Zip= " + Az.Text + "\n Priv= " + Priv.Text);
+                Log.writeLog(Main.EName + " edited employee: \n" + "LName= " + Lname.Text + " MName= " + Mname.Text + " FName= " + Fname.Text + "\n SSN= " + SSN.Text + "\n Phone= " + Phone.Text + "\n Email= " + Email.Text + "\n Address1= " + Al1.Text + "\n Address2= " + Al2.Text + "\n City= " + Ac.Text + "\n State= " + As.Text + "\n Zip= " + Az.Text + "\n Priv= " + Priv.Text);
 
             }
         }

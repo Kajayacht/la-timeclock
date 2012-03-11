@@ -84,6 +84,16 @@ namespace Los_Alamos_Timeclock
             Menuclock.Text = DateTime.Now.ToLongTimeString();
         }
 
+        private void Contactinfo_Click(object sender, EventArgs e)
+        {
+            if (Main.maininstance.panel1.HasChildren == false || Main.maininstance.panel1.Controls[0].Name != "Contactinfo")
+            {
+                Main.maininstance.panel1.Controls.Clear();
+                Main.maininstance.panel1.Controls.Add(new Contactinfo());
+                Main.maininstance.panel1.Controls[0].Dock = DockStyle.Fill;
+            }
+        }
+
        
     }
 }

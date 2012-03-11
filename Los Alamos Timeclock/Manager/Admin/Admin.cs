@@ -15,6 +15,15 @@ namespace Los_Alamos_Timeclock
         public Admin()
         {
             InitializeComponent();
+            if (Main.permissions == "Manager")
+            {
+                editemployees.BackColor = Color.Gray;
+                editjobs.BackColor = Color.Gray;
+                calculatepay.BackColor = Color.Gray;
+                viewlog.BackColor = Color.Gray;
+                config.BackColor = Color.Gray;
+
+            }
         }
 
         private void editemployees_Click(object sender, EventArgs e)

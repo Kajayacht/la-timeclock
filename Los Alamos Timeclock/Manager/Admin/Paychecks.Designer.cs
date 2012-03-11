@@ -30,7 +30,7 @@
         {
             this.Week = new System.Windows.Forms.DateTimePicker();
             this.weeklabel = new System.Windows.Forms.Label();
-            this.Grosspay = new System.Windows.Forms.Label();
+            this.Pay = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // Week
@@ -53,15 +53,15 @@
             this.weeklabel.TabIndex = 1;
             this.weeklabel.Text = "Pay for 2/27/2012-3/4/2012";
             // 
-            // Grosspay
+            // Pay
             // 
-            this.Grosspay.AutoSize = true;
-            this.Grosspay.BackColor = System.Drawing.Color.Transparent;
-            this.Grosspay.ForeColor = System.Drawing.Color.White;
-            this.Grosspay.Location = new System.Drawing.Point(26, 100);
-            this.Grosspay.Name = "Grosspay";
-            this.Grosspay.Size = new System.Drawing.Size(0, 13);
-            this.Grosspay.TabIndex = 2;
+            this.Pay.Location = new System.Drawing.Point(55, 78);
+            this.Pay.Name = "Pay";
+            this.Pay.ReadOnly = true;
+            this.Pay.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.Pay.Size = new System.Drawing.Size(388, 263);
+            this.Pay.TabIndex = 4;
+            this.Pay.Text = "";
             // 
             // Paychecks
             // 
@@ -70,7 +70,7 @@
             this.AutoScroll = true;
             this.BackgroundImage = global::Los_Alamos_Timeclock.Properties.Resources._1287421014661;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Controls.Add(this.Grosspay);
+            this.Controls.Add(this.Pay);
             this.Controls.Add(this.weeklabel);
             this.Controls.Add(this.Week);
             this.Name = "Paychecks";
@@ -84,6 +84,6 @@
 
         private System.Windows.Forms.DateTimePicker Week;
         private System.Windows.Forms.Label weeklabel;
-        private System.Windows.Forms.Label Grosspay;
+        private System.Windows.Forms.RichTextBox Pay;
     }
 }

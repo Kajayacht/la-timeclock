@@ -42,7 +42,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             {
                 a = a.AddDays(-1);
             }
-            Grosspay.Text = "";
+            Pay.Text = "";
             return a;
 
         }
@@ -83,12 +83,12 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                 {
                     if (ID != "")
                     {
-                        output = output + "    Total Hours: " + Totalhours + "\n" +
-                                          "      Gross Pay: $"+Totalpay+"\n\n";
+                        output = output + "\tTotal Hours: \t" + Totalhours + "\n" +
+                                          "\tGross Pay: \t$" + Totalpay + "\n\n";
                     }
                     ID = Main.reader["ID"].ToString();
                     output = output + Main.reader["LName"].ToString() + ", " + Main.reader["FName"].ToString()+" "+ Main.reader["MName"].ToString()+"\n";
-                    Totalhours = 0;//TimeSpan.FromHours(0);
+                    Totalhours = 0;
                     Totalpay = 0.00;
                 }
                 if (Main.reader["Start"].ToString() != "" && Main.reader["End"].ToString() != "")
@@ -140,11 +140,11 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             }
             if (ID != "")
             {
-                output = output + "    Total Hours: " + Totalhours +"\n" +
-                                  "      Gross Pay: $" + Totalpay + "\n\n";
+                output = output + "\tTotal Hours: \t" + Totalhours + "\n" +
+                                  "\tGross Pay: \t$" + Totalpay + "\n\n";
             }
             ID = "";
-            Grosspay.Text = output;
+            Pay.Text = output;
 
 
             Main.myConnection.Close();
