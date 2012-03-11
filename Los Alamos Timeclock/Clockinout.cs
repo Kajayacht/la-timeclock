@@ -38,7 +38,9 @@ namespace Los_Alamos_Timeclock
                 if (clockedin)
                 {
                     job = Main.reader["JID"].ToString();
-                    jobimg.BackgroundImage = (Bitmap)Resources.ResourceManager.GetObject(job);
+
+                    jobimg.Image = (Bitmap)Resources.ResourceManager.GetObject(job);
+                    
 
                     if (Main.reader["B1in"].ToString() == "")
                     {
@@ -57,8 +59,6 @@ namespace Los_Alamos_Timeclock
                     date = Main.reader["Date"].ToString();
                     date = DateTime.Parse(date).ToString("yyyy-MM-dd");
                     status = Main.reader["Status"].ToString();
-                    job = Main.reader["JID"].ToString();
-                    jobimg.BackgroundImage = (Bitmap)Resources.ResourceManager.GetObject(job);  //sets image to job image
 
                 }
                 else
@@ -77,7 +77,7 @@ namespace Los_Alamos_Timeclock
                         if (!clockedin)
                         {
                             job = Main.reader["JID"].ToString();
-                            jobimg.BackgroundImage = (Bitmap)Resources.ResourceManager.GetObject(job);
+                            jobimg.Image = (Bitmap)Resources.ResourceManager.GetObject(job);
                         }
                         if (start > end)
                         {
@@ -95,14 +95,14 @@ namespace Los_Alamos_Timeclock
                     }
                     else
                     {
+                        jobimg.Image = (Bitmap)Resources.ResourceManager.GetObject("none");
                         shiftinfo.Text =
                             "You are not Scheduled\n" +
                             "Please see a manager";
                         Main.reader.Close();
                         Main.myConnection.Close();
                     }
-                    //jobimg.BackgroundImage = (Bitmap)Resources.ResourceManager.GetObject(job);
-                //}
+
                 if (Main.myConnection.State == ConnectionState.Open)
                 {
                     Main.myConnection.Close();

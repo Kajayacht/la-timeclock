@@ -27,7 +27,7 @@ namespace Los_Alamos_Timeclock
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Paychecks_Click(object sender, EventArgs e)
         {
             if (Main.permissions == "Admin")
             {

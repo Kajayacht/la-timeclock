@@ -90,7 +90,7 @@
             // jobimg
             // 
             this.jobimg.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.jobimg.BackgroundImage = global::Los_Alamos_Timeclock.Properties.Resources.none;
+            this.jobimg.BackColor = System.Drawing.SystemColors.ControlDark;
             this.jobimg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.jobimg.InitialImage = null;
             this.jobimg.Location = new System.Drawing.Point(332, 90);

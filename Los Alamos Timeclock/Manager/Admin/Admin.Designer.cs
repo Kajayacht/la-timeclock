@@ -79,7 +79,7 @@
             this.calculatepay.TabIndex = 3;
             this.calculatepay.Text = "Calculate Paychecks";
             this.calculatepay.UseVisualStyleBackColor = true;
-            this.calculatepay.Click += new System.EventHandler(this.button1_Click);
+            this.calculatepay.Click += new System.EventHandler(this.Paychecks_Click);
             // 
             // editjobs
             // 
