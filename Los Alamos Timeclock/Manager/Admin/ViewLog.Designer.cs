@@ -28,18 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.logViewBox = new System.Windows.Forms.TextBox();
+            this.logViewBox = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // logViewBox
             // 
+            this.logViewBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.logViewBox.Location = new System.Drawing.Point(40, 25);
-            this.logViewBox.Multiline = true;
             this.logViewBox.Name = "logViewBox";
             this.logViewBox.ReadOnly = true;
-            this.logViewBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.logViewBox.Size = new System.Drawing.Size(420, 300);
-            this.logViewBox.TabIndex = 0;
+            this.logViewBox.TabIndex = 1;
+            this.logViewBox.Text = "";
             // 
             // ViewLog
             // 
@@ -52,12 +54,11 @@
             this.Name = "ViewLog";
             this.Size = new System.Drawing.Size(500, 400);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TextBox logViewBox;
+        private System.Windows.Forms.RichTextBox logViewBox;
     }
 }

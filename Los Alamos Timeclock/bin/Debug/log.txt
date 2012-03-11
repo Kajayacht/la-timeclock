@@ -1,0 +1,60 @@
+
+Log Entry : 7:16:52 PM Sunday, March 11, 2012
+  :
+  :Jenn edited employee: 
+LName= Chappel MName= E FName= Dave
+ SSN= 123456792
+ Phone= 2132159499
+ Email= 
+ Address1= 
+ Address2= 
+ City= 
+ State= Nebraska
+ Zip= 48457
+ Priv= Manager
+-------------------------------
+
+Log Entry : 7:31:26 PM Sunday, March 11, 2012
+  :
+  :Jenn changed the schedule for Chavez, Jenn
+ Date= 2012-03-05
+ Start= 3:15
+ End= 8:15
+ Job= Bartender
+-------------------------------
+
+Log Entry : 7:31:31 PM Sunday, March 11, 2012
+  :
+  :Jenn changed the schedule for Chavez, Jenn
+ Date= 2012-03-05
+ Start= 3:30
+ End= 8:15
+ Job= Bartender
+-------------------------------
+
+Log Entry : 7:31:46 PM Sunday, March 11, 2012
+  :
+  :Jenn changed the schedule for Chavez, Jenn
+ Date= 2012-03-05
+ Start= 3:15
+ End= 8:15
+ Job= Bartender
+-------------------------------
+
+Log Entry : 7:32:18 PM Sunday, March 11, 2012
+  :
+  :Jenn changed the schedule for Chappel, Dave
+ Date= 2012-03-11
+ Start= 4:30
+ End= 10:30
+ Job= Bartender
+-------------------------------
+
+Log Entry : 7:32:26 PM Sunday, March 11, 2012
+  :
+  :Jenn changed the schedule for Chappel, Dave
+ Date= 2012-03-11
+ Start= 4:15
+ End= 10:30
+ Job= Bartender
+-------------------------------

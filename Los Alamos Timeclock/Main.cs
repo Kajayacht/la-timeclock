@@ -278,6 +278,11 @@ namespace Los_Alamos_Timeclock
             return t;
         }
 
+        public void error(String s)
+        {
+            MessageBox.Show(s);
+        }
+
 
         private void Main_Load(object sender, EventArgs e)
         {

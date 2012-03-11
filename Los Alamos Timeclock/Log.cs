@@ -16,10 +16,10 @@ namespace Los_Alamos_Timeclock
         //create file (if not exist)
         public static void createLog()
         {
-            string filepath = "/log.txt";
+            string filepath = Directory.GetCurrentDirectory() + "/log.txt";
             if (File.Exists(filepath) == false)
             {
-                StreamWriter w = new StreamWriter("/log.txt");
+                StreamWriter w = new StreamWriter(Directory.GetCurrentDirectory() + "/log.txt");
                 // Update the underlying file.
                 w.Flush();
                 // Close the writer and underlying file.
@@ -30,20 +30,27 @@ namespace Los_Alamos_Timeclock
         //write to file        
         public static void writeLog(String logMessage)
         {
-            //open the file
-            StreamWriter w = File.AppendText("/log.txt");
+            try
+            {
+                //open the file
+                StreamWriter w = File.AppendText(Directory.GetCurrentDirectory()+ "/log.txt");
 
-            //write the header, date/time, and the logmessage
-            w.Write("\r\nLog Entry : ");
-            w.WriteLine("{0} {1}", DateTime.Now.ToLongTimeString(),
-                DateTime.Now.ToLongDateString());
-            w.WriteLine("  :");
-            w.WriteLine("  :{0}", logMessage);
-            w.WriteLine("-------------------------------");
-            // Update the underlying file.
-            w.Flush();
-            // Close the writer and underlying file.
-            w.Close();
+                //write the header, date/time, and the logmessage
+                w.Write("\r\nLog Entry : ");
+                w.WriteLine("{0} {1}", DateTime.Now.ToLongTimeString(),
+                    DateTime.Now.ToLongDateString());
+                w.WriteLine("  :");
+                w.WriteLine("  :{0}", logMessage);
+                w.WriteLine("-------------------------------");
+                // Update the underlying file.
+                w.Flush();
+                // Close the writer and underlying file.
+                w.Close();
+            }
+            catch (System.UnauthorizedAccessException)
+            {
+                Main.maininstance.error("Log access denied: Run as Administrator");
+            }
         }
 
         //read file, work in progress
@@ -53,7 +60,7 @@ namespace Los_Alamos_Timeclock
             {
                 // Create an instance of StreamReader to read from a file.
                 // The using statement also closes the StreamReader.
-                using (StreamReader r = new StreamReader("/log.txt"))
+                using (StreamReader r = new StreamReader(Directory.GetCurrentDirectory() + "/log.txt"))
                 {
                     
                     //Create a string from the text file and return it
