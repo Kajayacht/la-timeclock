@@ -43,7 +43,7 @@
             this.Email = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.Update = new System.Windows.Forms.Button();
+            this.Updateinfo = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Al1
@@ -253,15 +253,15 @@
             this.label20.TabIndex = 69;
             this.label20.Text = "Phone";
             // 
-            // Update
+            // Updateinfo
             // 
-            this.Update.Location = new System.Drawing.Point(384, 294);
-            this.Update.Name = "Update";
-            this.Update.Size = new System.Drawing.Size(75, 75);
-            this.Update.TabIndex = 71;
-            this.Update.Text = "Update";
-            this.Update.UseVisualStyleBackColor = true;
-            this.Update.Click += new System.EventHandler(this.Update_Click);
+            this.Updateinfo.Location = new System.Drawing.Point(384, 294);
+            this.Updateinfo.Name = "Updateinfo";
+            this.Updateinfo.Size = new System.Drawing.Size(75, 75);
+            this.Updateinfo.TabIndex = 71;
+            this.Updateinfo.Text = "Update";
+            this.Updateinfo.UseVisualStyleBackColor = true;
+            this.Updateinfo.Click += new System.EventHandler(this.Update_Click);
             // 
             // Contactinfo
             // 
@@ -269,7 +269,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Los_Alamos_Timeclock.Properties.Resources._1287421014661;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Controls.Add(this.Update);
+            this.Controls.Add(this.Updateinfo);
             this.Controls.Add(this.Phone);
             this.Controls.Add(this.Email);
             this.Controls.Add(this.label14);
@@ -310,6 +310,6 @@
         private System.Windows.Forms.TextBox Email;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Button Update;
+        private System.Windows.Forms.Button Updateinfo;
     }
 }

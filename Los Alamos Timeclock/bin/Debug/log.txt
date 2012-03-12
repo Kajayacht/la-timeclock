@@ -58,3 +58,10 @@ Log Entry : 7:32:26 PM Sunday, March 11, 2012
  End= 10:30
  Job= Bartender
 -------------------------------
+
+Log Entry : 11:00:35 PM Sunday, March 11, 2012
+  :
+  :test overrode clock in for: 
+ Employee= Dave
+ Job= Cook
+-------------------------------

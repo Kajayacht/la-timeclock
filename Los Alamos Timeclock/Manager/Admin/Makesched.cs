@@ -80,7 +80,6 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             sun = mon.AddDays(6);
             popdg();
             Eupdate();
-
         }
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -125,9 +124,8 @@ namespace Los_Alamos_Timeclock.Manager.Admin
 
         public void popdg()
         {
-            //string query = "SELECT * FROM Schedule Where Date='" + date + "'";
 
-            string query = "SELECT Date, LName AS Last, FName AS First, Start, End, JID AS Job FROM Schedule JOIN Employee ON Schedule.ID=Employee.ID Where Date>='" + mon.ToString("yyyy-MM-dd") + "' AND Date<='" + sun.ToString("yyyy-MM-dd") + "' ORDER BY Date, Start";
+            string query = "SELECT Date, CONCAT(LName, ', ',FName,' ',MName) AS Name, Start, End, JID AS Job FROM Schedule JOIN Employee ON Schedule.ID=Employee.ID Where Date>='" + mon.ToString("yyyy-MM-dd") + "' AND Date<='" + sun.ToString("yyyy-MM-dd") + "' ORDER BY Date, Start";
             try
             {
                 Main.myConnection.Open();
@@ -199,7 +197,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                 MessageBox.Show("End minutes not valid");
                 return false;
             }
-            if (int.Parse(eh.Text) > 23 || int.Parse(eh.Text) < 0)
+            else if (int.Parse(eh.Text) > 23 || int.Parse(eh.Text) < 0)
             {
                 MessageBox.Show("End hour not valid");
                 return false;
