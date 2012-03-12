@@ -51,7 +51,6 @@ namespace Los_Alamos_Timeclock.Manager.Admin
         {
             string ID = "";
             TimeSpan hours = TimeSpan.FromHours(0);
-            //TimeSpan Totalhours = TimeSpan.FromHours(0);
             Double Totalhours = 0;
             Double hourlyrate = 0.00;
             Double pay = 0.00;
@@ -104,7 +103,6 @@ namespace Los_Alamos_Timeclock.Manager.Admin
 
                     if (Main.reader["Lout"].ToString() != "" && Main.reader["Lin"].ToString() != "")
                     {
-                        //hours = hours.Subtract(roundtime(DateTime.Parse(Main.reader["Lin"].ToString()).Subtract(DateTime.Parse(Main.reader["Lout"].ToString()))));
 
                         if (Main.maininstance.roundtime(DateTime.Parse(Main.reader["Lin"].ToString())) < Main.maininstance.roundtime(DateTime.Parse(Main.reader["Lout"].ToString())))
                         {
@@ -114,10 +112,6 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                         {
                             hours = hours.Subtract(roundtime(DateTime.Parse(Main.reader["Lin"].ToString()).Subtract(DateTime.Parse(Main.reader["Lout"].ToString()))));
                         }
-                    
-                    
-                    
-                    
                     }
 
 

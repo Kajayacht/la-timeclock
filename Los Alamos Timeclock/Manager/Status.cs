@@ -40,18 +40,105 @@ namespace Los_Alamos_Timeclock.Manager
             if (validate())
             {
                 Main.myConnection.Open();
-                Main.maininstance.sqlreader("SELECT * FROM `Hours Worked` WHERE ID='"+ID+"' AND Date='"+date+"'");
+                Main.maininstance.sqlreader("SELECT * FROM `Hours Worked` WHERE ID='" + ID + "' AND Date='" + date + "'");
                 Boolean working = Main.reader.HasRows;
                 Main.myConnection.Close();
+                String _start = "'" + Start.Text + "'", b1_out, b1_in, b2_out, b2_in, l_out, l_in, _end;
+
+                DateTime a;
+                if (!DateTime.TryParse(b1out.Text, out a))
+                {
+                    b1_out = "NULL";
+                }
+                else
+                {
+                    b1_out = "'" + b1out.Text + "'";
+                }
+                if (!DateTime.TryParse(b1in.Text, out a))
+                {
+                    b1_in = "NULL";
+                }
+                else
+                {
+                    b1_in = "'" + b1in.Text + "'";
+                }
+
+                if (!DateTime.TryParse(b2out.Text, out a))
+                {
+                    b2_out = "NULL";
+                }
+                else
+                {
+                    b2_out = "'" + b2out.Text + "'";
+                }
+                if (!DateTime.TryParse(b2in.Text, out a))
+                {
+                    b2_in = "NULL";
+                }
+                else
+                {
+                    b2_in = "'" + b2in.Text + "'";
+                }
+
+                if (!DateTime.TryParse(lout.Text, out a))
+                {
+                    l_out = "NULL";
+                }
+                else
+                {
+                    l_out = "'" + lout.Text + "'";
+                }
+                if (!DateTime.TryParse(lin.Text, out a))
+                {
+                    l_in = "NULL";
+                }
+                else
+                {
+                    l_in = "'" + lin.Text + "'";
+                }
+
+                if (!DateTime.TryParse(End.Text, out a))
+                {
+                    _end = "NULL";
+                }
+                else
+                {
+                    _end = "'" + End.Text + "'";
+                }
+
+                string status = "OUT";
+                if (_end == "NULL")
+                {
+
+
+                }
+
+
+
+
 
                 if (working)
                 {
-                    //Main.maininstance.sqlinsert("UPDATE `Hours Worked` SET Start='" + sh.Text + ":" + sm.Text + "', End='" + eh.Text + ":" + em.Text + "', JID='" + jobs.Text + "' WHERE Date='" + date + "' AND ID='" + ID + "'");
+                    Main.maininstance.sqlinsert("UPDATE `Hours Worked` "+
+                                                "SET "+
+                                                "Start=" + _start +", "+
+                                                "End=" + _end + ", "+
+                                                "B1out=" + b1_out + ", " +
+                                                "B1in=" + b1_in + ", " +
+                                                "B2out=" + b2_out + ", " +
+                                                "B2in=" + b2_in + ", " +
+                                                "Lout=" + l_out + ", " +
+                                                "Lin=" + l_in + ", " +
+                                                "JID='" + jobs.Text + "' "+
+                                                "WHERE Date='" + date + "' AND ID='" + ID + "'");
+                    MessageBox.Show("Update Successful");
                     //Log.writeLog(Main.EName + " changed the Hours Worked for " + comboBox1.Text + "\n Date= " + date + "\n Start= " + sh.Text + ":" + sm.Text + "\n End= " + eh.Text + ":" + em.Text + "\n Job= " + jobs.Text);
                 }
                 else
                 {
-                    //Main.maininstance.sqlinsert("INSERT INTO `Hours Worked` SET Start='" + sh.Text + ":" + sm.Text + "', End='" + eh.Text + ":" + em.Text + "', JID='" + jobs.Text + "' WHERE Date='" + date + "' AND ID='" + ID + "'");
+                    Main.maininstance.sqlinsert("INSERT INTO `Hours Worked`(`ID` ,`Date` ,`Start` ,`End` ,`JID` ,`B1out` ,`B1in` ,`B2out` ,`B2in` ,`Lout` ,`Lin` ,`Status`)" +
+                                                "VALUES('"+ID+"','"+date+"',"+_start+","+_end+",'"+jobs.Text+"',"+b1_out+","+b1_in+","+b2_out+","+b2_in+","+l_out+","+l_in+",'IN')");
+                    MessageBox.Show("Insert Successful");
                     //Log.writeLog(Main.EName + " changed the Hours Worked for " + comboBox1.Text + "\n Date= " + date + "\n Start= " + sh.Text + ":" + sm.Text + "\n End= " + eh.Text + ":" + em.Text + "\n Job= " + jobs.Text);
                 }
 
@@ -86,13 +173,6 @@ namespace Los_Alamos_Timeclock.Manager
                 b2in.Text = Main.reader["B2in"].ToString();
                 lout.Text = Main.reader["Lout"].ToString();
                 lin.Text = Main.reader["Lin"].ToString();
-                //TimeSpan a = TimeSpan.Parse(Main.reader["Start"].ToString());
-                //sh.Text = a.Hours.ToString();
-                //sm.Text = a.Minutes.ToString();
-                //a = TimeSpan.Parse(Main.reader["End"].ToString());
-                //eh.Text = a.Hours.ToString();
-                //em.Text = a.Minutes.ToString();
-                //jobs.Text = Main.reader["JID"].ToString();
             }
             else
             {
@@ -113,8 +193,9 @@ namespace Los_Alamos_Timeclock.Manager
         public void popdg()
         {
             string query = "Select " +
+                                "a.Date, " +
                                 "CONCAT(c.LName, ', ',c.FName,' ',c.MName) AS Name, " +
-                                "a.Status, a.Start ,b.Start As 'Scheduled Start',  " +
+                                "a.Status,a.JID As Job, a.Start ,b.Start As 'Scheduled Start',  " +
                                 "a.B1out As 'B1 OUT', " +
                                 "a.B1in As 'B1 IN', " +
                                 "a.B2out As 'B2 OUT', " +
@@ -130,8 +211,9 @@ namespace Los_Alamos_Timeclock.Manager
                             "WHERE a.Date='" + date + "' " +
                             "UNION " +
                             "Select " +
+                                "b.Date, " +
                                 "CONCAT(c.LName, ', ',c.FName,' ',c.MName) AS Name, " +
-                                "a.Status, a.Start ,b.Start As 'Scheduled Start', " +
+                                "a.Status,a.JID As Job, a.Start ,b.Start As 'Scheduled Start', " +
                                 "a.B1out As 'B1 OUT', " +
                                 "a.B1in As 'B1 IN', " +
                                 "a.B2out As 'B2 OUT', " +
@@ -144,7 +226,25 @@ namespace Los_Alamos_Timeclock.Manager
                                     "ON a.ID=b.ID AND a.Date=b.Date " +
                                 "JOIN Employee c " +
                                     "ON c.ID=b.ID " +
-                            "WHERE a.Date='" + date + "'";
+                            "WHERE a.Date='" + date + "' " +
+                            "UNION " +
+                            "Select " +
+                                "b.Date, " +
+                                "CONCAT(c.LName, ', ',c.FName,' ',c.MName) AS Name, " +
+                                "a.Status,a.JID As Job, a.Start ,b.Start As 'Scheduled Start', " +
+                                "a.B1out As 'B1 OUT', " +
+                                "a.B1in As 'B1 IN', " +
+                                "a.B2out As 'B2 OUT', " +
+                                "a.B2in As 'B2 IN', " +
+                                "a.Lout As 'L OUT', " +
+                                "a.Lin As 'L IN', " +
+                                "a.End, b.End AS 'Scheduled End'  " +
+                            "FROM `Hours Worked` a " +
+                                "RIGHT JOIN Schedule b  " +
+                                    "ON a.ID=b.ID AND a.Date=b.Date " +
+                                "JOIN Employee c " +
+                                    "ON c.ID=b.ID " +
+                            "WHERE a.Status!='OUT'";
 
             try
             {
@@ -176,45 +276,17 @@ namespace Los_Alamos_Timeclock.Manager
 
         public Boolean validate()
         {
-            //DateTime a;
-            //if (DateTime.TryParse(Start.Text, out a))
-            //{
-            //    MessageBox.Show("valid");
-            //}
+            DateTime a;
 
-            if (Start.Text == "" || jobs.Text == "")
+            if (!DateTime.TryParse(Start.Text, out a))
             {
-                MessageBox.Show("Start and Job Cannot be Empty");
+                MessageBox.Show("Start Time cannot be Empty");
                 return false;
             }
             else
             {
                 return true;
             }
-            //else if (int.Parse(sh.Text) > 23 || int.Parse(sh.Text) < 0)
-            //{
-            //    MessageBox.Show("Start hour not valid");
-            //    return false;
-            //}
-            //else if (int.Parse(sm.Text) != 0 && int.Parse(sm.Text) != 15 && int.Parse(sm.Text) != 30 && int.Parse(sm.Text) != 45)
-            //{
-            //    MessageBox.Show("End minutes not valid");
-            //    return false;
-            //}
-            //if (int.Parse(eh.Text) > 23 || int.Parse(eh.Text) < 0)
-            //{
-            //    MessageBox.Show("End hour not valid");
-            //    return false;
-            //}
-            //else if (int.Parse(em.Text) != 0 && int.Parse(em.Text) != 15 && int.Parse(em.Text) != 30 && int.Parse(em.Text) != 45)
-            //{
-            //    MessageBox.Show("End minutes not valid");
-            //    return false;
-            //}
-            //else
-            //{
-            //    return true;
-            //}
         }
     }
 }
