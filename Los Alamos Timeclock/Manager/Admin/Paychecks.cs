@@ -93,11 +93,31 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                 }
                 if (Main.reader["Start"].ToString() != "" && Main.reader["End"].ToString() != "")
                 {
-                    hours = Main.maininstance.roundtime(DateTime.Parse(Main.reader["End"].ToString())).Subtract(Main.maininstance.roundtime(DateTime.Parse(Main.reader["Start"].ToString())));
+                    if (Main.maininstance.roundtime(DateTime.Parse(Main.reader["End"].ToString())) < Main.maininstance.roundtime(DateTime.Parse(Main.reader["Start"].ToString())))
+                    {
+                        hours = Main.maininstance.roundtime(DateTime.Parse(Main.reader["End"].ToString())).AddHours(24).Subtract(Main.maininstance.roundtime(DateTime.Parse(Main.reader["Start"].ToString())));
+                    }
+                    else
+                    {
+                        hours = Main.maininstance.roundtime(DateTime.Parse(Main.reader["End"].ToString())).Subtract(Main.maininstance.roundtime(DateTime.Parse(Main.reader["Start"].ToString())));
+                    }
 
                     if (Main.reader["Lout"].ToString() != "" && Main.reader["Lin"].ToString() != "")
                     {
-                        hours = hours.Subtract(roundtime(DateTime.Parse(Main.reader["Lin"].ToString()).Subtract(DateTime.Parse(Main.reader["Lout"].ToString()))));
+                        //hours = hours.Subtract(roundtime(DateTime.Parse(Main.reader["Lin"].ToString()).Subtract(DateTime.Parse(Main.reader["Lout"].ToString()))));
+
+                        if (Main.maininstance.roundtime(DateTime.Parse(Main.reader["Lin"].ToString())) < Main.maininstance.roundtime(DateTime.Parse(Main.reader["Lout"].ToString())))
+                        {
+                            hours = hours.Subtract(roundtime((DateTime.Parse(Main.reader["Lin"].ToString()).AddHours(24)).Subtract(DateTime.Parse(Main.reader["Lout"].ToString()))));
+                        }
+                        else
+                        {
+                            hours = hours.Subtract(roundtime(DateTime.Parse(Main.reader["Lin"].ToString()).Subtract(DateTime.Parse(Main.reader["Lout"].ToString()))));
+                        }
+                    
+                    
+                    
+                    
                     }
 
 
@@ -133,10 +153,6 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                     Totalhours = Totalhours+(hours.Hours+(hours.Minutes/15)*.25);
                     hours = TimeSpan.FromHours(0);
                 }
-
-
-
-
             }
             if (ID != "")
             {
@@ -148,6 +164,11 @@ namespace Los_Alamos_Timeclock.Manager.Admin
 
 
             Main.myConnection.Close();
+        }
+
+        public void Subtime()
+        {
+
         }
 
         public TimeSpan roundtime(TimeSpan a)

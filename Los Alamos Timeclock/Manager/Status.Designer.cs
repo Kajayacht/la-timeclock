@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.Employees = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.calander = new System.Windows.Forms.DateTimePicker();
             this.Updateschedule = new System.Windows.Forms.Button();
@@ -54,16 +54,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.dg)).BeginInit();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // Employees
             // 
-            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(79, 267);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(190, 21);
-            this.comboBox1.TabIndex = 1;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.Employees.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.Employees.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Employees.FormattingEnabled = true;
+            this.Employees.Location = new System.Drawing.Point(79, 267);
+            this.Employees.Name = "Employees";
+            this.Employees.Size = new System.Drawing.Size(190, 21);
+            this.Employees.TabIndex = 1;
+            this.Employees.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -101,8 +101,8 @@
             // 
             this.dg.AllowUserToAddRows = false;
             this.dg.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            this.dg.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dg.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dg.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -311,7 +311,7 @@
             this.Controls.Add(this.Updateschedule);
             this.Controls.Add(this.calander);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.Employees);
             this.Controls.Add(this.dg);
             this.DoubleBuffered = true;
             this.Name = "Status";
@@ -324,7 +324,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox Employees;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker calander;
         private System.Windows.Forms.Button Updateschedule;

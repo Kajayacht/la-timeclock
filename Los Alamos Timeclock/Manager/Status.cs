@@ -23,9 +23,10 @@ namespace Los_Alamos_Timeclock.Manager
             popdg();
             jobs.DisplayMember = "getname";
             jobs.DataSource = Main.Joblist;
-            comboBox1.DisplayMember = "getname";
-            comboBox1.ValueMember = "gid";
-            comboBox1.DataSource = Main.EmployeeList;
+            Employees.DisplayMember = "getname";
+            Employees.ValueMember = "gid";
+            Employees.DataSource = Main.EmployeeList;
+            ID = Employees.SelectedValue.ToString();
         }
 
 
@@ -39,7 +40,7 @@ namespace Los_Alamos_Timeclock.Manager
             if (validate())
             {
                 Main.myConnection.Open();
-                Main.maininstance.sqlreader("SELECT FROM `Hours Worked` WHERE ID='"+ID+"' AND Date='"+date+"'");
+                Main.maininstance.sqlreader("SELECT * FROM `Hours Worked` WHERE ID='"+ID+"' AND Date='"+date+"'");
                 Boolean working = Main.reader.HasRows;
                 Main.myConnection.Close();
 
@@ -67,7 +68,7 @@ namespace Los_Alamos_Timeclock.Manager
         }
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ID = comboBox1.SelectedValue.ToString();
+            ID = Employees.SelectedValue.ToString();
             Eupdate();
         }
 
@@ -77,6 +78,14 @@ namespace Los_Alamos_Timeclock.Manager
             Main.maininstance.sqlreader("Select * from `Hours Worked` where ID='" + ID + "' AND Date='" + date + "'");
             if (Main.reader.HasRows)
             {
+                Start.Text = Main.reader["Start"].ToString();
+                End.Text = Main.reader["End"].ToString();
+                b1out.Text = Main.reader["B1out"].ToString();
+                b1in.Text = Main.reader["B1in"].ToString();
+                b2out.Text = Main.reader["B2out"].ToString();
+                b2in.Text = Main.reader["B2in"].ToString();
+                lout.Text = Main.reader["Lout"].ToString();
+                lin.Text = Main.reader["Lin"].ToString();
                 //TimeSpan a = TimeSpan.Parse(Main.reader["Start"].ToString());
                 //sh.Text = a.Hours.ToString();
                 //sm.Text = a.Minutes.ToString();
@@ -167,18 +176,21 @@ namespace Los_Alamos_Timeclock.Manager
 
         public Boolean validate()
         {
-            return true;
             //DateTime a;
             //if (DateTime.TryParse(Start.Text, out a))
             //{
             //    MessageBox.Show("valid");
             //}
 
-            //if (sh.Text == "" || sm.Text == "" || eh.Text == "" || em.Text == "" || jobs.Text == "")
-            //{
-            //    MessageBox.Show("Fill in all fields");
-            //    return false;
-            //}
+            if (Start.Text == "" || jobs.Text == "")
+            {
+                MessageBox.Show("Start and Job Cannot be Empty");
+                return false;
+            }
+            else
+            {
+                return true;
+            }
             //else if (int.Parse(sh.Text) > 23 || int.Parse(sh.Text) < 0)
             //{
             //    MessageBox.Show("Start hour not valid");
