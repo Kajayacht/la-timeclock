@@ -65,3 +65,51 @@ Log Entry : 11:00:35 PM Sunday, March 11, 2012
  Employee= Dave
  Job= Cook
 -------------------------------
+
+Log Entry : 2:54:27 AM Monday, March 12, 2012
+  :
+  :Jenn changed the Hours Worked for Chavez, Jenn
+ Date= 2012-03-12
+ Job= Bartender
+ Start= 02:32
+ End= 04:32
+ Break 1=   :-  :
+ Break 2=   :-  :
+ Lunch=   :-  :
+-------------------------------
+
+Log Entry : 2:56:50 AM Monday, March 12, 2012
+  :
+  :Jenn changed the Hours Worked for Chappel, Dave
+ Date= 2012-03-12
+ Job= Bartender
+ Start= 01:20
+ End= 02:34
+ Break 1=   :-  :
+ Break 2=   :-  :
+ Lunch=   :-  :
+-------------------------------
+
+Log Entry : 2:57:17 AM Monday, March 12, 2012
+  :
+  :Jenn changed the Hours Worked for Chappel, Dave
+ Date= 2012-03-12
+ Job= Bartender
+ Start= 01:20
+ End= 02:34
+ Break 1=   :-  :
+ Break 2=   :-  :
+ Lunch=   :-  :
+-------------------------------
+
+Log Entry : 2:59:40 AM Monday, March 12, 2012
+  :
+  :Jenn inserted into the Hours Worked for Warrior, The
+ Date= 2012-03-12
+ Job= Cook
+ Start= 11:20
+ End= 12:50
+ Break 1=   :-  :
+ Break 2=   :-  :
+ Lunch=   :-  :
+-------------------------------

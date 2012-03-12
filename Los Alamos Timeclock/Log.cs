@@ -33,8 +33,9 @@ namespace Los_Alamos_Timeclock
             try
             {
                 //open the file
+                
                 StreamWriter w = File.AppendText(Directory.GetCurrentDirectory()+ "/log.txt");
-
+                
                 //write the header, date/time, and the logmessage
                 w.Write("\r\nLog Entry : ");
                 w.WriteLine("{0} {1}", DateTime.Now.ToLongTimeString(),

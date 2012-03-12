@@ -106,15 +106,24 @@ namespace Los_Alamos_Timeclock.Manager
                     _end = "'" + End.Text + "'";
                 }
 
-                string status = "OUT";
+                string state = "'OUT'";
+
                 if (_end == "NULL")
                 {
-
+                    if ((b1_out != "NULL" && b1_in == "NULL") || (b2_out != "NULL" && b2_in == "NULL"))
+                    {
+                        state = "'BREAK'";
+                    }
+                    else if (l_out != "NULL" && l_in == "NULL")
+                    {
+                        state = "'LUNCH'";
+                    }
+                    else
+                    {
+                        state = "'IN'";
+                    }
 
                 }
-
-
-
 
 
                 if (working)
@@ -129,17 +138,18 @@ namespace Los_Alamos_Timeclock.Manager
                                                 "B2in=" + b2_in + ", " +
                                                 "Lout=" + l_out + ", " +
                                                 "Lin=" + l_in + ", " +
-                                                "JID='" + jobs.Text + "' "+
+                                                "JID='" + jobs.Text + "', "+
+                                                "Status=" + state +" "+
                                                 "WHERE Date='" + date + "' AND ID='" + ID + "'");
                     MessageBox.Show("Update Successful");
-                    //Log.writeLog(Main.EName + " changed the Hours Worked for " + comboBox1.Text + "\n Date= " + date + "\n Start= " + sh.Text + ":" + sm.Text + "\n End= " + eh.Text + ":" + em.Text + "\n Job= " + jobs.Text);
+                    Log.writeLog(Main.EName + " changed the Hours Worked for " + Employees.Text + "\n Date= " + date + "\n Job= " + jobs.Text + "\n Start= " + Start.Text + "\n End= " + End.Text + "\n Break 1= " + b1out.Text + "-" + b1in.Text + "\n Break 2= " + b2out.Text + "-" + b2in.Text + "\n Lunch= " + lout.Text + "-" + lin.Text);
                 }
                 else
                 {
                     Main.maininstance.sqlinsert("INSERT INTO `Hours Worked`(`ID` ,`Date` ,`Start` ,`End` ,`JID` ,`B1out` ,`B1in` ,`B2out` ,`B2in` ,`Lout` ,`Lin` ,`Status`)" +
-                                                "VALUES('"+ID+"','"+date+"',"+_start+","+_end+",'"+jobs.Text+"',"+b1_out+","+b1_in+","+b2_out+","+b2_in+","+l_out+","+l_in+",'IN')");
+                                                "VALUES('"+ID+"','"+date+"',"+_start+","+_end+",'"+jobs.Text+"',"+b1_out+","+b1_in+","+b2_out+","+b2_in+","+l_out+","+l_in+","+state+")");
                     MessageBox.Show("Insert Successful");
-                    //Log.writeLog(Main.EName + " changed the Hours Worked for " + comboBox1.Text + "\n Date= " + date + "\n Start= " + sh.Text + ":" + sm.Text + "\n End= " + eh.Text + ":" + em.Text + "\n Job= " + jobs.Text);
+                    Log.writeLog(Main.EName + " inserted into the Hours Worked for " + Employees.Text + "\n Date= " + date + "\n Job= " + jobs.Text + "\n Start= " + Start.Text + "\n End= " + End.Text + "\n Break 1= " + b1out.Text + "-" + b1in.Text + "\n Break 2= " + b2out.Text + "-" + b2in.Text + "\n Lunch= " + lout.Text + "-" + lin.Text);
                 }
 
                 popdg();
@@ -280,7 +290,7 @@ namespace Los_Alamos_Timeclock.Manager
 
             if (!DateTime.TryParse(Start.Text, out a))
             {
-                MessageBox.Show("Start Time cannot be Empty");
+                MessageBox.Show("Start Time not valid");
                 return false;
             }
             else
