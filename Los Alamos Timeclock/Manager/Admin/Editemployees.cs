@@ -104,45 +104,88 @@ namespace Los_Alamos_Timeclock.Manager.Admin
         {
             if (validateinfo())
             {
+                Boolean a=false, m=false;
+                Main.myConnection.Open();
+                Main.maininstance.sqlreader("SELECT a.ID, b.ID AS Manager, c.ID as Admin "+
+                                            "FROM Employee a "+
+                                            "LEFT JOIN Manager b "+
+                                            "ON b.ID=a.ID "+
+                                            "LEFT JOIN Admin c "+
+                                            "ON c.ID=a.ID "+
+                                            "WHERE a.ID='"+ID+"'"
+                                            );
+                if (Main.reader["Manager"].ToString() != "")
+                {
+                    m = true;
+                }
+                else if (Main.reader["Admin"].ToString() != "")
+                {
+                    a = true;
+                }
+                Main.reader.Close();
+                Main.myConnection.Close();
+
                 if (Priv.Text == "Admin")
                 {
-                    try
+                    
+                    if (m)
                     {
-                        Main.myConnection.Open();
-                        MySqlCommand command = new MySqlCommand("INSERT INTO Admin Values('" + ID + "')", Main.myConnection);
-                        command.ExecuteNonQuery();
-                        Main.myConnection.Close();
+                        Main.maininstance.sqlcommand("DELETE FROM Manager WHERE ID='" + ID + "'");
                     }
-                    catch
+                    if (!a)
                     {
-                        Main.myConnection.Close();
+                        try
+                        {
+                            Main.myConnection.Open();
+                            MySqlCommand command = new MySqlCommand("INSERT INTO Admin Values('" + ID + "')", Main.myConnection);
+                            command.ExecuteNonQuery();
+                        }
+                        catch (Exception f)
+                        {
+                            MessageBox.Show(f.ToString());
+                        }
+                        finally
+                        {
+                            Main.myConnection.Close();
+                        }
                     }
                 }
                 else if (Priv.Text == "Manager")
                 {
-                    Main.maininstance.sqlinsert("DELETE FROM Admin WHERE ID='" + ID + "'");
-                    try
+                    if (a)
                     {
-                        Main.myConnection.Open();
-                        MySqlCommand command = new MySqlCommand("INSERT INTO Manager Values('" + ID + "')", Main.myConnection);
-                        command.ExecuteNonQuery();
-                        Main.myConnection.Close();
+                        Main.maininstance.sqlcommand("DELETE FROM Admin WHERE ID='" + ID + "'");
                     }
-                    catch
+                    if (!m)
                     {
-                        Main.myConnection.Close();
+
+                        try
+                        {
+                            Main.myConnection.Open();
+                            MySqlCommand command = new MySqlCommand("INSERT INTO Manager Values('" + ID + "')", Main.myConnection);
+                            command.ExecuteNonQuery();
+                        }
+                        catch (Exception f)
+                        {
+                            MessageBox.Show(f.ToString());
+                        }
+                        finally
+                        {
+                            Main.myConnection.Close();
+                        }
                     }
                 }
                 else if (Priv.Text == "None")
                 {
-                    Main.maininstance.sqlinsert("DELETE FROM Admin WHERE ID='"+ID+"'");
-                    Main.maininstance.sqlinsert("DELETE FROM Manager WHERE ID='" + ID + "'");
+                    Main.maininstance.sqlcommand("DELETE FROM Admin WHERE ID='"+ID+"'");
+                    Main.maininstance.sqlcommand("DELETE FROM Manager WHERE ID='" + ID + "'");
                 }
 
-                Main.maininstance.sqlinsert("UPDATE Employee SET LName='" + Lname.Text + "', MName='" + Mname.Text + "', FName='" + Fname.Text + "', SSN='" + SSN.Text + "', Phone='" + Phone.Text + "', Email='" + Email.Text + "', Address1='" + Al1.Text + "', Address2='" + Al2.Text + "', City='" + Ac.Text + "', State='" + As.Text + "', Zip='" + Az.Text + "' WHERE ID='" + ID + "'");
+                Main.maininstance.sqlcommand("UPDATE Employee SET LName='" + Lname.Text + "', MName='" + Mname.Text + "', FName='" + Fname.Text + "', SSN='" + SSN.Text + "', Phone='" + Phone.Text + "', Email='" + Email.Text + "', Address1='" + Al1.Text + "', Address2='" + Al2.Text + "', City='" + Ac.Text + "', State='" + As.Text + "', Zip='" + Az.Text + "' WHERE ID='" + ID + "'");
                 MessageBox.Show("Employee Updated");
                 Log.writeLog(Main.EName + " edited employee: \n" + "LName= " + Lname.Text + " MName= " + Mname.Text + " FName= " + Fname.Text + "\n SSN= " + SSN.Text + "\n Phone= " + Phone.Text + "\n Email= " + Email.Text + "\n Address1= " + Al1.Text + "\n Address2= " + Al2.Text + "\n City= " + Ac.Text + "\n State= " + As.Text + "\n Zip= " + Az.Text + "\n Priv= " + Priv.Text);
-
+                Main.EmployeeList = Main.maininstance.getEmployees();
+                comboBox1.DataSource = Main.EmployeeList;
             }
         }
 
@@ -208,11 +251,11 @@ namespace Los_Alamos_Timeclock.Manager.Admin
 
                 if (rows)
                 {
-                    Main.maininstance.sqlinsert("UPDATE Users SET User='" + User.Text + "', Password='" + Pass1.Text + "' WHERE ID='" + ID + "'");
+                    Main.maininstance.sqlcommand("UPDATE Users SET User='" + User.Text + "', Password='" + Pass1.Text + "' WHERE ID='" + ID + "'");
                 }
                 else
                 {
-                    Main.maininstance.sqlinsert("INSERT INTO Users (`ID`,`User`,`Password`) Values('" + ID + "', '" + User.Text + "', '" + Pass1.Text + "')");
+                    Main.maininstance.sqlcommand("INSERT INTO Users (`ID`,`User`,`Password`) Values('" + ID + "', '" + User.Text + "', '" + Pass1.Text + "')");
                 }
                 MessageBox.Show("Login Updated");
                 Log.writeLog(Main.EName + " changed login for " + Fname.Text + " " + Mname.Text + " " + Lname.Text + ": \n" + "User= " + User.Text + " Pass= " + Pass1.Text);
@@ -233,7 +276,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                 }
                 else
                 {
-                    Main.maininstance.sqlinsert("DELETE FROM Employee WHERE ID='" + ID + "'");
+                    Main.maininstance.sqlcommand("DELETE FROM Employee WHERE ID='" + ID + "'");
                     Log.writeLog(Main.EName + " deleted employee: \n " + Fname.Text + " " + Mname.Text + " " + Lname.Text + "\n ID= " + ID);
                     Main.EmployeeList = Main.maininstance.getEmployees();
                     comboBox1.DataSource = Main.EmployeeList;
@@ -292,31 +335,19 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                     {
                         Main.reader.Close();
                         Main.myConnection.Close();
-                        Main.maininstance.sqlinsert("UPDATE `Employee Jobs` SET JPay='" + pay.Text + "' WHERE ID='" + ID + "' AND JID='" + jobs.Text + "'");
+                        Main.maininstance.sqlcommand("UPDATE `Employee Jobs` SET JPay='" + pay.Text + "' WHERE ID='" + ID + "' AND JID='" + jobs.Text + "'");
                     }
                     else
                     {
                         Main.myConnection.Close();
-                        Main.maininstance.sqlinsert("INSERT INTO `Employee Jobs` Values('" + ID + "','" + jobs.Text + "', '" + pay.Text + "')");
+                        Main.maininstance.sqlcommand("INSERT INTO `Employee Jobs` Values('" + ID + "','" + jobs.Text + "', '" + pay.Text + "')");
 
                     }
+                    MessageBox.Show("Pay Updated");
                     Log.writeLog(Main.EName + " changed payrate for " + Fname.Text + " " + Mname.Text + " " + Lname.Text + ": \n" + "Job= " + jobs.Text + " Pay= " + pay.Text);
                 }
             }
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label17_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-
 
     }
 }

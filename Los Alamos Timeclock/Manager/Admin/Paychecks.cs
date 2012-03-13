@@ -83,7 +83,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                     if (ID != "")
                     {
                         output = output + "\tTotal Hours: \t" + Totalhours + "\n" +
-                                          "\tGross Pay: \t$" + Totalpay + "\n\n";
+                                          "\tGross Pay: \t$" + String.Format("{0:0.00}", Math.Round(Totalpay, 2)) + "\n\n";
                     }
                     ID = Main.reader["ID"].ToString();
                     output = output + Main.reader["LName"].ToString() + ", " + Main.reader["FName"].ToString()+" "+ Main.reader["MName"].ToString()+"\n";
@@ -151,7 +151,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             if (ID != "")
             {
                 output = output + "\tTotal Hours: \t" + Totalhours + "\n" +
-                                  "\tGross Pay: \t$" + Totalpay + "\n\n";
+                                  "\tGross Pay: \t$" + String.Format("{0:0.00}", Math.Round(Totalpay, 2)) + "\n\n";
             }
             ID = "";
             Pay.Text = output;

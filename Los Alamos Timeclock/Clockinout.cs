@@ -145,7 +145,7 @@ namespace Los_Alamos_Timeclock
             {
                 if (start == Main.maininstance.roundtime(DateTime.Now) && status != "IN" && status != "BREAK" && status != "LUNCH")
                 {
-                    Main.maininstance.sqlinsert("INSERT INTO `Hours Worked` (`ID`, `Date`, `Start`, `JID`,`Status`) VALUES ('" + Main.ID + "', '" + DateTime.Today.ToString("yyyy-MM-dd") + "' , '" + DateTime.Now.ToString("HH:mm:ss") + "', '" + job + "', 'IN')");
+                    Main.maininstance.sqlcommand("INSERT INTO `Hours Worked` (`ID`, `Date`, `Start`, `JID`,`Status`) VALUES ('" + Main.ID + "', '" + DateTime.Today.ToString("yyyy-MM-dd") + "' , '" + DateTime.Now.ToString("HH:mm:ss") + "', '" + job + "', 'IN')");
                     status = "IN";
                     supdate();
                 }
@@ -166,14 +166,14 @@ namespace Los_Alamos_Timeclock
 
             if (status == "BREAK" && n > 0)
             {
-                Main.maininstance.sqlinsert("UPDATE `Hours Worked` SET B" + n + "in='" + DateTime.Now.ToString("HH:mm:ss") + "', Status='IN' WHERE ID='" + Main.ID + "' AND Date='" + date + "'");
+                Main.maininstance.sqlcommand("UPDATE `Hours Worked` SET B" + n + "in='" + DateTime.Now.ToString("HH:mm:ss") + "', Status='IN' WHERE ID='" + Main.ID + "' AND Date='" + date + "'");
                 status = "IN";
                 supdate();
                 n = n + 1;
             }
             else if (status == "IN" && n > 0)
             {
-                Main.maininstance.sqlinsert("UPDATE `Hours Worked` SET B" + n + "out='" + DateTime.Now.ToString("HH:mm:ss") + "', Status='BREAK' WHERE ID='" + Main.ID + "' AND Date='" + date + "'");
+                Main.maininstance.sqlcommand("UPDATE `Hours Worked` SET B" + n + "out='" + DateTime.Now.ToString("HH:mm:ss") + "', Status='BREAK' WHERE ID='" + Main.ID + "' AND Date='" + date + "'");
                 status = "BREAK";
                 supdate();
             }
@@ -190,13 +190,13 @@ namespace Los_Alamos_Timeclock
         {
             if (status == "LUNCH")
             {
-                Main.maininstance.sqlinsert("UPDATE `Hours Worked` SET Lin='" + DateTime.Now.ToString("HH:mm:ss") + "', Status='IN' WHERE ID='" + Main.ID + "' AND Date='" + date + "'");
+                Main.maininstance.sqlcommand("UPDATE `Hours Worked` SET Lin='" + DateTime.Now.ToString("HH:mm:ss") + "', Status='IN' WHERE ID='" + Main.ID + "' AND Date='" + date + "'");
                 status = "IN";
                 supdate();
             }
             else if (status == "IN" && lunch)
             {
-                Main.maininstance.sqlinsert("UPDATE `Hours Worked` SET Lout='" + DateTime.Now.ToString("HH:mm:ss") + "', Status='LUNCH' WHERE ID='" + Main.ID + "' AND Date='" + date + "'");
+                Main.maininstance.sqlcommand("UPDATE `Hours Worked` SET Lout='" + DateTime.Now.ToString("HH:mm:ss") + "', Status='LUNCH' WHERE ID='" + Main.ID + "' AND Date='" + date + "'");
                 status = "LUNCH";
                 supdate();
                 lunch = false;
@@ -210,7 +210,7 @@ namespace Los_Alamos_Timeclock
         {
             if (status == "IN")
             {
-                Main.maininstance.sqlinsert("UPDATE `Hours Worked` SET End='" + DateTime.Now.ToString("HH:mm:ss") + "', Status='OUT' WHERE ID='" + Main.ID + "' AND Date='" + date + "'");
+                Main.maininstance.sqlcommand("UPDATE `Hours Worked` SET End='" + DateTime.Now.ToString("HH:mm:ss") + "', Status='OUT' WHERE ID='" + Main.ID + "' AND Date='" + date + "'");
                 status = "OUT";
                 supdate();
             }

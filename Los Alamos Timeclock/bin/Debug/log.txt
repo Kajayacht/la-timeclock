@@ -113,3 +113,243 @@ Log Entry : 2:59:40 AM Monday, March 12, 2012
  Break 2=   :-  :
  Lunch=   :-  :
 -------------------------------
+
+Log Entry : 9:44:54 AM Tuesday, March 13, 2012
+  :
+  :Jenn changed the Hours Worked for Chavez, Jenn
+ Date= 2012-03-04
+ Job= Bartender
+ Start= 21:55
+ End= 22:38
+ Break 1=   :-  :
+ Break 2=   :-  :
+ Lunch=   :-  :
+-------------------------------
+
+Log Entry : 10:01:41 AM Tuesday, March 13, 2012
+  :
+  :Jenn Chavez edited employee: 
+LName= Chavez MName= L FName= Jennifer
+ SSN= 123845421
+ Phone= 2147483647
+ Email= test@aol.com
+ Address1= address1
+ Address2= 
+ City= 
+ State= Indiana
+ Zip= 47304
+ Priv= Admin
+-------------------------------
+
+Log Entry : 10:08:05 AM Tuesday, March 13, 2012
+  :
+  :Jennifer Chavez edited employee: 
+LName= Chappel MName= Earl FName= Dave
+ SSN= 123456792
+ Phone= 2132159499
+ Email= 
+ Address1= 
+ Address2= 
+ City= 
+ State= Nebraska
+ Zip= 48457
+ Priv= Manager
+-------------------------------
+
+Log Entry : 10:08:23 AM Tuesday, March 13, 2012
+  :
+  :Jennifer Chavez edited employee: 
+LName= Chappel MName= Earl FName= Dave
+ SSN= 123456792
+ Phone= 2132159499
+ Email= 
+ Address1= 
+ Address2= 
+ City= 
+ State= Nebraska
+ Zip= 48457
+ Priv= Manager
+-------------------------------
+
+Log Entry : 10:09:43 AM Tuesday, March 13, 2012
+  :
+  :Jennifer Chavez edited employee: 
+LName= Chappel MName= Earl FName= Dave
+ SSN= 123456792
+ Phone= 2132159499
+ Email= 
+ Address1= 
+ Address2= 
+ City= 
+ State= Nebraska
+ Zip= 48457
+ Priv= Manager
+-------------------------------
+
+Log Entry : 10:09:58 AM Tuesday, March 13, 2012
+  :
+  :Jennifer Chavez edited employee: 
+LName= Chavez MName= L FName= Jenn
+ SSN= 123845421
+ Phone= 2147483647
+ Email= test@aol.com
+ Address1= address1
+ Address2= 
+ City= 
+ State= Indiana
+ Zip= 47304
+ Priv= Admin
+-------------------------------
+
+Log Entry : 10:10:10 AM Tuesday, March 13, 2012
+  :
+  :Jennifer Chavez edited employee: 
+LName= Chavez MName= L FName= Jennifer
+ SSN= 123845421
+ Phone= 2147483647
+ Email= test@aol.com
+ Address1= address1
+ Address2= 
+ City= 
+ State= Indiana
+ Zip= 47304
+ Priv= Admin
+-------------------------------
+
+Log Entry : 10:24:05 AM Tuesday, March 13, 2012
+  :
+  :Jennifer Chavez edited employee: 
+LName= Chappel MName= Earl FName= Dave
+ SSN= 123456792
+ Phone= 2132159499
+ Email= 
+ Address1= 
+ Address2= 
+ City= 
+ State= Nebraska
+ Zip= 48457
+ Priv= Manager
+-------------------------------
+
+Log Entry : 10:24:10 AM Tuesday, March 13, 2012
+  :
+  :Jennifer Chavez edited employee: 
+LName= Chappel MName= Earl FName= Dave
+ SSN= 123456792
+ Phone= 2132159499
+ Email= 
+ Address1= 
+ Address2= 
+ City= 
+ State= Nebraska
+ Zip= 48457
+ Priv= Admin
+-------------------------------
+
+Log Entry : 10:24:17 AM Tuesday, March 13, 2012
+  :
+  :Jennifer Chavez edited employee: 
+LName= Chappel MName= Earl FName= Dave
+ SSN= 123456792
+ Phone= 2132159499
+ Email= 
+ Address1= 
+ Address2= 
+ City= 
+ State= Nebraska
+ Zip= 48457
+ Priv= Admin
+-------------------------------
+
+Log Entry : 10:24:20 AM Tuesday, March 13, 2012
+  :
+  :Jennifer Chavez edited employee: 
+LName= Chappel MName= Earl FName= Dave
+ SSN= 123456792
+ Phone= 2132159499
+ Email= 
+ Address1= 
+ Address2= 
+ City= 
+ State= Nebraska
+ Zip= 48457
+ Priv= Manager
+-------------------------------
+
+Log Entry : 10:24:23 AM Tuesday, March 13, 2012
+  :
+  :Jennifer Chavez edited employee: 
+LName= Chappel MName= Earl FName= Dave
+ SSN= 123456792
+ Phone= 2132159499
+ Email= 
+ Address1= 
+ Address2= 
+ City= 
+ State= Nebraska
+ Zip= 48457
+ Priv= None
+-------------------------------
+
+Log Entry : 10:24:28 AM Tuesday, March 13, 2012
+  :
+  :Jennifer Chavez edited employee: 
+LName= Chappel MName= Earl FName= Dave
+ SSN= 123456792
+ Phone= 2132159499
+ Email= 
+ Address1= 
+ Address2= 
+ City= 
+ State= Nebraska
+ Zip= 48457
+ Priv= None
+-------------------------------
+
+Log Entry : 10:24:31 AM Tuesday, March 13, 2012
+  :
+  :Jennifer Chavez edited employee: 
+LName= Chappel MName= Earl FName= Dave
+ SSN= 123456792
+ Phone= 2132159499
+ Email= 
+ Address1= 
+ Address2= 
+ City= 
+ State= Nebraska
+ Zip= 48457
+ Priv= Manager
+-------------------------------
+
+Log Entry : 10:24:45 AM Tuesday, March 13, 2012
+  :
+  :Jennifer Chavez changed payrate for Dave Earl Chappel: 
+Job= Server Pay= 3.75
+-------------------------------
+
+Log Entry : 10:24:49 AM Tuesday, March 13, 2012
+  :
+  :Jennifer Chavez changed payrate for Dave Earl Chappel: 
+Job= Server Pay= 3.75
+-------------------------------
+
+Log Entry : 10:24:55 AM Tuesday, March 13, 2012
+  :
+  :Jennifer Chavez edited employee: 
+LName= Chappel MName= Earl FName= Dave
+ SSN= 123456792
+ Phone= 2132159499
+ Email= 
+ Address1= 
+ Address2= 
+ City= 
+ State= Nebraska
+ Zip= 48457
+ Priv= Manager
+-------------------------------
+
+Log Entry : 10:25:52 AM Tuesday, March 13, 2012
+  :
+  :Jennifer Chavez changed payrate for Dave Earl Chappel: 
+Job= Cook Pay= 8.10
+-------------------------------

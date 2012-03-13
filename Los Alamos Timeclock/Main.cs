@@ -227,22 +227,21 @@ namespace Los_Alamos_Timeclock
         }
 
 
-        public void sqlinsert(String c)
+        public void sqlcommand(String c)
         {
             try
             {
                 myConnection.Open();
                 MySqlCommand command = new MySqlCommand(c, myConnection);
                 command.ExecuteNonQuery();
-                myConnection.Close();
             }
             catch (Exception e)
             {
-                if (myConnection.State == ConnectionState.Open)
-                {
-                    myConnection.Close();
-                }
                 MessageBox.Show(e.ToString());
+            }
+            finally
+            {
+                myConnection.Close();
             }
         }
         public void sqlreader(String c)

@@ -87,7 +87,6 @@
             this.label1.Size = new System.Drawing.Size(92, 20);
             this.label1.TabIndex = 5;
             this.label1.Text = "Employee:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // comboBox1
             // 
@@ -432,7 +431,6 @@
             this.label17.Size = new System.Drawing.Size(133, 20);
             this.label17.TabIndex = 58;
             this.label17.Text = "Edit Employees";
-            this.label17.Click += new System.EventHandler(this.label17_Click);
             // 
             // Priv
             // 

@@ -128,7 +128,7 @@ namespace Los_Alamos_Timeclock.Manager
 
                 if (working)
                 {
-                    Main.maininstance.sqlinsert("UPDATE `Hours Worked` "+
+                    Main.maininstance.sqlcommand("UPDATE `Hours Worked` "+
                                                 "SET "+
                                                 "Start=" + _start +", "+
                                                 "End=" + _end + ", "+
@@ -146,7 +146,7 @@ namespace Los_Alamos_Timeclock.Manager
                 }
                 else
                 {
-                    Main.maininstance.sqlinsert("INSERT INTO `Hours Worked`(`ID` ,`Date` ,`Start` ,`End` ,`JID` ,`B1out` ,`B1in` ,`B2out` ,`B2in` ,`Lout` ,`Lin` ,`Status`)" +
+                    Main.maininstance.sqlcommand("INSERT INTO `Hours Worked`(`ID` ,`Date` ,`Start` ,`End` ,`JID` ,`B1out` ,`B1in` ,`B2out` ,`B2in` ,`Lout` ,`Lin` ,`Status`)" +
                                                 "VALUES('"+ID+"','"+date+"',"+_start+","+_end+",'"+jobs.Text+"',"+b1_out+","+b1_in+","+b2_out+","+b2_in+","+l_out+","+l_in+","+state+")");
                     MessageBox.Show("Insert Successful");
                     Log.writeLog(Main.EName + " inserted into the Hours Worked for " + Employees.Text + "\n Date= " + date + "\n Job= " + jobs.Text + "\n Start= " + Start.Text + "\n End= " + End.Text + "\n Break 1= " + b1out.Text + "-" + b1in.Text + "\n Break 2= " + b2out.Text + "-" + b2in.Text + "\n Lunch= " + lout.Text + "-" + lin.Text);

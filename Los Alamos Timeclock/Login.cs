@@ -22,7 +22,7 @@ namespace Los_Alamos_Timeclock
             try
             {
                 Main.myConnection.Open();
-                Main.maininstance.sqlreader("SELECT a.ID,b.FName, c.ID AS Admin, d.ID AS Manager " +
+                Main.maininstance.sqlreader("SELECT a.ID,b.FName, b.LName, c.ID AS Admin, d.ID AS Manager " +
                                             "FROM Users a " +
                                             "Join Employee b " +
                                             "ON a.ID=b.ID " +
@@ -36,7 +36,6 @@ namespace Los_Alamos_Timeclock
                 if (Main.reader.HasRows)
                 {
                     Main.ID = Main.reader["ID"].ToString();
-                    //Main.permissions = Main.reader["Priv"].ToString();
 
                     if (Main.reader["Admin"].ToString() != "")
                     {
@@ -50,7 +49,7 @@ namespace Los_Alamos_Timeclock
                     {
                         Main.permissions = "None";
                     }
-                    Main.EName = Main.reader["FName"].ToString();
+                    Main.EName = Main.reader["FName"].ToString() + " " + Main.reader["LName"].ToString();
                     Main.reader.Close();
                     Main.myConnection.Close();
 
@@ -61,7 +60,6 @@ namespace Los_Alamos_Timeclock
                 }
                 else
                 {
-                    Main.myConnection.Close();
                     MessageBox.Show("Incorrect Login");
                 }
             }
@@ -69,6 +67,11 @@ namespace Los_Alamos_Timeclock
             {
                 MessageBox.Show(d.ToString());
                 MessageBox.Show("Failed to connect to SQL database");
+            }
+            finally
+            {
+                Main.reader.Close();
+                Main.myConnection.Close();
             }
 
         }

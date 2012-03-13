@@ -43,11 +43,11 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             {
                 if (scheduled)
                 {
-                    Main.maininstance.sqlinsert("UPDATE Schedule SET Start='" + sh.Text + ":" + sm.Text + "', End='" + eh.Text + ":" + em.Text + "', JID='" + jobs.Text + "' WHERE Date='" + date + "' AND ID='" + ID + "'");
+                    Main.maininstance.sqlcommand("UPDATE Schedule SET Start='" + sh.Text + ":" + sm.Text + "', End='" + eh.Text + ":" + em.Text + "', JID='" + jobs.Text + "' WHERE Date='" + date + "' AND ID='" + ID + "'");
                 }
                 else
                 {
-                    Main.maininstance.sqlinsert("INSERT INTO Schedule (`ID`, `Date`, `Start`, `End`, `JID`) VALUES ('" + ID + "', '" + date + "', '" + sh.Text + ":" + sm.Text + "', '" + eh.Text + ":" + em.Text + "', '" + jobs.Text + "')");
+                    Main.maininstance.sqlcommand("INSERT INTO Schedule (`ID`, `Date`, `Start`, `End`, `JID`) VALUES ('" + ID + "', '" + date + "', '" + sh.Text + ":" + sm.Text + "', '" + eh.Text + ":" + em.Text + "', '" + jobs.Text + "')");
                     scheduled = true;
                 }
                 Log.writeLog(Main.EName + " changed the schedule for " + comboBox1.Text + "\n Date= " + date + "\n Start= " + sh.Text + ":" + sm.Text + "\n End= " + eh.Text + ":" + em.Text + "\n Job= " + jobs.Text);
@@ -61,7 +61,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             {
                 if (scheduled)
                 {
-                    Main.maininstance.sqlinsert("DELETE FROM Schedule WHERE ID='" + ID + "' AND Date='" + date + "'");
+                    Main.maininstance.sqlcommand("DELETE FROM Schedule WHERE ID='" + ID + "' AND Date='" + date + "'");
                     Log.writeLog(Main.EName + " deleted " + comboBox1.Text + " from the schedule for: " +"\n Date= " + date + "\n Start= " + sh.Text + ":" + sm.Text + "\n End= " + eh.Text + ":" + em.Text + "\n Job= " + jobs.Text);
                     scheduled = false;
                 }

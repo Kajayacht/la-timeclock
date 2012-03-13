@@ -31,7 +31,7 @@ namespace Los_Alamos_Timeclock
         {
             if (validateinfo())
             {
-                Main.maininstance.sqlinsert("UPDATE Employee SET Address1='" + Al1.Text + "', Address2='" + Al2.Text + "', City='" + Ac.Text + "', State='" + As.Text + "', Zip='" + Az.Text + "', Email='" + Email.Text + "', Phone='" + Phone.Text + "'  WHERE ID='" + Main.ID + "'");
+                Main.maininstance.sqlcommand("UPDATE Employee SET Address1='" + Al1.Text + "', Address2='" + Al2.Text + "', City='" + Ac.Text + "', State='" + As.Text + "', Zip='" + Az.Text + "', Email='" + Email.Text + "', Phone='" + Phone.Text + "'  WHERE ID='" + Main.ID + "'");
                 MessageBox.Show("Update Successful");
             }
         }
