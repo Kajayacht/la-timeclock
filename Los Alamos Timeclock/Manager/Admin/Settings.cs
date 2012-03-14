@@ -29,7 +29,7 @@ namespace Los_Alamos_Timeclock
             }
             catch
             {
-
+                MessageBox.Show("Failed to get config file");
             }
         }
 
@@ -65,13 +65,6 @@ namespace Los_Alamos_Timeclock
 
         private void Apply_Click(object sender, EventArgs e)
         {
-            Main.myConnection.Close();
-            Properties.Settings.Default.IP=ipaddress.Text;
-            Properties.Settings.Default.Port=port.Text;
-            Properties.Settings.Default.Database=database.Text;
-            Properties.Settings.Default.User = user.Text;
-            Properties.Settings.Default.Password = pass.Text;
-            Properties.Settings.Default.Save();
 
             Main.myConnection = new MySqlConnection(
                 "SERVER="+ipaddress.Text+
@@ -79,25 +72,26 @@ namespace Los_Alamos_Timeclock
 				";DATABASE="+database.Text+
 				";UID="+user.Text+";" +
 				";PASSWORD="+pass.Text+";");
-            MySqlDataReader reader;
-            MySqlCommand command = new MySqlCommand("SELECT * FROM `Employee` WHERE 1", Main.myConnection);
 
             Main.myConnection.Close();
             try
             {
                 Main.myConnection.Open();
-                reader = command.ExecuteReader();
-                string test = "Connection Successful\n";
-                while (reader.Read())
-                {
-                    test = test + reader["LName"].ToString() + "\n";
-                }
-                Main.myConnection.Close();
-                MessageBox.Show(test);
+                MessageBox.Show("Connection Successful");
+                Properties.Settings.Default.IP = ipaddress.Text;
+                Properties.Settings.Default.Port = port.Text;
+                Properties.Settings.Default.Database = database.Text;
+                Properties.Settings.Default.User = user.Text;
+                Properties.Settings.Default.Password = pass.Text;
+                Properties.Settings.Default.Save();
             }
             catch (Exception f)
             {
-                MessageBox.Show(f.ToString());
+                MessageBox.Show("Connection Failed");
+            }
+            finally
+            {
+                Main.myConnection.Close();
             }
 
         }

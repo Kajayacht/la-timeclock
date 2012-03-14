@@ -15,7 +15,6 @@ C:\Users\Nate\Dropbox\Visual Studio Projects\Projects\Los Alamos Timeclock\Los A
 C:\Users\Nate\Dropbox\Visual Studio Projects\Projects\Los Alamos Timeclock\Los Alamos Timeclock\obj\x86\Debug\Los_Alamos_Timeclock.Settings.resources
 C:\Users\Nate\Dropbox\Visual Studio Projects\Projects\Los Alamos Timeclock\Los Alamos Timeclock\bin\Debug\Los Alamos Timeclock.exe.config
 C:\Users\Nate\Dropbox\Visual Studio Projects\Projects\Los Alamos Timeclock\Los Alamos Timeclock\obj\x86\Debug\Los_Alamos_Timeclock.Clockinout.resources
-C:\Users\Nate\Dropbox\Visual Studio Projects\Projects\Los Alamos Timeclock\Los Alamos Timeclock\obj\x86\Debug\GenerateResource.read.1 (Data54's conflicted copy 2012-02-15).tlog
 C:\Users\Kajayacht\Desktop\chrono\la-timeclock\Los Alamos Timeclock\bin\Debug\Los Alamos Timeclock.exe.config
 C:\Users\Kajayacht\Desktop\chrono\la-timeclock\Los Alamos Timeclock\bin\Debug\Los Alamos Timeclock.exe
 C:\Users\Kajayacht\Desktop\chrono\la-timeclock\Los Alamos Timeclock\bin\Debug\Los Alamos Timeclock.pdb
@@ -29,7 +28,6 @@ C:\Users\Kajayacht\Desktop\chrono\la-timeclock\Los Alamos Timeclock\obj\x86\Debu
 C:\Users\Kajayacht\Desktop\chrono\la-timeclock\Los Alamos Timeclock\obj\x86\Debug\Los_Alamos_Timeclock.Properties.Resources.resources
 C:\Users\Kajayacht\Desktop\chrono\la-timeclock\Los Alamos Timeclock\obj\x86\Debug\Los_Alamos_Timeclock.Schedule.resources
 C:\Users\Kajayacht\Desktop\chrono\la-timeclock\Los Alamos Timeclock\obj\x86\Debug\Los_Alamos_Timeclock.Settings.resources
-C:\Users\Kajayacht\Desktop\chrono\la-timeclock\Los Alamos Timeclock\obj\x86\Debug\GenerateResource.read.1 (Data54's conflicted copy 2012-02-15).tlog
 C:\Users\Kajayacht\Desktop\chrono\la-timeclock\Los Alamos Timeclock\obj\x86\Debug\GenerateResource.read.1.tlog
 C:\Users\Kajayacht\Desktop\chrono\la-timeclock\Los Alamos Timeclock\obj\x86\Debug\GenerateResource.write.1.tlog
 C:\Users\Kajayacht\Desktop\chrono\la-timeclock\Los Alamos Timeclock\obj\x86\Debug\Los Alamos Timeclock.exe
@@ -61,7 +59,6 @@ C:\Users\Kajayacht\Desktop\chrono\la-timeclock\la-timeclock\Los Alamos Timeclock
 C:\Users\Kajayacht\Desktop\chrono\la-timeclock\la-timeclock\Los Alamos Timeclock\obj\x86\Debug\Los_Alamos_Timeclock.Properties.Resources.resources
 C:\Users\Kajayacht\Desktop\chrono\la-timeclock\la-timeclock\Los Alamos Timeclock\obj\x86\Debug\Los_Alamos_Timeclock.Schedule.resources
 C:\Users\Kajayacht\Desktop\chrono\la-timeclock\la-timeclock\Los Alamos Timeclock\obj\x86\Debug\Los_Alamos_Timeclock.Settings.resources
-C:\Users\Kajayacht\Desktop\chrono\la-timeclock\la-timeclock\Los Alamos Timeclock\obj\x86\Debug\GenerateResource.read.1 (Data54's conflicted copy 2012-02-15).tlog
 C:\Users\Kajayacht\Desktop\chrono\la-timeclock\la-timeclock\Los Alamos Timeclock\obj\x86\Debug\GenerateResource.read.1.tlog
 C:\Users\Kajayacht\Desktop\chrono\la-timeclock\la-timeclock\Los Alamos Timeclock\obj\x86\Debug\GenerateResource.write.1.tlog
 C:\Users\Kajayacht\Desktop\chrono\la-timeclock\la-timeclock\Los Alamos Timeclock\obj\x86\Debug\Los_Alamos_Timeclock.Manager.Admin.ViewLog.resources

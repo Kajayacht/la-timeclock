@@ -44,7 +44,7 @@
             // 
             // label1
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -57,7 +57,7 @@
             // 
             // linkLabel1
             // 
-            this.linkLabel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.linkLabel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
             this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -73,7 +73,7 @@
             // 
             // linkLabel2
             // 
-            this.linkLabel2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.linkLabel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.linkLabel2.AutoSize = true;
             this.linkLabel2.BackColor = System.Drawing.Color.Transparent;
             this.linkLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -90,7 +90,7 @@
             // 
             // userlabel
             // 
-            this.userlabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.userlabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.userlabel.AutoSize = true;
             this.userlabel.BackColor = System.Drawing.Color.Transparent;
             this.userlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -107,7 +107,7 @@
             // 
             // linkLabel4
             // 
-            this.linkLabel4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.linkLabel4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.linkLabel4.AutoSize = true;
             this.linkLabel4.BackColor = System.Drawing.Color.Transparent;
             this.linkLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -124,7 +124,7 @@
             // 
             // ipaddress
             // 
-            this.ipaddress.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ipaddress.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.ipaddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ipaddress.Location = new System.Drawing.Point(202, 164);
             this.ipaddress.Name = "ipaddress";
@@ -135,7 +135,7 @@
             // 
             // port
             // 
-            this.port.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.port.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.port.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.port.Location = new System.Drawing.Point(202, 196);
             this.port.Name = "port";
@@ -145,7 +145,7 @@
             // 
             // user
             // 
-            this.user.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.user.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.user.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.user.Location = new System.Drawing.Point(200, 260);
             this.user.Name = "user";
@@ -156,7 +156,7 @@
             // 
             // pass
             // 
-            this.pass.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pass.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pass.Location = new System.Drawing.Point(200, 292);
             this.pass.Name = "pass";
@@ -167,7 +167,7 @@
             // 
             // Apply
             // 
-            this.Apply.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Apply.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Apply.Location = new System.Drawing.Point(280, 324);
             this.Apply.Name = "Apply";
             this.Apply.Size = new System.Drawing.Size(75, 23);
@@ -178,7 +178,7 @@
             // 
             // database
             // 
-            this.database.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.database.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.database.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.database.Location = new System.Drawing.Point(200, 228);
             this.database.Name = "database";
@@ -188,7 +188,7 @@
             // 
             // databaselabel
             // 
-            this.databaselabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.databaselabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.databaselabel.AutoSize = true;
             this.databaselabel.BackColor = System.Drawing.Color.Transparent;
             this.databaselabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

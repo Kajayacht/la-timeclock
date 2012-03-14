@@ -78,6 +78,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -90,6 +91,7 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
@@ -102,6 +104,7 @@
             // 
             // Pass1
             // 
+            this.Pass1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Pass1.Location = new System.Drawing.Point(118, 903);
             this.Pass1.Name = "Pass1";
             this.Pass1.PasswordChar = '*';
@@ -110,6 +113,7 @@
             // 
             // User
             // 
+            this.User.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.User.Location = new System.Drawing.Point(118, 877);
             this.User.Name = "User";
             this.User.Size = new System.Drawing.Size(344, 20);
@@ -117,6 +121,7 @@
             // 
             // label15
             // 
+            this.label15.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label15.AutoSize = true;
             this.label15.BackColor = System.Drawing.Color.Transparent;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -130,6 +135,7 @@
             // 
             // label16
             // 
+            this.label16.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label16.AutoSize = true;
             this.label16.BackColor = System.Drawing.Color.Transparent;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -143,6 +149,7 @@
             // 
             // label13
             // 
+            this.label13.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.Color.Transparent;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -156,6 +163,7 @@
             // 
             // label12
             // 
+            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -169,6 +177,7 @@
             // 
             // As
             // 
+            this.As.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.As.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.As.FormattingEnabled = true;
             this.As.Items.AddRange(new object[] {
@@ -230,6 +239,7 @@
             // 
             // Ac
             // 
+            this.Ac.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Ac.Location = new System.Drawing.Point(118, 343);
             this.Ac.Name = "Ac";
             this.Ac.Size = new System.Drawing.Size(344, 20);
@@ -237,6 +247,7 @@
             // 
             // Al2
             // 
+            this.Al2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Al2.Location = new System.Drawing.Point(118, 317);
             this.Al2.Name = "Al2";
             this.Al2.Size = new System.Drawing.Size(344, 20);
@@ -244,6 +255,7 @@
             // 
             // Al1
             // 
+            this.Al1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Al1.Location = new System.Drawing.Point(118, 291);
             this.Al1.Name = "Al1";
             this.Al1.Size = new System.Drawing.Size(344, 20);
@@ -251,6 +263,7 @@
             // 
             // Lname
             // 
+            this.Lname.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Lname.Location = new System.Drawing.Point(118, 201);
             this.Lname.Name = "Lname";
             this.Lname.Size = new System.Drawing.Size(344, 20);
@@ -258,6 +271,7 @@
             // 
             // Mname
             // 
+            this.Mname.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Mname.Location = new System.Drawing.Point(118, 175);
             this.Mname.Name = "Mname";
             this.Mname.Size = new System.Drawing.Size(344, 20);
@@ -265,6 +279,7 @@
             // 
             // Fname
             // 
+            this.Fname.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Fname.Location = new System.Drawing.Point(118, 149);
             this.Fname.Name = "Fname";
             this.Fname.Size = new System.Drawing.Size(344, 20);
@@ -272,6 +287,7 @@
             // 
             // label11
             // 
+            this.label11.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -285,6 +301,7 @@
             // 
             // label10
             // 
+            this.label10.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -298,6 +315,7 @@
             // 
             // label8
             // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -311,6 +329,7 @@
             // 
             // label9
             // 
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -324,6 +343,7 @@
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -337,6 +357,7 @@
             // 
             // label6
             // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -350,6 +371,7 @@
             // 
             // label7
             // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -363,6 +385,7 @@
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -376,6 +399,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -389,6 +413,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -402,6 +427,7 @@
             // 
             // Saveemployee
             // 
+            this.Saveemployee.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Saveemployee.Location = new System.Drawing.Point(387, 579);
             this.Saveemployee.Name = "Saveemployee";
             this.Saveemployee.Size = new System.Drawing.Size(75, 75);
@@ -412,6 +438,7 @@
             // 
             // Delete
             // 
+            this.Delete.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Delete.Location = new System.Drawing.Point(341, 3);
             this.Delete.Name = "Delete";
             this.Delete.Size = new System.Drawing.Size(75, 75);
@@ -422,6 +449,7 @@
             // 
             // label17
             // 
+            this.label17.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label17.AutoSize = true;
             this.label17.BackColor = System.Drawing.Color.Transparent;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -434,6 +462,7 @@
             // 
             // Priv
             // 
+            this.Priv.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Priv.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Priv.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Priv.FormattingEnabled = true;
@@ -448,6 +477,7 @@
             // 
             // label19
             // 
+            this.label19.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label19.AutoSize = true;
             this.label19.BackColor = System.Drawing.Color.Transparent;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -461,6 +491,7 @@
             // 
             // Changepass
             // 
+            this.Changepass.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Changepass.Location = new System.Drawing.Point(118, 975);
             this.Changepass.Name = "Changepass";
             this.Changepass.Size = new System.Drawing.Size(344, 35);
@@ -471,6 +502,7 @@
             // 
             // Newemployee
             // 
+            this.Newemployee.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Newemployee.Location = new System.Drawing.Point(422, 3);
             this.Newemployee.Name = "Newemployee";
             this.Newemployee.Size = new System.Drawing.Size(75, 75);
@@ -481,6 +513,7 @@
             // 
             // Email
             // 
+            this.Email.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Email.Location = new System.Drawing.Point(118, 485);
             this.Email.Name = "Email";
             this.Email.Size = new System.Drawing.Size(344, 20);
@@ -488,6 +521,7 @@
             // 
             // label14
             // 
+            this.label14.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label14.AutoSize = true;
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -501,6 +535,7 @@
             // 
             // label20
             // 
+            this.label20.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label20.AutoSize = true;
             this.label20.BackColor = System.Drawing.Color.Transparent;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -514,6 +549,7 @@
             // 
             // label21
             // 
+            this.label21.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label21.AutoSize = true;
             this.label21.BackColor = System.Drawing.Color.Transparent;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -527,6 +563,7 @@
             // 
             // jobs
             // 
+            this.jobs.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.jobs.FormattingEnabled = true;
             this.jobs.Items.AddRange(new object[] {
             "Bartender",
@@ -543,6 +580,7 @@
             // 
             // label22
             // 
+            this.label22.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label22.AutoSize = true;
             this.label22.BackColor = System.Drawing.Color.Transparent;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -555,6 +593,7 @@
             // 
             // Pass2
             // 
+            this.Pass2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Pass2.Location = new System.Drawing.Point(118, 949);
             this.Pass2.Name = "Pass2";
             this.Pass2.PasswordChar = '*';
@@ -563,6 +602,7 @@
             // 
             // label23
             // 
+            this.label23.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label23.BackColor = System.Drawing.Color.Transparent;
             this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.ForeColor = System.Drawing.Color.White;
@@ -575,6 +615,7 @@
             // 
             // pay
             // 
+            this.pay.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pay.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pay.Location = new System.Drawing.Point(289, 703);
             this.pay.Name = "pay";
@@ -583,6 +624,7 @@
             // 
             // label24
             // 
+            this.label24.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label24.AutoSize = true;
             this.label24.BackColor = System.Drawing.Color.Transparent;
             this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -596,6 +638,7 @@
             // 
             // Savepay
             // 
+            this.Savepay.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Savepay.Location = new System.Drawing.Point(387, 739);
             this.Savepay.Name = "Savepay";
             this.Savepay.Size = new System.Drawing.Size(75, 75);
@@ -606,6 +649,7 @@
             // 
             // SSN
             // 
+            this.SSN.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.SSN.Location = new System.Drawing.Point(118, 229);
             this.SSN.Mask = "000-00-0000";
             this.SSN.Name = "SSN";
@@ -614,6 +658,7 @@
             // 
             // Phone
             // 
+            this.Phone.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Phone.Location = new System.Drawing.Point(119, 459);
             this.Phone.Mask = "(999) 000-0000";
             this.Phone.Name = "Phone";
@@ -622,6 +667,7 @@
             // 
             // Az
             // 
+            this.Az.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Az.Location = new System.Drawing.Point(118, 395);
             this.Az.Mask = "00000";
             this.Az.Name = "Az";

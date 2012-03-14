@@ -35,6 +35,7 @@
             // 
             // Week
             // 
+            this.Week.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Week.Location = new System.Drawing.Point(150, 3);
             this.Week.Name = "Week";
             this.Week.Size = new System.Drawing.Size(200, 20);
@@ -43,6 +44,7 @@
             // 
             // weeklabel
             // 
+            this.weeklabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.weeklabel.AutoSize = true;
             this.weeklabel.BackColor = System.Drawing.Color.Transparent;
             this.weeklabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -55,6 +57,9 @@
             // 
             // Pay
             // 
+            this.Pay.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Pay.Location = new System.Drawing.Point(55, 78);
             this.Pay.Name = "Pay";
             this.Pay.ReadOnly = true;
@@ -73,6 +78,7 @@
             this.Controls.Add(this.Pay);
             this.Controls.Add(this.weeklabel);
             this.Controls.Add(this.Week);
+            this.DoubleBuffered = true;
             this.Name = "Paychecks";
             this.Size = new System.Drawing.Size(500, 400);
             this.ResumeLayout(false);

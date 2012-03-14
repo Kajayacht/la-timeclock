@@ -40,6 +40,7 @@
             // 
             // jobs
             // 
+            this.jobs.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.jobs.FormattingEnabled = true;
             this.jobs.Location = new System.Drawing.Point(102, 127);
             this.jobs.Name = "jobs";
@@ -49,6 +50,7 @@
             // 
             // nlabel
             // 
+            this.nlabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.nlabel.AutoSize = true;
             this.nlabel.BackColor = System.Drawing.Color.Transparent;
             this.nlabel.ForeColor = System.Drawing.Color.White;
@@ -60,6 +62,7 @@
             // 
             // plabel
             // 
+            this.plabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.plabel.AutoSize = true;
             this.plabel.BackColor = System.Drawing.Color.Transparent;
             this.plabel.ForeColor = System.Drawing.Color.White;
@@ -71,6 +74,7 @@
             // 
             // jname
             // 
+            this.jname.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.jname.Location = new System.Drawing.Point(319, 127);
             this.jname.Name = "jname";
             this.jname.Size = new System.Drawing.Size(100, 20);
@@ -78,6 +82,7 @@
             // 
             // jpay
             // 
+            this.jpay.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.jpay.Location = new System.Drawing.Point(318, 150);
             this.jpay.Name = "jpay";
             this.jpay.Size = new System.Drawing.Size(100, 20);
@@ -85,6 +90,7 @@
             // 
             // Updatejob
             // 
+            this.Updatejob.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.Updatejob.Location = new System.Drawing.Point(156, 284);
             this.Updatejob.Name = "Updatejob";
             this.Updatejob.Size = new System.Drawing.Size(75, 75);
@@ -95,6 +101,7 @@
             // 
             // New
             // 
+            this.New.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.New.Location = new System.Drawing.Point(237, 284);
             this.New.Name = "New";
             this.New.Size = new System.Drawing.Size(75, 75);
@@ -105,6 +112,7 @@
             // 
             // Delete
             // 
+            this.Delete.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.Delete.Location = new System.Drawing.Point(318, 284);
             this.Delete.Name = "Delete";
             this.Delete.Size = new System.Drawing.Size(75, 75);
@@ -127,6 +135,7 @@
             this.Controls.Add(this.plabel);
             this.Controls.Add(this.nlabel);
             this.Controls.Add(this.jobs);
+            this.DoubleBuffered = true;
             this.Name = "EditJobs";
             this.Size = new System.Drawing.Size(500, 400);
             this.ResumeLayout(false);

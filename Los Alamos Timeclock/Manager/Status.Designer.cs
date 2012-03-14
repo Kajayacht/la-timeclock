@@ -163,6 +163,7 @@
             // 
             // Start
             // 
+            this.Start.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.Start.Location = new System.Drawing.Point(79, 294);
             this.Start.Mask = "90:00";
             this.Start.Name = "Start";
@@ -171,6 +172,7 @@
             // 
             // End
             // 
+            this.End.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.End.Location = new System.Drawing.Point(79, 324);
             this.End.Mask = "90:00";
             this.End.Name = "End";
@@ -179,6 +181,7 @@
             // 
             // b1out
             // 
+            this.b1out.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.b1out.Location = new System.Drawing.Point(186, 294);
             this.b1out.Mask = "90:00";
             this.b1out.Name = "b1out";
@@ -211,6 +214,7 @@
             // 
             // b1in
             // 
+            this.b1in.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.b1in.Location = new System.Drawing.Point(252, 294);
             this.b1in.Mask = "90:00";
             this.b1in.Name = "b1in";
@@ -219,6 +223,7 @@
             // 
             // b2in
             // 
+            this.b2in.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.b2in.Location = new System.Drawing.Point(252, 321);
             this.b2in.Mask = "90:00";
             this.b2in.Name = "b2in";
@@ -239,6 +244,7 @@
             // 
             // b2out
             // 
+            this.b2out.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.b2out.Location = new System.Drawing.Point(186, 321);
             this.b2out.Mask = "90:00";
             this.b2out.Name = "b2out";
@@ -259,6 +265,7 @@
             // 
             // lin
             // 
+            this.lin.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lin.Location = new System.Drawing.Point(252, 347);
             this.lin.Mask = "90:00";
             this.lin.Name = "lin";
@@ -267,6 +274,7 @@
             // 
             // lout
             // 
+            this.lout.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lout.Location = new System.Drawing.Point(186, 347);
             this.lout.Mask = "90:00";
             this.lout.Name = "lout";

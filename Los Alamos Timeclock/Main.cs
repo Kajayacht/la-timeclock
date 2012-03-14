@@ -74,10 +74,6 @@ namespace Los_Alamos_Timeclock
                     Employees.Add(new Employee(Main.reader["LName"].ToString() + ", " + Main.reader["FName"].ToString(), int.Parse(Main.reader["ID"].ToString())));
                 }
 
-                //comboBox1.DisplayMember = "getname";
-                //comboBox1.ValueMember = "gid";
-                //comboBox1.DataSource = Employees;
-
                 Main.reader.Close();
                 Main.myConnection.Close();
                 return Employees;
@@ -213,6 +209,13 @@ namespace Los_Alamos_Timeclock
             string database = Microsoft.VisualBasic.Interaction.InputBox("Enter Database Name", "", Properties.Settings.Default.Database, 0, 0);
             string uid = Microsoft.VisualBasic.Interaction.InputBox("Enter Database User", "", Properties.Settings.Default.User, 0, 0);
             string password = Microsoft.VisualBasic.Interaction.InputBox("Enter Database User Password", "", Properties.Settings.Default.Password, 0, 0);
+
+            Properties.Settings.Default.IP = server;
+            Properties.Settings.Default.Port = port;
+            Properties.Settings.Default.Database = database;
+            Properties.Settings.Default.User = uid;
+            Properties.Settings.Default.Password = password;
+            Properties.Settings.Default.Save();
 
             //Build new sql connection
             Main.myConnection = new MySqlConnection(
