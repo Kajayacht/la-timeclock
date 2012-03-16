@@ -389,3 +389,27 @@ Log Entry : 10:47:48 AM Tuesday, March 13, 2012
   :Jennifer Chavez deleted job: 
  Job= Test
 -------------------------------
+
+Log Entry : 1:02:44 PM Friday, March 16, 2012
+  :
+  :Jennifer Chavez changed login for Dave Earl Chappel: 
+User= dave Pass= a
+-------------------------------
+
+Log Entry : 1:03:18 PM Friday, March 16, 2012
+  :
+  :Jennifer Chavez changed login for Dave Earl Chappel: 
+User= dave Pass= a
+-------------------------------
+
+Log Entry : 1:09:47 PM Friday, March 16, 2012
+  :
+  :Jennifer Chavez changed login for Dave Earl Chappel: 
+User= dave Pass= a
+-------------------------------
+
+Log Entry : 1:17:02 PM Friday, March 16, 2012
+  :
+  :Jennifer Chavez changed login for Dave Earl Chappel: 
+User= dave Pass= a
+-------------------------------

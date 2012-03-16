@@ -244,21 +244,33 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             if (Pass1.Text == Pass2.Text && User.Text != "")
             {
                 Main.myConnection.Open();
-                Main.maininstance.sqlreader("Select * FROM Users WHERE ID='" + ID + "'");
+                Main.maininstance.sqlreader("Select * FROM Users WHERE Lower(User)=Lower('" + User.Text + "') AND ID!='"+ID+"'");
                 Boolean rows = Main.reader.HasRows;
                 Main.reader.Close();
-                Main.myConnection.Close();
-
-                if (rows)
+                if (!rows)
                 {
-                    Main.maininstance.sqlcommand("UPDATE Users SET User='" + User.Text + "', Password='" + Pass1.Text + "' WHERE ID='" + ID + "'");
+
+                    Main.maininstance.sqlreader("Select * FROM Users WHERE ID='" + ID + "'");
+                    rows = Main.reader.HasRows;
+                    Main.reader.Close();
+                    Main.myConnection.Close();
+
+                    if (rows)
+                    {
+                        Main.maininstance.sqlcommand("UPDATE Users SET User='" + User.Text + "', Password=PASSWORD('" + Pass1.Text + "') WHERE ID='" + ID + "'");
+                    }
+                    else
+                    {
+                        Main.maininstance.sqlcommand("INSERT INTO Users (`ID`,`User`,`Password`) Values('" + ID + "', '" + User.Text + "', PASSWORD('" + Pass1.Text + "'))");
+                    }
+                    MessageBox.Show("Login Updated");
+                    Log.writeLog(Main.EName + " changed login for " + Fname.Text + " " + Mname.Text + " " + Lname.Text + ": \n" + "User= " + User.Text);
                 }
                 else
                 {
-                    Main.maininstance.sqlcommand("INSERT INTO Users (`ID`,`User`,`Password`) Values('" + ID + "', '" + User.Text + "', '" + Pass1.Text + "')");
+                    MessageBox.Show("Username already exists");
+                    Main.myConnection.Close();
                 }
-                MessageBox.Show("Login Updated");
-                Log.writeLog(Main.EName + " changed login for " + Fname.Text + " " + Mname.Text + " " + Lname.Text + ": \n" + "User= " + User.Text + " Pass= " + Pass1.Text);
             }
 
         }

@@ -30,8 +30,8 @@ namespace Los_Alamos_Timeclock
                                             "ON a.ID=c.ID " +
                                             "Left Join Manager d " +
                                             "ON a.ID=d.ID " +
-                                            "Where a.User='" + IN_USER.Text + "' " +
-                                            "And a.Password='" + IN_PASS.Text + "'");
+                                            "Where LOWER(a.User)=LOWER('" + IN_USER.Text + "') " +
+                                            "And a.Password=PASSWORD('"+IN_PASS.Text + "')");
 
                 if (Main.reader.HasRows)
                 {
