@@ -13,10 +13,26 @@ using System.Collections;
 
 namespace Los_Alamos_Timeclock
 {
-    
+    /*
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+     */
+
+
+    //Main file for program
+
     public partial class Main : Form
     {
-        public static string week;
         public static Main maininstance = null;
         public static string ID;
         public static string EName;
@@ -24,7 +40,6 @@ namespace Los_Alamos_Timeclock
         public static ArrayList EmployeeList;
         public static MySqlConnection myConnection = new MySqlConnection();
         public static MySqlDataReader reader;
-        public static DateTime w;
         public static string permissions = "";
 
 
@@ -35,18 +50,12 @@ namespace Los_Alamos_Timeclock
                                     ControlStyles.UserPaint |
                                     ControlStyles.AllPaintingInWmPaint, true);
             maininstance = this;
-            w = DateTime.Now.Date;
-            while (w.DayOfWeek != DayOfWeek.Monday)
-            {
-                w = w.AddDays(-1);
-            }
-            w = w.Date;
-            week = w.Date.ToShortDateString();
 
-
+            //Starts up with login user controls
             panel1.Controls.Clear();
             panel1.Controls.Add(new Login());
             panel1.Controls[0].Dock = DockStyle.Fill;
+            //Connects to the database
             Main.myConnection = new MySqlConnection(
                 "SERVER=" + Properties.Settings.Default.IP +
                 ";PORT=" + Properties.Settings.Default.Port +
@@ -59,6 +68,7 @@ namespace Los_Alamos_Timeclock
             EmployeeList = getEmployees();
         }
 
+        //Method to get Employee List
         public ArrayList getEmployees()
         {
             ArrayList Employees = new ArrayList();
@@ -92,6 +102,8 @@ namespace Los_Alamos_Timeclock
             }
 
         }
+
+        //Class to store the Employees in the Employee List
         public class Employee
         {
             private string Name;
@@ -120,6 +132,7 @@ namespace Los_Alamos_Timeclock
             }
         }
 
+        //Method to get Job List
         public ArrayList getJobs()
         {
             ArrayList joblist = new ArrayList();
@@ -137,6 +150,7 @@ namespace Los_Alamos_Timeclock
             Main.myConnection.Close();
             return joblist;
         }
+        //Class to store the Jobs in the Job List
         public class Job
         {
             private string Jobname;
@@ -229,7 +243,7 @@ namespace Los_Alamos_Timeclock
             connectDB(myConnection);
         }
 
-
+        //method to call SQL commands
         public void sqlcommand(String c)
         {
             try
@@ -247,6 +261,8 @@ namespace Los_Alamos_Timeclock
                 myConnection.Close();
             }
         }
+
+        //method to read from the SQL database
         public void sqlreader(String c)
         {
             c = c + " LIMIT 0,1000";
@@ -255,6 +271,7 @@ namespace Los_Alamos_Timeclock
             reader.Read();
         }
 
+        //method to round time to nearest 15 min
         public DateTime roundtime(DateTime t)
         {
             TimeSpan a = TimeSpan.ParseExact(t.ToString("HH:mm:ss"), "g", null);
@@ -275,22 +292,22 @@ namespace Los_Alamos_Timeclock
                 a = a.Add(TimeSpan.FromMinutes(q * 15));
             }
             a = a.Subtract(TimeSpan.FromSeconds(a.Seconds));
-            //return a;
             t = DateTime.ParseExact(a.ToString(), "HH:mm:ss", null);
             return t;
         }
 
+        //method to throw error messages
         public void error(String s)
         {
             MessageBox.Show(s);
         }
-
 
         private void Main_Load(object sender, EventArgs e)
         {
             menu1.Hide();
         }
 
+        //start clock
         private void menu1_Load(object sender, EventArgs e)
         {
             menu1.timer1.Start();
