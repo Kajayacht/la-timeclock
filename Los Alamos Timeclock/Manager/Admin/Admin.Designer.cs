@@ -35,12 +35,14 @@
             this.editjobs = new System.Windows.Forms.Button();
             this.config = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.employeenotes = new System.Windows.Forms.Button();
+            this.phonebook = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // editemployees
             // 
             this.editemployees.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.editemployees.Location = new System.Drawing.Point(136, 155);
+            this.editemployees.Location = new System.Drawing.Point(217, 155);
             this.editemployees.Name = "editemployees";
             this.editemployees.Size = new System.Drawing.Size(75, 75);
             this.editemployees.TabIndex = 0;
@@ -84,7 +86,7 @@
             // editjobs
             // 
             this.editjobs.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.editjobs.Location = new System.Drawing.Point(217, 155);
+            this.editjobs.Location = new System.Drawing.Point(298, 155);
             this.editjobs.Name = "editjobs";
             this.editjobs.Size = new System.Drawing.Size(75, 75);
             this.editjobs.TabIndex = 4;
@@ -114,12 +116,36 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // employeenotes
+            // 
+            this.employeenotes.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.employeenotes.Location = new System.Drawing.Point(298, 74);
+            this.employeenotes.Name = "employeenotes";
+            this.employeenotes.Size = new System.Drawing.Size(75, 75);
+            this.employeenotes.TabIndex = 7;
+            this.employeenotes.Text = "Employee Notes";
+            this.employeenotes.UseVisualStyleBackColor = true;
+            this.employeenotes.Click += new System.EventHandler(this.employeenotes_Click);
+            // 
+            // phonebook
+            // 
+            this.phonebook.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.phonebook.Location = new System.Drawing.Point(136, 155);
+            this.phonebook.Name = "phonebook";
+            this.phonebook.Size = new System.Drawing.Size(75, 75);
+            this.phonebook.TabIndex = 8;
+            this.phonebook.Text = "Phone Book";
+            this.phonebook.UseVisualStyleBackColor = true;
+            this.phonebook.Click += new System.EventHandler(this.phonebook_Click);
+            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Los_Alamos_Timeclock.Properties.Resources._1287421014661;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.phonebook);
+            this.Controls.Add(this.employeenotes);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.config);
             this.Controls.Add(this.editjobs);
@@ -143,5 +169,7 @@
         private System.Windows.Forms.Button editjobs;
         private System.Windows.Forms.Button config;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button employeenotes;
+        private System.Windows.Forms.Button phonebook;
     }
 }

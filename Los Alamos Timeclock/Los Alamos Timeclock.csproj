@@ -106,6 +106,18 @@
     <Compile Include="Manager\Admin\ViewLog.Designer.cs">
       <DependentUpon>ViewLog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Manager\Employeenotes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Manager\Employeenotes.Designer.cs">
+      <DependentUpon>Employeenotes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\Phonebook.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Manager\Phonebook.Designer.cs">
+      <DependentUpon>Phonebook.cs</DependentUpon>
+    </Compile>
     <Compile Include="Manager\Status.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -183,6 +195,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Manager\Admin\ViewLog.resx">
       <DependentUpon>ViewLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager\Employeenotes.resx">
+      <DependentUpon>Employeenotes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager\Phonebook.resx">
+      <DependentUpon>Phonebook.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manager\Status.resx">
       <DependentUpon>Status.cs</DependentUpon>

@@ -45,7 +45,6 @@
             this.Ac = new System.Windows.Forms.TextBox();
             this.Al2 = new System.Windows.Forms.TextBox();
             this.Al1 = new System.Windows.Forms.TextBox();
-            this.Az = new System.Windows.Forms.TextBox();
             this.As = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -63,6 +62,7 @@
             this.label19 = new System.Windows.Forms.Label();
             this.SSN = new System.Windows.Forms.MaskedTextBox();
             this.Phone = new System.Windows.Forms.MaskedTextBox();
+            this.Az = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -275,14 +275,6 @@
             this.Al1.Size = new System.Drawing.Size(344, 20);
             this.Al1.TabIndex = 5;
             // 
-            // Az
-            // 
-            this.Az.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Az.Location = new System.Drawing.Point(107, 349);
-            this.Az.Name = "Az";
-            this.Az.Size = new System.Drawing.Size(344, 20);
-            this.Az.TabIndex = 9;
-            // 
             // As
             // 
             this.As.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -379,6 +371,7 @@
             this.Pass2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Pass2.Location = new System.Drawing.Point(107, 555);
             this.Pass2.Name = "Pass2";
+            this.Pass2.PasswordChar = '*';
             this.Pass2.Size = new System.Drawing.Size(344, 20);
             this.Pass2.TabIndex = 14;
             // 
@@ -387,6 +380,7 @@
             this.Pass1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Pass1.Location = new System.Drawing.Point(107, 529);
             this.Pass1.Name = "Pass1";
+            this.Pass1.PasswordChar = '*';
             this.Pass1.Size = new System.Drawing.Size(344, 20);
             this.Pass1.TabIndex = 13;
             // 
@@ -531,6 +525,15 @@
             this.Phone.Size = new System.Drawing.Size(343, 20);
             this.Phone.TabIndex = 10;
             // 
+            // Az
+            // 
+            this.Az.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Az.Location = new System.Drawing.Point(108, 349);
+            this.Az.Mask = "00000";
+            this.Az.Name = "Az";
+            this.Az.Size = new System.Drawing.Size(344, 20);
+            this.Az.TabIndex = 34;
+            // 
             // Newemployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -538,6 +541,7 @@
             this.AutoScroll = true;
             this.BackgroundImage = global::Los_Alamos_Timeclock.Properties.Resources._1287421014661;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.Az);
             this.Controls.Add(this.Phone);
             this.Controls.Add(this.SSN);
             this.Controls.Add(this.Email);
@@ -555,7 +559,6 @@
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.As);
-            this.Controls.Add(this.Az);
             this.Controls.Add(this.Ac);
             this.Controls.Add(this.Al2);
             this.Controls.Add(this.Al1);
@@ -600,7 +603,6 @@
         private System.Windows.Forms.TextBox Ac;
         private System.Windows.Forms.TextBox Al2;
         private System.Windows.Forms.TextBox Al1;
-        private System.Windows.Forms.TextBox Az;
         private System.Windows.Forms.ComboBox As;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
@@ -618,5 +620,6 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.MaskedTextBox SSN;
         private System.Windows.Forms.MaskedTextBox Phone;
+        private System.Windows.Forms.MaskedTextBox Az;
     }
 }

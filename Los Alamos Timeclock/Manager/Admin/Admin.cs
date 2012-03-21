@@ -90,5 +90,19 @@ namespace Los_Alamos_Timeclock
             Main.maininstance.panel1.Controls.Add(new Status());
             Main.maininstance.panel1.Controls[0].Dock = DockStyle.Fill;
         }
+
+        private void phonebook_Click(object sender, EventArgs e)
+        {
+            Main.maininstance.panel1.Controls.Clear();
+            Main.maininstance.panel1.Controls.Add(new Phonebook());
+            Main.maininstance.panel1.Controls[0].Dock = DockStyle.Fill;
+        }
+
+        private void employeenotes_Click(object sender, EventArgs e)
+        {
+            Main.maininstance.panel1.Controls.Clear();
+            Main.maininstance.panel1.Controls.Add(new Employeenotes());
+            Main.maininstance.panel1.Controls[0].Dock = DockStyle.Fill;
+        }
     }
 }
