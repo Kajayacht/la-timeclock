@@ -532,7 +532,7 @@
             this.Az.Mask = "00000";
             this.Az.Name = "Az";
             this.Az.Size = new System.Drawing.Size(344, 20);
-            this.Az.TabIndex = 34;
+            this.Az.TabIndex = 9;
             // 
             // Newemployee
             // 
