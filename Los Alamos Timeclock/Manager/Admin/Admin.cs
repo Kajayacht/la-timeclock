@@ -18,11 +18,11 @@ namespace Los_Alamos_Timeclock
             InitializeComponent();
             if (Main.permissions == "Manager")
             {
-                editemployees.BackColor = Color.Gray;
-                editjobs.BackColor = Color.Gray;
-                calculatepay.BackColor = Color.Gray;
-                viewlog.BackColor = Color.Gray;
-                config.BackColor = Color.Gray;
+                editemployeesButton.BackColor = Color.Gray;
+                editjobsButton.BackColor = Color.Gray;
+                calculatepayButton.BackColor = Color.Gray;
+                viewlogButton.BackColor = Color.Gray;
+                settingsButton.BackColor = Color.Gray;
 
             }
         }
@@ -37,7 +37,7 @@ namespace Los_Alamos_Timeclock
             }
         }
 
-        private void Paychecks_Click(object sender, EventArgs e)
+        private void paychecks_Click(object sender, EventArgs e)
         {
             if (Main.permissions == "Admin")
             {
@@ -47,7 +47,7 @@ namespace Los_Alamos_Timeclock
             }
         }
 
-        private void config_Click(object sender, EventArgs e)
+        private void settings_Click(object sender, EventArgs e)
         {
             if (Main.permissions == "Admin")
             {
@@ -57,7 +57,7 @@ namespace Los_Alamos_Timeclock
             }
         }
 
-        private void Editschedule_Click(object sender, EventArgs e)
+        private void editschedule_Click(object sender, EventArgs e)
         {
             Main.maininstance.panel1.Controls.Clear();
             Main.maininstance.panel1.Controls.Add(new Makesched());
@@ -84,7 +84,7 @@ namespace Los_Alamos_Timeclock
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void status_Click(object sender, EventArgs e)
         {
             Main.maininstance.panel1.Controls.Clear();
             Main.maininstance.panel1.Controls.Add(new Status());

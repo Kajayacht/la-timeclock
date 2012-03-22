@@ -206,12 +206,12 @@ namespace Los_Alamos_Timeclock.Manager
                                 "a.Date, " +
                                 "CONCAT(c.LName, ', ',c.FName,' ',c.MName) AS Name, " +
                                 "a.Status,a.JID As Job, a.Start ,b.Start As 'Scheduled Start',  " +
-                                "a.B1out As 'B1 OUT', " +
-                                "a.B1in As 'B1 IN', " +
-                                "a.B2out As 'B2 OUT', " +
-                                "a.B2in As 'B2 IN', " +
-                                "a.Lout As 'L OUT', " +
-                                "a.Lin As 'L IN', " +
+                                "a.B1out As 'Break 1 OUT', " +
+                                "a.B1in As 'Break 1 IN', " +
+                                "a.B2out As 'Break 2 OUT', " +
+                                "a.B2in As 'Break 2 IN', " +
+                                "a.Lout As 'Lunch OUT', " +
+                                "a.Lin As 'Lunch IN', " +
                                 "a.End, b.End AS 'Scheduled End'  " +
                             "FROM `Hours Worked` a " +
                                 "LEFT JOIN Schedule b  " +
@@ -224,12 +224,12 @@ namespace Los_Alamos_Timeclock.Manager
                                 "b.Date, " +
                                 "CONCAT(c.LName, ', ',c.FName,' ',c.MName) AS Name, " +
                                 "a.Status,a.JID As Job, a.Start ,b.Start As 'Scheduled Start', " +
-                                "a.B1out As 'B1 OUT', " +
-                                "a.B1in As 'B1 IN', " +
-                                "a.B2out As 'B2 OUT', " +
-                                "a.B2in As 'B2 IN', " +
-                                "a.Lout As 'L OUT', " +
-                                "a.Lin As 'L IN', " +
+                                "a.B1out As 'Break 1 OUT', " +
+                                "a.B1in As 'Break 1 IN', " +
+                                "a.B2out As 'Break 2 OUT', " +
+                                "a.B2in As 'Break 2 IN', " +
+                                "a.Lout As 'Lunch OUT', " +
+                                "a.Lin As 'Lunch IN', " +
                                 "a.End, b.End AS 'Scheduled End'  " +
                             "FROM `Hours Worked` a " +
                                 "RIGHT JOIN Schedule b  " +
@@ -242,12 +242,12 @@ namespace Los_Alamos_Timeclock.Manager
                                 "b.Date, " +
                                 "CONCAT(c.LName, ', ',c.FName,' ',c.MName) AS Name, " +
                                 "a.Status,a.JID As Job, a.Start ,b.Start As 'Scheduled Start', " +
-                                "a.B1out As 'B1 OUT', " +
-                                "a.B1in As 'B1 IN', " +
-                                "a.B2out As 'B2 OUT', " +
-                                "a.B2in As 'B2 IN', " +
-                                "a.Lout As 'L OUT', " +
-                                "a.Lin As 'L IN', " +
+                                "a.B1out As 'Break 1 OUT', " +
+                                "a.B1in As 'Break 1 IN', " +
+                                "a.B2out As 'Break 2 OUT', " +
+                                "a.B2in As 'Break 2 IN', " +
+                                "a.Lout As 'Lunch OUT', " +
+                                "a.Lin As 'Lunch IN', " +
                                 "a.End, b.End AS 'Scheduled End'  " +
                             "FROM `Hours Worked` a " +
                                 "RIGHT JOIN Schedule b  " +

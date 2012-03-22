@@ -28,45 +28,45 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Week = new System.Windows.Forms.DateTimePicker();
-            this.weeklabel = new System.Windows.Forms.Label();
-            this.Pay = new System.Windows.Forms.RichTextBox();
+            this.weekCalander = new System.Windows.Forms.DateTimePicker();
+            this.weekLabel = new System.Windows.Forms.Label();
+            this.payTextbox = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
-            // Week
+            // weekCalander
             // 
-            this.Week.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Week.Location = new System.Drawing.Point(150, 3);
-            this.Week.Name = "Week";
-            this.Week.Size = new System.Drawing.Size(200, 20);
-            this.Week.TabIndex = 0;
-            this.Week.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            this.weekCalander.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.weekCalander.Location = new System.Drawing.Point(150, 3);
+            this.weekCalander.Name = "weekCalander";
+            this.weekCalander.Size = new System.Drawing.Size(200, 20);
+            this.weekCalander.TabIndex = 0;
+            this.weekCalander.ValueChanged += new System.EventHandler(this.weekCalander_ValueChanged);
             // 
-            // weeklabel
+            // weekLabel
             // 
-            this.weeklabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.weeklabel.AutoSize = true;
-            this.weeklabel.BackColor = System.Drawing.Color.Transparent;
-            this.weeklabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.weeklabel.ForeColor = System.Drawing.Color.White;
-            this.weeklabel.Location = new System.Drawing.Point(102, 26);
-            this.weeklabel.Name = "weeklabel";
-            this.weeklabel.Size = new System.Drawing.Size(299, 25);
-            this.weeklabel.TabIndex = 1;
-            this.weeklabel.Text = "Pay for 2/27/2012-3/4/2012";
+            this.weekLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.weekLabel.AutoSize = true;
+            this.weekLabel.BackColor = System.Drawing.Color.Transparent;
+            this.weekLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.weekLabel.ForeColor = System.Drawing.Color.White;
+            this.weekLabel.Location = new System.Drawing.Point(102, 26);
+            this.weekLabel.Name = "weekLabel";
+            this.weekLabel.Size = new System.Drawing.Size(299, 25);
+            this.weekLabel.TabIndex = 1;
+            this.weekLabel.Text = "Pay for 2/27/2012-3/4/2012";
             // 
-            // Pay
+            // payTextbox
             // 
-            this.Pay.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.payTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Pay.Location = new System.Drawing.Point(55, 78);
-            this.Pay.Name = "Pay";
-            this.Pay.ReadOnly = true;
-            this.Pay.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.Pay.Size = new System.Drawing.Size(388, 263);
-            this.Pay.TabIndex = 4;
-            this.Pay.Text = "";
+            this.payTextbox.Location = new System.Drawing.Point(55, 78);
+            this.payTextbox.Name = "payTextbox";
+            this.payTextbox.ReadOnly = true;
+            this.payTextbox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.payTextbox.Size = new System.Drawing.Size(388, 263);
+            this.payTextbox.TabIndex = 4;
+            this.payTextbox.Text = "";
             // 
             // Paychecks
             // 
@@ -75,9 +75,9 @@
             this.AutoScroll = true;
             this.BackgroundImage = global::Los_Alamos_Timeclock.Properties.Resources._1287421014661;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Controls.Add(this.Pay);
-            this.Controls.Add(this.weeklabel);
-            this.Controls.Add(this.Week);
+            this.Controls.Add(this.payTextbox);
+            this.Controls.Add(this.weekLabel);
+            this.Controls.Add(this.weekCalander);
             this.DoubleBuffered = true;
             this.Name = "Paychecks";
             this.Size = new System.Drawing.Size(500, 400);
@@ -88,8 +88,8 @@
 
         #endregion
 
-        private System.Windows.Forms.DateTimePicker Week;
-        private System.Windows.Forms.Label weeklabel;
-        private System.Windows.Forms.RichTextBox Pay;
+        private System.Windows.Forms.DateTimePicker weekCalander;
+        private System.Windows.Forms.Label weekLabel;
+        private System.Windows.Forms.RichTextBox payTextbox;
     }
 }

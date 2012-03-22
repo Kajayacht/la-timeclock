@@ -15,34 +15,34 @@ namespace Los_Alamos_Timeclock.Manager.Admin
         {
             InitializeComponent();
 
-            jobs.DisplayMember = "getname";
-            jobs.ValueMember = "getpay";
-            jobs.DataSource = Main.joblist;
+            jobsBox.DisplayMember = "getname";
+            jobsBox.ValueMember = "getpay";
+            jobsBox.DataSource = Main.joblist;
 
             //!Decimal.TryParse(pay.Text, out a)
         }
 
-        private void jobs_SelectedIndexChanged(object sender, EventArgs e)
+        private void jobsBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            jname.Text = jobs.Text;
-            jpay.Text = jobs.SelectedValue.ToString();
+            jobnameTextbox.Text = jobsBox.Text;
+            startingpayTextbox.Text = jobsBox.SelectedValue.ToString();
         }
 
         public Boolean validate()
         {
             Decimal a;
             Main.myConnection.Open();
-            Main.maininstance.sqlreader("SELECT * FROM Jobs WHERE JID='"+jname.Text+"'");
-            Boolean rows = Main.reader.HasRows;
+            Main.maininstance.sqlreader("SELECT * FROM Jobs WHERE JID='"+jobnameTextbox.Text+"'");
+            Boolean hasrows = Main.reader.HasRows;
             Main.reader.Close();
             Main.myConnection.Close();
 
-            if (rows && jname.Text != jobs.Text)
+            if (hasrows && jobnameTextbox.Text != jobsBox.Text)
             {
-                MessageBox.Show("A job with the name of " + jname.Text + " already exists");
+                MessageBox.Show("A job with the name of " + jobnameTextbox.Text + " already exists");
                 return false;
             }
-            else if (!Decimal.TryParse(jpay.Text, out a))
+            else if (!Decimal.TryParse(startingpayTextbox.Text, out a))
             {
                 MessageBox.Show("Invalid starting pay");
                 return false;
@@ -53,52 +53,52 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             }
         }
 
-        public void refreshjobs()
+        public void refreshJobs()
         {
             Main.joblist = Main.maininstance.getJobs();
-            jobs.DataSource = Main.joblist;
+            jobsBox.DataSource = Main.joblist;
         }
 
-        private void Updatejob_Click(object sender, EventArgs e)
+        private void updateJob_Click(object sender, EventArgs e)
         {
             if (validate())
             {
-                Main.maininstance.sqlcommand("UPDATE Jobs SET JID='"+jname.Text+"',JSPay='"+Decimal.Parse(jpay.Text)+"' WHERE JID='"+jobs.Text+"'");
+                Main.maininstance.sqlcommand("UPDATE Jobs SET JID='"+jobnameTextbox.Text+"',JSPay='"+Decimal.Parse(startingpayTextbox.Text)+"' WHERE JID='"+jobsBox.Text+"'");
                 MessageBox.Show("Update successful");
-                Log.writeLog(Main.eName + " updated job: " + "\n Job= " + jname.Text + "\n Starting Pay= " + Decimal.Parse(jpay.Text));
-                refreshjobs();
+                Log.writeLog(Main.eName + " updated job: " + "\n Job= " + jobnameTextbox.Text + "\n Starting Pay= " + Decimal.Parse(startingpayTextbox.Text));
+                refreshJobs();
             }
       
         }
 
-        private void New_Click(object sender, EventArgs e)
+        private void newJob_Click(object sender, EventArgs e)
         {
-            if (jobs.Text != jname.Text)
+            if (jobsBox.Text != jobnameTextbox.Text)
             {
                 if (validate())
                 {
                     MessageBox.Show("Insert successful");
-                    Main.maininstance.sqlcommand("INSERT INTO Jobs Values('" + jname.Text + "','" + Decimal.Parse(jpay.Text) + "')");
-                    Log.writeLog(Main.eName + " added job: " + "\n Job= " + jname.Text + "\n Starting Pay= " + Decimal.Parse(jpay.Text));
-                    refreshjobs();
+                    Main.maininstance.sqlcommand("INSERT INTO Jobs Values('" + jobnameTextbox.Text + "','" + Decimal.Parse(startingpayTextbox.Text) + "')");
+                    Log.writeLog(Main.eName + " added job: " + "\n Job= " + jobnameTextbox.Text + "\n Starting Pay= " + Decimal.Parse(startingpayTextbox.Text));
+                    refreshJobs();
                 }
             }
             else
             {
-                MessageBox.Show("A job with the name of " + jname.Text + " already exists");
+                MessageBox.Show("A job with the name of " + jobnameTextbox.Text + " already exists");
             }
         }
 
-        private void Delete_Click(object sender, EventArgs e)
+        private void deleteJob_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Are you sure you want to delete this job? All "+jobs.Text+" shifts will also be removed",
+            DialogResult result = MessageBox.Show("Are you sure you want to delete this job? All "+jobsBox.Text+" shifts will also be removed",
                     "Delete Job?", MessageBoxButtons.YesNo);
 
                 if (result == DialogResult.Yes)
                 {
-                    Main.maininstance.sqlcommand("DELETE FROM Jobs WHERE JID='"+jobs.Text+"'");
-                    Log.writeLog(Main.eName + " deleted job: " + "\n Job= " + jname.Text);
-                    refreshjobs();
+                    Main.maininstance.sqlcommand("DELETE FROM Jobs WHERE JID='"+jobsBox.Text+"'");
+                    Log.writeLog(Main.eName + " deleted job: " + "\n Job= " + jobnameTextbox.Text);
+                    refreshJobs();
                 }
         }
     }

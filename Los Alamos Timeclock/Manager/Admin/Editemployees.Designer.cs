@@ -33,7 +33,7 @@
             this.pass1Textbox = new System.Windows.Forms.TextBox();
             this.userTextbox = new System.Windows.Forms.TextBox();
             this.pass1Label = new System.Windows.Forms.Label();
-            this.usernameLabel = new System.Windows.Forms.Label();
+            this.userLabel = new System.Windows.Forms.Label();
             this.loginLabel = new System.Windows.Forms.Label();
             this.ssnLabel = new System.Windows.Forms.Label();
             this.aStateDropdownlist = new System.Windows.Forms.ComboBox();
@@ -133,19 +133,19 @@
             this.pass1Label.TabIndex = 51;
             this.pass1Label.Text = "Password:";
             // 
-            // usernameLabel
+            // userLabel
             // 
-            this.usernameLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.usernameLabel.AutoSize = true;
-            this.usernameLabel.BackColor = System.Drawing.Color.Transparent;
-            this.usernameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usernameLabel.ForeColor = System.Drawing.Color.White;
-            this.usernameLabel.Location = new System.Drawing.Point(25, 877);
-            this.usernameLabel.Margin = new System.Windows.Forms.Padding(3);
-            this.usernameLabel.Name = "usernameLabel";
-            this.usernameLabel.Size = new System.Drawing.Size(87, 20);
-            this.usernameLabel.TabIndex = 50;
-            this.usernameLabel.Text = "Username:";
+            this.userLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.userLabel.AutoSize = true;
+            this.userLabel.BackColor = System.Drawing.Color.Transparent;
+            this.userLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userLabel.ForeColor = System.Drawing.Color.White;
+            this.userLabel.Location = new System.Drawing.Point(25, 877);
+            this.userLabel.Margin = new System.Windows.Forms.Padding(3);
+            this.userLabel.Name = "userLabel";
+            this.userLabel.Size = new System.Drawing.Size(87, 20);
+            this.userLabel.TabIndex = 50;
+            this.userLabel.Text = "Username:";
             // 
             // loginLabel
             // 
@@ -705,7 +705,7 @@
             this.Controls.Add(this.pass1Textbox);
             this.Controls.Add(this.userTextbox);
             this.Controls.Add(this.pass1Label);
-            this.Controls.Add(this.usernameLabel);
+            this.Controls.Add(this.userLabel);
             this.Controls.Add(this.loginLabel);
             this.Controls.Add(this.ssnLabel);
             this.Controls.Add(this.aStateDropdownlist);
@@ -742,7 +742,7 @@
         private System.Windows.Forms.TextBox pass1Textbox;
         private System.Windows.Forms.TextBox userTextbox;
         private System.Windows.Forms.Label pass1Label;
-        private System.Windows.Forms.Label usernameLabel;
+        private System.Windows.Forms.Label userLabel;
         private System.Windows.Forms.Label loginLabel;
         private System.Windows.Forms.Label ssnLabel;
         private System.Windows.Forms.ComboBox aStateDropdownlist;

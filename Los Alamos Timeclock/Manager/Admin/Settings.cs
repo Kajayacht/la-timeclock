@@ -85,7 +85,7 @@ namespace Los_Alamos_Timeclock
                 Properties.Settings.Default.Password = pass.Text;
                 Properties.Settings.Default.Save();
             }
-            catch (Exception f)
+            catch (Exception)
             {
                 MessageBox.Show("Connection Failed");
             }
