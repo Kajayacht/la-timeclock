@@ -29,20 +29,20 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.Pass1 = new System.Windows.Forms.TextBox();
-            this.User = new System.Windows.Forms.TextBox();
+            this.employeeDropdownlist = new System.Windows.Forms.ComboBox();
+            this.pass1Text = new System.Windows.Forms.TextBox();
+            this.userText = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.As = new System.Windows.Forms.ComboBox();
-            this.Ac = new System.Windows.Forms.TextBox();
-            this.Al2 = new System.Windows.Forms.TextBox();
-            this.Al1 = new System.Windows.Forms.TextBox();
-            this.Lname = new System.Windows.Forms.TextBox();
-            this.Mname = new System.Windows.Forms.TextBox();
-            this.Fname = new System.Windows.Forms.TextBox();
+            this.aStateDropdownlist = new System.Windows.Forms.ComboBox();
+            this.aCityText = new System.Windows.Forms.TextBox();
+            this.aLine2Text = new System.Windows.Forms.TextBox();
+            this.aLine1Text = new System.Windows.Forms.TextBox();
+            this.lNameText = new System.Windows.Forms.TextBox();
+            this.mNameText = new System.Windows.Forms.TextBox();
+            this.fNameText = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -53,27 +53,27 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.Saveemployee = new System.Windows.Forms.Button();
-            this.Delete = new System.Windows.Forms.Button();
-            this.label17 = new System.Windows.Forms.Label();
-            this.Priv = new System.Windows.Forms.ComboBox();
+            this.saveemployeeButton = new System.Windows.Forms.Button();
+            this.deleteButton = new System.Windows.Forms.Button();
+            this.titleLabel = new System.Windows.Forms.Label();
+            this.privDropdownlist = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.Changepass = new System.Windows.Forms.Button();
-            this.Newemployee = new System.Windows.Forms.Button();
-            this.Email = new System.Windows.Forms.TextBox();
+            this.changepassButton = new System.Windows.Forms.Button();
+            this.newemployeeButton = new System.Windows.Forms.Button();
+            this.emailText = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.jobs = new System.Windows.Forms.ListBox();
+            this.jobsBox = new System.Windows.Forms.ListBox();
             this.label22 = new System.Windows.Forms.Label();
-            this.Pass2 = new System.Windows.Forms.TextBox();
+            this.pass2Text = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
-            this.pay = new System.Windows.Forms.TextBox();
+            this.payText = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
-            this.Savepay = new System.Windows.Forms.Button();
-            this.SSN = new System.Windows.Forms.MaskedTextBox();
-            this.Phone = new System.Windows.Forms.MaskedTextBox();
-            this.Az = new System.Windows.Forms.MaskedTextBox();
+            this.savepayButton = new System.Windows.Forms.Button();
+            this.ssnText = new System.Windows.Forms.MaskedTextBox();
+            this.phoneText = new System.Windows.Forms.MaskedTextBox();
+            this.aZipText = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -89,35 +89,35 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Employee:";
             // 
-            // comboBox1
+            // employeeDropdownlist
             // 
-            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(118, 85);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(190, 28);
-            this.comboBox1.TabIndex = 1;
-            this.comboBox1.TabStop = false;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.employeeDropdownlist.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.employeeDropdownlist.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.employeeDropdownlist.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.employeeDropdownlist.FormattingEnabled = true;
+            this.employeeDropdownlist.Location = new System.Drawing.Point(118, 85);
+            this.employeeDropdownlist.Name = "employeeDropdownlist";
+            this.employeeDropdownlist.Size = new System.Drawing.Size(190, 28);
+            this.employeeDropdownlist.TabIndex = 1;
+            this.employeeDropdownlist.TabStop = false;
+            this.employeeDropdownlist.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // Pass1
+            // pass1Text
             // 
-            this.Pass1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Pass1.Location = new System.Drawing.Point(118, 903);
-            this.Pass1.Name = "Pass1";
-            this.Pass1.PasswordChar = '*';
-            this.Pass1.Size = new System.Drawing.Size(344, 20);
-            this.Pass1.TabIndex = 19;
+            this.pass1Text.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pass1Text.Location = new System.Drawing.Point(118, 903);
+            this.pass1Text.Name = "pass1Text";
+            this.pass1Text.PasswordChar = '*';
+            this.pass1Text.Size = new System.Drawing.Size(344, 20);
+            this.pass1Text.TabIndex = 19;
             // 
-            // User
+            // userText
             // 
-            this.User.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.User.Location = new System.Drawing.Point(118, 877);
-            this.User.Name = "User";
-            this.User.Size = new System.Drawing.Size(344, 20);
-            this.User.TabIndex = 18;
+            this.userText.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.userText.Location = new System.Drawing.Point(118, 877);
+            this.userText.Name = "userText";
+            this.userText.Size = new System.Drawing.Size(344, 20);
+            this.userText.TabIndex = 18;
             // 
             // label15
             // 
@@ -175,12 +175,12 @@
             this.label12.TabIndex = 47;
             this.label12.Text = "SSN:";
             // 
-            // As
+            // aStateDropdownlist
             // 
-            this.As.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.As.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.As.FormattingEnabled = true;
-            this.As.Items.AddRange(new object[] {
+            this.aStateDropdownlist.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.aStateDropdownlist.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.aStateDropdownlist.FormattingEnabled = true;
+            this.aStateDropdownlist.Items.AddRange(new object[] {
             "Alabama",
             "Alaska",
             "Arizona",
@@ -232,58 +232,58 @@
             "West Virginia",
             "Wisconsin",
             "Wyoming"});
-            this.As.Location = new System.Drawing.Point(118, 369);
-            this.As.Name = "As";
-            this.As.Size = new System.Drawing.Size(344, 21);
-            this.As.TabIndex = 9;
+            this.aStateDropdownlist.Location = new System.Drawing.Point(118, 369);
+            this.aStateDropdownlist.Name = "aStateDropdownlist";
+            this.aStateDropdownlist.Size = new System.Drawing.Size(344, 21);
+            this.aStateDropdownlist.TabIndex = 9;
             // 
-            // Ac
+            // aCityText
             // 
-            this.Ac.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Ac.Location = new System.Drawing.Point(118, 343);
-            this.Ac.Name = "Ac";
-            this.Ac.Size = new System.Drawing.Size(344, 20);
-            this.Ac.TabIndex = 8;
+            this.aCityText.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.aCityText.Location = new System.Drawing.Point(118, 343);
+            this.aCityText.Name = "aCityText";
+            this.aCityText.Size = new System.Drawing.Size(344, 20);
+            this.aCityText.TabIndex = 8;
             // 
-            // Al2
+            // aLine2Text
             // 
-            this.Al2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Al2.Location = new System.Drawing.Point(118, 317);
-            this.Al2.Name = "Al2";
-            this.Al2.Size = new System.Drawing.Size(344, 20);
-            this.Al2.TabIndex = 7;
+            this.aLine2Text.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.aLine2Text.Location = new System.Drawing.Point(118, 317);
+            this.aLine2Text.Name = "aLine2Text";
+            this.aLine2Text.Size = new System.Drawing.Size(344, 20);
+            this.aLine2Text.TabIndex = 7;
             // 
-            // Al1
+            // aLine1Text
             // 
-            this.Al1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Al1.Location = new System.Drawing.Point(118, 291);
-            this.Al1.Name = "Al1";
-            this.Al1.Size = new System.Drawing.Size(344, 20);
-            this.Al1.TabIndex = 6;
+            this.aLine1Text.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.aLine1Text.Location = new System.Drawing.Point(118, 291);
+            this.aLine1Text.Name = "aLine1Text";
+            this.aLine1Text.Size = new System.Drawing.Size(344, 20);
+            this.aLine1Text.TabIndex = 6;
             // 
-            // Lname
+            // lNameText
             // 
-            this.Lname.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Lname.Location = new System.Drawing.Point(118, 201);
-            this.Lname.Name = "Lname";
-            this.Lname.Size = new System.Drawing.Size(344, 20);
-            this.Lname.TabIndex = 4;
+            this.lNameText.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lNameText.Location = new System.Drawing.Point(118, 201);
+            this.lNameText.Name = "lNameText";
+            this.lNameText.Size = new System.Drawing.Size(344, 20);
+            this.lNameText.TabIndex = 4;
             // 
-            // Mname
+            // mNameText
             // 
-            this.Mname.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Mname.Location = new System.Drawing.Point(118, 175);
-            this.Mname.Name = "Mname";
-            this.Mname.Size = new System.Drawing.Size(344, 20);
-            this.Mname.TabIndex = 3;
+            this.mNameText.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.mNameText.Location = new System.Drawing.Point(118, 175);
+            this.mNameText.Name = "mNameText";
+            this.mNameText.Size = new System.Drawing.Size(344, 20);
+            this.mNameText.TabIndex = 3;
             // 
-            // Fname
+            // fNameText
             // 
-            this.Fname.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Fname.Location = new System.Drawing.Point(118, 149);
-            this.Fname.Name = "Fname";
-            this.Fname.Size = new System.Drawing.Size(344, 20);
-            this.Fname.TabIndex = 2;
+            this.fNameText.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.fNameText.Location = new System.Drawing.Point(118, 149);
+            this.fNameText.Name = "fNameText";
+            this.fNameText.Size = new System.Drawing.Size(344, 20);
+            this.fNameText.TabIndex = 2;
             // 
             // label11
             // 
@@ -425,55 +425,55 @@
             this.label2.TabIndex = 29;
             this.label2.Text = "Name";
             // 
-            // Saveemployee
+            // saveemployeeButton
             // 
-            this.Saveemployee.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Saveemployee.Location = new System.Drawing.Point(387, 579);
-            this.Saveemployee.Name = "Saveemployee";
-            this.Saveemployee.Size = new System.Drawing.Size(75, 75);
-            this.Saveemployee.TabIndex = 14;
-            this.Saveemployee.Text = "Save Employee Changes";
-            this.Saveemployee.UseVisualStyleBackColor = true;
-            this.Saveemployee.Click += new System.EventHandler(this.Saveemployee_Click);
+            this.saveemployeeButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.saveemployeeButton.Location = new System.Drawing.Point(387, 579);
+            this.saveemployeeButton.Name = "saveemployeeButton";
+            this.saveemployeeButton.Size = new System.Drawing.Size(75, 75);
+            this.saveemployeeButton.TabIndex = 14;
+            this.saveemployeeButton.Text = "Save Employee Changes";
+            this.saveemployeeButton.UseVisualStyleBackColor = true;
+            this.saveemployeeButton.Click += new System.EventHandler(this.Saveemployee_Click);
             // 
-            // Delete
+            // deleteButton
             // 
-            this.Delete.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Delete.Location = new System.Drawing.Point(341, 3);
-            this.Delete.Name = "Delete";
-            this.Delete.Size = new System.Drawing.Size(75, 75);
-            this.Delete.TabIndex = 22;
-            this.Delete.Text = "Delete";
-            this.Delete.UseVisualStyleBackColor = true;
-            this.Delete.Click += new System.EventHandler(this.Delete_Click);
+            this.deleteButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.deleteButton.Location = new System.Drawing.Point(341, 3);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(75, 75);
+            this.deleteButton.TabIndex = 22;
+            this.deleteButton.Text = "Delete";
+            this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.Delete_Click);
             // 
-            // label17
+            // titleLabel
             // 
-            this.label17.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label17.AutoSize = true;
-            this.label17.BackColor = System.Drawing.Color.Transparent;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(184, 22);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(133, 20);
-            this.label17.TabIndex = 58;
-            this.label17.Text = "Edit Employees";
+            this.titleLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.titleLabel.AutoSize = true;
+            this.titleLabel.BackColor = System.Drawing.Color.Transparent;
+            this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleLabel.ForeColor = System.Drawing.Color.White;
+            this.titleLabel.Location = new System.Drawing.Point(184, 22);
+            this.titleLabel.Name = "titleLabel";
+            this.titleLabel.Size = new System.Drawing.Size(133, 20);
+            this.titleLabel.TabIndex = 58;
+            this.titleLabel.Text = "Edit Employees";
             // 
-            // Priv
+            // privDropdownlist
             // 
-            this.Priv.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Priv.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.Priv.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Priv.FormattingEnabled = true;
-            this.Priv.Items.AddRange(new object[] {
+            this.privDropdownlist.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.privDropdownlist.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.privDropdownlist.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.privDropdownlist.FormattingEnabled = true;
+            this.privDropdownlist.Items.AddRange(new object[] {
             "None",
             "Manager",
             "Admin"});
-            this.Priv.Location = new System.Drawing.Point(118, 550);
-            this.Priv.Name = "Priv";
-            this.Priv.Size = new System.Drawing.Size(344, 23);
-            this.Priv.TabIndex = 13;
+            this.privDropdownlist.Location = new System.Drawing.Point(118, 550);
+            this.privDropdownlist.Name = "privDropdownlist";
+            this.privDropdownlist.Size = new System.Drawing.Size(344, 23);
+            this.privDropdownlist.TabIndex = 13;
             // 
             // label19
             // 
@@ -489,35 +489,35 @@
             this.label19.TabIndex = 61;
             this.label19.Text = "Jobs";
             // 
-            // Changepass
+            // changepassButton
             // 
-            this.Changepass.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Changepass.Location = new System.Drawing.Point(118, 975);
-            this.Changepass.Name = "Changepass";
-            this.Changepass.Size = new System.Drawing.Size(344, 35);
-            this.Changepass.TabIndex = 21;
-            this.Changepass.Text = "Change Login";
-            this.Changepass.UseVisualStyleBackColor = true;
-            this.Changepass.Click += new System.EventHandler(this.Changelogin_Click);
+            this.changepassButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.changepassButton.Location = new System.Drawing.Point(118, 975);
+            this.changepassButton.Name = "changepassButton";
+            this.changepassButton.Size = new System.Drawing.Size(344, 35);
+            this.changepassButton.TabIndex = 21;
+            this.changepassButton.Text = "Change Login";
+            this.changepassButton.UseVisualStyleBackColor = true;
+            this.changepassButton.Click += new System.EventHandler(this.Changelogin_Click);
             // 
-            // Newemployee
+            // newemployeeButton
             // 
-            this.Newemployee.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Newemployee.Location = new System.Drawing.Point(422, 3);
-            this.Newemployee.Name = "Newemployee";
-            this.Newemployee.Size = new System.Drawing.Size(75, 75);
-            this.Newemployee.TabIndex = 23;
-            this.Newemployee.Text = "New Employee";
-            this.Newemployee.UseVisualStyleBackColor = true;
-            this.Newemployee.Click += new System.EventHandler(this.Newemployee_Click);
+            this.newemployeeButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.newemployeeButton.Location = new System.Drawing.Point(422, 3);
+            this.newemployeeButton.Name = "newemployeeButton";
+            this.newemployeeButton.Size = new System.Drawing.Size(75, 75);
+            this.newemployeeButton.TabIndex = 23;
+            this.newemployeeButton.Text = "New Employee";
+            this.newemployeeButton.UseVisualStyleBackColor = true;
+            this.newemployeeButton.Click += new System.EventHandler(this.Newemployee_Click);
             // 
-            // Email
+            // emailText
             // 
-            this.Email.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Email.Location = new System.Drawing.Point(118, 485);
-            this.Email.Name = "Email";
-            this.Email.Size = new System.Drawing.Size(344, 20);
-            this.Email.TabIndex = 12;
+            this.emailText.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.emailText.Location = new System.Drawing.Point(118, 485);
+            this.emailText.Name = "emailText";
+            this.emailText.Size = new System.Drawing.Size(344, 20);
+            this.emailText.TabIndex = 12;
             // 
             // label14
             // 
@@ -561,22 +561,22 @@
             this.label21.TabIndex = 64;
             this.label21.Text = "Contact";
             // 
-            // jobs
+            // jobsBox
             // 
-            this.jobs.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.jobs.FormattingEnabled = true;
-            this.jobs.Items.AddRange(new object[] {
+            this.jobsBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.jobsBox.FormattingEnabled = true;
+            this.jobsBox.Items.AddRange(new object[] {
             "Bartender",
             "Cook",
             "Dishwasher",
             "Manager",
             "Security",
             "Server"});
-            this.jobs.Location = new System.Drawing.Point(118, 706);
-            this.jobs.Name = "jobs";
-            this.jobs.Size = new System.Drawing.Size(120, 108);
-            this.jobs.TabIndex = 15;
-            this.jobs.SelectedIndexChanged += new System.EventHandler(this.Jobs_SelectedIndexChanged);
+            this.jobsBox.Location = new System.Drawing.Point(118, 706);
+            this.jobsBox.Name = "jobsBox";
+            this.jobsBox.Size = new System.Drawing.Size(120, 108);
+            this.jobsBox.TabIndex = 15;
+            this.jobsBox.SelectedIndexChanged += new System.EventHandler(this.Jobs_SelectedIndexChanged);
             // 
             // label22
             // 
@@ -591,14 +591,14 @@
             this.label22.TabIndex = 71;
             this.label22.Text = "Pay:";
             // 
-            // Pass2
+            // pass2Text
             // 
-            this.Pass2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Pass2.Location = new System.Drawing.Point(118, 949);
-            this.Pass2.Name = "Pass2";
-            this.Pass2.PasswordChar = '*';
-            this.Pass2.Size = new System.Drawing.Size(344, 20);
-            this.Pass2.TabIndex = 20;
+            this.pass2Text.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pass2Text.Location = new System.Drawing.Point(118, 949);
+            this.pass2Text.Name = "pass2Text";
+            this.pass2Text.PasswordChar = '*';
+            this.pass2Text.Size = new System.Drawing.Size(344, 20);
+            this.pass2Text.TabIndex = 20;
             // 
             // label23
             // 
@@ -613,14 +613,14 @@
             this.label23.TabIndex = 72;
             this.label23.Text = "Confirm Password:";
             // 
-            // pay
+            // payText
             // 
-            this.pay.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pay.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pay.Location = new System.Drawing.Point(289, 703);
-            this.pay.Name = "pay";
-            this.pay.Size = new System.Drawing.Size(173, 26);
-            this.pay.TabIndex = 16;
+            this.payText.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.payText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.payText.Location = new System.Drawing.Point(289, 703);
+            this.payText.Name = "payText";
+            this.payText.Size = new System.Drawing.Size(173, 26);
+            this.payText.TabIndex = 16;
             // 
             // label24
             // 
@@ -636,43 +636,43 @@
             this.label24.TabIndex = 75;
             this.label24.Text = "Privileges";
             // 
-            // Savepay
+            // savepayButton
             // 
-            this.Savepay.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Savepay.Location = new System.Drawing.Point(387, 739);
-            this.Savepay.Name = "Savepay";
-            this.Savepay.Size = new System.Drawing.Size(75, 75);
-            this.Savepay.TabIndex = 17;
-            this.Savepay.Text = "Save Pay Change";
-            this.Savepay.UseVisualStyleBackColor = true;
-            this.Savepay.Click += new System.EventHandler(this.Savepay_Click);
+            this.savepayButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.savepayButton.Location = new System.Drawing.Point(387, 739);
+            this.savepayButton.Name = "savepayButton";
+            this.savepayButton.Size = new System.Drawing.Size(75, 75);
+            this.savepayButton.TabIndex = 17;
+            this.savepayButton.Text = "Save Pay Change";
+            this.savepayButton.UseVisualStyleBackColor = true;
+            this.savepayButton.Click += new System.EventHandler(this.Savepay_Click);
             // 
-            // SSN
+            // ssnText
             // 
-            this.SSN.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.SSN.Location = new System.Drawing.Point(118, 229);
-            this.SSN.Mask = "000-00-0000";
-            this.SSN.Name = "SSN";
-            this.SSN.Size = new System.Drawing.Size(344, 20);
-            this.SSN.TabIndex = 5;
+            this.ssnText.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ssnText.Location = new System.Drawing.Point(118, 229);
+            this.ssnText.Mask = "000-00-0000";
+            this.ssnText.Name = "ssnText";
+            this.ssnText.Size = new System.Drawing.Size(344, 20);
+            this.ssnText.TabIndex = 5;
             // 
-            // Phone
+            // phoneText
             // 
-            this.Phone.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Phone.Location = new System.Drawing.Point(119, 459);
-            this.Phone.Mask = "(999) 000-0000";
-            this.Phone.Name = "Phone";
-            this.Phone.Size = new System.Drawing.Size(343, 20);
-            this.Phone.TabIndex = 11;
+            this.phoneText.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.phoneText.Location = new System.Drawing.Point(119, 459);
+            this.phoneText.Mask = "(999) 000-0000";
+            this.phoneText.Name = "phoneText";
+            this.phoneText.Size = new System.Drawing.Size(343, 20);
+            this.phoneText.TabIndex = 11;
             // 
-            // Az
+            // aZipText
             // 
-            this.Az.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Az.Location = new System.Drawing.Point(118, 395);
-            this.Az.Mask = "00000";
-            this.Az.Name = "Az";
-            this.Az.Size = new System.Drawing.Size(344, 20);
-            this.Az.TabIndex = 10;
+            this.aZipText.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.aZipText.Location = new System.Drawing.Point(118, 395);
+            this.aZipText.Mask = "00000";
+            this.aZipText.Name = "aZipText";
+            this.aZipText.Size = new System.Drawing.Size(344, 20);
+            this.aZipText.TabIndex = 10;
             // 
             // Editemployees
             // 
@@ -681,40 +681,40 @@
             this.AutoScroll = true;
             this.BackgroundImage = global::Los_Alamos_Timeclock.Properties.Resources._1287421014661;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Controls.Add(this.Az);
-            this.Controls.Add(this.Phone);
-            this.Controls.Add(this.SSN);
-            this.Controls.Add(this.jobs);
-            this.Controls.Add(this.Savepay);
+            this.Controls.Add(this.aZipText);
+            this.Controls.Add(this.phoneText);
+            this.Controls.Add(this.ssnText);
+            this.Controls.Add(this.jobsBox);
+            this.Controls.Add(this.savepayButton);
             this.Controls.Add(this.label24);
-            this.Controls.Add(this.pay);
-            this.Controls.Add(this.Pass2);
+            this.Controls.Add(this.payText);
+            this.Controls.Add(this.pass2Text);
             this.Controls.Add(this.label23);
             this.Controls.Add(this.label22);
-            this.Controls.Add(this.Email);
+            this.Controls.Add(this.emailText);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label20);
             this.Controls.Add(this.label21);
-            this.Controls.Add(this.Newemployee);
-            this.Controls.Add(this.Changepass);
+            this.Controls.Add(this.newemployeeButton);
+            this.Controls.Add(this.changepassButton);
             this.Controls.Add(this.label19);
-            this.Controls.Add(this.Priv);
-            this.Controls.Add(this.label17);
-            this.Controls.Add(this.Delete);
-            this.Controls.Add(this.Saveemployee);
-            this.Controls.Add(this.Pass1);
-            this.Controls.Add(this.User);
+            this.Controls.Add(this.privDropdownlist);
+            this.Controls.Add(this.titleLabel);
+            this.Controls.Add(this.deleteButton);
+            this.Controls.Add(this.saveemployeeButton);
+            this.Controls.Add(this.pass1Text);
+            this.Controls.Add(this.userText);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.As);
-            this.Controls.Add(this.Ac);
-            this.Controls.Add(this.Al2);
-            this.Controls.Add(this.Al1);
-            this.Controls.Add(this.Lname);
-            this.Controls.Add(this.Mname);
-            this.Controls.Add(this.Fname);
+            this.Controls.Add(this.aStateDropdownlist);
+            this.Controls.Add(this.aCityText);
+            this.Controls.Add(this.aLine2Text);
+            this.Controls.Add(this.aLine1Text);
+            this.Controls.Add(this.lNameText);
+            this.Controls.Add(this.mNameText);
+            this.Controls.Add(this.fNameText);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label8);
@@ -726,7 +726,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.employeeDropdownlist);
             this.DoubleBuffered = true;
             this.Name = "Editemployees";
             this.Size = new System.Drawing.Size(500, 1119);
@@ -738,20 +738,20 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox Pass1;
-        private System.Windows.Forms.TextBox User;
+        private System.Windows.Forms.ComboBox employeeDropdownlist;
+        private System.Windows.Forms.TextBox pass1Text;
+        private System.Windows.Forms.TextBox userText;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.ComboBox As;
-        private System.Windows.Forms.TextBox Ac;
-        private System.Windows.Forms.TextBox Al2;
-        private System.Windows.Forms.TextBox Al1;
-        private System.Windows.Forms.TextBox Lname;
-        private System.Windows.Forms.TextBox Mname;
-        private System.Windows.Forms.TextBox Fname;
+        private System.Windows.Forms.ComboBox aStateDropdownlist;
+        private System.Windows.Forms.TextBox aCityText;
+        private System.Windows.Forms.TextBox aLine2Text;
+        private System.Windows.Forms.TextBox aLine1Text;
+        private System.Windows.Forms.TextBox lNameText;
+        private System.Windows.Forms.TextBox mNameText;
+        private System.Windows.Forms.TextBox fNameText;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label8;
@@ -762,26 +762,26 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button Saveemployee;
-        private System.Windows.Forms.Button Delete;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.ComboBox Priv;
+        private System.Windows.Forms.Button saveemployeeButton;
+        private System.Windows.Forms.Button deleteButton;
+        private System.Windows.Forms.Label titleLabel;
+        private System.Windows.Forms.ComboBox privDropdownlist;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Button Changepass;
-        private System.Windows.Forms.Button Newemployee;
-        private System.Windows.Forms.TextBox Email;
+        private System.Windows.Forms.Button changepassButton;
+        private System.Windows.Forms.Button newemployeeButton;
+        private System.Windows.Forms.TextBox emailText;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.ListBox jobs;
+        private System.Windows.Forms.ListBox jobsBox;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.TextBox Pass2;
+        private System.Windows.Forms.TextBox pass2Text;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.TextBox pay;
+        private System.Windows.Forms.TextBox payText;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Button Savepay;
-        private System.Windows.Forms.MaskedTextBox SSN;
-        private System.Windows.Forms.MaskedTextBox Phone;
-        private System.Windows.Forms.MaskedTextBox Az;
+        private System.Windows.Forms.Button savepayButton;
+        private System.Windows.Forms.MaskedTextBox ssnText;
+        private System.Windows.Forms.MaskedTextBox phoneText;
+        private System.Windows.Forms.MaskedTextBox aZipText;
     }
 }

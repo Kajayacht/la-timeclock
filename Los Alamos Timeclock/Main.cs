@@ -34,10 +34,10 @@ namespace Los_Alamos_Timeclock
     public partial class Main : Form
     {
         public static Main maininstance = null;
-        public static string ID;
-        public static string EName;
-        public static ArrayList Joblist;
-        public static ArrayList EmployeeList;
+        public static string id;
+        public static string eName;
+        public static ArrayList joblist;
+        public static ArrayList employeeList;
         public static MySqlConnection myConnection = new MySqlConnection();
         public static MySqlDataReader reader;
         public static string permissions = "";
@@ -64,14 +64,14 @@ namespace Los_Alamos_Timeclock
                 ";PASSWORD=" + Properties.Settings.Default.Password + ";");
             connectDB(myConnection);
 
-            Joblist = getJobs();
-            EmployeeList = getEmployees();
+            joblist = getJobs();
+            employeeList = getEmployees();
         }
 
         //Method to get Employee List
         public ArrayList getEmployees()
         {
-            ArrayList Employees = new ArrayList();
+            ArrayList employees = new ArrayList();
             try
             {
 
@@ -81,12 +81,12 @@ namespace Los_Alamos_Timeclock
 
                 while (Main.reader.Read())
                 {
-                    Employees.Add(new Employee(Main.reader["LName"].ToString() + ", " + Main.reader["FName"].ToString(), int.Parse(Main.reader["ID"].ToString())));
+                    employees.Add(new Employee(Main.reader["LName"].ToString() + ", " + Main.reader["FName"].ToString(), int.Parse(Main.reader["ID"].ToString())));
                 }
 
                 Main.reader.Close();
                 Main.myConnection.Close();
-                return Employees;
+                return employees;
 
             }
             catch (Exception e)
@@ -98,7 +98,7 @@ namespace Los_Alamos_Timeclock
                     Main.reader.Close();
                     Main.myConnection.Close();
                 }
-                return Employees;
+                return employees;
             }
 
         }

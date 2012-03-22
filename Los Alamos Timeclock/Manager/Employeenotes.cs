@@ -18,7 +18,7 @@ namespace Los_Alamos_Timeclock.Manager
             InitializeComponent();
             empnotelist.DisplayMember = "getname";
             empnotelist.ValueMember = "gid";
-            empnotelist.DataSource = Main.EmployeeList;
+            empnotelist.DataSource = Main.employeeList;
         }
 
         private void empnotelist_SelectedIndexChanged(object sender, EventArgs e)
@@ -69,7 +69,7 @@ namespace Los_Alamos_Timeclock.Manager
             }
             else
             {
-                Main.maininstance.sqlcommand("INSERT INTO EmployeeNotes VALUES('"+ID+"','"+Main.EName+"','"+DateTime.Today.ToString("yyyy-MM-dd")+"','"+notetextbox.Text+"')");
+                Main.maininstance.sqlcommand("INSERT INTO EmployeeNotes VALUES('"+ID+"','"+Main.eName+"','"+DateTime.Today.ToString("yyyy-MM-dd")+"','"+notetextbox.Text+"')");
                 filldt();
             }
         }

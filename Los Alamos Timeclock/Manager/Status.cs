@@ -22,10 +22,10 @@ namespace Los_Alamos_Timeclock.Manager
             calander.MaxDate = DateTime.Today;
             popdg();
             jobs.DisplayMember = "getname";
-            jobs.DataSource = Main.Joblist;
+            jobs.DataSource = Main.joblist;
             Employees.DisplayMember = "getname";
             Employees.ValueMember = "gid";
-            Employees.DataSource = Main.EmployeeList;
+            Employees.DataSource = Main.employeeList;
             ID = Employees.SelectedValue.ToString();
         }
 
@@ -142,14 +142,14 @@ namespace Los_Alamos_Timeclock.Manager
                                                 "Status=" + state +" "+
                                                 "WHERE Date='" + date + "' AND ID='" + ID + "'");
                     MessageBox.Show("Update Successful");
-                    Log.writeLog(Main.EName + " changed the Hours Worked for " + Employees.Text + "\n Date= " + date + "\n Job= " + jobs.Text + "\n Start= " + Start.Text + "\n End= " + End.Text + "\n Break 1= " + b1out.Text + "-" + b1in.Text + "\n Break 2= " + b2out.Text + "-" + b2in.Text + "\n Lunch= " + lout.Text + "-" + lin.Text);
+                    Log.writeLog(Main.eName + " changed the Hours Worked for " + Employees.Text + "\n Date= " + date + "\n Job= " + jobs.Text + "\n Start= " + Start.Text + "\n End= " + End.Text + "\n Break 1= " + b1out.Text + "-" + b1in.Text + "\n Break 2= " + b2out.Text + "-" + b2in.Text + "\n Lunch= " + lout.Text + "-" + lin.Text);
                 }
                 else
                 {
                     Main.maininstance.sqlcommand("INSERT INTO `Hours Worked`(`ID` ,`Date` ,`Start` ,`End` ,`JID` ,`B1out` ,`B1in` ,`B2out` ,`B2in` ,`Lout` ,`Lin` ,`Status`)" +
                                                 "VALUES('"+ID+"','"+date+"',"+_start+","+_end+",'"+jobs.Text+"',"+b1_out+","+b1_in+","+b2_out+","+b2_in+","+l_out+","+l_in+","+state+")");
                     MessageBox.Show("Insert Successful");
-                    Log.writeLog(Main.EName + " inserted into the Hours Worked for " + Employees.Text + "\n Date= " + date + "\n Job= " + jobs.Text + "\n Start= " + Start.Text + "\n End= " + End.Text + "\n Break 1= " + b1out.Text + "-" + b1in.Text + "\n Break 2= " + b2out.Text + "-" + b2in.Text + "\n Lunch= " + lout.Text + "-" + lin.Text);
+                    Log.writeLog(Main.eName + " inserted into the Hours Worked for " + Employees.Text + "\n Date= " + date + "\n Job= " + jobs.Text + "\n Start= " + Start.Text + "\n End= " + End.Text + "\n Break 1= " + b1out.Text + "-" + b1in.Text + "\n Break 2= " + b2out.Text + "-" + b2in.Text + "\n Lunch= " + lout.Text + "-" + lin.Text);
                 }
 
                 popdg();

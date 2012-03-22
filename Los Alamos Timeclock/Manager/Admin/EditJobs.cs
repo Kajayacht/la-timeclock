@@ -17,7 +17,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
 
             jobs.DisplayMember = "getname";
             jobs.ValueMember = "getpay";
-            jobs.DataSource = Main.Joblist;
+            jobs.DataSource = Main.joblist;
 
             //!Decimal.TryParse(pay.Text, out a)
         }
@@ -55,8 +55,8 @@ namespace Los_Alamos_Timeclock.Manager.Admin
 
         public void refreshjobs()
         {
-            Main.Joblist = Main.maininstance.getJobs();
-            jobs.DataSource = Main.Joblist;
+            Main.joblist = Main.maininstance.getJobs();
+            jobs.DataSource = Main.joblist;
         }
 
         private void Updatejob_Click(object sender, EventArgs e)
@@ -65,7 +65,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             {
                 Main.maininstance.sqlcommand("UPDATE Jobs SET JID='"+jname.Text+"',JSPay='"+Decimal.Parse(jpay.Text)+"' WHERE JID='"+jobs.Text+"'");
                 MessageBox.Show("Update successful");
-                Log.writeLog(Main.EName + " updated job: " + "\n Job= " + jname.Text + "\n Starting Pay= " + Decimal.Parse(jpay.Text));
+                Log.writeLog(Main.eName + " updated job: " + "\n Job= " + jname.Text + "\n Starting Pay= " + Decimal.Parse(jpay.Text));
                 refreshjobs();
             }
       
@@ -79,7 +79,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                 {
                     MessageBox.Show("Insert successful");
                     Main.maininstance.sqlcommand("INSERT INTO Jobs Values('" + jname.Text + "','" + Decimal.Parse(jpay.Text) + "')");
-                    Log.writeLog(Main.EName + " added job: " + "\n Job= " + jname.Text + "\n Starting Pay= " + Decimal.Parse(jpay.Text));
+                    Log.writeLog(Main.eName + " added job: " + "\n Job= " + jname.Text + "\n Starting Pay= " + Decimal.Parse(jpay.Text));
                     refreshjobs();
                 }
             }
@@ -97,7 +97,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                 if (result == DialogResult.Yes)
                 {
                     Main.maininstance.sqlcommand("DELETE FROM Jobs WHERE JID='"+jobs.Text+"'");
-                    Log.writeLog(Main.EName + " deleted job: " + "\n Job= " + jname.Text);
+                    Log.writeLog(Main.eName + " deleted job: " + "\n Job= " + jname.Text);
                     refreshjobs();
                 }
         }

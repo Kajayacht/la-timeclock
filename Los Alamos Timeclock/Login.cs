@@ -36,7 +36,7 @@ namespace Los_Alamos_Timeclock
 
                 if (Main.reader.HasRows)
                 {
-                    Main.ID = Main.reader["ID"].ToString();
+                    Main.id = Main.reader["ID"].ToString();
 
                     if (Main.reader["Admin"].ToString() != "")
                     {
@@ -50,7 +50,7 @@ namespace Los_Alamos_Timeclock
                     {
                         Main.permissions = "None";
                     }
-                    Main.EName = Main.reader["FName"].ToString() + " " + Main.reader["LName"].ToString();
+                    Main.eName = Main.reader["FName"].ToString() + " " + Main.reader["LName"].ToString();
                     Main.reader.Close();
                     Main.myConnection.Close();
 

@@ -17,7 +17,7 @@ namespace Los_Alamos_Timeclock.Manager
             InitializeComponent();
             emplist.DisplayMember = "getname";
             emplist.ValueMember = "gid";
-            emplist.DataSource = Main.EmployeeList;
+            emplist.DataSource = Main.employeeList;
         }
 
         private void emplist_SelectedIndexChanged(object sender, EventArgs e)

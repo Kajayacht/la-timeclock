@@ -25,10 +25,10 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             calander.MaxDate = DateTime.Today.AddYears(1);
             popdg();
             jobs.DisplayMember = "getname";
-            jobs.DataSource = Main.Joblist;
+            jobs.DataSource = Main.joblist;
             comboBox1.DisplayMember = "getname";
             comboBox1.ValueMember = "gid";
-            comboBox1.DataSource = Main.EmployeeList;
+            comboBox1.DataSource = Main.employeeList;
         }
 
 
@@ -50,7 +50,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                     Main.maininstance.sqlcommand("INSERT INTO Schedule (`ID`, `Date`, `Start`, `End`, `JID`) VALUES ('" + ID + "', '" + date + "', '" + sh.Text + ":" + sm.Text + "', '" + eh.Text + ":" + em.Text + "', '" + jobs.Text + "')");
                     scheduled = true;
                 }
-                Log.writeLog(Main.EName + " changed the schedule for " + comboBox1.Text + "\n Date= " + date + "\n Start= " + sh.Text + ":" + sm.Text + "\n End= " + eh.Text + ":" + em.Text + "\n Job= " + jobs.Text);
+                Log.writeLog(Main.eName + " changed the schedule for " + comboBox1.Text + "\n Date= " + date + "\n Start= " + sh.Text + ":" + sm.Text + "\n End= " + eh.Text + ":" + em.Text + "\n Job= " + jobs.Text);
                 popdg();
             }
         }
@@ -62,7 +62,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                 if (scheduled)
                 {
                     Main.maininstance.sqlcommand("DELETE FROM Schedule WHERE ID='" + ID + "' AND Date='" + date + "'");
-                    Log.writeLog(Main.EName + " deleted " + comboBox1.Text + " from the schedule for: " +"\n Date= " + date + "\n Start= " + sh.Text + ":" + sm.Text + "\n End= " + eh.Text + ":" + em.Text + "\n Job= " + jobs.Text);
+                    Log.writeLog(Main.eName + " deleted " + comboBox1.Text + " from the schedule for: " +"\n Date= " + date + "\n Start= " + sh.Text + ":" + sm.Text + "\n End= " + eh.Text + ":" + em.Text + "\n Job= " + jobs.Text);
                     scheduled = false;
                 }
                 else

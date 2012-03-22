@@ -46,9 +46,9 @@ namespace Los_Alamos_Timeclock.Manager.Admin
 
                     Main.maininstance.sqlcommand("INSERT INTO Employee (`ID`, `LName`, `MName`, `FName`, `SSN`, `Phone`, `Email`, `Address1`, `Address2`,`City`, `State`, `Zip`,`SDate`) VALUES ('" + ID + "', '" + Lname.Text + "', '" + Mname.Text + "', '" + Fname.Text + "', '" + SSN.Text + "', '" + Phone.Text + "', '" + Email.Text + "', '" + Al1.Text + "', '" + Al2.Text + "','" + Ac.Text + "', '" + As.Text + "', '" + Az.Text + "', '" + DateTime.Today.ToString("yyyy-MM-dd") + "')");
                     Main.maininstance.sqlcommand("INSERT INTO Users (`ID`, `User`, `Password`) VALUES ('" + ID + "', '"+User.Text+"', PASSWORD('"+Pass1.Text+"'))");
-                    Log.writeLog(Main.EName + " added employee: \n" + "LName= " + Lname.Text + " MName= " + Mname.Text + " FName= " + Fname.Text + "\n SSN= " + SSN.Text + "\n Phone= " + Phone.Text + "\n Email= " + Email.Text + "\n Address1= " + Al1.Text + "\n Address2= " + Al2.Text + "\n City= " + Ac.Text + "\n State= " + As.Text + "\n Zip= " + Az.Text + "\n ID= " + ID + " User= " + User.Text);
+                    Log.writeLog(Main.eName + " added employee: \n" + "LName= " + Lname.Text + " MName= " + Mname.Text + " FName= " + Fname.Text + "\n SSN= " + SSN.Text + "\n Phone= " + Phone.Text + "\n Email= " + Email.Text + "\n Address1= " + Al1.Text + "\n Address2= " + Al2.Text + "\n City= " + Ac.Text + "\n State= " + As.Text + "\n Zip= " + Az.Text + "\n ID= " + ID + " User= " + User.Text);
                     
-                    Main.EmployeeList = Main.maininstance.getEmployees();
+                    Main.employeeList = Main.maininstance.getEmployees();
 
                     Main.maininstance.panel1.Controls.Clear();
                     Main.maininstance.panel1.Controls.Add(new Editemployees());
