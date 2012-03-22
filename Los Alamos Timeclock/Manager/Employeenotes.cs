@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace Los_Alamos_Timeclock.Manager
 {
@@ -23,19 +24,32 @@ namespace Los_Alamos_Timeclock.Manager
         private void empnotelist_SelectedIndexChanged(object sender, EventArgs e)
         {
             ID = empnotelist.SelectedValue.ToString();
-            fieldupdate();
+            filldt();
         }
 
 
-        public void fieldupdate()
+        public void filldt()
         {
+            string query = 
+                "SELECT CONCAT(b.LName,', ',b.FName,' ', b.MName) As Name, a.Date, a.Note, a.Manager " +
+                "FROM EmployeeNotes a "+
+                "JOIN Employee b "+
+                "ON a.ID=b.ID "+
+                "WHERE b.ID='" + ID + "' "+
+                "ORDER BY a.Date";
+
             try
             {
                 Main.myConnection.Open();
-                Main.maininstance.sqlreader("SELECT Phone FROM Employee WHERE ID='" + ID + "'");
-                
-                empnotesbox.Text = "Phone: " + String.Format("{0:(###) ###-####}", int.Parse(Main.reader["Phone"].ToString()));
+                MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter(query, Main.myConnection);
+                MySqlCommandBuilder mySqlCommandBuilder = new MySqlCommandBuilder(mySqlDataAdapter);
 
+                DataTable dataTable = new DataTable();
+                mySqlDataAdapter.Fill(dataTable);
+
+                BindingSource bind = new BindingSource();
+                bind.DataSource = dataTable;
+                Notes.DataSource = bind;
             }
             catch (Exception e)
             {
@@ -43,8 +57,20 @@ namespace Los_Alamos_Timeclock.Manager
             }
             finally
             {
-                Main.reader.Close();
                 Main.myConnection.Close();
+            }
+        }
+
+        private void addnote_Click(object sender, EventArgs e)
+        {
+            if (addnote.Text == "")
+            {
+                MessageBox.Show("Note Cannot be empty");
+            }
+            else
+            {
+                Main.maininstance.sqlcommand("INSERT INTO EmployeeNotes VALUES('"+ID+"','"+Main.EName+"','"+DateTime.Today.ToString("yyyy-MM-dd")+"','"+notetextbox.Text+"')");
+                filldt();
             }
         }
     }

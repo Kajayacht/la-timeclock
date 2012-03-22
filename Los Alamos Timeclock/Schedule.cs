@@ -80,7 +80,6 @@ namespace Los_Alamos_Timeclock
             }
             mon = Week.Value;
             sun = mon.AddDays(6);
-            //weeklabel.Text = "Pay for " + mon.ToShortDateString() + "-" + sun.ToShortDateString();
             filldt();
         }
 
