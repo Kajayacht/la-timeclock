@@ -68,27 +68,34 @@ namespace Los_Alamos_Timeclock
             EmployeeList = getEmployees();
         }
 
-        //Method to get Employee List
+        /** Method to return an array of employee's IDs, lastnames, firstnames
+         * 
+         * @author Nate Rush
+         * @return ArrayList Employees
+         */
         public ArrayList getEmployees()
         {
             ArrayList Employees = new ArrayList();
             try
             {
-
+                //start SQL connection and query
                 Main.myConnection.Open();
                 MySqlCommand command = new MySqlCommand("Select ID, LName,FName From Employee ORDER BY LName", Main.myConnection);
                 Main.reader = command.ExecuteReader();
 
+                //Populate the arraylist
                 while (Main.reader.Read())
                 {
                     Employees.Add(new Employee(Main.reader["LName"].ToString() + ", " + Main.reader["FName"].ToString(), int.Parse(Main.reader["ID"].ToString())));
                 }
 
+                //Close the connection
                 Main.reader.Close();
                 Main.myConnection.Close();
                 return Employees;
 
             }
+                //If connection to Database fails
             catch (Exception e)
             {
                 MessageBox.Show(e.ToString());
@@ -103,19 +110,27 @@ namespace Los_Alamos_Timeclock
 
         }
 
-        //Class to store the Employees in the Employee List
+        /*Class to store the Employees in the Employee List*/
         public class Employee
         {
             private string Name;
             private int ID;
 
-
+            /* Constructor for Employee
+             * 
+             * @param stringName    The name of the employee
+             * @param intID         The ID number of the employee
+             */
             public Employee(string stringName, int intID)
             {
                 this.Name = stringName;
                 this.ID = intID;
             }
 
+            /* Return the name
+             * 
+             * @return string Name     Name of the employee
+             */
             public string getname
             {
                 get
@@ -123,6 +138,11 @@ namespace Los_Alamos_Timeclock
                     return Name;
                 }
             }
+
+            /* Return the ID number
+             * 
+             * @return int ID     ID number of the employee
+             */
             public int gid
             {
                 get
@@ -132,37 +152,71 @@ namespace Los_Alamos_Timeclock
             }
         }
 
-        //Method to get Job List
+        /* Method to return a list of jobs available
+         * 
+         * @author Nate Rush
+         * @author Andrew DePersio
+         * @lastModified 3/22/12
+         * @return ArrayList joblist    List of jobs available
+         *
+         */
         public ArrayList getJobs()
         {
             ArrayList joblist = new ArrayList();
 
-            Main.myConnection.Open();
-            MySqlCommand command = new MySqlCommand("Select * From Jobs ORDER BY JID", Main.myConnection);
-            Main.reader = command.ExecuteReader();
-
-            while (Main.reader.Read())
+            try
             {
-                joblist.Add(new Job(Main.reader["JID"].ToString(), Decimal.Parse(Main.reader["JSPay"].ToString())));
-            }
+                //Connect to the database, execute query
+                Main.myConnection.Open();
+                MySqlCommand command = new MySqlCommand("Select * From Jobs ORDER BY JID", Main.myConnection);
+                Main.reader = command.ExecuteReader();
 
-            Main.reader.Close();
-            Main.myConnection.Close();
-            return joblist;
+                //Populate the arraylist with jobs
+                while (Main.reader.Read())
+                {
+                    joblist.Add(new Job(Main.reader["JID"].ToString(), Decimal.Parse(Main.reader["JSPay"].ToString())));
+                }
+
+                //Close the connection
+                Main.reader.Close();
+                Main.myConnection.Close();
+                return joblist;
+            }
+            //If connection to Database fails
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+
+                if (Main.myConnection.State == ConnectionState.Open)
+                {
+                    Main.reader.Close();
+                    Main.myConnection.Close();
+                }
+                return joblist;
+            }
         }
-        //Class to store the Jobs in the Job List
+        
+        /* Class to store object of job*/
         public class Job
         {
             private string Jobname;
             private decimal Pay;
 
-
+            /* Main constructor for a Job
+             * 
+             * @param stringName    Name of the job
+             * @param jpay          Default pay rate for the job
+             */
             public Job(string stringName, decimal jpay)
             {
                 this.Jobname = stringName;
                 this.Pay = jpay;
             }
 
+            /* Method to return the name of a job
+             * 
+             * @return string JobName   Name of the job
+             */
             public string getname
             {
                 get
@@ -170,6 +224,11 @@ namespace Los_Alamos_Timeclock
                     return Jobname;
                 }
             }
+
+            /* Method to return the default payrate of a job
+             * 
+             * @return decimal Pay   Default payrate of a job
+             */
             public decimal getpay
             {
                 get
@@ -180,11 +239,11 @@ namespace Los_Alamos_Timeclock
         }
 
 
-        /* Method to connect to the database 
+        /* Method to connect to the database
          * @author Nate Rush
          * @author Andrew DePersio ajdepersio@gmail.com
          * 
-         * @param myConnection = the MySqlConnection server to be connected to
+         * @param myConnection      The MySqlConnection server to be connected to
          */
         public void connectDB(MySqlConnection myConnection)
         {
@@ -197,13 +256,15 @@ namespace Los_Alamos_Timeclock
            //If connection fails, give user the option to reenter settings or exit the program
             catch
             {
-                DialogResult result = MessageBox.Show("Failed to connect to database, make sure apache is running or change settings. \n Do you Want to change connection settings?",
+                DialogResult result = MessageBox.Show("Failed to connect to database, make sure MYSQL is running or change settings. \n Do you Want to change connection settings?",
                     "Database Error", MessageBoxButtons.YesNo);
 
+                //Change DB connection settings
                 if (result == DialogResult.Yes)
                 {
                     changeConnection();
                 }
+                //Or exit the program
                 else
                 {
                     Environment.Exit(0);
@@ -213,6 +274,8 @@ namespace Los_Alamos_Timeclock
 
 
         /** Method to change database connection settings in case of connection error
+         * Then executes connectDB() with the new SQL connection
+         * 
          * @author Andrew DePersio ajdepersio@gmail.com
          */
         public void changeConnection()
@@ -224,6 +287,7 @@ namespace Los_Alamos_Timeclock
             string uid = Microsoft.VisualBasic.Interaction.InputBox("Enter Database User", "", Properties.Settings.Default.User, 0, 0);
             string password = Microsoft.VisualBasic.Interaction.InputBox("Enter Database User Password", "", Properties.Settings.Default.Password, 0, 0);
 
+            //Populate the default settings with the new connection info
             Properties.Settings.Default.IP = server;
             Properties.Settings.Default.Port = port;
             Properties.Settings.Default.Database = database;
@@ -243,26 +307,35 @@ namespace Los_Alamos_Timeclock
             connectDB(myConnection);
         }
 
-        //method to call SQL commands
+        /* Method to execute an SQL query command
+         * 
+         * @param c     The command to be executed
+         */
         public void sqlcommand(String c)
         {
             try
+            //Connect and execute query
             {
                 myConnection.Open();
                 MySqlCommand command = new MySqlCommand(c, myConnection);
                 command.ExecuteNonQuery();
             }
+            //if DB connection error
             catch (Exception e)
             {
                 MessageBox.Show(e.ToString());
             }
+            //close the connection
             finally
             {
                 myConnection.Close();
             }
         }
 
-        //method to read from the SQL database
+        /* Method to execute a select command and read the results
+         * 
+         * @param c     The command to be executed
+         */
         public void sqlreader(String c)
         {
             c = c + " LIMIT 0,1000";
@@ -271,11 +344,18 @@ namespace Los_Alamos_Timeclock
             reader.Read();
         }
 
-        //method to round time to nearest 15 min
+        /* Method to round time to the nearest 15 minute interval
+         * 
+         * @param t                 The current time
+         * @return DateTime t       The rounded time
+         */
         public DateTime roundtime(DateTime t)
         {
+            //Get the current time, then the minutes of it
             TimeSpan a = TimeSpan.ParseExact(t.ToString("HH:mm:ss"), "g", null);
             int q = 0;
+            
+            //Round time to nearest 15 minute interval
             while (a.Minutes > 15)
             {
                 a = a.Subtract(TimeSpan.FromMinutes(15));
@@ -292,16 +372,22 @@ namespace Los_Alamos_Timeclock
                 a = a.Add(TimeSpan.FromMinutes(q * 15));
             }
             a = a.Subtract(TimeSpan.FromSeconds(a.Seconds));
+            
+            //return the time
             t = DateTime.ParseExact(a.ToString(), "HH:mm:ss", null);
             return t;
         }
 
-        //method to throw error messages
+        /* Error message showing method
+         * 
+         * @param s     Error message
+         */
         public void error(String s)
         {
             MessageBox.Show(s);
         }
 
+        //load the main menu
         private void Main_Load(object sender, EventArgs e)
         {
             menu1.Hide();
