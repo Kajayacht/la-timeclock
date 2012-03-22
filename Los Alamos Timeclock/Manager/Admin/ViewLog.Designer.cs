@@ -1,6 +1,6 @@
 ﻿namespace Los_Alamos_Timeclock.Manager.Admin
 {
-    partial class ViewLog
+    partial class viewLog
     {
         /// <summary> 
         /// Required designer variable.

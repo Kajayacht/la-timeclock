@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace Los_Alamos_Timeclock.Manager.Admin
 {
-    public partial class ViewLog : UserControl
+    public partial class viewLog : UserControl
     {
-        public ViewLog()
+        public viewLog()
         {
             InitializeComponent();
             logViewBox.Text = Log.viewLog();

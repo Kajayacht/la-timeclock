@@ -21,8 +21,8 @@ namespace Los_Alamos_Timeclock.Manager
             InitializeComponent();
             calander.MaxDate = DateTime.Today;
             popdg();
-            jobs.DisplayMember = "getname";
-            jobs.DataSource = Main.joblist;
+            jobsDropdownlist.DisplayMember = "getname";
+            jobsDropdownlist.DataSource = Main.joblist;
             Employees.DisplayMember = "getname";
             Employees.ValueMember = "gid";
             Employees.DataSource = Main.employeeList;
@@ -43,67 +43,67 @@ namespace Los_Alamos_Timeclock.Manager
                 Main.maininstance.sqlreader("SELECT * FROM `Hours Worked` WHERE ID='" + ID + "' AND Date='" + date + "'");
                 Boolean working = Main.reader.HasRows;
                 Main.myConnection.Close();
-                String _start = "'" + Start.Text + "'", b1_out, b1_in, b2_out, b2_in, l_out, l_in, _end;
+                String _start = "'" + startTextbox.Text + "'", b1_out, b1_in, b2_out, b2_in, l_out, l_in, _end;
 
                 DateTime a;
-                if (!DateTime.TryParse(b1out.Text, out a))
+                if (!DateTime.TryParse(b1outTextbox.Text, out a))
                 {
                     b1_out = "NULL";
                 }
                 else
                 {
-                    b1_out = "'" + b1out.Text + "'";
+                    b1_out = "'" + b1outTextbox.Text + "'";
                 }
-                if (!DateTime.TryParse(b1in.Text, out a))
+                if (!DateTime.TryParse(b1inTextbox.Text, out a))
                 {
                     b1_in = "NULL";
                 }
                 else
                 {
-                    b1_in = "'" + b1in.Text + "'";
+                    b1_in = "'" + b1inTextbox.Text + "'";
                 }
 
-                if (!DateTime.TryParse(b2out.Text, out a))
+                if (!DateTime.TryParse(b2outTextbox.Text, out a))
                 {
                     b2_out = "NULL";
                 }
                 else
                 {
-                    b2_out = "'" + b2out.Text + "'";
+                    b2_out = "'" + b2outTextbox.Text + "'";
                 }
-                if (!DateTime.TryParse(b2in.Text, out a))
+                if (!DateTime.TryParse(b2inTextbox.Text, out a))
                 {
                     b2_in = "NULL";
                 }
                 else
                 {
-                    b2_in = "'" + b2in.Text + "'";
+                    b2_in = "'" + b2inTextbox.Text + "'";
                 }
 
-                if (!DateTime.TryParse(lout.Text, out a))
+                if (!DateTime.TryParse(loutTextbox.Text, out a))
                 {
                     l_out = "NULL";
                 }
                 else
                 {
-                    l_out = "'" + lout.Text + "'";
+                    l_out = "'" + loutTextbox.Text + "'";
                 }
-                if (!DateTime.TryParse(lin.Text, out a))
+                if (!DateTime.TryParse(linTextbox.Text, out a))
                 {
                     l_in = "NULL";
                 }
                 else
                 {
-                    l_in = "'" + lin.Text + "'";
+                    l_in = "'" + linTextbox.Text + "'";
                 }
 
-                if (!DateTime.TryParse(End.Text, out a))
+                if (!DateTime.TryParse(endTextbox.Text, out a))
                 {
                     _end = "NULL";
                 }
                 else
                 {
-                    _end = "'" + End.Text + "'";
+                    _end = "'" + endTextbox.Text + "'";
                 }
 
                 string state = "'OUT'";
@@ -138,18 +138,18 @@ namespace Los_Alamos_Timeclock.Manager
                                                 "B2in=" + b2_in + ", " +
                                                 "Lout=" + l_out + ", " +
                                                 "Lin=" + l_in + ", " +
-                                                "JID='" + jobs.Text + "', "+
+                                                "JID='" + jobsDropdownlist.Text + "', "+
                                                 "Status=" + state +" "+
                                                 "WHERE Date='" + date + "' AND ID='" + ID + "'");
                     MessageBox.Show("Update Successful");
-                    Log.writeLog(Main.eName + " changed the Hours Worked for " + Employees.Text + "\n Date= " + date + "\n Job= " + jobs.Text + "\n Start= " + Start.Text + "\n End= " + End.Text + "\n Break 1= " + b1out.Text + "-" + b1in.Text + "\n Break 2= " + b2out.Text + "-" + b2in.Text + "\n Lunch= " + lout.Text + "-" + lin.Text);
+                    Log.writeLog(Main.eName + " changed the Hours Worked for " + Employees.Text + "\n Date= " + date + "\n Job= " + jobsDropdownlist.Text + "\n Start= " + startTextbox.Text + "\n End= " + endTextbox.Text + "\n Break 1= " + b1outTextbox.Text + "-" + b1inTextbox.Text + "\n Break 2= " + b2outTextbox.Text + "-" + b2inTextbox.Text + "\n Lunch= " + loutTextbox.Text + "-" + linTextbox.Text);
                 }
                 else
                 {
                     Main.maininstance.sqlcommand("INSERT INTO `Hours Worked`(`ID` ,`Date` ,`Start` ,`End` ,`JID` ,`B1out` ,`B1in` ,`B2out` ,`B2in` ,`Lout` ,`Lin` ,`Status`)" +
-                                                "VALUES('"+ID+"','"+date+"',"+_start+","+_end+",'"+jobs.Text+"',"+b1_out+","+b1_in+","+b2_out+","+b2_in+","+l_out+","+l_in+","+state+")");
+                                                "VALUES('"+ID+"','"+date+"',"+_start+","+_end+",'"+jobsDropdownlist.Text+"',"+b1_out+","+b1_in+","+b2_out+","+b2_in+","+l_out+","+l_in+","+state+")");
                     MessageBox.Show("Insert Successful");
-                    Log.writeLog(Main.eName + " inserted into the Hours Worked for " + Employees.Text + "\n Date= " + date + "\n Job= " + jobs.Text + "\n Start= " + Start.Text + "\n End= " + End.Text + "\n Break 1= " + b1out.Text + "-" + b1in.Text + "\n Break 2= " + b2out.Text + "-" + b2in.Text + "\n Lunch= " + lout.Text + "-" + lin.Text);
+                    Log.writeLog(Main.eName + " inserted into the Hours Worked for " + Employees.Text + "\n Date= " + date + "\n Job= " + jobsDropdownlist.Text + "\n Start= " + startTextbox.Text + "\n End= " + endTextbox.Text + "\n Break 1= " + b1outTextbox.Text + "-" + b1inTextbox.Text + "\n Break 2= " + b2outTextbox.Text + "-" + b2inTextbox.Text + "\n Lunch= " + loutTextbox.Text + "-" + linTextbox.Text);
                 }
 
                 popdg();
@@ -175,26 +175,26 @@ namespace Los_Alamos_Timeclock.Manager
             Main.maininstance.sqlreader("Select * from `Hours Worked` where ID='" + ID + "' AND Date='" + date + "'");
             if (Main.reader.HasRows)
             {
-                Start.Text = Main.reader["Start"].ToString();
-                End.Text = Main.reader["End"].ToString();
-                b1out.Text = Main.reader["B1out"].ToString();
-                b1in.Text = Main.reader["B1in"].ToString();
-                b2out.Text = Main.reader["B2out"].ToString();
-                b2in.Text = Main.reader["B2in"].ToString();
-                lout.Text = Main.reader["Lout"].ToString();
-                lin.Text = Main.reader["Lin"].ToString();
+                startTextbox.Text = Main.reader["Start"].ToString();
+                endTextbox.Text = Main.reader["End"].ToString();
+                b1outTextbox.Text = Main.reader["B1out"].ToString();
+                b1inTextbox.Text = Main.reader["B1in"].ToString();
+                b2outTextbox.Text = Main.reader["B2out"].ToString();
+                b2inTextbox.Text = Main.reader["B2in"].ToString();
+                loutTextbox.Text = Main.reader["Lout"].ToString();
+                linTextbox.Text = Main.reader["Lin"].ToString();
             }
             else
             {
-                Start.Text = "";
-                End.Text = "";
-                b1out.Text = "";
-                b1in.Text = "";
-                b2out.Text = "";
-                b2in.Text = "";
-                lout.Text = "";
-                lin.Text = "";
-                jobs.Text = "";
+                startTextbox.Text = "";
+                endTextbox.Text = "";
+                b1outTextbox.Text = "";
+                b1inTextbox.Text = "";
+                b2outTextbox.Text = "";
+                b2inTextbox.Text = "";
+                loutTextbox.Text = "";
+                linTextbox.Text = "";
+                jobsDropdownlist.Text = "";
             }
             Main.reader.Close();
             Main.myConnection.Close();
@@ -288,7 +288,7 @@ namespace Los_Alamos_Timeclock.Manager
         {
             DateTime a;
 
-            if (!DateTime.TryParse(Start.Text, out a))
+            if (!DateTime.TryParse(startTextbox.Text, out a))
             {
                 MessageBox.Show("Start Time not valid");
                 return false;
