@@ -26,8 +26,8 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             employeeDropdownlist.ValueMember = "gid";
             employeeDropdownlist.DataSource = Main.employeeList;
             fieldupdate();
-            ssnText.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
-            phoneText.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            ssnTextbox.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            phoneTextbox.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             jobsBox.DisplayMember = "getname";
             jobsBox.ValueMember = "getpay";
             jobsBox.DataSource = Main.joblist;
@@ -59,18 +59,18 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                     "ON a.ID=d.ID "+
                     "WHERE a.ID='" + id + "'");
 
-                fNameText.Text = Main.reader["FName"].ToString();
-                mNameText.Text = Main.reader["MName"].ToString();
-                lNameText.Text = Main.reader["LName"].ToString();
-                ssnText.Text = Main.reader["SSN"].ToString();
+                fNameTextbox.Text = Main.reader["FName"].ToString();
+                mNameTextbox.Text = Main.reader["MName"].ToString();
+                lNameTextbox.Text = Main.reader["LName"].ToString();
+                ssnTextbox.Text = Main.reader["SSN"].ToString();
 
-                aLine1Text.Text = Main.reader["Address1"].ToString();
-                aLine2Text.Text = Main.reader["Address2"].ToString();
+                aLine1Textbox.Text = Main.reader["Address1"].ToString();
+                aLine2Textbox.Text = Main.reader["Address2"].ToString();
                 aStateDropdownlist.Text = Main.reader["State"].ToString();
-                aZipText.Text = Main.reader["Zip"].ToString();
+                aZipTextbox.Text = Main.reader["Zip"].ToString();
 
-                phoneText.Text = Main.reader["Phone"].ToString();
-                emailText.Text = Main.reader["Email"].ToString();
+                phoneTextbox.Text = Main.reader["Phone"].ToString();
+                emailTextbox.Text = Main.reader["Email"].ToString();
 
 
                 if (Main.reader["Admin"].ToString() != "")
@@ -87,9 +87,9 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                 }
 
 
-                userText.Text = Main.reader["User"].ToString();
-                pass1Text.Text = "";
-                pass2Text.Text = "";
+                userTextbox.Text = Main.reader["User"].ToString();
+                pass1Textbox.Text = "";
+                pass2Textbox.Text = "";
 
                 Main.reader.Close();
                 Main.myConnection.Close();
@@ -181,9 +181,9 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                     Main.maininstance.sqlcommand("DELETE FROM Manager WHERE ID='" + id + "'");
                 }
 
-                Main.maininstance.sqlcommand("UPDATE Employee SET LName='" + lNameText.Text + "', MName='" + mNameText.Text + "', FName='" + fNameText.Text + "', SSN='" + ssnText.Text + "', Phone='" + phoneText.Text + "', Email='" + emailText.Text + "', Address1='" + aLine1Text.Text + "', Address2='" + aLine2Text.Text + "', City='" + aCityText.Text + "', State='" + aStateDropdownlist.Text + "', Zip='" + aZipText.Text + "' WHERE ID='" + id + "'");
+                Main.maininstance.sqlcommand("UPDATE Employee SET LName='" + lNameTextbox.Text + "', MName='" + mNameTextbox.Text + "', FName='" + fNameTextbox.Text + "', SSN='" + ssnTextbox.Text + "', Phone='" + phoneTextbox.Text + "', Email='" + emailTextbox.Text + "', Address1='" + aLine1Textbox.Text + "', Address2='" + aLine2Textbox.Text + "', City='" + aCityTextbox.Text + "', State='" + aStateDropdownlist.Text + "', Zip='" + aZipTextbox.Text + "' WHERE ID='" + id + "'");
                 MessageBox.Show("Employee Updated");
-                Log.writeLog(Main.eName + " edited employee: \n" + "LName= " + lNameText.Text + " MName= " + mNameText.Text + " FName= " + fNameText.Text + "\n SSN= " + ssnText.Text + "\n Phone= " + phoneText.Text + "\n Email= " + emailText.Text + "\n Address1= " + aLine1Text.Text + "\n Address2= " + aLine2Text.Text + "\n City= " + aCityText.Text + "\n State= " + aStateDropdownlist.Text + "\n Zip= " + aZipText.Text + "\n Priv= " + privDropdownlist.Text);
+                Log.writeLog(Main.eName + " edited employee: \n" + "LName= " + lNameTextbox.Text + " MName= " + mNameTextbox.Text + " FName= " + fNameTextbox.Text + "\n SSN= " + ssnTextbox.Text + "\n Phone= " + phoneTextbox.Text + "\n Email= " + emailTextbox.Text + "\n Address1= " + aLine1Textbox.Text + "\n Address2= " + aLine2Textbox.Text + "\n City= " + aCityTextbox.Text + "\n State= " + aStateDropdownlist.Text + "\n Zip= " + aZipTextbox.Text + "\n Priv= " + privDropdownlist.Text);
                 Main.employeeList = Main.maininstance.getEmployees();
                 employeeDropdownlist.DataSource = Main.employeeList;
             }
@@ -196,27 +196,27 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                 MessageBox.Show("You cannot change your own privileges");
                 return false;
             }
-            else if (fNameText.Text == "")
+            else if (fNameTextbox.Text == "")
             {
                 MessageBox.Show("First Name cannot be empty");
                 return false;
             }
-            else if (mNameText.Text == "")
+            else if (mNameTextbox.Text == "")
             {
                 MessageBox.Show("Middle Name cannot be empty");
                 return false;
             }
-            else if (lNameText.Text == "")
+            else if (lNameTextbox.Text == "")
             {
                 MessageBox.Show("Last Name cannot be empty");
                 return false;
             }
-            else if (ssnText.Text == "")
+            else if (ssnTextbox.Text == "")
             {
                 MessageBox.Show("SSN cannot be empty");
                 return false;
             }
-            else if (phoneText.Text == "")
+            else if (phoneTextbox.Text == "")
             {
                 MessageBox.Show("Phone Number cannot be empty");
                 return false;
@@ -241,10 +241,10 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                 Main.reader.Close();
                 Main.myConnection.Close();
             }
-            if (pass1Text.Text == pass2Text.Text && userText.Text != "")
+            if (pass1Textbox.Text == pass2Textbox.Text && userTextbox.Text != "")
             {
                 Main.myConnection.Open();
-                Main.maininstance.sqlreader("Select * FROM Users WHERE Lower(User)=Lower('" + userText.Text + "') AND ID!='"+id+"'");
+                Main.maininstance.sqlreader("Select * FROM Users WHERE Lower(User)=Lower('" + userTextbox.Text + "') AND ID!='"+id+"'");
                 Boolean rows = Main.reader.HasRows;
                 Main.reader.Close();
                 if (!rows)
@@ -257,14 +257,14 @@ namespace Los_Alamos_Timeclock.Manager.Admin
 
                     if (rows)
                     {
-                        Main.maininstance.sqlcommand("UPDATE Users SET User='" + userText.Text + "', Password=PASSWORD('" + pass1Text.Text + "') WHERE ID='" + id + "'");
+                        Main.maininstance.sqlcommand("UPDATE Users SET User='" + userTextbox.Text + "', Password=PASSWORD('" + pass1Textbox.Text + "') WHERE ID='" + id + "'");
                     }
                     else
                     {
-                        Main.maininstance.sqlcommand("INSERT INTO Users (`ID`,`User`,`Password`) Values('" + id + "', '" + userText.Text + "', PASSWORD('" + pass1Text.Text + "'))");
+                        Main.maininstance.sqlcommand("INSERT INTO Users (`ID`,`User`,`Password`) Values('" + id + "', '" + userTextbox.Text + "', PASSWORD('" + pass1Textbox.Text + "'))");
                     }
                     MessageBox.Show("Login Updated");
-                    Log.writeLog(Main.eName + " changed login for " + fNameText.Text + " " + mNameText.Text + " " + lNameText.Text + ": \n" + "User= " + userText.Text);
+                    Log.writeLog(Main.eName + " changed login for " + fNameTextbox.Text + " " + mNameTextbox.Text + " " + lNameTextbox.Text + ": \n" + "User= " + userTextbox.Text);
                 }
                 else
                 {
@@ -277,7 +277,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
 
         private void Delete_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Are you sure you want to delete " + fNameText.Text + " " + mNameText.Text + " " + lNameText.Text + "? All information related to " + fNameText.Text + " " + mNameText.Text + " " + lNameText.Text + " will also be removed.",
+            DialogResult result = MessageBox.Show("Are you sure you want to delete " + fNameTextbox.Text + " " + mNameTextbox.Text + " " + lNameTextbox.Text + "? All information related to " + fNameTextbox.Text + " " + mNameTextbox.Text + " " + lNameTextbox.Text + " will also be removed.",
         "Delete Employee?", MessageBoxButtons.YesNo);
 
             if (result == DialogResult.Yes)
@@ -289,7 +289,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                 else
                 {
                     Main.maininstance.sqlcommand("DELETE FROM Employee WHERE ID='" + id + "'");
-                    Log.writeLog(Main.eName + " deleted employee: \n " + fNameText.Text + " " + mNameText.Text + " " + lNameText.Text + "\n ID= " + id);
+                    Log.writeLog(Main.eName + " deleted employee: \n " + fNameTextbox.Text + " " + mNameTextbox.Text + " " + lNameTextbox.Text + "\n ID= " + id);
                     Main.employeeList = Main.maininstance.getEmployees();
                     employeeDropdownlist.DataSource = Main.employeeList;
                 }
@@ -303,11 +303,11 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             Main.maininstance.sqlreader("SELECT JPay FROM `Employee Jobs` WHERE ID='" + id + "' AND JID='" + jobsBox.Text + "'");
             if (!Main.reader.HasRows)
             {
-                payText.Text = jobsBox.SelectedValue.ToString();
+                payTextbox.Text = jobsBox.SelectedValue.ToString();
             }
             else
             {
-                payText.Text = Main.reader["JPay"].ToString();
+                payTextbox.Text = Main.reader["JPay"].ToString();
             }
 
             Main.reader.Close();
@@ -317,7 +317,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
         private void Savepay_Click(object sender, EventArgs e)
         {
             Decimal a;
-            if (jobsBox.Text == ""|| !Decimal.TryParse(payText.Text, out a))
+            if (jobsBox.Text == ""|| !Decimal.TryParse(payTextbox.Text, out a))
             {
                 if (jobsBox.Text == "")
                 {
@@ -332,7 +332,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             {
                 
                 Decimal opay = Decimal.Parse(jobsBox.SelectedValue.ToString());
-                Decimal npay = Decimal.Parse(payText.Text);
+                Decimal npay = Decimal.Parse(payTextbox.Text);
 
                 if (opay > npay)
                 {
@@ -347,16 +347,16 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                     {
                         Main.reader.Close();
                         Main.myConnection.Close();
-                        Main.maininstance.sqlcommand("UPDATE `Employee Jobs` SET JPay='" + payText.Text + "' WHERE ID='" + id + "' AND JID='" + jobsBox.Text + "'");
+                        Main.maininstance.sqlcommand("UPDATE `Employee Jobs` SET JPay='" + payTextbox.Text + "' WHERE ID='" + id + "' AND JID='" + jobsBox.Text + "'");
                     }
                     else
                     {
                         Main.myConnection.Close();
-                        Main.maininstance.sqlcommand("INSERT INTO `Employee Jobs` Values('" + id + "','" + jobsBox.Text + "', '" + payText.Text + "')");
+                        Main.maininstance.sqlcommand("INSERT INTO `Employee Jobs` Values('" + id + "','" + jobsBox.Text + "', '" + payTextbox.Text + "')");
 
                     }
                     MessageBox.Show("Pay Updated");
-                    Log.writeLog(Main.eName + " changed payrate for " + fNameText.Text + " " + mNameText.Text + " " + lNameText.Text + ": \n" + "Job= " + jobsBox.Text + " Pay= " + payText.Text);
+                    Log.writeLog(Main.eName + " changed payrate for " + fNameTextbox.Text + " " + mNameTextbox.Text + " " + lNameTextbox.Text + ": \n" + "Job= " + jobsBox.Text + " Pay= " + payTextbox.Text);
                 }
             }
         }

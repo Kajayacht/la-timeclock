@@ -28,66 +28,66 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.employeeLabel = new System.Windows.Forms.Label();
             this.employeeDropdownlist = new System.Windows.Forms.ComboBox();
-            this.pass1Text = new System.Windows.Forms.TextBox();
-            this.userText = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.pass1Textbox = new System.Windows.Forms.TextBox();
+            this.userTextbox = new System.Windows.Forms.TextBox();
+            this.pass1Label = new System.Windows.Forms.Label();
+            this.usernameLabel = new System.Windows.Forms.Label();
+            this.loginLabel = new System.Windows.Forms.Label();
+            this.ssnLabel = new System.Windows.Forms.Label();
             this.aStateDropdownlist = new System.Windows.Forms.ComboBox();
-            this.aCityText = new System.Windows.Forms.TextBox();
-            this.aLine2Text = new System.Windows.Forms.TextBox();
-            this.aLine1Text = new System.Windows.Forms.TextBox();
-            this.lNameText = new System.Windows.Forms.TextBox();
-            this.mNameText = new System.Windows.Forms.TextBox();
-            this.fNameText = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.saveemployeeButton = new System.Windows.Forms.Button();
+            this.aCityTextbox = new System.Windows.Forms.TextBox();
+            this.aLine2Textbox = new System.Windows.Forms.TextBox();
+            this.aLine1Textbox = new System.Windows.Forms.TextBox();
+            this.lNameTextbox = new System.Windows.Forms.TextBox();
+            this.mNameTextbox = new System.Windows.Forms.TextBox();
+            this.fNameTextbox = new System.Windows.Forms.TextBox();
+            this.mnameLabel = new System.Windows.Forms.Label();
+            this.azipLabel = new System.Windows.Forms.Label();
+            this.astateLabel = new System.Windows.Forms.Label();
+            this.acityLabel = new System.Windows.Forms.Label();
+            this.aline2Label = new System.Windows.Forms.Label();
+            this.aline1Label = new System.Windows.Forms.Label();
+            this.addressLabel = new System.Windows.Forms.Label();
+            this.lnameLabel = new System.Windows.Forms.Label();
+            this.fnameLabel = new System.Windows.Forms.Label();
+            this.nameLabel = new System.Windows.Forms.Label();
+            this.saveemployeechangesButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
             this.titleLabel = new System.Windows.Forms.Label();
             this.privDropdownlist = new System.Windows.Forms.ComboBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.changepassButton = new System.Windows.Forms.Button();
+            this.jobsLabel = new System.Windows.Forms.Label();
+            this.changeloginButton = new System.Windows.Forms.Button();
             this.newemployeeButton = new System.Windows.Forms.Button();
-            this.emailText = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
+            this.emailTextbox = new System.Windows.Forms.TextBox();
+            this.emailLabel = new System.Windows.Forms.Label();
+            this.phoneLabel = new System.Windows.Forms.Label();
+            this.contactLabel = new System.Windows.Forms.Label();
             this.jobsBox = new System.Windows.Forms.ListBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.pass2Text = new System.Windows.Forms.TextBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.payText = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
+            this.payLabel = new System.Windows.Forms.Label();
+            this.pass2Textbox = new System.Windows.Forms.TextBox();
+            this.pass2Label = new System.Windows.Forms.Label();
+            this.payTextbox = new System.Windows.Forms.TextBox();
+            this.privLabel = new System.Windows.Forms.Label();
             this.savepayButton = new System.Windows.Forms.Button();
-            this.ssnText = new System.Windows.Forms.MaskedTextBox();
-            this.phoneText = new System.Windows.Forms.MaskedTextBox();
-            this.aZipText = new System.Windows.Forms.MaskedTextBox();
+            this.ssnTextbox = new System.Windows.Forms.MaskedTextBox();
+            this.phoneTextbox = new System.Windows.Forms.MaskedTextBox();
+            this.aZipTextbox = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
-            // label1
+            // employeeLabel
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(20, 88);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 20);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Employee:";
+            this.employeeLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.employeeLabel.AutoSize = true;
+            this.employeeLabel.BackColor = System.Drawing.Color.Transparent;
+            this.employeeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.employeeLabel.ForeColor = System.Drawing.Color.White;
+            this.employeeLabel.Location = new System.Drawing.Point(20, 88);
+            this.employeeLabel.Name = "employeeLabel";
+            this.employeeLabel.Size = new System.Drawing.Size(92, 20);
+            this.employeeLabel.TabIndex = 5;
+            this.employeeLabel.Text = "Employee:";
             // 
             // employeeDropdownlist
             // 
@@ -102,78 +102,78 @@
             this.employeeDropdownlist.TabStop = false;
             this.employeeDropdownlist.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // pass1Text
+            // pass1Textbox
             // 
-            this.pass1Text.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pass1Text.Location = new System.Drawing.Point(118, 903);
-            this.pass1Text.Name = "pass1Text";
-            this.pass1Text.PasswordChar = '*';
-            this.pass1Text.Size = new System.Drawing.Size(344, 20);
-            this.pass1Text.TabIndex = 19;
+            this.pass1Textbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pass1Textbox.Location = new System.Drawing.Point(118, 903);
+            this.pass1Textbox.Name = "pass1Textbox";
+            this.pass1Textbox.PasswordChar = '*';
+            this.pass1Textbox.Size = new System.Drawing.Size(344, 20);
+            this.pass1Textbox.TabIndex = 19;
             // 
-            // userText
+            // userTextbox
             // 
-            this.userText.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.userText.Location = new System.Drawing.Point(118, 877);
-            this.userText.Name = "userText";
-            this.userText.Size = new System.Drawing.Size(344, 20);
-            this.userText.TabIndex = 18;
+            this.userTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.userTextbox.Location = new System.Drawing.Point(118, 877);
+            this.userTextbox.Name = "userTextbox";
+            this.userTextbox.Size = new System.Drawing.Size(344, 20);
+            this.userTextbox.TabIndex = 18;
             // 
-            // label15
+            // pass1Label
             // 
-            this.label15.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(30, 903);
-            this.label15.Margin = new System.Windows.Forms.Padding(3);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(82, 20);
-            this.label15.TabIndex = 51;
-            this.label15.Text = "Password:";
+            this.pass1Label.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pass1Label.AutoSize = true;
+            this.pass1Label.BackColor = System.Drawing.Color.Transparent;
+            this.pass1Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pass1Label.ForeColor = System.Drawing.Color.White;
+            this.pass1Label.Location = new System.Drawing.Point(30, 903);
+            this.pass1Label.Margin = new System.Windows.Forms.Padding(3);
+            this.pass1Label.Name = "pass1Label";
+            this.pass1Label.Size = new System.Drawing.Size(82, 20);
+            this.pass1Label.TabIndex = 51;
+            this.pass1Label.Text = "Password:";
             // 
-            // label16
+            // usernameLabel
             // 
-            this.label16.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label16.AutoSize = true;
-            this.label16.BackColor = System.Drawing.Color.Transparent;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(25, 877);
-            this.label16.Margin = new System.Windows.Forms.Padding(3);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(87, 20);
-            this.label16.TabIndex = 50;
-            this.label16.Text = "Username:";
+            this.usernameLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.usernameLabel.AutoSize = true;
+            this.usernameLabel.BackColor = System.Drawing.Color.Transparent;
+            this.usernameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usernameLabel.ForeColor = System.Drawing.Color.White;
+            this.usernameLabel.Location = new System.Drawing.Point(25, 877);
+            this.usernameLabel.Margin = new System.Windows.Forms.Padding(3);
+            this.usernameLabel.Name = "usernameLabel";
+            this.usernameLabel.Size = new System.Drawing.Size(87, 20);
+            this.usernameLabel.TabIndex = 50;
+            this.usernameLabel.Text = "Username:";
             // 
-            // label13
+            // loginLabel
             // 
-            this.label13.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(42, 846);
-            this.label13.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(70, 25);
-            this.label13.TabIndex = 49;
-            this.label13.Text = "Login";
+            this.loginLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.loginLabel.AutoSize = true;
+            this.loginLabel.BackColor = System.Drawing.Color.Transparent;
+            this.loginLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loginLabel.ForeColor = System.Drawing.Color.White;
+            this.loginLabel.Location = new System.Drawing.Point(42, 846);
+            this.loginLabel.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
+            this.loginLabel.Name = "loginLabel";
+            this.loginLabel.Size = new System.Drawing.Size(70, 25);
+            this.loginLabel.TabIndex = 49;
+            this.loginLabel.Text = "Login";
             // 
-            // label12
+            // ssnLabel
             // 
-            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(66, 227);
-            this.label12.Margin = new System.Windows.Forms.Padding(3);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(46, 20);
-            this.label12.TabIndex = 47;
-            this.label12.Text = "SSN:";
+            this.ssnLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ssnLabel.AutoSize = true;
+            this.ssnLabel.BackColor = System.Drawing.Color.Transparent;
+            this.ssnLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ssnLabel.ForeColor = System.Drawing.Color.White;
+            this.ssnLabel.Location = new System.Drawing.Point(66, 227);
+            this.ssnLabel.Margin = new System.Windows.Forms.Padding(3);
+            this.ssnLabel.Name = "ssnLabel";
+            this.ssnLabel.Size = new System.Drawing.Size(46, 20);
+            this.ssnLabel.TabIndex = 47;
+            this.ssnLabel.Text = "SSN:";
             // 
             // aStateDropdownlist
             // 
@@ -237,204 +237,204 @@
             this.aStateDropdownlist.Size = new System.Drawing.Size(344, 21);
             this.aStateDropdownlist.TabIndex = 9;
             // 
-            // aCityText
+            // aCityTextbox
             // 
-            this.aCityText.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.aCityText.Location = new System.Drawing.Point(118, 343);
-            this.aCityText.Name = "aCityText";
-            this.aCityText.Size = new System.Drawing.Size(344, 20);
-            this.aCityText.TabIndex = 8;
+            this.aCityTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.aCityTextbox.Location = new System.Drawing.Point(118, 343);
+            this.aCityTextbox.Name = "aCityTextbox";
+            this.aCityTextbox.Size = new System.Drawing.Size(344, 20);
+            this.aCityTextbox.TabIndex = 8;
             // 
-            // aLine2Text
+            // aLine2Textbox
             // 
-            this.aLine2Text.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.aLine2Text.Location = new System.Drawing.Point(118, 317);
-            this.aLine2Text.Name = "aLine2Text";
-            this.aLine2Text.Size = new System.Drawing.Size(344, 20);
-            this.aLine2Text.TabIndex = 7;
+            this.aLine2Textbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.aLine2Textbox.Location = new System.Drawing.Point(118, 317);
+            this.aLine2Textbox.Name = "aLine2Textbox";
+            this.aLine2Textbox.Size = new System.Drawing.Size(344, 20);
+            this.aLine2Textbox.TabIndex = 7;
             // 
-            // aLine1Text
+            // aLine1Textbox
             // 
-            this.aLine1Text.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.aLine1Text.Location = new System.Drawing.Point(118, 291);
-            this.aLine1Text.Name = "aLine1Text";
-            this.aLine1Text.Size = new System.Drawing.Size(344, 20);
-            this.aLine1Text.TabIndex = 6;
+            this.aLine1Textbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.aLine1Textbox.Location = new System.Drawing.Point(118, 291);
+            this.aLine1Textbox.Name = "aLine1Textbox";
+            this.aLine1Textbox.Size = new System.Drawing.Size(344, 20);
+            this.aLine1Textbox.TabIndex = 6;
             // 
-            // lNameText
+            // lNameTextbox
             // 
-            this.lNameText.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lNameText.Location = new System.Drawing.Point(118, 201);
-            this.lNameText.Name = "lNameText";
-            this.lNameText.Size = new System.Drawing.Size(344, 20);
-            this.lNameText.TabIndex = 4;
+            this.lNameTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lNameTextbox.Location = new System.Drawing.Point(118, 201);
+            this.lNameTextbox.Name = "lNameTextbox";
+            this.lNameTextbox.Size = new System.Drawing.Size(344, 20);
+            this.lNameTextbox.TabIndex = 4;
             // 
-            // mNameText
+            // mNameTextbox
             // 
-            this.mNameText.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.mNameText.Location = new System.Drawing.Point(118, 175);
-            this.mNameText.Name = "mNameText";
-            this.mNameText.Size = new System.Drawing.Size(344, 20);
-            this.mNameText.TabIndex = 3;
+            this.mNameTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.mNameTextbox.Location = new System.Drawing.Point(118, 175);
+            this.mNameTextbox.Name = "mNameTextbox";
+            this.mNameTextbox.Size = new System.Drawing.Size(344, 20);
+            this.mNameTextbox.TabIndex = 3;
             // 
-            // fNameText
+            // fNameTextbox
             // 
-            this.fNameText.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.fNameText.Location = new System.Drawing.Point(118, 149);
-            this.fNameText.Name = "fNameText";
-            this.fNameText.Size = new System.Drawing.Size(344, 20);
-            this.fNameText.TabIndex = 2;
+            this.fNameTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.fNameTextbox.Location = new System.Drawing.Point(118, 149);
+            this.fNameTextbox.Name = "fNameTextbox";
+            this.fNameTextbox.Size = new System.Drawing.Size(344, 20);
+            this.fNameTextbox.TabIndex = 2;
             // 
-            // label11
+            // mnameLabel
             // 
-            this.label11.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(53, 175);
-            this.label11.Margin = new System.Windows.Forms.Padding(3);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(59, 20);
-            this.label11.TabIndex = 38;
-            this.label11.Text = "Middle:";
+            this.mnameLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.mnameLabel.AutoSize = true;
+            this.mnameLabel.BackColor = System.Drawing.Color.Transparent;
+            this.mnameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mnameLabel.ForeColor = System.Drawing.Color.White;
+            this.mnameLabel.Location = new System.Drawing.Point(53, 175);
+            this.mnameLabel.Margin = new System.Windows.Forms.Padding(3);
+            this.mnameLabel.Name = "mnameLabel";
+            this.mnameLabel.Size = new System.Drawing.Size(59, 20);
+            this.mnameLabel.TabIndex = 38;
+            this.mnameLabel.Text = "Middle:";
             // 
-            // label10
+            // azipLabel
             // 
-            this.label10.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(35, 395);
-            this.label10.Margin = new System.Windows.Forms.Padding(3);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(77, 20);
-            this.label10.TabIndex = 37;
-            this.label10.Text = "Zip Code:";
+            this.azipLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.azipLabel.AutoSize = true;
+            this.azipLabel.BackColor = System.Drawing.Color.Transparent;
+            this.azipLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.azipLabel.ForeColor = System.Drawing.Color.White;
+            this.azipLabel.Location = new System.Drawing.Point(35, 395);
+            this.azipLabel.Margin = new System.Windows.Forms.Padding(3);
+            this.azipLabel.Name = "azipLabel";
+            this.azipLabel.Size = new System.Drawing.Size(77, 20);
+            this.azipLabel.TabIndex = 37;
+            this.azipLabel.Text = "Zip Code:";
             // 
-            // label8
+            // astateLabel
             // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(60, 369);
-            this.label8.Margin = new System.Windows.Forms.Padding(3);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(52, 20);
-            this.label8.TabIndex = 36;
-            this.label8.Text = "State:";
+            this.astateLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.astateLabel.AutoSize = true;
+            this.astateLabel.BackColor = System.Drawing.Color.Transparent;
+            this.astateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.astateLabel.ForeColor = System.Drawing.Color.White;
+            this.astateLabel.Location = new System.Drawing.Point(60, 369);
+            this.astateLabel.Margin = new System.Windows.Forms.Padding(3);
+            this.astateLabel.Name = "astateLabel";
+            this.astateLabel.Size = new System.Drawing.Size(52, 20);
+            this.astateLabel.TabIndex = 36;
+            this.astateLabel.Text = "State:";
             // 
-            // label9
+            // acityLabel
             // 
-            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(73, 343);
-            this.label9.Margin = new System.Windows.Forms.Padding(3);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(39, 20);
-            this.label9.TabIndex = 35;
-            this.label9.Text = "City:";
+            this.acityLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.acityLabel.AutoSize = true;
+            this.acityLabel.BackColor = System.Drawing.Color.Transparent;
+            this.acityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.acityLabel.ForeColor = System.Drawing.Color.White;
+            this.acityLabel.Location = new System.Drawing.Point(73, 343);
+            this.acityLabel.Margin = new System.Windows.Forms.Padding(3);
+            this.acityLabel.Name = "acityLabel";
+            this.acityLabel.Size = new System.Drawing.Size(39, 20);
+            this.acityLabel.TabIndex = 35;
+            this.acityLabel.Text = "City:";
             // 
-            // label5
+            // aline2Label
             // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(56, 317);
-            this.label5.Margin = new System.Windows.Forms.Padding(3);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(56, 20);
-            this.label5.TabIndex = 34;
-            this.label5.Text = "Line 2:";
+            this.aline2Label.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.aline2Label.AutoSize = true;
+            this.aline2Label.BackColor = System.Drawing.Color.Transparent;
+            this.aline2Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aline2Label.ForeColor = System.Drawing.Color.White;
+            this.aline2Label.Location = new System.Drawing.Point(56, 317);
+            this.aline2Label.Margin = new System.Windows.Forms.Padding(3);
+            this.aline2Label.Name = "aline2Label";
+            this.aline2Label.Size = new System.Drawing.Size(56, 20);
+            this.aline2Label.TabIndex = 34;
+            this.aline2Label.Text = "Line 2:";
             // 
-            // label6
+            // aline1Label
             // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(56, 291);
-            this.label6.Margin = new System.Windows.Forms.Padding(3);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(56, 20);
-            this.label6.TabIndex = 33;
-            this.label6.Text = "Line 1:";
+            this.aline1Label.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.aline1Label.AutoSize = true;
+            this.aline1Label.BackColor = System.Drawing.Color.Transparent;
+            this.aline1Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aline1Label.ForeColor = System.Drawing.Color.White;
+            this.aline1Label.Location = new System.Drawing.Point(56, 291);
+            this.aline1Label.Margin = new System.Windows.Forms.Padding(3);
+            this.aline1Label.Name = "aline1Label";
+            this.aline1Label.Size = new System.Drawing.Size(56, 20);
+            this.aline1Label.TabIndex = 33;
+            this.aline1Label.Text = "Line 1:";
             // 
-            // label7
+            // addressLabel
             // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(14, 260);
-            this.label7.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(98, 25);
-            this.label7.TabIndex = 32;
-            this.label7.Text = "Address";
+            this.addressLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.addressLabel.AutoSize = true;
+            this.addressLabel.BackColor = System.Drawing.Color.Transparent;
+            this.addressLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addressLabel.ForeColor = System.Drawing.Color.White;
+            this.addressLabel.Location = new System.Drawing.Point(14, 260);
+            this.addressLabel.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
+            this.addressLabel.Name = "addressLabel";
+            this.addressLabel.Size = new System.Drawing.Size(98, 25);
+            this.addressLabel.TabIndex = 32;
+            this.addressLabel.Text = "Address";
             // 
-            // label4
+            // lnameLabel
             // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(68, 201);
-            this.label4.Margin = new System.Windows.Forms.Padding(3);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(44, 20);
-            this.label4.TabIndex = 31;
-            this.label4.Text = "Last:";
+            this.lnameLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lnameLabel.AutoSize = true;
+            this.lnameLabel.BackColor = System.Drawing.Color.Transparent;
+            this.lnameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lnameLabel.ForeColor = System.Drawing.Color.White;
+            this.lnameLabel.Location = new System.Drawing.Point(68, 201);
+            this.lnameLabel.Margin = new System.Windows.Forms.Padding(3);
+            this.lnameLabel.Name = "lnameLabel";
+            this.lnameLabel.Size = new System.Drawing.Size(44, 20);
+            this.lnameLabel.TabIndex = 31;
+            this.lnameLabel.Text = "Last:";
             // 
-            // label3
+            // fnameLabel
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(68, 149);
-            this.label3.Margin = new System.Windows.Forms.Padding(3);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(44, 20);
-            this.label3.TabIndex = 30;
-            this.label3.Text = "First:";
+            this.fnameLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.fnameLabel.AutoSize = true;
+            this.fnameLabel.BackColor = System.Drawing.Color.Transparent;
+            this.fnameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fnameLabel.ForeColor = System.Drawing.Color.White;
+            this.fnameLabel.Location = new System.Drawing.Point(68, 149);
+            this.fnameLabel.Margin = new System.Windows.Forms.Padding(3);
+            this.fnameLabel.Name = "fnameLabel";
+            this.fnameLabel.Size = new System.Drawing.Size(44, 20);
+            this.fnameLabel.TabIndex = 30;
+            this.fnameLabel.Text = "First:";
             // 
-            // label2
+            // nameLabel
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(40, 118);
-            this.label2.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 25);
-            this.label2.TabIndex = 29;
-            this.label2.Text = "Name";
+            this.nameLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.nameLabel.AutoSize = true;
+            this.nameLabel.BackColor = System.Drawing.Color.Transparent;
+            this.nameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameLabel.ForeColor = System.Drawing.Color.White;
+            this.nameLabel.Location = new System.Drawing.Point(40, 118);
+            this.nameLabel.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
+            this.nameLabel.Name = "nameLabel";
+            this.nameLabel.Size = new System.Drawing.Size(72, 25);
+            this.nameLabel.TabIndex = 29;
+            this.nameLabel.Text = "Name";
             // 
-            // saveemployeeButton
+            // saveemployeechangesButton
             // 
-            this.saveemployeeButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.saveemployeeButton.Location = new System.Drawing.Point(387, 579);
-            this.saveemployeeButton.Name = "saveemployeeButton";
-            this.saveemployeeButton.Size = new System.Drawing.Size(75, 75);
-            this.saveemployeeButton.TabIndex = 14;
-            this.saveemployeeButton.Text = "Save Employee Changes";
-            this.saveemployeeButton.UseVisualStyleBackColor = true;
-            this.saveemployeeButton.Click += new System.EventHandler(this.Saveemployee_Click);
+            this.saveemployeechangesButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.saveemployeechangesButton.Location = new System.Drawing.Point(387, 579);
+            this.saveemployeechangesButton.Name = "saveemployeechangesButton";
+            this.saveemployeechangesButton.Size = new System.Drawing.Size(75, 75);
+            this.saveemployeechangesButton.TabIndex = 14;
+            this.saveemployeechangesButton.Text = "Save Employee Changes";
+            this.saveemployeechangesButton.UseVisualStyleBackColor = true;
+            this.saveemployeechangesButton.Click += new System.EventHandler(this.Saveemployee_Click);
             // 
             // deleteButton
             // 
@@ -475,30 +475,30 @@
             this.privDropdownlist.Size = new System.Drawing.Size(344, 23);
             this.privDropdownlist.TabIndex = 13;
             // 
-            // label19
+            // jobsLabel
             // 
-            this.label19.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label19.AutoSize = true;
-            this.label19.BackColor = System.Drawing.Color.Transparent;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.Color.White;
-            this.label19.Location = new System.Drawing.Point(50, 667);
-            this.label19.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(62, 25);
-            this.label19.TabIndex = 61;
-            this.label19.Text = "Jobs";
+            this.jobsLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.jobsLabel.AutoSize = true;
+            this.jobsLabel.BackColor = System.Drawing.Color.Transparent;
+            this.jobsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.jobsLabel.ForeColor = System.Drawing.Color.White;
+            this.jobsLabel.Location = new System.Drawing.Point(50, 667);
+            this.jobsLabel.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
+            this.jobsLabel.Name = "jobsLabel";
+            this.jobsLabel.Size = new System.Drawing.Size(62, 25);
+            this.jobsLabel.TabIndex = 61;
+            this.jobsLabel.Text = "Jobs";
             // 
-            // changepassButton
+            // changeloginButton
             // 
-            this.changepassButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.changepassButton.Location = new System.Drawing.Point(118, 975);
-            this.changepassButton.Name = "changepassButton";
-            this.changepassButton.Size = new System.Drawing.Size(344, 35);
-            this.changepassButton.TabIndex = 21;
-            this.changepassButton.Text = "Change Login";
-            this.changepassButton.UseVisualStyleBackColor = true;
-            this.changepassButton.Click += new System.EventHandler(this.Changelogin_Click);
+            this.changeloginButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.changeloginButton.Location = new System.Drawing.Point(118, 975);
+            this.changeloginButton.Name = "changeloginButton";
+            this.changeloginButton.Size = new System.Drawing.Size(344, 35);
+            this.changeloginButton.TabIndex = 21;
+            this.changeloginButton.Text = "Change Login";
+            this.changeloginButton.UseVisualStyleBackColor = true;
+            this.changeloginButton.Click += new System.EventHandler(this.Changelogin_Click);
             // 
             // newemployeeButton
             // 
@@ -511,55 +511,55 @@
             this.newemployeeButton.UseVisualStyleBackColor = true;
             this.newemployeeButton.Click += new System.EventHandler(this.Newemployee_Click);
             // 
-            // emailText
+            // emailTextbox
             // 
-            this.emailText.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.emailText.Location = new System.Drawing.Point(118, 485);
-            this.emailText.Name = "emailText";
-            this.emailText.Size = new System.Drawing.Size(344, 20);
-            this.emailText.TabIndex = 12;
+            this.emailTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.emailTextbox.Location = new System.Drawing.Point(118, 485);
+            this.emailTextbox.Name = "emailTextbox";
+            this.emailTextbox.Size = new System.Drawing.Size(344, 20);
+            this.emailTextbox.TabIndex = 12;
             // 
-            // label14
+            // emailLabel
             // 
-            this.label14.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(60, 485);
-            this.label14.Margin = new System.Windows.Forms.Padding(3);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(52, 20);
-            this.label14.TabIndex = 66;
-            this.label14.Text = "Email:";
+            this.emailLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.emailLabel.AutoSize = true;
+            this.emailLabel.BackColor = System.Drawing.Color.Transparent;
+            this.emailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emailLabel.ForeColor = System.Drawing.Color.White;
+            this.emailLabel.Location = new System.Drawing.Point(60, 485);
+            this.emailLabel.Margin = new System.Windows.Forms.Padding(3);
+            this.emailLabel.Name = "emailLabel";
+            this.emailLabel.Size = new System.Drawing.Size(52, 20);
+            this.emailLabel.TabIndex = 66;
+            this.emailLabel.Text = "Email:";
             // 
-            // label20
+            // phoneLabel
             // 
-            this.label20.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label20.AutoSize = true;
-            this.label20.BackColor = System.Drawing.Color.Transparent;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.Color.White;
-            this.label20.Location = new System.Drawing.Point(57, 459);
-            this.label20.Margin = new System.Windows.Forms.Padding(3);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(55, 20);
-            this.label20.TabIndex = 65;
-            this.label20.Text = "Phone";
+            this.phoneLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.phoneLabel.AutoSize = true;
+            this.phoneLabel.BackColor = System.Drawing.Color.Transparent;
+            this.phoneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phoneLabel.ForeColor = System.Drawing.Color.White;
+            this.phoneLabel.Location = new System.Drawing.Point(57, 459);
+            this.phoneLabel.Margin = new System.Windows.Forms.Padding(3);
+            this.phoneLabel.Name = "phoneLabel";
+            this.phoneLabel.Size = new System.Drawing.Size(55, 20);
+            this.phoneLabel.TabIndex = 65;
+            this.phoneLabel.Text = "Phone";
             // 
-            // label21
+            // contactLabel
             // 
-            this.label21.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label21.AutoSize = true;
-            this.label21.BackColor = System.Drawing.Color.Transparent;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.ForeColor = System.Drawing.Color.White;
-            this.label21.Location = new System.Drawing.Point(19, 428);
-            this.label21.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(93, 25);
-            this.label21.TabIndex = 64;
-            this.label21.Text = "Contact";
+            this.contactLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.contactLabel.AutoSize = true;
+            this.contactLabel.BackColor = System.Drawing.Color.Transparent;
+            this.contactLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contactLabel.ForeColor = System.Drawing.Color.White;
+            this.contactLabel.Location = new System.Drawing.Point(19, 428);
+            this.contactLabel.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
+            this.contactLabel.Name = "contactLabel";
+            this.contactLabel.Size = new System.Drawing.Size(93, 25);
+            this.contactLabel.TabIndex = 64;
+            this.contactLabel.Text = "Contact";
             // 
             // jobsBox
             // 
@@ -578,63 +578,63 @@
             this.jobsBox.TabIndex = 15;
             this.jobsBox.SelectedIndexChanged += new System.EventHandler(this.Jobs_SelectedIndexChanged);
             // 
-            // label22
+            // payLabel
             // 
-            this.label22.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label22.AutoSize = true;
-            this.label22.BackColor = System.Drawing.Color.Transparent;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.ForeColor = System.Drawing.Color.White;
-            this.label22.Location = new System.Drawing.Point(244, 706);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(39, 20);
-            this.label22.TabIndex = 71;
-            this.label22.Text = "Pay:";
+            this.payLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.payLabel.AutoSize = true;
+            this.payLabel.BackColor = System.Drawing.Color.Transparent;
+            this.payLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.payLabel.ForeColor = System.Drawing.Color.White;
+            this.payLabel.Location = new System.Drawing.Point(244, 706);
+            this.payLabel.Name = "payLabel";
+            this.payLabel.Size = new System.Drawing.Size(39, 20);
+            this.payLabel.TabIndex = 71;
+            this.payLabel.Text = "Pay:";
             // 
-            // pass2Text
+            // pass2Textbox
             // 
-            this.pass2Text.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pass2Text.Location = new System.Drawing.Point(118, 949);
-            this.pass2Text.Name = "pass2Text";
-            this.pass2Text.PasswordChar = '*';
-            this.pass2Text.Size = new System.Drawing.Size(344, 20);
-            this.pass2Text.TabIndex = 20;
+            this.pass2Textbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pass2Textbox.Location = new System.Drawing.Point(118, 949);
+            this.pass2Textbox.Name = "pass2Textbox";
+            this.pass2Textbox.PasswordChar = '*';
+            this.pass2Textbox.Size = new System.Drawing.Size(344, 20);
+            this.pass2Textbox.TabIndex = 20;
             // 
-            // label23
+            // pass2Label
             // 
-            this.label23.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label23.BackColor = System.Drawing.Color.Transparent;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.ForeColor = System.Drawing.Color.White;
-            this.label23.Location = new System.Drawing.Point(30, 929);
-            this.label23.Margin = new System.Windows.Forms.Padding(3);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(82, 40);
-            this.label23.TabIndex = 72;
-            this.label23.Text = "Confirm Password:";
+            this.pass2Label.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pass2Label.BackColor = System.Drawing.Color.Transparent;
+            this.pass2Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pass2Label.ForeColor = System.Drawing.Color.White;
+            this.pass2Label.Location = new System.Drawing.Point(30, 929);
+            this.pass2Label.Margin = new System.Windows.Forms.Padding(3);
+            this.pass2Label.Name = "pass2Label";
+            this.pass2Label.Size = new System.Drawing.Size(82, 40);
+            this.pass2Label.TabIndex = 72;
+            this.pass2Label.Text = "Confirm Password:";
             // 
-            // payText
+            // payTextbox
             // 
-            this.payText.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.payText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.payText.Location = new System.Drawing.Point(289, 703);
-            this.payText.Name = "payText";
-            this.payText.Size = new System.Drawing.Size(173, 26);
-            this.payText.TabIndex = 16;
+            this.payTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.payTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.payTextbox.Location = new System.Drawing.Point(289, 703);
+            this.payTextbox.Name = "payTextbox";
+            this.payTextbox.Size = new System.Drawing.Size(173, 26);
+            this.payTextbox.TabIndex = 16;
             // 
-            // label24
+            // privLabel
             // 
-            this.label24.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label24.AutoSize = true;
-            this.label24.BackColor = System.Drawing.Color.Transparent;
-            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.ForeColor = System.Drawing.Color.White;
-            this.label24.Location = new System.Drawing.Point(-4, 518);
-            this.label24.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(116, 25);
-            this.label24.TabIndex = 75;
-            this.label24.Text = "Privileges";
+            this.privLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.privLabel.AutoSize = true;
+            this.privLabel.BackColor = System.Drawing.Color.Transparent;
+            this.privLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.privLabel.ForeColor = System.Drawing.Color.White;
+            this.privLabel.Location = new System.Drawing.Point(-4, 518);
+            this.privLabel.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
+            this.privLabel.Name = "privLabel";
+            this.privLabel.Size = new System.Drawing.Size(116, 25);
+            this.privLabel.TabIndex = 75;
+            this.privLabel.Text = "Privileges";
             // 
             // savepayButton
             // 
@@ -647,32 +647,32 @@
             this.savepayButton.UseVisualStyleBackColor = true;
             this.savepayButton.Click += new System.EventHandler(this.Savepay_Click);
             // 
-            // ssnText
+            // ssnTextbox
             // 
-            this.ssnText.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.ssnText.Location = new System.Drawing.Point(118, 229);
-            this.ssnText.Mask = "000-00-0000";
-            this.ssnText.Name = "ssnText";
-            this.ssnText.Size = new System.Drawing.Size(344, 20);
-            this.ssnText.TabIndex = 5;
+            this.ssnTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ssnTextbox.Location = new System.Drawing.Point(118, 229);
+            this.ssnTextbox.Mask = "000-00-0000";
+            this.ssnTextbox.Name = "ssnTextbox";
+            this.ssnTextbox.Size = new System.Drawing.Size(344, 20);
+            this.ssnTextbox.TabIndex = 5;
             // 
-            // phoneText
+            // phoneTextbox
             // 
-            this.phoneText.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.phoneText.Location = new System.Drawing.Point(119, 459);
-            this.phoneText.Mask = "(999) 000-0000";
-            this.phoneText.Name = "phoneText";
-            this.phoneText.Size = new System.Drawing.Size(343, 20);
-            this.phoneText.TabIndex = 11;
+            this.phoneTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.phoneTextbox.Location = new System.Drawing.Point(119, 459);
+            this.phoneTextbox.Mask = "(999) 000-0000";
+            this.phoneTextbox.Name = "phoneTextbox";
+            this.phoneTextbox.Size = new System.Drawing.Size(343, 20);
+            this.phoneTextbox.TabIndex = 11;
             // 
-            // aZipText
+            // aZipTextbox
             // 
-            this.aZipText.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.aZipText.Location = new System.Drawing.Point(118, 395);
-            this.aZipText.Mask = "00000";
-            this.aZipText.Name = "aZipText";
-            this.aZipText.Size = new System.Drawing.Size(344, 20);
-            this.aZipText.TabIndex = 10;
+            this.aZipTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.aZipTextbox.Location = new System.Drawing.Point(118, 395);
+            this.aZipTextbox.Mask = "00000";
+            this.aZipTextbox.Name = "aZipTextbox";
+            this.aZipTextbox.Size = new System.Drawing.Size(344, 20);
+            this.aZipTextbox.TabIndex = 10;
             // 
             // Editemployees
             // 
@@ -681,51 +681,51 @@
             this.AutoScroll = true;
             this.BackgroundImage = global::Los_Alamos_Timeclock.Properties.Resources._1287421014661;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Controls.Add(this.aZipText);
-            this.Controls.Add(this.phoneText);
-            this.Controls.Add(this.ssnText);
+            this.Controls.Add(this.aZipTextbox);
+            this.Controls.Add(this.phoneTextbox);
+            this.Controls.Add(this.ssnTextbox);
             this.Controls.Add(this.jobsBox);
             this.Controls.Add(this.savepayButton);
-            this.Controls.Add(this.label24);
-            this.Controls.Add(this.payText);
-            this.Controls.Add(this.pass2Text);
-            this.Controls.Add(this.label23);
-            this.Controls.Add(this.label22);
-            this.Controls.Add(this.emailText);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.label20);
-            this.Controls.Add(this.label21);
+            this.Controls.Add(this.privLabel);
+            this.Controls.Add(this.payTextbox);
+            this.Controls.Add(this.pass2Textbox);
+            this.Controls.Add(this.pass2Label);
+            this.Controls.Add(this.payLabel);
+            this.Controls.Add(this.emailTextbox);
+            this.Controls.Add(this.emailLabel);
+            this.Controls.Add(this.phoneLabel);
+            this.Controls.Add(this.contactLabel);
             this.Controls.Add(this.newemployeeButton);
-            this.Controls.Add(this.changepassButton);
-            this.Controls.Add(this.label19);
+            this.Controls.Add(this.changeloginButton);
+            this.Controls.Add(this.jobsLabel);
             this.Controls.Add(this.privDropdownlist);
             this.Controls.Add(this.titleLabel);
             this.Controls.Add(this.deleteButton);
-            this.Controls.Add(this.saveemployeeButton);
-            this.Controls.Add(this.pass1Text);
-            this.Controls.Add(this.userText);
-            this.Controls.Add(this.label15);
-            this.Controls.Add(this.label16);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.label12);
+            this.Controls.Add(this.saveemployeechangesButton);
+            this.Controls.Add(this.pass1Textbox);
+            this.Controls.Add(this.userTextbox);
+            this.Controls.Add(this.pass1Label);
+            this.Controls.Add(this.usernameLabel);
+            this.Controls.Add(this.loginLabel);
+            this.Controls.Add(this.ssnLabel);
             this.Controls.Add(this.aStateDropdownlist);
-            this.Controls.Add(this.aCityText);
-            this.Controls.Add(this.aLine2Text);
-            this.Controls.Add(this.aLine1Text);
-            this.Controls.Add(this.lNameText);
-            this.Controls.Add(this.mNameText);
-            this.Controls.Add(this.fNameText);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.aCityTextbox);
+            this.Controls.Add(this.aLine2Textbox);
+            this.Controls.Add(this.aLine1Textbox);
+            this.Controls.Add(this.lNameTextbox);
+            this.Controls.Add(this.mNameTextbox);
+            this.Controls.Add(this.fNameTextbox);
+            this.Controls.Add(this.mnameLabel);
+            this.Controls.Add(this.azipLabel);
+            this.Controls.Add(this.astateLabel);
+            this.Controls.Add(this.acityLabel);
+            this.Controls.Add(this.aline2Label);
+            this.Controls.Add(this.aline1Label);
+            this.Controls.Add(this.addressLabel);
+            this.Controls.Add(this.lnameLabel);
+            this.Controls.Add(this.fnameLabel);
+            this.Controls.Add(this.nameLabel);
+            this.Controls.Add(this.employeeLabel);
             this.Controls.Add(this.employeeDropdownlist);
             this.DoubleBuffered = true;
             this.Name = "Editemployees";
@@ -737,51 +737,51 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label employeeLabel;
         private System.Windows.Forms.ComboBox employeeDropdownlist;
-        private System.Windows.Forms.TextBox pass1Text;
-        private System.Windows.Forms.TextBox userText;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox pass1Textbox;
+        private System.Windows.Forms.TextBox userTextbox;
+        private System.Windows.Forms.Label pass1Label;
+        private System.Windows.Forms.Label usernameLabel;
+        private System.Windows.Forms.Label loginLabel;
+        private System.Windows.Forms.Label ssnLabel;
         private System.Windows.Forms.ComboBox aStateDropdownlist;
-        private System.Windows.Forms.TextBox aCityText;
-        private System.Windows.Forms.TextBox aLine2Text;
-        private System.Windows.Forms.TextBox aLine1Text;
-        private System.Windows.Forms.TextBox lNameText;
-        private System.Windows.Forms.TextBox mNameText;
-        private System.Windows.Forms.TextBox fNameText;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button saveemployeeButton;
+        private System.Windows.Forms.TextBox aCityTextbox;
+        private System.Windows.Forms.TextBox aLine2Textbox;
+        private System.Windows.Forms.TextBox aLine1Textbox;
+        private System.Windows.Forms.TextBox lNameTextbox;
+        private System.Windows.Forms.TextBox mNameTextbox;
+        private System.Windows.Forms.TextBox fNameTextbox;
+        private System.Windows.Forms.Label mnameLabel;
+        private System.Windows.Forms.Label azipLabel;
+        private System.Windows.Forms.Label astateLabel;
+        private System.Windows.Forms.Label acityLabel;
+        private System.Windows.Forms.Label aline2Label;
+        private System.Windows.Forms.Label aline1Label;
+        private System.Windows.Forms.Label addressLabel;
+        private System.Windows.Forms.Label lnameLabel;
+        private System.Windows.Forms.Label fnameLabel;
+        private System.Windows.Forms.Label nameLabel;
+        private System.Windows.Forms.Button saveemployeechangesButton;
         private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.Label titleLabel;
         private System.Windows.Forms.ComboBox privDropdownlist;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Button changepassButton;
+        private System.Windows.Forms.Label jobsLabel;
+        private System.Windows.Forms.Button changeloginButton;
         private System.Windows.Forms.Button newemployeeButton;
-        private System.Windows.Forms.TextBox emailText;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox emailTextbox;
+        private System.Windows.Forms.Label emailLabel;
+        private System.Windows.Forms.Label phoneLabel;
+        private System.Windows.Forms.Label contactLabel;
         private System.Windows.Forms.ListBox jobsBox;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.TextBox pass2Text;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.TextBox payText;
-        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label payLabel;
+        private System.Windows.Forms.TextBox pass2Textbox;
+        private System.Windows.Forms.Label pass2Label;
+        private System.Windows.Forms.TextBox payTextbox;
+        private System.Windows.Forms.Label privLabel;
         private System.Windows.Forms.Button savepayButton;
-        private System.Windows.Forms.MaskedTextBox ssnText;
-        private System.Windows.Forms.MaskedTextBox phoneText;
-        private System.Windows.Forms.MaskedTextBox aZipText;
+        private System.Windows.Forms.MaskedTextBox ssnTextbox;
+        private System.Windows.Forms.MaskedTextBox phoneTextbox;
+        private System.Windows.Forms.MaskedTextBox aZipTextbox;
     }
 }
