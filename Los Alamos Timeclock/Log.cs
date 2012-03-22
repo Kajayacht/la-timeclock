@@ -27,7 +27,11 @@ namespace Los_Alamos_Timeclock
             }
         }
 
-        //write to file        
+        /* Write a message to the logfile
+         * 
+         * @author Andrew DePersio
+         * @param logMessage        The message to be written
+         */
         public static void writeLog(String logMessage)
         {
             try
@@ -48,13 +52,18 @@ namespace Los_Alamos_Timeclock
                 // Close the writer and underlying file.
                 w.Close();
             }
+            //Catch error if the log is inaccesible 
             catch (System.UnauthorizedAccessException)
             {
                 Main.maininstance.error("Log access denied: Run as Administrator");
             }
         }
 
-        //read file, work in progress
+        /* Method to return a string of the log
+         * 
+         * @author Andrew DePersio
+         * @return string line      The contents of the logfile
+         */
         public static string viewLog()
         {
             try
