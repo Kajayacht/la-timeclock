@@ -134,6 +134,7 @@
             this.Controls.Add(this.jobs);
             this.Controls.Add(this.cancel);
             this.Controls.Add(this.ok);
+            this.MinimumSize = new System.Drawing.Size(364, 187);
             this.Name = "Override";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manager Override";

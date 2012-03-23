@@ -28,66 +28,156 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.L_Pass = new System.Windows.Forms.Label();
-            this.L_User = new System.Windows.Forms.Label();
-            this.IN_USER = new System.Windows.Forms.TextBox();
-            this.IN_PASS = new System.Windows.Forms.TextBox();
-            this.B_login = new System.Windows.Forms.Button();
+            this.passLabel = new System.Windows.Forms.Label();
+            this.userLabel = new System.Windows.Forms.Label();
+            this.userTextbox = new System.Windows.Forms.TextBox();
+            this.passTextbox = new System.Windows.Forms.TextBox();
+            this.loginButton = new System.Windows.Forms.Button();
+            this.dancingTaco2 = new System.Windows.Forms.PictureBox();
+            this.dancingTaco1 = new System.Windows.Forms.PictureBox();
+            this.dancingChile2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.clock1 = new Los_Alamos_Timeclock.Clock();
+            ((System.ComponentModel.ISupportInitialize)(this.dancingTaco2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dancingTaco1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dancingChile2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
-            // L_Pass
+            // passLabel
             // 
-            this.L_Pass.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.L_Pass.AutoSize = true;
-            this.L_Pass.BackColor = System.Drawing.Color.Transparent;
-            this.L_Pass.ForeColor = System.Drawing.Color.White;
-            this.L_Pass.Location = new System.Drawing.Point(132, 183);
-            this.L_Pass.Name = "L_Pass";
-            this.L_Pass.Size = new System.Drawing.Size(56, 13);
-            this.L_Pass.TabIndex = 9;
-            this.L_Pass.Text = "Password:";
+            this.passLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.passLabel.AutoSize = true;
+            this.passLabel.BackColor = System.Drawing.Color.Transparent;
+            this.passLabel.ForeColor = System.Drawing.Color.White;
+            this.passLabel.Location = new System.Drawing.Point(132, 183);
+            this.passLabel.Name = "passLabel";
+            this.passLabel.Size = new System.Drawing.Size(56, 13);
+            this.passLabel.TabIndex = 9;
+            this.passLabel.Text = "Password:";
             // 
-            // L_User
+            // userLabel
             // 
-            this.L_User.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.L_User.AutoSize = true;
-            this.L_User.BackColor = System.Drawing.Color.Transparent;
-            this.L_User.ForeColor = System.Drawing.Color.White;
-            this.L_User.Location = new System.Drawing.Point(132, 160);
-            this.L_User.Name = "L_User";
-            this.L_User.Size = new System.Drawing.Size(32, 13);
-            this.L_User.TabIndex = 8;
-            this.L_User.Text = "User:";
+            this.userLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.userLabel.AutoSize = true;
+            this.userLabel.BackColor = System.Drawing.Color.Transparent;
+            this.userLabel.ForeColor = System.Drawing.Color.White;
+            this.userLabel.Location = new System.Drawing.Point(132, 160);
+            this.userLabel.Name = "userLabel";
+            this.userLabel.Size = new System.Drawing.Size(32, 13);
+            this.userLabel.TabIndex = 8;
+            this.userLabel.Text = "User:";
             // 
-            // IN_USER
+            // userTextbox
             // 
-            this.IN_USER.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.IN_USER.Location = new System.Drawing.Point(194, 160);
-            this.IN_USER.Name = "IN_USER";
-            this.IN_USER.Size = new System.Drawing.Size(100, 20);
-            this.IN_USER.TabIndex = 1;
+            this.userTextbox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.userTextbox.Location = new System.Drawing.Point(194, 160);
+            this.userTextbox.Name = "userTextbox";
+            this.userTextbox.Size = new System.Drawing.Size(100, 20);
+            this.userTextbox.TabIndex = 1;
             // 
-            // IN_PASS
+            // passTextbox
             // 
-            this.IN_PASS.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.IN_PASS.Location = new System.Drawing.Point(194, 183);
-            this.IN_PASS.Name = "IN_PASS";
-            this.IN_PASS.PasswordChar = '*';
-            this.IN_PASS.Size = new System.Drawing.Size(100, 20);
-            this.IN_PASS.TabIndex = 2;
+            this.passTextbox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.passTextbox.Location = new System.Drawing.Point(194, 183);
+            this.passTextbox.Name = "passTextbox";
+            this.passTextbox.PasswordChar = '*';
+            this.passTextbox.Size = new System.Drawing.Size(100, 20);
+            this.passTextbox.TabIndex = 2;
             // 
-            // B_login
+            // loginButton
             // 
-            this.B_login.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.B_login.Location = new System.Drawing.Point(194, 209);
-            this.B_login.MaximumSize = new System.Drawing.Size(200, 100);
-            this.B_login.Name = "B_login";
-            this.B_login.Size = new System.Drawing.Size(100, 25);
-            this.B_login.TabIndex = 3;
-            this.B_login.Text = "Login";
-            this.B_login.UseVisualStyleBackColor = true;
-            this.B_login.Click += new System.EventHandler(this.B_login_Click);
+            this.loginButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.loginButton.Location = new System.Drawing.Point(194, 209);
+            this.loginButton.MaximumSize = new System.Drawing.Size(200, 100);
+            this.loginButton.Name = "loginButton";
+            this.loginButton.Size = new System.Drawing.Size(100, 25);
+            this.loginButton.TabIndex = 3;
+            this.loginButton.Text = "Login";
+            this.loginButton.UseVisualStyleBackColor = true;
+            this.loginButton.Click += new System.EventHandler(this.B_login_Click);
+            // 
+            // dancingTaco2
+            // 
+            this.dancingTaco2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.dancingTaco2.BackColor = System.Drawing.Color.Transparent;
+            this.dancingTaco2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.dancingTaco2.Image = global::Los_Alamos_Timeclock.Properties.Resources.dancingtaco;
+            this.dancingTaco2.Location = new System.Drawing.Point(250, 150);
+            this.dancingTaco2.Name = "dancingTaco2";
+            this.dancingTaco2.Size = new System.Drawing.Size(250, 250);
+            this.dancingTaco2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.dancingTaco2.TabIndex = 12;
+            this.dancingTaco2.TabStop = false;
+            // 
+            // dancingTaco1
+            // 
+            this.dancingTaco1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.dancingTaco1.BackColor = System.Drawing.Color.Transparent;
+            this.dancingTaco1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.dancingTaco1.Image = global::Los_Alamos_Timeclock.Properties.Resources.dancingtaco;
+            this.dancingTaco1.Location = new System.Drawing.Point(0, 150);
+            this.dancingTaco1.Name = "dancingTaco1";
+            this.dancingTaco1.Size = new System.Drawing.Size(250, 250);
+            this.dancingTaco1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.dancingTaco1.TabIndex = 11;
+            this.dancingTaco1.TabStop = false;
+            // 
+            // dancingChile2
+            // 
+            this.dancingChile2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.dancingChile2.BackColor = System.Drawing.Color.Transparent;
+            this.dancingChile2.Image = global::Los_Alamos_Timeclock.Properties.Resources.dancingChile;
+            this.dancingChile2.Location = new System.Drawing.Point(435, 335);
+            this.dancingChile2.Margin = new System.Windows.Forms.Padding(0);
+            this.dancingChile2.Name = "dancingChile2";
+            this.dancingChile2.Size = new System.Drawing.Size(65, 65);
+            this.dancingChile2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.dancingChile2.TabIndex = 13;
+            this.dancingChile2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::Los_Alamos_Timeclock.Properties.Resources.dancingChile;
+            this.pictureBox1.Location = new System.Drawing.Point(251, 335);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(65, 65);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 15;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = global::Los_Alamos_Timeclock.Properties.Resources.dancingChile;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 335);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(65, 65);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 17;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox3.Image = global::Los_Alamos_Timeclock.Properties.Resources.dancingChile;
+            this.pictureBox3.Location = new System.Drawing.Point(186, 335);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(65, 65);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 16;
+            this.pictureBox3.TabStop = false;
             // 
             // clock1
             // 
@@ -108,15 +198,27 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Los_Alamos_Timeclock.Properties.Resources._1287421014661;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.dancingChile2);
             this.Controls.Add(this.clock1);
-            this.Controls.Add(this.L_Pass);
-            this.Controls.Add(this.L_User);
-            this.Controls.Add(this.IN_USER);
-            this.Controls.Add(this.IN_PASS);
-            this.Controls.Add(this.B_login);
+            this.Controls.Add(this.passLabel);
+            this.Controls.Add(this.userLabel);
+            this.Controls.Add(this.userTextbox);
+            this.Controls.Add(this.passTextbox);
+            this.Controls.Add(this.loginButton);
+            this.Controls.Add(this.dancingTaco1);
+            this.Controls.Add(this.dancingTaco2);
             this.DoubleBuffered = true;
             this.Name = "Login";
             this.Size = new System.Drawing.Size(500, 400);
+            ((System.ComponentModel.ISupportInitialize)(this.dancingTaco2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dancingTaco1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dancingChile2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -124,11 +226,17 @@
 
         #endregion
 
-        private System.Windows.Forms.Label L_Pass;
-        private System.Windows.Forms.Label L_User;
-        private System.Windows.Forms.Button B_login;
-        public System.Windows.Forms.TextBox IN_USER;
-        public System.Windows.Forms.TextBox IN_PASS;
+        private System.Windows.Forms.Label passLabel;
+        private System.Windows.Forms.Label userLabel;
+        private System.Windows.Forms.Button loginButton;
+        public System.Windows.Forms.TextBox userTextbox;
+        public System.Windows.Forms.TextBox passTextbox;
         private Clock clock1;
+        private System.Windows.Forms.PictureBox dancingTaco2;
+        private System.Windows.Forms.PictureBox dancingTaco1;
+        private System.Windows.Forms.PictureBox dancingChile2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }

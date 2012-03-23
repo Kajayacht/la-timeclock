@@ -44,7 +44,7 @@
             // 
             // titleLabel
             // 
-            this.titleLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.titleLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.titleLabel.AutoSize = true;
             this.titleLabel.BackColor = System.Drawing.Color.Transparent;
             this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -57,7 +57,7 @@
             // 
             // ipaddressLLabel
             // 
-            this.ipaddressLLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ipaddressLLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ipaddressLLabel.AutoSize = true;
             this.ipaddressLLabel.BackColor = System.Drawing.Color.Transparent;
             this.ipaddressLLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -73,7 +73,7 @@
             // 
             // portLLabel
             // 
-            this.portLLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.portLLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.portLLabel.AutoSize = true;
             this.portLLabel.BackColor = System.Drawing.Color.Transparent;
             this.portLLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -90,7 +90,7 @@
             // 
             // userLLabel
             // 
-            this.userLLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.userLLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.userLLabel.AutoSize = true;
             this.userLLabel.BackColor = System.Drawing.Color.Transparent;
             this.userLLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -107,7 +107,7 @@
             // 
             // passLLabel
             // 
-            this.passLLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.passLLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.passLLabel.AutoSize = true;
             this.passLLabel.BackColor = System.Drawing.Color.Transparent;
             this.passLLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -124,7 +124,7 @@
             // 
             // ipaddressTextbox
             // 
-            this.ipaddressTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ipaddressTextbox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ipaddressTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ipaddressTextbox.Location = new System.Drawing.Point(186, 139);
             this.ipaddressTextbox.Name = "ipaddressTextbox";
@@ -134,7 +134,7 @@
             // 
             // portTextbox
             // 
-            this.portTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.portTextbox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.portTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.portTextbox.Location = new System.Drawing.Point(186, 171);
             this.portTextbox.Name = "portTextbox";
@@ -144,7 +144,7 @@
             // 
             // userTextbox
             // 
-            this.userTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.userTextbox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.userTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userTextbox.Location = new System.Drawing.Point(184, 235);
             this.userTextbox.Name = "userTextbox";
@@ -154,7 +154,7 @@
             // 
             // passTextbox
             // 
-            this.passTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.passTextbox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.passTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passTextbox.Location = new System.Drawing.Point(184, 267);
             this.passTextbox.Name = "passTextbox";
@@ -165,7 +165,7 @@
             // 
             // applyButton
             // 
-            this.applyButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.applyButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.applyButton.Location = new System.Drawing.Point(264, 299);
             this.applyButton.Name = "applyButton";
             this.applyButton.Size = new System.Drawing.Size(75, 23);
@@ -176,7 +176,7 @@
             // 
             // databaseTextbox
             // 
-            this.databaseTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.databaseTextbox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.databaseTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.databaseTextbox.Location = new System.Drawing.Point(184, 203);
             this.databaseTextbox.Name = "databaseTextbox";
@@ -186,7 +186,7 @@
             // 
             // databaseLLabel
             // 
-            this.databaseLLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.databaseLLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.databaseLLabel.AutoSize = true;
             this.databaseLLabel.BackColor = System.Drawing.Color.Transparent;
             this.databaseLLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
