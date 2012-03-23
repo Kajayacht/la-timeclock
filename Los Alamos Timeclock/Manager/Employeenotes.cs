@@ -61,7 +61,7 @@ namespace Los_Alamos_Timeclock.Manager
             }
         }
 
-        private void addNoteButton_Click(object sender, EventArgs e)
+        private void addnoteButton_Click(object sender, EventArgs e)
         {
             if (addnoteButton.Text == "")
             {
@@ -69,7 +69,7 @@ namespace Los_Alamos_Timeclock.Manager
             }
             else
             {
-                Main.maininstance.sqlcommand("INSERT INTO EmployeeNotes VALUES('"+id+"','"+Main.eName+"','"+DateTime.Today.ToString("yyyy-MM-dd")+"','"+noteTextbox.Text+"')");
+                Main.maininstance.sqlcommand("INSERT INTO EmployeeNotes VALUES('" + id + "','" + Main.eName + "','" + DateTime.Today.ToString("yyyy-MM-dd") + "','" + noteTextbox.Text + "')");
                 fillNotesDatagrid();
             }
         }

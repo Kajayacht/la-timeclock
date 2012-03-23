@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.Employees = new System.Windows.Forms.ComboBox();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.employeeDropdownlist = new System.Windows.Forms.ComboBox();
             this.employeeLabel = new System.Windows.Forms.Label();
             this.calander = new System.Windows.Forms.DateTimePicker();
             this.updatescheduleButton = new System.Windows.Forms.Button();
-            this.dg = new System.Windows.Forms.DataGridView();
+            this.datagrid = new System.Windows.Forms.DataGridView();
             this.jobsDropdownlist = new System.Windows.Forms.ComboBox();
             this.startLabel = new System.Windows.Forms.Label();
             this.endLabel = new System.Windows.Forms.Label();
@@ -42,28 +42,29 @@
             this.endTextbox = new System.Windows.Forms.MaskedTextBox();
             this.b1outTextbox = new System.Windows.Forms.MaskedTextBox();
             this.break1Label = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.b1dashLabel = new System.Windows.Forms.Label();
             this.b1inTextbox = new System.Windows.Forms.MaskedTextBox();
             this.b2inTextbox = new System.Windows.Forms.MaskedTextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.b2dashLabel = new System.Windows.Forms.Label();
             this.b2outTextbox = new System.Windows.Forms.MaskedTextBox();
             this.break2Label = new System.Windows.Forms.Label();
             this.linTextbox = new System.Windows.Forms.MaskedTextBox();
             this.loutTextbox = new System.Windows.Forms.MaskedTextBox();
             this.lunchLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dg)).BeginInit();
+            this.lunchdashLabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.datagrid)).BeginInit();
             this.SuspendLayout();
             // 
-            // Employees
+            // employeeDropdownlist
             // 
-            this.Employees.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.Employees.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.Employees.FormattingEnabled = true;
-            this.Employees.Location = new System.Drawing.Point(79, 267);
-            this.Employees.Name = "Employees";
-            this.Employees.Size = new System.Drawing.Size(190, 21);
-            this.Employees.TabIndex = 1;
-            this.Employees.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.employeeDropdownlist.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.employeeDropdownlist.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.employeeDropdownlist.FormattingEnabled = true;
+            this.employeeDropdownlist.Location = new System.Drawing.Point(79, 267);
+            this.employeeDropdownlist.Name = "employeeDropdownlist";
+            this.employeeDropdownlist.Size = new System.Drawing.Size(190, 21);
+            this.employeeDropdownlist.TabIndex = 1;
+            this.employeeDropdownlist.SelectedIndexChanged += new System.EventHandler(this.employeeDropdownlist_SelectedIndexChanged);
             // 
             // employeeLabel
             // 
@@ -84,7 +85,7 @@
             this.calander.Name = "calander";
             this.calander.Size = new System.Drawing.Size(200, 20);
             this.calander.TabIndex = 2;
-            this.calander.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            this.calander.ValueChanged += new System.EventHandler(this.calander_DateChanged);
             // 
             // updatescheduleButton
             // 
@@ -95,25 +96,25 @@
             this.updatescheduleButton.TabIndex = 7;
             this.updatescheduleButton.Text = "Update";
             this.updatescheduleButton.UseVisualStyleBackColor = true;
-            this.updatescheduleButton.Click += new System.EventHandler(this.Update_Click);
+            this.updatescheduleButton.Click += new System.EventHandler(this.update_Click);
             // 
-            // dg
+            // datagrid
             // 
-            this.dg.AllowUserToAddRows = false;
-            this.dg.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            this.dg.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.dg.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.datagrid.AllowUserToAddRows = false;
+            this.datagrid.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.datagrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.datagrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dg.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dg.Location = new System.Drawing.Point(0, 0);
-            this.dg.Name = "dg";
-            this.dg.ReadOnly = true;
-            this.dg.RowHeadersVisible = false;
-            this.dg.Size = new System.Drawing.Size(500, 261);
-            this.dg.TabIndex = 6;
+            this.datagrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.datagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.datagrid.Location = new System.Drawing.Point(0, 0);
+            this.datagrid.Name = "datagrid";
+            this.datagrid.ReadOnly = true;
+            this.datagrid.RowHeadersVisible = false;
+            this.datagrid.Size = new System.Drawing.Size(500, 261);
+            this.datagrid.TabIndex = 6;
             // 
             // jobsDropdownlist
             // 
@@ -200,17 +201,17 @@
             this.break1Label.TabIndex = 16;
             this.break1Label.Text = "Break 1:";
             // 
-            // label7
+            // b1dashLabel
             // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(233, 297);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(13, 13);
-            this.label7.TabIndex = 20;
-            this.label7.Text = "--";
+            this.b1dashLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.b1dashLabel.AutoSize = true;
+            this.b1dashLabel.BackColor = System.Drawing.Color.Transparent;
+            this.b1dashLabel.ForeColor = System.Drawing.Color.White;
+            this.b1dashLabel.Location = new System.Drawing.Point(233, 297);
+            this.b1dashLabel.Name = "b1dashLabel";
+            this.b1dashLabel.Size = new System.Drawing.Size(13, 13);
+            this.b1dashLabel.TabIndex = 20;
+            this.b1dashLabel.Text = "--";
             // 
             // b1inTextbox
             // 
@@ -230,17 +231,17 @@
             this.b2inTextbox.Size = new System.Drawing.Size(41, 20);
             this.b2inTextbox.TabIndex = 7;
             // 
-            // label5
+            // b2dashLabel
             // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(233, 324);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(13, 13);
-            this.label5.TabIndex = 24;
-            this.label5.Text = "--";
+            this.b2dashLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.b2dashLabel.AutoSize = true;
+            this.b2dashLabel.BackColor = System.Drawing.Color.Transparent;
+            this.b2dashLabel.ForeColor = System.Drawing.Color.White;
+            this.b2dashLabel.Location = new System.Drawing.Point(233, 324);
+            this.b2dashLabel.Name = "b2dashLabel";
+            this.b2dashLabel.Size = new System.Drawing.Size(13, 13);
+            this.b2dashLabel.TabIndex = 24;
+            this.b2dashLabel.Text = "--";
             // 
             // b2outTextbox
             // 
@@ -293,21 +294,34 @@
             this.lunchLabel.TabIndex = 26;
             this.lunchLabel.Text = "Lunch:";
             // 
+            // lunchdashLabel
+            // 
+            this.lunchdashLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.lunchdashLabel.AutoSize = true;
+            this.lunchdashLabel.BackColor = System.Drawing.Color.Transparent;
+            this.lunchdashLabel.ForeColor = System.Drawing.Color.White;
+            this.lunchdashLabel.Location = new System.Drawing.Point(233, 350);
+            this.lunchdashLabel.Name = "lunchdashLabel";
+            this.lunchdashLabel.Size = new System.Drawing.Size(13, 13);
+            this.lunchdashLabel.TabIndex = 27;
+            this.lunchdashLabel.Text = "--";
+            // 
             // Status
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Los_Alamos_Timeclock.Properties.Resources._1287421014661;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.lunchdashLabel);
             this.Controls.Add(this.linTextbox);
             this.Controls.Add(this.loutTextbox);
             this.Controls.Add(this.lunchLabel);
             this.Controls.Add(this.b2inTextbox);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.b2dashLabel);
             this.Controls.Add(this.b2outTextbox);
             this.Controls.Add(this.break2Label);
             this.Controls.Add(this.b1inTextbox);
-            this.Controls.Add(this.label7);
+            this.Controls.Add(this.b1dashLabel);
             this.Controls.Add(this.b1outTextbox);
             this.Controls.Add(this.break1Label);
             this.Controls.Add(this.endTextbox);
@@ -319,12 +333,12 @@
             this.Controls.Add(this.updatescheduleButton);
             this.Controls.Add(this.calander);
             this.Controls.Add(this.employeeLabel);
-            this.Controls.Add(this.Employees);
-            this.Controls.Add(this.dg);
+            this.Controls.Add(this.employeeDropdownlist);
+            this.Controls.Add(this.datagrid);
             this.DoubleBuffered = true;
             this.Name = "Status";
             this.Size = new System.Drawing.Size(500, 400);
-            ((System.ComponentModel.ISupportInitialize)(this.dg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datagrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -332,11 +346,11 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox Employees;
+        private System.Windows.Forms.ComboBox employeeDropdownlist;
         private System.Windows.Forms.Label employeeLabel;
         private System.Windows.Forms.DateTimePicker calander;
         private System.Windows.Forms.Button updatescheduleButton;
-        private System.Windows.Forms.DataGridView dg;
+        private System.Windows.Forms.DataGridView datagrid;
         private System.Windows.Forms.ComboBox jobsDropdownlist;
         private System.Windows.Forms.Label startLabel;
         private System.Windows.Forms.Label endLabel;
@@ -345,15 +359,16 @@
         private System.Windows.Forms.MaskedTextBox endTextbox;
         private System.Windows.Forms.MaskedTextBox b1outTextbox;
         private System.Windows.Forms.Label break1Label;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label b1dashLabel;
         private System.Windows.Forms.MaskedTextBox b1inTextbox;
         private System.Windows.Forms.MaskedTextBox b2inTextbox;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label b2dashLabel;
         private System.Windows.Forms.MaskedTextBox b2outTextbox;
         private System.Windows.Forms.Label break2Label;
         private System.Windows.Forms.MaskedTextBox linTextbox;
         private System.Windows.Forms.MaskedTextBox loutTextbox;
         private System.Windows.Forms.Label lunchLabel;
+        private System.Windows.Forms.Label lunchdashLabel;
 
     }
 }

@@ -14,107 +14,107 @@ namespace Los_Alamos_Timeclock.Manager
     public partial class Status : UserControl
     {
         public string date = DateTime.Today.ToString("yyyy-MM-dd");
-        public string ID = "";
+        public string id = "";
         public Boolean scheduled = false;
         public Status()
         {
             InitializeComponent();
             calander.MaxDate = DateTime.Today;
-            popdg();
+            populateDatagrid();
             jobsDropdownlist.DisplayMember = "getname";
             jobsDropdownlist.DataSource = Main.joblist;
-            Employees.DisplayMember = "getname";
-            Employees.ValueMember = "gid";
-            Employees.DataSource = Main.employeeList;
-            ID = Employees.SelectedValue.ToString();
+            employeeDropdownlist.DisplayMember = "getname";
+            employeeDropdownlist.ValueMember = "gid";
+            employeeDropdownlist.DataSource = Main.employeeList;
+            id = employeeDropdownlist.SelectedValue.ToString();
         }
 
 
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
         {
-            popdg();
+            populateDatagrid();
         }
 
-        private void Update_Click(object sender, EventArgs e)
+        private void update_Click(object sender, EventArgs e)
         {
             if (validate())
             {
                 Main.myConnection.Open();
-                Main.maininstance.sqlreader("SELECT * FROM `Hours Worked` WHERE ID='" + ID + "' AND Date='" + date + "'");
+                Main.maininstance.sqlreader("SELECT * FROM `Hours Worked` WHERE ID='" + id + "' AND Date='" + date + "'");
                 Boolean working = Main.reader.HasRows;
                 Main.myConnection.Close();
-                String _start = "'" + startTextbox.Text + "'", b1_out, b1_in, b2_out, b2_in, l_out, l_in, _end;
+                String startTime = "'" + startTextbox.Text + "'", b1_Out, b1_In, b2_Out, b2_In, l_Out, l_In, endTime;
 
                 DateTime a;
                 if (!DateTime.TryParse(b1outTextbox.Text, out a))
                 {
-                    b1_out = "NULL";
+                    b1_Out = "NULL";
                 }
                 else
                 {
-                    b1_out = "'" + b1outTextbox.Text + "'";
+                    b1_Out = "'" + b1outTextbox.Text + "'";
                 }
                 if (!DateTime.TryParse(b1inTextbox.Text, out a))
                 {
-                    b1_in = "NULL";
+                    b1_In = "NULL";
                 }
                 else
                 {
-                    b1_in = "'" + b1inTextbox.Text + "'";
+                    b1_In = "'" + b1inTextbox.Text + "'";
                 }
 
                 if (!DateTime.TryParse(b2outTextbox.Text, out a))
                 {
-                    b2_out = "NULL";
+                    b2_Out = "NULL";
                 }
                 else
                 {
-                    b2_out = "'" + b2outTextbox.Text + "'";
+                    b2_Out = "'" + b2outTextbox.Text + "'";
                 }
                 if (!DateTime.TryParse(b2inTextbox.Text, out a))
                 {
-                    b2_in = "NULL";
+                    b2_In = "NULL";
                 }
                 else
                 {
-                    b2_in = "'" + b2inTextbox.Text + "'";
+                    b2_In = "'" + b2inTextbox.Text + "'";
                 }
 
                 if (!DateTime.TryParse(loutTextbox.Text, out a))
                 {
-                    l_out = "NULL";
+                    l_Out = "NULL";
                 }
                 else
                 {
-                    l_out = "'" + loutTextbox.Text + "'";
+                    l_Out = "'" + loutTextbox.Text + "'";
                 }
                 if (!DateTime.TryParse(linTextbox.Text, out a))
                 {
-                    l_in = "NULL";
+                    l_In = "NULL";
                 }
                 else
                 {
-                    l_in = "'" + linTextbox.Text + "'";
+                    l_In = "'" + linTextbox.Text + "'";
                 }
 
                 if (!DateTime.TryParse(endTextbox.Text, out a))
                 {
-                    _end = "NULL";
+                    endTime = "NULL";
                 }
                 else
                 {
-                    _end = "'" + endTextbox.Text + "'";
+                    endTime = "'" + endTextbox.Text + "'";
                 }
 
                 string state = "'OUT'";
 
-                if (_end == "NULL")
+                if (endTime == "NULL")
                 {
-                    if ((b1_out != "NULL" && b1_in == "NULL") || (b2_out != "NULL" && b2_in == "NULL"))
+                    if ((b1_Out != "NULL" && b1_In == "NULL") || (b2_Out != "NULL" && b2_In == "NULL"))
                     {
                         state = "'BREAK'";
                     }
-                    else if (l_out != "NULL" && l_in == "NULL")
+                    else if (l_Out != "NULL" && l_In == "NULL")
                     {
                         state = "'LUNCH'";
                     }
@@ -130,49 +130,49 @@ namespace Los_Alamos_Timeclock.Manager
                 {
                     Main.maininstance.sqlcommand("UPDATE `Hours Worked` "+
                                                 "SET "+
-                                                "Start=" + _start +", "+
-                                                "End=" + _end + ", "+
-                                                "B1out=" + b1_out + ", " +
-                                                "B1in=" + b1_in + ", " +
-                                                "B2out=" + b2_out + ", " +
-                                                "B2in=" + b2_in + ", " +
-                                                "Lout=" + l_out + ", " +
-                                                "Lin=" + l_in + ", " +
+                                                "Start=" + startTime +", "+
+                                                "End=" + endTime + ", "+
+                                                "B1out=" + b1_Out + ", " +
+                                                "B1in=" + b1_In + ", " +
+                                                "B2out=" + b2_Out + ", " +
+                                                "B2in=" + b2_In + ", " +
+                                                "Lout=" + l_Out + ", " +
+                                                "Lin=" + l_In + ", " +
                                                 "JID='" + jobsDropdownlist.Text + "', "+
                                                 "Status=" + state +" "+
-                                                "WHERE Date='" + date + "' AND ID='" + ID + "'");
+                                                "WHERE Date='" + date + "' AND ID='" + id + "'");
                     MessageBox.Show("Update Successful");
-                    Log.writeLog(Main.eName + " changed the Hours Worked for " + Employees.Text + "\n Date= " + date + "\n Job= " + jobsDropdownlist.Text + "\n Start= " + startTextbox.Text + "\n End= " + endTextbox.Text + "\n Break 1= " + b1outTextbox.Text + "-" + b1inTextbox.Text + "\n Break 2= " + b2outTextbox.Text + "-" + b2inTextbox.Text + "\n Lunch= " + loutTextbox.Text + "-" + linTextbox.Text);
+                    Log.writeLog(Main.eName + " changed the Hours Worked for " + employeeDropdownlist.Text + "\n Date= " + date + "\n Job= " + jobsDropdownlist.Text + "\n Start= " + startTextbox.Text + "\n End= " + endTextbox.Text + "\n Break 1= " + b1outTextbox.Text + "-" + b1inTextbox.Text + "\n Break 2= " + b2outTextbox.Text + "-" + b2inTextbox.Text + "\n Lunch= " + loutTextbox.Text + "-" + linTextbox.Text);
                 }
                 else
                 {
                     Main.maininstance.sqlcommand("INSERT INTO `Hours Worked`(`ID` ,`Date` ,`Start` ,`End` ,`JID` ,`B1out` ,`B1in` ,`B2out` ,`B2in` ,`Lout` ,`Lin` ,`Status`)" +
-                                                "VALUES('"+ID+"','"+date+"',"+_start+","+_end+",'"+jobsDropdownlist.Text+"',"+b1_out+","+b1_in+","+b2_out+","+b2_in+","+l_out+","+l_in+","+state+")");
+                                                "VALUES('"+id+"','"+date+"',"+startTime+","+endTime+",'"+jobsDropdownlist.Text+"',"+b1_Out+","+b1_In+","+b2_Out+","+b2_In+","+l_Out+","+l_In+","+state+")");
                     MessageBox.Show("Insert Successful");
-                    Log.writeLog(Main.eName + " inserted into the Hours Worked for " + Employees.Text + "\n Date= " + date + "\n Job= " + jobsDropdownlist.Text + "\n Start= " + startTextbox.Text + "\n End= " + endTextbox.Text + "\n Break 1= " + b1outTextbox.Text + "-" + b1inTextbox.Text + "\n Break 2= " + b2outTextbox.Text + "-" + b2inTextbox.Text + "\n Lunch= " + loutTextbox.Text + "-" + linTextbox.Text);
+                    Log.writeLog(Main.eName + " inserted into the Hours Worked for " + employeeDropdownlist.Text + "\n Date= " + date + "\n Job= " + jobsDropdownlist.Text + "\n Start= " + startTextbox.Text + "\n End= " + endTextbox.Text + "\n Break 1= " + b1outTextbox.Text + "-" + b1inTextbox.Text + "\n Break 2= " + b2outTextbox.Text + "-" + b2inTextbox.Text + "\n Lunch= " + loutTextbox.Text + "-" + linTextbox.Text);
                 }
 
-                popdg();
+                populateDatagrid();
             }
         }
 
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        private void calander_DateChanged(object sender, EventArgs e)
         {
             date = calander.Value.ToString("yyyy-MM-dd");
-            popdg();
-            Eupdate();
+            populateDatagrid();
+            employeeUpdate();
 
         }
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void employeeDropdownlist_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ID = Employees.SelectedValue.ToString();
-            Eupdate();
+            id = employeeDropdownlist.SelectedValue.ToString();
+            employeeUpdate();
         }
 
-        public void Eupdate()
+        public void employeeUpdate()
         {
             Main.myConnection.Open();
-            Main.maininstance.sqlreader("Select * from `Hours Worked` where ID='" + ID + "' AND Date='" + date + "'");
+            Main.maininstance.sqlreader("Select * from `Hours Worked` where ID='" + id + "' AND Date='" + date + "'");
             if (Main.reader.HasRows)
             {
                 startTextbox.Text = Main.reader["Start"].ToString();
@@ -200,7 +200,7 @@ namespace Los_Alamos_Timeclock.Manager
             Main.myConnection.Close();
         }
 
-        public void popdg()
+        public void populateDatagrid()
         {
             string query = "Select " +
                                 "a.Date, " +
@@ -269,7 +269,7 @@ namespace Los_Alamos_Timeclock.Manager
 
                     BindingSource bind = new BindingSource();
                     bind.DataSource = dataTable;
-                    dg.DataSource = bind;
+                    datagrid.DataSource = bind;
                 }
                 catch (Exception e)
                 {

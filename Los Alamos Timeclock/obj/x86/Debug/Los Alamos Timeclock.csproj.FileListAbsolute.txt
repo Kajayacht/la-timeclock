@@ -67,4 +67,3 @@ C:\Users\Nate\Dropbox\Visual Studio Projects\Projects\Los Alamos Timeclock\Los A
 C:\Users\Nate\Dropbox\Visual Studio Projects\Projects\Los Alamos Timeclock\Los Alamos Timeclock\obj\x86\Debug\Los_Alamos_Timeclock.Contactinfo.resources
 C:\Users\Nate\Dropbox\Visual Studio Projects\Projects\Los Alamos Timeclock\Los Alamos Timeclock\obj\x86\Debug\Los_Alamos_Timeclock.Manager.Phonebook.resources
 C:\Users\Nate\Dropbox\Visual Studio Projects\Projects\Los Alamos Timeclock\Los Alamos Timeclock\obj\x86\Debug\Los_Alamos_Timeclock.Manager.Employeenotes.resources
-C:\Users\Nate\Dropbox\Visual Studio Projects\Projects\Los Alamos Timeclock\Los Alamos Timeclock\bin\Debug\MySql.Data.dll

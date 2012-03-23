@@ -125,7 +125,7 @@
             this.addnoteButton.TabIndex = 64;
             this.addnoteButton.Text = "Add Note";
             this.addnoteButton.UseVisualStyleBackColor = true;
-            this.addnoteButton.Click += new System.EventHandler(this.addnote_Click);
+            this.addnoteButton.Click += new System.EventHandler(this.addnoteButton_Click);
             // 
             // Employeenotes
             // 
