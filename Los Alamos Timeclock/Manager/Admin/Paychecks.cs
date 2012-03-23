@@ -5,7 +5,7 @@ using System.Drawing;
 using System.Data;
 using System.Linq;
 using System.Text;
-using System.Windows.Forms;
+using System.Windows.Forms;                                                                                                                                                             
 using MySql.Data.MySqlClient;
 
 namespace Los_Alamos_Timeclock.Manager.Admin
@@ -29,49 +29,54 @@ namespace Los_Alamos_Timeclock.Manager.Admin
 
     public partial class Paychecks : UserControl
     {
-        public DateTime mon = DateTime.Now.Date;
-        public DateTime sun;
+        
         public Paychecks()
         {
             InitializeComponent();
-            mon = getmon(mon);
-            Week.Value = mon;
-            sun = mon.AddDays(6);
-            weeklabel.Text = "Pay for " + mon.ToShortDateString() + "-" + sun.ToShortDateString();
-            calculate();
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-            if (Week.Value.DayOfWeek != DayOfWeek.Monday)
+            if (DateTime.Today.DayOfWeek != DayOfWeek.Monday)
             {
-                Week.Value = getmon(Week.Value.Date);
+                startCalander.Value = getMonday(startCalander.Value);
             }
-            mon = Week.Value;
-            sun = mon.AddDays(6);
-            weeklabel.Text = "Pay for " + mon.ToShortDateString() + "-" + sun.ToShortDateString();
-            calculate();
+            endCalander.Value = startCalander.Value.AddDays(6);
+
+            weekLabel.Text = "Pay for " + startCalander.Value.ToShortDateString() + " - " + endCalander.Value.ToShortDateString();
+            calculatePay();
         }
 
-        public DateTime getmon(DateTime a)
+        private void startCalander_ValueChanged(object sender, EventArgs e)
+        {
+            endCalander.MinDate = startCalander.Value;
+
+            weekLabel.Text = "Pay for " + startCalander.Value.ToShortDateString() + " - " + endCalander.Value.ToShortDateString();
+            calculatePay();
+        }
+        private void endCalander_ValueChanged(object sender, EventArgs e)
+        {
+            if (endCalander.Value < startCalander.Value)
+            {
+                endCalander.Value = startCalander.Value;
+            }
+            calculatePay();
+        }
+
+        public DateTime getMonday(DateTime a)
         {
             while (a.DayOfWeek != DayOfWeek.Monday)
             {
                 a = a.AddDays(-1);
             }
-            Pay.Text = "";
+            payTextbox.Text = "";
             return a;
-
         }
 
-        public void calculate()
+        public void calculatePay()
         {
-            string ID = "";
+            string id = "";
             TimeSpan hours = TimeSpan.FromHours(0);
-            Double Totalhours = 0;
-            Double hourlyrate = 0.00;
+            Double totalHours = 0;
+            Double hourlyRate = 0.00;
             Double pay = 0.00;
-            Double Totalpay = 0.00;
+            Double totalPay = 0.00;
             Main.myConnection.Open();
 
 
@@ -83,8 +88,8 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             "ON b.JID=c.JID AND a.ID = c.ID " +
             "JOIN `Employee` d "+
             "ON a.ID=d.ID "+
-            "WHERE a.Date>='" + mon.ToString("yyyy-MM-dd") +
-            "' AND a.Date<='" + sun.ToString("yyyy-MM-dd") + 
+            "WHERE a.Date>='" + startCalander.Value.ToString("yyyy-MM-dd") +
+            "' AND a.Date<='" + endCalander.Value.ToString("yyyy-MM-dd") + 
             "' AND a.Status='OUT'"+
             "ORDER BY d.LName "+
             "LIMIT 0,1000";
@@ -95,17 +100,17 @@ namespace Los_Alamos_Timeclock.Manager.Admin
 
             while (Main.reader.Read())
             {
-                if (Main.reader["ID"].ToString() != ID)
+                if (Main.reader["ID"].ToString() != id)
                 {
-                    if (ID != "")
+                    if (id != "")
                     {
-                        output = output + "\tTotal Hours: \t" + Totalhours + "\n" +
-                                          "\tGross Pay: \t$" + String.Format("{0:0.00}", Math.Round(Totalpay, 2)) + "\n\n";
+                        output = output + "\tTotal Hours: \t" + totalHours + "\n" +
+                                          "\tGross Pay: \t$" + String.Format("{0:0.00}", Math.Round(totalPay, 2)) + "\n\n";
                     }
-                    ID = Main.reader["ID"].ToString();
+                    id = Main.reader["ID"].ToString();
                     output = output + Main.reader["LName"].ToString() + ", " + Main.reader["FName"].ToString()+" "+ Main.reader["MName"].ToString()+"\n";
-                    Totalhours = 0;
-                    Totalpay = 0.00;
+                    totalHours = 0;
+                    totalPay = 0.00;
                 }
                 if (Main.reader["Start"].ToString() != "" && Main.reader["End"].ToString() != "")
                 {
@@ -123,66 +128,61 @@ namespace Los_Alamos_Timeclock.Manager.Admin
 
                         if (Main.maininstance.roundtime(DateTime.Parse(Main.reader["Lin"].ToString())) < Main.maininstance.roundtime(DateTime.Parse(Main.reader["Lout"].ToString())))
                         {
-                            hours = hours.Subtract(roundtime((DateTime.Parse(Main.reader["Lin"].ToString()).AddHours(24)).Subtract(DateTime.Parse(Main.reader["Lout"].ToString()))));
+                            hours = hours.Subtract(roundTime((DateTime.Parse(Main.reader["Lin"].ToString()).AddHours(24)).Subtract(DateTime.Parse(Main.reader["Lout"].ToString()))));
                         }
                         else
                         {
-                            hours = hours.Subtract(roundtime(DateTime.Parse(Main.reader["Lin"].ToString()).Subtract(DateTime.Parse(Main.reader["Lout"].ToString()))));
+                            hours = hours.Subtract(roundTime(DateTime.Parse(Main.reader["Lin"].ToString()).Subtract(DateTime.Parse(Main.reader["Lout"].ToString()))));
                         }
                     }
 
 
                     if (Main.reader["JPay"].ToString()=="")
                     {
-                        hourlyrate = Double.Parse(Main.reader["JSPay"].ToString());
+                        hourlyRate = Double.Parse(Main.reader["JSPay"].ToString());
                     }
                     else
                     {
-                        hourlyrate = Double.Parse(Main.reader["JPay"].ToString());
+                        hourlyRate = Double.Parse(Main.reader["JPay"].ToString());
                     }
 
-                    if (Totalhours > 40)
+                    if (totalHours > 40)
                     {
-                        hourlyrate *= 1.5;
-                        pay = hourlyrate * (hours.Hours + (hours.Minutes / 15 * .25));
+                        hourlyRate *= 1.5;
+                        pay = hourlyRate * (hours.Hours + (hours.Minutes / 15 * .25));
 
                     }
-                    else if (Totalhours + (hours.Hours + (hours.Minutes / 15) * .25) > 40)
+                    else if (totalHours + (hours.Hours + (hours.Minutes / 15) * .25) > 40)
                     {
                         TimeSpan a = TimeSpan.FromHours(40);
-                        a = a.Subtract(TimeSpan.FromHours(Totalhours));
+                        a = a.Subtract(TimeSpan.FromHours(totalHours));
                         hours = hours.Subtract(a);
-                        pay = (hourlyrate * (a.Hours + (a.Minutes / 15 * .25))) + ((hourlyrate * 1.5) * (a.Hours + (a.Minutes / 15 * .25)));
+                        pay = (hourlyRate * (a.Hours + (a.Minutes / 15 * .25))) + ((hourlyRate * 1.5) * (a.Hours + (a.Minutes / 15 * .25)));
                         hours = hours.Add(a);
                     }
                     else
                     {
-                        pay = hourlyrate * (hours.Hours + (hours.Minutes / 15 * .25));
+                        pay = hourlyRate * (hours.Hours + (hours.Minutes / 15 * .25));
                     }
-                    Totalpay += pay;
+                    totalPay += pay;
                     pay = 0.00;
-                    Totalhours = Totalhours+(hours.Hours+(hours.Minutes/15)*.25);
+                    totalHours = totalHours+(hours.Hours+(hours.Minutes/15)*.25);
                     hours = TimeSpan.FromHours(0);
                 }
             }
-            if (ID != "")
+            if (id != "")
             {
-                output = output + "\tTotal Hours: \t" + Totalhours + "\n" +
-                                  "\tGross Pay: \t$" + String.Format("{0:0.00}", Math.Round(Totalpay, 2)) + "\n\n";
+                output = output + "\tTotal Hours: \t" + totalHours + "\n" +
+                                  "\tGross Pay: \t$" + String.Format("{0:0.00}", Math.Round(totalPay, 2)) + "\n\n";
             }
-            ID = "";
-            Pay.Text = output;
+            id = "";
+            payTextbox.Text = output;
 
 
             Main.myConnection.Close();
         }
 
-        public void Subtime()
-        {
-
-        }
-
-        public TimeSpan roundtime(TimeSpan a)
+        public TimeSpan roundTime(TimeSpan a)
         {
             int q = 0;
             while (a.Minutes > 15)

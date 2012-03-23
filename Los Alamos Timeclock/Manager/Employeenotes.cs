@@ -12,30 +12,30 @@ namespace Los_Alamos_Timeclock.Manager
 {
     public partial class Employeenotes : UserControl
     {
-        string ID;
+        string id;
         public Employeenotes()
         {
             InitializeComponent();
-            empnotelist.DisplayMember = "getname";
-            empnotelist.ValueMember = "gid";
-            empnotelist.DataSource = Main.EmployeeList;
+            employeeDropdownlist.DisplayMember = "getname";
+            employeeDropdownlist.ValueMember = "gid";
+            employeeDropdownlist.DataSource = Main.employeeList;
         }
 
-        private void empnotelist_SelectedIndexChanged(object sender, EventArgs e)
+        private void employeeDropdownlist_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ID = empnotelist.SelectedValue.ToString();
-            filldt();
+            id = employeeDropdownlist.SelectedValue.ToString();
+            fillNotesDatagrid();
         }
 
 
-        public void filldt()
+        public void fillNotesDatagrid()
         {
             string query = 
                 "SELECT CONCAT(b.LName,', ',b.FName,' ', b.MName) As Name, a.Date, a.Note, a.Manager " +
                 "FROM EmployeeNotes a "+
                 "JOIN Employee b "+
                 "ON a.ID=b.ID "+
-                "WHERE b.ID='" + ID + "' "+
+                "WHERE b.ID='" + id + "' "+
                 "ORDER BY a.Date";
 
             try
@@ -49,7 +49,7 @@ namespace Los_Alamos_Timeclock.Manager
 
                 BindingSource bind = new BindingSource();
                 bind.DataSource = dataTable;
-                Notes.DataSource = bind;
+                notesDatagrid.DataSource = bind;
             }
             catch (Exception e)
             {
@@ -61,16 +61,16 @@ namespace Los_Alamos_Timeclock.Manager
             }
         }
 
-        private void addnote_Click(object sender, EventArgs e)
+        private void addnoteButton_Click(object sender, EventArgs e)
         {
-            if (addnote.Text == "")
+            if (noteTextbox.Text == "")
             {
                 MessageBox.Show("Note Cannot be empty");
             }
             else
             {
-                Main.maininstance.sqlcommand("INSERT INTO EmployeeNotes VALUES('"+ID+"','"+Main.EName+"','"+DateTime.Today.ToString("yyyy-MM-dd")+"','"+notetextbox.Text+"')");
-                filldt();
+                Main.maininstance.sqlcommand("INSERT INTO EmployeeNotes VALUES('" + id + "','" + Main.eName + "','" + DateTime.Today.ToString("yyyy-MM-dd") + "','" + noteTextbox.Text + "')");
+                fillNotesDatagrid();
             }
         }
     }

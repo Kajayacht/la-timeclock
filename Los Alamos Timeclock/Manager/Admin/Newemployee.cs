@@ -14,8 +14,8 @@ namespace Los_Alamos_Timeclock.Manager.Admin
         public Newemployee()
         {
             InitializeComponent();
-            SSN.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
-            Phone.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            ssnTextbox.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            phoneTextbox.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             if (Main.myConnection.State == ConnectionState.Open)
             {
                 Main.reader.Close();
@@ -23,41 +23,55 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             }
         }
 
-        private void Save_Click(object sender, EventArgs e)
+        private void save_Click(object sender, EventArgs e)
         {
             if (validate())
             {
-                int ID = 0;
-                Main.myConnection.Open();
-                Main.maininstance.sqlreader("SELECT * FROM Users WHERE User='"+User.Text+"'");
-                Boolean a = Main.reader.HasRows;
-                Main.reader.Close();
-                if (a)
+                int id = 0;
+                Boolean hasrows;
+
+                try
                 {
-                    Main.myConnection.Close();
-                    MessageBox.Show("Duplicate Username, choose another");
-                }
-                else
-                {
-                    Main.maininstance.sqlreader("SELECT MAX(ID) FROM Employee");
-                    ID = Convert.ToInt32(Main.reader["MAX(ID)"]) + 1;
+                    Main.myConnection.Open();
+                    Main.maininstance.sqlreader("SELECT * FROM Users WHERE User='" + userTextbox.Text + "'");
+                    hasrows = Main.reader.HasRows;
                     Main.reader.Close();
+
+                    if (hasrows)
+                    {
+                        Main.myConnection.Close();
+                        MessageBox.Show("Duplicate Username, choose another");
+                    }
+                    else
+                    {
+                        Main.maininstance.sqlreader("SELECT MAX(ID) FROM Employee");
+                        id = Convert.ToInt32(Main.reader["MAX(ID)"]) + 1;
+                        Main.reader.Close();
+                        Main.myConnection.Close();
+
+                        Main.maininstance.sqlcommand("INSERT INTO Employee (`ID`, `LName`, `MName`, `FName`, `SSN`, `Phone`, `Email`, `Address1`, `Address2`,`City`, `State`, `Zip`,`SDate`) VALUES ('" + id + "', '" + lNameTextbox.Text + "', '" + mNameTextbox.Text + "', '" + fNameTextbox.Text + "', '" + ssnTextbox.Text + "', '" + phoneTextbox.Text + "', '" + emailTextbox.Text + "', '" + aLine1Textbox.Text + "', '" + aLine2Textbox.Text + "','" + aCityTextbox.Text + "', '" + aStateDropdownlist.Text + "', '" + aZipTextbox.Text + "', '" + DateTime.Today.ToString("yyyy-MM-dd") + "')");
+                        Main.maininstance.sqlcommand("INSERT INTO Users (`ID`, `User`, `Password`) VALUES ('" + id + "', '" + userTextbox.Text + "', PASSWORD('" + pass1Textbox.Text + "'))");
+                        Log.writeLog(Main.eName + " added employee: \n" + "LName= " + lNameTextbox.Text + " MName= " + mNameTextbox.Text + " FName= " + fNameTextbox.Text + "\n SSN= " + ssnTextbox.Text + "\n Phone= " + phoneTextbox.Text + "\n Email= " + emailTextbox.Text + "\n Address1= " + aLine1Textbox.Text + "\n Address2= " + aLine2Textbox.Text + "\n City= " + aCityTextbox.Text + "\n State= " + aStateDropdownlist.Text + "\n Zip= " + aZipTextbox.Text + "\n ID= " + id + " User= " + userTextbox.Text);
+
+                        Main.employeeList = Main.maininstance.getEmployees();
+
+                        Main.maininstance.panel1.Controls.Clear();
+                        Main.maininstance.panel1.Controls.Add(new Editemployees());
+                        Main.maininstance.panel1.Controls[0].Dock = DockStyle.Fill;
+                    }
+                }
+                catch (Exception f)
+                {
+                    MessageBox.Show(f.ToString());
+                }
+                finally
+                {
                     Main.myConnection.Close();
-
-                    Main.maininstance.sqlcommand("INSERT INTO Employee (`ID`, `LName`, `MName`, `FName`, `SSN`, `Phone`, `Email`, `Address1`, `Address2`,`City`, `State`, `Zip`,`SDate`) VALUES ('" + ID + "', '" + Lname.Text + "', '" + Mname.Text + "', '" + Fname.Text + "', '" + SSN.Text + "', '" + Phone.Text + "', '" + Email.Text + "', '" + Al1.Text + "', '" + Al2.Text + "','" + Ac.Text + "', '" + As.Text + "', '" + Az.Text + "', '" + DateTime.Today.ToString("yyyy-MM-dd") + "')");
-                    Main.maininstance.sqlcommand("INSERT INTO Users (`ID`, `User`, `Password`) VALUES ('" + ID + "', '"+User.Text+"', PASSWORD('"+Pass1.Text+"'))");
-                    Log.writeLog(Main.EName + " added employee: \n" + "LName= " + Lname.Text + " MName= " + Mname.Text + " FName= " + Fname.Text + "\n SSN= " + SSN.Text + "\n Phone= " + Phone.Text + "\n Email= " + Email.Text + "\n Address1= " + Al1.Text + "\n Address2= " + Al2.Text + "\n City= " + Ac.Text + "\n State= " + As.Text + "\n Zip= " + Az.Text + "\n ID= " + ID + " User= " + User.Text);
-                    
-                    Main.EmployeeList = Main.maininstance.getEmployees();
-
-                    Main.maininstance.panel1.Controls.Clear();
-                    Main.maininstance.panel1.Controls.Add(new Editemployees());
-                    Main.maininstance.panel1.Controls[0].Dock = DockStyle.Fill;
                 }
             }
         }
 
-        private void Cancel_Click(object sender, EventArgs e)
+        private void cancel_Click(object sender, EventArgs e)
         {
             
             Main.maininstance.panel1.Controls.Clear();
@@ -68,7 +82,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
         public Boolean validate()
         {
             Main.myConnection.Open();
-            Main.maininstance.sqlreader("SELECT * FROM Users WHERE LOWER(User)=LOWER('"+User.Text+"')");
+            Main.maininstance.sqlreader("SELECT * FROM Users WHERE LOWER(User)=LOWER('"+userTextbox.Text+"')");
             Boolean used = Main.reader.HasRows;
             Main.myConnection.Close();
 
@@ -77,42 +91,42 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                 MessageBox.Show("Username already exists");
                 return false;
             }
-            else if (Fname.Text == "")
+            else if (fNameTextbox.Text == "")
             {
                 MessageBox.Show("First Name cannot be empty");
                 return false;
             }
-            else if (Mname.Text == "")
+            else if (mNameTextbox.Text == "")
             {
                 MessageBox.Show("Middle Name cannot be empty");
                 return false;
             }
-            else if (Lname.Text == "")
+            else if (lNameTextbox.Text == "")
             {
                 MessageBox.Show("Last Name cannot be empty");
                 return false;
             }
-            else if (SSN.Text == "")
+            else if (ssnTextbox.Text == "")
             {
                 MessageBox.Show("SSN cannot be empty");
                 return false;
             }
-            else if (Phone.Text == "")
+            else if (phoneTextbox.Text == "")
             {
                 MessageBox.Show("Phone Number cannot be empty");
                 return false;
             }
-            else if (User.Text == "")
+            else if (userTextbox.Text == "")
             {
                 MessageBox.Show("User cannot be empty");
                 return false;
             }
-            else if (Pass1.Text == "")
+            else if (pass1Textbox.Text == "")
             {
                 MessageBox.Show("Password cannot be empty");
                 return false;
             }
-            else if (Pass1.Text !=Pass2.Text)
+            else if (pass1Textbox.Text !=pass2Textbox.Text)
             {
                 MessageBox.Show("Password confirmation does not match");
                 return false;
@@ -121,56 +135,6 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             {
                 return true;
             }
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label12_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

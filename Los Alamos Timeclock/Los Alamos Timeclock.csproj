@@ -259,6 +259,8 @@
   <ItemGroup>
     <Content Include="Resources\Bartender.bmp" />
     <Content Include="Resources\Cook.bmp" />
+    <None Include="Resources\dancingtaco.gif" />
+    <None Include="Resources\dancingChile.gif" />
     <Content Include="Resources\Dishwasher.bmp" />
     <Content Include="Resources\Manager.bmp" />
     <Content Include="Resources\Security.bmp" />

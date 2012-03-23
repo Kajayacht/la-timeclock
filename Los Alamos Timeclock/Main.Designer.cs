@@ -68,6 +68,7 @@
             this.Controls.Add(this.menu1);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.DoubleBuffered = true;
+            this.MinimumSize = new System.Drawing.Size(586, 438);
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Los Alamos Timeclock";

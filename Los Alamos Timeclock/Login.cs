@@ -30,13 +30,13 @@ namespace Los_Alamos_Timeclock
                                             "ON a.ID=c.ID " +
                                             "Left Join Manager d " +
                                             "ON a.ID=d.ID " +
-                                            "Where LOWER(a.User)=LOWER('" + IN_USER.Text + "') " +
-                                            "And a.Password=PASSWORD('"+IN_PASS.Text + "') "+
+                                            "Where LOWER(a.User)=LOWER('" + userTextbox.Text + "') " +
+                                            "And a.Password=PASSWORD('"+passTextbox.Text + "') "+
                                             "AND (b.EDate>='"+DateTime.Today.AddDays(-1).ToString("yyyy-MM-dd")+"' OR b.EDate='0000-00-00')");
 
                 if (Main.reader.HasRows)
                 {
-                    Main.ID = Main.reader["ID"].ToString();
+                    Main.id = Main.reader["ID"].ToString();
 
                     if (Main.reader["Admin"].ToString() != "")
                     {
@@ -50,7 +50,7 @@ namespace Los_Alamos_Timeclock
                     {
                         Main.permissions = "None";
                     }
-                    Main.EName = Main.reader["FName"].ToString() + " " + Main.reader["LName"].ToString();
+                    Main.eName = Main.reader["FName"].ToString() + " " + Main.reader["LName"].ToString();
                     Main.reader.Close();
                     Main.myConnection.Close();
 

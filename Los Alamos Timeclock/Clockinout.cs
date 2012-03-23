@@ -34,12 +34,13 @@ namespace Los_Alamos_Timeclock
     public partial class Clockinout : UserControl
     {
         public Boolean scheduled = false;
-        DateTime start, end;
+        DateTime startTime, endTime;
         string date;
         int n = 0;
         Boolean lunch = false;
         string job;
         string status;
+        Boolean clockedIn = false;
         public MySqlCommand command;
         public Clockinout()
         {
@@ -48,17 +49,17 @@ namespace Los_Alamos_Timeclock
 
             try
             {
-                welcome.Text = "Welcome " + Main.EName + "!";
+                welcome.Text = "Welcome " + Main.eName + "!";
 
                 Main.myConnection.Open();
-                Main.maininstance.sqlreader("Select * From `Hours Worked` WHERE ID='" + Main.ID + "' AND Status!='OUT'");
-                Boolean clockedin = Main.reader.HasRows;
-                if (clockedin)
+                Main.maininstance.sqlreader("Select * From `Hours Worked` WHERE ID='" + Main.id + "' AND Status!='OUT'");
+                clockedIn = Main.reader.HasRows;
+                if (clockedIn)
                 {
                     job = Main.reader["JID"].ToString();
 
-                    jobimg.Image = (Bitmap)Resources.ResourceManager.GetObject(job);
-                    
+                    jobImage.Image = (Image)Resources.ResourceManager.GetObject(job);
+
 
                     if (Main.reader["B1in"].ToString() == "")
                     {
@@ -83,43 +84,48 @@ namespace Los_Alamos_Timeclock
                 {
                     date = DateTime.Today.ToString("yyyy-MM-dd");
                 }
+                Main.reader.Close();
+                Main.maininstance.sqlreader("Select Employee.FName, Schedule.Date, Schedule.Start, Schedule.End, Schedule.JID from Employee,Schedule Where Employee.ID='" + Main.id + "' AND Employee.ID=Schedule.ID AND Schedule.Date='" + date + "'");
+
+                scheduled = Main.reader.HasRows;
+
+                if (Main.reader.HasRows)
+                {
+                    startTime = DateTime.ParseExact(Main.reader["Start"].ToString(), "HH:mm:ss", null);
+                    endTime = DateTime.ParseExact(Main.reader["End"].ToString(), "HH:mm:ss", null);
+                    if (!clockedIn)
+                    {
+                        job = Main.reader["JID"].ToString();
+                        jobImage.Image = (Image)Resources.ResourceManager.GetObject(job);
+                    }
+                    if (startTime > endTime)
+                    {
+                        endTime = endTime.AddDays(1); //handles late shift length
+                    }
+
                     Main.reader.Close();
-                    Main.maininstance.sqlreader("Select Employee.FName, Schedule.Date, Schedule.Start, Schedule.End, Schedule.JID from Employee,Schedule Where Employee.ID='" + Main.ID + "' AND Employee.ID=Schedule.ID AND Schedule.Date='" + date + "'");
-
-                    scheduled = Main.reader.HasRows;
-
-                    if (Main.reader.HasRows)
-                    {
-                        start = DateTime.ParseExact(Main.reader["Start"].ToString(), "HH:mm:ss", null);
-                        end = DateTime.ParseExact(Main.reader["End"].ToString(), "HH:mm:ss", null);
-                        if (!clockedin)
-                        {
-                            job = Main.reader["JID"].ToString();
-                            jobimg.Image = (Bitmap)Resources.ResourceManager.GetObject(job);
-                        }
-                        if (start > end)
-                        {
-                            end = end.AddDays(1); //handles late shift length
-                        }
-
-                        Main.reader.Close();
-                        Main.myConnection.Close();
-                        shiftinfo.Text =
-                            "Today's Schedule:\n" +
-                            "Start: " + start.ToString("hh:mm tt") + "\n" +
-                            "End:  " + end.ToString("hh:mm tt") + "\n" +
-                            "Job:  " + job + "\n" +
-                            "Length: " + end.Subtract(start).ToString();
-                    }
-                    else
-                    {
-                        jobimg.Image = (Bitmap)Resources.ResourceManager.GetObject("none");
-                        shiftinfo.Text =
-                            "You are not Scheduled\n" +
-                            "Please see a manager";
-                        Main.reader.Close();
-                        Main.myConnection.Close();
-                    }
+                    Main.myConnection.Close();
+                    shiftinfoLabel.Text =
+                        "Today's Schedule:\n" +
+                        "Start: " + startTime.ToString("hh:mm tt") + "\n" +
+                        "End:  " + endTime.ToString("hh:mm tt") + "\n" +
+                        "Job:  " + job + "\n" +
+                        "Length: " + endTime.Subtract(startTime).ToString();
+                }
+                else if (clockedIn)
+                {
+                    shiftinfoLabel.Text = 
+                        "Today's Schedule:\n"+
+                        "Job:  " + job;
+                }
+                else
+                {
+                    jobImage.Image = (Image)Resources.ResourceManager.GetObject("none");
+                    shiftinfoLabel.Text =
+                        "You are not Scheduled\n" +
+                        "Please see a manager";
+                    Main.myConnection.Close();
+                }
 
                 if (Main.myConnection.State == ConnectionState.Open)
                 {
@@ -130,6 +136,10 @@ namespace Los_Alamos_Timeclock
             {
                 MessageBox.Show(e.ToString());
             }
+            finally
+            {
+                Main.myConnection.Close();
+            }
             supdate();
         }
 
@@ -137,23 +147,23 @@ namespace Los_Alamos_Timeclock
         {
             if (status == "IN")
             {
-                statusmessage.Text = "Clocked In";
-                statusmessage.BackColor = Color.Green;
+                statusMessagebox.Text = "Clocked In";
+                statusMessagebox.BackColor = Color.Green;
             }
             else if (status == "BREAK")
             {
-                statusmessage.Text = "On Break";
-                statusmessage.BackColor = Color.Yellow;
+                statusMessagebox.Text = "On Break";
+                statusMessagebox.BackColor = Color.Yellow;
             }
             else if (status == "LUNCH")
             {
-                statusmessage.Text = "On Lunch";
-                statusmessage.BackColor = Color.Yellow;
+                statusMessagebox.Text = "On Lunch";
+                statusMessagebox.BackColor = Color.Yellow;
             }
             else
             {
-                statusmessage.Text = "Clocked Out";
-                statusmessage.BackColor = Color.Red;
+                statusMessagebox.Text = "Clocked Out";
+                statusMessagebox.BackColor = Color.Red;
             }
         }
 
@@ -161,9 +171,9 @@ namespace Los_Alamos_Timeclock
         {
             if (scheduled)
             {
-                if (start == Main.maininstance.roundtime(DateTime.Now) && status != "IN" && status != "BREAK" && status != "LUNCH")
+                if (startTime == Main.maininstance.roundtime(DateTime.Now) && status != "IN" && status != "BREAK" && status != "LUNCH")
                 {
-                    Main.maininstance.sqlcommand("INSERT INTO `Hours Worked` (`ID`, `Date`, `Start`, `JID`,`Status`) VALUES ('" + Main.ID + "', '" + DateTime.Today.ToString("yyyy-MM-dd") + "' , '" + DateTime.Now.ToString("HH:mm:ss") + "', '" + job + "', 'IN')");
+                    Main.maininstance.sqlcommand("INSERT INTO `Hours Worked` (`ID`, `Date`, `Start`, `JID`,`Status`) VALUES ('" + Main.id + "', '" + DateTime.Today.ToString("yyyy-MM-dd") + "' , '" + DateTime.Now.ToString("HH:mm:ss") + "', '" + job + "', 'IN')");
                     status = "IN";
                     supdate();
                 }
@@ -184,14 +194,14 @@ namespace Los_Alamos_Timeclock
 
             if (status == "BREAK" && n > 0)
             {
-                Main.maininstance.sqlcommand("UPDATE `Hours Worked` SET B" + n + "in='" + DateTime.Now.ToString("HH:mm:ss") + "', Status='IN' WHERE ID='" + Main.ID + "' AND Date='" + date + "'");
+                Main.maininstance.sqlcommand("UPDATE `Hours Worked` SET B" + n + "in='" + DateTime.Now.ToString("HH:mm:ss") + "', Status='IN' WHERE ID='" + Main.id + "' AND Date='" + date + "'");
                 status = "IN";
                 supdate();
                 n = n + 1;
             }
             else if (status == "IN" && n > 0)
             {
-                Main.maininstance.sqlcommand("UPDATE `Hours Worked` SET B" + n + "out='" + DateTime.Now.ToString("HH:mm:ss") + "', Status='BREAK' WHERE ID='" + Main.ID + "' AND Date='" + date + "'");
+                Main.maininstance.sqlcommand("UPDATE `Hours Worked` SET B" + n + "out='" + DateTime.Now.ToString("HH:mm:ss") + "', Status='BREAK' WHERE ID='" + Main.id + "' AND Date='" + date + "'");
                 status = "BREAK";
                 supdate();
             }
@@ -208,13 +218,13 @@ namespace Los_Alamos_Timeclock
         {
             if (status == "LUNCH")
             {
-                Main.maininstance.sqlcommand("UPDATE `Hours Worked` SET Lin='" + DateTime.Now.ToString("HH:mm:ss") + "', Status='IN' WHERE ID='" + Main.ID + "' AND Date='" + date + "'");
+                Main.maininstance.sqlcommand("UPDATE `Hours Worked` SET Lin='" + DateTime.Now.ToString("HH:mm:ss") + "', Status='IN' WHERE ID='" + Main.id + "' AND Date='" + date + "'");
                 status = "IN";
                 supdate();
             }
             else if (status == "IN" && lunch)
             {
-                Main.maininstance.sqlcommand("UPDATE `Hours Worked` SET Lout='" + DateTime.Now.ToString("HH:mm:ss") + "', Status='LUNCH' WHERE ID='" + Main.ID + "' AND Date='" + date + "'");
+                Main.maininstance.sqlcommand("UPDATE `Hours Worked` SET Lout='" + DateTime.Now.ToString("HH:mm:ss") + "', Status='LUNCH' WHERE ID='" + Main.id + "' AND Date='" + date + "'");
                 status = "LUNCH";
                 supdate();
                 lunch = false;
@@ -228,8 +238,9 @@ namespace Los_Alamos_Timeclock
         {
             if (status == "IN")
             {
-                Main.maininstance.sqlcommand("UPDATE `Hours Worked` SET End='" + DateTime.Now.ToString("HH:mm:ss") + "', Status='OUT' WHERE ID='" + Main.ID + "' AND Date='" + date + "'");
+                Main.maininstance.sqlcommand("UPDATE `Hours Worked` SET End='" + DateTime.Now.ToString("HH:mm:ss") + "', Status='OUT' WHERE ID='" + Main.id + "' AND Date='" + date + "'");
                 status = "OUT";
+                clockedIn = false;
                 supdate();
             }
             else
@@ -241,14 +252,15 @@ namespace Los_Alamos_Timeclock
 
         private void Manager_Click(object sender, EventArgs e)
         {
-
-            Override o = new Override();
-            o.Show();
-        }
-
-        private void Clockinout_Load(object sender, EventArgs e)
-        {
-
+            if (clockedIn)
+            {
+                MessageBox.Show("Employee is already clocked in");
+            }
+            else
+            {
+                Override o = new Override();
+                o.Show();
+            }
         }
     }
 }

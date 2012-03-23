@@ -19,10 +19,10 @@ namespace Los_Alamos_Timeclock
         public Schedule()
         {
             InitializeComponent();
-            mon = getmon(DateTime.Parse(Week.Value.ToShortDateString()));
+            mon = getmon(DateTime.Parse(weekCalander.Value.ToShortDateString()));
             sun = mon.AddDays(6);
-            comboBox1.SelectedItem = "Self";
-            Week.Value = mon.Date;
+            whoDropdownlist.SelectedItem = "Self";
+            weekCalander.Value = mon.Date;
 
             if (Main.myConnection.State == ConnectionState.Open)
             {
@@ -35,9 +35,9 @@ namespace Los_Alamos_Timeclock
         public void filldt()
         {
             string query = "";
-            if (comboBox1.Text == "Self")
+            if (whoDropdownlist.Text == "Self")
             {
-                query = "SELECT Date, LName AS Last, FName AS First, Start, End, JID AS Job FROM Schedule JOIN Employee ON Schedule.ID=Employee.ID Where Schedule.ID='" + Main.ID + "' AND Date>='" + mon.ToString("yyyy-MM-dd") + "' AND Date<='" + sun.ToString("yyyy-MM-dd") + "' ORDER BY Date, Start";
+                query = "SELECT Date, LName AS Last, FName AS First, Start, End, JID AS Job FROM Schedule JOIN Employee ON Schedule.ID=Employee.ID Where Schedule.ID='" + Main.id + "' AND Date>='" + mon.ToString("yyyy-MM-dd") + "' AND Date<='" + sun.ToString("yyyy-MM-dd") + "' ORDER BY Date, Start";
             }
             else
             {
@@ -55,7 +55,7 @@ namespace Los_Alamos_Timeclock
 
                 BindingSource bind = new BindingSource();
                 bind.DataSource = dataTable;
-                Table1.DataSource = bind;
+                scheduleDatagrid.DataSource = bind;
 
                 Main.myConnection.Close();
             }
@@ -74,11 +74,11 @@ namespace Los_Alamos_Timeclock
 
         private void date_ValueChanged(object sender, EventArgs e)
         {
-            if (Week.Value.DayOfWeek != DayOfWeek.Monday)
+            if (weekCalander.Value.DayOfWeek != DayOfWeek.Monday)
             {
-                Week.Value = getmon(Week.Value.Date);
+                weekCalander.Value = getmon(weekCalander.Value.Date);
             }
-            mon = Week.Value;
+            mon = weekCalander.Value;
             sun = mon.AddDays(6);
             filldt();
         }

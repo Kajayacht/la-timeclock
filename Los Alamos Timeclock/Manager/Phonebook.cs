@@ -11,18 +11,18 @@ namespace Los_Alamos_Timeclock.Manager
 {
     public partial class Phonebook : UserControl
     {
-        String ID;
+        String id;
         public Phonebook()
         {
             InitializeComponent();
-            emplist.DisplayMember = "getname";
-            emplist.ValueMember = "gid";
-            emplist.DataSource = Main.EmployeeList;
+            employeeDropdownlist.DisplayMember = "getname";
+            employeeDropdownlist.ValueMember = "gid";
+            employeeDropdownlist.DataSource = Main.employeeList;
         }
 
-        private void emplist_SelectedIndexChanged(object sender, EventArgs e)
+        private void employeeDropdownlist_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ID = emplist.SelectedValue.ToString();
+            id = employeeDropdownlist.SelectedValue.ToString();
             fieldupdate();
         }
 
@@ -31,9 +31,9 @@ namespace Los_Alamos_Timeclock.Manager
             try
             {
                 Main.myConnection.Open();
-                Main.maininstance.sqlreader("SELECT Phone FROM Employee WHERE ID='"+ID+"'");
+                Main.maininstance.sqlreader("SELECT Phone FROM Employee WHERE ID='"+id+"'");
 
-                phonenumber.Text = "Phone: " + String.Format("{0:(###) ###-####}", int.Parse(Main.reader["Phone"].ToString()));
+                phoneNumber.Text = "Phone: " + String.Format("{0:(###) ###-####}", int.Parse(Main.reader["Phone"].ToString()));
 
             }
             catch (Exception e)

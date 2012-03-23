@@ -28,29 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.jobs = new System.Windows.Forms.ListBox();
+            this.jobsBox = new System.Windows.Forms.ListBox();
             this.nlabel = new System.Windows.Forms.Label();
             this.plabel = new System.Windows.Forms.Label();
-            this.jname = new System.Windows.Forms.TextBox();
-            this.jpay = new System.Windows.Forms.TextBox();
-            this.Updatejob = new System.Windows.Forms.Button();
-            this.New = new System.Windows.Forms.Button();
-            this.Delete = new System.Windows.Forms.Button();
+            this.jobnameTextbox = new System.Windows.Forms.TextBox();
+            this.startingpayTextbox = new System.Windows.Forms.TextBox();
+            this.updatejobButton = new System.Windows.Forms.Button();
+            this.newjobButton = new System.Windows.Forms.Button();
+            this.deletejobButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // jobs
+            // jobsBox
             // 
-            this.jobs.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.jobs.FormattingEnabled = true;
-            this.jobs.Location = new System.Drawing.Point(102, 127);
-            this.jobs.Name = "jobs";
-            this.jobs.Size = new System.Drawing.Size(120, 95);
-            this.jobs.TabIndex = 0;
-            this.jobs.SelectedIndexChanged += new System.EventHandler(this.jobs_SelectedIndexChanged);
+            this.jobsBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.jobsBox.FormattingEnabled = true;
+            this.jobsBox.Location = new System.Drawing.Point(102, 127);
+            this.jobsBox.Name = "jobsBox";
+            this.jobsBox.Size = new System.Drawing.Size(120, 95);
+            this.jobsBox.TabIndex = 0;
+            this.jobsBox.SelectedIndexChanged += new System.EventHandler(this.jobsBox_SelectedIndexChanged);
             // 
             // nlabel
             // 
-            this.nlabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.nlabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.nlabel.AutoSize = true;
             this.nlabel.BackColor = System.Drawing.Color.Transparent;
             this.nlabel.ForeColor = System.Drawing.Color.White;
@@ -62,7 +62,7 @@
             // 
             // plabel
             // 
-            this.plabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.plabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.plabel.AutoSize = true;
             this.plabel.BackColor = System.Drawing.Color.Transparent;
             this.plabel.ForeColor = System.Drawing.Color.White;
@@ -72,54 +72,54 @@
             this.plabel.TabIndex = 2;
             this.plabel.Text = "Starting Pay:";
             // 
-            // jname
+            // jobnameTextbox
             // 
-            this.jname.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.jname.Location = new System.Drawing.Point(319, 127);
-            this.jname.Name = "jname";
-            this.jname.Size = new System.Drawing.Size(100, 20);
-            this.jname.TabIndex = 3;
+            this.jobnameTextbox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.jobnameTextbox.Location = new System.Drawing.Point(319, 127);
+            this.jobnameTextbox.Name = "jobnameTextbox";
+            this.jobnameTextbox.Size = new System.Drawing.Size(100, 20);
+            this.jobnameTextbox.TabIndex = 3;
             // 
-            // jpay
+            // startingpayTextbox
             // 
-            this.jpay.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.jpay.Location = new System.Drawing.Point(318, 150);
-            this.jpay.Name = "jpay";
-            this.jpay.Size = new System.Drawing.Size(100, 20);
-            this.jpay.TabIndex = 4;
+            this.startingpayTextbox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.startingpayTextbox.Location = new System.Drawing.Point(318, 150);
+            this.startingpayTextbox.Name = "startingpayTextbox";
+            this.startingpayTextbox.Size = new System.Drawing.Size(100, 20);
+            this.startingpayTextbox.TabIndex = 4;
             // 
-            // Updatejob
+            // updatejobButton
             // 
-            this.Updatejob.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.Updatejob.Location = new System.Drawing.Point(156, 284);
-            this.Updatejob.Name = "Updatejob";
-            this.Updatejob.Size = new System.Drawing.Size(75, 75);
-            this.Updatejob.TabIndex = 5;
-            this.Updatejob.Text = "Update";
-            this.Updatejob.UseVisualStyleBackColor = true;
-            this.Updatejob.Click += new System.EventHandler(this.Updatejob_Click);
+            this.updatejobButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.updatejobButton.Location = new System.Drawing.Point(156, 284);
+            this.updatejobButton.Name = "updatejobButton";
+            this.updatejobButton.Size = new System.Drawing.Size(75, 75);
+            this.updatejobButton.TabIndex = 5;
+            this.updatejobButton.Text = "Update";
+            this.updatejobButton.UseVisualStyleBackColor = true;
+            this.updatejobButton.Click += new System.EventHandler(this.updateJob_Click);
             // 
-            // New
+            // newjobButton
             // 
-            this.New.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.New.Location = new System.Drawing.Point(237, 284);
-            this.New.Name = "New";
-            this.New.Size = new System.Drawing.Size(75, 75);
-            this.New.TabIndex = 6;
-            this.New.Text = "New";
-            this.New.UseVisualStyleBackColor = true;
-            this.New.Click += new System.EventHandler(this.New_Click);
+            this.newjobButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.newjobButton.Location = new System.Drawing.Point(237, 284);
+            this.newjobButton.Name = "newjobButton";
+            this.newjobButton.Size = new System.Drawing.Size(75, 75);
+            this.newjobButton.TabIndex = 6;
+            this.newjobButton.Text = "New";
+            this.newjobButton.UseVisualStyleBackColor = true;
+            this.newjobButton.Click += new System.EventHandler(this.newJob_Click);
             // 
-            // Delete
+            // deletejobButton
             // 
-            this.Delete.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.Delete.Location = new System.Drawing.Point(318, 284);
-            this.Delete.Name = "Delete";
-            this.Delete.Size = new System.Drawing.Size(75, 75);
-            this.Delete.TabIndex = 7;
-            this.Delete.Text = "Delete";
-            this.Delete.UseVisualStyleBackColor = true;
-            this.Delete.Click += new System.EventHandler(this.Delete_Click);
+            this.deletejobButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.deletejobButton.Location = new System.Drawing.Point(318, 284);
+            this.deletejobButton.Name = "deletejobButton";
+            this.deletejobButton.Size = new System.Drawing.Size(75, 75);
+            this.deletejobButton.TabIndex = 7;
+            this.deletejobButton.Text = "Delete";
+            this.deletejobButton.UseVisualStyleBackColor = true;
+            this.deletejobButton.Click += new System.EventHandler(this.deleteJob_Click);
             // 
             // EditJobs
             // 
@@ -127,14 +127,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Los_Alamos_Timeclock.Properties.Resources._1287421014661;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Controls.Add(this.Delete);
-            this.Controls.Add(this.New);
-            this.Controls.Add(this.Updatejob);
-            this.Controls.Add(this.jpay);
-            this.Controls.Add(this.jname);
+            this.Controls.Add(this.deletejobButton);
+            this.Controls.Add(this.newjobButton);
+            this.Controls.Add(this.updatejobButton);
+            this.Controls.Add(this.startingpayTextbox);
+            this.Controls.Add(this.jobnameTextbox);
             this.Controls.Add(this.plabel);
             this.Controls.Add(this.nlabel);
-            this.Controls.Add(this.jobs);
+            this.Controls.Add(this.jobsBox);
             this.DoubleBuffered = true;
             this.Name = "EditJobs";
             this.Size = new System.Drawing.Size(500, 400);
@@ -145,13 +145,13 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox jobs;
+        private System.Windows.Forms.ListBox jobsBox;
         private System.Windows.Forms.Label nlabel;
         private System.Windows.Forms.Label plabel;
-        private System.Windows.Forms.TextBox jname;
-        private System.Windows.Forms.TextBox jpay;
-        private System.Windows.Forms.Button Updatejob;
-        private System.Windows.Forms.Button New;
-        private System.Windows.Forms.Button Delete;
+        private System.Windows.Forms.TextBox jobnameTextbox;
+        private System.Windows.Forms.TextBox startingpayTextbox;
+        private System.Windows.Forms.Button updatejobButton;
+        private System.Windows.Forms.Button newjobButton;
+        private System.Windows.Forms.Button deletejobButton;
     }
 }

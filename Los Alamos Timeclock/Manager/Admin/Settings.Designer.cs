@@ -28,179 +28,178 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
-            this.userlabel = new System.Windows.Forms.LinkLabel();
-            this.linkLabel4 = new System.Windows.Forms.LinkLabel();
-            this.ipaddress = new System.Windows.Forms.TextBox();
-            this.port = new System.Windows.Forms.TextBox();
-            this.user = new System.Windows.Forms.TextBox();
-            this.pass = new System.Windows.Forms.TextBox();
-            this.Apply = new System.Windows.Forms.Button();
-            this.database = new System.Windows.Forms.TextBox();
-            this.databaselabel = new System.Windows.Forms.LinkLabel();
+            this.titleLabel = new System.Windows.Forms.Label();
+            this.ipaddressLLabel = new System.Windows.Forms.LinkLabel();
+            this.portLLabel = new System.Windows.Forms.LinkLabel();
+            this.userLLabel = new System.Windows.Forms.LinkLabel();
+            this.passLLabel = new System.Windows.Forms.LinkLabel();
+            this.ipaddressTextbox = new System.Windows.Forms.TextBox();
+            this.portTextbox = new System.Windows.Forms.TextBox();
+            this.userTextbox = new System.Windows.Forms.TextBox();
+            this.passTextbox = new System.Windows.Forms.TextBox();
+            this.applyButton = new System.Windows.Forms.Button();
+            this.databaseTextbox = new System.Windows.Forms.TextBox();
+            this.databaseLLabel = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
-            // label1
+            // titleLabel
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(196, 92);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(159, 24);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Database Settings";
+            this.titleLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.titleLabel.AutoSize = true;
+            this.titleLabel.BackColor = System.Drawing.Color.Transparent;
+            this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleLabel.ForeColor = System.Drawing.Color.White;
+            this.titleLabel.Location = new System.Drawing.Point(180, 67);
+            this.titleLabel.Name = "titleLabel";
+            this.titleLabel.Size = new System.Drawing.Size(159, 24);
+            this.titleLabel.TabIndex = 0;
+            this.titleLabel.Text = "Database Settings";
             // 
-            // linkLabel1
+            // ipaddressLLabel
             // 
-            this.linkLabel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.ForeColor = System.Drawing.Color.White;
-            this.linkLabel1.LinkColor = System.Drawing.Color.White;
-            this.linkLabel1.Location = new System.Drawing.Point(105, 164);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(91, 20);
-            this.linkLabel1.TabIndex = 1;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "IP Address:";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.iplabel_LinkClicked);
+            this.ipaddressLLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ipaddressLLabel.AutoSize = true;
+            this.ipaddressLLabel.BackColor = System.Drawing.Color.Transparent;
+            this.ipaddressLLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ipaddressLLabel.ForeColor = System.Drawing.Color.White;
+            this.ipaddressLLabel.LinkColor = System.Drawing.Color.White;
+            this.ipaddressLLabel.Location = new System.Drawing.Point(89, 139);
+            this.ipaddressLLabel.Name = "ipaddressLLabel";
+            this.ipaddressLLabel.Size = new System.Drawing.Size(91, 20);
+            this.ipaddressLLabel.TabIndex = 1;
+            this.ipaddressLLabel.TabStop = true;
+            this.ipaddressLLabel.Text = "IP Address:";
+            this.ipaddressLLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ipLLabel_LinkClicked);
             // 
-            // linkLabel2
+            // portLLabel
             // 
-            this.linkLabel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel2.ForeColor = System.Drawing.Color.White;
-            this.linkLabel2.LinkColor = System.Drawing.Color.White;
-            this.linkLabel2.Location = new System.Drawing.Point(154, 199);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(42, 20);
-            this.linkLabel2.TabIndex = 2;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "Port:";
-            this.linkLabel2.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.portlabel_LinkClicked);
+            this.portLLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.portLLabel.AutoSize = true;
+            this.portLLabel.BackColor = System.Drawing.Color.Transparent;
+            this.portLLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.portLLabel.ForeColor = System.Drawing.Color.White;
+            this.portLLabel.LinkColor = System.Drawing.Color.White;
+            this.portLLabel.Location = new System.Drawing.Point(138, 174);
+            this.portLLabel.Name = "portLLabel";
+            this.portLLabel.Size = new System.Drawing.Size(42, 20);
+            this.portLLabel.TabIndex = 2;
+            this.portLLabel.TabStop = true;
+            this.portLLabel.Text = "Port:";
+            this.portLLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.portLLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.portLLabel_LinkClicked);
             // 
-            // userlabel
+            // userLLabel
             // 
-            this.userlabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.userlabel.AutoSize = true;
-            this.userlabel.BackColor = System.Drawing.Color.Transparent;
-            this.userlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userlabel.ForeColor = System.Drawing.Color.White;
-            this.userlabel.LinkColor = System.Drawing.Color.White;
-            this.userlabel.Location = new System.Drawing.Point(147, 260);
-            this.userlabel.Name = "userlabel";
-            this.userlabel.Size = new System.Drawing.Size(47, 20);
-            this.userlabel.TabIndex = 3;
-            this.userlabel.TabStop = true;
-            this.userlabel.Text = "User:";
-            this.userlabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.userlabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.userlabel_LinkClicked);
+            this.userLLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.userLLabel.AutoSize = true;
+            this.userLLabel.BackColor = System.Drawing.Color.Transparent;
+            this.userLLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userLLabel.ForeColor = System.Drawing.Color.White;
+            this.userLLabel.LinkColor = System.Drawing.Color.White;
+            this.userLLabel.Location = new System.Drawing.Point(131, 235);
+            this.userLLabel.Name = "userLLabel";
+            this.userLLabel.Size = new System.Drawing.Size(47, 20);
+            this.userLLabel.TabIndex = 3;
+            this.userLLabel.TabStop = true;
+            this.userLLabel.Text = "User:";
+            this.userLLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.userLLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.userLLabel_LinkClicked);
             // 
-            // linkLabel4
+            // passLLabel
             // 
-            this.linkLabel4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.linkLabel4.AutoSize = true;
-            this.linkLabel4.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel4.ForeColor = System.Drawing.Color.White;
-            this.linkLabel4.LinkColor = System.Drawing.Color.White;
-            this.linkLabel4.Location = new System.Drawing.Point(112, 292);
-            this.linkLabel4.Name = "linkLabel4";
-            this.linkLabel4.Size = new System.Drawing.Size(82, 20);
-            this.linkLabel4.TabIndex = 4;
-            this.linkLabel4.TabStop = true;
-            this.linkLabel4.Text = "Password:";
-            this.linkLabel4.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.linkLabel4.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.passlabel_LinkClicked);
+            this.passLLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.passLLabel.AutoSize = true;
+            this.passLLabel.BackColor = System.Drawing.Color.Transparent;
+            this.passLLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passLLabel.ForeColor = System.Drawing.Color.White;
+            this.passLLabel.LinkColor = System.Drawing.Color.White;
+            this.passLLabel.Location = new System.Drawing.Point(96, 267);
+            this.passLLabel.Name = "passLLabel";
+            this.passLLabel.Size = new System.Drawing.Size(82, 20);
+            this.passLLabel.TabIndex = 4;
+            this.passLLabel.TabStop = true;
+            this.passLLabel.Text = "Password:";
+            this.passLLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.passLLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.passLLabel_LinkClicked);
             // 
-            // ipaddress
+            // ipaddressTextbox
             // 
-            this.ipaddress.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.ipaddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ipaddress.Location = new System.Drawing.Point(202, 164);
-            this.ipaddress.Name = "ipaddress";
-            this.ipaddress.Size = new System.Drawing.Size(153, 26);
-            this.ipaddress.TabIndex = 5;
-            this.ipaddress.Text = "184.154.225.11";
-            this.ipaddress.TextChanged += new System.EventHandler(this.ipaddress_TextChanged);
+            this.ipaddressTextbox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ipaddressTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ipaddressTextbox.Location = new System.Drawing.Point(186, 139);
+            this.ipaddressTextbox.Name = "ipaddressTextbox";
+            this.ipaddressTextbox.Size = new System.Drawing.Size(153, 26);
+            this.ipaddressTextbox.TabIndex = 5;
+            this.ipaddressTextbox.Text = "184.154.225.11";
             // 
-            // port
+            // portTextbox
             // 
-            this.port.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.port.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.port.Location = new System.Drawing.Point(202, 196);
-            this.port.Name = "port";
-            this.port.Size = new System.Drawing.Size(153, 26);
-            this.port.TabIndex = 6;
-            this.port.Text = "3306";
+            this.portTextbox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.portTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.portTextbox.Location = new System.Drawing.Point(186, 171);
+            this.portTextbox.Name = "portTextbox";
+            this.portTextbox.Size = new System.Drawing.Size(153, 26);
+            this.portTextbox.TabIndex = 6;
+            this.portTextbox.Text = "3306";
             // 
-            // user
+            // userTextbox
             // 
-            this.user.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.user.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.user.Location = new System.Drawing.Point(200, 260);
-            this.user.Name = "user";
-            this.user.Size = new System.Drawing.Size(153, 26);
-            this.user.TabIndex = 7;
-            this.user.Text = "teamchro_user";
-            this.user.TextChanged += new System.EventHandler(this.user_TextChanged);
+            this.userTextbox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.userTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userTextbox.Location = new System.Drawing.Point(184, 235);
+            this.userTextbox.Name = "userTextbox";
+            this.userTextbox.Size = new System.Drawing.Size(153, 26);
+            this.userTextbox.TabIndex = 7;
+            this.userTextbox.Text = "teamchro_user";
             // 
-            // pass
+            // passTextbox
             // 
-            this.pass.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pass.Location = new System.Drawing.Point(200, 292);
-            this.pass.Name = "pass";
-            this.pass.PasswordChar = '*';
-            this.pass.Size = new System.Drawing.Size(153, 26);
-            this.pass.TabIndex = 8;
-            this.pass.Text = "chrono";
+            this.passTextbox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.passTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passTextbox.Location = new System.Drawing.Point(184, 267);
+            this.passTextbox.Name = "passTextbox";
+            this.passTextbox.PasswordChar = '*';
+            this.passTextbox.Size = new System.Drawing.Size(153, 26);
+            this.passTextbox.TabIndex = 8;
+            this.passTextbox.Text = "chrono";
             // 
-            // Apply
+            // applyButton
             // 
-            this.Apply.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Apply.Location = new System.Drawing.Point(280, 324);
-            this.Apply.Name = "Apply";
-            this.Apply.Size = new System.Drawing.Size(75, 23);
-            this.Apply.TabIndex = 9;
-            this.Apply.Text = "Apply";
-            this.Apply.UseVisualStyleBackColor = true;
-            this.Apply.Click += new System.EventHandler(this.Apply_Click);
+            this.applyButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.applyButton.Location = new System.Drawing.Point(264, 299);
+            this.applyButton.Name = "applyButton";
+            this.applyButton.Size = new System.Drawing.Size(75, 23);
+            this.applyButton.TabIndex = 9;
+            this.applyButton.Text = "Apply";
+            this.applyButton.UseVisualStyleBackColor = true;
+            this.applyButton.Click += new System.EventHandler(this.Apply_Click);
             // 
-            // database
+            // databaseTextbox
             // 
-            this.database.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.database.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.database.Location = new System.Drawing.Point(200, 228);
-            this.database.Name = "database";
-            this.database.Size = new System.Drawing.Size(153, 26);
-            this.database.TabIndex = 11;
-            this.database.Text = "teamchro_LATSQL";
+            this.databaseTextbox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.databaseTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.databaseTextbox.Location = new System.Drawing.Point(184, 203);
+            this.databaseTextbox.Name = "databaseTextbox";
+            this.databaseTextbox.Size = new System.Drawing.Size(153, 26);
+            this.databaseTextbox.TabIndex = 11;
+            this.databaseTextbox.Text = "teamchro_LATSQL";
             // 
-            // databaselabel
+            // databaseLLabel
             // 
-            this.databaselabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.databaselabel.AutoSize = true;
-            this.databaselabel.BackColor = System.Drawing.Color.Transparent;
-            this.databaselabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.databaselabel.ForeColor = System.Drawing.Color.White;
-            this.databaselabel.LinkColor = System.Drawing.Color.White;
-            this.databaselabel.Location = new System.Drawing.Point(113, 228);
-            this.databaselabel.Name = "databaselabel";
-            this.databaselabel.Size = new System.Drawing.Size(83, 20);
-            this.databaselabel.TabIndex = 10;
-            this.databaselabel.TabStop = true;
-            this.databaselabel.Text = "Database:";
-            this.databaselabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.databaseLLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.databaseLLabel.AutoSize = true;
+            this.databaseLLabel.BackColor = System.Drawing.Color.Transparent;
+            this.databaseLLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.databaseLLabel.ForeColor = System.Drawing.Color.White;
+            this.databaseLLabel.LinkColor = System.Drawing.Color.White;
+            this.databaseLLabel.Location = new System.Drawing.Point(97, 203);
+            this.databaseLLabel.Name = "databaseLLabel";
+            this.databaseLLabel.Size = new System.Drawing.Size(83, 20);
+            this.databaseLLabel.TabIndex = 10;
+            this.databaseLLabel.TabStop = true;
+            this.databaseLLabel.Text = "Database:";
+            this.databaseLLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.databaseLLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.databaseLLabel_LinkClicked);
             // 
             // Settings
             // 
@@ -208,18 +207,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Los_Alamos_Timeclock.Properties.Resources._1287421014661;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Controls.Add(this.database);
-            this.Controls.Add(this.databaselabel);
-            this.Controls.Add(this.Apply);
-            this.Controls.Add(this.pass);
-            this.Controls.Add(this.user);
-            this.Controls.Add(this.port);
-            this.Controls.Add(this.ipaddress);
-            this.Controls.Add(this.linkLabel4);
-            this.Controls.Add(this.userlabel);
-            this.Controls.Add(this.linkLabel2);
-            this.Controls.Add(this.linkLabel1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.databaseTextbox);
+            this.Controls.Add(this.databaseLLabel);
+            this.Controls.Add(this.applyButton);
+            this.Controls.Add(this.passTextbox);
+            this.Controls.Add(this.userTextbox);
+            this.Controls.Add(this.portTextbox);
+            this.Controls.Add(this.ipaddressTextbox);
+            this.Controls.Add(this.passLLabel);
+            this.Controls.Add(this.userLLabel);
+            this.Controls.Add(this.portLLabel);
+            this.Controls.Add(this.ipaddressLLabel);
+            this.Controls.Add(this.titleLabel);
             this.DoubleBuffered = true;
             this.Name = "Settings";
             this.Size = new System.Drawing.Size(500, 400);
@@ -230,18 +229,18 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.LinkLabel linkLabel2;
-        private System.Windows.Forms.LinkLabel userlabel;
-        private System.Windows.Forms.LinkLabel linkLabel4;
-        private System.Windows.Forms.TextBox ipaddress;
-        private System.Windows.Forms.TextBox port;
-        private System.Windows.Forms.TextBox user;
-        private System.Windows.Forms.TextBox pass;
-        private System.Windows.Forms.Button Apply;
-        private System.Windows.Forms.TextBox database;
-        private System.Windows.Forms.LinkLabel databaselabel;
+        private System.Windows.Forms.Label titleLabel;
+        private System.Windows.Forms.LinkLabel ipaddressLLabel;
+        private System.Windows.Forms.LinkLabel portLLabel;
+        private System.Windows.Forms.LinkLabel userLLabel;
+        private System.Windows.Forms.LinkLabel passLLabel;
+        private System.Windows.Forms.TextBox ipaddressTextbox;
+        private System.Windows.Forms.TextBox portTextbox;
+        private System.Windows.Forms.TextBox userTextbox;
+        private System.Windows.Forms.TextBox passTextbox;
+        private System.Windows.Forms.Button applyButton;
+        private System.Windows.Forms.TextBox databaseTextbox;
+        private System.Windows.Forms.LinkLabel databaseLLabel;
 
     }
 }

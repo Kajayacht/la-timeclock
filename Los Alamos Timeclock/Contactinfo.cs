@@ -16,7 +16,7 @@ namespace Los_Alamos_Timeclock
             InitializeComponent();
             Phone.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             Main.myConnection.Open();
-            Main.maininstance.sqlreader("SELECT * FROM Employee WHERE ID='"+Main.ID+"'");
+            Main.maininstance.sqlreader("SELECT * FROM Employee WHERE ID='"+Main.id+"'");
             Al1.Text = Main.reader["Address1"].ToString();
             Al2.Text = Main.reader["Address2"].ToString();
             Ac.Text = Main.reader["City"].ToString();
@@ -31,7 +31,7 @@ namespace Los_Alamos_Timeclock
         {
             if (validateinfo())
             {
-                Main.maininstance.sqlcommand("UPDATE Employee SET Address1='" + Al1.Text + "', Address2='" + Al2.Text + "', City='" + Ac.Text + "', State='" + As.Text + "', Zip='" + Az.Text + "', Email='" + Email.Text + "', Phone='" + Phone.Text + "'  WHERE ID='" + Main.ID + "'");
+                Main.maininstance.sqlcommand("UPDATE Employee SET Address1='" + Al1.Text + "', Address2='" + Al2.Text + "', City='" + Ac.Text + "', State='" + As.Text + "', Zip='" + Az.Text + "', Email='" + Email.Text + "', Phone='" + Phone.Text + "'  WHERE ID='" + Main.id + "'");
                 MessageBox.Show("Update Successful");
             }
         }

@@ -23,71 +23,71 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             mon = getmon(DateTime.Today.Date);
             sun = mon.AddDays(6);
             calander.MaxDate = DateTime.Today.AddYears(1);
-            popdg();
-            jobs.DisplayMember = "getname";
-            jobs.DataSource = Main.Joblist;
-            comboBox1.DisplayMember = "getname";
-            comboBox1.ValueMember = "gid";
-            comboBox1.DataSource = Main.EmployeeList;
+            populateDatagrid();
+            jobsDropdownlist.DisplayMember = "getname";
+            jobsDropdownlist.DataSource = Main.joblist;
+            employeeDropdownlist.DisplayMember = "getname";
+            employeeDropdownlist.ValueMember = "gid";
+            employeeDropdownlist.DataSource = Main.employeeList;
         }
 
 
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
         {
-            popdg();
+            populateDatagrid();
         }
 
-        private void Update_Click(object sender, EventArgs e)
+        private void update_Click(object sender, EventArgs e)
         {
             if (validate())
             {
                 if (scheduled)
                 {
-                    Main.maininstance.sqlcommand("UPDATE Schedule SET Start='" + sh.Text + ":" + sm.Text + "', End='" + eh.Text + ":" + em.Text + "', JID='" + jobs.Text + "' WHERE Date='" + date + "' AND ID='" + ID + "'");
+                    Main.maininstance.sqlcommand("UPDATE Schedule SET Start='" + startHourDropdownlist.Text + ":" + startMinDropdownlist.Text + "', End='" + endHourDropdownlist.Text + ":" + endMinDropdownlist.Text + "', JID='" + jobsDropdownlist.Text + "' WHERE Date='" + date + "' AND ID='" + ID + "'");
                 }
                 else
                 {
-                    Main.maininstance.sqlcommand("INSERT INTO Schedule (`ID`, `Date`, `Start`, `End`, `JID`) VALUES ('" + ID + "', '" + date + "', '" + sh.Text + ":" + sm.Text + "', '" + eh.Text + ":" + em.Text + "', '" + jobs.Text + "')");
+                    Main.maininstance.sqlcommand("INSERT INTO Schedule (`ID`, `Date`, `Start`, `End`, `JID`) VALUES ('" + ID + "', '" + date + "', '" + startHourDropdownlist.Text + ":" + startMinDropdownlist.Text + "', '" + endHourDropdownlist.Text + ":" + endMinDropdownlist.Text + "', '" + jobsDropdownlist.Text + "')");
                     scheduled = true;
                 }
-                Log.writeLog(Main.EName + " changed the schedule for " + comboBox1.Text + "\n Date= " + date + "\n Start= " + sh.Text + ":" + sm.Text + "\n End= " + eh.Text + ":" + em.Text + "\n Job= " + jobs.Text);
-                popdg();
+                Log.writeLog(Main.eName + " changed the schedule for " + employeeDropdownlist.Text + "\n Date= " + date + "\n Start= " + startHourDropdownlist.Text + ":" + startMinDropdownlist.Text + "\n End= " + endHourDropdownlist.Text + ":" + endMinDropdownlist.Text + "\n Job= " + jobsDropdownlist.Text);
+                populateDatagrid();
             }
         }
 
-        private void Delete_Click(object sender, EventArgs e)
+        private void delete_Click(object sender, EventArgs e)
         {
             if (validate())
             {
                 if (scheduled)
                 {
                     Main.maininstance.sqlcommand("DELETE FROM Schedule WHERE ID='" + ID + "' AND Date='" + date + "'");
-                    Log.writeLog(Main.EName + " deleted " + comboBox1.Text + " from the schedule for: " +"\n Date= " + date + "\n Start= " + sh.Text + ":" + sm.Text + "\n End= " + eh.Text + ":" + em.Text + "\n Job= " + jobs.Text);
+                    Log.writeLog(Main.eName + " deleted " + employeeDropdownlist.Text + " from the schedule for: " +"\n Date= " + date + "\n Start= " + startHourDropdownlist.Text + ":" + startMinDropdownlist.Text + "\n End= " + endHourDropdownlist.Text + ":" + endMinDropdownlist.Text + "\n Job= " + jobsDropdownlist.Text);
                     scheduled = false;
                 }
                 else
                 {
                     MessageBox.Show("No record to delete");
                 }
-                popdg();
+                populateDatagrid();
             }
         }
 
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        private void calander_DateChanged(object sender, EventArgs e)
         {
             date = calander.Value.ToString("yyyy-MM-dd");
             mon = getmon(calander.Value);
             sun = mon.AddDays(6);
-            popdg();
-            Eupdate();
+            populateDatagrid();
+            employeeUpdate();
         }
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void employeeDropdownlist_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ID = comboBox1.SelectedValue.ToString();
-            Eupdate();
+            ID = employeeDropdownlist.SelectedValue.ToString();
+            employeeUpdate();
         }
 
-        public void Eupdate()
+        public void employeeUpdate()
         {
             if (Main.myConnection.State == ConnectionState.Open)
             {
@@ -101,28 +101,28 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             {
                 scheduled = true;
                 TimeSpan a = TimeSpan.Parse(Main.reader["Start"].ToString());
-                sh.Text = a.Hours.ToString();
-                sm.Text = a.Minutes.ToString();
+                startHourDropdownlist.Text = a.Hours.ToString();
+                startMinDropdownlist.Text = a.Minutes.ToString();
                 a = TimeSpan.Parse(Main.reader["End"].ToString());
-                eh.Text = a.Hours.ToString();
-                em.Text = a.Minutes.ToString();
-                jobs.Text = Main.reader["JID"].ToString();
+                endHourDropdownlist.Text = a.Hours.ToString();
+                endMinDropdownlist.Text = a.Minutes.ToString();
+                jobsDropdownlist.Text = Main.reader["JID"].ToString();
             }
             else
             {
                 scheduled = false;
-                sh.Text = "";
-                sm.Text = "";
-                eh.Text = "";
-                em.Text = "";
-                jobs.Text = "";
+                startHourDropdownlist.Text = "";
+                startMinDropdownlist.Text = "";
+                endHourDropdownlist.Text = "";
+                endMinDropdownlist.Text = "";
+                jobsDropdownlist.Text = "";
             }
             clength();
             Main.reader.Close();
             Main.myConnection.Close();
         }
 
-        public void popdg()
+        public void populateDatagrid()
         {
 
             string query = "SELECT Date, CONCAT(LName, ', ',FName,' ',MName) AS Name, Start, End, JID AS Job FROM Schedule JOIN Employee ON Schedule.ID=Employee.ID Where Date>='" + mon.ToString("yyyy-MM-dd") + "' AND Date<='" + sun.ToString("yyyy-MM-dd") + "' ORDER BY Date, Start";
@@ -139,7 +139,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
 
                     BindingSource bind = new BindingSource();
                     bind.DataSource = dataTable;
-                    dg.DataSource = bind;
+                    datagrid.DataSource = bind;
                 }
                 catch (Exception e)
                 {
@@ -155,21 +155,21 @@ namespace Los_Alamos_Timeclock.Manager.Admin
 
         public void clength()
         {
-            if (sh.Text == "" || sm.Text == "" || eh.Text == "" || em.Text == "" || jobs.Text == "")
+            if (startHourDropdownlist.Text == "" || startMinDropdownlist.Text == "" || endHourDropdownlist.Text == "" || endMinDropdownlist.Text == "" || jobsDropdownlist.Text == "")
             {
-                Length.Text = "";
+                lengthLabel.Text = "";
             }
             else
             {
                 try
                 {
-                    DateTime s = DateTime.Parse(sh.Text + ":" + sm.Text);
-                    DateTime e = DateTime.Parse(eh.Text + ":" + em.Text);
+                    DateTime s = DateTime.Parse(startHourDropdownlist.Text + ":" + startMinDropdownlist.Text);
+                    DateTime e = DateTime.Parse(endHourDropdownlist.Text + ":" + endMinDropdownlist.Text);
                     if (e < s)
                     {
                         e=e.AddDays(1);
                     }
-                    Length.Text = "Length: "+e.Subtract(s).ToString();
+                    lengthLabel.Text = "Length: "+e.Subtract(s).ToString();
                 }
                 catch
                 {
@@ -182,27 +182,27 @@ namespace Los_Alamos_Timeclock.Manager.Admin
         public Boolean validate()
         {
 
-            if (sh.Text == "" || sm.Text == "" || eh.Text == "" || em.Text == ""||jobs.Text=="")
+            if (startHourDropdownlist.Text == "" || startMinDropdownlist.Text == "" || endHourDropdownlist.Text == "" || endMinDropdownlist.Text == ""||jobsDropdownlist.Text=="")
             {
                 MessageBox.Show("Fill in all fields");
                 return false;
             }
-            else if (int.Parse(sh.Text) > 23 || int.Parse(sh.Text) < 0)
+            else if (int.Parse(startHourDropdownlist.Text) > 23 || int.Parse(startHourDropdownlist.Text) < 0)
             {
                 MessageBox.Show("Start hour not valid");
                 return false;
             }
-            else if (int.Parse(sm.Text) != 0 && int.Parse(sm.Text) != 15 && int.Parse(sm.Text) != 30 && int.Parse(sm.Text) != 45)
+            else if (int.Parse(startMinDropdownlist.Text) != 0 && int.Parse(startMinDropdownlist.Text) != 15 && int.Parse(startMinDropdownlist.Text) != 30 && int.Parse(startMinDropdownlist.Text) != 45)
             {
                 MessageBox.Show("End minutes not valid");
                 return false;
             }
-            else if (int.Parse(eh.Text) > 23 || int.Parse(eh.Text) < 0)
+            else if (int.Parse(endHourDropdownlist.Text) > 23 || int.Parse(endHourDropdownlist.Text) < 0)
             {
                 MessageBox.Show("End hour not valid");
                 return false;
             }
-            else if (int.Parse(em.Text) != 0 && int.Parse(em.Text) != 15 && int.Parse(em.Text) != 30 && int.Parse(em.Text) != 45)
+            else if (int.Parse(endMinDropdownlist.Text) != 0 && int.Parse(endMinDropdownlist.Text) != 15 && int.Parse(endMinDropdownlist.Text) != 30 && int.Parse(endMinDropdownlist.Text) != 45)
             {
                 MessageBox.Show("End minutes not valid");
                 return false;
@@ -222,22 +222,22 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             return a;
         }
 
-        private void Start_SelectedIndexChanged(object sender, EventArgs e)
+        private void startHour_SelectedIndexChanged(object sender, EventArgs e)
         {
             clength();
         }
 
-        private void sm_SelectedIndexChanged(object sender, EventArgs e)
+        private void startMin_SelectedIndexChanged(object sender, EventArgs e)
         {
             clength();
         }
 
-        private void eh_SelectedIndexChanged(object sender, EventArgs e)
+        private void endHour_SelectedIndexChanged(object sender, EventArgs e)
         {
             clength();
         }
 
-        private void em_SelectedIndexChanged(object sender, EventArgs e)
+        private void endMin_SelectedIndexChanged(object sender, EventArgs e)
         {
             clength();
         }

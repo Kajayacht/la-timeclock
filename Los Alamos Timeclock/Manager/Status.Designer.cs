@@ -29,53 +29,54 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.Employees = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.employeeDropdownlist = new System.Windows.Forms.ComboBox();
+            this.employeeLabel = new System.Windows.Forms.Label();
             this.calander = new System.Windows.Forms.DateTimePicker();
-            this.Updateschedule = new System.Windows.Forms.Button();
-            this.dg = new System.Windows.Forms.DataGridView();
-            this.jobs = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.Start = new System.Windows.Forms.MaskedTextBox();
-            this.End = new System.Windows.Forms.MaskedTextBox();
-            this.b1out = new System.Windows.Forms.MaskedTextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.b1in = new System.Windows.Forms.MaskedTextBox();
-            this.b2in = new System.Windows.Forms.MaskedTextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.b2out = new System.Windows.Forms.MaskedTextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.lin = new System.Windows.Forms.MaskedTextBox();
-            this.lout = new System.Windows.Forms.MaskedTextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dg)).BeginInit();
+            this.updatescheduleButton = new System.Windows.Forms.Button();
+            this.datagrid = new System.Windows.Forms.DataGridView();
+            this.jobsDropdownlist = new System.Windows.Forms.ComboBox();
+            this.startLabel = new System.Windows.Forms.Label();
+            this.endLabel = new System.Windows.Forms.Label();
+            this.jobLabel = new System.Windows.Forms.Label();
+            this.startTextbox = new System.Windows.Forms.MaskedTextBox();
+            this.endTextbox = new System.Windows.Forms.MaskedTextBox();
+            this.b1outTextbox = new System.Windows.Forms.MaskedTextBox();
+            this.break1Label = new System.Windows.Forms.Label();
+            this.b1dashLabel = new System.Windows.Forms.Label();
+            this.b1inTextbox = new System.Windows.Forms.MaskedTextBox();
+            this.b2inTextbox = new System.Windows.Forms.MaskedTextBox();
+            this.b2dashLabel = new System.Windows.Forms.Label();
+            this.b2outTextbox = new System.Windows.Forms.MaskedTextBox();
+            this.break2Label = new System.Windows.Forms.Label();
+            this.linTextbox = new System.Windows.Forms.MaskedTextBox();
+            this.loutTextbox = new System.Windows.Forms.MaskedTextBox();
+            this.lunchLabel = new System.Windows.Forms.Label();
+            this.lunchdashLabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.datagrid)).BeginInit();
             this.SuspendLayout();
             // 
-            // Employees
+            // employeeDropdownlist
             // 
-            this.Employees.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.Employees.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.Employees.FormattingEnabled = true;
-            this.Employees.Location = new System.Drawing.Point(79, 267);
-            this.Employees.Name = "Employees";
-            this.Employees.Size = new System.Drawing.Size(190, 21);
-            this.Employees.TabIndex = 1;
-            this.Employees.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.employeeDropdownlist.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.employeeDropdownlist.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.employeeDropdownlist.FormattingEnabled = true;
+            this.employeeDropdownlist.Location = new System.Drawing.Point(79, 267);
+            this.employeeDropdownlist.Name = "employeeDropdownlist";
+            this.employeeDropdownlist.Size = new System.Drawing.Size(190, 21);
+            this.employeeDropdownlist.TabIndex = 1;
+            this.employeeDropdownlist.SelectedIndexChanged += new System.EventHandler(this.employeeDropdownlist_SelectedIndexChanged);
             // 
-            // label1
+            // employeeLabel
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(20, 269);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Employee:";
+            this.employeeLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.employeeLabel.AutoSize = true;
+            this.employeeLabel.BackColor = System.Drawing.Color.Transparent;
+            this.employeeLabel.ForeColor = System.Drawing.Color.White;
+            this.employeeLabel.Location = new System.Drawing.Point(20, 269);
+            this.employeeLabel.Name = "employeeLabel";
+            this.employeeLabel.Size = new System.Drawing.Size(56, 13);
+            this.employeeLabel.TabIndex = 3;
+            this.employeeLabel.Text = "Employee:";
             // 
             // calander
             // 
@@ -83,215 +84,227 @@
             this.calander.Location = new System.Drawing.Point(275, 267);
             this.calander.Name = "calander";
             this.calander.Size = new System.Drawing.Size(200, 20);
-            this.calander.TabIndex = 4;
-            this.calander.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            this.calander.TabIndex = 2;
+            this.calander.ValueChanged += new System.EventHandler(this.calander_DateChanged);
             // 
-            // Updateschedule
+            // updatescheduleButton
             // 
-            this.Updateschedule.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.Updateschedule.Location = new System.Drawing.Point(378, 294);
-            this.Updateschedule.Name = "Updateschedule";
-            this.Updateschedule.Size = new System.Drawing.Size(97, 95);
-            this.Updateschedule.TabIndex = 7;
-            this.Updateschedule.Text = "Update";
-            this.Updateschedule.UseVisualStyleBackColor = true;
-            this.Updateschedule.Click += new System.EventHandler(this.Update_Click);
+            this.updatescheduleButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.updatescheduleButton.Location = new System.Drawing.Point(378, 294);
+            this.updatescheduleButton.Name = "updatescheduleButton";
+            this.updatescheduleButton.Size = new System.Drawing.Size(97, 95);
+            this.updatescheduleButton.TabIndex = 7;
+            this.updatescheduleButton.Text = "Update";
+            this.updatescheduleButton.UseVisualStyleBackColor = true;
+            this.updatescheduleButton.Click += new System.EventHandler(this.update_Click);
             // 
-            // dg
+            // datagrid
             // 
-            this.dg.AllowUserToAddRows = false;
-            this.dg.AllowUserToDeleteRows = false;
+            this.datagrid.AllowUserToAddRows = false;
+            this.datagrid.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dg.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dg.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.datagrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.datagrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dg.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dg.Location = new System.Drawing.Point(0, 0);
-            this.dg.Name = "dg";
-            this.dg.ReadOnly = true;
-            this.dg.RowHeadersVisible = false;
-            this.dg.Size = new System.Drawing.Size(500, 261);
-            this.dg.TabIndex = 6;
+            this.datagrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.datagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.datagrid.Location = new System.Drawing.Point(0, 0);
+            this.datagrid.Name = "datagrid";
+            this.datagrid.ReadOnly = true;
+            this.datagrid.RowHeadersVisible = false;
+            this.datagrid.Size = new System.Drawing.Size(500, 261);
+            this.datagrid.TabIndex = 6;
             // 
-            // jobs
+            // jobsDropdownlist
             // 
-            this.jobs.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.jobs.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.jobs.FormattingEnabled = true;
-            this.jobs.Location = new System.Drawing.Point(79, 373);
-            this.jobs.Name = "jobs";
-            this.jobs.Size = new System.Drawing.Size(190, 21);
-            this.jobs.TabIndex = 6;
+            this.jobsDropdownlist.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.jobsDropdownlist.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.jobsDropdownlist.FormattingEnabled = true;
+            this.jobsDropdownlist.Location = new System.Drawing.Point(79, 373);
+            this.jobsDropdownlist.Name = "jobsDropdownlist";
+            this.jobsDropdownlist.Size = new System.Drawing.Size(190, 21);
+            this.jobsDropdownlist.TabIndex = 6;
             // 
-            // label2
+            // startLabel
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(20, 297);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(32, 13);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "Start:";
+            this.startLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.startLabel.AutoSize = true;
+            this.startLabel.BackColor = System.Drawing.Color.Transparent;
+            this.startLabel.ForeColor = System.Drawing.Color.White;
+            this.startLabel.Location = new System.Drawing.Point(20, 297);
+            this.startLabel.Name = "startLabel";
+            this.startLabel.Size = new System.Drawing.Size(32, 13);
+            this.startLabel.TabIndex = 11;
+            this.startLabel.Text = "Start:";
             // 
-            // label3
+            // endLabel
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(20, 324);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(29, 13);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "End:";
+            this.endLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.endLabel.AutoSize = true;
+            this.endLabel.BackColor = System.Drawing.Color.Transparent;
+            this.endLabel.ForeColor = System.Drawing.Color.White;
+            this.endLabel.Location = new System.Drawing.Point(20, 324);
+            this.endLabel.Name = "endLabel";
+            this.endLabel.Size = new System.Drawing.Size(29, 13);
+            this.endLabel.TabIndex = 12;
+            this.endLabel.Text = "End:";
             // 
-            // label4
+            // jobLabel
             // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(20, 373);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(27, 13);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "Job:";
+            this.jobLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.jobLabel.AutoSize = true;
+            this.jobLabel.BackColor = System.Drawing.Color.Transparent;
+            this.jobLabel.ForeColor = System.Drawing.Color.White;
+            this.jobLabel.Location = new System.Drawing.Point(20, 373);
+            this.jobLabel.Name = "jobLabel";
+            this.jobLabel.Size = new System.Drawing.Size(27, 13);
+            this.jobLabel.TabIndex = 13;
+            this.jobLabel.Text = "Job:";
             // 
-            // Start
+            // startTextbox
             // 
-            this.Start.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.Start.Location = new System.Drawing.Point(79, 294);
-            this.Start.Mask = "90:00";
-            this.Start.Name = "Start";
-            this.Start.Size = new System.Drawing.Size(41, 20);
-            this.Start.TabIndex = 14;
+            this.startTextbox.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.startTextbox.Location = new System.Drawing.Point(79, 294);
+            this.startTextbox.Mask = "90:00";
+            this.startTextbox.Name = "startTextbox";
+            this.startTextbox.Size = new System.Drawing.Size(41, 20);
+            this.startTextbox.TabIndex = 3;
             // 
-            // End
+            // endTextbox
             // 
-            this.End.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.End.Location = new System.Drawing.Point(79, 324);
-            this.End.Mask = "90:00";
-            this.End.Name = "End";
-            this.End.Size = new System.Drawing.Size(41, 20);
-            this.End.TabIndex = 15;
+            this.endTextbox.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.endTextbox.Location = new System.Drawing.Point(79, 324);
+            this.endTextbox.Mask = "90:00";
+            this.endTextbox.Name = "endTextbox";
+            this.endTextbox.Size = new System.Drawing.Size(41, 20);
+            this.endTextbox.TabIndex = 15;
             // 
-            // b1out
+            // b1outTextbox
             // 
-            this.b1out.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.b1out.Location = new System.Drawing.Point(186, 294);
-            this.b1out.Mask = "90:00";
-            this.b1out.Name = "b1out";
-            this.b1out.Size = new System.Drawing.Size(41, 20);
-            this.b1out.TabIndex = 18;
+            this.b1outTextbox.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.b1outTextbox.Location = new System.Drawing.Point(186, 294);
+            this.b1outTextbox.Mask = "90:00";
+            this.b1outTextbox.Name = "b1outTextbox";
+            this.b1outTextbox.Size = new System.Drawing.Size(41, 20);
+            this.b1outTextbox.TabIndex = 4;
             // 
-            // label6
+            // break1Label
             // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(127, 297);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(47, 13);
-            this.label6.TabIndex = 16;
-            this.label6.Text = "Break 1:";
+            this.break1Label.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.break1Label.AutoSize = true;
+            this.break1Label.BackColor = System.Drawing.Color.Transparent;
+            this.break1Label.ForeColor = System.Drawing.Color.White;
+            this.break1Label.Location = new System.Drawing.Point(127, 297);
+            this.break1Label.Name = "break1Label";
+            this.break1Label.Size = new System.Drawing.Size(47, 13);
+            this.break1Label.TabIndex = 16;
+            this.break1Label.Text = "Break 1:";
             // 
-            // label7
+            // b1dashLabel
             // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(233, 297);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(13, 13);
-            this.label7.TabIndex = 20;
-            this.label7.Text = "--";
+            this.b1dashLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.b1dashLabel.AutoSize = true;
+            this.b1dashLabel.BackColor = System.Drawing.Color.Transparent;
+            this.b1dashLabel.ForeColor = System.Drawing.Color.White;
+            this.b1dashLabel.Location = new System.Drawing.Point(233, 297);
+            this.b1dashLabel.Name = "b1dashLabel";
+            this.b1dashLabel.Size = new System.Drawing.Size(13, 13);
+            this.b1dashLabel.TabIndex = 20;
+            this.b1dashLabel.Text = "--";
             // 
-            // b1in
+            // b1inTextbox
             // 
-            this.b1in.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.b1in.Location = new System.Drawing.Point(252, 294);
-            this.b1in.Mask = "90:00";
-            this.b1in.Name = "b1in";
-            this.b1in.Size = new System.Drawing.Size(41, 20);
-            this.b1in.TabIndex = 21;
+            this.b1inTextbox.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.b1inTextbox.Location = new System.Drawing.Point(252, 294);
+            this.b1inTextbox.Mask = "90:00";
+            this.b1inTextbox.Name = "b1inTextbox";
+            this.b1inTextbox.Size = new System.Drawing.Size(41, 20);
+            this.b1inTextbox.TabIndex = 5;
             // 
-            // b2in
+            // b2inTextbox
             // 
-            this.b2in.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.b2in.Location = new System.Drawing.Point(252, 321);
-            this.b2in.Mask = "90:00";
-            this.b2in.Name = "b2in";
-            this.b2in.Size = new System.Drawing.Size(41, 20);
-            this.b2in.TabIndex = 25;
+            this.b2inTextbox.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.b2inTextbox.Location = new System.Drawing.Point(252, 321);
+            this.b2inTextbox.Mask = "90:00";
+            this.b2inTextbox.Name = "b2inTextbox";
+            this.b2inTextbox.Size = new System.Drawing.Size(41, 20);
+            this.b2inTextbox.TabIndex = 7;
             // 
-            // label5
+            // b2dashLabel
             // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(233, 324);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(13, 13);
-            this.label5.TabIndex = 24;
-            this.label5.Text = "--";
+            this.b2dashLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.b2dashLabel.AutoSize = true;
+            this.b2dashLabel.BackColor = System.Drawing.Color.Transparent;
+            this.b2dashLabel.ForeColor = System.Drawing.Color.White;
+            this.b2dashLabel.Location = new System.Drawing.Point(233, 324);
+            this.b2dashLabel.Name = "b2dashLabel";
+            this.b2dashLabel.Size = new System.Drawing.Size(13, 13);
+            this.b2dashLabel.TabIndex = 24;
+            this.b2dashLabel.Text = "--";
             // 
-            // b2out
+            // b2outTextbox
             // 
-            this.b2out.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.b2out.Location = new System.Drawing.Point(186, 321);
-            this.b2out.Mask = "90:00";
-            this.b2out.Name = "b2out";
-            this.b2out.Size = new System.Drawing.Size(41, 20);
-            this.b2out.TabIndex = 23;
+            this.b2outTextbox.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.b2outTextbox.Location = new System.Drawing.Point(186, 321);
+            this.b2outTextbox.Mask = "90:00";
+            this.b2outTextbox.Name = "b2outTextbox";
+            this.b2outTextbox.Size = new System.Drawing.Size(41, 20);
+            this.b2outTextbox.TabIndex = 6;
             // 
-            // label8
+            // break2Label
             // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(127, 324);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(47, 13);
-            this.label8.TabIndex = 22;
-            this.label8.Text = "Break 2:";
+            this.break2Label.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.break2Label.AutoSize = true;
+            this.break2Label.BackColor = System.Drawing.Color.Transparent;
+            this.break2Label.ForeColor = System.Drawing.Color.White;
+            this.break2Label.Location = new System.Drawing.Point(127, 324);
+            this.break2Label.Name = "break2Label";
+            this.break2Label.Size = new System.Drawing.Size(47, 13);
+            this.break2Label.TabIndex = 22;
+            this.break2Label.Text = "Break 2:";
             // 
-            // lin
+            // linTextbox
             // 
-            this.lin.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.lin.Location = new System.Drawing.Point(252, 347);
-            this.lin.Mask = "90:00";
-            this.lin.Name = "lin";
-            this.lin.Size = new System.Drawing.Size(41, 20);
-            this.lin.TabIndex = 28;
+            this.linTextbox.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.linTextbox.Location = new System.Drawing.Point(252, 347);
+            this.linTextbox.Mask = "90:00";
+            this.linTextbox.Name = "linTextbox";
+            this.linTextbox.Size = new System.Drawing.Size(41, 20);
+            this.linTextbox.TabIndex = 9;
             // 
-            // lout
+            // loutTextbox
             // 
-            this.lout.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.lout.Location = new System.Drawing.Point(186, 347);
-            this.lout.Mask = "90:00";
-            this.lout.Name = "lout";
-            this.lout.Size = new System.Drawing.Size(41, 20);
-            this.lout.TabIndex = 27;
+            this.loutTextbox.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.loutTextbox.Location = new System.Drawing.Point(186, 347);
+            this.loutTextbox.Mask = "90:00";
+            this.loutTextbox.Name = "loutTextbox";
+            this.loutTextbox.Size = new System.Drawing.Size(41, 20);
+            this.loutTextbox.TabIndex = 8;
             // 
-            // label9
+            // lunchLabel
             // 
-            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(127, 350);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(40, 13);
-            this.label9.TabIndex = 26;
-            this.label9.Text = "Lunch:";
+            this.lunchLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.lunchLabel.AutoSize = true;
+            this.lunchLabel.BackColor = System.Drawing.Color.Transparent;
+            this.lunchLabel.ForeColor = System.Drawing.Color.White;
+            this.lunchLabel.Location = new System.Drawing.Point(127, 350);
+            this.lunchLabel.Name = "lunchLabel";
+            this.lunchLabel.Size = new System.Drawing.Size(40, 13);
+            this.lunchLabel.TabIndex = 26;
+            this.lunchLabel.Text = "Lunch:";
+            // 
+            // lunchdashLabel
+            // 
+            this.lunchdashLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.lunchdashLabel.AutoSize = true;
+            this.lunchdashLabel.BackColor = System.Drawing.Color.Transparent;
+            this.lunchdashLabel.ForeColor = System.Drawing.Color.White;
+            this.lunchdashLabel.Location = new System.Drawing.Point(233, 350);
+            this.lunchdashLabel.Name = "lunchdashLabel";
+            this.lunchdashLabel.Size = new System.Drawing.Size(13, 13);
+            this.lunchdashLabel.TabIndex = 27;
+            this.lunchdashLabel.Text = "--";
             // 
             // Status
             // 
@@ -299,32 +312,33 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Los_Alamos_Timeclock.Properties.Resources._1287421014661;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Controls.Add(this.lin);
-            this.Controls.Add(this.lout);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.b2in);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.b2out);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.b1in);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.b1out);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.End);
-            this.Controls.Add(this.Start);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.jobs);
-            this.Controls.Add(this.Updateschedule);
+            this.Controls.Add(this.lunchdashLabel);
+            this.Controls.Add(this.linTextbox);
+            this.Controls.Add(this.loutTextbox);
+            this.Controls.Add(this.lunchLabel);
+            this.Controls.Add(this.b2inTextbox);
+            this.Controls.Add(this.b2dashLabel);
+            this.Controls.Add(this.b2outTextbox);
+            this.Controls.Add(this.break2Label);
+            this.Controls.Add(this.b1inTextbox);
+            this.Controls.Add(this.b1dashLabel);
+            this.Controls.Add(this.b1outTextbox);
+            this.Controls.Add(this.break1Label);
+            this.Controls.Add(this.endTextbox);
+            this.Controls.Add(this.startTextbox);
+            this.Controls.Add(this.jobLabel);
+            this.Controls.Add(this.endLabel);
+            this.Controls.Add(this.startLabel);
+            this.Controls.Add(this.jobsDropdownlist);
+            this.Controls.Add(this.updatescheduleButton);
             this.Controls.Add(this.calander);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.Employees);
-            this.Controls.Add(this.dg);
+            this.Controls.Add(this.employeeLabel);
+            this.Controls.Add(this.employeeDropdownlist);
+            this.Controls.Add(this.datagrid);
             this.DoubleBuffered = true;
             this.Name = "Status";
             this.Size = new System.Drawing.Size(500, 400);
-            ((System.ComponentModel.ISupportInitialize)(this.dg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datagrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -332,28 +346,29 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox Employees;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox employeeDropdownlist;
+        private System.Windows.Forms.Label employeeLabel;
         private System.Windows.Forms.DateTimePicker calander;
-        private System.Windows.Forms.Button Updateschedule;
-        private System.Windows.Forms.DataGridView dg;
-        private System.Windows.Forms.ComboBox jobs;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.MaskedTextBox Start;
-        private System.Windows.Forms.MaskedTextBox End;
-        private System.Windows.Forms.MaskedTextBox b1out;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.MaskedTextBox b1in;
-        private System.Windows.Forms.MaskedTextBox b2in;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.MaskedTextBox b2out;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.MaskedTextBox lin;
-        private System.Windows.Forms.MaskedTextBox lout;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button updatescheduleButton;
+        private System.Windows.Forms.DataGridView datagrid;
+        private System.Windows.Forms.ComboBox jobsDropdownlist;
+        private System.Windows.Forms.Label startLabel;
+        private System.Windows.Forms.Label endLabel;
+        private System.Windows.Forms.Label jobLabel;
+        private System.Windows.Forms.MaskedTextBox startTextbox;
+        private System.Windows.Forms.MaskedTextBox endTextbox;
+        private System.Windows.Forms.MaskedTextBox b1outTextbox;
+        private System.Windows.Forms.Label break1Label;
+        private System.Windows.Forms.Label b1dashLabel;
+        private System.Windows.Forms.MaskedTextBox b1inTextbox;
+        private System.Windows.Forms.MaskedTextBox b2inTextbox;
+        private System.Windows.Forms.Label b2dashLabel;
+        private System.Windows.Forms.MaskedTextBox b2outTextbox;
+        private System.Windows.Forms.Label break2Label;
+        private System.Windows.Forms.MaskedTextBox linTextbox;
+        private System.Windows.Forms.MaskedTextBox loutTextbox;
+        private System.Windows.Forms.Label lunchLabel;
+        private System.Windows.Forms.Label lunchdashLabel;
 
     }
 }

@@ -28,115 +28,115 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.editemployees = new System.Windows.Forms.Button();
-            this.Editschedule = new System.Windows.Forms.Button();
-            this.viewlog = new System.Windows.Forms.Button();
-            this.calculatepay = new System.Windows.Forms.Button();
-            this.editjobs = new System.Windows.Forms.Button();
-            this.config = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.employeenotes = new System.Windows.Forms.Button();
-            this.phonebook = new System.Windows.Forms.Button();
+            this.editemployeesButton = new System.Windows.Forms.Button();
+            this.editscheduleButton = new System.Windows.Forms.Button();
+            this.viewlogButton = new System.Windows.Forms.Button();
+            this.calculatepayButton = new System.Windows.Forms.Button();
+            this.editjobsButton = new System.Windows.Forms.Button();
+            this.settingsButton = new System.Windows.Forms.Button();
+            this.statusButton = new System.Windows.Forms.Button();
+            this.employeenotesButton = new System.Windows.Forms.Button();
+            this.phonebookButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // editemployees
+            // editemployeesButton
             // 
-            this.editemployees.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.editemployees.Location = new System.Drawing.Point(217, 155);
-            this.editemployees.Name = "editemployees";
-            this.editemployees.Size = new System.Drawing.Size(75, 75);
-            this.editemployees.TabIndex = 0;
-            this.editemployees.Text = "Edit Employees";
-            this.editemployees.UseVisualStyleBackColor = true;
-            this.editemployees.Click += new System.EventHandler(this.editemployees_Click);
+            this.editemployeesButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.editemployeesButton.Location = new System.Drawing.Point(217, 155);
+            this.editemployeesButton.Name = "editemployeesButton";
+            this.editemployeesButton.Size = new System.Drawing.Size(75, 75);
+            this.editemployeesButton.TabIndex = 0;
+            this.editemployeesButton.Text = "Edit Employees";
+            this.editemployeesButton.UseVisualStyleBackColor = true;
+            this.editemployeesButton.Click += new System.EventHandler(this.editemployees_Click);
             // 
-            // Editschedule
+            // editscheduleButton
             // 
-            this.Editschedule.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Editschedule.Location = new System.Drawing.Point(217, 74);
-            this.Editschedule.Name = "Editschedule";
-            this.Editschedule.Size = new System.Drawing.Size(75, 75);
-            this.Editschedule.TabIndex = 1;
-            this.Editschedule.Text = "Edit Schedule";
-            this.Editschedule.UseVisualStyleBackColor = true;
-            this.Editschedule.Click += new System.EventHandler(this.Editschedule_Click);
+            this.editscheduleButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.editscheduleButton.Location = new System.Drawing.Point(217, 74);
+            this.editscheduleButton.Name = "editscheduleButton";
+            this.editscheduleButton.Size = new System.Drawing.Size(75, 75);
+            this.editscheduleButton.TabIndex = 1;
+            this.editscheduleButton.Text = "Edit Schedule";
+            this.editscheduleButton.UseVisualStyleBackColor = true;
+            this.editscheduleButton.Click += new System.EventHandler(this.editschedule_Click);
             // 
-            // viewlog
+            // viewlogButton
             // 
-            this.viewlog.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.viewlog.Location = new System.Drawing.Point(217, 236);
-            this.viewlog.Name = "viewlog";
-            this.viewlog.Size = new System.Drawing.Size(75, 75);
-            this.viewlog.TabIndex = 2;
-            this.viewlog.Text = "View Log";
-            this.viewlog.UseVisualStyleBackColor = true;
-            this.viewlog.Click += new System.EventHandler(this.viewlog_Click);
+            this.viewlogButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.viewlogButton.Location = new System.Drawing.Point(217, 236);
+            this.viewlogButton.Name = "viewlogButton";
+            this.viewlogButton.Size = new System.Drawing.Size(75, 75);
+            this.viewlogButton.TabIndex = 2;
+            this.viewlogButton.Text = "View Log";
+            this.viewlogButton.UseVisualStyleBackColor = true;
+            this.viewlogButton.Click += new System.EventHandler(this.viewlog_Click);
             // 
-            // calculatepay
+            // calculatepayButton
             // 
-            this.calculatepay.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.calculatepay.Location = new System.Drawing.Point(136, 236);
-            this.calculatepay.Name = "calculatepay";
-            this.calculatepay.Size = new System.Drawing.Size(75, 75);
-            this.calculatepay.TabIndex = 3;
-            this.calculatepay.Text = "Calculate Paychecks";
-            this.calculatepay.UseVisualStyleBackColor = true;
-            this.calculatepay.Click += new System.EventHandler(this.Paychecks_Click);
+            this.calculatepayButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.calculatepayButton.Location = new System.Drawing.Point(136, 236);
+            this.calculatepayButton.Name = "calculatepayButton";
+            this.calculatepayButton.Size = new System.Drawing.Size(75, 75);
+            this.calculatepayButton.TabIndex = 3;
+            this.calculatepayButton.Text = "Calculate Paychecks";
+            this.calculatepayButton.UseVisualStyleBackColor = true;
+            this.calculatepayButton.Click += new System.EventHandler(this.paychecks_Click);
             // 
-            // editjobs
+            // editjobsButton
             // 
-            this.editjobs.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.editjobs.Location = new System.Drawing.Point(298, 155);
-            this.editjobs.Name = "editjobs";
-            this.editjobs.Size = new System.Drawing.Size(75, 75);
-            this.editjobs.TabIndex = 4;
-            this.editjobs.Text = "Edit Jobs";
-            this.editjobs.UseVisualStyleBackColor = true;
-            this.editjobs.Click += new System.EventHandler(this.editjobs_Click);
+            this.editjobsButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.editjobsButton.Location = new System.Drawing.Point(298, 155);
+            this.editjobsButton.Name = "editjobsButton";
+            this.editjobsButton.Size = new System.Drawing.Size(75, 75);
+            this.editjobsButton.TabIndex = 4;
+            this.editjobsButton.Text = "Edit Jobs";
+            this.editjobsButton.UseVisualStyleBackColor = true;
+            this.editjobsButton.Click += new System.EventHandler(this.editjobs_Click);
             // 
-            // config
+            // settingsButton
             // 
-            this.config.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.config.Location = new System.Drawing.Point(298, 236);
-            this.config.Name = "config";
-            this.config.Size = new System.Drawing.Size(75, 75);
-            this.config.TabIndex = 5;
-            this.config.Text = "Settings";
-            this.config.UseVisualStyleBackColor = true;
-            this.config.Click += new System.EventHandler(this.config_Click);
+            this.settingsButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.settingsButton.Location = new System.Drawing.Point(298, 236);
+            this.settingsButton.Name = "settingsButton";
+            this.settingsButton.Size = new System.Drawing.Size(75, 75);
+            this.settingsButton.TabIndex = 5;
+            this.settingsButton.Text = "Settings";
+            this.settingsButton.UseVisualStyleBackColor = true;
+            this.settingsButton.Click += new System.EventHandler(this.settings_Click);
             // 
-            // button1
+            // statusButton
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.Location = new System.Drawing.Point(136, 74);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 75);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Status";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.statusButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.statusButton.Location = new System.Drawing.Point(136, 74);
+            this.statusButton.Name = "statusButton";
+            this.statusButton.Size = new System.Drawing.Size(75, 75);
+            this.statusButton.TabIndex = 6;
+            this.statusButton.Text = "Status";
+            this.statusButton.UseVisualStyleBackColor = true;
+            this.statusButton.Click += new System.EventHandler(this.status_Click);
             // 
-            // employeenotes
+            // employeenotesButton
             // 
-            this.employeenotes.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.employeenotes.Location = new System.Drawing.Point(298, 74);
-            this.employeenotes.Name = "employeenotes";
-            this.employeenotes.Size = new System.Drawing.Size(75, 75);
-            this.employeenotes.TabIndex = 7;
-            this.employeenotes.Text = "Employee Notes";
-            this.employeenotes.UseVisualStyleBackColor = true;
-            this.employeenotes.Click += new System.EventHandler(this.employeenotes_Click);
+            this.employeenotesButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.employeenotesButton.Location = new System.Drawing.Point(298, 74);
+            this.employeenotesButton.Name = "employeenotesButton";
+            this.employeenotesButton.Size = new System.Drawing.Size(75, 75);
+            this.employeenotesButton.TabIndex = 7;
+            this.employeenotesButton.Text = "Employee Notes";
+            this.employeenotesButton.UseVisualStyleBackColor = true;
+            this.employeenotesButton.Click += new System.EventHandler(this.employeenotes_Click);
             // 
-            // phonebook
+            // phonebookButton
             // 
-            this.phonebook.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.phonebook.Location = new System.Drawing.Point(136, 155);
-            this.phonebook.Name = "phonebook";
-            this.phonebook.Size = new System.Drawing.Size(75, 75);
-            this.phonebook.TabIndex = 8;
-            this.phonebook.Text = "Phone Book";
-            this.phonebook.UseVisualStyleBackColor = true;
-            this.phonebook.Click += new System.EventHandler(this.phonebook_Click);
+            this.phonebookButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.phonebookButton.Location = new System.Drawing.Point(136, 155);
+            this.phonebookButton.Name = "phonebookButton";
+            this.phonebookButton.Size = new System.Drawing.Size(75, 75);
+            this.phonebookButton.TabIndex = 8;
+            this.phonebookButton.Text = "Phone Book";
+            this.phonebookButton.UseVisualStyleBackColor = true;
+            this.phonebookButton.Click += new System.EventHandler(this.phonebook_Click);
             // 
             // Admin
             // 
@@ -144,15 +144,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Los_Alamos_Timeclock.Properties.Resources._1287421014661;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Controls.Add(this.phonebook);
-            this.Controls.Add(this.employeenotes);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.config);
-            this.Controls.Add(this.editjobs);
-            this.Controls.Add(this.calculatepay);
-            this.Controls.Add(this.viewlog);
-            this.Controls.Add(this.Editschedule);
-            this.Controls.Add(this.editemployees);
+            this.Controls.Add(this.phonebookButton);
+            this.Controls.Add(this.employeenotesButton);
+            this.Controls.Add(this.statusButton);
+            this.Controls.Add(this.settingsButton);
+            this.Controls.Add(this.editjobsButton);
+            this.Controls.Add(this.calculatepayButton);
+            this.Controls.Add(this.viewlogButton);
+            this.Controls.Add(this.editscheduleButton);
+            this.Controls.Add(this.editemployeesButton);
             this.DoubleBuffered = true;
             this.Name = "Admin";
             this.Size = new System.Drawing.Size(500, 400);
@@ -162,14 +162,14 @@
 
         #endregion
 
-        private System.Windows.Forms.Button editemployees;
-        private System.Windows.Forms.Button Editschedule;
-        private System.Windows.Forms.Button viewlog;
-        private System.Windows.Forms.Button calculatepay;
-        private System.Windows.Forms.Button editjobs;
-        private System.Windows.Forms.Button config;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button employeenotes;
-        private System.Windows.Forms.Button phonebook;
+        private System.Windows.Forms.Button editemployeesButton;
+        private System.Windows.Forms.Button editscheduleButton;
+        private System.Windows.Forms.Button viewlogButton;
+        private System.Windows.Forms.Button calculatepayButton;
+        private System.Windows.Forms.Button editjobsButton;
+        private System.Windows.Forms.Button settingsButton;
+        private System.Windows.Forms.Button statusButton;
+        private System.Windows.Forms.Button employeenotesButton;
+        private System.Windows.Forms.Button phonebookButton;
     }
 }

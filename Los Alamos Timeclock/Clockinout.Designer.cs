@@ -28,41 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.clockin = new System.Windows.Forms.Button();
-            this.shiftinfo = new System.Windows.Forms.Label();
+            this.clockinButton = new System.Windows.Forms.Button();
+            this.shiftinfoLabel = new System.Windows.Forms.Label();
             this.welcome = new System.Windows.Forms.Label();
-            this.Clockout = new System.Windows.Forms.Button();
-            this.jobimg = new System.Windows.Forms.PictureBox();
-            this.statusmessage = new System.Windows.Forms.Label();
-            this.Break = new System.Windows.Forms.Button();
-            this.Lunch = new System.Windows.Forms.Button();
-            this.Manager = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.jobimg)).BeginInit();
+            this.clockoutButton = new System.Windows.Forms.Button();
+            this.jobImage = new System.Windows.Forms.PictureBox();
+            this.statusMessagebox = new System.Windows.Forms.Label();
+            this.BreakButton = new System.Windows.Forms.Button();
+            this.lunchButton = new System.Windows.Forms.Button();
+            this.managerOverrideButton = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.jobImage)).BeginInit();
             this.SuspendLayout();
             // 
-            // clockin
+            // clockinButton
             // 
-            this.clockin.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.clockin.Location = new System.Drawing.Point(64, 291);
-            this.clockin.Name = "clockin";
-            this.clockin.Size = new System.Drawing.Size(75, 75);
-            this.clockin.TabIndex = 0;
-            this.clockin.Text = "Clock In";
-            this.clockin.UseVisualStyleBackColor = true;
-            this.clockin.Click += new System.EventHandler(this.clockin_Click);
+            this.clockinButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.clockinButton.Location = new System.Drawing.Point(64, 291);
+            this.clockinButton.Name = "clockinButton";
+            this.clockinButton.Size = new System.Drawing.Size(75, 75);
+            this.clockinButton.TabIndex = 0;
+            this.clockinButton.Text = "Clock In";
+            this.clockinButton.UseVisualStyleBackColor = true;
+            this.clockinButton.Click += new System.EventHandler(this.clockin_Click);
             // 
-            // shiftinfo
+            // shiftinfoLabel
             // 
-            this.shiftinfo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.shiftinfo.AutoSize = true;
-            this.shiftinfo.BackColor = System.Drawing.Color.Transparent;
-            this.shiftinfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.shiftinfo.ForeColor = System.Drawing.Color.Transparent;
-            this.shiftinfo.Location = new System.Drawing.Point(3, 90);
-            this.shiftinfo.Name = "shiftinfo";
-            this.shiftinfo.Size = new System.Drawing.Size(77, 29);
-            this.shiftinfo.TabIndex = 1;
-            this.shiftinfo.Text = "TEST";
+            this.shiftinfoLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.shiftinfoLabel.AutoSize = true;
+            this.shiftinfoLabel.BackColor = System.Drawing.Color.Transparent;
+            this.shiftinfoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.shiftinfoLabel.ForeColor = System.Drawing.Color.Transparent;
+            this.shiftinfoLabel.Location = new System.Drawing.Point(3, 90);
+            this.shiftinfoLabel.Name = "shiftinfoLabel";
+            this.shiftinfoLabel.Size = new System.Drawing.Size(77, 29);
+            this.shiftinfoLabel.TabIndex = 1;
+            this.shiftinfoLabel.Text = "TEST";
             // 
             // welcome
             // 
@@ -76,73 +76,73 @@
             this.welcome.TabIndex = 2;
             this.welcome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Clockout
+            // clockoutButton
             // 
-            this.Clockout.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Clockout.Location = new System.Drawing.Point(307, 291);
-            this.Clockout.Name = "Clockout";
-            this.Clockout.Size = new System.Drawing.Size(75, 75);
-            this.Clockout.TabIndex = 3;
-            this.Clockout.Text = "Clock Out";
-            this.Clockout.UseVisualStyleBackColor = true;
-            this.Clockout.Click += new System.EventHandler(this.Clockout_Click);
+            this.clockoutButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.clockoutButton.Location = new System.Drawing.Point(307, 291);
+            this.clockoutButton.Name = "clockoutButton";
+            this.clockoutButton.Size = new System.Drawing.Size(75, 75);
+            this.clockoutButton.TabIndex = 3;
+            this.clockoutButton.Text = "Clock Out";
+            this.clockoutButton.UseVisualStyleBackColor = true;
+            this.clockoutButton.Click += new System.EventHandler(this.Clockout_Click);
             // 
-            // jobimg
+            // jobImage
             // 
-            this.jobimg.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.jobimg.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.jobimg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.jobimg.InitialImage = null;
-            this.jobimg.Location = new System.Drawing.Point(332, 90);
-            this.jobimg.Name = "jobimg";
-            this.jobimg.Size = new System.Drawing.Size(150, 150);
-            this.jobimg.TabIndex = 4;
-            this.jobimg.TabStop = false;
+            this.jobImage.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.jobImage.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.jobImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.jobImage.InitialImage = null;
+            this.jobImage.Location = new System.Drawing.Point(332, 90);
+            this.jobImage.Name = "jobImage";
+            this.jobImage.Size = new System.Drawing.Size(150, 150);
+            this.jobImage.TabIndex = 4;
+            this.jobImage.TabStop = false;
             // 
-            // statusmessage
+            // statusMessagebox
             // 
-            this.statusmessage.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.statusmessage.BackColor = System.Drawing.Color.Red;
-            this.statusmessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.statusmessage.Location = new System.Drawing.Point(332, 57);
-            this.statusmessage.Name = "statusmessage";
-            this.statusmessage.Size = new System.Drawing.Size(150, 30);
-            this.statusmessage.TabIndex = 5;
-            this.statusmessage.Text = "Clocked Out";
-            this.statusmessage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.statusMessagebox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.statusMessagebox.BackColor = System.Drawing.Color.Red;
+            this.statusMessagebox.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusMessagebox.Location = new System.Drawing.Point(332, 57);
+            this.statusMessagebox.Name = "statusMessagebox";
+            this.statusMessagebox.Size = new System.Drawing.Size(150, 30);
+            this.statusMessagebox.TabIndex = 5;
+            this.statusMessagebox.Text = "Clocked Out";
+            this.statusMessagebox.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Break
+            // BreakButton
             // 
-            this.Break.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Break.Location = new System.Drawing.Point(145, 291);
-            this.Break.Name = "Break";
-            this.Break.Size = new System.Drawing.Size(75, 75);
-            this.Break.TabIndex = 6;
-            this.Break.Text = "Break In/Out";
-            this.Break.UseVisualStyleBackColor = true;
-            this.Break.Click += new System.EventHandler(this.Break_Click);
+            this.BreakButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.BreakButton.Location = new System.Drawing.Point(145, 291);
+            this.BreakButton.Name = "BreakButton";
+            this.BreakButton.Size = new System.Drawing.Size(75, 75);
+            this.BreakButton.TabIndex = 6;
+            this.BreakButton.Text = "Break In/Out";
+            this.BreakButton.UseVisualStyleBackColor = true;
+            this.BreakButton.Click += new System.EventHandler(this.Break_Click);
             // 
-            // Lunch
+            // lunchButton
             // 
-            this.Lunch.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Lunch.Location = new System.Drawing.Point(226, 291);
-            this.Lunch.Name = "Lunch";
-            this.Lunch.Size = new System.Drawing.Size(75, 75);
-            this.Lunch.TabIndex = 7;
-            this.Lunch.Text = "Lunch In/Out";
-            this.Lunch.UseVisualStyleBackColor = true;
-            this.Lunch.Click += new System.EventHandler(this.Lunch_Click);
+            this.lunchButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lunchButton.Location = new System.Drawing.Point(226, 291);
+            this.lunchButton.Name = "lunchButton";
+            this.lunchButton.Size = new System.Drawing.Size(75, 75);
+            this.lunchButton.TabIndex = 7;
+            this.lunchButton.Text = "Lunch In/Out";
+            this.lunchButton.UseVisualStyleBackColor = true;
+            this.lunchButton.Click += new System.EventHandler(this.Lunch_Click);
             // 
-            // Manager
+            // managerOverrideButton
             // 
-            this.Manager.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Manager.Location = new System.Drawing.Point(388, 291);
-            this.Manager.Name = "Manager";
-            this.Manager.Size = new System.Drawing.Size(75, 75);
-            this.Manager.TabIndex = 8;
-            this.Manager.Text = "Manager Override";
-            this.Manager.UseVisualStyleBackColor = true;
-            this.Manager.Click += new System.EventHandler(this.Manager_Click);
+            this.managerOverrideButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.managerOverrideButton.Location = new System.Drawing.Point(388, 291);
+            this.managerOverrideButton.Name = "managerOverrideButton";
+            this.managerOverrideButton.Size = new System.Drawing.Size(75, 75);
+            this.managerOverrideButton.TabIndex = 8;
+            this.managerOverrideButton.Text = "Manager Override";
+            this.managerOverrideButton.UseVisualStyleBackColor = true;
+            this.managerOverrideButton.Click += new System.EventHandler(this.Manager_Click);
             // 
             // Clockinout
             // 
@@ -150,20 +150,19 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Los_Alamos_Timeclock.Properties.Resources._1287421014661;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Controls.Add(this.Manager);
-            this.Controls.Add(this.Lunch);
-            this.Controls.Add(this.Break);
-            this.Controls.Add(this.statusmessage);
-            this.Controls.Add(this.jobimg);
-            this.Controls.Add(this.Clockout);
+            this.Controls.Add(this.managerOverrideButton);
+            this.Controls.Add(this.lunchButton);
+            this.Controls.Add(this.BreakButton);
+            this.Controls.Add(this.statusMessagebox);
+            this.Controls.Add(this.jobImage);
+            this.Controls.Add(this.clockoutButton);
             this.Controls.Add(this.welcome);
-            this.Controls.Add(this.shiftinfo);
-            this.Controls.Add(this.clockin);
+            this.Controls.Add(this.shiftinfoLabel);
+            this.Controls.Add(this.clockinButton);
             this.DoubleBuffered = true;
             this.Name = "Clockinout";
             this.Size = new System.Drawing.Size(500, 400);
-            this.Load += new System.EventHandler(this.Clockinout_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.jobimg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jobImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -171,14 +170,14 @@
 
         #endregion
 
-        private System.Windows.Forms.Button clockin;
-        private System.Windows.Forms.Label shiftinfo;
+        private System.Windows.Forms.Button clockinButton;
+        private System.Windows.Forms.Label shiftinfoLabel;
         private System.Windows.Forms.Label welcome;
-        private System.Windows.Forms.Button Clockout;
-        private System.Windows.Forms.PictureBox jobimg;
-        private System.Windows.Forms.Label statusmessage;
-        private System.Windows.Forms.Button Break;
-        private System.Windows.Forms.Button Lunch;
-        private System.Windows.Forms.Button Manager;
+        private System.Windows.Forms.Button clockoutButton;
+        private System.Windows.Forms.PictureBox jobImage;
+        private System.Windows.Forms.Label statusMessagebox;
+        private System.Windows.Forms.Button BreakButton;
+        private System.Windows.Forms.Button lunchButton;
+        private System.Windows.Forms.Button managerOverrideButton;
     }
 }
