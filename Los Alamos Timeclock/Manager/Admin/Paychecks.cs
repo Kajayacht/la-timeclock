@@ -29,27 +29,33 @@ namespace Los_Alamos_Timeclock.Manager.Admin
 
     public partial class Paychecks : UserControl
     {
-        public DateTime mon = DateTime.Now.Date;
-        public DateTime sun;
+        
         public Paychecks()
         {
             InitializeComponent();
-            mon = getMonday(mon);
-            weekCalander.Value = mon;
-            sun = mon.AddDays(6);
-            weekLabel.Text = "Pay for " + mon.ToShortDateString() + "-" + sun.ToShortDateString();
+            if (DateTime.Today.DayOfWeek != DayOfWeek.Monday)
+            {
+                startCalander.Value = getMonday(startCalander.Value);
+            }
+            endCalander.Value = startCalander.Value.AddDays(6);
+
+            weekLabel.Text = "Pay for " + startCalander.Value.ToShortDateString() + "-" + endCalander.Value.ToShortDateString();
             calculatePay();
         }
 
-        private void weekCalander_ValueChanged(object sender, EventArgs e)
+        private void startCalander_ValueChanged(object sender, EventArgs e)
         {
-            if (weekCalander.Value.DayOfWeek != DayOfWeek.Monday)
+            endCalander.MinDate = startCalander.Value;
+
+            weekLabel.Text = "Pay for " + startCalander.Value.ToShortDateString() + "-" + endCalander.Value.ToShortDateString();
+            calculatePay();
+        }
+        private void endCalander_ValueChanged(object sender, EventArgs e)
+        {
+            if (endCalander.Value < startCalander.Value)
             {
-                weekCalander.Value = getMonday(weekCalander.Value.Date);
+                endCalander.Value = startCalander.Value;
             }
-            mon = weekCalander.Value;
-            sun = mon.AddDays(6);
-            weekLabel.Text = "Pay for " + mon.ToShortDateString() + "-" + sun.ToShortDateString();
             calculatePay();
         }
 
@@ -82,8 +88,8 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             "ON b.JID=c.JID AND a.ID = c.ID " +
             "JOIN `Employee` d "+
             "ON a.ID=d.ID "+
-            "WHERE a.Date>='" + mon.ToString("yyyy-MM-dd") +
-            "' AND a.Date<='" + sun.ToString("yyyy-MM-dd") + 
+            "WHERE a.Date>='" + startCalander.Value.ToString("yyyy-MM-dd") +
+            "' AND a.Date<='" + endCalander.Value.ToString("yyyy-MM-dd") + 
             "' AND a.Status='OUT'"+
             "ORDER BY d.LName "+
             "LIMIT 0,1000";

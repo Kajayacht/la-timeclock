@@ -28,19 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.weekCalander = new System.Windows.Forms.DateTimePicker();
+            this.startCalander = new System.Windows.Forms.DateTimePicker();
             this.weekLabel = new System.Windows.Forms.Label();
             this.payTextbox = new System.Windows.Forms.RichTextBox();
+            this.disclaimerLabel = new System.Windows.Forms.Label();
+            this.endCalander = new System.Windows.Forms.DateTimePicker();
+            this.dashLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // weekCalander
+            // startCalander
             // 
-            this.weekCalander.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.weekCalander.Location = new System.Drawing.Point(150, 3);
-            this.weekCalander.Name = "weekCalander";
-            this.weekCalander.Size = new System.Drawing.Size(200, 20);
-            this.weekCalander.TabIndex = 0;
-            this.weekCalander.ValueChanged += new System.EventHandler(this.weekCalander_ValueChanged);
+            this.startCalander.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.startCalander.Location = new System.Drawing.Point(36, 3);
+            this.startCalander.Name = "startCalander";
+            this.startCalander.Size = new System.Drawing.Size(200, 20);
+            this.startCalander.TabIndex = 0;
+            this.startCalander.ValueChanged += new System.EventHandler(this.startCalander_ValueChanged);
             // 
             // weekLabel
             // 
@@ -68,6 +71,41 @@
             this.payTextbox.TabIndex = 4;
             this.payTextbox.Text = "";
             // 
+            // disclaimerLabel
+            // 
+            this.disclaimerLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.disclaimerLabel.AutoSize = true;
+            this.disclaimerLabel.BackColor = System.Drawing.Color.Transparent;
+            this.disclaimerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.disclaimerLabel.ForeColor = System.Drawing.Color.White;
+            this.disclaimerLabel.Location = new System.Drawing.Point(146, 369);
+            this.disclaimerLabel.Name = "disclaimerLabel";
+            this.disclaimerLabel.Size = new System.Drawing.Size(235, 20);
+            this.disclaimerLabel.TabIndex = 5;
+            this.disclaimerLabel.Text = "Pay based on current wages";
+            // 
+            // endCalander
+            // 
+            this.endCalander.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.endCalander.Location = new System.Drawing.Point(261, 3);
+            this.endCalander.Name = "endCalander";
+            this.endCalander.Size = new System.Drawing.Size(200, 20);
+            this.endCalander.TabIndex = 6;
+            this.endCalander.ValueChanged += new System.EventHandler(this.endCalander_ValueChanged);
+            // 
+            // dashLabel
+            // 
+            this.dashLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.dashLabel.AutoSize = true;
+            this.dashLabel.BackColor = System.Drawing.Color.Transparent;
+            this.dashLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dashLabel.ForeColor = System.Drawing.Color.White;
+            this.dashLabel.Location = new System.Drawing.Point(242, 3);
+            this.dashLabel.Name = "dashLabel";
+            this.dashLabel.Size = new System.Drawing.Size(15, 20);
+            this.dashLabel.TabIndex = 7;
+            this.dashLabel.Text = "-";
+            // 
             // Paychecks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -75,9 +113,12 @@
             this.AutoScroll = true;
             this.BackgroundImage = global::Los_Alamos_Timeclock.Properties.Resources._1287421014661;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.dashLabel);
+            this.Controls.Add(this.endCalander);
+            this.Controls.Add(this.disclaimerLabel);
             this.Controls.Add(this.payTextbox);
             this.Controls.Add(this.weekLabel);
-            this.Controls.Add(this.weekCalander);
+            this.Controls.Add(this.startCalander);
             this.DoubleBuffered = true;
             this.Name = "Paychecks";
             this.Size = new System.Drawing.Size(500, 400);
@@ -88,8 +129,11 @@
 
         #endregion
 
-        private System.Windows.Forms.DateTimePicker weekCalander;
+        private System.Windows.Forms.DateTimePicker startCalander;
         private System.Windows.Forms.Label weekLabel;
         private System.Windows.Forms.RichTextBox payTextbox;
+        private System.Windows.Forms.Label disclaimerLabel;
+        private System.Windows.Forms.DateTimePicker endCalander;
+        private System.Windows.Forms.Label dashLabel;
     }
 }
