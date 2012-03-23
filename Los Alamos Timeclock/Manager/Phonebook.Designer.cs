@@ -36,7 +36,7 @@
             // 
             // employeeLabel
             // 
-            this.employeeLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.employeeLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.employeeLabel.AutoSize = true;
             this.employeeLabel.BackColor = System.Drawing.Color.Transparent;
             this.employeeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -49,7 +49,7 @@
             // 
             // employeeDropdownlist
             // 
-            this.employeeDropdownlist.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.employeeDropdownlist.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.employeeDropdownlist.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.employeeDropdownlist.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.employeeDropdownlist.FormattingEnabled = true;
@@ -62,7 +62,7 @@
             // 
             // titleLabel
             // 
-            this.titleLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.titleLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.titleLabel.AutoSize = true;
             this.titleLabel.BackColor = System.Drawing.Color.Transparent;
             this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -75,7 +75,7 @@
             // 
             // phoneNumber
             // 
-            this.phoneNumber.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.phoneNumber.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.phoneNumber.AutoSize = true;
             this.phoneNumber.BackColor = System.Drawing.Color.Transparent;
             this.phoneNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

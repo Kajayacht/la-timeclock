@@ -18,15 +18,15 @@ namespace Los_Alamos_Timeclock
         {
             InitializeComponent();
 
-            jobs.DisplayMember = "getname";
-            jobs.DataSource = Main.joblist;
+            jobsBox.DisplayMember = "getname";
+            jobsBox.DataSource = Main.joblist;
 
         }
 
         private void ok_Click(object sender, EventArgs e)
         {
 
-            if (user.Text != "" && password.Text != "")
+            if (userTextbox.Text != "" && passTextbox.Text != "")
             {
                 Main.myConnection.Open();
                 //Main.maininstance.sqlreader("SELECT Users.ID,Employee.FName, Employee.Priv FROM Users, Employee WHERE Users.ID = Employee.ID AND Users.User='" + user.Text + "' AND Users.Password='" + password.Text + "' AND (Priv='Admin' OR Priv='Manager')");
@@ -36,8 +36,8 @@ namespace Los_Alamos_Timeclock
                                                 "ON a.ID=b.ID " +
                                                 "LEFT JOIN Manager c " +
                                                 "ON a.ID=c.ID " +
-                                                "Where a.User='" + user.Text + "' " +
-                                                "And a.Password='" + password.Text + "'");
+                                                "Where a.User='" + userTextbox.Text + "' " +
+                                                "And a.Password='" + passTextbox.Text + "'");
 
                 if (Main.reader.HasRows)
                 {
@@ -45,11 +45,11 @@ namespace Los_Alamos_Timeclock
                     {
                         Main.reader.Close();
                         Main.myConnection.Close();
-                        Main.maininstance.sqlcommand("INSERT INTO `Hours Worked` (`ID`, `Date`, `Start`, `JID`,`Status`) VALUES ('" + Main.id + "', '" + DateTime.Today.ToString("yyyy-MM-dd") + "' , '" + Main.maininstance.roundtime(DateTime.Now).ToString("HH:mm:ss") + "', '" + jobs.Text + "', 'IN')");
+                        Main.maininstance.sqlcommand("INSERT INTO `Hours Worked` (`ID`, `Date`, `Start`, `JID`,`Status`) VALUES ('" + Main.id + "', '" + DateTime.Today.ToString("yyyy-MM-dd") + "' , '" + Main.maininstance.roundtime(DateTime.Now).ToString("HH:mm:ss") + "', '" + jobsBox.Text + "', 'IN')");
                         Main.maininstance.panel1.Controls.Clear();
                         Main.maininstance.panel1.Controls.Add(new Clockinout());
                         Main.maininstance.panel1.Controls[0].Dock = DockStyle.Fill;
-                        Log.writeLog(user.Text + " overrode clock in for: " + "\n Employee= " + Main.eName + "\n Job= " + jobs.Text);
+                        Log.writeLog(userTextbox.Text + " overrode clock in for: " + "\n Employee= " + Main.eName + "\n Job= " + jobsBox.Text);
                         this.Close();
                     }
                     else

@@ -34,12 +34,13 @@ namespace Los_Alamos_Timeclock
     public partial class Clockinout : UserControl
     {
         public Boolean scheduled = false;
-        DateTime start, end;
+        DateTime startTime, endTime;
         string date;
         int n = 0;
         Boolean lunch = false;
         string job;
         string status;
+        Boolean clockedIn = false;
         public MySqlCommand command;
         public Clockinout()
         {
@@ -52,12 +53,12 @@ namespace Los_Alamos_Timeclock
 
                 Main.myConnection.Open();
                 Main.maininstance.sqlreader("Select * From `Hours Worked` WHERE ID='" + Main.id + "' AND Status!='OUT'");
-                Boolean clockedin = Main.reader.HasRows;
-                if (clockedin)
+                clockedIn = Main.reader.HasRows;
+                if (clockedIn)
                 {
                     job = Main.reader["JID"].ToString();
 
-                    jobimg.Image = (Bitmap)Resources.ResourceManager.GetObject(job);
+                    jobImage.Image = (Bitmap)Resources.ResourceManager.GetObject(job);
                     
 
                     if (Main.reader["B1in"].ToString() == "")
@@ -90,31 +91,31 @@ namespace Los_Alamos_Timeclock
 
                     if (Main.reader.HasRows)
                     {
-                        start = DateTime.ParseExact(Main.reader["Start"].ToString(), "HH:mm:ss", null);
-                        end = DateTime.ParseExact(Main.reader["End"].ToString(), "HH:mm:ss", null);
-                        if (!clockedin)
+                        startTime = DateTime.ParseExact(Main.reader["Start"].ToString(), "HH:mm:ss", null);
+                        endTime = DateTime.ParseExact(Main.reader["End"].ToString(), "HH:mm:ss", null);
+                        if (!clockedIn)
                         {
                             job = Main.reader["JID"].ToString();
-                            jobimg.Image = (Bitmap)Resources.ResourceManager.GetObject(job);
+                            jobImage.Image = (Bitmap)Resources.ResourceManager.GetObject(job);
                         }
-                        if (start > end)
+                        if (startTime > endTime)
                         {
-                            end = end.AddDays(1); //handles late shift length
+                            endTime = endTime.AddDays(1); //handles late shift length
                         }
 
                         Main.reader.Close();
                         Main.myConnection.Close();
-                        shiftinfo.Text =
+                        shiftinfoLabel.Text =
                             "Today's Schedule:\n" +
-                            "Start: " + start.ToString("hh:mm tt") + "\n" +
-                            "End:  " + end.ToString("hh:mm tt") + "\n" +
+                            "Start: " + startTime.ToString("hh:mm tt") + "\n" +
+                            "End:  " + endTime.ToString("hh:mm tt") + "\n" +
                             "Job:  " + job + "\n" +
-                            "Length: " + end.Subtract(start).ToString();
+                            "Length: " + endTime.Subtract(startTime).ToString();
                     }
                     else
                     {
-                        jobimg.Image = (Bitmap)Resources.ResourceManager.GetObject("none");
-                        shiftinfo.Text =
+                        jobImage.Image = (Bitmap)Resources.ResourceManager.GetObject("none");
+                        shiftinfoLabel.Text =
                             "You are not Scheduled\n" +
                             "Please see a manager";
                         Main.reader.Close();
@@ -137,23 +138,23 @@ namespace Los_Alamos_Timeclock
         {
             if (status == "IN")
             {
-                statusmessage.Text = "Clocked In";
-                statusmessage.BackColor = Color.Green;
+                statusMessagebox.Text = "Clocked In";
+                statusMessagebox.BackColor = Color.Green;
             }
             else if (status == "BREAK")
             {
-                statusmessage.Text = "On Break";
-                statusmessage.BackColor = Color.Yellow;
+                statusMessagebox.Text = "On Break";
+                statusMessagebox.BackColor = Color.Yellow;
             }
             else if (status == "LUNCH")
             {
-                statusmessage.Text = "On Lunch";
-                statusmessage.BackColor = Color.Yellow;
+                statusMessagebox.Text = "On Lunch";
+                statusMessagebox.BackColor = Color.Yellow;
             }
             else
             {
-                statusmessage.Text = "Clocked Out";
-                statusmessage.BackColor = Color.Red;
+                statusMessagebox.Text = "Clocked Out";
+                statusMessagebox.BackColor = Color.Red;
             }
         }
 
@@ -161,7 +162,7 @@ namespace Los_Alamos_Timeclock
         {
             if (scheduled)
             {
-                if (start == Main.maininstance.roundtime(DateTime.Now) && status != "IN" && status != "BREAK" && status != "LUNCH")
+                if (startTime == Main.maininstance.roundtime(DateTime.Now) && status != "IN" && status != "BREAK" && status != "LUNCH")
                 {
                     Main.maininstance.sqlcommand("INSERT INTO `Hours Worked` (`ID`, `Date`, `Start`, `JID`,`Status`) VALUES ('" + Main.id + "', '" + DateTime.Today.ToString("yyyy-MM-dd") + "' , '" + DateTime.Now.ToString("HH:mm:ss") + "', '" + job + "', 'IN')");
                     status = "IN";
@@ -241,14 +242,15 @@ namespace Los_Alamos_Timeclock
 
         private void Manager_Click(object sender, EventArgs e)
         {
-
-            Override o = new Override();
-            o.Show();
-        }
-
-        private void Clockinout_Load(object sender, EventArgs e)
-        {
-
+            if (clockedIn)
+            {
+                MessageBox.Show("Employee is already clocked in");
+            }
+            else
+            {
+                Override o = new Override();
+                o.Show();
+            }
         }
     }
 }

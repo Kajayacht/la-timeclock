@@ -29,21 +29,21 @@
         private void InitializeComponent()
         {
             this.Al1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.title = new System.Windows.Forms.Label();
+            this.line1Label = new System.Windows.Forms.Label();
+            this.titleLabel = new System.Windows.Forms.Label();
             this.Al2 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.line2Label = new System.Windows.Forms.Label();
             this.Az = new System.Windows.Forms.MaskedTextBox();
             this.As = new System.Windows.Forms.ComboBox();
             this.Ac = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.zipLabel = new System.Windows.Forms.Label();
+            this.stateLabel = new System.Windows.Forms.Label();
+            this.cityLabel = new System.Windows.Forms.Label();
             this.Phone = new System.Windows.Forms.MaskedTextBox();
             this.Email = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.Updateinfo = new System.Windows.Forms.Button();
+            this.emailLabel = new System.Windows.Forms.Label();
+            this.phoneLabel = new System.Windows.Forms.Label();
+            this.updateButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Al1
@@ -54,31 +54,31 @@
             this.Al1.Size = new System.Drawing.Size(361, 20);
             this.Al1.TabIndex = 5;
             // 
-            // label2
+            // line1Label
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(24, 90);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 20);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Address:";
+            this.line1Label.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.line1Label.AutoSize = true;
+            this.line1Label.BackColor = System.Drawing.Color.Transparent;
+            this.line1Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.line1Label.ForeColor = System.Drawing.Color.White;
+            this.line1Label.Location = new System.Drawing.Point(24, 90);
+            this.line1Label.Name = "line1Label";
+            this.line1Label.Size = new System.Drawing.Size(72, 20);
+            this.line1Label.TabIndex = 4;
+            this.line1Label.Text = "Address:";
             // 
-            // title
+            // titleLabel
             // 
-            this.title.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.title.AutoSize = true;
-            this.title.BackColor = System.Drawing.Color.Transparent;
-            this.title.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.title.ForeColor = System.Drawing.Color.White;
-            this.title.Location = new System.Drawing.Point(157, 15);
-            this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(217, 25);
-            this.title.TabIndex = 3;
-            this.title.Text = "Contact Information";
+            this.titleLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.titleLabel.AutoSize = true;
+            this.titleLabel.BackColor = System.Drawing.Color.Transparent;
+            this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleLabel.ForeColor = System.Drawing.Color.White;
+            this.titleLabel.Location = new System.Drawing.Point(157, 15);
+            this.titleLabel.Name = "titleLabel";
+            this.titleLabel.Size = new System.Drawing.Size(217, 25);
+            this.titleLabel.TabIndex = 3;
+            this.titleLabel.Text = "Contact Information";
             // 
             // Al2
             // 
@@ -88,18 +88,18 @@
             this.Al2.Size = new System.Drawing.Size(361, 20);
             this.Al2.TabIndex = 7;
             // 
-            // label1
+            // line2Label
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(24, 116);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 40);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Address\r\nLine 2:";
+            this.line2Label.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.line2Label.AutoSize = true;
+            this.line2Label.BackColor = System.Drawing.Color.Transparent;
+            this.line2Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.line2Label.ForeColor = System.Drawing.Color.White;
+            this.line2Label.Location = new System.Drawing.Point(24, 116);
+            this.line2Label.Name = "line2Label";
+            this.line2Label.Size = new System.Drawing.Size(68, 40);
+            this.line2Label.TabIndex = 6;
+            this.line2Label.Text = "Address\r\nLine 2:";
             // 
             // Az
             // 
@@ -181,47 +181,47 @@
             this.Ac.Size = new System.Drawing.Size(361, 20);
             this.Ac.TabIndex = 38;
             // 
-            // label10
+            // zipLabel
             // 
-            this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(15, 211);
-            this.label10.Margin = new System.Windows.Forms.Padding(3);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(77, 20);
-            this.label10.TabIndex = 43;
-            this.label10.Text = "Zip Code:";
+            this.zipLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.zipLabel.AutoSize = true;
+            this.zipLabel.BackColor = System.Drawing.Color.Transparent;
+            this.zipLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.zipLabel.ForeColor = System.Drawing.Color.White;
+            this.zipLabel.Location = new System.Drawing.Point(15, 211);
+            this.zipLabel.Margin = new System.Windows.Forms.Padding(3);
+            this.zipLabel.Name = "zipLabel";
+            this.zipLabel.Size = new System.Drawing.Size(77, 20);
+            this.zipLabel.TabIndex = 43;
+            this.zipLabel.Text = "Zip Code:";
             // 
-            // label8
+            // stateLabel
             // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(40, 185);
-            this.label8.Margin = new System.Windows.Forms.Padding(3);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(52, 20);
-            this.label8.TabIndex = 42;
-            this.label8.Text = "State:";
+            this.stateLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.stateLabel.AutoSize = true;
+            this.stateLabel.BackColor = System.Drawing.Color.Transparent;
+            this.stateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stateLabel.ForeColor = System.Drawing.Color.White;
+            this.stateLabel.Location = new System.Drawing.Point(40, 185);
+            this.stateLabel.Margin = new System.Windows.Forms.Padding(3);
+            this.stateLabel.Name = "stateLabel";
+            this.stateLabel.Size = new System.Drawing.Size(52, 20);
+            this.stateLabel.TabIndex = 42;
+            this.stateLabel.Text = "State:";
             // 
-            // label9
+            // cityLabel
             // 
-            this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(53, 159);
-            this.label9.Margin = new System.Windows.Forms.Padding(3);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(39, 20);
-            this.label9.TabIndex = 41;
-            this.label9.Text = "City:";
+            this.cityLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cityLabel.AutoSize = true;
+            this.cityLabel.BackColor = System.Drawing.Color.Transparent;
+            this.cityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cityLabel.ForeColor = System.Drawing.Color.White;
+            this.cityLabel.Location = new System.Drawing.Point(53, 159);
+            this.cityLabel.Margin = new System.Windows.Forms.Padding(3);
+            this.cityLabel.Name = "cityLabel";
+            this.cityLabel.Size = new System.Drawing.Size(39, 20);
+            this.cityLabel.TabIndex = 41;
+            this.cityLabel.Text = "City:";
             // 
             // Phone
             // 
@@ -240,44 +240,44 @@
             this.Email.Size = new System.Drawing.Size(361, 20);
             this.Email.TabIndex = 68;
             // 
-            // label14
+            // emailLabel
             // 
-            this.label14.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(40, 285);
-            this.label14.Margin = new System.Windows.Forms.Padding(3);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(52, 20);
-            this.label14.TabIndex = 70;
-            this.label14.Text = "Email:";
+            this.emailLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.emailLabel.AutoSize = true;
+            this.emailLabel.BackColor = System.Drawing.Color.Transparent;
+            this.emailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emailLabel.ForeColor = System.Drawing.Color.White;
+            this.emailLabel.Location = new System.Drawing.Point(40, 285);
+            this.emailLabel.Margin = new System.Windows.Forms.Padding(3);
+            this.emailLabel.Name = "emailLabel";
+            this.emailLabel.Size = new System.Drawing.Size(52, 20);
+            this.emailLabel.TabIndex = 70;
+            this.emailLabel.Text = "Email:";
             // 
-            // label20
+            // phoneLabel
             // 
-            this.label20.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label20.AutoSize = true;
-            this.label20.BackColor = System.Drawing.Color.Transparent;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.Color.White;
-            this.label20.Location = new System.Drawing.Point(37, 259);
-            this.label20.Margin = new System.Windows.Forms.Padding(3);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(55, 20);
-            this.label20.TabIndex = 69;
-            this.label20.Text = "Phone";
+            this.phoneLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.phoneLabel.AutoSize = true;
+            this.phoneLabel.BackColor = System.Drawing.Color.Transparent;
+            this.phoneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phoneLabel.ForeColor = System.Drawing.Color.White;
+            this.phoneLabel.Location = new System.Drawing.Point(37, 259);
+            this.phoneLabel.Margin = new System.Windows.Forms.Padding(3);
+            this.phoneLabel.Name = "phoneLabel";
+            this.phoneLabel.Size = new System.Drawing.Size(55, 20);
+            this.phoneLabel.TabIndex = 69;
+            this.phoneLabel.Text = "Phone";
             // 
-            // Updateinfo
+            // updateButton
             // 
-            this.Updateinfo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Updateinfo.Location = new System.Drawing.Point(384, 311);
-            this.Updateinfo.Name = "Updateinfo";
-            this.Updateinfo.Size = new System.Drawing.Size(75, 75);
-            this.Updateinfo.TabIndex = 71;
-            this.Updateinfo.Text = "Update";
-            this.Updateinfo.UseVisualStyleBackColor = true;
-            this.Updateinfo.Click += new System.EventHandler(this.Update_Click);
+            this.updateButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.updateButton.Location = new System.Drawing.Point(384, 311);
+            this.updateButton.Name = "updateButton";
+            this.updateButton.Size = new System.Drawing.Size(75, 75);
+            this.updateButton.TabIndex = 71;
+            this.updateButton.Text = "Update";
+            this.updateButton.UseVisualStyleBackColor = true;
+            this.updateButton.Click += new System.EventHandler(this.Update_Click);
             // 
             // Contactinfo
             // 
@@ -285,22 +285,22 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Los_Alamos_Timeclock.Properties.Resources._1287421014661;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Controls.Add(this.Updateinfo);
+            this.Controls.Add(this.updateButton);
             this.Controls.Add(this.Phone);
             this.Controls.Add(this.Email);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.label20);
+            this.Controls.Add(this.emailLabel);
+            this.Controls.Add(this.phoneLabel);
             this.Controls.Add(this.Az);
             this.Controls.Add(this.As);
             this.Controls.Add(this.Ac);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label9);
+            this.Controls.Add(this.zipLabel);
+            this.Controls.Add(this.stateLabel);
+            this.Controls.Add(this.cityLabel);
             this.Controls.Add(this.Al2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.line2Label);
             this.Controls.Add(this.Al1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.title);
+            this.Controls.Add(this.line1Label);
+            this.Controls.Add(this.titleLabel);
             this.DoubleBuffered = true;
             this.Name = "Contactinfo";
             this.Size = new System.Drawing.Size(500, 400);
@@ -312,20 +312,20 @@
         #endregion
 
         private System.Windows.Forms.TextBox Al1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label title;
+        private System.Windows.Forms.Label line1Label;
+        private System.Windows.Forms.Label titleLabel;
         private System.Windows.Forms.TextBox Al2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label line2Label;
         private System.Windows.Forms.MaskedTextBox Az;
         private System.Windows.Forms.ComboBox As;
         private System.Windows.Forms.TextBox Ac;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label zipLabel;
+        private System.Windows.Forms.Label stateLabel;
+        private System.Windows.Forms.Label cityLabel;
         private System.Windows.Forms.MaskedTextBox Phone;
         private System.Windows.Forms.TextBox Email;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Button Updateinfo;
+        private System.Windows.Forms.Label emailLabel;
+        private System.Windows.Forms.Label phoneLabel;
+        private System.Windows.Forms.Button updateButton;
     }
 }

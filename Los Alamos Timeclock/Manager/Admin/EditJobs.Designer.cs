@@ -40,7 +40,7 @@
             // 
             // jobsBox
             // 
-            this.jobsBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.jobsBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.jobsBox.FormattingEnabled = true;
             this.jobsBox.Location = new System.Drawing.Point(102, 127);
             this.jobsBox.Name = "jobsBox";
@@ -50,7 +50,7 @@
             // 
             // nlabel
             // 
-            this.nlabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.nlabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.nlabel.AutoSize = true;
             this.nlabel.BackColor = System.Drawing.Color.Transparent;
             this.nlabel.ForeColor = System.Drawing.Color.White;
@@ -62,7 +62,7 @@
             // 
             // plabel
             // 
-            this.plabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.plabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.plabel.AutoSize = true;
             this.plabel.BackColor = System.Drawing.Color.Transparent;
             this.plabel.ForeColor = System.Drawing.Color.White;
@@ -74,7 +74,7 @@
             // 
             // jobnameTextbox
             // 
-            this.jobnameTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.jobnameTextbox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.jobnameTextbox.Location = new System.Drawing.Point(319, 127);
             this.jobnameTextbox.Name = "jobnameTextbox";
             this.jobnameTextbox.Size = new System.Drawing.Size(100, 20);
@@ -82,7 +82,7 @@
             // 
             // startingpayTextbox
             // 
-            this.startingpayTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.startingpayTextbox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.startingpayTextbox.Location = new System.Drawing.Point(318, 150);
             this.startingpayTextbox.Name = "startingpayTextbox";
             this.startingpayTextbox.Size = new System.Drawing.Size(100, 20);
@@ -90,7 +90,7 @@
             // 
             // updatejobButton
             // 
-            this.updatejobButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.updatejobButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.updatejobButton.Location = new System.Drawing.Point(156, 284);
             this.updatejobButton.Name = "updatejobButton";
             this.updatejobButton.Size = new System.Drawing.Size(75, 75);
@@ -101,7 +101,7 @@
             // 
             // newjobButton
             // 
-            this.newjobButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.newjobButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.newjobButton.Location = new System.Drawing.Point(237, 284);
             this.newjobButton.Name = "newjobButton";
             this.newjobButton.Size = new System.Drawing.Size(75, 75);
@@ -112,7 +112,7 @@
             // 
             // deletejobButton
             // 
-            this.deletejobButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.deletejobButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.deletejobButton.Location = new System.Drawing.Point(318, 284);
             this.deletejobButton.Name = "deletejobButton";
             this.deletejobButton.Size = new System.Drawing.Size(75, 75);
