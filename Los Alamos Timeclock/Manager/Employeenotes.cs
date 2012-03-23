@@ -63,7 +63,7 @@ namespace Los_Alamos_Timeclock.Manager
 
         private void addnoteButton_Click(object sender, EventArgs e)
         {
-            if (addnoteButton.Text == "")
+            if (noteTextbox.Text == "")
             {
                 MessageBox.Show("Note Cannot be empty");
             }

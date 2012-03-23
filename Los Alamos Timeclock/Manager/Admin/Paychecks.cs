@@ -39,7 +39,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             }
             endCalander.Value = startCalander.Value.AddDays(6);
 
-            weekLabel.Text = "Pay for " + startCalander.Value.ToShortDateString() + "-" + endCalander.Value.ToShortDateString();
+            weekLabel.Text = "Pay for " + startCalander.Value.ToShortDateString() + " - " + endCalander.Value.ToShortDateString();
             calculatePay();
         }
 
@@ -47,7 +47,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
         {
             endCalander.MinDate = startCalander.Value;
 
-            weekLabel.Text = "Pay for " + startCalander.Value.ToShortDateString() + "-" + endCalander.Value.ToShortDateString();
+            weekLabel.Text = "Pay for " + startCalander.Value.ToShortDateString() + " - " + endCalander.Value.ToShortDateString();
             calculatePay();
         }
         private void endCalander_ValueChanged(object sender, EventArgs e)
