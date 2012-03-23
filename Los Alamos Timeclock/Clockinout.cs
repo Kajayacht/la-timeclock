@@ -58,8 +58,8 @@ namespace Los_Alamos_Timeclock
                 {
                     job = Main.reader["JID"].ToString();
 
-                    jobImage.Image = (Bitmap)Resources.ResourceManager.GetObject(job);
-                    
+                    jobImage.Image = (Image)Resources.ResourceManager.GetObject(job);
+
 
                     if (Main.reader["B1in"].ToString() == "")
                     {
@@ -84,43 +84,48 @@ namespace Los_Alamos_Timeclock
                 {
                     date = DateTime.Today.ToString("yyyy-MM-dd");
                 }
+                Main.reader.Close();
+                Main.maininstance.sqlreader("Select Employee.FName, Schedule.Date, Schedule.Start, Schedule.End, Schedule.JID from Employee,Schedule Where Employee.ID='" + Main.id + "' AND Employee.ID=Schedule.ID AND Schedule.Date='" + date + "'");
+
+                scheduled = Main.reader.HasRows;
+
+                if (Main.reader.HasRows)
+                {
+                    startTime = DateTime.ParseExact(Main.reader["Start"].ToString(), "HH:mm:ss", null);
+                    endTime = DateTime.ParseExact(Main.reader["End"].ToString(), "HH:mm:ss", null);
+                    if (!clockedIn)
+                    {
+                        job = Main.reader["JID"].ToString();
+                        jobImage.Image = (Image)Resources.ResourceManager.GetObject(job);
+                    }
+                    if (startTime > endTime)
+                    {
+                        endTime = endTime.AddDays(1); //handles late shift length
+                    }
+
                     Main.reader.Close();
-                    Main.maininstance.sqlreader("Select Employee.FName, Schedule.Date, Schedule.Start, Schedule.End, Schedule.JID from Employee,Schedule Where Employee.ID='" + Main.id + "' AND Employee.ID=Schedule.ID AND Schedule.Date='" + date + "'");
-
-                    scheduled = Main.reader.HasRows;
-
-                    if (Main.reader.HasRows)
-                    {
-                        startTime = DateTime.ParseExact(Main.reader["Start"].ToString(), "HH:mm:ss", null);
-                        endTime = DateTime.ParseExact(Main.reader["End"].ToString(), "HH:mm:ss", null);
-                        if (!clockedIn)
-                        {
-                            job = Main.reader["JID"].ToString();
-                            jobImage.Image = (Bitmap)Resources.ResourceManager.GetObject(job);
-                        }
-                        if (startTime > endTime)
-                        {
-                            endTime = endTime.AddDays(1); //handles late shift length
-                        }
-
-                        Main.reader.Close();
-                        Main.myConnection.Close();
-                        shiftinfoLabel.Text =
-                            "Today's Schedule:\n" +
-                            "Start: " + startTime.ToString("hh:mm tt") + "\n" +
-                            "End:  " + endTime.ToString("hh:mm tt") + "\n" +
-                            "Job:  " + job + "\n" +
-                            "Length: " + endTime.Subtract(startTime).ToString();
-                    }
-                    else
-                    {
-                        jobImage.Image = (Bitmap)Resources.ResourceManager.GetObject("none");
-                        shiftinfoLabel.Text =
-                            "You are not Scheduled\n" +
-                            "Please see a manager";
-                        Main.reader.Close();
-                        Main.myConnection.Close();
-                    }
+                    Main.myConnection.Close();
+                    shiftinfoLabel.Text =
+                        "Today's Schedule:\n" +
+                        "Start: " + startTime.ToString("hh:mm tt") + "\n" +
+                        "End:  " + endTime.ToString("hh:mm tt") + "\n" +
+                        "Job:  " + job + "\n" +
+                        "Length: " + endTime.Subtract(startTime).ToString();
+                }
+                else if (clockedIn)
+                {
+                    shiftinfoLabel.Text = 
+                        "Today's Schedule:\n"+
+                        "Job:  " + job;
+                }
+                else
+                {
+                    jobImage.Image = (Image)Resources.ResourceManager.GetObject("none");
+                    shiftinfoLabel.Text =
+                        "You are not Scheduled\n" +
+                        "Please see a manager";
+                    Main.myConnection.Close();
+                }
 
                 if (Main.myConnection.State == ConnectionState.Open)
                 {
@@ -130,6 +135,10 @@ namespace Los_Alamos_Timeclock
             catch (Exception e)
             {
                 MessageBox.Show(e.ToString());
+            }
+            finally
+            {
+                Main.myConnection.Close();
             }
             supdate();
         }
@@ -231,6 +240,7 @@ namespace Los_Alamos_Timeclock
             {
                 Main.maininstance.sqlcommand("UPDATE `Hours Worked` SET End='" + DateTime.Now.ToString("HH:mm:ss") + "', Status='OUT' WHERE ID='" + Main.id + "' AND Date='" + date + "'");
                 status = "OUT";
+                clockedIn = false;
                 supdate();
             }
             else

@@ -67,7 +67,6 @@
             this.jobsBox.Size = new System.Drawing.Size(101, 95);
             this.jobsBox.Sorted = true;
             this.jobsBox.TabIndex = 2;
-            this.jobsBox.SelectedIndexChanged += new System.EventHandler(this.jobs_SelectedIndexChanged);
             // 
             // jobLabel
             // 
@@ -138,7 +137,6 @@
             this.Name = "Override";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manager Override";
-            this.Load += new System.EventHandler(this.Override_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
