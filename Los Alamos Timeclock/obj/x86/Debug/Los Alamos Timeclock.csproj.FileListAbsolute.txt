@@ -67,3 +67,14 @@ C:\Users\Nate\Dropbox\Visual Studio Projects\Projects\Los Alamos Timeclock\Los A
 C:\Users\Nate\Dropbox\Visual Studio Projects\Projects\Los Alamos Timeclock\Los Alamos Timeclock\obj\x86\Debug\Los_Alamos_Timeclock.Contactinfo.resources
 C:\Users\Nate\Dropbox\Visual Studio Projects\Projects\Los Alamos Timeclock\Los Alamos Timeclock\obj\x86\Debug\Los_Alamos_Timeclock.Manager.Phonebook.resources
 C:\Users\Nate\Dropbox\Visual Studio Projects\Projects\Los Alamos Timeclock\Los Alamos Timeclock\obj\x86\Debug\Los_Alamos_Timeclock.Manager.Employeenotes.resources
+C:\Users\Kajayacht\Desktop\chrono\la-timeclock\Los Alamos Timeclock\obj\x86\Debug\Los_Alamos_Timeclock.Contactinfo.resources
+C:\Users\Kajayacht\Desktop\chrono\la-timeclock\Los Alamos Timeclock\obj\x86\Debug\Los_Alamos_Timeclock.Manager.Admin.Editemployees.resources
+C:\Users\Kajayacht\Desktop\chrono\la-timeclock\Los Alamos Timeclock\obj\x86\Debug\Los_Alamos_Timeclock.Manager.Admin.EditJobs.resources
+C:\Users\Kajayacht\Desktop\chrono\la-timeclock\Los Alamos Timeclock\obj\x86\Debug\Los_Alamos_Timeclock.Manager.Admin.Makesched.resources
+C:\Users\Kajayacht\Desktop\chrono\la-timeclock\Los Alamos Timeclock\obj\x86\Debug\Los_Alamos_Timeclock.Manager.Admin.Newemployee.resources
+C:\Users\Kajayacht\Desktop\chrono\la-timeclock\Los Alamos Timeclock\obj\x86\Debug\Los_Alamos_Timeclock.Manager.Admin.Paychecks.resources
+C:\Users\Kajayacht\Desktop\chrono\la-timeclock\Los Alamos Timeclock\obj\x86\Debug\Los_Alamos_Timeclock.Manager.Admin.viewLog.resources
+C:\Users\Kajayacht\Desktop\chrono\la-timeclock\Los Alamos Timeclock\obj\x86\Debug\Los_Alamos_Timeclock.Manager.Employeenotes.resources
+C:\Users\Kajayacht\Desktop\chrono\la-timeclock\Los Alamos Timeclock\obj\x86\Debug\Los_Alamos_Timeclock.Manager.Phonebook.resources
+C:\Users\Kajayacht\Desktop\chrono\la-timeclock\Los Alamos Timeclock\obj\x86\Debug\Los_Alamos_Timeclock.Manager.Status.resources
+C:\Users\Kajayacht\Desktop\chrono\la-timeclock\Los Alamos Timeclock\obj\x86\Debug\Los_Alamos_Timeclock.Override.resources

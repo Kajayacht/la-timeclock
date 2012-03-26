@@ -36,6 +36,7 @@
             this.updatejobButton = new System.Windows.Forms.Button();
             this.newjobButton = new System.Windows.Forms.Button();
             this.deletejobButton = new System.Windows.Forms.Button();
+            this.tippedBox = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // jobsBox
@@ -54,7 +55,7 @@
             this.nlabel.AutoSize = true;
             this.nlabel.BackColor = System.Drawing.Color.Transparent;
             this.nlabel.ForeColor = System.Drawing.Color.White;
-            this.nlabel.Location = new System.Drawing.Point(254, 127);
+            this.nlabel.Location = new System.Drawing.Point(254, 130);
             this.nlabel.Name = "nlabel";
             this.nlabel.Size = new System.Drawing.Size(58, 13);
             this.nlabel.TabIndex = 1;
@@ -66,7 +67,7 @@
             this.plabel.AutoSize = true;
             this.plabel.BackColor = System.Drawing.Color.Transparent;
             this.plabel.ForeColor = System.Drawing.Color.White;
-            this.plabel.Location = new System.Drawing.Point(245, 153);
+            this.plabel.Location = new System.Drawing.Point(246, 156);
             this.plabel.Name = "plabel";
             this.plabel.Size = new System.Drawing.Size(67, 13);
             this.plabel.TabIndex = 2;
@@ -83,7 +84,7 @@
             // startingpayTextbox
             // 
             this.startingpayTextbox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.startingpayTextbox.Location = new System.Drawing.Point(318, 150);
+            this.startingpayTextbox.Location = new System.Drawing.Point(319, 153);
             this.startingpayTextbox.Name = "startingpayTextbox";
             this.startingpayTextbox.Size = new System.Drawing.Size(100, 20);
             this.startingpayTextbox.TabIndex = 4;
@@ -121,12 +122,25 @@
             this.deletejobButton.UseVisualStyleBackColor = true;
             this.deletejobButton.Click += new System.EventHandler(this.deleteJob_Click);
             // 
+            // tippedBox
+            // 
+            this.tippedBox.AutoSize = true;
+            this.tippedBox.BackColor = System.Drawing.Color.Transparent;
+            this.tippedBox.ForeColor = System.Drawing.Color.White;
+            this.tippedBox.Location = new System.Drawing.Point(318, 179);
+            this.tippedBox.Name = "tippedBox";
+            this.tippedBox.Size = new System.Drawing.Size(79, 17);
+            this.tippedBox.TabIndex = 8;
+            this.tippedBox.Text = "Tipped Job";
+            this.tippedBox.UseVisualStyleBackColor = false;
+            // 
             // EditJobs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Los_Alamos_Timeclock.Properties.Resources._1287421014661;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.tippedBox);
             this.Controls.Add(this.deletejobButton);
             this.Controls.Add(this.newjobButton);
             this.Controls.Add(this.updatejobButton);
@@ -153,5 +167,6 @@
         private System.Windows.Forms.Button updatejobButton;
         private System.Windows.Forms.Button newjobButton;
         private System.Windows.Forms.Button deletejobButton;
+        private System.Windows.Forms.CheckBox tippedBox;
     }
 }

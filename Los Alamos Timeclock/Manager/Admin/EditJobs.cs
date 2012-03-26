@@ -16,7 +16,6 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             InitializeComponent();
 
             jobsBox.DisplayMember = "getname";
-            jobsBox.ValueMember = "getpay";
             jobsBox.DataSource = Main.joblist;
 
             //!Decimal.TryParse(pay.Text, out a)
@@ -25,7 +24,10 @@ namespace Los_Alamos_Timeclock.Manager.Admin
         private void jobsBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             jobnameTextbox.Text = jobsBox.Text;
+            jobsBox.ValueMember = "getpay";
             startingpayTextbox.Text = jobsBox.SelectedValue.ToString();
+            jobsBox.ValueMember = "getTipped";
+            tippedBox.Checked = Boolean.Parse(jobsBox.SelectedValue.ToString());
         }
 
         public Boolean validate()
@@ -63,9 +65,9 @@ namespace Los_Alamos_Timeclock.Manager.Admin
         {
             if (validate())
             {
-                Main.maininstance.sqlcommand("UPDATE Jobs SET JID='"+jobnameTextbox.Text+"',JSPay='"+Decimal.Parse(startingpayTextbox.Text)+"' WHERE JID='"+jobsBox.Text+"'");
+                Main.maininstance.sqlcommand("UPDATE Jobs SET JID='"+jobnameTextbox.Text+"',JSPay='"+Decimal.Parse(startingpayTextbox.Text)+ "',TippedJob='" + tippedBox.Checked +"' WHERE JID='"+jobsBox.Text+"'");
                 MessageBox.Show("Update successful");
-                Log.writeLog(Main.eName + " updated job: " + "\n Job= " + jobnameTextbox.Text + "\n Starting Pay= " + Decimal.Parse(startingpayTextbox.Text));
+                Log.writeLog(Main.eName + " updated job: " + "\n Job= " + jobnameTextbox.Text + "\n Starting Pay= " + Decimal.Parse(startingpayTextbox.Text) + "\n Tipped Job= " + tippedBox.Checked);
                 refreshJobs();
             }
       
@@ -78,8 +80,8 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                 if (validate())
                 {
                     MessageBox.Show("Insert successful");
-                    Main.maininstance.sqlcommand("INSERT INTO Jobs Values('" + jobnameTextbox.Text + "','" + Decimal.Parse(startingpayTextbox.Text) + "')");
-                    Log.writeLog(Main.eName + " added job: " + "\n Job= " + jobnameTextbox.Text + "\n Starting Pay= " + Decimal.Parse(startingpayTextbox.Text));
+                    Main.maininstance.sqlcommand("INSERT INTO Jobs Values('" + jobnameTextbox.Text + "','" + Decimal.Parse(startingpayTextbox.Text) +  "','" + tippedBox.Checked + "')");
+                    Log.writeLog(Main.eName + " added job: " + "\n Job= " + jobnameTextbox.Text + "\n Starting Pay= " + Decimal.Parse(startingpayTextbox.Text) + "\n Tipped Job= " + tippedBox.Checked);
                     refreshJobs();
                 }
             }

@@ -174,7 +174,7 @@ namespace Los_Alamos_Timeclock
                 //Populate the arraylist with jobs
                 while (Main.reader.Read())
                 {
-                    joblist.Add(new Job(Main.reader["JID"].ToString(), Decimal.Parse(Main.reader["JSPay"].ToString())));
+                    joblist.Add(new Job(Main.reader["JID"].ToString(), Decimal.Parse(Main.reader["JSPay"].ToString()), Boolean.Parse(Main.reader["TippedJob"].ToString())));
                 }
 
                 //Close the connection
@@ -201,16 +201,19 @@ namespace Los_Alamos_Timeclock
         {
             private string Jobname;
             private decimal Pay;
+            private Boolean Tipped;
 
             /* Main constructor for a Job
              * 
              * @param stringName    Name of the job
              * @param jpay          Default pay rate for the job
+             * @param tipped        Whether the job is tipped or not
              */
-            public Job(string stringName, decimal jpay)
+            public Job(string stringName, decimal jpay, Boolean tipped)
             {
                 this.Jobname = stringName;
                 this.Pay = jpay;
+                this.Tipped = tipped;
             }
 
             /* Method to return the name of a job
@@ -234,6 +237,18 @@ namespace Los_Alamos_Timeclock
                 get
                 {
                     return Pay;
+                }
+            }
+
+            /* Method to return whether or not the job is tipped
+             * 
+             * @return boolean Tipped       Whether the job is tipped or not
+             */
+            public Boolean getTipped
+            {
+                get
+                {
+                    return Tipped;
                 }
             }
         }
