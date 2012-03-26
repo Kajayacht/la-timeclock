@@ -66,6 +66,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
 
                 aLine1Textbox.Text = Main.reader["Address1"].ToString();
                 aLine2Textbox.Text = Main.reader["Address2"].ToString();
+                aCityTextbox.Text = Main.reader["City"].ToString();
                 aStateDropdownlist.Text = Main.reader["State"].ToString();
                 aZipTextbox.Text = Main.reader["Zip"].ToString();
 

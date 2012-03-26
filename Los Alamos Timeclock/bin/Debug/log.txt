@@ -449,3 +449,33 @@ LName= Dole MName= Joseph FName= Bob
  Zip= 47306
  Priv= Manager
 -------------------------------
+
+Log Entry : 7:42:58 PM Monday, March 26, 2012
+  :
+  :Jennifer Chavez edited employee: 
+LName= Dole MName= Joseph FName= Bob
+ SSN= 334434575
+ Phone= 2147483647
+ Email= bob.dole@compuserve.com
+ Address1= 1400 W, Jackson St
+ Address2= apartment 24
+ City= Funkytow
+ State= Indiana
+ Zip= 47306
+ Priv= Manager
+-------------------------------
+
+Log Entry : 7:43:09 PM Monday, March 26, 2012
+  :
+  :Jennifer Chavez edited employee: 
+LName= Dole MName= Joseph FName= Bob
+ SSN= 334434575
+ Phone= 2147483647
+ Email= bob.dole@compuserve.com
+ Address1= 1400 W, Jackson St
+ Address2= apartment 24
+ City= Funkytown
+ State= Indiana
+ Zip= 47306
+ Priv= Manager
+-------------------------------
