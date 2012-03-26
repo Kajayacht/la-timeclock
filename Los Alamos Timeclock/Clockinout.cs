@@ -237,11 +237,31 @@ namespace Los_Alamos_Timeclock
         private void Clockout_Click(object sender, EventArgs e)
         {
             if (status == "IN")
-            {
-                Main.maininstance.sqlcommand("UPDATE `Hours Worked` SET End='" + DateTime.Now.ToString("HH:mm:ss") + "', Status='OUT' WHERE ID='" + Main.id + "' AND Date='" + date + "'");
-                status = "OUT";
-                clockedIn = false;
-                supdate();
+            {   
+                //find out whther the job is tipped or not                
+                Main.myConnection.Open();
+                Main.maininstance.sqlreader("Select TippedJob From Jobs WHERE JID='" + job+ "'");
+                Boolean tipped = Boolean.Parse(Main.reader["TippedJob"].ToString());
+                Main.myConnection.Close();
+                //if tipped job
+                if (tipped == true)
+                {
+                    //ask for tips gotten
+                    double tips = double.Parse(Microsoft.VisualBasic.Interaction.InputBox("Enter the total Tips you received", ""));
+                    //run update statement with the tips                
+                    Main.maininstance.sqlcommand("UPDATE `Hours Worked` SET End='" + DateTime.Now.ToString("HH:mm:ss") + "', Tips='" + tips + "', Status='OUT' WHERE ID='" + Main.id + "' AND Date='" + date + "'");
+                    status = "OUT";
+                    clockedIn = false;
+                    supdate();
+                }
+                //else do this one
+                else
+                {
+                    Main.maininstance.sqlcommand("UPDATE `Hours Worked` SET End='" + DateTime.Now.ToString("HH:mm:ss") + "', Status='OUT' WHERE ID='" + Main.id + "' AND Date='" + date + "'");
+                    status = "OUT";
+                    clockedIn = false;
+                    supdate();
+                }
             }
             else
             {

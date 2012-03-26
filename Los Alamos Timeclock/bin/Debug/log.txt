@@ -413,3 +413,17 @@ Log Entry : 1:17:02 PM Friday, March 16, 2012
   :Jennifer Chavez changed login for Dave Earl Chappel: 
 User= dave Pass= a
 -------------------------------
+
+Log Entry : 6:57:40 PM Monday, March 26, 2012
+  :
+  :test overrode clock in for: 
+ Employee= Bob Dole
+ Job= Bartender
+-------------------------------
+
+Log Entry : 7:06:01 PM Monday, March 26, 2012
+  :
+  :test overrode clock in for: 
+ Employee= Bob Dole
+ Job= Security
+-------------------------------
