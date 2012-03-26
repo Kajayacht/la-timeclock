@@ -427,3 +427,25 @@ Log Entry : 7:06:01 PM Monday, March 26, 2012
  Employee= Bob Dole
  Job= Security
 -------------------------------
+
+Log Entry : 7:13:53 PM Monday, March 26, 2012
+  :
+  :test overrode clock in for: 
+ Employee= Jennifer Chavez
+ Job= Bartender
+-------------------------------
+
+Log Entry : 7:18:14 PM Monday, March 26, 2012
+  :
+  :Jennifer Chavez edited employee: 
+LName= Dole MName= Joseph FName= Bob
+ SSN= 334434575
+ Phone= 2147483647
+ Email= bob.dole@compuserve.com
+ Address1= 1400 W, Jackson St
+ Address2= apartment 24
+ City= 
+ State= Indiana
+ Zip= 47306
+ Priv= Manager
+-------------------------------

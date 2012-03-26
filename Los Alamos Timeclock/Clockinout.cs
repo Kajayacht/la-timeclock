@@ -246,28 +246,36 @@ namespace Los_Alamos_Timeclock
                 //if tipped job
                 if (tipped == true)
                 {
+                    double temp;
                     //ask for tips gotten
-                    double tips = double.Parse(Microsoft.VisualBasic.Interaction.InputBox("Enter the total Tips you received", ""));
-                    //run update statement with the tips                
-                    Main.maininstance.sqlcommand("UPDATE `Hours Worked` SET End='" + DateTime.Now.ToString("HH:mm:ss") + "', Tips='" + tips + "', Status='OUT' WHERE ID='" + Main.id + "' AND Date='" + date + "'");
-                    status = "OUT";
-                    clockedIn = false;
-                    supdate();
+                    string tips = Microsoft.VisualBasic.Interaction.InputBox("Enter the total Tips you received", "");
+                    if (double.TryParse(tips, out temp) == true)
+                    {
+                        //run update statement with the tips                
+                        Main.maininstance.sqlcommand("UPDATE `Hours Worked` SET End='" + DateTime.Now.ToString("HH:mm:ss") + "', Tips='" + tips + "', Status='OUT' WHERE ID='" + Main.id + "' AND Date='" + date + "'");
+                        status = "OUT";
+                        clockedIn = false;
+                        supdate();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid Input");
+                    }
+
                 }
                 //else do this one
-                else
+                else if (tipped == false)
                 {
                     Main.maininstance.sqlcommand("UPDATE `Hours Worked` SET End='" + DateTime.Now.ToString("HH:mm:ss") + "', Status='OUT' WHERE ID='" + Main.id + "' AND Date='" + date + "'");
                     status = "OUT";
                     clockedIn = false;
                     supdate();
-                }
+                }            
             }
             else
             {
                 MessageBox.Show("Ring Restricted, contact manager");
             }
-
         }
 
         private void Manager_Click(object sender, EventArgs e)

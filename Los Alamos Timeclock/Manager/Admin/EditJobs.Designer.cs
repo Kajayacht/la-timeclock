@@ -124,6 +124,7 @@
             // 
             // tippedBox
             // 
+            this.tippedBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tippedBox.AutoSize = true;
             this.tippedBox.BackColor = System.Drawing.Color.Transparent;
             this.tippedBox.ForeColor = System.Drawing.Color.White;
