@@ -479,3 +479,10 @@ LName= Dole MName= Joseph FName= Bob
  Zip= 47306
  Priv= Manager
 -------------------------------
+
+Log Entry : 5:47:07 PM Sunday, April 01, 2012
+  :
+  :test overrode clock in for: 
+ Employee= Jennifer Chavez
+ Job= Bartender
+-------------------------------

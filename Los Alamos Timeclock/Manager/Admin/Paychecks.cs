@@ -5,31 +5,31 @@ using System.Drawing;
 using System.Data;
 using System.Linq;
 using System.Text;
-using System.Windows.Forms;                                                                                                                                                             
+using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
 namespace Los_Alamos_Timeclock.Manager.Admin
 {
-        /*
-     This file is part of Los Alamos Timeclock.
+    /*
+ This file is part of Los Alamos Timeclock.
 
-    Los Alamos Timeclock is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
+Los Alamos Timeclock is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
 
-    Los Alamos Timeclock is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
+Los Alamos Timeclock is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
 
-    You should have received a copy of the GNU General Public License
-    along with Los Alamos Timeclock.  If not, see <http://www.gnu.org/licenses/>.
-     */
+You should have received a copy of the GNU General Public License
+along with Los Alamos Timeclock.  If not, see <http://www.gnu.org/licenses/>.
+ */
 
     public partial class Paychecks : UserControl
     {
-        
+
         public Paychecks()
         {
             InitializeComponent();
@@ -76,22 +76,24 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             Double totalHours = 0;
             Double hourlyRate = 0.00;
             Double pay = 0.00;
+            Double tips = 0.00;
             Double totalPay = 0.00;
+            Double totalTips = 0.00;
             Main.myConnection.Open();
 
 
             String c = "SELECT d.LName, d.FName, d.MName, a.*,b.JSPay, c.JPay " +
             "FROM `Hours Worked` a " +
             "LEFT OUTER JOIN `Jobs` b " +
-            "ON a.JID=b.JID "+
+            "ON a.JID=b.JID " +
             "LEFT OUTER JOIN `Employee Jobs` c " +
             "ON b.JID=c.JID AND a.ID = c.ID " +
-            "JOIN `Employee` d "+
-            "ON a.ID=d.ID "+
+            "JOIN `Employee` d " +
+            "ON a.ID=d.ID " +
             "WHERE a.Date>='" + startCalander.Value.ToString("yyyy-MM-dd") +
-            "' AND a.Date<='" + endCalander.Value.ToString("yyyy-MM-dd") + 
-            "' AND a.Status='OUT'"+
-            "ORDER BY d.LName "+
+            "' AND a.Date<='" + endCalander.Value.ToString("yyyy-MM-dd") +
+            "' AND a.Status='OUT'" +
+            "ORDER BY d.LName " +
             "LIMIT 0,1000";
 
             string output = "";
@@ -105,12 +107,14 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                     if (id != "")
                     {
                         output = output + "\tTotal Hours: \t" + totalHours + "\n" +
-                                          "\tGross Pay: \t$" + String.Format("{0:0.00}", Math.Round(totalPay, 2)) + "\n\n";
+                                          "\tGross Pay: \t$" + String.Format("{0:0.00}", Math.Round(totalPay, 2)) + "\n" +
+                                          "\tTotal Tips: \t$" + totalTips + "\n\n";
                     }
                     id = Main.reader["ID"].ToString();
-                    output = output + Main.reader["LName"].ToString() + ", " + Main.reader["FName"].ToString()+" "+ Main.reader["MName"].ToString()+"\n";
+                    output = output + Main.reader["LName"].ToString() + ", " + Main.reader["FName"].ToString() + " " + Main.reader["MName"].ToString() + "\n";
                     totalHours = 0;
                     totalPay = 0.00;
+                    totalTips = 0.00;
                 }
                 if (Main.reader["Start"].ToString() != "" && Main.reader["End"].ToString() != "")
                 {
@@ -137,7 +141,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                     }
 
 
-                    if (Main.reader["JPay"].ToString()=="")
+                    if (Main.reader["JPay"].ToString() == "")
                     {
                         hourlyRate = Double.Parse(Main.reader["JSPay"].ToString());
                     }
@@ -164,16 +168,22 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                     {
                         pay = hourlyRate * (hours.Hours + (hours.Minutes / 15 * .25));
                     }
+
+                    if (Main.reader["Tips"].ToString() != "")
+                    {
+                        totalTips += Double.Parse(Main.reader["Tips"].ToString());
+                    }
                     totalPay += pay;
                     pay = 0.00;
-                    totalHours = totalHours+(hours.Hours+(hours.Minutes/15)*.25);
+                    totalHours = totalHours + (hours.Hours + (hours.Minutes / 15) * .25);
                     hours = TimeSpan.FromHours(0);
                 }
             }
             if (id != "")
             {
                 output = output + "\tTotal Hours: \t" + totalHours + "\n" +
-                                  "\tGross Pay: \t$" + String.Format("{0:0.00}", Math.Round(totalPay, 2)) + "\n\n";
+                                  "\tGross Pay: \t$" + String.Format("{0:0.00}", Math.Round(totalPay, 2)) + "\n" +
+                                  "\tTotal Tips: \t$" + totalTips + "\n\n";
             }
             id = "";
             payTextbox.Text = output;
