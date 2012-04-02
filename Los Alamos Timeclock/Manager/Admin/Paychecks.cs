@@ -76,7 +76,6 @@ along with Los Alamos Timeclock.  If not, see <http://www.gnu.org/licenses/>.
             Double totalHours = 0;
             Double hourlyRate = 0.00;
             Double pay = 0.00;
-            Double tips = 0.00;
             Double totalPay = 0.00;
             Double totalTips = 0.00;
             Main.myConnection.Open();
@@ -107,8 +106,15 @@ along with Los Alamos Timeclock.  If not, see <http://www.gnu.org/licenses/>.
                     if (id != "")
                     {
                         output = output + "\tTotal Hours: \t" + totalHours + "\n" +
-                                          "\tGross Pay: \t$" + String.Format("{0:0.00}", Math.Round(totalPay, 2)) + "\n" +
-                                          "\tTotal Tips: \t$" + totalTips + "\n\n";
+                                          "\tGross Pay: \t$" + String.Format("{0:0.00}", Math.Round(totalPay, 2)) + "\n";
+                        if (totalTips > 0)
+                        {
+                            output = output + "\tTotal Tips: \t$" + String.Format("{0:0.00}", Math.Round(totalTips, 2)) + "\n\tTotal Pay: \t$" + String.Format("{0:0.00}", Math.Round(totalPay + totalTips, 2)) + "\n\n";
+                        }
+                        else
+                        {
+                            output = output + "\tTotal Pay: \t$" + String.Format("{0:0.00}", Math.Round(totalPay, 2)) + "\n\n";
+                        }
                     }
                     id = Main.reader["ID"].ToString();
                     output = output + Main.reader["LName"].ToString() + ", " + Main.reader["FName"].ToString() + " " + Main.reader["MName"].ToString() + "\n";
@@ -182,8 +188,15 @@ along with Los Alamos Timeclock.  If not, see <http://www.gnu.org/licenses/>.
             if (id != "")
             {
                 output = output + "\tTotal Hours: \t" + totalHours + "\n" +
-                                  "\tGross Pay: \t$" + String.Format("{0:0.00}", Math.Round(totalPay, 2)) + "\n" +
-                                  "\tTotal Tips: \t$" + totalTips + "\n\n";
+                                  "\tGross Pay: \t$" + String.Format("{0:0.00}", Math.Round(totalPay, 2)) + "\n";
+                if (totalTips > 0)
+                {
+                    output = output + "\tTotal Tips: \t$" + String.Format("{0:0.00}", Math.Round(totalTips, 2)) + "\n\tTotal Pay: \t$" + String.Format("{0:0.00}", Math.Round(totalPay + totalTips, 2)) + "\n\n";
+                }
+                else
+                {
+                    output = output + "\tTotal Pay: \t$" + String.Format("{0:0.00}", Math.Round(totalPay, 2)) + "\n\n";
+                }
             }
             id = "";
             payTextbox.Text = output;
