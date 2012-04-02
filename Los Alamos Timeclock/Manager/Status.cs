@@ -205,7 +205,7 @@ namespace Los_Alamos_Timeclock.Manager
             string query = "Select " +
                                 "a.Date, " +
                                 "CONCAT(c.LName, ', ',c.FName,' ',c.MName) AS Name, " +
-                                "a.Status,a.JID As Job, a.Start ,b.Start As 'Scheduled Start',  " +
+                                "a.Status,a.JID As Job, a.Tips as Tips, a.Start ,b.Start As 'Scheduled Start',  " +
                                 "a.B1out As 'Break 1 OUT', " +
                                 "a.B1in As 'Break 1 IN', " +
                                 "a.B2out As 'Break 2 OUT', " +
@@ -223,7 +223,7 @@ namespace Los_Alamos_Timeclock.Manager
                             "Select " +
                                 "b.Date, " +
                                 "CONCAT(c.LName, ', ',c.FName,' ',c.MName) AS Name, " +
-                                "a.Status,a.JID As Job, a.Start ,b.Start As 'Scheduled Start', " +
+                                "a.Status,a.JID As Job, a.Tips as Tips, a.Start ,b.Start As 'Scheduled Start', " +
                                 "a.B1out As 'Break 1 OUT', " +
                                 "a.B1in As 'Break 1 IN', " +
                                 "a.B2out As 'Break 2 OUT', " +
@@ -241,7 +241,7 @@ namespace Los_Alamos_Timeclock.Manager
                             "Select " +
                                 "b.Date, " +
                                 "CONCAT(c.LName, ', ',c.FName,' ',c.MName) AS Name, " +
-                                "a.Status,a.JID As Job, a.Start ,b.Start As 'Scheduled Start', " +
+                                "a.Status,a.JID As Job, a.Tips as Tips, a.Start ,b.Start As 'Scheduled Start', " +
                                 "a.B1out As 'Break 1 OUT', " +
                                 "a.B1in As 'Break 1 IN', " +
                                 "a.B2out As 'Break 2 OUT', " +
