@@ -65,9 +65,9 @@ namespace Los_Alamos_Timeclock.Manager.Admin
         {
             if (validate())
             {
-                Main.maininstance.sqlcommand("UPDATE Jobs SET JID='"+jobnameTextbox.Text+"',JSPay='"+Decimal.Parse(startingpayTextbox.Text)+ "',TippedJob='" + tippedBox.Checked +"' WHERE JID='"+jobsBox.Text+"'");
+                Main.maininstance.sqlcommand("UPDATE Jobs SET JID='" + jobnameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "',JSPay='" + Decimal.Parse(startingpayTextbox.Text) + "',TippedJob='" + tippedBox.Checked + "' WHERE JID='" + jobsBox.Text + "'");
                 MessageBox.Show("Update successful");
-                Log.writeLog(Main.eName + " updated job: " + "\n Job= " + jobnameTextbox.Text + "\n Starting Pay= " + Decimal.Parse(startingpayTextbox.Text) + "\n Tipped Job= " + tippedBox.Checked);
+                Log.writeLog(Main.eName + " updated job: " + "\n Job= " + jobnameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "\n Starting Pay= " + Decimal.Parse(startingpayTextbox.Text) + "\n Tipped Job= " + tippedBox.Checked);
                 refreshJobs();
             }
       

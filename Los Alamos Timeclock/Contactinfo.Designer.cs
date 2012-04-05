@@ -115,6 +115,7 @@
             this.As.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.As.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.As.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.As.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.As.FormattingEnabled = true;
             this.As.Items.AddRange(new object[] {
             "Alabama",

@@ -67,7 +67,7 @@
             // 
             // titleLabel
             // 
-            this.titleLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.titleLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.titleLabel.AutoSize = true;
             this.titleLabel.BackColor = System.Drawing.Color.Transparent;
             this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -80,7 +80,7 @@
             // 
             // nameLabel
             // 
-            this.nameLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.nameLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.nameLabel.AutoSize = true;
             this.nameLabel.BackColor = System.Drawing.Color.Transparent;
             this.nameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -94,7 +94,7 @@
             // 
             // fNameLabel
             // 
-            this.fNameLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.fNameLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.fNameLabel.AutoSize = true;
             this.fNameLabel.BackColor = System.Drawing.Color.Transparent;
             this.fNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -108,7 +108,7 @@
             // 
             // lNameLabel
             // 
-            this.lNameLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lNameLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lNameLabel.AutoSize = true;
             this.lNameLabel.BackColor = System.Drawing.Color.Transparent;
             this.lNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -122,7 +122,7 @@
             // 
             // aLine2Label
             // 
-            this.aLine2Label.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.aLine2Label.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.aLine2Label.AutoSize = true;
             this.aLine2Label.BackColor = System.Drawing.Color.Transparent;
             this.aLine2Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -136,7 +136,7 @@
             // 
             // aLine1Label
             // 
-            this.aLine1Label.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.aLine1Label.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.aLine1Label.AutoSize = true;
             this.aLine1Label.BackColor = System.Drawing.Color.Transparent;
             this.aLine1Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -150,7 +150,7 @@
             // 
             // addressLabel
             // 
-            this.addressLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.addressLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.addressLabel.AutoSize = true;
             this.addressLabel.BackColor = System.Drawing.Color.Transparent;
             this.addressLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -164,7 +164,7 @@
             // 
             // aStateLabel
             // 
-            this.aStateLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.aStateLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.aStateLabel.AutoSize = true;
             this.aStateLabel.BackColor = System.Drawing.Color.Transparent;
             this.aStateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -178,7 +178,7 @@
             // 
             // aCityLabel
             // 
-            this.aCityLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.aCityLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.aCityLabel.AutoSize = true;
             this.aCityLabel.BackColor = System.Drawing.Color.Transparent;
             this.aCityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -192,7 +192,7 @@
             // 
             // aZipLabel
             // 
-            this.aZipLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.aZipLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.aZipLabel.AutoSize = true;
             this.aZipLabel.BackColor = System.Drawing.Color.Transparent;
             this.aZipLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -206,7 +206,7 @@
             // 
             // mNameLabel
             // 
-            this.mNameLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.mNameLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.mNameLabel.AutoSize = true;
             this.mNameLabel.BackColor = System.Drawing.Color.Transparent;
             this.mNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -220,7 +220,7 @@
             // 
             // fNameTextbox
             // 
-            this.fNameTextbox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.fNameTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.fNameTextbox.Location = new System.Drawing.Point(107, 103);
             this.fNameTextbox.Name = "fNameTextbox";
             this.fNameTextbox.Size = new System.Drawing.Size(344, 20);
@@ -228,7 +228,7 @@
             // 
             // mNameTextbox
             // 
-            this.mNameTextbox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.mNameTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.mNameTextbox.Location = new System.Drawing.Point(107, 129);
             this.mNameTextbox.Name = "mNameTextbox";
             this.mNameTextbox.Size = new System.Drawing.Size(344, 20);
@@ -236,7 +236,7 @@
             // 
             // lNameTextbox
             // 
-            this.lNameTextbox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lNameTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lNameTextbox.Location = new System.Drawing.Point(107, 155);
             this.lNameTextbox.Name = "lNameTextbox";
             this.lNameTextbox.Size = new System.Drawing.Size(344, 20);
@@ -244,7 +244,7 @@
             // 
             // aCityTextbox
             // 
-            this.aCityTextbox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.aCityTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.aCityTextbox.Location = new System.Drawing.Point(107, 297);
             this.aCityTextbox.Name = "aCityTextbox";
             this.aCityTextbox.Size = new System.Drawing.Size(344, 20);
@@ -252,7 +252,7 @@
             // 
             // aLine2Textbox
             // 
-            this.aLine2Textbox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.aLine2Textbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.aLine2Textbox.Location = new System.Drawing.Point(107, 271);
             this.aLine2Textbox.Name = "aLine2Textbox";
             this.aLine2Textbox.Size = new System.Drawing.Size(344, 20);
@@ -260,7 +260,7 @@
             // 
             // aLine1Textbox
             // 
-            this.aLine1Textbox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.aLine1Textbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.aLine1Textbox.Location = new System.Drawing.Point(107, 245);
             this.aLine1Textbox.Name = "aLine1Textbox";
             this.aLine1Textbox.Size = new System.Drawing.Size(344, 20);
@@ -268,7 +268,7 @@
             // 
             // aStateDropdownlist
             // 
-            this.aStateDropdownlist.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.aStateDropdownlist.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.aStateDropdownlist.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.aStateDropdownlist.FormattingEnabled = true;
             this.aStateDropdownlist.Items.AddRange(new object[] {
@@ -330,7 +330,7 @@
             // 
             // ssnLabel
             // 
-            this.ssnLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ssnLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.ssnLabel.AutoSize = true;
             this.ssnLabel.BackColor = System.Drawing.Color.Transparent;
             this.ssnLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -344,7 +344,7 @@
             // 
             // loginLabel
             // 
-            this.loginLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.loginLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.loginLabel.AutoSize = true;
             this.loginLabel.BackColor = System.Drawing.Color.Transparent;
             this.loginLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -358,7 +358,7 @@
             // 
             // pass2Textbox
             // 
-            this.pass2Textbox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pass2Textbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pass2Textbox.Location = new System.Drawing.Point(107, 555);
             this.pass2Textbox.Name = "pass2Textbox";
             this.pass2Textbox.PasswordChar = '*';
@@ -367,7 +367,7 @@
             // 
             // pass1Textbox
             // 
-            this.pass1Textbox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pass1Textbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pass1Textbox.Location = new System.Drawing.Point(107, 529);
             this.pass1Textbox.Name = "pass1Textbox";
             this.pass1Textbox.PasswordChar = '*';
@@ -376,7 +376,7 @@
             // 
             // userTextbox
             // 
-            this.userTextbox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.userTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.userTextbox.Location = new System.Drawing.Point(107, 503);
             this.userTextbox.Name = "userTextbox";
             this.userTextbox.Size = new System.Drawing.Size(344, 20);
@@ -384,7 +384,7 @@
             // 
             // pass2Label
             // 
-            this.pass2Label.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pass2Label.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pass2Label.BackColor = System.Drawing.Color.Transparent;
             this.pass2Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pass2Label.ForeColor = System.Drawing.Color.White;
@@ -397,7 +397,7 @@
             // 
             // pass1Label
             // 
-            this.pass1Label.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pass1Label.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pass1Label.AutoSize = true;
             this.pass1Label.BackColor = System.Drawing.Color.Transparent;
             this.pass1Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -411,7 +411,7 @@
             // 
             // userLabel
             // 
-            this.userLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.userLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.userLabel.AutoSize = true;
             this.userLabel.BackColor = System.Drawing.Color.Transparent;
             this.userLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -425,7 +425,7 @@
             // 
             // saveButton
             // 
-            this.saveButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.saveButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.saveButton.Location = new System.Drawing.Point(376, 606);
             this.saveButton.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
             this.saveButton.Name = "saveButton";
@@ -437,7 +437,7 @@
             // 
             // cancelButton
             // 
-            this.cancelButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cancelButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cancelButton.Location = new System.Drawing.Point(295, 606);
             this.cancelButton.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
             this.cancelButton.Name = "cancelButton";
@@ -449,7 +449,7 @@
             // 
             // emailTextbox
             // 
-            this.emailTextbox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.emailTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.emailTextbox.Location = new System.Drawing.Point(107, 439);
             this.emailTextbox.Name = "emailTextbox";
             this.emailTextbox.Size = new System.Drawing.Size(344, 20);
@@ -457,7 +457,7 @@
             // 
             // emailLabel
             // 
-            this.emailLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.emailLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.emailLabel.AutoSize = true;
             this.emailLabel.BackColor = System.Drawing.Color.Transparent;
             this.emailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -471,7 +471,7 @@
             // 
             // phoneLabel
             // 
-            this.phoneLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.phoneLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.phoneLabel.AutoSize = true;
             this.phoneLabel.BackColor = System.Drawing.Color.Transparent;
             this.phoneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -485,7 +485,7 @@
             // 
             // contactLabel
             // 
-            this.contactLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.contactLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.contactLabel.AutoSize = true;
             this.contactLabel.BackColor = System.Drawing.Color.Transparent;
             this.contactLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -499,7 +499,7 @@
             // 
             // ssnTextbox
             // 
-            this.ssnTextbox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ssnTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.ssnTextbox.Location = new System.Drawing.Point(107, 183);
             this.ssnTextbox.Mask = "000-00-0000";
             this.ssnTextbox.Name = "ssnTextbox";
@@ -508,7 +508,7 @@
             // 
             // phoneTextbox
             // 
-            this.phoneTextbox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.phoneTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.phoneTextbox.Location = new System.Drawing.Point(108, 413);
             this.phoneTextbox.Mask = "(999) 000-0000";
             this.phoneTextbox.Name = "phoneTextbox";
@@ -517,7 +517,7 @@
             // 
             // aZipTextbox
             // 
-            this.aZipTextbox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.aZipTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.aZipTextbox.Location = new System.Drawing.Point(108, 349);
             this.aZipTextbox.Mask = "00000";
             this.aZipTextbox.Name = "aZipTextbox";
