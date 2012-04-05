@@ -37,8 +37,8 @@ namespace Los_Alamos_Timeclock
                                                     "ON a.ID=b.ID " +
                                                     "LEFT JOIN Manager c " +
                                                     "ON a.ID=c.ID " +
-                                                    "Where a.User='" + userTextbox.Text + "' " +
-                                                    "And a.Password=PASSWORD('" + passTextbox.Text + "')");
+                                                    "Where a.User='" + userTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "' " +
+                                                    "And a.Password=PASSWORD('" + passTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "')");
 
                     if (Main.reader.HasRows)
                     {
@@ -50,7 +50,7 @@ namespace Los_Alamos_Timeclock
                             Main.maininstance.panel1.Controls.Clear();
                             Main.maininstance.panel1.Controls.Add(new Clockinout());
                             Main.maininstance.panel1.Controls[0].Dock = DockStyle.Fill;
-                            Log.writeLog(userTextbox.Text + " overrode clock in for: " + "\n Employee= " + Main.eName + "\n Job= " + jobsBox.Text);
+                            Log.writeLog(userTextbox.Text + " overrode clock in for: " + "\n Employee= " + Main.eName.Replace(@"\", @"\\").Replace("'", @"\'") + "\n Job= " + jobsBox.Text.Replace(@"\", @"\\").Replace("'", @"\'"));
                             this.Close();
                         }
                         else
