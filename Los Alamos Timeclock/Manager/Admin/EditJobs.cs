@@ -80,8 +80,8 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                 if (validate())
                 {
                     MessageBox.Show("Insert successful");
-                    Main.maininstance.sqlcommand("INSERT INTO Jobs Values('" + jobnameTextbox.Text + "','" + Decimal.Parse(startingpayTextbox.Text) +  "','" + tippedBox.Checked + "')");
-                    Log.writeLog(Main.eName + " added job: " + "\n Job= " + jobnameTextbox.Text + "\n Starting Pay= " + Decimal.Parse(startingpayTextbox.Text) + "\n Tipped Job= " + tippedBox.Checked);
+                    Main.maininstance.sqlcommand("INSERT INTO Jobs Values('" + jobnameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "','" + Decimal.Parse(startingpayTextbox.Text) + "','" + tippedBox.Checked + "')");
+                    Log.writeLog(Main.eName + " added job: " + "\n Job= " + jobnameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "\n Starting Pay= " + Decimal.Parse(startingpayTextbox.Text) + "\n Tipped Job= " + tippedBox.Checked);
                     refreshJobs();
                 }
             }
@@ -98,8 +98,8 @@ namespace Los_Alamos_Timeclock.Manager.Admin
 
                 if (result == DialogResult.Yes)
                 {
-                    Main.maininstance.sqlcommand("DELETE FROM Jobs WHERE JID='"+jobsBox.Text+"'");
-                    Log.writeLog(Main.eName + " deleted job: " + "\n Job= " + jobnameTextbox.Text);
+                    Main.maininstance.sqlcommand("DELETE FROM Jobs WHERE JID='" + jobsBox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "'");
+                    Log.writeLog(Main.eName + " deleted job: " + "\n Job= " + jobnameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'"));
                     refreshJobs();
                 }
         }
