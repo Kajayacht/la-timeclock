@@ -26,6 +26,8 @@ namespace Los_Alamos_Timeclock
                 databaseTextbox.Text = Properties.Settings.Default.Database;
                 userTextbox.Text = Properties.Settings.Default.User;
                 passTextbox.Text = Properties.Settings.Default.Password;
+                showCurrentEmployeesCheckbox.Checked = Properties.Settings.Default.showCurrentEmployees;
+                showPreviousEmployeesCheckbox.Checked = Properties.Settings.Default.showPreviousEmployees;
             }
             catch
             {
@@ -88,6 +90,22 @@ namespace Los_Alamos_Timeclock
                 Main.myConnection.Close();
             }
 
+        }
+
+        private void saveAppSettings_Click(object sender, EventArgs e)
+        {
+            if (!showPreviousEmployeesCheckbox.Checked && !showCurrentEmployeesCheckbox.Checked)
+            {
+                MessageBox.Show("Must show at least 1 group of Employees");
+            }
+            else
+            {
+                Properties.Settings.Default.showCurrentEmployees = showCurrentEmployeesCheckbox.Checked;
+                Properties.Settings.Default.showPreviousEmployees = showPreviousEmployeesCheckbox.Checked;
+                Properties.Settings.Default.Save();
+                Main.employeeList= Main.maininstance.getEmployees();
+                MessageBox.Show("Application Settings Saved");
+            }
         }
     }
 }

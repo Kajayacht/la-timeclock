@@ -64,7 +64,15 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                 lNameTextbox.Text = Main.reader["LName"].ToString();
                 ssnTextbox.Text = Main.reader["SSN"].ToString();
 
-                startLabel.Text = "Start:" + DateTime.Parse(Main.reader["SDate"].ToString()).ToShortDateString();
+                if (Main.reader["EDate"].ToString() == "")
+                {
+                    employedLabel.Text = "Employed: " + DateTime.Parse(Main.reader["SDate"].ToString()).ToShortDateString() + " - Present";
+                }
+                else
+                {
+                    employedLabel.Text = "Employed: " + DateTime.Parse(Main.reader["SDate"].ToString()).ToShortDateString() + " - " + DateTime.Parse(Main.reader["EDate"].ToString()).ToShortDateString();
+                }
+
                 aLine1Textbox.Text = Main.reader["Address1"].ToString();
                 aLine2Textbox.Text = Main.reader["Address2"].ToString();
                 aCityTextbox.Text = Main.reader["City"].ToString();

@@ -32,7 +32,7 @@ namespace Los_Alamos_Timeclock
                                             "ON a.ID=d.ID " +
                                             "Where LOWER(a.User)=LOWER('" + userTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "') " +
                                             "And a.Password=PASSWORD('" + passTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "') " +
-                                            "AND (b.EDate>='"+DateTime.Today.AddDays(-1).ToString("yyyy-MM-dd")+"' OR b.EDate='0000-00-00')");
+                                            "AND (b.EDate>='" + DateTime.Today.AddDays(-1).ToString("yyyy-MM-dd") + "' OR b.EDate is NULL)");
 
                 if (Main.reader.HasRows)
                 {

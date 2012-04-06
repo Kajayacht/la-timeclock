@@ -82,5 +82,29 @@ namespace Los_Alamos_Timeclock.Properties {
                 this["Password"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool showCurrentEmployees {
+            get {
+                return ((bool)(this["showCurrentEmployees"]));
+            }
+            set {
+                this["showCurrentEmployees"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool showPreviousEmployees {
+            get {
+                return ((bool)(this["showPreviousEmployees"]));
+            }
+            set {
+                this["showPreviousEmployees"] = value;
+            }
+        }
     }
 }

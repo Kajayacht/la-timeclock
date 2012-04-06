@@ -33,6 +33,7 @@ namespace Los_Alamos_Timeclock
 
     public partial class Main : Form
     {
+
         public static Main maininstance = null;
         public static string id;
         public static string eName;
@@ -80,7 +81,23 @@ namespace Los_Alamos_Timeclock
             {
                 //start SQL connection and query
                 Main.myConnection.Open();
-                MySqlCommand command = new MySqlCommand("Select ID, LName,FName From Employee ORDER BY LName", Main.myConnection);
+                String commandString;
+
+                if (Properties.Settings.Default.showCurrentEmployees && Properties.Settings.Default.showPreviousEmployees)
+                {
+                    commandString = "Select ID, LName,FName From Employee ORDER BY LName";
+                }
+                else if (Properties.Settings.Default.showCurrentEmployees==false && Properties.Settings.Default.showPreviousEmployees)
+                {
+                    commandString = "Select ID, LName,FName From Employee WHERE EDate<'"+DateTime.Today.Date.ToString("yyyy-MM-dd")+"' ORDER BY LName";
+                }
+                else
+                {
+                    commandString = "Select ID, LName,FName From Employee WHERE EDate>'" + DateTime.Today.Date.ToString("yyyy-MM-dd") +"' OR EDate is NULL ORDER BY LName";
+                }
+
+
+                MySqlCommand command = new MySqlCommand(commandString, Main.myConnection);
                 Main.reader = command.ExecuteReader();
 
                 //Populate the arraylist
@@ -95,7 +112,7 @@ namespace Los_Alamos_Timeclock
                 return employees;
 
             }
-                //If connection to Database fails
+            //If connection to Database fails
             catch (Exception e)
             {
                 MessageBox.Show(e.ToString());
@@ -195,7 +212,7 @@ namespace Los_Alamos_Timeclock
                 return joblist;
             }
         }
-        
+
         /* Class to store object of job*/
         public class Job
         {
@@ -369,7 +386,7 @@ namespace Los_Alamos_Timeclock
             //Get the current time, then the minutes of it
             TimeSpan a = TimeSpan.ParseExact(t.ToString("HH:mm:ss"), "g", null);
             int q = 0;
-            
+
             //Round time to nearest 15 minute interval
             while (a.Minutes > 15)
             {
@@ -387,7 +404,7 @@ namespace Los_Alamos_Timeclock
                 a = a.Add(TimeSpan.FromMinutes(q * 15));
             }
             a = a.Subtract(TimeSpan.FromSeconds(a.Seconds));
-            
+
             //return the time
             t = DateTime.ParseExact(a.ToString(), "HH:mm:ss", null);
             return t;
@@ -413,5 +430,10 @@ namespace Los_Alamos_Timeclock
         {
             menu1.timer1.Start();
         }
+
+
     }
+
+
+
 }

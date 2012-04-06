@@ -17,5 +17,11 @@
     <Setting Name="Password" Type="System.String" Scope="User">
       <Value Profile="(Default)">chrono</Value>
     </Setting>
+    <Setting Name="showCurrentEmployees" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="showPreviousEmployees" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
