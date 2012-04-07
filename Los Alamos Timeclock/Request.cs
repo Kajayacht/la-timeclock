@@ -10,6 +10,23 @@ using MySql.Data.MySqlClient;
 
 namespace Los_Alamos_Timeclock
 {
+        /*
+     This file is part of Los Alamos Timeclock.
+
+    Los Alamos Timeclock is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Los Alamos Timeclock is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Los Alamos Timeclock.  If not, see <http://www.gnu.org/licenses/>.
+     */
+
     public partial class Request : UserControl
     {
         MySqlDataAdapter mySqlDataAdapter;
@@ -27,16 +44,15 @@ namespace Los_Alamos_Timeclock
             updateFields();
         }
 
-
-
-
-
-
+        /** Method to fill the datagridview
+         * 
+         * @author Nate Rush
+         */
 
         public void filldt()
         {
+            //query for the database
             String query = "Select SDate as 'Start Date', EDate as 'End Date', Reason, `Submitted Date` FROM Requests WHERE ID='"+Main.id+"' and EDate>='"+DateTime.Today.AddDays(-7).ToString("yyyy-MM-dd")+"'";
-
             try
             {
                 Main.myConnection.Open();
@@ -62,34 +78,49 @@ namespace Los_Alamos_Timeclock
             }
         }
 
+        /** Method to update the fields
+         * 
+         * @author Nate Rush
+         */
+
         void updateFields()
         {
+            //checks to see if the program is already updating, prevents infinite loop when it sets the start date
             if (!updating)
             {
                 try
                 {
+                    //sets updating to true so only updateFields won't run recursively
                     updating = true;
                     Main.myConnection.Open();
+                    //checks if the date is already requested by the employee
                     Main.maininstance.sqlReader("SELECT * FROM Requests WHERE ID='" + Main.id +
                                                 "' AND SDate<='" + startCalander.Value.ToString("yyyy-MM-dd") +
                                                 "' AND EDate>='" + startCalander.Value.ToString("yyyy-MM-dd") + "'");
+
+                    //true if the date is requested
                     if (Main.reader.HasRows)
                     {
                         existingSDate = DateTime.Parse(Main.reader["SDate"].ToString()).ToString("yyyy-MM-dd");
 
+                        //if the employee is already editing the entry it won't change the fields
                         if (!existingEntry)
                         {
+                            //sets field values to the request's values
                             requestButton.Text = "Update Request";
                             startCalander.Value = DateTime.Parse(Main.reader["SDate"].ToString()).Date;
                             endCalander.MinDate = startCalander.Value;
+                            //prevents requesting negative days off
                             endCalander.Value = DateTime.Parse(Main.reader["EDate"].ToString()).Date;
                             reasonTextbox.Text = Main.reader["Reason"].ToString();
                         }
 
+                        //used to tell the request/update button what to do
                         existingEntry = true;
                     }
                     else
                     {
+                        //no entry, so everything goes back to default
                         existingEntry = false;
                         existingSDate = "";
                         requestButton.Text = "Request";
@@ -102,7 +133,9 @@ namespace Los_Alamos_Timeclock
                 }
                 finally
                 {
+                    //closes the connection
                     Main.myConnection.Close();
+                    //signals the end of the update so it can be done again
                     updating = false;
                 }
             }
@@ -115,8 +148,10 @@ namespace Los_Alamos_Timeclock
 
         private void deleteButton_Click(object sender, EventArgs e)
         {
+            //checks to see if a valid entry is selected
             if (existingEntry)
             {
+                //double checks with user if they want to delete the entry
                 DialogResult result = MessageBox.Show("Are you sure you wish to delete this request?", "Delete Request?", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {
@@ -130,6 +165,7 @@ namespace Los_Alamos_Timeclock
                 }
                 else
                 {
+                    //no record is selected so there is nothing to delete
                     MessageBox.Show("No record selected");
                 }
             }
@@ -137,6 +173,7 @@ namespace Los_Alamos_Timeclock
 
         private void requestButton_Click(object sender, EventArgs e)
         {
+            //updates if there is an entry selected
             if (existingEntry)
             {
                 String update = "Update Requests "+
@@ -148,6 +185,7 @@ namespace Los_Alamos_Timeclock
                 filldt();
                 updateFields();
             }
+            //creates a new entry
             else
             {
                 String insert="INSERT INTO Requests VALUES('"+Main.id+"','"+
