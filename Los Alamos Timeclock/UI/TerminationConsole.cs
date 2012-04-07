@@ -30,6 +30,7 @@ namespace Los_Alamos_Timeclock.UI
             Main.maininstance.sqlCommand("UPDATE Employee SET EDate='" + lastDayCalander.Value.ToString("yyyy-MM-dd") + "', EReason='" + reasonDropdownlist.Text + "' WHERE ID='" + id + "'");
             String logString = reasonDropdownlist.Text.ToUpper() + ": " + commentsTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "\nLast Day: " + lastDayCalander.Value.ToShortDateString();
             Main.maininstance.sqlCommand("INSERT INTO EmployeeNotes VALUES('" + id + "','" + Main.eName.Replace(@"\", @"\\").Replace("'", @"\'") + "', NOW() ,'" + logString.Replace(@"\", @"\\").Replace("'", @"\'") + "')");
+            Main.maininstance.sqlCommand("DELETE FROM Schedule WHERE ID='" + id + "' and Date>'" + lastDayCalander.Value.ToString("yyyy-MM-dd") + "'");
 
             if (removePrivCheckbox.Checked)
             {
