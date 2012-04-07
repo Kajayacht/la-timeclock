@@ -128,6 +128,12 @@
     <Compile Include="Manager\Status.Designer.cs">
       <DependentUpon>Status.cs</DependentUpon>
     </Compile>
+    <Compile Include="Request.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Request.Designer.cs">
+      <DependentUpon>Request.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Override.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -214,6 +220,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Manager\Status.resx">
       <DependentUpon>Status.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Request.resx">
+      <DependentUpon>Request.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Override.resx">
       <DependentUpon>Override.cs</DependentUpon>

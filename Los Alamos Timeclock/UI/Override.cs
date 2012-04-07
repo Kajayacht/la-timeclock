@@ -45,13 +45,24 @@ namespace Los_Alamos_Timeclock
                         if (Main.reader["Admin"].ToString() != "" || Main.reader["Manager"].ToString() != "")
                         {
                             Main.reader.Close();
-                            Main.myConnection.Close();
-                            Main.maininstance.sqlCommand("INSERT INTO `Hours Worked` (`ID`, `Date`, `Start`, `JID`,`Status`) VALUES ('" + Main.id + "', '" + DateTime.Today.ToString("yyyy-MM-dd") + "' , '" + Main.maininstance.roundtime(DateTime.Now).ToString("HH:mm:ss") + "', '" + jobsBox.Text + "', 'IN')");
-                            Main.maininstance.panel1.Controls.Clear();
-                            Main.maininstance.panel1.Controls.Add(new Clockinout());
-                            Main.maininstance.panel1.Controls[0].Dock = DockStyle.Fill;
-                            Log.writeLog(userTextbox.Text + " overrode clock in for: " + "\n Employee= " + Main.eName.Replace(@"\", @"\\").Replace("'", @"\'") + "\n Job= " + jobsBox.Text.Replace(@"\", @"\\").Replace("'", @"\'"));
-                            this.Close();
+                            Main.maininstance.sqlReader("SELECT * FROM `Hours Worked` WHERE ID='"+Main.id+"' and Date='"+DateTime.Today.Date.ToString("yyyy-MM-dd")+"'");
+                            
+                            if (Main.reader.HasRows)
+                            {
+                                Main.myConnection.Close();
+                                MessageBox.Show("Employee has already been clocked in for today, change in status instead");
+                                this.Close();
+                            }
+                            else
+                            {
+                                Main.myConnection.Close();
+                                Main.maininstance.sqlCommand("INSERT INTO `Hours Worked` (`ID`, `Date`, `Start`, `JID`,`Status`) VALUES ('" + Main.id + "', '" + DateTime.Today.ToString("yyyy-MM-dd") + "' , '" + Main.maininstance.roundtime(DateTime.Now).ToString("HH:mm:ss") + "', '" + jobsBox.Text + "', 'IN')");
+                                Main.maininstance.panel1.Controls.Clear();
+                                Main.maininstance.panel1.Controls.Add(new Clockinout());
+                                Main.maininstance.panel1.Controls[0].Dock = DockStyle.Fill;
+                                Log.writeLog(userTextbox.Text + " overrode clock in for: " + "\n Employee= " + Main.eName.Replace(@"\", @"\\").Replace("'", @"\'") + "\n Job= " + jobsBox.Text.Replace(@"\", @"\\").Replace("'", @"\'"));
+                                this.Close();
+                            }
                         }
                         else
                         {

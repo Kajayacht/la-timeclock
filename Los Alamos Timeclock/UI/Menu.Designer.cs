@@ -29,93 +29,80 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.Break = new System.Windows.Forms.Button();
-            this.B_Logout = new System.Windows.Forms.Button();
+            this.clockButton = new System.Windows.Forms.Button();
+            this.requestsButton = new System.Windows.Forms.Button();
+            this.scheduleButton = new System.Windows.Forms.Button();
+            this.contactInfoButton = new System.Windows.Forms.Button();
+            this.logoutButton = new System.Windows.Forms.Button();
             this.Menuclock = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.button6 = new System.Windows.Forms.Button();
+            this.managerButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // clockButton
             // 
-            this.button1.AutoSize = true;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Margin = new System.Windows.Forms.Padding(0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(202, 46);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Clock";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Clockin_Click);
+            this.clockButton.AutoSize = true;
+            this.clockButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.clockButton.Location = new System.Drawing.Point(0, 0);
+            this.clockButton.Margin = new System.Windows.Forms.Padding(0);
+            this.clockButton.Name = "clockButton";
+            this.clockButton.Size = new System.Drawing.Size(202, 46);
+            this.clockButton.TabIndex = 0;
+            this.clockButton.Text = "Clock in/out";
+            this.clockButton.UseVisualStyleBackColor = true;
+            this.clockButton.Click += new System.EventHandler(this.Clockin_Click);
             // 
-            // button2
+            // requestsButton
             // 
-            this.button2.AutoSize = true;
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.Location = new System.Drawing.Point(0, 46);
-            this.button2.Margin = new System.Windows.Forms.Padding(0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(202, 46);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "...";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.Clockout_Click);
+            this.requestsButton.AutoSize = true;
+            this.requestsButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.requestsButton.Location = new System.Drawing.Point(0, 92);
+            this.requestsButton.Margin = new System.Windows.Forms.Padding(0);
+            this.requestsButton.Name = "requestsButton";
+            this.requestsButton.Size = new System.Drawing.Size(202, 46);
+            this.requestsButton.TabIndex = 1;
+            this.requestsButton.Text = "Requests";
+            this.requestsButton.UseVisualStyleBackColor = true;
+            this.requestsButton.Click += new System.EventHandler(this.requestsButton_Click);
             // 
-            // button3
+            // scheduleButton
             // 
-            this.button3.AutoSize = true;
-            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button3.Location = new System.Drawing.Point(0, 92);
-            this.button3.Margin = new System.Windows.Forms.Padding(0);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(202, 46);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Schedule";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.Schedule_Click);
+            this.scheduleButton.AutoSize = true;
+            this.scheduleButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.scheduleButton.Location = new System.Drawing.Point(0, 46);
+            this.scheduleButton.Margin = new System.Windows.Forms.Padding(0);
+            this.scheduleButton.Name = "scheduleButton";
+            this.scheduleButton.Size = new System.Drawing.Size(202, 46);
+            this.scheduleButton.TabIndex = 2;
+            this.scheduleButton.Text = "Schedule";
+            this.scheduleButton.UseVisualStyleBackColor = true;
+            this.scheduleButton.Click += new System.EventHandler(this.Schedule_Click);
             // 
-            // button4
+            // contactInfoButton
             // 
-            this.button4.AutoSize = true;
-            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button4.Location = new System.Drawing.Point(0, 138);
-            this.button4.Margin = new System.Windows.Forms.Padding(0);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(202, 46);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Contact Information";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.Contactinfo_Click);
+            this.contactInfoButton.AutoSize = true;
+            this.contactInfoButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.contactInfoButton.Location = new System.Drawing.Point(0, 138);
+            this.contactInfoButton.Margin = new System.Windows.Forms.Padding(0);
+            this.contactInfoButton.Name = "contactInfoButton";
+            this.contactInfoButton.Size = new System.Drawing.Size(202, 46);
+            this.contactInfoButton.TabIndex = 3;
+            this.contactInfoButton.Text = "Contact Information";
+            this.contactInfoButton.UseVisualStyleBackColor = true;
+            this.contactInfoButton.Click += new System.EventHandler(this.Contactinfo_Click);
             // 
-            // Break
+            // logoutButton
             // 
-            this.Break.AutoSize = true;
-            this.Break.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Break.Location = new System.Drawing.Point(0, 184);
-            this.Break.Margin = new System.Windows.Forms.Padding(0);
-            this.Break.Name = "Break";
-            this.Break.Size = new System.Drawing.Size(202, 46);
-            this.Break.TabIndex = 4;
-            this.Break.Text = "...";
-            this.Break.UseVisualStyleBackColor = true;
-            // 
-            // B_Logout
-            // 
-            this.B_Logout.AutoSize = true;
-            this.B_Logout.Dock = System.Windows.Forms.DockStyle.Top;
-            this.B_Logout.Location = new System.Drawing.Point(0, 276);
-            this.B_Logout.Margin = new System.Windows.Forms.Padding(0);
-            this.B_Logout.Name = "B_Logout";
-            this.B_Logout.Size = new System.Drawing.Size(202, 46);
-            this.B_Logout.TabIndex = 6;
-            this.B_Logout.Text = "Logout";
-            this.B_Logout.UseVisualStyleBackColor = true;
-            this.B_Logout.Click += new System.EventHandler(this.Logout_Click);
+            this.logoutButton.AutoSize = true;
+            this.logoutButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.logoutButton.Location = new System.Drawing.Point(0, 230);
+            this.logoutButton.Margin = new System.Windows.Forms.Padding(0);
+            this.logoutButton.Name = "logoutButton";
+            this.logoutButton.Size = new System.Drawing.Size(202, 46);
+            this.logoutButton.TabIndex = 6;
+            this.logoutButton.Text = "Logout";
+            this.logoutButton.UseVisualStyleBackColor = true;
+            this.logoutButton.Click += new System.EventHandler(this.Logout_Click);
             // 
             // Menuclock
             // 
@@ -126,25 +113,24 @@
             this.Menuclock.Size = new System.Drawing.Size(68, 13);
             this.Menuclock.TabIndex = 7;
             this.Menuclock.Text = "12:00:00 AM";
-            this.Menuclock.Click += new System.EventHandler(this.label1_Click);
             // 
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // button6
+            // managerButton
             // 
-            this.button6.AutoSize = true;
-            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button6.Location = new System.Drawing.Point(0, 230);
-            this.button6.Margin = new System.Windows.Forms.Padding(0);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(202, 46);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "Manager";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.Manager_Click);
+            this.managerButton.AutoSize = true;
+            this.managerButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.managerButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.managerButton.Location = new System.Drawing.Point(0, 184);
+            this.managerButton.Margin = new System.Windows.Forms.Padding(0);
+            this.managerButton.Name = "managerButton";
+            this.managerButton.Size = new System.Drawing.Size(202, 46);
+            this.managerButton.TabIndex = 5;
+            this.managerButton.Text = "Manager";
+            this.managerButton.UseVisualStyleBackColor = true;
+            this.managerButton.Click += new System.EventHandler(this.Manager_Click);
             // 
             // Menu
             // 
@@ -153,13 +139,12 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.Controls.Add(this.Menuclock);
-            this.Controls.Add(this.B_Logout);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.Break);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.logoutButton);
+            this.Controls.Add(this.managerButton);
+            this.Controls.Add(this.contactInfoButton);
+            this.Controls.Add(this.requestsButton);
+            this.Controls.Add(this.scheduleButton);
+            this.Controls.Add(this.clockButton);
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "Menu";
             this.Size = new System.Drawing.Size(202, 335);
@@ -171,13 +156,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button Break;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button B_Logout;
+        private System.Windows.Forms.Button clockButton;
+        private System.Windows.Forms.Button requestsButton;
+        private System.Windows.Forms.Button scheduleButton;
+        private System.Windows.Forms.Button contactInfoButton;
+        private System.Windows.Forms.Button managerButton;
+        private System.Windows.Forms.Button logoutButton;
         private System.Windows.Forms.Label Menuclock;
         public System.Windows.Forms.Timer timer1;
 

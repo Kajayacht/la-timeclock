@@ -69,16 +69,6 @@ namespace Los_Alamos_Timeclock
             }
         }
 
-        private void Clockout_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             Menuclock.Text = DateTime.Now.ToLongTimeString();
@@ -92,6 +82,17 @@ namespace Los_Alamos_Timeclock
                 Main.maininstance.panel1.Controls.Add(new Contactinfo());
                 Main.maininstance.panel1.Controls[0].Dock = DockStyle.Fill;
             }
+        }
+
+        private void requestsButton_Click(object sender, EventArgs e)
+        {
+            if (Main.maininstance.panel1.HasChildren == false || Main.maininstance.panel1.Controls[0].Name != "Request")
+            {
+                Main.maininstance.panel1.Controls.Clear();
+                Main.maininstance.panel1.Controls.Add(new Request());
+                Main.maininstance.panel1.Controls[0].Dock = DockStyle.Fill;
+            }
+
         }
 
        
