@@ -31,7 +31,7 @@ namespace Los_Alamos_Timeclock.Manager
         public void fillNotesDatagrid()
         {
             string query = 
-                "SELECT CONCAT(b.LName,', ',b.FName,' ', b.MName) As Name, a.Date, a.Note, a.Manager " +
+                "SELECT a.Date, a.Note, a.Manager " +
                 "FROM EmployeeNotes a "+
                 "JOIN Employee b "+
                 "ON a.ID=b.ID "+

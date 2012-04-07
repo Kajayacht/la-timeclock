@@ -17,7 +17,6 @@ namespace Los_Alamos_Timeclock.UI
         {
             InitializeComponent();
             reasonDropdownlist.SelectedIndex = 0;
-            removePrivCheckbox.Checked = true;
             lastDayCalander.MinDate = DateTime.Today;
         }
 
