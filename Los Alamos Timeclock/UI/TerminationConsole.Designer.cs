@@ -137,7 +137,7 @@
             this.Controls.Add(this.lastDayLabel);
             this.Controls.Add(this.commentsTextbox);
             this.Controls.Add(this.lastDayCalander);
-            this.MinimumSize = new System.Drawing.Size(314, 206);
+            this.MinimumSize = new System.Drawing.Size(314, 226);
             this.Name = "TerminationConsole";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Terminate Employee";
