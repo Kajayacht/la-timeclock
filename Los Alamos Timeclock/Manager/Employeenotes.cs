@@ -75,7 +75,7 @@ namespace Los_Alamos_Timeclock.Manager
                 }
                 else
                 {
-                    Main.maininstance.sqlCommand("INSERT INTO EmployeeNotes VALUES('" + id + "','" + Main.eName + "','" + DateTime.Today.ToString("yyyy-MM-dd") + "','" + noteTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "')");
+                    Main.maininstance.sqlCommand("INSERT INTO EmployeeNotes VALUES('" + id + "','" + Main.eName + "', NOW() ,'" + noteTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "')");
                     fillNotesDatagrid();
                 }
             }

@@ -28,8 +28,8 @@ namespace Los_Alamos_Timeclock.UI
         private void terminateButton_Click(object sender, EventArgs e)
         {
             Main.maininstance.sqlCommand("UPDATE Employee SET EDate='" + lastDayCalander.Value.ToString("yyyy-MM-dd") + "', EReason='" + reasonDropdownlist.Text + "' WHERE ID='" + id + "'");
-            String logString = reasonDropdownlist.Text.ToUpper() + ": " + commentsTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "\nLast Day: " + lastDayCalander.Value.ToShortDateString() + "\nPerformed by: " + Main.eName;
-            Main.maininstance.sqlCommand("INSERT INTO EmployeeNotes VALUES('" + id + "','" + Main.eName + "','" + DateTime.Today.ToString("yyyy-MM-dd") + "','" + logString.Replace(@"\", @"\\").Replace("'", @"\'") + "')");
+            String logString = reasonDropdownlist.Text.ToUpper() + ": " + commentsTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "\nLast Day: " + lastDayCalander.Value.ToShortDateString();
+            Main.maininstance.sqlCommand("INSERT INTO EmployeeNotes VALUES('" + id + "','" + Main.eName.Replace(@"\", @"\\").Replace("'", @"\'") + "', NOW() ,'" + logString.Replace(@"\", @"\\").Replace("'", @"\'") + "')");
 
             if (removePrivCheckbox.Checked)
             {

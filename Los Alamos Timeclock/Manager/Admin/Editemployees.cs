@@ -15,6 +15,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
     public partial class Editemployees : UserControl
     {
         public static string id;
+        Boolean terminated = false;
         public Editemployees()
         {
             InitializeComponent();
@@ -45,11 +46,6 @@ namespace Los_Alamos_Timeclock.Manager.Admin
 
         public void fieldUpdate()
         {
-            if (Main.myConnection.State == ConnectionState.Open)
-            {
-                Main.reader.Close();
-                Main.myConnection.Close();
-            }
             try
             {
                 Main.myConnection.Open();
@@ -71,10 +67,12 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                 if (Main.reader["EDate"].ToString() == "")
                 {
                     employedLabel.Text = "Employed: " + DateTime.Parse(Main.reader["SDate"].ToString()).ToShortDateString() + " - Present";
+                    terminated = false;
                 }
                 else
                 {
                     employedLabel.Text = "Employed: " + DateTime.Parse(Main.reader["SDate"].ToString()).ToShortDateString() + " - " + DateTime.Parse(Main.reader["EDate"].ToString()).ToShortDateString() + "\nCondition: " + Main.reader["EReason"].ToString();
+                    terminated = true;
                 }
 
                 aLine1Textbox.Text = Main.reader["Address1"].ToString();
@@ -104,9 +102,6 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                 userTextbox.Text = Main.reader["User"].ToString();
                 pass1Textbox.Text = "";
                 pass2Textbox.Text = "";
-
-                Main.reader.Close();
-                Main.myConnection.Close();
             }
             catch (Exception e)
             {
@@ -116,6 +111,15 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             {
                 Main.myConnection.Close();
             }
+            if (terminated)
+            {
+                quitorfireButton.Text = "Rehire";
+            }
+            else
+            {
+                quitorfireButton.Text = "Quit/Fire";
+            }
+
         }
 
         private void Saveemployee_Click(object sender, EventArgs e)
@@ -408,14 +412,34 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             }
             else
             {
-                if (id == Main.id)
+                if (terminated)
                 {
-                    MessageBox.Show("You cannot terminate yourself");
+                    DialogResult result = MessageBox.Show("Are you sure you want to rehire " + 
+                                                            fNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + " " +
+                                                            mNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + " " +
+                                                            lNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "?",
+                                                            "Rehire Employee?", MessageBoxButtons.YesNo);
+
+                    if (result == DialogResult.Yes)
+                    {
+                        Main.maininstance.sqlCommand("UPDATE Employee SET EDate=NULL,EReason=NULL WHERE ID='" + id + "'");
+                        Main.maininstance.sqlCommand("INSERT INTO EmployeeNotes VALUES('" + id + "','" + Main.eName.Replace(@"\", @"\\").Replace("'", @"\'") + "',NOW(),'Rehired')");
+                        Log.writeLog(Main.eName + " rehired employee: \n " + fNameTextbox.Text + " " + mNameTextbox.Text + " " + lNameTextbox.Text + "\n ID= " + id);
+                        Main.employeeList = Main.maininstance.getEmployees();
+                        employeeDropdownlist.DataSource = Main.employeeList;
+                    }
                 }
                 else
                 {
-                    TerminationConsole t = new TerminationConsole();
-                    t.Show();
+                    if (id == Main.id)
+                    {
+                        MessageBox.Show("You cannot terminate yourself");
+                    }
+                    else
+                    {
+                        TerminationConsole t = new TerminationConsole();
+                        t.Show();
+                    }
                 }
             }
         }
