@@ -94,7 +94,7 @@ namespace Los_Alamos_Timeclock
                 }
                 else
                 {
-                    commandString = "Select ID, LName,FName From Employee WHERE EDate>'" + DateTime.Today.Date.ToString("yyyy-MM-dd") +"' OR EDate is NULL ORDER BY LName";
+                    commandString = "Select ID, LName,FName From Employee WHERE EDate>='" + DateTime.Today.Date.ToString("yyyy-MM-dd") +"' OR EDate is NULL ORDER BY LName";
                 }
 
 
