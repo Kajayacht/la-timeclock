@@ -100,7 +100,7 @@
             this.employeeDropdownlist.Size = new System.Drawing.Size(190, 28);
             this.employeeDropdownlist.TabIndex = 1;
             this.employeeDropdownlist.TabStop = false;
-            this.employeeDropdownlist.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.employeeDropdownlist.SelectedIndexChanged += new System.EventHandler(this.employeeDropdownlist_SelectedIndexChanged);
             // 
             // pass1Textbox
             // 
@@ -638,6 +638,7 @@
             this.quitorfireButton.TabIndex = 76;
             this.quitorfireButton.Text = "Quit/Fire";
             this.quitorfireButton.UseVisualStyleBackColor = true;
+            this.quitorfireButton.Click += new System.EventHandler(this.quitorfireButton_Click);
             // 
             // employedLabel
             // 
