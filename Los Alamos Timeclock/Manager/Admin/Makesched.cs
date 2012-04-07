@@ -14,9 +14,13 @@ namespace Los_Alamos_Timeclock.Manager.Admin
     public partial class Makesched : UserControl
     {
         DateTime mon, sun;
-        public string date = DateTime.Today.ToString("yyyy-MM-dd");
-        public string ID = "0";
-        public Boolean scheduled = false;
+        String date = DateTime.Today.ToString("yyyy-MM-dd");
+        String ID = "0";
+        Boolean scheduled = false;
+        DateTime lastDay;
+        Boolean terminated = false;
+
+
         public Makesched()
         {
             InitializeComponent();
@@ -45,19 +49,26 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             }
             else
             {
-                if (validate())
+                if (terminated && lastDay < DateTime.Parse(date))
                 {
-                    if (scheduled)
+                    MessageBox.Show("Cannot schedule " + employeeDropdownlist.Text + " on " + DateTime.Parse(date).ToShortDateString() + ", employee's last day is " + lastDay.ToShortDateString());
+                }
+                else
+                {
+                    if (validate())
                     {
-                        Main.maininstance.sqlCommand("UPDATE Schedule SET Start='" + startHourDropdownlist.Text + ":" + startMinDropdownlist.Text + "', End='" + endHourDropdownlist.Text + ":" + endMinDropdownlist.Text + "', JID='" + jobsDropdownlist.Text + "' WHERE Date='" + date + "' AND ID='" + ID + "'");
+                        if (scheduled)
+                        {
+                            Main.maininstance.sqlCommand("UPDATE Schedule SET Start='" + startHourDropdownlist.Text + ":" + startMinDropdownlist.Text + "', End='" + endHourDropdownlist.Text + ":" + endMinDropdownlist.Text + "', JID='" + jobsDropdownlist.Text + "' WHERE Date='" + date + "' AND ID='" + ID + "'");
+                        }
+                        else
+                        {
+                            Main.maininstance.sqlCommand("INSERT INTO Schedule (`ID`, `Date`, `Start`, `End`, `JID`) VALUES ('" + ID + "', '" + date + "', '" + startHourDropdownlist.Text + ":" + startMinDropdownlist.Text + "', '" + endHourDropdownlist.Text + ":" + endMinDropdownlist.Text + "', '" + jobsDropdownlist.Text + "')");
+                            scheduled = true;
+                        }
+                        Log.writeLog(Main.eName + " changed the schedule for " + employeeDropdownlist.Text + "\n Date= " + date + "\n Start= " + startHourDropdownlist.Text + ":" + startMinDropdownlist.Text + "\n End= " + endHourDropdownlist.Text + ":" + endMinDropdownlist.Text + "\n Job= " + jobsDropdownlist.Text);
+                        populateDatagrid();
                     }
-                    else
-                    {
-                        Main.maininstance.sqlCommand("INSERT INTO Schedule (`ID`, `Date`, `Start`, `End`, `JID`) VALUES ('" + ID + "', '" + date + "', '" + startHourDropdownlist.Text + ":" + startMinDropdownlist.Text + "', '" + endHourDropdownlist.Text + ":" + endMinDropdownlist.Text + "', '" + jobsDropdownlist.Text + "')");
-                        scheduled = true;
-                    }
-                    Log.writeLog(Main.eName + " changed the schedule for " + employeeDropdownlist.Text + "\n Date= " + date + "\n Start= " + startHourDropdownlist.Text + ":" + startMinDropdownlist.Text + "\n End= " + endHourDropdownlist.Text + ":" + endMinDropdownlist.Text + "\n Job= " + jobsDropdownlist.Text);
-                    populateDatagrid();
                 }
             }
         }
@@ -110,9 +121,20 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             }
 
             Main.myConnection.Open();
-            Main.maininstance.sqlReader("Select * from Schedule where ID='" + ID + "' AND Date='" + date + "'");
+            Main.maininstance.sqlReader("Select a.*, b.EDate from Schedule a JOIN Employee b ON a.ID=b.ID where a.ID='" + ID + "' AND a.Date='" + date + "'");
+
             if (Main.reader.HasRows)
             {
+                if (Main.reader["EDate"].ToString() != "")
+                {
+                    terminated = true;
+                    lastDay = DateTime.Parse(Main.reader["EDate"].ToString());
+                }
+                else
+                {
+                    terminated = false;
+                }
+
                 scheduled = true;
                 TimeSpan a = TimeSpan.Parse(Main.reader["Start"].ToString());
                 startHourDropdownlist.Text = a.Hours.ToString();
