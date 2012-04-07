@@ -63,6 +63,10 @@ namespace Los_Alamos_Timeclock
             {
                 MessageBox.Show(e.ToString());
             }
+            finally
+            {
+                Main.myConnection.Close();
+            }
         }
 
 

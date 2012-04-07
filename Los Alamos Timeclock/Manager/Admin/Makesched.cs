@@ -187,6 +187,10 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             {
                 MessageBox.Show(e.ToString());
             }
+            finally
+            {
+                Main.myConnection.Close();
+            }
         }
 
         public void clength()
