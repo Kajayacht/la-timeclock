@@ -16,7 +16,7 @@ namespace Los_Alamos_Timeclock
             InitializeComponent();
             Phone.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             Main.myConnection.Open();
-            Main.maininstance.sqlreader("SELECT * FROM Employee WHERE ID='"+Main.id+"'");
+            Main.maininstance.sqlReader("SELECT * FROM Employee WHERE ID='"+Main.id+"'");
             Al1.Text = Main.reader["Address1"].ToString();
             Al2.Text = Main.reader["Address2"].ToString();
             Ac.Text = Main.reader["City"].ToString();
@@ -31,7 +31,7 @@ namespace Los_Alamos_Timeclock
         {
             if (validateinfo())
             {
-                Main.maininstance.sqlcommand("UPDATE Employee SET Address1='" + Al1.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "', Address2='" + Al2.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "', City='" + Ac.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "', State='" + As.Text + "', Zip='" + Az.Text + "', Email='" + Email.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "', Phone='" + Phone.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "'  WHERE ID='" + Main.id + "'");
+                Main.maininstance.sqlCommand("UPDATE Employee SET Address1='" + Al1.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "', Address2='" + Al2.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "', City='" + Ac.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "', State='" + As.Text + "', Zip='" + Az.Text + "', Email='" + Email.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "', Phone='" + Phone.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "'  WHERE ID='" + Main.id + "'");
                 MessageBox.Show("Update Successful");
             }
         }

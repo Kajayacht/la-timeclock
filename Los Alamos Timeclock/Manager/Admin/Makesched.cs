@@ -39,37 +39,51 @@ namespace Los_Alamos_Timeclock.Manager.Admin
 
         private void update_Click(object sender, EventArgs e)
         {
-            if (validate())
+            if (Main.employeeList.Count == 0)
             {
-                if (scheduled)
+                MessageBox.Show("No Employee Selected");
+            }
+            else
+            {
+                if (validate())
                 {
-                    Main.maininstance.sqlcommand("UPDATE Schedule SET Start='" + startHourDropdownlist.Text + ":" + startMinDropdownlist.Text + "', End='" + endHourDropdownlist.Text + ":" + endMinDropdownlist.Text + "', JID='" + jobsDropdownlist.Text + "' WHERE Date='" + date + "' AND ID='" + ID + "'");
+                    if (scheduled)
+                    {
+                        Main.maininstance.sqlCommand("UPDATE Schedule SET Start='" + startHourDropdownlist.Text + ":" + startMinDropdownlist.Text + "', End='" + endHourDropdownlist.Text + ":" + endMinDropdownlist.Text + "', JID='" + jobsDropdownlist.Text + "' WHERE Date='" + date + "' AND ID='" + ID + "'");
+                    }
+                    else
+                    {
+                        Main.maininstance.sqlCommand("INSERT INTO Schedule (`ID`, `Date`, `Start`, `End`, `JID`) VALUES ('" + ID + "', '" + date + "', '" + startHourDropdownlist.Text + ":" + startMinDropdownlist.Text + "', '" + endHourDropdownlist.Text + ":" + endMinDropdownlist.Text + "', '" + jobsDropdownlist.Text + "')");
+                        scheduled = true;
+                    }
+                    Log.writeLog(Main.eName + " changed the schedule for " + employeeDropdownlist.Text + "\n Date= " + date + "\n Start= " + startHourDropdownlist.Text + ":" + startMinDropdownlist.Text + "\n End= " + endHourDropdownlist.Text + ":" + endMinDropdownlist.Text + "\n Job= " + jobsDropdownlist.Text);
+                    populateDatagrid();
                 }
-                else
-                {
-                    Main.maininstance.sqlcommand("INSERT INTO Schedule (`ID`, `Date`, `Start`, `End`, `JID`) VALUES ('" + ID + "', '" + date + "', '" + startHourDropdownlist.Text + ":" + startMinDropdownlist.Text + "', '" + endHourDropdownlist.Text + ":" + endMinDropdownlist.Text + "', '" + jobsDropdownlist.Text + "')");
-                    scheduled = true;
-                }
-                Log.writeLog(Main.eName + " changed the schedule for " + employeeDropdownlist.Text + "\n Date= " + date + "\n Start= " + startHourDropdownlist.Text + ":" + startMinDropdownlist.Text + "\n End= " + endHourDropdownlist.Text + ":" + endMinDropdownlist.Text + "\n Job= " + jobsDropdownlist.Text);
-                populateDatagrid();
             }
         }
 
         private void delete_Click(object sender, EventArgs e)
         {
-            if (validate())
+            if (Main.employeeList.Count == 0)
             {
-                if (scheduled)
+                MessageBox.Show("No Employee Selected");
+            }
+            else
+            {
+                if (validate())
                 {
-                    Main.maininstance.sqlcommand("DELETE FROM Schedule WHERE ID='" + ID + "' AND Date='" + date + "'");
-                    Log.writeLog(Main.eName + " deleted " + employeeDropdownlist.Text + " from the schedule for: " +"\n Date= " + date + "\n Start= " + startHourDropdownlist.Text + ":" + startMinDropdownlist.Text + "\n End= " + endHourDropdownlist.Text + ":" + endMinDropdownlist.Text + "\n Job= " + jobsDropdownlist.Text);
-                    scheduled = false;
+                    if (scheduled)
+                    {
+                        Main.maininstance.sqlCommand("DELETE FROM Schedule WHERE ID='" + ID + "' AND Date='" + date + "'");
+                        Log.writeLog(Main.eName + " deleted " + employeeDropdownlist.Text + " from the schedule for: " + "\n Date= " + date + "\n Start= " + startHourDropdownlist.Text + ":" + startMinDropdownlist.Text + "\n End= " + endHourDropdownlist.Text + ":" + endMinDropdownlist.Text + "\n Job= " + jobsDropdownlist.Text);
+                        scheduled = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show("No record to delete");
+                    }
+                    populateDatagrid();
                 }
-                else
-                {
-                    MessageBox.Show("No record to delete");
-                }
-                populateDatagrid();
             }
         }
 
@@ -96,7 +110,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             }
 
             Main.myConnection.Open();
-            Main.maininstance.sqlreader("Select * from Schedule where ID='" + ID + "' AND Date='" + date + "'");
+            Main.maininstance.sqlReader("Select * from Schedule where ID='" + ID + "' AND Date='" + date + "'");
             if (Main.reader.HasRows)
             {
                 scheduled = true;

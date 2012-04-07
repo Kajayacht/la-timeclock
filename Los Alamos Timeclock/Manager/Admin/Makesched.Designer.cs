@@ -76,7 +76,7 @@
             this.calander.Location = new System.Drawing.Point(275, 267);
             this.calander.Name = "calander";
             this.calander.Size = new System.Drawing.Size(200, 20);
-            this.calander.TabIndex = 4;
+            this.calander.TabIndex = 2;
             this.calander.ValueChanged += new System.EventHandler(this.calander_DateChanged);
             // 
             // updatescheduleButon
@@ -85,7 +85,7 @@
             this.updatescheduleButon.Location = new System.Drawing.Point(275, 293);
             this.updatescheduleButon.Name = "updatescheduleButon";
             this.updatescheduleButon.Size = new System.Drawing.Size(97, 95);
-            this.updatescheduleButon.TabIndex = 7;
+            this.updatescheduleButon.TabIndex = 8;
             this.updatescheduleButon.Text = "Update";
             this.updatescheduleButon.UseVisualStyleBackColor = true;
             this.updatescheduleButon.Click += new System.EventHandler(this.update_Click);
@@ -116,7 +116,7 @@
             this.jobsDropdownlist.Location = new System.Drawing.Point(79, 368);
             this.jobsDropdownlist.Name = "jobsDropdownlist";
             this.jobsDropdownlist.Size = new System.Drawing.Size(190, 21);
-            this.jobsDropdownlist.TabIndex = 6;
+            this.jobsDropdownlist.TabIndex = 7;
             // 
             // deleteButton
             // 
@@ -124,7 +124,7 @@
             this.deleteButton.Location = new System.Drawing.Point(378, 293);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(97, 95);
-            this.deleteButton.TabIndex = 8;
+            this.deleteButton.TabIndex = 9;
             this.deleteButton.Text = "Delete";
             this.deleteButton.UseVisualStyleBackColor = true;
             this.deleteButton.Click += new System.EventHandler(this.delete_Click);
@@ -134,6 +134,7 @@
             this.startHourDropdownlist.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.startHourDropdownlist.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.startHourDropdownlist.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.startHourDropdownlist.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.startHourDropdownlist.FormattingEnabled = true;
             this.startHourDropdownlist.Items.AddRange(new object[] {
             "0",
@@ -163,7 +164,7 @@
             this.startHourDropdownlist.Location = new System.Drawing.Point(79, 294);
             this.startHourDropdownlist.Name = "startHourDropdownlist";
             this.startHourDropdownlist.Size = new System.Drawing.Size(92, 21);
-            this.startHourDropdownlist.TabIndex = 2;
+            this.startHourDropdownlist.TabIndex = 3;
             this.startHourDropdownlist.SelectedIndexChanged += new System.EventHandler(this.startHour_SelectedIndexChanged);
             // 
             // startLabel
@@ -207,6 +208,7 @@
             this.startMinDropdownlist.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.startMinDropdownlist.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.startMinDropdownlist.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.startMinDropdownlist.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.startMinDropdownlist.FormattingEnabled = true;
             this.startMinDropdownlist.Items.AddRange(new object[] {
             "00",
@@ -216,7 +218,7 @@
             this.startMinDropdownlist.Location = new System.Drawing.Point(177, 294);
             this.startMinDropdownlist.Name = "startMinDropdownlist";
             this.startMinDropdownlist.Size = new System.Drawing.Size(92, 21);
-            this.startMinDropdownlist.TabIndex = 3;
+            this.startMinDropdownlist.TabIndex = 4;
             this.startMinDropdownlist.SelectedIndexChanged += new System.EventHandler(this.startMin_SelectedIndexChanged);
             // 
             // endHourDropdownlist
@@ -224,6 +226,7 @@
             this.endHourDropdownlist.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.endHourDropdownlist.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.endHourDropdownlist.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.endHourDropdownlist.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.endHourDropdownlist.FormattingEnabled = true;
             this.endHourDropdownlist.Items.AddRange(new object[] {
             "0",
@@ -253,7 +256,7 @@
             this.endHourDropdownlist.Location = new System.Drawing.Point(79, 321);
             this.endHourDropdownlist.Name = "endHourDropdownlist";
             this.endHourDropdownlist.Size = new System.Drawing.Size(92, 21);
-            this.endHourDropdownlist.TabIndex = 4;
+            this.endHourDropdownlist.TabIndex = 5;
             this.endHourDropdownlist.SelectedIndexChanged += new System.EventHandler(this.endHour_SelectedIndexChanged);
             // 
             // endMinDropdownlist
@@ -261,6 +264,7 @@
             this.endMinDropdownlist.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.endMinDropdownlist.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.endMinDropdownlist.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.endMinDropdownlist.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.endMinDropdownlist.FormattingEnabled = true;
             this.endMinDropdownlist.Items.AddRange(new object[] {
             "00",
@@ -270,7 +274,7 @@
             this.endMinDropdownlist.Location = new System.Drawing.Point(177, 321);
             this.endMinDropdownlist.Name = "endMinDropdownlist";
             this.endMinDropdownlist.Size = new System.Drawing.Size(92, 21);
-            this.endMinDropdownlist.TabIndex = 5;
+            this.endMinDropdownlist.TabIndex = 6;
             this.endMinDropdownlist.SelectedIndexChanged += new System.EventHandler(this.endMin_SelectedIndexChanged);
             // 
             // lengthLabel

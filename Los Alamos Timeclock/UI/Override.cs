@@ -31,7 +31,7 @@ namespace Los_Alamos_Timeclock
                 try
                 {
                     Main.myConnection.Open();
-                    Main.maininstance.sqlreader("SELECT a.ID, b.ID AS Admin, c.ID AS Manager " +
+                    Main.maininstance.sqlReader("SELECT a.ID, b.ID AS Admin, c.ID AS Manager " +
                                                     "FROM Users a " +
                                                     "LEFT JOIN Admin b " +
                                                     "ON a.ID=b.ID " +
@@ -46,7 +46,7 @@ namespace Los_Alamos_Timeclock
                         {
                             Main.reader.Close();
                             Main.myConnection.Close();
-                            Main.maininstance.sqlcommand("INSERT INTO `Hours Worked` (`ID`, `Date`, `Start`, `JID`,`Status`) VALUES ('" + Main.id + "', '" + DateTime.Today.ToString("yyyy-MM-dd") + "' , '" + Main.maininstance.roundtime(DateTime.Now).ToString("HH:mm:ss") + "', '" + jobsBox.Text + "', 'IN')");
+                            Main.maininstance.sqlCommand("INSERT INTO `Hours Worked` (`ID`, `Date`, `Start`, `JID`,`Status`) VALUES ('" + Main.id + "', '" + DateTime.Today.ToString("yyyy-MM-dd") + "' , '" + Main.maininstance.roundtime(DateTime.Now).ToString("HH:mm:ss") + "', '" + jobsBox.Text + "', 'IN')");
                             Main.maininstance.panel1.Controls.Clear();
                             Main.maininstance.panel1.Controls.Add(new Clockinout());
                             Main.maininstance.panel1.Controls[0].Dock = DockStyle.Fill;

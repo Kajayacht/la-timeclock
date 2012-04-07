@@ -17,6 +17,7 @@ namespace Los_Alamos_Timeclock.Manager
             InitializeComponent();
             employeeDropdownlist.DisplayMember = "getname";
             employeeDropdownlist.ValueMember = "gid";
+
             employeeDropdownlist.DataSource = Main.employeeList;
         }
 
@@ -31,10 +32,9 @@ namespace Los_Alamos_Timeclock.Manager
             try
             {
                 Main.myConnection.Open();
-                Main.maininstance.sqlreader("SELECT Phone FROM Employee WHERE ID='"+id+"'");
+                Main.maininstance.sqlReader("SELECT Phone FROM Employee WHERE ID='"+id+"'");
 
                 phoneNumber.Text = "Phone: " + String.Format("{0:(###) ###-####}", int.Parse(Main.reader["Phone"].ToString()));
-
             }
             catch (Exception e)
             {

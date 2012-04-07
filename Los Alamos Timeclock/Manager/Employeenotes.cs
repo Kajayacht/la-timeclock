@@ -63,14 +63,21 @@ namespace Los_Alamos_Timeclock.Manager
 
         private void addnoteButton_Click(object sender, EventArgs e)
         {
-            if (noteTextbox.Text == "")
+            if (Main.employeeList.Count == 0)
             {
-                MessageBox.Show("Note Cannot be empty");
+                MessageBox.Show("No Employee Selected");
             }
             else
             {
-                Main.maininstance.sqlcommand("INSERT INTO EmployeeNotes VALUES('" + id + "','" + Main.eName + "','" + DateTime.Today.ToString("yyyy-MM-dd") + "','" + noteTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "')");
-                fillNotesDatagrid();
+                if (noteTextbox.Text == "")
+                {
+                    MessageBox.Show("Note Cannot be empty");
+                }
+                else
+                {
+                    Main.maininstance.sqlCommand("INSERT INTO EmployeeNotes VALUES('" + id + "','" + Main.eName + "','" + DateTime.Today.ToString("yyyy-MM-dd") + "','" + noteTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "')");
+                    fillNotesDatagrid();
+                }
             }
         }
     }

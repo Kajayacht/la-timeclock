@@ -26,7 +26,10 @@ namespace Los_Alamos_Timeclock.Manager
             employeeDropdownlist.DisplayMember = "getname";
             employeeDropdownlist.ValueMember = "gid";
             employeeDropdownlist.DataSource = Main.employeeList;
-            id = employeeDropdownlist.SelectedValue.ToString();
+            if (Main.employeeList.Count > 0)
+            {
+                id = employeeDropdownlist.SelectedValue.ToString();
+            }
         }
 
 
@@ -37,122 +40,129 @@ namespace Los_Alamos_Timeclock.Manager
 
         private void update_Click(object sender, EventArgs e)
         {
-            if (validate())
+            if (Main.employeeList.Count == 0)
             {
-                Main.myConnection.Open();
-                Main.maininstance.sqlreader("SELECT * FROM `Hours Worked` WHERE ID='" + id + "' AND Date='" + date + "'");
-                Boolean working = Main.reader.HasRows;
-                Main.myConnection.Close();
-                String startTime = "'" + startTextbox.Text + "'", b1_Out, b1_In, b2_Out, b2_In, l_Out, l_In, endTime;
+                MessageBox.Show("No Employee Selected");
+            }
+            else
+            {
+                if (validate())
+                {
+                    Main.myConnection.Open();
+                    Main.maininstance.sqlReader("SELECT * FROM `Hours Worked` WHERE ID='" + id + "' AND Date='" + date + "'");
+                    Boolean working = Main.reader.HasRows;
+                    Main.myConnection.Close();
+                    String startTime = "'" + startTextbox.Text + "'", b1_Out, b1_In, b2_Out, b2_In, l_Out, l_In, endTime;
 
-                DateTime a;
-                if (!DateTime.TryParse(b1outTextbox.Text, out a))
-                {
-                    b1_Out = "NULL";
-                }
-                else
-                {
-                    b1_Out = "'" + b1outTextbox.Text + "'";
-                }
-                if (!DateTime.TryParse(b1inTextbox.Text, out a))
-                {
-                    b1_In = "NULL";
-                }
-                else
-                {
-                    b1_In = "'" + b1inTextbox.Text + "'";
-                }
-
-                if (!DateTime.TryParse(b2outTextbox.Text, out a))
-                {
-                    b2_Out = "NULL";
-                }
-                else
-                {
-                    b2_Out = "'" + b2outTextbox.Text + "'";
-                }
-                if (!DateTime.TryParse(b2inTextbox.Text, out a))
-                {
-                    b2_In = "NULL";
-                }
-                else
-                {
-                    b2_In = "'" + b2inTextbox.Text + "'";
-                }
-
-                if (!DateTime.TryParse(loutTextbox.Text, out a))
-                {
-                    l_Out = "NULL";
-                }
-                else
-                {
-                    l_Out = "'" + loutTextbox.Text + "'";
-                }
-                if (!DateTime.TryParse(linTextbox.Text, out a))
-                {
-                    l_In = "NULL";
-                }
-                else
-                {
-                    l_In = "'" + linTextbox.Text + "'";
-                }
-
-                if (!DateTime.TryParse(endTextbox.Text, out a))
-                {
-                    endTime = "NULL";
-                }
-                else
-                {
-                    endTime = "'" + endTextbox.Text + "'";
-                }
-
-                string state = "'OUT'";
-
-                if (endTime == "NULL")
-                {
-                    if ((b1_Out != "NULL" && b1_In == "NULL") || (b2_Out != "NULL" && b2_In == "NULL"))
+                    DateTime a;
+                    if (!DateTime.TryParse(b1outTextbox.Text, out a))
                     {
-                        state = "'BREAK'";
-                    }
-                    else if (l_Out != "NULL" && l_In == "NULL")
-                    {
-                        state = "'LUNCH'";
+                        b1_Out = "NULL";
                     }
                     else
                     {
-                        state = "'IN'";
+                        b1_Out = "'" + b1outTextbox.Text + "'";
+                    }
+                    if (!DateTime.TryParse(b1inTextbox.Text, out a))
+                    {
+                        b1_In = "NULL";
+                    }
+                    else
+                    {
+                        b1_In = "'" + b1inTextbox.Text + "'";
                     }
 
-                }
+                    if (!DateTime.TryParse(b2outTextbox.Text, out a))
+                    {
+                        b2_Out = "NULL";
+                    }
+                    else
+                    {
+                        b2_Out = "'" + b2outTextbox.Text + "'";
+                    }
+                    if (!DateTime.TryParse(b2inTextbox.Text, out a))
+                    {
+                        b2_In = "NULL";
+                    }
+                    else
+                    {
+                        b2_In = "'" + b2inTextbox.Text + "'";
+                    }
+
+                    if (!DateTime.TryParse(loutTextbox.Text, out a))
+                    {
+                        l_Out = "NULL";
+                    }
+                    else
+                    {
+                        l_Out = "'" + loutTextbox.Text + "'";
+                    }
+                    if (!DateTime.TryParse(linTextbox.Text, out a))
+                    {
+                        l_In = "NULL";
+                    }
+                    else
+                    {
+                        l_In = "'" + linTextbox.Text + "'";
+                    }
+
+                    if (!DateTime.TryParse(endTextbox.Text, out a))
+                    {
+                        endTime = "NULL";
+                    }
+                    else
+                    {
+                        endTime = "'" + endTextbox.Text + "'";
+                    }
+
+                    string state = "'OUT'";
+
+                    if (endTime == "NULL")
+                    {
+                        if ((b1_Out != "NULL" && b1_In == "NULL") || (b2_Out != "NULL" && b2_In == "NULL"))
+                        {
+                            state = "'BREAK'";
+                        }
+                        else if (l_Out != "NULL" && l_In == "NULL")
+                        {
+                            state = "'LUNCH'";
+                        }
+                        else
+                        {
+                            state = "'IN'";
+                        }
+
+                    }
 
 
-                if (working)
-                {
-                    Main.maininstance.sqlcommand("UPDATE `Hours Worked` "+
-                                                "SET "+
-                                                "Start=" + startTime +", "+
-                                                "End=" + endTime + ", "+
-                                                "B1out=" + b1_Out + ", " +
-                                                "B1in=" + b1_In + ", " +
-                                                "B2out=" + b2_Out + ", " +
-                                                "B2in=" + b2_In + ", " +
-                                                "Lout=" + l_Out + ", " +
-                                                "Lin=" + l_In + ", " +
-                                                "JID='" + jobsDropdownlist.Text + "', "+
-                                                "Status=" + state +" "+
-                                                "WHERE Date='" + date + "' AND ID='" + id + "'");
-                    MessageBox.Show("Update Successful");
-                    Log.writeLog(Main.eName + " changed the Hours Worked for " + employeeDropdownlist.Text + "\n Date= " + date + "\n Job= " + jobsDropdownlist.Text + "\n Start= " + startTextbox.Text + "\n End= " + endTextbox.Text + "\n Break 1= " + b1outTextbox.Text + "-" + b1inTextbox.Text + "\n Break 2= " + b2outTextbox.Text + "-" + b2inTextbox.Text + "\n Lunch= " + loutTextbox.Text + "-" + linTextbox.Text);
-                }
-                else
-                {
-                    Main.maininstance.sqlcommand("INSERT INTO `Hours Worked`(`ID` ,`Date` ,`Start` ,`End` ,`JID` ,`B1out` ,`B1in` ,`B2out` ,`B2in` ,`Lout` ,`Lin` ,`Status`)" +
-                                                "VALUES('"+id+"','"+date+"',"+startTime+","+endTime+",'"+jobsDropdownlist.Text+"',"+b1_Out+","+b1_In+","+b2_Out+","+b2_In+","+l_Out+","+l_In+","+state+")");
-                    MessageBox.Show("Insert Successful");
-                    Log.writeLog(Main.eName + " inserted into the Hours Worked for " + employeeDropdownlist.Text + "\n Date= " + date + "\n Job= " + jobsDropdownlist.Text + "\n Start= " + startTextbox.Text + "\n End= " + endTextbox.Text + "\n Break 1= " + b1outTextbox.Text + "-" + b1inTextbox.Text + "\n Break 2= " + b2outTextbox.Text + "-" + b2inTextbox.Text + "\n Lunch= " + loutTextbox.Text + "-" + linTextbox.Text);
-                }
+                    if (working)
+                    {
+                        Main.maininstance.sqlCommand("UPDATE `Hours Worked` " +
+                                                    "SET " +
+                                                    "Start=" + startTime + ", " +
+                                                    "End=" + endTime + ", " +
+                                                    "B1out=" + b1_Out + ", " +
+                                                    "B1in=" + b1_In + ", " +
+                                                    "B2out=" + b2_Out + ", " +
+                                                    "B2in=" + b2_In + ", " +
+                                                    "Lout=" + l_Out + ", " +
+                                                    "Lin=" + l_In + ", " +
+                                                    "JID='" + jobsDropdownlist.Text + "', " +
+                                                    "Status=" + state + " " +
+                                                    "WHERE Date='" + date + "' AND ID='" + id + "'");
+                        MessageBox.Show("Update Successful");
+                        Log.writeLog(Main.eName + " changed the Hours Worked for " + employeeDropdownlist.Text + "\n Date= " + date + "\n Job= " + jobsDropdownlist.Text + "\n Start= " + startTextbox.Text + "\n End= " + endTextbox.Text + "\n Break 1= " + b1outTextbox.Text + "-" + b1inTextbox.Text + "\n Break 2= " + b2outTextbox.Text + "-" + b2inTextbox.Text + "\n Lunch= " + loutTextbox.Text + "-" + linTextbox.Text);
+                    }
+                    else
+                    {
+                        Main.maininstance.sqlCommand("INSERT INTO `Hours Worked`(`ID` ,`Date` ,`Start` ,`End` ,`JID` ,`B1out` ,`B1in` ,`B2out` ,`B2in` ,`Lout` ,`Lin` ,`Status`)" +
+                                                    "VALUES('" + id + "','" + date + "'," + startTime + "," + endTime + ",'" + jobsDropdownlist.Text + "'," + b1_Out + "," + b1_In + "," + b2_Out + "," + b2_In + "," + l_Out + "," + l_In + "," + state + ")");
+                        MessageBox.Show("Insert Successful");
+                        Log.writeLog(Main.eName + " inserted into the Hours Worked for " + employeeDropdownlist.Text + "\n Date= " + date + "\n Job= " + jobsDropdownlist.Text + "\n Start= " + startTextbox.Text + "\n End= " + endTextbox.Text + "\n Break 1= " + b1outTextbox.Text + "-" + b1inTextbox.Text + "\n Break 2= " + b2outTextbox.Text + "-" + b2inTextbox.Text + "\n Lunch= " + loutTextbox.Text + "-" + linTextbox.Text);
+                    }
 
-                populateDatagrid();
+                    populateDatagrid();
+                }
             }
         }
 
@@ -172,7 +182,7 @@ namespace Los_Alamos_Timeclock.Manager
         public void employeeUpdate()
         {
             Main.myConnection.Open();
-            Main.maininstance.sqlreader("Select * from `Hours Worked` where ID='" + id + "' AND Date='" + date + "'");
+            Main.maininstance.sqlReader("Select * from `Hours Worked` where ID='" + id + "' AND Date='" + date + "'");
             if (Main.reader.HasRows)
             {
                 startTextbox.Text = Main.reader["Start"].ToString();

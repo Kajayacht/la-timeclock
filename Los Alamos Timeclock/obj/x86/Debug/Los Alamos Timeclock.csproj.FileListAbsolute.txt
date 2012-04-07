@@ -78,3 +78,4 @@ C:\Users\Kajayacht\Desktop\chrono\la-timeclock\Los Alamos Timeclock\obj\x86\Debu
 C:\Users\Kajayacht\Desktop\chrono\la-timeclock\Los Alamos Timeclock\obj\x86\Debug\Los_Alamos_Timeclock.Manager.Phonebook.resources
 C:\Users\Kajayacht\Desktop\chrono\la-timeclock\Los Alamos Timeclock\obj\x86\Debug\Los_Alamos_Timeclock.Manager.Status.resources
 C:\Users\Kajayacht\Desktop\chrono\la-timeclock\Los Alamos Timeclock\obj\x86\Debug\Los_Alamos_Timeclock.Override.resources
+C:\Users\Nate\Dropbox\Visual Studio Projects\Projects\Los Alamos Timeclock\Los Alamos Timeclock\obj\x86\Debug\Los_Alamos_Timeclock.UI.TerminationConsole.resources

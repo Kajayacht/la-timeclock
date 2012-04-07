@@ -82,7 +82,8 @@ namespace Los_Alamos_Timeclock
                 //start SQL connection and query
                 Main.myConnection.Open();
                 String commandString;
-
+                
+                //command changes based on what the current settings are
                 if (Properties.Settings.Default.showCurrentEmployees && Properties.Settings.Default.showPreviousEmployees)
                 {
                     commandString = "Select ID, LName,FName From Employee ORDER BY LName";
@@ -173,7 +174,7 @@ namespace Los_Alamos_Timeclock
          * 
          * @author Nate Rush
          * @author Andrew DePersio
-         * @lastModified 3/22/12
+         * @lastModified 4/6/12
          * @return ArrayList joblist    List of jobs available
          *
          */
@@ -343,7 +344,7 @@ namespace Los_Alamos_Timeclock
          * 
          * @param c     The command to be executed
          */
-        public void sqlcommand(String c)
+        public void sqlCommand(String c)
         {
             try
             //Connect and execute query
@@ -368,7 +369,7 @@ namespace Los_Alamos_Timeclock
          * 
          * @param c     The command to be executed
          */
-        public void sqlreader(String c)
+        public void sqlReader(String c)
         {
             c = c + " LIMIT 0,1000";
             MySqlCommand command = new MySqlCommand(c, myConnection);

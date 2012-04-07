@@ -41,7 +41,7 @@
             // 
             // okButton
             // 
-            this.okButton.Location = new System.Drawing.Point(47, 102);
+            this.okButton.Location = new System.Drawing.Point(71, 102);
             this.okButton.Name = "okButton";
             this.okButton.Size = new System.Drawing.Size(75, 23);
             this.okButton.TabIndex = 0;
@@ -51,7 +51,7 @@
             // 
             // cancelButton
             // 
-            this.cancelButton.Location = new System.Drawing.Point(128, 102);
+            this.cancelButton.Location = new System.Drawing.Point(152, 102);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
             this.cancelButton.TabIndex = 1;

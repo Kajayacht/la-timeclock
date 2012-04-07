@@ -128,10 +128,10 @@
     <Compile Include="Manager\Status.Designer.cs">
       <DependentUpon>Status.cs</DependentUpon>
     </Compile>
-    <Compile Include="Override.cs">
+    <Compile Include="UI\Override.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Override.Designer.cs">
+    <Compile Include="UI\Override.Designer.cs">
       <DependentUpon>Override.cs</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
@@ -173,6 +173,12 @@
     <Compile Include="Manager\Admin\Settings.Designer.cs">
       <DependentUpon>Settings.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\TerminationConsole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TerminationConsole.Designer.cs">
+      <DependentUpon>TerminationConsole.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Clockinout.resx">
       <DependentUpon>Clockinout.cs</DependentUpon>
     </EmbeddedResource>
@@ -209,7 +215,7 @@
     <EmbeddedResource Include="Manager\Status.resx">
       <DependentUpon>Status.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Override.resx">
+    <EmbeddedResource Include="UI\Override.resx">
       <DependentUpon>Override.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Clock.resx">
@@ -239,6 +245,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Manager\Admin\Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TerminationConsole.resx">
+      <DependentUpon>TerminationConsole.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="Properties\Settings.settings">

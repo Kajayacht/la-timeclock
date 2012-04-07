@@ -33,7 +33,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                 try
                 {
                     Main.myConnection.Open();
-                    Main.maininstance.sqlreader("SELECT * FROM Users WHERE User='" + userTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "'");
+                    Main.maininstance.sqlReader("SELECT * FROM Users WHERE User='" + userTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "'");
                     hasrows = Main.reader.HasRows;
                     Main.reader.Close();
 
@@ -44,13 +44,13 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                     }
                     else
                     {
-                        Main.maininstance.sqlreader("SELECT MAX(ID) FROM Employee");
+                        Main.maininstance.sqlReader("SELECT MAX(ID) FROM Employee");
                         id = Convert.ToInt32(Main.reader["MAX(ID)"]) + 1;
                         Main.reader.Close();
                         Main.myConnection.Close();
 
-                        Main.maininstance.sqlcommand("INSERT INTO Employee (`ID`, `LName`, `MName`, `FName`, `SSN`, `Phone`, `Email`, `Address1`, `Address2`,`City`, `State`, `Zip`,`SDate`) VALUES ('" + id + "', '" + lNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "', '" + mNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "', '" + fNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "', '" + ssnTextbox.Text + "', '" + phoneTextbox.Text + "', '" + emailTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "', '" + aLine1Textbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "', '" + aLine2Textbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "','" + aCityTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "', '" + aStateDropdownlist.Text + "', '" + aZipTextbox.Text + "', '" + DateTime.Today.ToString("yyyy-MM-dd") + "')");
-                        Main.maininstance.sqlcommand("INSERT INTO Users (`ID`, `User`, `Password`) VALUES ('" + id + "', '" + userTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "', PASSWORD('" + pass1Textbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "'))");
+                        Main.maininstance.sqlCommand("INSERT INTO Employee (`ID`, `LName`, `MName`, `FName`, `SSN`, `Phone`, `Email`, `Address1`, `Address2`,`City`, `State`, `Zip`,`SDate`) VALUES ('" + id + "', '" + lNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "', '" + mNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "', '" + fNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "', '" + ssnTextbox.Text + "', '" + phoneTextbox.Text + "', '" + emailTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "', '" + aLine1Textbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "', '" + aLine2Textbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "','" + aCityTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "', '" + aStateDropdownlist.Text + "', '" + aZipTextbox.Text + "', '" + DateTime.Today.ToString("yyyy-MM-dd") + "')");
+                        Main.maininstance.sqlCommand("INSERT INTO Users (`ID`, `User`, `Password`) VALUES ('" + id + "', '" + userTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "', PASSWORD('" + pass1Textbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "'))");
                         Log.writeLog(Main.eName + " added employee: \n" + "LName= " + lNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + " MName= " + mNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + " FName= " + fNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "\n SSN= " + ssnTextbox.Text + "\n Phone= " + phoneTextbox.Text + "\n Email= " + emailTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "\n Address1= " + aLine1Textbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "\n Address2= " + aLine2Textbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "\n City= " + aCityTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "\n State= " + aStateDropdownlist.Text + "\n Zip= " + aZipTextbox.Text + "\n ID= " + id + " User= " + userTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'"));
 
                         Main.employeeList = Main.maininstance.getEmployees();
@@ -82,7 +82,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
         public Boolean validate()
         {
             Main.myConnection.Open();
-            Main.maininstance.sqlreader("SELECT * FROM Users WHERE LOWER(User)=LOWER('" + userTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "')");
+            Main.maininstance.sqlReader("SELECT * FROM Users WHERE LOWER(User)=LOWER('" + userTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "')");
             Boolean used = Main.reader.HasRows;
             Main.myConnection.Close();
 

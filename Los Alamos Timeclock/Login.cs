@@ -22,7 +22,7 @@ namespace Los_Alamos_Timeclock
             try
             {
                 Main.myConnection.Open();
-                Main.maininstance.sqlreader("SELECT a.ID,b.FName, b.LName, c.ID AS Admin, d.ID AS Manager " +
+                Main.maininstance.sqlReader("SELECT a.ID,b.FName, b.LName, c.ID AS Admin, d.ID AS Manager " +
                                             "FROM Users a " +
                                             "Join Employee b " +
                                             "ON a.ID=b.ID " +

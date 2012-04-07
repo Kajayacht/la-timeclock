@@ -34,7 +34,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
         {
             Decimal a;
             Main.myConnection.Open();
-            Main.maininstance.sqlreader("SELECT * FROM Jobs WHERE JID='"+jobnameTextbox.Text+"'");
+            Main.maininstance.sqlReader("SELECT * FROM Jobs WHERE JID='"+jobnameTextbox.Text+"'");
             Boolean hasrows = Main.reader.HasRows;
             Main.reader.Close();
             Main.myConnection.Close();
@@ -65,7 +65,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
         {
             if (validate())
             {
-                Main.maininstance.sqlcommand("UPDATE Jobs SET JID='" + jobnameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "',JSPay='" + Decimal.Parse(startingpayTextbox.Text) + "',TippedJob='" + tippedBox.Checked + "' WHERE JID='" + jobsBox.Text + "'");
+                Main.maininstance.sqlCommand("UPDATE Jobs SET JID='" + jobnameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "',JSPay='" + Decimal.Parse(startingpayTextbox.Text) + "',TippedJob='" + tippedBox.Checked + "' WHERE JID='" + jobsBox.Text + "'");
                 MessageBox.Show("Update successful");
                 Log.writeLog(Main.eName + " updated job: " + "\n Job= " + jobnameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "\n Starting Pay= " + Decimal.Parse(startingpayTextbox.Text) + "\n Tipped Job= " + tippedBox.Checked);
                 refreshJobs();
@@ -80,7 +80,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                 if (validate())
                 {
                     MessageBox.Show("Insert successful");
-                    Main.maininstance.sqlcommand("INSERT INTO Jobs Values('" + jobnameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "','" + Decimal.Parse(startingpayTextbox.Text) + "','" + tippedBox.Checked + "')");
+                    Main.maininstance.sqlCommand("INSERT INTO Jobs Values('" + jobnameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "','" + Decimal.Parse(startingpayTextbox.Text) + "','" + tippedBox.Checked + "')");
                     Log.writeLog(Main.eName + " added job: " + "\n Job= " + jobnameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "\n Starting Pay= " + Decimal.Parse(startingpayTextbox.Text) + "\n Tipped Job= " + tippedBox.Checked);
                     refreshJobs();
                 }
@@ -98,7 +98,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
 
                 if (result == DialogResult.Yes)
                 {
-                    Main.maininstance.sqlcommand("DELETE FROM Jobs WHERE JID='" + jobsBox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "'");
+                    Main.maininstance.sqlCommand("DELETE FROM Jobs WHERE JID='" + jobsBox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "'");
                     Log.writeLog(Main.eName + " deleted job: " + "\n Job= " + jobnameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'"));
                     refreshJobs();
                 }

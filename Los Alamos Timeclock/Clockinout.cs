@@ -52,7 +52,7 @@ namespace Los_Alamos_Timeclock
                 welcome.Text = "Welcome " + Main.eName + "!";
 
                 Main.myConnection.Open();
-                Main.maininstance.sqlreader("Select * From `Hours Worked` WHERE ID='" + Main.id + "' AND Status!='OUT'");
+                Main.maininstance.sqlReader("Select * From `Hours Worked` WHERE ID='" + Main.id + "' AND Status!='OUT'");
                 clockedIn = Main.reader.HasRows;
                 if (clockedIn)
                 {
@@ -85,7 +85,7 @@ namespace Los_Alamos_Timeclock
                     date = DateTime.Today.ToString("yyyy-MM-dd");
                 }
                 Main.reader.Close();
-                Main.maininstance.sqlreader("Select Employee.FName, Schedule.Date, Schedule.Start, Schedule.End, Schedule.JID from Employee,Schedule Where Employee.ID='" + Main.id + "' AND Employee.ID=Schedule.ID AND Schedule.Date='" + date + "'");
+                Main.maininstance.sqlReader("Select Employee.FName, Schedule.Date, Schedule.Start, Schedule.End, Schedule.JID from Employee,Schedule Where Employee.ID='" + Main.id + "' AND Employee.ID=Schedule.ID AND Schedule.Date='" + date + "'");
 
                 scheduled = Main.reader.HasRows;
 
@@ -173,7 +173,7 @@ namespace Los_Alamos_Timeclock
             {
                 if (startTime == Main.maininstance.roundtime(DateTime.Now) && status != "IN" && status != "BREAK" && status != "LUNCH")
                 {
-                    Main.maininstance.sqlcommand("INSERT INTO `Hours Worked` (`ID`, `Date`, `Start`, `JID`,`Status`) VALUES ('" + Main.id + "', '" + DateTime.Today.ToString("yyyy-MM-dd") + "' , '" + DateTime.Now.ToString("HH:mm:ss") + "', '" + job + "', 'IN')");
+                    Main.maininstance.sqlCommand("INSERT INTO `Hours Worked` (`ID`, `Date`, `Start`, `JID`,`Status`) VALUES ('" + Main.id + "', '" + DateTime.Today.ToString("yyyy-MM-dd") + "' , '" + DateTime.Now.ToString("HH:mm:ss") + "', '" + job + "', 'IN')");
                     status = "IN";
                     supdate();
                 }
@@ -194,14 +194,14 @@ namespace Los_Alamos_Timeclock
 
             if (status == "BREAK" && n > 0)
             {
-                Main.maininstance.sqlcommand("UPDATE `Hours Worked` SET B" + n + "in='" + DateTime.Now.ToString("HH:mm:ss") + "', Status='IN' WHERE ID='" + Main.id + "' AND Date='" + date + "'");
+                Main.maininstance.sqlCommand("UPDATE `Hours Worked` SET B" + n + "in='" + DateTime.Now.ToString("HH:mm:ss") + "', Status='IN' WHERE ID='" + Main.id + "' AND Date='" + date + "'");
                 status = "IN";
                 supdate();
                 n = n + 1;
             }
             else if (status == "IN" && n > 0)
             {
-                Main.maininstance.sqlcommand("UPDATE `Hours Worked` SET B" + n + "out='" + DateTime.Now.ToString("HH:mm:ss") + "', Status='BREAK' WHERE ID='" + Main.id + "' AND Date='" + date + "'");
+                Main.maininstance.sqlCommand("UPDATE `Hours Worked` SET B" + n + "out='" + DateTime.Now.ToString("HH:mm:ss") + "', Status='BREAK' WHERE ID='" + Main.id + "' AND Date='" + date + "'");
                 status = "BREAK";
                 supdate();
             }
@@ -218,13 +218,13 @@ namespace Los_Alamos_Timeclock
         {
             if (status == "LUNCH")
             {
-                Main.maininstance.sqlcommand("UPDATE `Hours Worked` SET Lin='" + DateTime.Now.ToString("HH:mm:ss") + "', Status='IN' WHERE ID='" + Main.id + "' AND Date='" + date + "'");
+                Main.maininstance.sqlCommand("UPDATE `Hours Worked` SET Lin='" + DateTime.Now.ToString("HH:mm:ss") + "', Status='IN' WHERE ID='" + Main.id + "' AND Date='" + date + "'");
                 status = "IN";
                 supdate();
             }
             else if (status == "IN" && lunch)
             {
-                Main.maininstance.sqlcommand("UPDATE `Hours Worked` SET Lout='" + DateTime.Now.ToString("HH:mm:ss") + "', Status='LUNCH' WHERE ID='" + Main.id + "' AND Date='" + date + "'");
+                Main.maininstance.sqlCommand("UPDATE `Hours Worked` SET Lout='" + DateTime.Now.ToString("HH:mm:ss") + "', Status='LUNCH' WHERE ID='" + Main.id + "' AND Date='" + date + "'");
                 status = "LUNCH";
                 supdate();
                 lunch = false;
@@ -240,7 +240,7 @@ namespace Los_Alamos_Timeclock
             {   
                 //find out whther the job is tipped or not                
                 Main.myConnection.Open();
-                Main.maininstance.sqlreader("Select TippedJob From Jobs WHERE JID='" + job+ "'");
+                Main.maininstance.sqlReader("Select TippedJob From Jobs WHERE JID='" + job+ "'");
                 Boolean tipped = Boolean.Parse(Main.reader["TippedJob"].ToString());
                 Main.myConnection.Close();
                 //if tipped job
@@ -252,7 +252,7 @@ namespace Los_Alamos_Timeclock
                     if (double.TryParse(tips, out temp) == true)
                     {
                         //run update statement with the tips                
-                        Main.maininstance.sqlcommand("UPDATE `Hours Worked` SET End='" + DateTime.Now.ToString("HH:mm:ss") + "', Tips='" + tips + "', Status='OUT' WHERE ID='" + Main.id + "' AND Date='" + date + "'");
+                        Main.maininstance.sqlCommand("UPDATE `Hours Worked` SET End='" + DateTime.Now.ToString("HH:mm:ss") + "', Tips='" + tips + "', Status='OUT' WHERE ID='" + Main.id + "' AND Date='" + date + "'");
                         status = "OUT";
                         clockedIn = false;
                         supdate();
@@ -266,7 +266,7 @@ namespace Los_Alamos_Timeclock
                 //else do this one
                 else if (tipped == false)
                 {
-                    Main.maininstance.sqlcommand("UPDATE `Hours Worked` SET End='" + DateTime.Now.ToString("HH:mm:ss") + "', Status='OUT' WHERE ID='" + Main.id + "' AND Date='" + date + "'");
+                    Main.maininstance.sqlCommand("UPDATE `Hours Worked` SET End='" + DateTime.Now.ToString("HH:mm:ss") + "', Status='OUT' WHERE ID='" + Main.id + "' AND Date='" + date + "'");
                     status = "OUT";
                     clockedIn = false;
                     supdate();
