@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 06, 2012 at 07:05 PM
+-- Generation Time: Apr 07, 2012 at 02:12 AM
 -- Server version: 5.0.91
 -- PHP Version: 5.2.6
 
@@ -18,6 +18,7 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 --
 -- Database: `teamchro_LATSQL`
 --
+DROP DATABASE `teamchro_LATSQL`;
 CREATE DATABASE `teamchro_LATSQL` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
 USE `teamchro_LATSQL`;
 
@@ -90,7 +91,7 @@ CREATE TABLE IF NOT EXISTS `Employee` (
   `Zip` int(11) default NULL,
   `SDate` date NOT NULL,
   `EDate` date default NULL,
-  `EReason` text,
+  `EReason` varchar(10) default NULL,
   PRIMARY KEY  (`ID`),
   UNIQUE KEY `ID_UNIQUE` (`ID`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
@@ -109,7 +110,7 @@ INSERT INTO `Employee` (`ID`, `LName`, `MName`, `FName`, `SSN`, `Phone`, `Email`
 (12, 'daf', 'dfa', 'dsaf', 651632132, 2147483647, 'test@yahoo.com', 'asfkaj', 'dsf', 'dalskfja', 'Idaho', 52154, '2012-03-21', NULL, ''),
 (13, 'lkjlk', 'lkj', 'privtest', 546542162, 1854162165, 'a@msn.com', '6516251 sadfa', '', 'sdfa', 'Alabama', 51854, '2012-03-21', NULL, ''),
 (14, 'te''s\\', 'te''s\\', 'te''s\\', 394230938, 2147483647, 'te''s\\', 'te''s\\', 'te''s\\', 'te''s\\', 'Delaware', 12345, '2012-04-05', NULL, ''),
-(15, 'Me', 'M', 'Fire', 421845216, 2147483647, '65154', '51651', '551651', '216551', 'Delaware', 51621, '2012-04-01', '2012-04-07', NULL);
+(15, 'Me', 'M', 'Fire', 421845216, 2147483647, '65154', '51651', '551651', '216551', 'Delaware', 51621, '2012-04-01', '2012-04-07', 'Terminated');
 
 -- --------------------------------------------------------
 
@@ -121,7 +122,7 @@ DROP TABLE IF EXISTS `EmployeeNotes`;
 CREATE TABLE IF NOT EXISTS `EmployeeNotes` (
   `ID` int(11) NOT NULL,
   `Manager` varchar(50) NOT NULL,
-  `Date` date NOT NULL,
+  `Date` datetime NOT NULL,
   `Note` text NOT NULL,
   KEY `NoteEID` (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -131,17 +132,31 @@ CREATE TABLE IF NOT EXISTS `EmployeeNotes` (
 --
 
 INSERT INTO `EmployeeNotes` (`ID`, `Manager`, `Date`, `Note`) VALUES
-(4, 'Jennifer Chavez', '2012-03-21', 'Employee Constantly asking me to "Take a Seat"'),
-(10, 'Jennifer Chavez', '2012-03-14', 'Keeps telling me he''s rich'),
-(10, 'Jennifer Chavez', '2012-03-22', 'Smoking Crack in the Freezer'),
-(11, 'Jennifer Chavez', '2012-03-22', 'All he says is Bob Dole'),
-(11, 'Jennifer Chavez', '2012-03-22', 'Bob Dole\nBob Dole\nBob Dole'),
-(12, 'Bob Dole', '2012-03-23', 'Has a dumb name'),
-(2, 'Jennifer Chavez', '2012-04-01', 'Mando, Man do'),
-(10, 'Jennifer Chavez', '2012-04-05', '''stringttest'),
-(10, 'Jennifer Chavez', '2012-04-05', 'stringttest2'),
-(10, 'Jennifer Chavez', '2012-04-05', 'note''s test\\ 2'),
-(10, 'Jennifer Chavez', '2012-04-05', 'te''s\\');
+(4, 'Jennifer Chavez', '2012-03-21 00:00:00', 'Employee Constantly asking me to "Take a Seat"'),
+(10, 'Jennifer Chavez', '2012-03-14 00:00:00', 'Keeps telling me he''s rich'),
+(10, 'Jennifer Chavez', '2012-03-22 00:00:00', 'Smoking Crack in the Freezer'),
+(11, 'Jennifer Chavez', '2012-03-22 00:00:00', 'All he says is Bob Dole'),
+(11, 'Jennifer Chavez', '2012-03-22 00:00:00', 'Bob Dole\nBob Dole\nBob Dole'),
+(12, 'Bob Dole', '2012-03-23 00:00:00', 'Has a dumb name'),
+(2, 'Jennifer Chavez', '2012-04-01 00:00:00', 'Mando, Man do'),
+(10, 'Jennifer Chavez', '2012-04-05 00:00:00', '''stringttest'),
+(10, 'Jennifer Chavez', '2012-04-05 00:00:00', 'stringttest2'),
+(10, 'Jennifer Chavez', '2012-04-05 00:00:00', 'note''s test\\ 2'),
+(10, 'Jennifer Chavez', '2012-04-05 00:00:00', 'te''s\\'),
+(10, 'Jennifer Chavez', '2012-04-06 00:00:00', 'newtest'),
+(15, 'Jennifer Chavez', '2012-04-07 00:00:00', 'QUIT: test\nLast Day: 4/7/2012\nPerformed by: Jennifer Chavez'),
+(15, 'Jennifer Chavez', '2012-04-07 00:00:00', 'QUIT: test\nLast Day: 4/7/2012\nPerformed by: Jennifer Chavez'),
+(15, 'Jennifer Chavez', '2012-04-07 00:00:00', 'TERMINATED: Termination Test\nLast Day: 4/7/2012\nPerformed by: Jennifer Chavez'),
+(15, 'Jennifer Chavez', '2012-04-07 00:00:00', 'QUIT: Another Test\nLast Day: 4/14/2012\nPerformed by: Jennifer Chavez'),
+(15, 'SYSTEM', '2012-04-07 00:00:00', 'QUIT: test\nLast Day: 4/7/2012\nPerformed by: Jennifer Chavez'),
+(15, 'Jennifer Chavez', '2012-04-07 00:00:00', 'Rehired'),
+(15, 'Jennifer Chavez', '2012-04-07 01:54:33', 'timetest'),
+(15, 'Jennifer Chavez', '2012-04-07 00:00:00', 'Rehired'),
+(15, 'Jennifer Chavez', '2012-04-07 00:00:00', 'Rehired'),
+(15, 'Jennifer Chavez', '2012-04-07 01:55:13', 'QUIT: test\nLast Day: 4/7/2012'),
+(15, 'Jennifer Chavez', '2012-04-07 01:57:49', 'Timestamp Test'),
+(15, 'Jennifer Chavez', '2012-04-07 01:58:07', 'Rehired'),
+(15, 'Jennifer Chavez', '2012-04-07 01:58:17', 'TERMINATED: timestamp test\nLast Day: 4/7/2012');
 
 -- --------------------------------------------------------
 
