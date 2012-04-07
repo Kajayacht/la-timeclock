@@ -36,7 +36,7 @@ namespace Los_Alamos_Timeclock.Manager
                 "JOIN Employee b "+
                 "ON a.ID=b.ID "+
                 "WHERE b.ID='" + id + "' "+
-                "ORDER BY a.Date";
+                "ORDER BY a.Date DESC";
 
             try
             {

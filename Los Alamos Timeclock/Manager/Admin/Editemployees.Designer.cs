@@ -80,6 +80,7 @@
             // 
             // employeeLabel
             // 
+            this.employeeLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.employeeLabel.AutoSize = true;
             this.employeeLabel.BackColor = System.Drawing.Color.Transparent;
             this.employeeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -92,6 +93,7 @@
             // 
             // employeeDropdownlist
             // 
+            this.employeeDropdownlist.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.employeeDropdownlist.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.employeeDropdownlist.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.employeeDropdownlist.FormattingEnabled = true;
@@ -104,6 +106,7 @@
             // 
             // pass1Textbox
             // 
+            this.pass1Textbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pass1Textbox.Location = new System.Drawing.Point(118, 1000);
             this.pass1Textbox.Name = "pass1Textbox";
             this.pass1Textbox.PasswordChar = '*';
@@ -112,6 +115,7 @@
             // 
             // userTextbox
             // 
+            this.userTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.userTextbox.Location = new System.Drawing.Point(118, 974);
             this.userTextbox.Name = "userTextbox";
             this.userTextbox.Size = new System.Drawing.Size(344, 20);
@@ -119,6 +123,7 @@
             // 
             // pass1Label
             // 
+            this.pass1Label.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pass1Label.AutoSize = true;
             this.pass1Label.BackColor = System.Drawing.Color.Transparent;
             this.pass1Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -132,6 +137,7 @@
             // 
             // userLabel
             // 
+            this.userLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.userLabel.AutoSize = true;
             this.userLabel.BackColor = System.Drawing.Color.Transparent;
             this.userLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -145,6 +151,7 @@
             // 
             // loginLabel
             // 
+            this.loginLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.loginLabel.AutoSize = true;
             this.loginLabel.BackColor = System.Drawing.Color.Transparent;
             this.loginLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -158,6 +165,7 @@
             // 
             // ssnLabel
             // 
+            this.ssnLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.ssnLabel.AutoSize = true;
             this.ssnLabel.BackColor = System.Drawing.Color.Transparent;
             this.ssnLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -171,6 +179,7 @@
             // 
             // aStateDropdownlist
             // 
+            this.aStateDropdownlist.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.aStateDropdownlist.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.aStateDropdownlist.FormattingEnabled = true;
             this.aStateDropdownlist.Items.AddRange(new object[] {
@@ -232,6 +241,7 @@
             // 
             // aCityTextbox
             // 
+            this.aCityTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.aCityTextbox.Location = new System.Drawing.Point(118, 533);
             this.aCityTextbox.Name = "aCityTextbox";
             this.aCityTextbox.Size = new System.Drawing.Size(344, 20);
@@ -239,6 +249,7 @@
             // 
             // aLine2Textbox
             // 
+            this.aLine2Textbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.aLine2Textbox.Location = new System.Drawing.Point(118, 507);
             this.aLine2Textbox.Name = "aLine2Textbox";
             this.aLine2Textbox.Size = new System.Drawing.Size(344, 20);
@@ -246,6 +257,7 @@
             // 
             // aLine1Textbox
             // 
+            this.aLine1Textbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.aLine1Textbox.Location = new System.Drawing.Point(118, 481);
             this.aLine1Textbox.Name = "aLine1Textbox";
             this.aLine1Textbox.Size = new System.Drawing.Size(344, 20);
@@ -253,6 +265,7 @@
             // 
             // lNameTextbox
             // 
+            this.lNameTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lNameTextbox.Location = new System.Drawing.Point(118, 391);
             this.lNameTextbox.Name = "lNameTextbox";
             this.lNameTextbox.Size = new System.Drawing.Size(344, 20);
@@ -260,6 +273,7 @@
             // 
             // mNameTextbox
             // 
+            this.mNameTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.mNameTextbox.Location = new System.Drawing.Point(118, 365);
             this.mNameTextbox.Name = "mNameTextbox";
             this.mNameTextbox.Size = new System.Drawing.Size(344, 20);
@@ -267,6 +281,7 @@
             // 
             // fNameTextbox
             // 
+            this.fNameTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.fNameTextbox.Location = new System.Drawing.Point(118, 339);
             this.fNameTextbox.Name = "fNameTextbox";
             this.fNameTextbox.Size = new System.Drawing.Size(344, 20);
@@ -274,6 +289,7 @@
             // 
             // mnameLabel
             // 
+            this.mnameLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.mnameLabel.AutoSize = true;
             this.mnameLabel.BackColor = System.Drawing.Color.Transparent;
             this.mnameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -287,6 +303,7 @@
             // 
             // azipLabel
             // 
+            this.azipLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.azipLabel.AutoSize = true;
             this.azipLabel.BackColor = System.Drawing.Color.Transparent;
             this.azipLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -300,6 +317,7 @@
             // 
             // astateLabel
             // 
+            this.astateLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.astateLabel.AutoSize = true;
             this.astateLabel.BackColor = System.Drawing.Color.Transparent;
             this.astateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -313,6 +331,7 @@
             // 
             // acityLabel
             // 
+            this.acityLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.acityLabel.AutoSize = true;
             this.acityLabel.BackColor = System.Drawing.Color.Transparent;
             this.acityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -326,6 +345,7 @@
             // 
             // aline2Label
             // 
+            this.aline2Label.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.aline2Label.AutoSize = true;
             this.aline2Label.BackColor = System.Drawing.Color.Transparent;
             this.aline2Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -339,6 +359,7 @@
             // 
             // aline1Label
             // 
+            this.aline1Label.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.aline1Label.AutoSize = true;
             this.aline1Label.BackColor = System.Drawing.Color.Transparent;
             this.aline1Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -352,6 +373,7 @@
             // 
             // addressLabel
             // 
+            this.addressLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.addressLabel.AutoSize = true;
             this.addressLabel.BackColor = System.Drawing.Color.Transparent;
             this.addressLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -365,6 +387,7 @@
             // 
             // lnameLabel
             // 
+            this.lnameLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lnameLabel.AutoSize = true;
             this.lnameLabel.BackColor = System.Drawing.Color.Transparent;
             this.lnameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -378,6 +401,7 @@
             // 
             // fnameLabel
             // 
+            this.fnameLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.fnameLabel.AutoSize = true;
             this.fnameLabel.BackColor = System.Drawing.Color.Transparent;
             this.fnameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -391,6 +415,7 @@
             // 
             // nameLabel
             // 
+            this.nameLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.nameLabel.AutoSize = true;
             this.nameLabel.BackColor = System.Drawing.Color.Transparent;
             this.nameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -404,6 +429,7 @@
             // 
             // saveemployeechangesButton
             // 
+            this.saveemployeechangesButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.saveemployeechangesButton.Location = new System.Drawing.Point(387, 701);
             this.saveemployeechangesButton.Name = "saveemployeechangesButton";
             this.saveemployeechangesButton.Size = new System.Drawing.Size(75, 75);
@@ -414,6 +440,7 @@
             // 
             // deleteButton
             // 
+            this.deleteButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.deleteButton.Location = new System.Drawing.Point(216, 119);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(92, 33);
@@ -424,6 +451,7 @@
             // 
             // titleLabel
             // 
+            this.titleLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.titleLabel.AutoSize = true;
             this.titleLabel.BackColor = System.Drawing.Color.Transparent;
             this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -436,6 +464,7 @@
             // 
             // privDropdownlist
             // 
+            this.privDropdownlist.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.privDropdownlist.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.privDropdownlist.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.privDropdownlist.FormattingEnabled = true;
@@ -450,6 +479,7 @@
             // 
             // jobsLabel
             // 
+            this.jobsLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.jobsLabel.AutoSize = true;
             this.jobsLabel.BackColor = System.Drawing.Color.Transparent;
             this.jobsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -463,6 +493,7 @@
             // 
             // changeloginButton
             // 
+            this.changeloginButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.changeloginButton.Location = new System.Drawing.Point(118, 1072);
             this.changeloginButton.Name = "changeloginButton";
             this.changeloginButton.Size = new System.Drawing.Size(344, 35);
@@ -473,6 +504,7 @@
             // 
             // newemployeeButton
             // 
+            this.newemployeeButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.newemployeeButton.Location = new System.Drawing.Point(422, 3);
             this.newemployeeButton.Name = "newemployeeButton";
             this.newemployeeButton.Size = new System.Drawing.Size(75, 75);
@@ -483,6 +515,7 @@
             // 
             // emailTextbox
             // 
+            this.emailTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.emailTextbox.Location = new System.Drawing.Point(118, 675);
             this.emailTextbox.Name = "emailTextbox";
             this.emailTextbox.Size = new System.Drawing.Size(344, 20);
@@ -490,6 +523,7 @@
             // 
             // emailLabel
             // 
+            this.emailLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.emailLabel.AutoSize = true;
             this.emailLabel.BackColor = System.Drawing.Color.Transparent;
             this.emailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -503,6 +537,7 @@
             // 
             // phoneLabel
             // 
+            this.phoneLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.phoneLabel.AutoSize = true;
             this.phoneLabel.BackColor = System.Drawing.Color.Transparent;
             this.phoneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -516,6 +551,7 @@
             // 
             // contactLabel
             // 
+            this.contactLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.contactLabel.AutoSize = true;
             this.contactLabel.BackColor = System.Drawing.Color.Transparent;
             this.contactLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -529,6 +565,7 @@
             // 
             // jobsBox
             // 
+            this.jobsBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.jobsBox.FormattingEnabled = true;
             this.jobsBox.Items.AddRange(new object[] {
             "Bartender",
@@ -545,6 +582,7 @@
             // 
             // payLabel
             // 
+            this.payLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.payLabel.AutoSize = true;
             this.payLabel.BackColor = System.Drawing.Color.Transparent;
             this.payLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -557,6 +595,7 @@
             // 
             // pass2Textbox
             // 
+            this.pass2Textbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pass2Textbox.Location = new System.Drawing.Point(118, 1046);
             this.pass2Textbox.Name = "pass2Textbox";
             this.pass2Textbox.PasswordChar = '*';
@@ -565,6 +604,7 @@
             // 
             // pass2Label
             // 
+            this.pass2Label.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pass2Label.BackColor = System.Drawing.Color.Transparent;
             this.pass2Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pass2Label.ForeColor = System.Drawing.Color.White;
@@ -577,6 +617,7 @@
             // 
             // payTextbox
             // 
+            this.payTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.payTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.payTextbox.Location = new System.Drawing.Point(289, 808);
             this.payTextbox.Name = "payTextbox";
@@ -585,6 +626,7 @@
             // 
             // privLabel
             // 
+            this.privLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.privLabel.AutoSize = true;
             this.privLabel.BackColor = System.Drawing.Color.Transparent;
             this.privLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -598,6 +640,7 @@
             // 
             // savepayButton
             // 
+            this.savepayButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.savepayButton.Location = new System.Drawing.Point(387, 844);
             this.savepayButton.Name = "savepayButton";
             this.savepayButton.Size = new System.Drawing.Size(75, 75);
@@ -608,6 +651,7 @@
             // 
             // ssnTextbox
             // 
+            this.ssnTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.ssnTextbox.Location = new System.Drawing.Point(118, 419);
             this.ssnTextbox.Mask = "000-00-0000";
             this.ssnTextbox.Name = "ssnTextbox";
@@ -616,6 +660,7 @@
             // 
             // phoneTextbox
             // 
+            this.phoneTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.phoneTextbox.Location = new System.Drawing.Point(119, 649);
             this.phoneTextbox.Mask = "(999) 000-0000";
             this.phoneTextbox.Name = "phoneTextbox";
@@ -624,6 +669,7 @@
             // 
             // aZipTextbox
             // 
+            this.aZipTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.aZipTextbox.Location = new System.Drawing.Point(118, 585);
             this.aZipTextbox.Mask = "00000";
             this.aZipTextbox.Name = "aZipTextbox";
@@ -632,6 +678,7 @@
             // 
             // quitorfireButton
             // 
+            this.quitorfireButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.quitorfireButton.Location = new System.Drawing.Point(119, 119);
             this.quitorfireButton.Name = "quitorfireButton";
             this.quitorfireButton.Size = new System.Drawing.Size(92, 33);
@@ -642,6 +689,7 @@
             // 
             // employedLabel
             // 
+            this.employedLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.employedLabel.AutoSize = true;
             this.employedLabel.BackColor = System.Drawing.Color.Transparent;
             this.employedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

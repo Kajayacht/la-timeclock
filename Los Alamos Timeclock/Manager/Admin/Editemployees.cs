@@ -74,7 +74,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                 }
                 else
                 {
-                    employedLabel.Text = "Employed: " + DateTime.Parse(Main.reader["SDate"].ToString()).ToShortDateString() + " - " + DateTime.Parse(Main.reader["EDate"].ToString()).ToShortDateString();
+                    employedLabel.Text = "Employed: " + DateTime.Parse(Main.reader["SDate"].ToString()).ToShortDateString() + " - " + DateTime.Parse(Main.reader["EDate"].ToString()).ToShortDateString() + "\nCondition: " + Main.reader["EReason"].ToString();
                 }
 
                 aLine1Textbox.Text = Main.reader["Address1"].ToString();
