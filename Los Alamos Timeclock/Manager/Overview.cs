@@ -41,6 +41,11 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                         query = "SELECT Date, CONCAT(LName, ', ',FName,' ',MName) AS Name, Start, End, JID AS Job FROM Schedule JOIN Employee ON Schedule.ID=Employee.ID Where Date>='" + fromCalander.Value.ToString("yyyy-MM-dd") + "' AND Date<='" + toCalander.Value.ToString("yyyy-MM-dd") + "' ORDER BY Date, Start";
                         break;
                     }
+                case "Employee Notes":
+                    {
+                        query = "SELECT CONCAT(a.LName, ', ',a.FName) as Name, b.Manager, b.Date,b.Note FROM Employee a JOIN EmployeeNotes b ON a.ID=b.ID Where b.Date>='" + fromCalander.Value.ToString("yyyy-MM-dd") + "' AND b.Date<='" + toCalander.Value.ToString("yyyy-MM-dd") + "' ORDER BY Date DESC";
+                        break;
+                    }
                 case "Hours Worked":
                     {
                         query = "Select " +

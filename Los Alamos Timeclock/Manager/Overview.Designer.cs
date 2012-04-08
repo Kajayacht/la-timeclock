@@ -108,7 +108,8 @@
             this.showwhatDropdownlist.Items.AddRange(new object[] {
             "Requests",
             "Schedule",
-            "Hours Worked"});
+            "Hours Worked",
+            "Employee Notes"});
             this.showwhatDropdownlist.Location = new System.Drawing.Point(89, 325);
             this.showwhatDropdownlist.Name = "showwhatDropdownlist";
             this.showwhatDropdownlist.Size = new System.Drawing.Size(200, 33);
