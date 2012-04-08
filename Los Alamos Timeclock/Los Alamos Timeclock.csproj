@@ -104,6 +104,12 @@
     <Compile Include="Manager\Admin\Paychecks.Designer.cs">
       <DependentUpon>Paychecks.cs</DependentUpon>
     </Compile>
+    <Compile Include="Manager\Overview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager\Overview.Designer.cs">
+      <DependentUpon>Overview.cs</DependentUpon>
+    </Compile>
     <Compile Include="Manager\Admin\ViewLog.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -208,6 +214,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Manager\Admin\Paychecks.resx">
       <DependentUpon>Paychecks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager\Overview.resx">
+      <DependentUpon>Overview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manager\Admin\ViewLog.resx">
       <DependentUpon>ViewLog.cs</DependentUpon>

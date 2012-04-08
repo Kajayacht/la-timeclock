@@ -281,5 +281,11 @@ namespace Los_Alamos_Timeclock.Manager.Admin
         {
             clength();
         }
+
+        private void showRequests_Click(object sender, EventArgs e)
+        {
+            Overview l=new Overview();
+            l.Show();
+        }
     }
 }

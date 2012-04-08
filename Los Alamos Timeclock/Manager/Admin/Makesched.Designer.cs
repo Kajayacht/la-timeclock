@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.employeeDropdownlist = new System.Windows.Forms.ComboBox();
             this.employeeLabel = new System.Windows.Forms.Label();
             this.calander = new System.Windows.Forms.DateTimePicker();
@@ -44,6 +44,7 @@
             this.endHourDropdownlist = new System.Windows.Forms.ComboBox();
             this.endMinDropdownlist = new System.Windows.Forms.ComboBox();
             this.lengthLabel = new System.Windows.Forms.Label();
+            this.showRequests = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.datagrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -84,7 +85,7 @@
             this.updatescheduleButon.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.updatescheduleButon.Location = new System.Drawing.Point(275, 293);
             this.updatescheduleButon.Name = "updatescheduleButon";
-            this.updatescheduleButon.Size = new System.Drawing.Size(97, 95);
+            this.updatescheduleButon.Size = new System.Drawing.Size(60, 95);
             this.updatescheduleButon.TabIndex = 8;
             this.updatescheduleButon.Text = "Update";
             this.updatescheduleButon.UseVisualStyleBackColor = true;
@@ -94,8 +95,8 @@
             // 
             this.datagrid.AllowUserToAddRows = false;
             this.datagrid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            this.datagrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.datagrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.datagrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -121,9 +122,9 @@
             // deleteButton
             // 
             this.deleteButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.deleteButton.Location = new System.Drawing.Point(378, 293);
+            this.deleteButton.Location = new System.Drawing.Point(341, 293);
             this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(97, 95);
+            this.deleteButton.Size = new System.Drawing.Size(66, 95);
             this.deleteButton.TabIndex = 9;
             this.deleteButton.Text = "Delete";
             this.deleteButton.UseVisualStyleBackColor = true;
@@ -290,12 +291,24 @@
             this.lengthLabel.TabIndex = 17;
             this.lengthLabel.Text = "Length: ";
             // 
+            // showRequests
+            // 
+            this.showRequests.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.showRequests.Location = new System.Drawing.Point(413, 293);
+            this.showRequests.Name = "showRequests";
+            this.showRequests.Size = new System.Drawing.Size(62, 95);
+            this.showRequests.TabIndex = 18;
+            this.showRequests.Text = "Show Overview";
+            this.showRequests.UseVisualStyleBackColor = true;
+            this.showRequests.Click += new System.EventHandler(this.showRequests_Click);
+            // 
             // Makesched
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Los_Alamos_Timeclock.Properties.Resources._1287421014661;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.showRequests);
             this.Controls.Add(this.lengthLabel);
             this.Controls.Add(this.endMinDropdownlist);
             this.Controls.Add(this.endHourDropdownlist);
@@ -337,6 +350,7 @@
         private System.Windows.Forms.ComboBox endHourDropdownlist;
         private System.Windows.Forms.ComboBox endMinDropdownlist;
         private System.Windows.Forms.Label lengthLabel;
+        private System.Windows.Forms.Button showRequests;
 
     }
 }
