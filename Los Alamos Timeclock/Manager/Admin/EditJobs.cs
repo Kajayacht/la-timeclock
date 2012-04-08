@@ -33,6 +33,8 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             Main.myConnection.Open();
             Main.maininstance.sqlReader("SELECT Filename FROM Jobs WHERE JID='"+jobsBox.Text+"'");
             filenameTextbox.Text=Main.reader["Filename"].ToString();
+            filename = Main.reader["Filename"].ToString();
+            jobPicturebox.ImageLocation = "Graphics\\" + filename;
             Main.myConnection.Close();
         }
 
@@ -114,7 +116,8 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             OpenFileDialog imageDialog = new OpenFileDialog();
             imageDialog.Filter = "Image Files(*.BMP;*.JPG;*.GIF;*.PNG)|*.BMP;*.JPG;*.GIF;*.PNG|All files (*.*)|*.*";
             imageDialog.FilterIndex = 1;
-            imageDialog.InitialDirectory = "graphics\\";
+            imageDialog.InitialDirectory = Application.StartupPath.ToString()+ "\\Graphics\\";
+            imageDialog.RestoreDirectory = false;
 
             if (imageDialog.ShowDialog() == DialogResult.OK)
             {
@@ -130,6 +133,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                     {
                         System.IO.File.Copy(filepath, "Graphics\\" + filename);
                         filenameTextbox.Text = filename;
+                        jobPicturebox.ImageLocation = "Graphics\\" + filename;
                     }
                     catch (System.IO.FileNotFoundException)
                     {
@@ -150,6 +154,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                 else
                 {
                     filenameTextbox.Text = filename;
+                    jobPicturebox.ImageLocation = "Graphics\\" + filename;
                 }
             }
         }

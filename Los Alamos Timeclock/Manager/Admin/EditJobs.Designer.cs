@@ -40,15 +40,17 @@
             this.selectImageButton = new System.Windows.Forms.Button();
             this.filenameTextbox = new System.Windows.Forms.TextBox();
             this.imageLabel = new System.Windows.Forms.Label();
+            this.jobPicturebox = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.jobPicturebox)).BeginInit();
             this.SuspendLayout();
             // 
             // jobsBox
             // 
             this.jobsBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.jobsBox.FormattingEnabled = true;
-            this.jobsBox.Location = new System.Drawing.Point(102, 127);
+            this.jobsBox.Location = new System.Drawing.Point(350, 83);
             this.jobsBox.Name = "jobsBox";
-            this.jobsBox.Size = new System.Drawing.Size(120, 95);
+            this.jobsBox.Size = new System.Drawing.Size(136, 95);
             this.jobsBox.TabIndex = 0;
             this.jobsBox.SelectedIndexChanged += new System.EventHandler(this.jobsBox_SelectedIndexChanged);
             // 
@@ -58,7 +60,7 @@
             this.nlabel.AutoSize = true;
             this.nlabel.BackColor = System.Drawing.Color.Transparent;
             this.nlabel.ForeColor = System.Drawing.Color.White;
-            this.nlabel.Location = new System.Drawing.Point(254, 130);
+            this.nlabel.Location = new System.Drawing.Point(178, 86);
             this.nlabel.Name = "nlabel";
             this.nlabel.Size = new System.Drawing.Size(58, 13);
             this.nlabel.TabIndex = 1;
@@ -70,7 +72,7 @@
             this.plabel.AutoSize = true;
             this.plabel.BackColor = System.Drawing.Color.Transparent;
             this.plabel.ForeColor = System.Drawing.Color.White;
-            this.plabel.Location = new System.Drawing.Point(246, 156);
+            this.plabel.Location = new System.Drawing.Point(170, 112);
             this.plabel.Name = "plabel";
             this.plabel.Size = new System.Drawing.Size(67, 13);
             this.plabel.TabIndex = 2;
@@ -79,7 +81,7 @@
             // jobnameTextbox
             // 
             this.jobnameTextbox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.jobnameTextbox.Location = new System.Drawing.Point(319, 127);
+            this.jobnameTextbox.Location = new System.Drawing.Point(243, 83);
             this.jobnameTextbox.Name = "jobnameTextbox";
             this.jobnameTextbox.Size = new System.Drawing.Size(100, 20);
             this.jobnameTextbox.TabIndex = 3;
@@ -87,7 +89,7 @@
             // startingpayTextbox
             // 
             this.startingpayTextbox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.startingpayTextbox.Location = new System.Drawing.Point(319, 153);
+            this.startingpayTextbox.Location = new System.Drawing.Point(243, 109);
             this.startingpayTextbox.Name = "startingpayTextbox";
             this.startingpayTextbox.Size = new System.Drawing.Size(100, 20);
             this.startingpayTextbox.TabIndex = 4;
@@ -95,7 +97,7 @@
             // updatejobButton
             // 
             this.updatejobButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.updatejobButton.Location = new System.Drawing.Point(156, 284);
+            this.updatejobButton.Location = new System.Drawing.Point(187, 286);
             this.updatejobButton.Name = "updatejobButton";
             this.updatejobButton.Size = new System.Drawing.Size(75, 75);
             this.updatejobButton.TabIndex = 5;
@@ -106,7 +108,7 @@
             // newjobButton
             // 
             this.newjobButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.newjobButton.Location = new System.Drawing.Point(237, 284);
+            this.newjobButton.Location = new System.Drawing.Point(268, 286);
             this.newjobButton.Name = "newjobButton";
             this.newjobButton.Size = new System.Drawing.Size(75, 75);
             this.newjobButton.TabIndex = 6;
@@ -117,7 +119,7 @@
             // deletejobButton
             // 
             this.deletejobButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.deletejobButton.Location = new System.Drawing.Point(318, 284);
+            this.deletejobButton.Location = new System.Drawing.Point(349, 286);
             this.deletejobButton.Name = "deletejobButton";
             this.deletejobButton.Size = new System.Drawing.Size(75, 75);
             this.deletejobButton.TabIndex = 7;
@@ -131,7 +133,7 @@
             this.tippedBox.AutoSize = true;
             this.tippedBox.BackColor = System.Drawing.Color.Transparent;
             this.tippedBox.ForeColor = System.Drawing.Color.White;
-            this.tippedBox.Location = new System.Drawing.Point(318, 179);
+            this.tippedBox.Location = new System.Drawing.Point(242, 135);
             this.tippedBox.Name = "tippedBox";
             this.tippedBox.Size = new System.Drawing.Size(79, 17);
             this.tippedBox.TabIndex = 8;
@@ -141,7 +143,7 @@
             // selectImageButton
             // 
             this.selectImageButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.selectImageButton.Location = new System.Drawing.Point(319, 228);
+            this.selectImageButton.Location = new System.Drawing.Point(243, 184);
             this.selectImageButton.Name = "selectImageButton";
             this.selectImageButton.Size = new System.Drawing.Size(101, 23);
             this.selectImageButton.TabIndex = 9;
@@ -152,7 +154,7 @@
             // filenameTextbox
             // 
             this.filenameTextbox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.filenameTextbox.Location = new System.Drawing.Point(319, 202);
+            this.filenameTextbox.Location = new System.Drawing.Point(243, 158);
             this.filenameTextbox.Name = "filenameTextbox";
             this.filenameTextbox.ReadOnly = true;
             this.filenameTextbox.Size = new System.Drawing.Size(100, 20);
@@ -164,11 +166,21 @@
             this.imageLabel.AutoSize = true;
             this.imageLabel.BackColor = System.Drawing.Color.Transparent;
             this.imageLabel.ForeColor = System.Drawing.Color.White;
-            this.imageLabel.Location = new System.Drawing.Point(274, 205);
+            this.imageLabel.Location = new System.Drawing.Point(198, 161);
             this.imageLabel.Name = "imageLabel";
             this.imageLabel.Size = new System.Drawing.Size(39, 13);
             this.imageLabel.TabIndex = 11;
             this.imageLabel.Text = "Image:";
+            // 
+            // jobPicturebox
+            // 
+            this.jobPicturebox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.jobPicturebox.Location = new System.Drawing.Point(15, 83);
+            this.jobPicturebox.Name = "jobPicturebox";
+            this.jobPicturebox.Size = new System.Drawing.Size(150, 150);
+            this.jobPicturebox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.jobPicturebox.TabIndex = 12;
+            this.jobPicturebox.TabStop = false;
             // 
             // EditJobs
             // 
@@ -176,6 +188,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Los_Alamos_Timeclock.Properties.Resources._1287421014661;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.jobPicturebox);
             this.Controls.Add(this.imageLabel);
             this.Controls.Add(this.filenameTextbox);
             this.Controls.Add(this.selectImageButton);
@@ -191,6 +204,7 @@
             this.DoubleBuffered = true;
             this.Name = "EditJobs";
             this.Size = new System.Drawing.Size(500, 400);
+            ((System.ComponentModel.ISupportInitialize)(this.jobPicturebox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -210,5 +224,6 @@
         private System.Windows.Forms.Button selectImageButton;
         private System.Windows.Forms.TextBox filenameTextbox;
         private System.Windows.Forms.Label imageLabel;
+        private System.Windows.Forms.PictureBox jobPicturebox;
     }
 }

@@ -52,13 +52,13 @@ namespace Los_Alamos_Timeclock
                 welcome.Text = "Welcome " + Main.eName + "!";
 
                 Main.myConnection.Open();
-                Main.maininstance.sqlReader("Select * From `Hours Worked` WHERE ID='" + Main.id + "' AND Status!='OUT'");
+                Main.maininstance.sqlReader("Select a.*,b.Filename From `Hours Worked` a JOIN Jobs b ON a.JID=b.JID WHERE ID='" + Main.id + "' AND Status!='OUT'");
                 clockedIn = Main.reader.HasRows;
                 if (clockedIn)
                 {
                     job = Main.reader["JID"].ToString();
-
-                    jobImage.Image = (Image)Resources.ResourceManager.GetObject(job);
+                    jobImage.ImageLocation = "Graphics\\" + Main.reader["Filename"].ToString();
+                    //jobImage.Image = (Image)Resources.ResourceManager.GetObject(job);
 
 
                     if (Main.reader["B1in"].ToString() == "")
@@ -85,7 +85,7 @@ namespace Los_Alamos_Timeclock
                     date = DateTime.Today.ToString("yyyy-MM-dd");
                 }
                 Main.reader.Close();
-                Main.maininstance.sqlReader("Select Employee.FName, Schedule.Date, Schedule.Start, Schedule.End, Schedule.JID from Employee,Schedule Where Employee.ID='" + Main.id + "' AND Employee.ID=Schedule.ID AND Schedule.Date='" + date + "'");
+                Main.maininstance.sqlReader("Select a.FName, b.Date, b.Start, b.End, b.JID, c.Filename from Employee a JOIN Schedule b ON a.ID=b.ID JOIN Jobs c ON c.JID=b.JID Where a.ID='" + Main.id + "' AND b.Date='" + date + "'");
 
                 scheduled = Main.reader.HasRows;
 
@@ -96,7 +96,8 @@ namespace Los_Alamos_Timeclock
                     if (!clockedIn)
                     {
                         job = Main.reader["JID"].ToString();
-                        jobImage.Image = (Image)Resources.ResourceManager.GetObject(job);
+                        jobImage.ImageLocation = "Graphics\\" + Main.reader["Filename"].ToString();
+                        //jobImage.Image = (Image)Resources.ResourceManager.GetObject(job);
                     }
                     if (startTime > endTime)
                     {
@@ -120,8 +121,8 @@ namespace Los_Alamos_Timeclock
                 }
                 else
                 {
-                    //jobImage.ImageLocation = "graphics\\manager.bmp";
-                    jobImage.Image = (Image)Resources.ResourceManager.GetObject("none");
+                    jobImage.ImageLocation = "Graphics\\" + Main.reader["Filename"].ToString();
+                    //jobImage.Image = (Image)Resources.ResourceManager.GetObject("none");
                     shiftinfoLabel.Text =
                         "You are not Scheduled\n" +
                         "Please see a manager";

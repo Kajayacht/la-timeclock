@@ -96,6 +96,7 @@
             this.jobImage.Location = new System.Drawing.Point(332, 90);
             this.jobImage.Name = "jobImage";
             this.jobImage.Size = new System.Drawing.Size(150, 150);
+            this.jobImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.jobImage.TabIndex = 4;
             this.jobImage.TabStop = false;
             // 
