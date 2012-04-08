@@ -146,7 +146,7 @@
             this.DoubleBuffered = true;
             this.MinimumSize = new System.Drawing.Size(562, 38);
             this.Name = "Overview";
-            this.Text = "RequestsList";
+            this.Text = "Overview";
             ((System.ComponentModel.ISupportInitialize)(this.requestsDatagridview)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
