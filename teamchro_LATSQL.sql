@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 07, 2012 at 02:12 AM
+-- Generation Time: Apr 07, 2012 at 09:54 PM
 -- Server version: 5.0.91
 -- PHP Version: 5.2.6
 
@@ -18,7 +18,6 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 --
 -- Database: `teamchro_LATSQL`
 --
-DROP DATABASE `teamchro_LATSQL`;
 CREATE DATABASE `teamchro_LATSQL` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
 USE `teamchro_LATSQL`;
 
@@ -28,7 +27,6 @@ USE `teamchro_LATSQL`;
 -- Table structure for table `Admin`
 --
 
-DROP TABLE IF EXISTS `Admin`;
 CREATE TABLE IF NOT EXISTS `Admin` (
   `ID` int(11) NOT NULL,
   PRIMARY KEY  (`ID`),
@@ -48,11 +46,10 @@ INSERT INTO `Admin` (`ID`) VALUES
 -- Table structure for table `Employee Jobs`
 --
 
-DROP TABLE IF EXISTS `Employee Jobs`;
 CREATE TABLE IF NOT EXISTS `Employee Jobs` (
   `ID` int(11) NOT NULL,
   `JID` varchar(50) NOT NULL,
-  `JPay` decimal(10,2) NOT NULL,
+  `JPay` decimal(3,2) NOT NULL,
   KEY `EJID` (`ID`),
   KEY `EJJID` (`JID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -62,7 +59,7 @@ CREATE TABLE IF NOT EXISTS `Employee Jobs` (
 --
 
 INSERT INTO `Employee Jobs` (`ID`, `JID`, `JPay`) VALUES
-(1, 'Manager', '11.00'),
+(1, 'Manager', '9.99'),
 (5, 'Dishwasher', '7.40'),
 (2, 'Server', '3.75'),
 (10, 'Server', '3.75'),
@@ -75,7 +72,6 @@ INSERT INTO `Employee Jobs` (`ID`, `JID`, `JPay`) VALUES
 -- Table structure for table `Employee`
 --
 
-DROP TABLE IF EXISTS `Employee`;
 CREATE TABLE IF NOT EXISTS `Employee` (
   `ID` int(11) NOT NULL auto_increment,
   `LName` text NOT NULL,
@@ -118,7 +114,6 @@ INSERT INTO `Employee` (`ID`, `LName`, `MName`, `FName`, `SSN`, `Phone`, `Email`
 -- Table structure for table `EmployeeNotes`
 --
 
-DROP TABLE IF EXISTS `EmployeeNotes`;
 CREATE TABLE IF NOT EXISTS `EmployeeNotes` (
   `ID` int(11) NOT NULL,
   `Manager` varchar(50) NOT NULL,
@@ -156,7 +151,9 @@ INSERT INTO `EmployeeNotes` (`ID`, `Manager`, `Date`, `Note`) VALUES
 (15, 'Jennifer Chavez', '2012-04-07 01:55:13', 'QUIT: test\nLast Day: 4/7/2012'),
 (15, 'Jennifer Chavez', '2012-04-07 01:57:49', 'Timestamp Test'),
 (15, 'Jennifer Chavez', '2012-04-07 01:58:07', 'Rehired'),
-(15, 'Jennifer Chavez', '2012-04-07 01:58:17', 'TERMINATED: timestamp test\nLast Day: 4/7/2012');
+(15, 'Jennifer Chavez', '2012-04-07 01:58:17', 'TERMINATED: timestamp test\nLast Day: 4/7/2012'),
+(15, 'Jennifer Chavez', '2012-04-07 15:21:47', 'Rehired'),
+(15, 'Jennifer Chavez', '2012-04-07 15:22:24', 'TERMINATED: Testing if termination removes scheduled dates\nLast Day: 4/7/2012');
 
 -- --------------------------------------------------------
 
@@ -164,7 +161,6 @@ INSERT INTO `EmployeeNotes` (`ID`, `Manager`, `Date`, `Note`) VALUES
 -- Table structure for table `Hours Worked`
 --
 
-DROP TABLE IF EXISTS `Hours Worked`;
 CREATE TABLE IF NOT EXISTS `Hours Worked` (
   `ID` int(11) NOT NULL,
   `Date` date NOT NULL,
@@ -208,9 +204,7 @@ INSERT INTO `Hours Worked` (`ID`, `Date`, `Start`, `End`, `Tips`, `JID`, `B1out`
 (1, '2012-03-23', '09:15:00', '09:08:31', NULL, 'Manager', NULL, NULL, NULL, NULL, NULL, NULL, 'OUT'),
 (11, '2012-03-26', '19:00:00', '19:06:06', '69.00', 'Bartender', NULL, NULL, NULL, NULL, NULL, NULL, 'OUT'),
 (11, '2012-03-26', '19:00:00', '19:06:06', NULL, 'Security', NULL, NULL, NULL, NULL, NULL, NULL, 'OUT'),
-(1, '2012-03-26', '19:15:00', '19:34:22', '9001.00', 'Bartender', '19:13:57', '19:13:58', '19:13:58', '19:13:59', '19:13:55', '19:13:56', 'OUT'),
-(1, '2012-04-01', '17:15:00', '17:47:10', '0.00', 'Server', NULL, NULL, NULL, NULL, NULL, NULL, 'OUT'),
-(1, '2012-04-01', '17:45:00', '17:47:10', '0.00', 'Bartender', NULL, NULL, NULL, NULL, NULL, NULL, 'OUT');
+(1, '2012-03-26', '19:15:00', '19:34:22', '9001.00', 'Bartender', '19:13:57', '19:13:58', '19:13:58', '19:13:59', '19:13:55', '19:13:56', 'OUT');
 
 -- --------------------------------------------------------
 
@@ -218,7 +212,6 @@ INSERT INTO `Hours Worked` (`ID`, `Date`, `Start`, `End`, `Tips`, `JID`, `B1out`
 -- Table structure for table `Jobs`
 --
 
-DROP TABLE IF EXISTS `Jobs`;
 CREATE TABLE IF NOT EXISTS `Jobs` (
   `JID` varchar(50) NOT NULL,
   `JSPay` decimal(10,2) NOT NULL,
@@ -241,30 +234,9 @@ INSERT INTO `Jobs` (`JID`, `JSPay`, `TippedJob`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Late`
---
-
-DROP TABLE IF EXISTS `Late`;
-CREATE TABLE IF NOT EXISTS `Late` (
-  `ID` int(11) NOT NULL,
-  `Date` date NOT NULL,
-  `Stime` time NOT NULL,
-  `Atime` time NOT NULL,
-  KEY `LID` (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `Late`
---
-
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `Manager`
 --
 
-DROP TABLE IF EXISTS `Manager`;
 CREATE TABLE IF NOT EXISTS `Manager` (
   `ID` int(11) NOT NULL,
   PRIMARY KEY  (`ID`),
@@ -285,7 +257,6 @@ INSERT INTO `Manager` (`ID`) VALUES
 -- Table structure for table `Payrole YTD`
 --
 
-DROP TABLE IF EXISTS `Payrole YTD`;
 CREATE TABLE IF NOT EXISTS `Payrole YTD` (
   `ID` int(11) NOT NULL,
   `Total Hours` decimal(10,0) NOT NULL,
@@ -304,10 +275,32 @@ CREATE TABLE IF NOT EXISTS `Payrole YTD` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `Requests`
+--
+
+CREATE TABLE IF NOT EXISTS `Requests` (
+  `ID` int(11) NOT NULL,
+  `SDate` date NOT NULL,
+  `EDate` date NOT NULL,
+  `Submitted Date` date default NULL,
+  `Reason` text,
+  KEY `RID` (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `Requests`
+--
+
+INSERT INTO `Requests` (`ID`, `SDate`, `EDate`, `Submitted Date`, `Reason`) VALUES
+(1, '2012-04-07', '2012-04-13', '2012-04-07', 'request test'),
+(10, '2012-04-12', '2012-04-12', '2012-04-07', 'dave''s request');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `Schedule`
 --
 
-DROP TABLE IF EXISTS `Schedule`;
 CREATE TABLE IF NOT EXISTS `Schedule` (
   `ID` int(11) NOT NULL,
   `Date` date NOT NULL,
@@ -325,7 +318,6 @@ CREATE TABLE IF NOT EXISTS `Schedule` (
 INSERT INTO `Schedule` (`ID`, `Date`, `Start`, `End`, `JID`) VALUES
 (1, '2012-02-16', '22:30:00', '05:00:00', 'Manager'),
 (1, '2012-02-29', '02:00:00', '06:00:00', 'Cook'),
-(10, '0000-00-00', '02:30:00', '22:15:00', 'Cook'),
 (10, '2012-02-25', '01:30:00', '23:30:00', 'Dishwasher'),
 (4, '2012-02-25', '21:15:00', '20:30:00', 'Dishwasher'),
 (10, '2012-02-27', '13:00:00', '23:00:00', 'Manager'),
@@ -337,7 +329,8 @@ INSERT INTO `Schedule` (`ID`, `Date`, `Start`, `End`, `JID`) VALUES
 (1, '2012-03-10', '22:00:00', '05:30:00', 'Bartender'),
 (10, '2012-03-11', '04:15:00', '10:30:00', 'Bartender'),
 (11, '2012-03-13', '10:45:00', '11:00:00', 'Dishwasher'),
-(11, '2012-03-30', '10:00:00', '18:00:00', 'Security');
+(11, '2012-03-30', '10:00:00', '18:00:00', 'Security'),
+(15, '2012-04-11', '05:45:00', '09:30:00', 'Bartender');
 
 -- --------------------------------------------------------
 
@@ -345,7 +338,6 @@ INSERT INTO `Schedule` (`ID`, `Date`, `Start`, `End`, `JID`) VALUES
 -- Table structure for table `Users`
 --
 
-DROP TABLE IF EXISTS `Users`;
 CREATE TABLE IF NOT EXISTS `Users` (
   `ID` int(11) NOT NULL,
   `User` varchar(45) NOT NULL,
@@ -397,14 +389,8 @@ ALTER TABLE `EmployeeNotes`
 -- Constraints for table `Hours Worked`
 --
 ALTER TABLE `Hours Worked`
-  ADD CONSTRAINT `HWID` FOREIGN KEY (`ID`) REFERENCES `Employee` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `HWJID` FOREIGN KEY (`JID`) REFERENCES `Jobs` (`JID`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Constraints for table `Late`
---
-ALTER TABLE `Late`
-  ADD CONSTRAINT `LID` FOREIGN KEY (`ID`) REFERENCES `Employee` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `HWJID` FOREIGN KEY (`JID`) REFERENCES `Jobs` (`JID`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `HWID` FOREIGN KEY (`ID`) REFERENCES `Employee` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `Manager`
@@ -430,3 +416,4 @@ ALTER TABLE `Schedule`
 --
 ALTER TABLE `Users`
   ADD CONSTRAINT `ID` FOREIGN KEY (`ID`) REFERENCES `Employee` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE;
+
