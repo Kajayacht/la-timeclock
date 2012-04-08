@@ -38,6 +38,8 @@
             this.deletejobButton = new System.Windows.Forms.Button();
             this.tippedBox = new System.Windows.Forms.CheckBox();
             this.selectImageButton = new System.Windows.Forms.Button();
+            this.filenameTextbox = new System.Windows.Forms.TextBox();
+            this.imageLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // jobsBox
@@ -138,7 +140,8 @@
             // 
             // selectImageButton
             // 
-            this.selectImageButton.Location = new System.Drawing.Point(318, 199);
+            this.selectImageButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.selectImageButton.Location = new System.Drawing.Point(319, 228);
             this.selectImageButton.Name = "selectImageButton";
             this.selectImageButton.Size = new System.Drawing.Size(101, 23);
             this.selectImageButton.TabIndex = 9;
@@ -146,12 +149,35 @@
             this.selectImageButton.UseVisualStyleBackColor = true;
             this.selectImageButton.Click += new System.EventHandler(this.selectImageButton_Click);
             // 
+            // filenameTextbox
+            // 
+            this.filenameTextbox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.filenameTextbox.Location = new System.Drawing.Point(319, 202);
+            this.filenameTextbox.Name = "filenameTextbox";
+            this.filenameTextbox.ReadOnly = true;
+            this.filenameTextbox.Size = new System.Drawing.Size(100, 20);
+            this.filenameTextbox.TabIndex = 10;
+            // 
+            // imageLabel
+            // 
+            this.imageLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.imageLabel.AutoSize = true;
+            this.imageLabel.BackColor = System.Drawing.Color.Transparent;
+            this.imageLabel.ForeColor = System.Drawing.Color.White;
+            this.imageLabel.Location = new System.Drawing.Point(274, 205);
+            this.imageLabel.Name = "imageLabel";
+            this.imageLabel.Size = new System.Drawing.Size(39, 13);
+            this.imageLabel.TabIndex = 11;
+            this.imageLabel.Text = "Image:";
+            // 
             // EditJobs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Los_Alamos_Timeclock.Properties.Resources._1287421014661;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.imageLabel);
+            this.Controls.Add(this.filenameTextbox);
             this.Controls.Add(this.selectImageButton);
             this.Controls.Add(this.tippedBox);
             this.Controls.Add(this.deletejobButton);
@@ -182,5 +208,7 @@
         private System.Windows.Forms.Button deletejobButton;
         private System.Windows.Forms.CheckBox tippedBox;
         private System.Windows.Forms.Button selectImageButton;
+        private System.Windows.Forms.TextBox filenameTextbox;
+        private System.Windows.Forms.Label imageLabel;
     }
 }

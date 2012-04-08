@@ -108,6 +108,12 @@ namespace Los_Alamos_Timeclock
                         {
                             //sets field values to the request's values
                             requestButton.Text = "Update Request";
+
+                            if (startCalander.MinDate > DateTime.Parse(Main.reader["SDate"].ToString()).Date)
+                            {
+                                startCalander.MinDate = DateTime.Parse(Main.reader["SDate"].ToString()).Date;
+                            }
+
                             startCalander.Value = DateTime.Parse(Main.reader["SDate"].ToString()).Date;
                             endCalander.MinDate = startCalander.Value;
                             //prevents requesting negative days off
