@@ -103,5 +103,12 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                     refreshJobs();
                 }
         }
+
+        private void selectImageButton_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog imageDialog = new OpenFileDialog();
+            imageDialog.Filter = "Pictures (*.jpg)|*.jpg";
+            imageDialog.FilterIndex = 1;
+        }
     }
 }

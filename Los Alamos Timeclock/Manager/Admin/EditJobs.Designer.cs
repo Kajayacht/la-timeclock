@@ -37,6 +37,7 @@
             this.newjobButton = new System.Windows.Forms.Button();
             this.deletejobButton = new System.Windows.Forms.Button();
             this.tippedBox = new System.Windows.Forms.CheckBox();
+            this.selectImageButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // jobsBox
@@ -135,12 +136,23 @@
             this.tippedBox.Text = "Tipped Job";
             this.tippedBox.UseVisualStyleBackColor = false;
             // 
+            // selectImageButton
+            // 
+            this.selectImageButton.Location = new System.Drawing.Point(318, 199);
+            this.selectImageButton.Name = "selectImageButton";
+            this.selectImageButton.Size = new System.Drawing.Size(101, 23);
+            this.selectImageButton.TabIndex = 9;
+            this.selectImageButton.Text = "Select Image";
+            this.selectImageButton.UseVisualStyleBackColor = true;
+            this.selectImageButton.Click += new System.EventHandler(this.selectImageButton_Click);
+            // 
             // EditJobs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Los_Alamos_Timeclock.Properties.Resources._1287421014661;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.selectImageButton);
             this.Controls.Add(this.tippedBox);
             this.Controls.Add(this.deletejobButton);
             this.Controls.Add(this.newjobButton);
@@ -169,5 +181,6 @@
         private System.Windows.Forms.Button newjobButton;
         private System.Windows.Forms.Button deletejobButton;
         private System.Windows.Forms.CheckBox tippedBox;
+        private System.Windows.Forms.Button selectImageButton;
     }
 }

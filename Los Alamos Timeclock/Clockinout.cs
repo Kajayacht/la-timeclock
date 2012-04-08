@@ -120,6 +120,7 @@ namespace Los_Alamos_Timeclock
                 }
                 else
                 {
+                    //jobImage.ImageLocation = "graphics\\manager.bmp";
                     jobImage.Image = (Image)Resources.ResourceManager.GetObject("none");
                     shiftinfoLabel.Text =
                         "You are not Scheduled\n" +
