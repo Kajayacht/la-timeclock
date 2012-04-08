@@ -10,6 +10,7 @@ using System.Data.SqlClient;
 using MySql.Data.MySqlClient;
 using Los_Alamos_Timeclock;
 using System.Collections;
+using System.Diagnostics;
 
 namespace Los_Alamos_Timeclock
 {
@@ -33,7 +34,6 @@ namespace Los_Alamos_Timeclock
 
     public partial class Main : Form
     {
-
         public static Main maininstance = null;
         public static string id;
         public static string eName;
@@ -50,8 +50,8 @@ namespace Los_Alamos_Timeclock
             SetStyle(ControlStyles.OptimizedDoubleBuffer |
                                     ControlStyles.UserPaint |
                                     ControlStyles.AllPaintingInWmPaint, true);
+            timeoutTimer.Interval = 1000;
             maininstance = this;
-
             //Starts up with login user controls
             panel1.Controls.Clear();
             panel1.Controls.Add(new Login());
@@ -82,19 +82,19 @@ namespace Los_Alamos_Timeclock
                 //start SQL connection and query
                 Main.myConnection.Open();
                 String commandString;
-                
+
                 //command changes based on what the current settings are
                 if (Properties.Settings.Default.showCurrentEmployees && Properties.Settings.Default.showPreviousEmployees)
                 {
                     commandString = "Select ID, LName,FName From Employee ORDER BY LName";
                 }
-                else if (Properties.Settings.Default.showCurrentEmployees==false && Properties.Settings.Default.showPreviousEmployees)
+                else if (Properties.Settings.Default.showCurrentEmployees == false && Properties.Settings.Default.showPreviousEmployees)
                 {
-                    commandString = "Select ID, LName,FName From Employee WHERE EDate<'"+DateTime.Today.Date.ToString("yyyy-MM-dd")+"' ORDER BY LName";
+                    commandString = "Select ID, LName,FName From Employee WHERE EDate<'" + DateTime.Today.Date.ToString("yyyy-MM-dd") + "' ORDER BY LName";
                 }
                 else
                 {
-                    commandString = "Select ID, LName,FName From Employee WHERE EDate>='" + DateTime.Today.Date.ToString("yyyy-MM-dd") +"' OR EDate is NULL ORDER BY LName";
+                    commandString = "Select ID, LName,FName From Employee WHERE EDate>='" + DateTime.Today.Date.ToString("yyyy-MM-dd") + "' OR EDate is NULL ORDER BY LName";
                 }
 
 
@@ -430,6 +430,45 @@ namespace Los_Alamos_Timeclock
         private void menu1_Load(object sender, EventArgs e)
         {
             menu1.timer1.Start();
+        }
+
+
+
+        //methods to deal with the timeout timer
+        private TimeSpan timeoutTimelimit = TimeSpan.FromSeconds(5);
+        private DateTime timerCompareTime = DateTime.Now;
+        
+        //start the timer
+        public void startTimer()
+        {
+            timerCompareTime = DateTime.Now;
+            timeoutTimer.Start();
+        }
+
+        //reset the timer
+        public void resetTimer()
+        {
+            timerCompareTime = DateTime.Now;
+        }
+
+        //stop the timer
+        public void stopTimer()
+        {
+            timeoutTimer.Stop();
+        }
+
+        //event for the timer ticking
+        private void timeoutTimer_Tick(object sender, EventArgs e)
+        {
+            if (DateTime.Now.Subtract(timerCompareTime) > timeoutTimelimit)
+            {
+                stopTimer();
+                permissions = "0";
+                maininstance.menu1.Hide();
+                panel1.Controls.Clear();
+                panel1.Controls.Add(new Login());
+                panel1.Controls[0].Dock = DockStyle.Fill;
+            }
         }
 
 

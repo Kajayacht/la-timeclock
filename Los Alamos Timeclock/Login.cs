@@ -58,6 +58,8 @@ namespace Los_Alamos_Timeclock
                     Main.maininstance.panel1.Controls.Clear();
                     Main.maininstance.panel1.Controls.Add(new Clockinout());
                     Main.maininstance.panel1.Controls[0].Dock = DockStyle.Fill;
+
+                    Main.maininstance.startTimer();
                 }
                 else
                 {

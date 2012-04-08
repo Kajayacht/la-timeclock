@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.menu1 = new Los_Alamos_Timeclock.Menu();
+            this.timeoutTimer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // panel1
@@ -57,6 +59,10 @@
             this.menu1.Visible = false;
             this.menu1.Load += new System.EventHandler(this.menu1_Load);
             // 
+            // timeoutTimer
+            // 
+            this.timeoutTimer.Tick += new System.EventHandler(this.timeoutTimer_Tick);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -83,6 +89,7 @@
 
         public Menu menu1;
         public System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Timer timeoutTimer;
 
 
 

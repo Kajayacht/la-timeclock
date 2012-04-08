@@ -23,6 +23,7 @@ namespace Los_Alamos_Timeclock
 
         private void Logout_Click(object sender, EventArgs e)
         {
+            Main.maininstance.stopTimer();
             Main.permissions = "0";
             Main.maininstance.menu1.Hide();
             Main.maininstance.panel1.Controls.Clear();
