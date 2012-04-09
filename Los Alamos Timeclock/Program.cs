@@ -17,7 +17,6 @@ namespace Los_Alamos_Timeclock
         [STAThread]
         static void Main()
         {   
-            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Log.createLog();

@@ -30,10 +30,12 @@ namespace Los_Alamos_Timeclock
      */
 
 
+
     //Main file for program
 
     public partial class Main : Form
     {
+
         public static Main maininstance = null;
         public static string id;
         public static string eName;
@@ -43,10 +45,17 @@ namespace Los_Alamos_Timeclock
         public static MySqlDataReader reader;
         public static string permissions = "";
 
-
         public Main()
         {
             InitializeComponent();
+
+            //this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.keypress_event); //new System.EventHandler(this.keypress_event);
+            //this.KeyPress += new System.EventHandler(this.keypress_event);
+            //this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.keypress_event);
+            //this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.keypress_event);
+           
+
+
             SetStyle(ControlStyles.OptimizedDoubleBuffer |
                                     ControlStyles.UserPaint |
                                     ControlStyles.AllPaintingInWmPaint, true);
@@ -67,6 +76,10 @@ namespace Los_Alamos_Timeclock
 
             joblist = getJobs();
             employeeList = getEmployees();
+            
+            //Main.maininstance.  .maininstance.Click += new System.EventHandler(this.keypress_event);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.keypress_event);
+            //this.panel1.Controls[0].Click += keypress_event;
         }
 
         /** Method to return an array of employee's IDs, lastnames, firstnames
@@ -435,7 +448,9 @@ namespace Los_Alamos_Timeclock
 
 
         //methods to deal with the timeout timer
-        private TimeSpan timeoutTimelimit = TimeSpan.FromSeconds(5);
+
+        //ammount of time to wait before timing out
+        private TimeSpan timeoutTimelimit = TimeSpan.FromMinutes(9999);
         private DateTime timerCompareTime = DateTime.Now;
         
         //start the timer
@@ -469,6 +484,11 @@ namespace Los_Alamos_Timeclock
                 panel1.Controls.Add(new Login());
                 panel1.Controls[0].Dock = DockStyle.Fill;
             }
+        }
+
+        private void keypress_event(object sender, EventArgs e)
+        {
+            MessageBox.Show("EVENT");
         }
 
 
