@@ -15,9 +15,16 @@ namespace Los_Alamos_Timeclock
         public Login()
         {
             InitializeComponent();
+            passTextbox.KeyPress += new KeyPressEventHandler(passwordreturn_event);
         }
 
         private void B_login_Click(object sender, EventArgs e)
+        {
+            startLogin();
+        }
+
+
+        private void startLogin()
         {
             try
             {
@@ -63,6 +70,7 @@ namespace Los_Alamos_Timeclock
                 }
                 else
                 {
+                    passTextbox.Clear();
                     MessageBox.Show("Incorrect Login");
                 }
             }
@@ -76,12 +84,21 @@ namespace Los_Alamos_Timeclock
                 Main.reader.Close();
                 Main.myConnection.Close();
             }
-
         }
 
         private void clock1_Load(object sender, EventArgs e)
         {
             clock1.timer1.Start();
+        }
+
+        private void passwordreturn_event(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '\r')
+            {
+                passTextbox.Text=passTextbox.Text.ToString().Replace("\r", "");
+                startLogin();
+            }
+            
         }
     }
 }

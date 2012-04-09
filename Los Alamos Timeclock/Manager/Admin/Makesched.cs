@@ -24,6 +24,8 @@ namespace Los_Alamos_Timeclock.Manager.Admin
         public Makesched()
         {
             InitializeComponent();
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(Main.maininstance.notIdle_event);
+            datagrid.MouseMove += new System.Windows.Forms.MouseEventHandler(Main.maininstance.notIdle_event);
             mon = getmon(DateTime.Today.Date);
             sun = mon.AddDays(6);
             calander.MaxDate = DateTime.Today.AddYears(1);

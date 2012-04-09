@@ -52,7 +52,7 @@
             this.Al1.Location = new System.Drawing.Point(98, 93);
             this.Al1.Name = "Al1";
             this.Al1.Size = new System.Drawing.Size(361, 20);
-            this.Al1.TabIndex = 5;
+            this.Al1.TabIndex = 0;
             // 
             // line1Label
             // 
@@ -86,7 +86,7 @@
             this.Al2.Location = new System.Drawing.Point(98, 128);
             this.Al2.Name = "Al2";
             this.Al2.Size = new System.Drawing.Size(361, 20);
-            this.Al2.TabIndex = 7;
+            this.Al2.TabIndex = 1;
             // 
             // line2Label
             // 
@@ -108,7 +108,7 @@
             this.Az.Mask = "00000";
             this.Az.Name = "Az";
             this.Az.Size = new System.Drawing.Size(361, 20);
-            this.Az.TabIndex = 40;
+            this.Az.TabIndex = 4;
             // 
             // As
             // 
@@ -172,7 +172,7 @@
             this.As.Location = new System.Drawing.Point(98, 185);
             this.As.Name = "As";
             this.As.Size = new System.Drawing.Size(361, 21);
-            this.As.TabIndex = 39;
+            this.As.TabIndex = 3;
             // 
             // Ac
             // 
@@ -180,7 +180,7 @@
             this.Ac.Location = new System.Drawing.Point(98, 159);
             this.Ac.Name = "Ac";
             this.Ac.Size = new System.Drawing.Size(361, 20);
-            this.Ac.TabIndex = 38;
+            this.Ac.TabIndex = 2;
             // 
             // zipLabel
             // 
@@ -231,7 +231,7 @@
             this.Phone.Mask = "(999) 000-0000";
             this.Phone.Name = "Phone";
             this.Phone.Size = new System.Drawing.Size(360, 20);
-            this.Phone.TabIndex = 67;
+            this.Phone.TabIndex = 5;
             // 
             // Email
             // 
@@ -239,7 +239,7 @@
             this.Email.Location = new System.Drawing.Point(98, 285);
             this.Email.Name = "Email";
             this.Email.Size = new System.Drawing.Size(361, 20);
-            this.Email.TabIndex = 68;
+            this.Email.TabIndex = 6;
             // 
             // emailLabel
             // 
@@ -275,7 +275,7 @@
             this.updateButton.Location = new System.Drawing.Point(384, 311);
             this.updateButton.Name = "updateButton";
             this.updateButton.Size = new System.Drawing.Size(75, 75);
-            this.updateButton.TabIndex = 71;
+            this.updateButton.TabIndex = 7;
             this.updateButton.Text = "Update";
             this.updateButton.UseVisualStyleBackColor = true;
             this.updateButton.Click += new System.EventHandler(this.Update_Click);

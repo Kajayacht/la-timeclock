@@ -63,7 +63,7 @@
             this.startCalander.Location = new System.Drawing.Point(56, 282);
             this.startCalander.Name = "startCalander";
             this.startCalander.Size = new System.Drawing.Size(200, 20);
-            this.startCalander.TabIndex = 1;
+            this.startCalander.TabIndex = 0;
             this.startCalander.ValueChanged += new System.EventHandler(this.startCalander_ValueChanged);
             // 
             // endCalander
@@ -73,7 +73,7 @@
             this.endCalander.Location = new System.Drawing.Point(291, 283);
             this.endCalander.Name = "endCalander";
             this.endCalander.Size = new System.Drawing.Size(200, 20);
-            this.endCalander.TabIndex = 2;
+            this.endCalander.TabIndex = 1;
             // 
             // fromLabel
             // 
@@ -105,7 +105,7 @@
             this.requestButton.Location = new System.Drawing.Point(335, 318);
             this.requestButton.Name = "requestButton";
             this.requestButton.Size = new System.Drawing.Size(75, 67);
-            this.requestButton.TabIndex = 4;
+            this.requestButton.TabIndex = 3;
             this.requestButton.Text = "Request";
             this.requestButton.UseVisualStyleBackColor = true;
             this.requestButton.Click += new System.EventHandler(this.requestButton_Click);
@@ -116,7 +116,7 @@
             this.deleteButton.Location = new System.Drawing.Point(416, 318);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(75, 67);
-            this.deleteButton.TabIndex = 5;
+            this.deleteButton.TabIndex = 4;
             this.deleteButton.Text = "Delete";
             this.deleteButton.UseVisualStyleBackColor = true;
             this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
@@ -127,7 +127,7 @@
             this.reasonTextbox.Location = new System.Drawing.Point(56, 318);
             this.reasonTextbox.Name = "reasonTextbox";
             this.reasonTextbox.Size = new System.Drawing.Size(273, 67);
-            this.reasonTextbox.TabIndex = 3;
+            this.reasonTextbox.TabIndex = 2;
             this.reasonTextbox.Text = "";
             // 
             // label1

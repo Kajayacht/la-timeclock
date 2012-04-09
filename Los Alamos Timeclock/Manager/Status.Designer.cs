@@ -63,7 +63,7 @@
             this.employeeDropdownlist.Location = new System.Drawing.Point(79, 267);
             this.employeeDropdownlist.Name = "employeeDropdownlist";
             this.employeeDropdownlist.Size = new System.Drawing.Size(190, 21);
-            this.employeeDropdownlist.TabIndex = 1;
+            this.employeeDropdownlist.TabIndex = 0;
             this.employeeDropdownlist.SelectedIndexChanged += new System.EventHandler(this.employeeDropdownlist_SelectedIndexChanged);
             // 
             // employeeLabel
@@ -84,7 +84,7 @@
             this.calander.Location = new System.Drawing.Point(275, 267);
             this.calander.Name = "calander";
             this.calander.Size = new System.Drawing.Size(200, 20);
-            this.calander.TabIndex = 2;
+            this.calander.TabIndex = 1;
             this.calander.ValueChanged += new System.EventHandler(this.calander_DateChanged);
             // 
             // updatescheduleButton
@@ -93,7 +93,7 @@
             this.updatescheduleButton.Location = new System.Drawing.Point(378, 294);
             this.updatescheduleButton.Name = "updatescheduleButton";
             this.updatescheduleButton.Size = new System.Drawing.Size(97, 95);
-            this.updatescheduleButton.TabIndex = 7;
+            this.updatescheduleButton.TabIndex = 11;
             this.updatescheduleButton.Text = "Update";
             this.updatescheduleButton.UseVisualStyleBackColor = true;
             this.updatescheduleButton.Click += new System.EventHandler(this.update_Click);
@@ -114,7 +114,7 @@
             this.datagrid.ReadOnly = true;
             this.datagrid.RowHeadersVisible = false;
             this.datagrid.Size = new System.Drawing.Size(500, 261);
-            this.datagrid.TabIndex = 6;
+            this.datagrid.TabIndex = 12;
             // 
             // jobsDropdownlist
             // 
@@ -124,7 +124,7 @@
             this.jobsDropdownlist.Location = new System.Drawing.Point(79, 373);
             this.jobsDropdownlist.Name = "jobsDropdownlist";
             this.jobsDropdownlist.Size = new System.Drawing.Size(190, 21);
-            this.jobsDropdownlist.TabIndex = 6;
+            this.jobsDropdownlist.TabIndex = 10;
             // 
             // startLabel
             // 
@@ -169,7 +169,7 @@
             this.startTextbox.Mask = "90:00";
             this.startTextbox.Name = "startTextbox";
             this.startTextbox.Size = new System.Drawing.Size(41, 20);
-            this.startTextbox.TabIndex = 3;
+            this.startTextbox.TabIndex = 2;
             // 
             // endTextbox
             // 
@@ -178,7 +178,7 @@
             this.endTextbox.Mask = "90:00";
             this.endTextbox.Name = "endTextbox";
             this.endTextbox.Size = new System.Drawing.Size(41, 20);
-            this.endTextbox.TabIndex = 15;
+            this.endTextbox.TabIndex = 9;
             // 
             // b1outTextbox
             // 
@@ -187,7 +187,7 @@
             this.b1outTextbox.Mask = "90:00";
             this.b1outTextbox.Name = "b1outTextbox";
             this.b1outTextbox.Size = new System.Drawing.Size(41, 20);
-            this.b1outTextbox.TabIndex = 4;
+            this.b1outTextbox.TabIndex = 3;
             // 
             // break1Label
             // 
@@ -220,7 +220,7 @@
             this.b1inTextbox.Mask = "90:00";
             this.b1inTextbox.Name = "b1inTextbox";
             this.b1inTextbox.Size = new System.Drawing.Size(41, 20);
-            this.b1inTextbox.TabIndex = 5;
+            this.b1inTextbox.TabIndex = 4;
             // 
             // b2inTextbox
             // 
@@ -229,7 +229,7 @@
             this.b2inTextbox.Mask = "90:00";
             this.b2inTextbox.Name = "b2inTextbox";
             this.b2inTextbox.Size = new System.Drawing.Size(41, 20);
-            this.b2inTextbox.TabIndex = 7;
+            this.b2inTextbox.TabIndex = 6;
             // 
             // b2dashLabel
             // 
@@ -250,7 +250,7 @@
             this.b2outTextbox.Mask = "90:00";
             this.b2outTextbox.Name = "b2outTextbox";
             this.b2outTextbox.Size = new System.Drawing.Size(41, 20);
-            this.b2outTextbox.TabIndex = 6;
+            this.b2outTextbox.TabIndex = 5;
             // 
             // break2Label
             // 
@@ -271,7 +271,7 @@
             this.linTextbox.Mask = "90:00";
             this.linTextbox.Name = "linTextbox";
             this.linTextbox.Size = new System.Drawing.Size(41, 20);
-            this.linTextbox.TabIndex = 9;
+            this.linTextbox.TabIndex = 8;
             // 
             // loutTextbox
             // 
@@ -280,7 +280,7 @@
             this.loutTextbox.Mask = "90:00";
             this.loutTextbox.Name = "loutTextbox";
             this.loutTextbox.Size = new System.Drawing.Size(41, 20);
-            this.loutTextbox.TabIndex = 8;
+            this.loutTextbox.TabIndex = 7;
             // 
             // lunchLabel
             // 

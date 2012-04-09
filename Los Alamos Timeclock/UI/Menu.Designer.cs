@@ -47,7 +47,7 @@
             this.clockButton.Margin = new System.Windows.Forms.Padding(0);
             this.clockButton.Name = "clockButton";
             this.clockButton.Size = new System.Drawing.Size(202, 46);
-            this.clockButton.TabIndex = 0;
+            this.clockButton.TabIndex = 100;
             this.clockButton.Text = "Clock in/out";
             this.clockButton.UseVisualStyleBackColor = true;
             this.clockButton.Click += new System.EventHandler(this.Clockin_Click);
@@ -60,7 +60,7 @@
             this.requestsButton.Margin = new System.Windows.Forms.Padding(0);
             this.requestsButton.Name = "requestsButton";
             this.requestsButton.Size = new System.Drawing.Size(202, 46);
-            this.requestsButton.TabIndex = 1;
+            this.requestsButton.TabIndex = 102;
             this.requestsButton.Text = "Requests";
             this.requestsButton.UseVisualStyleBackColor = true;
             this.requestsButton.Click += new System.EventHandler(this.requestsButton_Click);
@@ -73,7 +73,7 @@
             this.scheduleButton.Margin = new System.Windows.Forms.Padding(0);
             this.scheduleButton.Name = "scheduleButton";
             this.scheduleButton.Size = new System.Drawing.Size(202, 46);
-            this.scheduleButton.TabIndex = 2;
+            this.scheduleButton.TabIndex = 101;
             this.scheduleButton.Text = "Schedule";
             this.scheduleButton.UseVisualStyleBackColor = true;
             this.scheduleButton.Click += new System.EventHandler(this.Schedule_Click);
@@ -86,7 +86,7 @@
             this.contactInfoButton.Margin = new System.Windows.Forms.Padding(0);
             this.contactInfoButton.Name = "contactInfoButton";
             this.contactInfoButton.Size = new System.Drawing.Size(202, 46);
-            this.contactInfoButton.TabIndex = 3;
+            this.contactInfoButton.TabIndex = 103;
             this.contactInfoButton.Text = "Contact Information";
             this.contactInfoButton.UseVisualStyleBackColor = true;
             this.contactInfoButton.Click += new System.EventHandler(this.Contactinfo_Click);
@@ -99,7 +99,7 @@
             this.logoutButton.Margin = new System.Windows.Forms.Padding(0);
             this.logoutButton.Name = "logoutButton";
             this.logoutButton.Size = new System.Drawing.Size(202, 46);
-            this.logoutButton.TabIndex = 6;
+            this.logoutButton.TabIndex = 105;
             this.logoutButton.Text = "Logout";
             this.logoutButton.UseVisualStyleBackColor = true;
             this.logoutButton.Click += new System.EventHandler(this.Logout_Click);
@@ -127,7 +127,7 @@
             this.managerButton.Margin = new System.Windows.Forms.Padding(0);
             this.managerButton.Name = "managerButton";
             this.managerButton.Size = new System.Drawing.Size(202, 46);
-            this.managerButton.TabIndex = 5;
+            this.managerButton.TabIndex = 104;
             this.managerButton.Text = "Manager";
             this.managerButton.UseVisualStyleBackColor = true;
             this.managerButton.Click += new System.EventHandler(this.Manager_Click);

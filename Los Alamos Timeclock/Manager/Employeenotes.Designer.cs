@@ -73,7 +73,7 @@
             this.employeeDropdownlist.Location = new System.Drawing.Point(100, 313);
             this.employeeDropdownlist.Name = "employeeDropdownlist";
             this.employeeDropdownlist.Size = new System.Drawing.Size(153, 24);
-            this.employeeDropdownlist.TabIndex = 60;
+            this.employeeDropdownlist.TabIndex = 1;
             this.employeeDropdownlist.TabStop = false;
             this.employeeDropdownlist.SelectedIndexChanged += new System.EventHandler(this.employeeDropdownlist_SelectedIndexChanged);
             // 
@@ -104,7 +104,7 @@
             this.notesDatagrid.RowTemplate.ReadOnly = true;
             this.notesDatagrid.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.notesDatagrid.Size = new System.Drawing.Size(500, 275);
-            this.notesDatagrid.TabIndex = 62;
+            this.notesDatagrid.TabIndex = 0;
             // 
             // noteTextbox
             // 
@@ -113,7 +113,7 @@
             this.noteTextbox.Location = new System.Drawing.Point(264, 313);
             this.noteTextbox.Name = "noteTextbox";
             this.noteTextbox.Size = new System.Drawing.Size(229, 84);
-            this.noteTextbox.TabIndex = 63;
+            this.noteTextbox.TabIndex = 2;
             this.noteTextbox.Text = "";
             // 
             // addnoteButton
@@ -122,7 +122,7 @@
             this.addnoteButton.Location = new System.Drawing.Point(100, 343);
             this.addnoteButton.Name = "addnoteButton";
             this.addnoteButton.Size = new System.Drawing.Size(158, 54);
-            this.addnoteButton.TabIndex = 64;
+            this.addnoteButton.TabIndex = 3;
             this.addnoteButton.Text = "Add Note";
             this.addnoteButton.UseVisualStyleBackColor = true;
             this.addnoteButton.Click += new System.EventHandler(this.addnoteButton_Click);

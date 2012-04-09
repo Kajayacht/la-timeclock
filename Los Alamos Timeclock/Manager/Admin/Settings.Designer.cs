@@ -133,7 +133,7 @@
             this.ipaddressTextbox.Location = new System.Drawing.Point(189, 262);
             this.ipaddressTextbox.Name = "ipaddressTextbox";
             this.ipaddressTextbox.Size = new System.Drawing.Size(153, 26);
-            this.ipaddressTextbox.TabIndex = 5;
+            this.ipaddressTextbox.TabIndex = 3;
             this.ipaddressTextbox.Text = "184.154.225.11";
             // 
             // portTextbox
@@ -143,7 +143,7 @@
             this.portTextbox.Location = new System.Drawing.Point(189, 294);
             this.portTextbox.Name = "portTextbox";
             this.portTextbox.Size = new System.Drawing.Size(153, 26);
-            this.portTextbox.TabIndex = 6;
+            this.portTextbox.TabIndex = 4;
             this.portTextbox.Text = "3306";
             // 
             // userTextbox
@@ -153,7 +153,7 @@
             this.userTextbox.Location = new System.Drawing.Point(187, 358);
             this.userTextbox.Name = "userTextbox";
             this.userTextbox.Size = new System.Drawing.Size(153, 26);
-            this.userTextbox.TabIndex = 7;
+            this.userTextbox.TabIndex = 6;
             this.userTextbox.Text = "teamchro_user";
             // 
             // passTextbox
@@ -164,7 +164,7 @@
             this.passTextbox.Name = "passTextbox";
             this.passTextbox.PasswordChar = '*';
             this.passTextbox.Size = new System.Drawing.Size(153, 26);
-            this.passTextbox.TabIndex = 8;
+            this.passTextbox.TabIndex = 7;
             this.passTextbox.Text = "chrono";
             // 
             // applyButton
@@ -173,7 +173,7 @@
             this.applyButton.Location = new System.Drawing.Point(267, 422);
             this.applyButton.Name = "applyButton";
             this.applyButton.Size = new System.Drawing.Size(75, 23);
-            this.applyButton.TabIndex = 9;
+            this.applyButton.TabIndex = 8;
             this.applyButton.Text = "Apply";
             this.applyButton.UseVisualStyleBackColor = true;
             this.applyButton.Click += new System.EventHandler(this.Apply_Click);
@@ -185,7 +185,7 @@
             this.databaseTextbox.Location = new System.Drawing.Point(187, 326);
             this.databaseTextbox.Name = "databaseTextbox";
             this.databaseTextbox.Size = new System.Drawing.Size(153, 26);
-            this.databaseTextbox.TabIndex = 11;
+            this.databaseTextbox.TabIndex = 5;
             this.databaseTextbox.Text = "teamchro_LATSQL";
             // 
             // databaseLLabel
@@ -227,7 +227,7 @@
             this.showCurrentEmployeesCheckbox.Location = new System.Drawing.Point(189, 68);
             this.showCurrentEmployeesCheckbox.Name = "showCurrentEmployeesCheckbox";
             this.showCurrentEmployeesCheckbox.Size = new System.Drawing.Size(144, 17);
-            this.showCurrentEmployeesCheckbox.TabIndex = 13;
+            this.showCurrentEmployeesCheckbox.TabIndex = 0;
             this.showCurrentEmployeesCheckbox.Text = "Show Current Employees";
             this.showCurrentEmployeesCheckbox.UseVisualStyleBackColor = false;
             // 
@@ -240,7 +240,7 @@
             this.showPreviousEmployeesCheckbox.Location = new System.Drawing.Point(189, 102);
             this.showPreviousEmployeesCheckbox.Name = "showPreviousEmployeesCheckbox";
             this.showPreviousEmployeesCheckbox.Size = new System.Drawing.Size(151, 17);
-            this.showPreviousEmployeesCheckbox.TabIndex = 14;
+            this.showPreviousEmployeesCheckbox.TabIndex = 1;
             this.showPreviousEmployeesCheckbox.Text = "Show Previous Employees";
             this.showPreviousEmployeesCheckbox.UseVisualStyleBackColor = false;
             // 
@@ -250,7 +250,7 @@
             this.saveAppSettings.Location = new System.Drawing.Point(258, 125);
             this.saveAppSettings.Name = "saveAppSettings";
             this.saveAppSettings.Size = new System.Drawing.Size(75, 23);
-            this.saveAppSettings.TabIndex = 15;
+            this.saveAppSettings.TabIndex = 2;
             this.saveAppSettings.Text = "Save";
             this.saveAppSettings.UseVisualStyleBackColor = true;
             this.saveAppSettings.Click += new System.EventHandler(this.saveAppSettings_Click);

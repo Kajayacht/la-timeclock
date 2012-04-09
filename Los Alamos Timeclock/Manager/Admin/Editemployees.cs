@@ -19,6 +19,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
         public Editemployees()
         {
             InitializeComponent();
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(Main.maininstance.notIdle_event);
             if (Main.myConnection.State == ConnectionState.Open)
             {
                 Main.reader.Close();

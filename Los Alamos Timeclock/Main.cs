@@ -76,9 +76,10 @@ namespace Los_Alamos_Timeclock
 
             joblist = getJobs();
             employeeList = getEmployees();
-            
+            menu1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.notIdle_event);
+
             //Main.maininstance.  .maininstance.Click += new System.EventHandler(this.keypress_event);
-            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.keypress_event);
+            //this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.keypress_event);
             //this.panel1.Controls[0].Click += keypress_event;
         }
 
@@ -450,7 +451,7 @@ namespace Los_Alamos_Timeclock
         //methods to deal with the timeout timer
 
         //ammount of time to wait before timing out
-        private TimeSpan timeoutTimelimit = TimeSpan.FromMinutes(9999);
+        private TimeSpan timeoutTimelimit = TimeSpan.FromSeconds(5);
         private DateTime timerCompareTime = DateTime.Now;
         
         //start the timer
@@ -483,12 +484,23 @@ namespace Los_Alamos_Timeclock
                 panel1.Controls.Clear();
                 panel1.Controls.Add(new Login());
                 panel1.Controls[0].Dock = DockStyle.Fill;
+                MessageBox.Show("You have been logged out due to inactivity");
             }
         }
-
-        private void keypress_event(object sender, EventArgs e)
+        private int mX = 0, mY = 0;
+        public virtual void notIdle_event(object sender, EventArgs e)
         {
-            MessageBox.Show("EVENT");
+            if (MousePosition.X != mX && MousePosition.Y != mY)
+            {
+                mX = MousePosition.X;
+                mY = MousePosition.Y;
+                resetTimer();
+            }
+            else if(e.ToString()=="System.Windows.Forms.KeyPressEventArgs")
+            {
+                resetTimer();
+                MessageBox.Show("timer reset");
+            }
         }
 
 

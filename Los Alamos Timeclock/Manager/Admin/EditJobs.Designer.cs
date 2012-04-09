@@ -84,7 +84,7 @@
             this.jobnameTextbox.Location = new System.Drawing.Point(243, 83);
             this.jobnameTextbox.Name = "jobnameTextbox";
             this.jobnameTextbox.Size = new System.Drawing.Size(100, 20);
-            this.jobnameTextbox.TabIndex = 3;
+            this.jobnameTextbox.TabIndex = 1;
             // 
             // startingpayTextbox
             // 
@@ -92,7 +92,7 @@
             this.startingpayTextbox.Location = new System.Drawing.Point(243, 109);
             this.startingpayTextbox.Name = "startingpayTextbox";
             this.startingpayTextbox.Size = new System.Drawing.Size(100, 20);
-            this.startingpayTextbox.TabIndex = 4;
+            this.startingpayTextbox.TabIndex = 2;
             // 
             // updatejobButton
             // 
@@ -100,7 +100,7 @@
             this.updatejobButton.Location = new System.Drawing.Point(187, 286);
             this.updatejobButton.Name = "updatejobButton";
             this.updatejobButton.Size = new System.Drawing.Size(75, 75);
-            this.updatejobButton.TabIndex = 5;
+            this.updatejobButton.TabIndex = 6;
             this.updatejobButton.Text = "Update";
             this.updatejobButton.UseVisualStyleBackColor = true;
             this.updatejobButton.Click += new System.EventHandler(this.updateJob_Click);
@@ -111,7 +111,7 @@
             this.newjobButton.Location = new System.Drawing.Point(268, 286);
             this.newjobButton.Name = "newjobButton";
             this.newjobButton.Size = new System.Drawing.Size(75, 75);
-            this.newjobButton.TabIndex = 6;
+            this.newjobButton.TabIndex = 7;
             this.newjobButton.Text = "New";
             this.newjobButton.UseVisualStyleBackColor = true;
             this.newjobButton.Click += new System.EventHandler(this.newJob_Click);
@@ -122,7 +122,7 @@
             this.deletejobButton.Location = new System.Drawing.Point(349, 286);
             this.deletejobButton.Name = "deletejobButton";
             this.deletejobButton.Size = new System.Drawing.Size(75, 75);
-            this.deletejobButton.TabIndex = 7;
+            this.deletejobButton.TabIndex = 8;
             this.deletejobButton.Text = "Delete";
             this.deletejobButton.UseVisualStyleBackColor = true;
             this.deletejobButton.Click += new System.EventHandler(this.deleteJob_Click);
@@ -136,7 +136,7 @@
             this.tippedBox.Location = new System.Drawing.Point(242, 135);
             this.tippedBox.Name = "tippedBox";
             this.tippedBox.Size = new System.Drawing.Size(79, 17);
-            this.tippedBox.TabIndex = 8;
+            this.tippedBox.TabIndex = 3;
             this.tippedBox.Text = "Tipped Job";
             this.tippedBox.UseVisualStyleBackColor = false;
             // 
@@ -146,7 +146,7 @@
             this.selectImageButton.Location = new System.Drawing.Point(243, 184);
             this.selectImageButton.Name = "selectImageButton";
             this.selectImageButton.Size = new System.Drawing.Size(101, 23);
-            this.selectImageButton.TabIndex = 9;
+            this.selectImageButton.TabIndex = 5;
             this.selectImageButton.Text = "Select Image";
             this.selectImageButton.UseVisualStyleBackColor = true;
             this.selectImageButton.Click += new System.EventHandler(this.selectImageButton_Click);
@@ -158,7 +158,7 @@
             this.filenameTextbox.Name = "filenameTextbox";
             this.filenameTextbox.ReadOnly = true;
             this.filenameTextbox.Size = new System.Drawing.Size(100, 20);
-            this.filenameTextbox.TabIndex = 10;
+            this.filenameTextbox.TabIndex = 4;
             // 
             // imageLabel
             // 

@@ -68,7 +68,7 @@
             this.payTextbox.ReadOnly = true;
             this.payTextbox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
             this.payTextbox.Size = new System.Drawing.Size(388, 263);
-            this.payTextbox.TabIndex = 4;
+            this.payTextbox.TabIndex = 2;
             this.payTextbox.Text = "";
             // 
             // disclaimerLabel
@@ -90,7 +90,7 @@
             this.endCalander.Location = new System.Drawing.Point(261, 3);
             this.endCalander.Name = "endCalander";
             this.endCalander.Size = new System.Drawing.Size(200, 20);
-            this.endCalander.TabIndex = 6;
+            this.endCalander.TabIndex = 1;
             this.endCalander.ValueChanged += new System.EventHandler(this.endCalander_ValueChanged);
             // 
             // dashLabel

@@ -56,7 +56,7 @@
             this.employeeDropdownlist.Location = new System.Drawing.Point(79, 267);
             this.employeeDropdownlist.Name = "employeeDropdownlist";
             this.employeeDropdownlist.Size = new System.Drawing.Size(190, 21);
-            this.employeeDropdownlist.TabIndex = 1;
+            this.employeeDropdownlist.TabIndex = 0;
             this.employeeDropdownlist.SelectedIndexChanged += new System.EventHandler(this.employeeDropdownlist_SelectedIndexChanged);
             // 
             // employeeLabel
@@ -77,7 +77,7 @@
             this.calander.Location = new System.Drawing.Point(275, 267);
             this.calander.Name = "calander";
             this.calander.Size = new System.Drawing.Size(200, 20);
-            this.calander.TabIndex = 2;
+            this.calander.TabIndex = 1;
             this.calander.ValueChanged += new System.EventHandler(this.calander_DateChanged);
             // 
             // updatescheduleButon
@@ -86,7 +86,7 @@
             this.updatescheduleButon.Location = new System.Drawing.Point(275, 293);
             this.updatescheduleButon.Name = "updatescheduleButon";
             this.updatescheduleButon.Size = new System.Drawing.Size(60, 95);
-            this.updatescheduleButon.TabIndex = 8;
+            this.updatescheduleButon.TabIndex = 7;
             this.updatescheduleButon.Text = "Update";
             this.updatescheduleButon.UseVisualStyleBackColor = true;
             this.updatescheduleButon.Click += new System.EventHandler(this.update_Click);
@@ -117,7 +117,7 @@
             this.jobsDropdownlist.Location = new System.Drawing.Point(79, 368);
             this.jobsDropdownlist.Name = "jobsDropdownlist";
             this.jobsDropdownlist.Size = new System.Drawing.Size(190, 21);
-            this.jobsDropdownlist.TabIndex = 7;
+            this.jobsDropdownlist.TabIndex = 6;
             // 
             // deleteButton
             // 
@@ -125,7 +125,7 @@
             this.deleteButton.Location = new System.Drawing.Point(341, 293);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(66, 95);
-            this.deleteButton.TabIndex = 9;
+            this.deleteButton.TabIndex = 8;
             this.deleteButton.Text = "Delete";
             this.deleteButton.UseVisualStyleBackColor = true;
             this.deleteButton.Click += new System.EventHandler(this.delete_Click);
@@ -165,7 +165,7 @@
             this.startHourDropdownlist.Location = new System.Drawing.Point(79, 294);
             this.startHourDropdownlist.Name = "startHourDropdownlist";
             this.startHourDropdownlist.Size = new System.Drawing.Size(92, 21);
-            this.startHourDropdownlist.TabIndex = 3;
+            this.startHourDropdownlist.TabIndex = 2;
             this.startHourDropdownlist.SelectedIndexChanged += new System.EventHandler(this.startHour_SelectedIndexChanged);
             // 
             // startLabel
@@ -219,7 +219,7 @@
             this.startMinDropdownlist.Location = new System.Drawing.Point(177, 294);
             this.startMinDropdownlist.Name = "startMinDropdownlist";
             this.startMinDropdownlist.Size = new System.Drawing.Size(92, 21);
-            this.startMinDropdownlist.TabIndex = 4;
+            this.startMinDropdownlist.TabIndex = 3;
             this.startMinDropdownlist.SelectedIndexChanged += new System.EventHandler(this.startMin_SelectedIndexChanged);
             // 
             // endHourDropdownlist
@@ -257,7 +257,7 @@
             this.endHourDropdownlist.Location = new System.Drawing.Point(79, 321);
             this.endHourDropdownlist.Name = "endHourDropdownlist";
             this.endHourDropdownlist.Size = new System.Drawing.Size(92, 21);
-            this.endHourDropdownlist.TabIndex = 5;
+            this.endHourDropdownlist.TabIndex = 4;
             this.endHourDropdownlist.SelectedIndexChanged += new System.EventHandler(this.endHour_SelectedIndexChanged);
             // 
             // endMinDropdownlist
@@ -275,7 +275,7 @@
             this.endMinDropdownlist.Location = new System.Drawing.Point(177, 321);
             this.endMinDropdownlist.Name = "endMinDropdownlist";
             this.endMinDropdownlist.Size = new System.Drawing.Size(92, 21);
-            this.endMinDropdownlist.TabIndex = 6;
+            this.endMinDropdownlist.TabIndex = 5;
             this.endMinDropdownlist.SelectedIndexChanged += new System.EventHandler(this.endMin_SelectedIndexChanged);
             // 
             // lengthLabel
@@ -297,7 +297,7 @@
             this.showRequests.Location = new System.Drawing.Point(413, 293);
             this.showRequests.Name = "showRequests";
             this.showRequests.Size = new System.Drawing.Size(62, 95);
-            this.showRequests.TabIndex = 18;
+            this.showRequests.TabIndex = 9;
             this.showRequests.Text = "Show Overview";
             this.showRequests.UseVisualStyleBackColor = true;
             this.showRequests.Click += new System.EventHandler(this.showRequests_Click);

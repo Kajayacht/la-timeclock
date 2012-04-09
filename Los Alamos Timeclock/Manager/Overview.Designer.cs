@@ -55,7 +55,7 @@
             this.requestsDatagridview.ReadOnly = true;
             this.requestsDatagridview.RowHeadersVisible = false;
             this.requestsDatagridview.Size = new System.Drawing.Size(522, 304);
-            this.requestsDatagridview.TabIndex = 7;
+            this.requestsDatagridview.TabIndex = 3;
             // 
             // toCalander
             // 
@@ -63,7 +63,7 @@
             this.toCalander.Location = new System.Drawing.Point(334, 351);
             this.toCalander.Name = "toCalander";
             this.toCalander.Size = new System.Drawing.Size(200, 20);
-            this.toCalander.TabIndex = 8;
+            this.toCalander.TabIndex = 2;
             this.toCalander.ValueChanged += new System.EventHandler(this.toCalander_ValueChanged);
             // 
             // fromCalander
@@ -72,7 +72,7 @@
             this.fromCalander.Location = new System.Drawing.Point(334, 322);
             this.fromCalander.Name = "fromCalander";
             this.fromCalander.Size = new System.Drawing.Size(200, 20);
-            this.fromCalander.TabIndex = 9;
+            this.fromCalander.TabIndex = 1;
             this.fromCalander.ValueChanged += new System.EventHandler(this.fromCalander_ValueChanged);
             // 
             // fromLabel
@@ -113,7 +113,7 @@
             this.showwhatDropdownlist.Location = new System.Drawing.Point(89, 325);
             this.showwhatDropdownlist.Name = "showwhatDropdownlist";
             this.showwhatDropdownlist.Size = new System.Drawing.Size(200, 33);
-            this.showwhatDropdownlist.TabIndex = 14;
+            this.showwhatDropdownlist.TabIndex = 0;
             this.showwhatDropdownlist.SelectedIndexChanged += new System.EventHandler(this.showwhatDropdownlist_SelectedIndexChanged);
             // 
             // showLabel

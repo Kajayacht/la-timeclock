@@ -38,6 +38,12 @@ namespace Los_Alamos_Timeclock
         public Request()
         {
             InitializeComponent();
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(Main.maininstance.notIdle_event);
+            requestsDatagrid.MouseMove += new System.Windows.Forms.MouseEventHandler(Main.maininstance.notIdle_event);
+            requestsDatagrid.KeyPress +=new KeyPressEventHandler(Main.maininstance.notIdle_event);
+            reasonTextbox.MouseMove += new System.Windows.Forms.MouseEventHandler(Main.maininstance.notIdle_event);
+            reasonTextbox.KeyPress += new KeyPressEventHandler(Main.maininstance.notIdle_event);
+
             startCalander.MinDate = DateTime.Today;
             endCalander.MinDate = DateTime.Today;
             filldt();

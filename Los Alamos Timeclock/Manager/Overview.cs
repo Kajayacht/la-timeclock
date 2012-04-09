@@ -19,6 +19,10 @@ namespace Los_Alamos_Timeclock.Manager.Admin
         public Overview()
         {
             InitializeComponent();
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(Main.maininstance.notIdle_event);
+            requestsDatagridview.MouseMove += new System.Windows.Forms.MouseEventHandler(Main.maininstance.notIdle_event);
+            requestsDatagridview.KeyPress +=new KeyPressEventHandler(Main.maininstance.notIdle_event);
+
             toCalander.MinDate = fromCalander.Value;
             showwhatDropdownlist.SelectedIndex = 0;
             filldt();

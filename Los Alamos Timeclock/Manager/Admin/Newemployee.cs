@@ -14,6 +14,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
         public Newemployee()
         {
             InitializeComponent();
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(Main.maininstance.notIdle_event);
             ssnTextbox.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             phoneTextbox.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             if (Main.myConnection.State == ConnectionState.Open)

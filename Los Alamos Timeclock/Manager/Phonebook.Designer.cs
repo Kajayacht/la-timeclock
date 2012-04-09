@@ -56,7 +56,7 @@
             this.employeeDropdownlist.Location = new System.Drawing.Point(154, 137);
             this.employeeDropdownlist.Name = "employeeDropdownlist";
             this.employeeDropdownlist.Size = new System.Drawing.Size(190, 28);
-            this.employeeDropdownlist.TabIndex = 6;
+            this.employeeDropdownlist.TabIndex = 0;
             this.employeeDropdownlist.TabStop = false;
             this.employeeDropdownlist.SelectedIndexChanged += new System.EventHandler(this.employeeDropdownlist_SelectedIndexChanged);
             // 

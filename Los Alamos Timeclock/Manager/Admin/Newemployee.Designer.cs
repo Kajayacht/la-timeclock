@@ -224,7 +224,7 @@
             this.fNameTextbox.Location = new System.Drawing.Point(107, 103);
             this.fNameTextbox.Name = "fNameTextbox";
             this.fNameTextbox.Size = new System.Drawing.Size(344, 20);
-            this.fNameTextbox.TabIndex = 1;
+            this.fNameTextbox.TabIndex = 0;
             // 
             // mNameTextbox
             // 
@@ -232,7 +232,7 @@
             this.mNameTextbox.Location = new System.Drawing.Point(107, 129);
             this.mNameTextbox.Name = "mNameTextbox";
             this.mNameTextbox.Size = new System.Drawing.Size(344, 20);
-            this.mNameTextbox.TabIndex = 2;
+            this.mNameTextbox.TabIndex = 1;
             // 
             // lNameTextbox
             // 
@@ -240,7 +240,7 @@
             this.lNameTextbox.Location = new System.Drawing.Point(107, 155);
             this.lNameTextbox.Name = "lNameTextbox";
             this.lNameTextbox.Size = new System.Drawing.Size(344, 20);
-            this.lNameTextbox.TabIndex = 3;
+            this.lNameTextbox.TabIndex = 2;
             // 
             // aCityTextbox
             // 
@@ -248,7 +248,7 @@
             this.aCityTextbox.Location = new System.Drawing.Point(107, 297);
             this.aCityTextbox.Name = "aCityTextbox";
             this.aCityTextbox.Size = new System.Drawing.Size(344, 20);
-            this.aCityTextbox.TabIndex = 7;
+            this.aCityTextbox.TabIndex = 6;
             // 
             // aLine2Textbox
             // 
@@ -256,7 +256,7 @@
             this.aLine2Textbox.Location = new System.Drawing.Point(107, 271);
             this.aLine2Textbox.Name = "aLine2Textbox";
             this.aLine2Textbox.Size = new System.Drawing.Size(344, 20);
-            this.aLine2Textbox.TabIndex = 6;
+            this.aLine2Textbox.TabIndex = 5;
             // 
             // aLine1Textbox
             // 
@@ -264,7 +264,7 @@
             this.aLine1Textbox.Location = new System.Drawing.Point(107, 245);
             this.aLine1Textbox.Name = "aLine1Textbox";
             this.aLine1Textbox.Size = new System.Drawing.Size(344, 20);
-            this.aLine1Textbox.TabIndex = 5;
+            this.aLine1Textbox.TabIndex = 4;
             // 
             // aStateDropdownlist
             // 
@@ -326,7 +326,7 @@
             this.aStateDropdownlist.Location = new System.Drawing.Point(107, 323);
             this.aStateDropdownlist.Name = "aStateDropdownlist";
             this.aStateDropdownlist.Size = new System.Drawing.Size(344, 21);
-            this.aStateDropdownlist.TabIndex = 8;
+            this.aStateDropdownlist.TabIndex = 7;
             // 
             // ssnLabel
             // 
@@ -363,7 +363,7 @@
             this.pass2Textbox.Name = "pass2Textbox";
             this.pass2Textbox.PasswordChar = '*';
             this.pass2Textbox.Size = new System.Drawing.Size(344, 20);
-            this.pass2Textbox.TabIndex = 14;
+            this.pass2Textbox.TabIndex = 13;
             // 
             // pass1Textbox
             // 
@@ -372,7 +372,7 @@
             this.pass1Textbox.Name = "pass1Textbox";
             this.pass1Textbox.PasswordChar = '*';
             this.pass1Textbox.Size = new System.Drawing.Size(344, 20);
-            this.pass1Textbox.TabIndex = 13;
+            this.pass1Textbox.TabIndex = 12;
             // 
             // userTextbox
             // 
@@ -380,7 +380,7 @@
             this.userTextbox.Location = new System.Drawing.Point(107, 503);
             this.userTextbox.Name = "userTextbox";
             this.userTextbox.Size = new System.Drawing.Size(344, 20);
-            this.userTextbox.TabIndex = 12;
+            this.userTextbox.TabIndex = 11;
             // 
             // pass2Label
             // 
@@ -426,11 +426,11 @@
             // saveButton
             // 
             this.saveButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.saveButton.Location = new System.Drawing.Point(376, 606);
+            this.saveButton.Location = new System.Drawing.Point(295, 606);
             this.saveButton.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(75, 75);
-            this.saveButton.TabIndex = 16;
+            this.saveButton.TabIndex = 14;
             this.saveButton.Text = "Save";
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.save_Click);
@@ -438,7 +438,7 @@
             // cancelButton
             // 
             this.cancelButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.cancelButton.Location = new System.Drawing.Point(295, 606);
+            this.cancelButton.Location = new System.Drawing.Point(376, 606);
             this.cancelButton.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 75);
@@ -453,7 +453,7 @@
             this.emailTextbox.Location = new System.Drawing.Point(107, 439);
             this.emailTextbox.Name = "emailTextbox";
             this.emailTextbox.Size = new System.Drawing.Size(344, 20);
-            this.emailTextbox.TabIndex = 11;
+            this.emailTextbox.TabIndex = 10;
             // 
             // emailLabel
             // 
@@ -504,7 +504,7 @@
             this.ssnTextbox.Mask = "000-00-0000";
             this.ssnTextbox.Name = "ssnTextbox";
             this.ssnTextbox.Size = new System.Drawing.Size(344, 20);
-            this.ssnTextbox.TabIndex = 4;
+            this.ssnTextbox.TabIndex = 3;
             // 
             // phoneTextbox
             // 
@@ -513,7 +513,7 @@
             this.phoneTextbox.Mask = "(999) 000-0000";
             this.phoneTextbox.Name = "phoneTextbox";
             this.phoneTextbox.Size = new System.Drawing.Size(343, 20);
-            this.phoneTextbox.TabIndex = 10;
+            this.phoneTextbox.TabIndex = 9;
             // 
             // aZipTextbox
             // 
@@ -522,7 +522,7 @@
             this.aZipTextbox.Mask = "00000";
             this.aZipTextbox.Name = "aZipTextbox";
             this.aZipTextbox.Size = new System.Drawing.Size(344, 20);
-            this.aZipTextbox.TabIndex = 9;
+            this.aZipTextbox.TabIndex = 8;
             // 
             // Newemployee
             // 

@@ -44,7 +44,7 @@
             this.okButton.Location = new System.Drawing.Point(71, 102);
             this.okButton.Name = "okButton";
             this.okButton.Size = new System.Drawing.Size(75, 23);
-            this.okButton.TabIndex = 0;
+            this.okButton.TabIndex = 3;
             this.okButton.Text = "Ok";
             this.okButton.UseVisualStyleBackColor = true;
             this.okButton.Click += new System.EventHandler(this.ok_Click);
@@ -54,7 +54,7 @@
             this.cancelButton.Location = new System.Drawing.Point(152, 102);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
-            this.cancelButton.TabIndex = 1;
+            this.cancelButton.TabIndex = 4;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.cancel_Click);
@@ -82,7 +82,7 @@
             this.userTextbox.Location = new System.Drawing.Point(71, 30);
             this.userTextbox.Name = "userTextbox";
             this.userTextbox.Size = new System.Drawing.Size(157, 20);
-            this.userTextbox.TabIndex = 4;
+            this.userTextbox.TabIndex = 0;
             // 
             // passTextbox
             // 
@@ -90,7 +90,7 @@
             this.passTextbox.Name = "passTextbox";
             this.passTextbox.PasswordChar = '*';
             this.passTextbox.Size = new System.Drawing.Size(157, 20);
-            this.passTextbox.TabIndex = 5;
+            this.passTextbox.TabIndex = 1;
             // 
             // userLabel
             // 

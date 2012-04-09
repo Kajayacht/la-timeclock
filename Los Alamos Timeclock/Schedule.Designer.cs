@@ -63,7 +63,7 @@
             this.weekCalander.Location = new System.Drawing.Point(3, 3);
             this.weekCalander.Name = "weekCalander";
             this.weekCalander.Size = new System.Drawing.Size(200, 20);
-            this.weekCalander.TabIndex = 3;
+            this.weekCalander.TabIndex = 0;
             this.weekCalander.ValueChanged += new System.EventHandler(this.date_ValueChanged);
             // 
             // whoDropdownlist
@@ -76,7 +76,7 @@
             this.whoDropdownlist.Location = new System.Drawing.Point(210, 4);
             this.whoDropdownlist.Name = "whoDropdownlist";
             this.whoDropdownlist.Size = new System.Drawing.Size(121, 21);
-            this.whoDropdownlist.TabIndex = 4;
+            this.whoDropdownlist.TabIndex = 1;
             this.whoDropdownlist.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // Schedule

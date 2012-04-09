@@ -45,6 +45,7 @@ namespace Los_Alamos_Timeclock
         public Clockinout()
         {
             InitializeComponent();
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(Main.maininstance.notIdle_event);
 
             try
             {

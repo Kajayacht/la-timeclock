@@ -78,16 +78,18 @@
             this.userTextbox.Location = new System.Drawing.Point(194, 160);
             this.userTextbox.Name = "userTextbox";
             this.userTextbox.Size = new System.Drawing.Size(100, 20);
-            this.userTextbox.TabIndex = 1;
+            this.userTextbox.TabIndex = 0;
             // 
             // passTextbox
             // 
+            this.passTextbox.AcceptsReturn = true;
             this.passTextbox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.passTextbox.Location = new System.Drawing.Point(194, 183);
+            this.passTextbox.Multiline = true;
             this.passTextbox.Name = "passTextbox";
             this.passTextbox.PasswordChar = '*';
             this.passTextbox.Size = new System.Drawing.Size(100, 20);
-            this.passTextbox.TabIndex = 2;
+            this.passTextbox.TabIndex = 1;
             // 
             // loginButton
             // 
@@ -96,7 +98,7 @@
             this.loginButton.MaximumSize = new System.Drawing.Size(200, 100);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(100, 25);
-            this.loginButton.TabIndex = 3;
+            this.loginButton.TabIndex = 2;
             this.loginButton.Text = "Login";
             this.loginButton.UseVisualStyleBackColor = true;
             this.loginButton.Click += new System.EventHandler(this.B_login_Click);

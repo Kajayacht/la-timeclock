@@ -19,6 +19,10 @@ namespace Los_Alamos_Timeclock
         public Schedule()
         {
             InitializeComponent();
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(Main.maininstance.notIdle_event);
+            scheduleDatagrid.MouseMove += new System.Windows.Forms.MouseEventHandler(Main.maininstance.notIdle_event);
+            scheduleDatagrid.KeyPress +=new KeyPressEventHandler(Main.maininstance.notIdle_event);
+
             mon = getmon(DateTime.Parse(weekCalander.Value.ToShortDateString()));
             sun = mon.AddDays(6);
             whoDropdownlist.SelectedItem = "Self";

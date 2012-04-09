@@ -15,6 +15,8 @@ namespace Los_Alamos_Timeclock.Manager
         public Phonebook()
         {
             InitializeComponent();
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(Main.maininstance.notIdle_event);
+
             employeeDropdownlist.DisplayMember = "getname";
             employeeDropdownlist.ValueMember = "gid";
 

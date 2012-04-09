@@ -118,7 +118,7 @@
             this.BreakButton.Location = new System.Drawing.Point(145, 291);
             this.BreakButton.Name = "BreakButton";
             this.BreakButton.Size = new System.Drawing.Size(75, 75);
-            this.BreakButton.TabIndex = 6;
+            this.BreakButton.TabIndex = 1;
             this.BreakButton.Text = "Break In/Out";
             this.BreakButton.UseVisualStyleBackColor = true;
             this.BreakButton.Click += new System.EventHandler(this.Break_Click);
@@ -129,7 +129,7 @@
             this.lunchButton.Location = new System.Drawing.Point(226, 291);
             this.lunchButton.Name = "lunchButton";
             this.lunchButton.Size = new System.Drawing.Size(75, 75);
-            this.lunchButton.TabIndex = 7;
+            this.lunchButton.TabIndex = 2;
             this.lunchButton.Text = "Lunch In/Out";
             this.lunchButton.UseVisualStyleBackColor = true;
             this.lunchButton.Click += new System.EventHandler(this.Lunch_Click);
@@ -140,7 +140,7 @@
             this.managerOverrideButton.Location = new System.Drawing.Point(388, 291);
             this.managerOverrideButton.Name = "managerOverrideButton";
             this.managerOverrideButton.Size = new System.Drawing.Size(75, 75);
-            this.managerOverrideButton.TabIndex = 8;
+            this.managerOverrideButton.TabIndex = 4;
             this.managerOverrideButton.Text = "Manager Override";
             this.managerOverrideButton.UseVisualStyleBackColor = true;
             this.managerOverrideButton.Click += new System.EventHandler(this.Manager_Click);

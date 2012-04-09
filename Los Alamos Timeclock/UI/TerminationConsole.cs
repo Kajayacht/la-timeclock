@@ -16,6 +16,10 @@ namespace Los_Alamos_Timeclock.UI
         public TerminationConsole()
         {
             InitializeComponent();
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(Main.maininstance.notIdle_event);
+            commentsTextbox.MouseMove +=new MouseEventHandler(Main.maininstance.notIdle_event);
+            commentsTextbox.KeyPress +=new KeyPressEventHandler(Main.maininstance.notIdle_event);
+
             reasonDropdownlist.SelectedIndex = 0;
             lastDayCalander.MinDate = DateTime.Today;
         }

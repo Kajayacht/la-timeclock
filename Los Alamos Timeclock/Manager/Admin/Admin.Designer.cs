@@ -45,7 +45,7 @@
             this.editemployeesButton.Location = new System.Drawing.Point(217, 155);
             this.editemployeesButton.Name = "editemployeesButton";
             this.editemployeesButton.Size = new System.Drawing.Size(75, 75);
-            this.editemployeesButton.TabIndex = 0;
+            this.editemployeesButton.TabIndex = 5;
             this.editemployeesButton.Text = "Edit Employees";
             this.editemployeesButton.UseVisualStyleBackColor = true;
             this.editemployeesButton.Click += new System.EventHandler(this.editemployees_Click);
@@ -56,7 +56,7 @@
             this.editscheduleButton.Location = new System.Drawing.Point(217, 74);
             this.editscheduleButton.Name = "editscheduleButton";
             this.editscheduleButton.Size = new System.Drawing.Size(75, 75);
-            this.editscheduleButton.TabIndex = 1;
+            this.editscheduleButton.TabIndex = 2;
             this.editscheduleButton.Text = "Edit Schedule";
             this.editscheduleButton.UseVisualStyleBackColor = true;
             this.editscheduleButton.Click += new System.EventHandler(this.editschedule_Click);
@@ -67,7 +67,7 @@
             this.viewlogButton.Location = new System.Drawing.Point(217, 236);
             this.viewlogButton.Name = "viewlogButton";
             this.viewlogButton.Size = new System.Drawing.Size(75, 75);
-            this.viewlogButton.TabIndex = 2;
+            this.viewlogButton.TabIndex = 8;
             this.viewlogButton.Text = "View Log";
             this.viewlogButton.UseVisualStyleBackColor = true;
             this.viewlogButton.Click += new System.EventHandler(this.viewlog_Click);
@@ -78,7 +78,7 @@
             this.calculatepayButton.Location = new System.Drawing.Point(136, 236);
             this.calculatepayButton.Name = "calculatepayButton";
             this.calculatepayButton.Size = new System.Drawing.Size(75, 75);
-            this.calculatepayButton.TabIndex = 3;
+            this.calculatepayButton.TabIndex = 7;
             this.calculatepayButton.Text = "Calculate Paychecks";
             this.calculatepayButton.UseVisualStyleBackColor = true;
             this.calculatepayButton.Click += new System.EventHandler(this.paychecks_Click);
@@ -89,7 +89,7 @@
             this.editjobsButton.Location = new System.Drawing.Point(298, 155);
             this.editjobsButton.Name = "editjobsButton";
             this.editjobsButton.Size = new System.Drawing.Size(75, 75);
-            this.editjobsButton.TabIndex = 4;
+            this.editjobsButton.TabIndex = 6;
             this.editjobsButton.Text = "Edit Jobs";
             this.editjobsButton.UseVisualStyleBackColor = true;
             this.editjobsButton.Click += new System.EventHandler(this.editjobs_Click);
@@ -100,7 +100,7 @@
             this.settingsButton.Location = new System.Drawing.Point(298, 236);
             this.settingsButton.Name = "settingsButton";
             this.settingsButton.Size = new System.Drawing.Size(75, 75);
-            this.settingsButton.TabIndex = 5;
+            this.settingsButton.TabIndex = 9;
             this.settingsButton.Text = "Settings";
             this.settingsButton.UseVisualStyleBackColor = true;
             this.settingsButton.Click += new System.EventHandler(this.settings_Click);
@@ -111,7 +111,7 @@
             this.statusButton.Location = new System.Drawing.Point(136, 74);
             this.statusButton.Name = "statusButton";
             this.statusButton.Size = new System.Drawing.Size(75, 75);
-            this.statusButton.TabIndex = 6;
+            this.statusButton.TabIndex = 1;
             this.statusButton.Text = "Status";
             this.statusButton.UseVisualStyleBackColor = true;
             this.statusButton.Click += new System.EventHandler(this.status_Click);
@@ -122,7 +122,7 @@
             this.employeenotesButton.Location = new System.Drawing.Point(298, 74);
             this.employeenotesButton.Name = "employeenotesButton";
             this.employeenotesButton.Size = new System.Drawing.Size(75, 75);
-            this.employeenotesButton.TabIndex = 7;
+            this.employeenotesButton.TabIndex = 3;
             this.employeenotesButton.Text = "Employee Notes";
             this.employeenotesButton.UseVisualStyleBackColor = true;
             this.employeenotesButton.Click += new System.EventHandler(this.employeenotes_Click);
@@ -133,7 +133,7 @@
             this.phonebookButton.Location = new System.Drawing.Point(136, 155);
             this.phonebookButton.Name = "phonebookButton";
             this.phonebookButton.Size = new System.Drawing.Size(75, 75);
-            this.phonebookButton.TabIndex = 8;
+            this.phonebookButton.TabIndex = 4;
             this.phonebookButton.Text = "Phone Book";
             this.phonebookButton.UseVisualStyleBackColor = true;
             this.phonebookButton.Click += new System.EventHandler(this.phonebook_Click);

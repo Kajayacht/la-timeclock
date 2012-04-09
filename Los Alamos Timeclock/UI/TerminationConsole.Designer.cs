@@ -51,7 +51,7 @@
             this.commentsTextbox.Location = new System.Drawing.Point(78, 86);
             this.commentsTextbox.Name = "commentsTextbox";
             this.commentsTextbox.Size = new System.Drawing.Size(200, 64);
-            this.commentsTextbox.TabIndex = 1;
+            this.commentsTextbox.TabIndex = 3;
             this.commentsTextbox.Text = "";
             // 
             // lastDayLabel
@@ -102,7 +102,7 @@
             this.reasonDropdownlist.Location = new System.Drawing.Point(78, 36);
             this.reasonDropdownlist.Name = "reasonDropdownlist";
             this.reasonDropdownlist.Size = new System.Drawing.Size(200, 21);
-            this.reasonDropdownlist.TabIndex = 6;
+            this.reasonDropdownlist.TabIndex = 1;
             // 
             // label1
             // 
@@ -119,7 +119,7 @@
             this.removePrivCheckbox.Location = new System.Drawing.Point(78, 63);
             this.removePrivCheckbox.Name = "removePrivCheckbox";
             this.removePrivCheckbox.Size = new System.Drawing.Size(193, 17);
-            this.removePrivCheckbox.TabIndex = 8;
+            this.removePrivCheckbox.TabIndex = 2;
             this.removePrivCheckbox.Text = "Remove Admin/Manager Privileges";
             this.removePrivCheckbox.UseVisualStyleBackColor = true;
             // 
