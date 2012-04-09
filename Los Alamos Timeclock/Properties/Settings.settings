@@ -3,19 +3,19 @@
   <Profiles />
   <Settings>
     <Setting Name="IP" Type="System.String" Scope="User">
-      <Value Profile="(Default)">184.154.225.11</Value>
+      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="Port" Type="System.String" Scope="User">
-      <Value Profile="(Default)">3306</Value>
+      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="Database" Type="System.String" Scope="User">
-      <Value Profile="(Default)">teamchro_LATSQL</Value>
+      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="User" Type="System.String" Scope="User">
-      <Value Profile="(Default)">teamchro_user</Value>
+      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="Password" Type="System.String" Scope="User">
-      <Value Profile="(Default)">chrono</Value>
+      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="showCurrentEmployees" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
