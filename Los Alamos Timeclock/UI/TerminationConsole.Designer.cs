@@ -1,4 +1,5 @@
-﻿namespace Los_Alamos_Timeclock.UI
+﻿using System.Windows.Forms;
+namespace Los_Alamos_Timeclock.UI
 {
     partial class TerminationConsole
     {
@@ -28,15 +29,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.Label lastDayLabel;
+            System.Windows.Forms.Label reasonLabel;
+            System.Windows.Forms.Label label1;
             this.lastDayCalander = new System.Windows.Forms.DateTimePicker();
             this.commentsTextbox = new System.Windows.Forms.RichTextBox();
-            this.lastDayLabel = new System.Windows.Forms.Label();
-            this.reasonLabel = new System.Windows.Forms.Label();
             this.terminateButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
             this.reasonDropdownlist = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.removePrivCheckbox = new System.Windows.Forms.CheckBox();
+            lastDayLabel = new System.Windows.Forms.Label();
+            reasonLabel = new System.Windows.Forms.Label();
+            label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lastDayCalander
@@ -56,21 +60,21 @@
             // 
             // lastDayLabel
             // 
-            this.lastDayLabel.AutoSize = true;
-            this.lastDayLabel.Location = new System.Drawing.Point(12, 9);
-            this.lastDayLabel.Name = "lastDayLabel";
-            this.lastDayLabel.Size = new System.Drawing.Size(52, 13);
-            this.lastDayLabel.TabIndex = 2;
-            this.lastDayLabel.Text = "Last Day:";
+            lastDayLabel.AutoSize = true;
+            lastDayLabel.Location = new System.Drawing.Point(12, 9);
+            lastDayLabel.Name = "lastDayLabel";
+            lastDayLabel.Size = new System.Drawing.Size(52, 13);
+            lastDayLabel.TabIndex = 2;
+            lastDayLabel.Text = "Last Day:";
             // 
             // reasonLabel
             // 
-            this.reasonLabel.AutoSize = true;
-            this.reasonLabel.Location = new System.Drawing.Point(11, 35);
-            this.reasonLabel.Name = "reasonLabel";
-            this.reasonLabel.Size = new System.Drawing.Size(47, 13);
-            this.reasonLabel.TabIndex = 3;
-            this.reasonLabel.Text = "Reason:";
+            reasonLabel.AutoSize = true;
+            reasonLabel.Location = new System.Drawing.Point(11, 35);
+            reasonLabel.Name = "reasonLabel";
+            reasonLabel.Size = new System.Drawing.Size(47, 13);
+            reasonLabel.TabIndex = 3;
+            reasonLabel.Text = "Reason:";
             // 
             // terminateButton
             // 
@@ -106,12 +110,12 @@
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(5, 89);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 13);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Comments:";
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(5, 89);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(59, 13);
+            label1.TabIndex = 7;
+            label1.Text = "Comments:";
             // 
             // removePrivCheckbox
             // 
@@ -129,12 +133,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(298, 188);
             this.Controls.Add(this.removePrivCheckbox);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(label1);
             this.Controls.Add(this.reasonDropdownlist);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.terminateButton);
-            this.Controls.Add(this.reasonLabel);
-            this.Controls.Add(this.lastDayLabel);
+            this.Controls.Add(reasonLabel);
+            this.Controls.Add(lastDayLabel);
             this.Controls.Add(this.commentsTextbox);
             this.Controls.Add(this.lastDayCalander);
             this.MinimumSize = new System.Drawing.Size(314, 226);
@@ -150,12 +154,9 @@
 
         private System.Windows.Forms.DateTimePicker lastDayCalander;
         private System.Windows.Forms.RichTextBox commentsTextbox;
-        private System.Windows.Forms.Label lastDayLabel;
-        private System.Windows.Forms.Label reasonLabel;
         private System.Windows.Forms.Button terminateButton;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.ComboBox reasonDropdownlist;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox removePrivCheckbox;
     }
 }

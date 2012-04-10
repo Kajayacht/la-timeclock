@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.Label disclaimerLabel;
             this.startCalander = new System.Windows.Forms.DateTimePicker();
             this.weekLabel = new System.Windows.Forms.Label();
             this.payTextbox = new System.Windows.Forms.RichTextBox();
-            this.disclaimerLabel = new System.Windows.Forms.Label();
             this.endCalander = new System.Windows.Forms.DateTimePicker();
             this.dashLabel = new System.Windows.Forms.Label();
+            disclaimerLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // startCalander
@@ -73,16 +74,16 @@
             // 
             // disclaimerLabel
             // 
-            this.disclaimerLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.disclaimerLabel.AutoSize = true;
-            this.disclaimerLabel.BackColor = System.Drawing.Color.Transparent;
-            this.disclaimerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.disclaimerLabel.ForeColor = System.Drawing.Color.White;
-            this.disclaimerLabel.Location = new System.Drawing.Point(146, 369);
-            this.disclaimerLabel.Name = "disclaimerLabel";
-            this.disclaimerLabel.Size = new System.Drawing.Size(235, 20);
-            this.disclaimerLabel.TabIndex = 5;
-            this.disclaimerLabel.Text = "Pay based on current wages";
+            disclaimerLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            disclaimerLabel.AutoSize = true;
+            disclaimerLabel.BackColor = System.Drawing.Color.Transparent;
+            disclaimerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            disclaimerLabel.ForeColor = System.Drawing.Color.White;
+            disclaimerLabel.Location = new System.Drawing.Point(146, 369);
+            disclaimerLabel.Name = "disclaimerLabel";
+            disclaimerLabel.Size = new System.Drawing.Size(235, 20);
+            disclaimerLabel.TabIndex = 5;
+            disclaimerLabel.Text = "Pay based on current wages";
             // 
             // endCalander
             // 
@@ -115,7 +116,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.dashLabel);
             this.Controls.Add(this.endCalander);
-            this.Controls.Add(this.disclaimerLabel);
+            this.Controls.Add(disclaimerLabel);
             this.Controls.Add(this.payTextbox);
             this.Controls.Add(this.weekLabel);
             this.Controls.Add(this.startCalander);
@@ -132,7 +133,6 @@
         private System.Windows.Forms.DateTimePicker startCalander;
         private System.Windows.Forms.Label weekLabel;
         private System.Windows.Forms.RichTextBox payTextbox;
-        private System.Windows.Forms.Label disclaimerLabel;
         private System.Windows.Forms.DateTimePicker endCalander;
         private System.Windows.Forms.Label dashLabel;
     }

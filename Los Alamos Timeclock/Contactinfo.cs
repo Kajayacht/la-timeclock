@@ -31,14 +31,6 @@ namespace Los_Alamos_Timeclock
         public Contactinfo()
         {
             InitializeComponent();
-            this.MouseMove += new System.Windows.Forms.MouseEventHandler(Main.maininstance.notIdle_event);
-            Al1.KeyPress +=new KeyPressEventHandler(Main.maininstance.notIdle_event);
-            Al2.KeyPress += new KeyPressEventHandler(Main.maininstance.notIdle_event);
-            Az.KeyPress += new KeyPressEventHandler(Main.maininstance.notIdle_event);
-            As.KeyPress += new KeyPressEventHandler(Main.maininstance.notIdle_event);
-            Ac.KeyPress += new KeyPressEventHandler(Main.maininstance.notIdle_event);
-            Phone.KeyPress += new KeyPressEventHandler(Main.maininstance.notIdle_event);
-            Email.KeyPress += new KeyPressEventHandler(Main.maininstance.notIdle_event);
 
             Phone.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             Main.myConnection.Open();

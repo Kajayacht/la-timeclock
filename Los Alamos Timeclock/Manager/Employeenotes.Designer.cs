@@ -1,4 +1,5 @@
-﻿namespace Los_Alamos_Timeclock.Manager
+﻿using System.Windows.Forms;
+namespace Los_Alamos_Timeclock.Manager
 {
     partial class Employeenotes
     {
@@ -28,41 +29,43 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.titleLabel = new System.Windows.Forms.Label();
-            this.employeeLabel = new System.Windows.Forms.Label();
+            System.Windows.Forms.Label titleLabel;
+            System.Windows.Forms.Label employeeLabel;
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.employeeDropdownlist = new System.Windows.Forms.ComboBox();
             this.notesDatagrid = new System.Windows.Forms.DataGridView();
             this.noteTextbox = new System.Windows.Forms.RichTextBox();
             this.addnoteButton = new System.Windows.Forms.Button();
+            titleLabel = new System.Windows.Forms.Label();
+            employeeLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.notesDatagrid)).BeginInit();
             this.SuspendLayout();
             // 
             // titleLabel
             // 
-            this.titleLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.titleLabel.AutoSize = true;
-            this.titleLabel.BackColor = System.Drawing.Color.Transparent;
-            this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleLabel.ForeColor = System.Drawing.Color.White;
-            this.titleLabel.Location = new System.Drawing.Point(175, 9);
-            this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(139, 20);
-            this.titleLabel.TabIndex = 59;
-            this.titleLabel.Text = "Employee Notes";
+            titleLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            titleLabel.AutoSize = true;
+            titleLabel.BackColor = System.Drawing.Color.Transparent;
+            titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            titleLabel.ForeColor = System.Drawing.Color.White;
+            titleLabel.Location = new System.Drawing.Point(175, 9);
+            titleLabel.Name = "titleLabel";
+            titleLabel.Size = new System.Drawing.Size(139, 20);
+            titleLabel.TabIndex = 59;
+            titleLabel.Text = "Employee Notes";
             // 
             // employeeLabel
             // 
-            this.employeeLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.employeeLabel.AutoSize = true;
-            this.employeeLabel.BackColor = System.Drawing.Color.Transparent;
-            this.employeeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.employeeLabel.ForeColor = System.Drawing.Color.White;
-            this.employeeLabel.Location = new System.Drawing.Point(2, 316);
-            this.employeeLabel.Name = "employeeLabel";
-            this.employeeLabel.Size = new System.Drawing.Size(92, 20);
-            this.employeeLabel.TabIndex = 61;
-            this.employeeLabel.Text = "Employee:";
+            employeeLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            employeeLabel.AutoSize = true;
+            employeeLabel.BackColor = System.Drawing.Color.Transparent;
+            employeeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            employeeLabel.ForeColor = System.Drawing.Color.White;
+            employeeLabel.Location = new System.Drawing.Point(2, 316);
+            employeeLabel.Name = "employeeLabel";
+            employeeLabel.Size = new System.Drawing.Size(92, 20);
+            employeeLabel.TabIndex = 61;
+            employeeLabel.Text = "Employee:";
             // 
             // employeeDropdownlist
             // 
@@ -86,14 +89,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.notesDatagrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.notesDatagrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.notesDatagrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.notesDatagrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.notesDatagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.notesDatagrid.Location = new System.Drawing.Point(0, 32);
             this.notesDatagrid.Name = "notesDatagrid";
@@ -136,9 +139,9 @@
             this.Controls.Add(this.addnoteButton);
             this.Controls.Add(this.noteTextbox);
             this.Controls.Add(this.notesDatagrid);
-            this.Controls.Add(this.employeeLabel);
+            this.Controls.Add(employeeLabel);
             this.Controls.Add(this.employeeDropdownlist);
-            this.Controls.Add(this.titleLabel);
+            this.Controls.Add(titleLabel);
             this.DoubleBuffered = true;
             this.Name = "Employeenotes";
             this.Size = new System.Drawing.Size(500, 400);
@@ -150,8 +153,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Label titleLabel;
-        private System.Windows.Forms.Label employeeLabel;
         private System.Windows.Forms.ComboBox employeeDropdownlist;
         private System.Windows.Forms.DataGridView notesDatagrid;
         private System.Windows.Forms.RichTextBox noteTextbox;

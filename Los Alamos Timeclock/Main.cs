@@ -451,7 +451,7 @@ namespace Los_Alamos_Timeclock
         //methods to deal with the timeout timer
 
         //ammount of time to wait before timing out
-        private TimeSpan timeoutTimelimit = TimeSpan.FromSeconds(5);
+        private TimeSpan timeoutTimelimit = TimeSpan.FromMinutes(2);
         private DateTime timerCompareTime = DateTime.Now;
         
         //start the timer
@@ -496,16 +496,10 @@ namespace Los_Alamos_Timeclock
                 mY = MousePosition.Y;
                 resetTimer();
             }
-            else if(e.ToString()=="System.Windows.Forms.KeyPressEventArgs")
+            else if (e.ToString() == "System.Windows.Forms.KeyEventArgs")
             {
                 resetTimer();
-                MessageBox.Show("timer reset");
             }
         }
-
-
     }
-
-
-
 }

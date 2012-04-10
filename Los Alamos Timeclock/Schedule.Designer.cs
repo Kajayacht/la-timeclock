@@ -1,4 +1,5 @@
-﻿namespace Los_Alamos_Timeclock
+﻿using System.Windows.Forms;
+namespace Los_Alamos_Timeclock
 {
     partial class Schedule
     {
@@ -29,11 +30,9 @@
         private void InitializeComponent()
         {
             this.scheduleDatagrid = new System.Windows.Forms.DataGridView();
-            this.eventLog1 = new System.Diagnostics.EventLog();
             this.weekCalander = new System.Windows.Forms.DateTimePicker();
             this.whoDropdownlist = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.scheduleDatagrid)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.eventLog1)).BeginInit();
             this.SuspendLayout();
             // 
             // scheduleDatagrid
@@ -53,10 +52,6 @@
             this.scheduleDatagrid.RowHeadersWidth = 4;
             this.scheduleDatagrid.Size = new System.Drawing.Size(500, 372);
             this.scheduleDatagrid.TabIndex = 2;
-            // 
-            // eventLog1
-            // 
-            this.eventLog1.SynchronizingObject = this;
             // 
             // weekCalander
             // 
@@ -93,7 +88,6 @@
             this.Name = "Schedule";
             this.Size = new System.Drawing.Size(500, 400);
             ((System.ComponentModel.ISupportInitialize)(this.scheduleDatagrid)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.eventLog1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -101,7 +95,6 @@
         #endregion
 
         public System.Windows.Forms.DataGridView scheduleDatagrid;
-        private System.Diagnostics.EventLog eventLog1;
         private System.Windows.Forms.DateTimePicker weekCalander;
         private System.Windows.Forms.ComboBox whoDropdownlist;
 

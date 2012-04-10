@@ -157,7 +157,7 @@
             this.Name = "Admin";
             this.Size = new System.Drawing.Size(500, 400);
             this.ResumeLayout(false);
-
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(Main.maininstance.notIdle_event);
         }
 
         #endregion

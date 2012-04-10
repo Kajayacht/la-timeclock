@@ -1,4 +1,5 @@
-﻿namespace Los_Alamos_Timeclock.Manager.Admin
+﻿using System.Windows.Forms;
+namespace Los_Alamos_Timeclock.Manager.Admin
 {
     partial class Overview
     {
@@ -29,13 +30,16 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.Label fromLabel;
+            System.Windows.Forms.Label toLabel;
+            System.Windows.Forms.Label showLabel;
             this.requestsDatagridview = new System.Windows.Forms.DataGridView();
             this.toCalander = new System.Windows.Forms.DateTimePicker();
             this.fromCalander = new System.Windows.Forms.DateTimePicker();
-            this.fromLabel = new System.Windows.Forms.Label();
-            this.toLabel = new System.Windows.Forms.Label();
             this.showwhatDropdownlist = new System.Windows.Forms.ComboBox();
-            this.showLabel = new System.Windows.Forms.Label();
+            fromLabel = new System.Windows.Forms.Label();
+            toLabel = new System.Windows.Forms.Label();
+            showLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.requestsDatagridview)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,27 +81,27 @@
             // 
             // fromLabel
             // 
-            this.fromLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.fromLabel.AutoSize = true;
-            this.fromLabel.BackColor = System.Drawing.Color.Transparent;
-            this.fromLabel.ForeColor = System.Drawing.Color.White;
-            this.fromLabel.Location = new System.Drawing.Point(295, 328);
-            this.fromLabel.Name = "fromLabel";
-            this.fromLabel.Size = new System.Drawing.Size(33, 13);
-            this.fromLabel.TabIndex = 12;
-            this.fromLabel.Text = "From:";
+            fromLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            fromLabel.AutoSize = true;
+            fromLabel.BackColor = System.Drawing.Color.Transparent;
+            fromLabel.ForeColor = System.Drawing.Color.White;
+            fromLabel.Location = new System.Drawing.Point(295, 328);
+            fromLabel.Name = "fromLabel";
+            fromLabel.Size = new System.Drawing.Size(33, 13);
+            fromLabel.TabIndex = 12;
+            fromLabel.Text = "From:";
             // 
             // toLabel
             // 
-            this.toLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.toLabel.AutoSize = true;
-            this.toLabel.BackColor = System.Drawing.Color.Transparent;
-            this.toLabel.ForeColor = System.Drawing.Color.White;
-            this.toLabel.Location = new System.Drawing.Point(305, 357);
-            this.toLabel.Name = "toLabel";
-            this.toLabel.Size = new System.Drawing.Size(23, 13);
-            this.toLabel.TabIndex = 13;
-            this.toLabel.Text = "To:";
+            toLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            toLabel.AutoSize = true;
+            toLabel.BackColor = System.Drawing.Color.Transparent;
+            toLabel.ForeColor = System.Drawing.Color.White;
+            toLabel.Location = new System.Drawing.Point(305, 357);
+            toLabel.Name = "toLabel";
+            toLabel.Size = new System.Drawing.Size(23, 13);
+            toLabel.TabIndex = 13;
+            toLabel.Text = "To:";
             // 
             // showwhatDropdownlist
             // 
@@ -118,16 +122,16 @@
             // 
             // showLabel
             // 
-            this.showLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.showLabel.AutoSize = true;
-            this.showLabel.BackColor = System.Drawing.Color.Transparent;
-            this.showLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.showLabel.ForeColor = System.Drawing.Color.White;
-            this.showLabel.Location = new System.Drawing.Point(12, 328);
-            this.showLabel.Name = "showLabel";
-            this.showLabel.Size = new System.Drawing.Size(71, 25);
-            this.showLabel.TabIndex = 15;
-            this.showLabel.Text = "Show:";
+            showLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            showLabel.AutoSize = true;
+            showLabel.BackColor = System.Drawing.Color.Transparent;
+            showLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            showLabel.ForeColor = System.Drawing.Color.White;
+            showLabel.Location = new System.Drawing.Point(12, 328);
+            showLabel.Name = "showLabel";
+            showLabel.Size = new System.Drawing.Size(71, 25);
+            showLabel.TabIndex = 15;
+            showLabel.Text = "Show:";
             // 
             // Overview
             // 
@@ -136,10 +140,10 @@
             this.BackgroundImage = global::Los_Alamos_Timeclock.Properties.Resources._1287421014661;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(546, 383);
-            this.Controls.Add(this.showLabel);
+            this.Controls.Add(showLabel);
             this.Controls.Add(this.showwhatDropdownlist);
-            this.Controls.Add(this.toLabel);
-            this.Controls.Add(this.fromLabel);
+            this.Controls.Add(toLabel);
+            this.Controls.Add(fromLabel);
             this.Controls.Add(this.fromCalander);
             this.Controls.Add(this.toCalander);
             this.Controls.Add(this.requestsDatagridview);
@@ -158,10 +162,7 @@
         private System.Windows.Forms.DataGridView requestsDatagridview;
         private System.Windows.Forms.DateTimePicker toCalander;
         private System.Windows.Forms.DateTimePicker fromCalander;
-        private System.Windows.Forms.Label fromLabel;
-        private System.Windows.Forms.Label toLabel;
         private System.Windows.Forms.ComboBox showwhatDropdownlist;
-        private System.Windows.Forms.Label showLabel;
 
     }
 }

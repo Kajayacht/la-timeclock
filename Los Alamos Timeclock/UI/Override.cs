@@ -17,7 +17,6 @@ namespace Los_Alamos_Timeclock
         public Override()
         {
             InitializeComponent();
-            this.MouseMove += new System.Windows.Forms.MouseEventHandler(Main.maininstance.notIdle_event);
 
             jobsBox.DisplayMember = "getname";
             jobsBox.DataSource = Main.joblist;

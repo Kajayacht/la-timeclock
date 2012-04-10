@@ -1,4 +1,5 @@
-﻿namespace Los_Alamos_Timeclock.Manager.Admin
+﻿using System.Windows.Forms;
+namespace Los_Alamos_Timeclock.Manager.Admin
 {
     partial class Makesched
     {
@@ -28,23 +29,27 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.Label employeeLabel;
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.Label startLabel;
+            System.Windows.Forms.Label endLabel;
+            System.Windows.Forms.Label jobLabel;
             this.employeeDropdownlist = new System.Windows.Forms.ComboBox();
-            this.employeeLabel = new System.Windows.Forms.Label();
             this.calander = new System.Windows.Forms.DateTimePicker();
             this.updatescheduleButon = new System.Windows.Forms.Button();
             this.datagrid = new System.Windows.Forms.DataGridView();
             this.jobsDropdownlist = new System.Windows.Forms.ComboBox();
             this.deleteButton = new System.Windows.Forms.Button();
             this.startHourDropdownlist = new System.Windows.Forms.ComboBox();
-            this.startLabel = new System.Windows.Forms.Label();
-            this.endLabel = new System.Windows.Forms.Label();
-            this.jobLabel = new System.Windows.Forms.Label();
             this.startMinDropdownlist = new System.Windows.Forms.ComboBox();
             this.endHourDropdownlist = new System.Windows.Forms.ComboBox();
             this.endMinDropdownlist = new System.Windows.Forms.ComboBox();
             this.lengthLabel = new System.Windows.Forms.Label();
             this.showRequests = new System.Windows.Forms.Button();
+            employeeLabel = new System.Windows.Forms.Label();
+            startLabel = new System.Windows.Forms.Label();
+            endLabel = new System.Windows.Forms.Label();
+            jobLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.datagrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,15 +66,15 @@
             // 
             // employeeLabel
             // 
-            this.employeeLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.employeeLabel.AutoSize = true;
-            this.employeeLabel.BackColor = System.Drawing.Color.Transparent;
-            this.employeeLabel.ForeColor = System.Drawing.Color.White;
-            this.employeeLabel.Location = new System.Drawing.Point(20, 269);
-            this.employeeLabel.Name = "employeeLabel";
-            this.employeeLabel.Size = new System.Drawing.Size(56, 13);
-            this.employeeLabel.TabIndex = 3;
-            this.employeeLabel.Text = "Employee:";
+            employeeLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            employeeLabel.AutoSize = true;
+            employeeLabel.BackColor = System.Drawing.Color.Transparent;
+            employeeLabel.ForeColor = System.Drawing.Color.White;
+            employeeLabel.Location = new System.Drawing.Point(20, 269);
+            employeeLabel.Name = "employeeLabel";
+            employeeLabel.Size = new System.Drawing.Size(56, 13);
+            employeeLabel.TabIndex = 3;
+            employeeLabel.Text = "Employee:";
             // 
             // calander
             // 
@@ -170,39 +175,39 @@
             // 
             // startLabel
             // 
-            this.startLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.startLabel.AutoSize = true;
-            this.startLabel.BackColor = System.Drawing.Color.Transparent;
-            this.startLabel.ForeColor = System.Drawing.Color.White;
-            this.startLabel.Location = new System.Drawing.Point(20, 297);
-            this.startLabel.Name = "startLabel";
-            this.startLabel.Size = new System.Drawing.Size(32, 13);
-            this.startLabel.TabIndex = 11;
-            this.startLabel.Text = "Start:";
+            startLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            startLabel.AutoSize = true;
+            startLabel.BackColor = System.Drawing.Color.Transparent;
+            startLabel.ForeColor = System.Drawing.Color.White;
+            startLabel.Location = new System.Drawing.Point(20, 297);
+            startLabel.Name = "startLabel";
+            startLabel.Size = new System.Drawing.Size(32, 13);
+            startLabel.TabIndex = 11;
+            startLabel.Text = "Start:";
             // 
             // endLabel
             // 
-            this.endLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.endLabel.AutoSize = true;
-            this.endLabel.BackColor = System.Drawing.Color.Transparent;
-            this.endLabel.ForeColor = System.Drawing.Color.White;
-            this.endLabel.Location = new System.Drawing.Point(20, 324);
-            this.endLabel.Name = "endLabel";
-            this.endLabel.Size = new System.Drawing.Size(29, 13);
-            this.endLabel.TabIndex = 12;
-            this.endLabel.Text = "End:";
+            endLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            endLabel.AutoSize = true;
+            endLabel.BackColor = System.Drawing.Color.Transparent;
+            endLabel.ForeColor = System.Drawing.Color.White;
+            endLabel.Location = new System.Drawing.Point(20, 324);
+            endLabel.Name = "endLabel";
+            endLabel.Size = new System.Drawing.Size(29, 13);
+            endLabel.TabIndex = 12;
+            endLabel.Text = "End:";
             // 
             // jobLabel
             // 
-            this.jobLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.jobLabel.AutoSize = true;
-            this.jobLabel.BackColor = System.Drawing.Color.Transparent;
-            this.jobLabel.ForeColor = System.Drawing.Color.White;
-            this.jobLabel.Location = new System.Drawing.Point(20, 368);
-            this.jobLabel.Name = "jobLabel";
-            this.jobLabel.Size = new System.Drawing.Size(27, 13);
-            this.jobLabel.TabIndex = 13;
-            this.jobLabel.Text = "Job:";
+            jobLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            jobLabel.AutoSize = true;
+            jobLabel.BackColor = System.Drawing.Color.Transparent;
+            jobLabel.ForeColor = System.Drawing.Color.White;
+            jobLabel.Location = new System.Drawing.Point(20, 368);
+            jobLabel.Name = "jobLabel";
+            jobLabel.Size = new System.Drawing.Size(27, 13);
+            jobLabel.TabIndex = 13;
+            jobLabel.Text = "Job:";
             // 
             // startMinDropdownlist
             // 
@@ -313,15 +318,15 @@
             this.Controls.Add(this.endMinDropdownlist);
             this.Controls.Add(this.endHourDropdownlist);
             this.Controls.Add(this.startMinDropdownlist);
-            this.Controls.Add(this.jobLabel);
-            this.Controls.Add(this.endLabel);
-            this.Controls.Add(this.startLabel);
+            this.Controls.Add(jobLabel);
+            this.Controls.Add(endLabel);
+            this.Controls.Add(startLabel);
             this.Controls.Add(this.startHourDropdownlist);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.jobsDropdownlist);
             this.Controls.Add(this.updatescheduleButon);
             this.Controls.Add(this.calander);
-            this.Controls.Add(this.employeeLabel);
+            this.Controls.Add(employeeLabel);
             this.Controls.Add(this.employeeDropdownlist);
             this.Controls.Add(this.datagrid);
             this.DoubleBuffered = true;
@@ -336,16 +341,12 @@
         #endregion
 
         private System.Windows.Forms.ComboBox employeeDropdownlist;
-        private System.Windows.Forms.Label employeeLabel;
         private System.Windows.Forms.DateTimePicker calander;
         private System.Windows.Forms.Button updatescheduleButon;
         private System.Windows.Forms.DataGridView datagrid;
         private System.Windows.Forms.ComboBox jobsDropdownlist;
         private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.ComboBox startHourDropdownlist;
-        private System.Windows.Forms.Label startLabel;
-        private System.Windows.Forms.Label endLabel;
-        private System.Windows.Forms.Label jobLabel;
         private System.Windows.Forms.ComboBox startMinDropdownlist;
         private System.Windows.Forms.ComboBox endHourDropdownlist;
         private System.Windows.Forms.ComboBox endMinDropdownlist;

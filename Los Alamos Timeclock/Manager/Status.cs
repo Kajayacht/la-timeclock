@@ -19,9 +19,6 @@ namespace Los_Alamos_Timeclock.Manager
         public Status()
         {
             InitializeComponent();
-            this.MouseMove += new System.Windows.Forms.MouseEventHandler(Main.maininstance.notIdle_event);
-            datagrid.MouseMove +=new MouseEventHandler(Main.maininstance.notIdle_event);
-            datagrid.KeyPress +=new KeyPressEventHandler(Main.maininstance.notIdle_event);
 
             calander.MaxDate = DateTime.Today;
             populateDatagrid();

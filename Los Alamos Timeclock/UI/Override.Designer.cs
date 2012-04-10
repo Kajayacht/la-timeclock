@@ -28,15 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.Label jobLabel;
+            System.Windows.Forms.Label userLabel;
+            System.Windows.Forms.Label passLabel;
+            System.Windows.Forms.Label label4;
             this.okButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
             this.jobsBox = new System.Windows.Forms.ListBox();
-            this.jobLabel = new System.Windows.Forms.Label();
             this.userTextbox = new System.Windows.Forms.TextBox();
             this.passTextbox = new System.Windows.Forms.TextBox();
-            this.userLabel = new System.Windows.Forms.Label();
-            this.passLabel = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            jobLabel = new System.Windows.Forms.Label();
+            userLabel = new System.Windows.Forms.Label();
+            passLabel = new System.Windows.Forms.Label();
+            label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // okButton
@@ -70,12 +74,12 @@
             // 
             // jobLabel
             // 
-            this.jobLabel.AutoSize = true;
-            this.jobLabel.Location = new System.Drawing.Point(231, 9);
-            this.jobLabel.Name = "jobLabel";
-            this.jobLabel.Size = new System.Drawing.Size(27, 13);
-            this.jobLabel.TabIndex = 3;
-            this.jobLabel.Text = "Job:";
+            jobLabel.AutoSize = true;
+            jobLabel.Location = new System.Drawing.Point(231, 9);
+            jobLabel.Name = "jobLabel";
+            jobLabel.Size = new System.Drawing.Size(27, 13);
+            jobLabel.TabIndex = 3;
+            jobLabel.Text = "Job:";
             // 
             // userTextbox
             // 
@@ -94,42 +98,42 @@
             // 
             // userLabel
             // 
-            this.userLabel.AutoSize = true;
-            this.userLabel.Location = new System.Drawing.Point(30, 30);
-            this.userLabel.Name = "userLabel";
-            this.userLabel.Size = new System.Drawing.Size(35, 13);
-            this.userLabel.TabIndex = 6;
-            this.userLabel.Text = "User: ";
+            userLabel.AutoSize = true;
+            userLabel.Location = new System.Drawing.Point(30, 30);
+            userLabel.Name = "userLabel";
+            userLabel.Size = new System.Drawing.Size(35, 13);
+            userLabel.TabIndex = 6;
+            userLabel.Text = "User: ";
             // 
             // passLabel
             // 
-            this.passLabel.AutoSize = true;
-            this.passLabel.Location = new System.Drawing.Point(6, 56);
-            this.passLabel.Name = "passLabel";
-            this.passLabel.Size = new System.Drawing.Size(59, 13);
-            this.passLabel.TabIndex = 7;
-            this.passLabel.Text = "Password: ";
+            passLabel.AutoSize = true;
+            passLabel.Location = new System.Drawing.Point(6, 56);
+            passLabel.Name = "passLabel";
+            passLabel.Size = new System.Drawing.Size(59, 13);
+            passLabel.TabIndex = 7;
+            passLabel.Text = "Password: ";
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(97, 9);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(106, 13);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Enter Manager Login";
+            label4.AutoSize = true;
+            label4.Location = new System.Drawing.Point(97, 9);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(106, 13);
+            label4.TabIndex = 8;
+            label4.Text = "Enter Manager Login";
             // 
             // Override
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(348, 149);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.passLabel);
-            this.Controls.Add(this.userLabel);
+            this.Controls.Add(label4);
+            this.Controls.Add(passLabel);
+            this.Controls.Add(userLabel);
             this.Controls.Add(this.passTextbox);
             this.Controls.Add(this.userTextbox);
-            this.Controls.Add(this.jobLabel);
+            this.Controls.Add(jobLabel);
             this.Controls.Add(this.jobsBox);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.okButton);
@@ -147,11 +151,7 @@
         private System.Windows.Forms.Button okButton;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.ListBox jobsBox;
-        private System.Windows.Forms.Label jobLabel;
         private System.Windows.Forms.TextBox userTextbox;
         private System.Windows.Forms.TextBox passTextbox;
-        private System.Windows.Forms.Label userLabel;
-        private System.Windows.Forms.Label passLabel;
-        private System.Windows.Forms.Label label4;
     }
 }

@@ -1,4 +1,5 @@
-﻿namespace Los_Alamos_Timeclock.Manager
+﻿using System.Windows.Forms;
+namespace Los_Alamos_Timeclock.Manager
 {
     partial class Status
     {
@@ -28,30 +29,37 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.Label employeeLabel;
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.Label startLabel;
+            System.Windows.Forms.Label endLabel;
+            System.Windows.Forms.Label jobLabel;
+            System.Windows.Forms.Label break1Label;
+            System.Windows.Forms.Label break2Label;
+            System.Windows.Forms.Label lunchLabel;
             this.employeeDropdownlist = new System.Windows.Forms.ComboBox();
-            this.employeeLabel = new System.Windows.Forms.Label();
             this.calander = new System.Windows.Forms.DateTimePicker();
             this.updatescheduleButton = new System.Windows.Forms.Button();
             this.datagrid = new System.Windows.Forms.DataGridView();
             this.jobsDropdownlist = new System.Windows.Forms.ComboBox();
-            this.startLabel = new System.Windows.Forms.Label();
-            this.endLabel = new System.Windows.Forms.Label();
-            this.jobLabel = new System.Windows.Forms.Label();
             this.startTextbox = new System.Windows.Forms.MaskedTextBox();
             this.endTextbox = new System.Windows.Forms.MaskedTextBox();
             this.b1outTextbox = new System.Windows.Forms.MaskedTextBox();
-            this.break1Label = new System.Windows.Forms.Label();
             this.b1dashLabel = new System.Windows.Forms.Label();
             this.b1inTextbox = new System.Windows.Forms.MaskedTextBox();
             this.b2inTextbox = new System.Windows.Forms.MaskedTextBox();
             this.b2dashLabel = new System.Windows.Forms.Label();
             this.b2outTextbox = new System.Windows.Forms.MaskedTextBox();
-            this.break2Label = new System.Windows.Forms.Label();
             this.linTextbox = new System.Windows.Forms.MaskedTextBox();
             this.loutTextbox = new System.Windows.Forms.MaskedTextBox();
-            this.lunchLabel = new System.Windows.Forms.Label();
             this.lunchdashLabel = new System.Windows.Forms.Label();
+            employeeLabel = new System.Windows.Forms.Label();
+            startLabel = new System.Windows.Forms.Label();
+            endLabel = new System.Windows.Forms.Label();
+            jobLabel = new System.Windows.Forms.Label();
+            break1Label = new System.Windows.Forms.Label();
+            break2Label = new System.Windows.Forms.Label();
+            lunchLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.datagrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,15 +76,15 @@
             // 
             // employeeLabel
             // 
-            this.employeeLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.employeeLabel.AutoSize = true;
-            this.employeeLabel.BackColor = System.Drawing.Color.Transparent;
-            this.employeeLabel.ForeColor = System.Drawing.Color.White;
-            this.employeeLabel.Location = new System.Drawing.Point(20, 269);
-            this.employeeLabel.Name = "employeeLabel";
-            this.employeeLabel.Size = new System.Drawing.Size(56, 13);
-            this.employeeLabel.TabIndex = 3;
-            this.employeeLabel.Text = "Employee:";
+            employeeLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            employeeLabel.AutoSize = true;
+            employeeLabel.BackColor = System.Drawing.Color.Transparent;
+            employeeLabel.ForeColor = System.Drawing.Color.White;
+            employeeLabel.Location = new System.Drawing.Point(20, 269);
+            employeeLabel.Name = "employeeLabel";
+            employeeLabel.Size = new System.Drawing.Size(56, 13);
+            employeeLabel.TabIndex = 3;
+            employeeLabel.Text = "Employee:";
             // 
             // calander
             // 
@@ -128,39 +136,39 @@
             // 
             // startLabel
             // 
-            this.startLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.startLabel.AutoSize = true;
-            this.startLabel.BackColor = System.Drawing.Color.Transparent;
-            this.startLabel.ForeColor = System.Drawing.Color.White;
-            this.startLabel.Location = new System.Drawing.Point(20, 297);
-            this.startLabel.Name = "startLabel";
-            this.startLabel.Size = new System.Drawing.Size(32, 13);
-            this.startLabel.TabIndex = 11;
-            this.startLabel.Text = "Start:";
+            startLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            startLabel.AutoSize = true;
+            startLabel.BackColor = System.Drawing.Color.Transparent;
+            startLabel.ForeColor = System.Drawing.Color.White;
+            startLabel.Location = new System.Drawing.Point(20, 297);
+            startLabel.Name = "startLabel";
+            startLabel.Size = new System.Drawing.Size(32, 13);
+            startLabel.TabIndex = 11;
+            startLabel.Text = "Start:";
             // 
             // endLabel
             // 
-            this.endLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.endLabel.AutoSize = true;
-            this.endLabel.BackColor = System.Drawing.Color.Transparent;
-            this.endLabel.ForeColor = System.Drawing.Color.White;
-            this.endLabel.Location = new System.Drawing.Point(20, 324);
-            this.endLabel.Name = "endLabel";
-            this.endLabel.Size = new System.Drawing.Size(29, 13);
-            this.endLabel.TabIndex = 12;
-            this.endLabel.Text = "End:";
+            endLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            endLabel.AutoSize = true;
+            endLabel.BackColor = System.Drawing.Color.Transparent;
+            endLabel.ForeColor = System.Drawing.Color.White;
+            endLabel.Location = new System.Drawing.Point(20, 324);
+            endLabel.Name = "endLabel";
+            endLabel.Size = new System.Drawing.Size(29, 13);
+            endLabel.TabIndex = 12;
+            endLabel.Text = "End:";
             // 
             // jobLabel
             // 
-            this.jobLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.jobLabel.AutoSize = true;
-            this.jobLabel.BackColor = System.Drawing.Color.Transparent;
-            this.jobLabel.ForeColor = System.Drawing.Color.White;
-            this.jobLabel.Location = new System.Drawing.Point(20, 373);
-            this.jobLabel.Name = "jobLabel";
-            this.jobLabel.Size = new System.Drawing.Size(27, 13);
-            this.jobLabel.TabIndex = 13;
-            this.jobLabel.Text = "Job:";
+            jobLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            jobLabel.AutoSize = true;
+            jobLabel.BackColor = System.Drawing.Color.Transparent;
+            jobLabel.ForeColor = System.Drawing.Color.White;
+            jobLabel.Location = new System.Drawing.Point(20, 373);
+            jobLabel.Name = "jobLabel";
+            jobLabel.Size = new System.Drawing.Size(27, 13);
+            jobLabel.TabIndex = 13;
+            jobLabel.Text = "Job:";
             // 
             // startTextbox
             // 
@@ -191,15 +199,15 @@
             // 
             // break1Label
             // 
-            this.break1Label.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.break1Label.AutoSize = true;
-            this.break1Label.BackColor = System.Drawing.Color.Transparent;
-            this.break1Label.ForeColor = System.Drawing.Color.White;
-            this.break1Label.Location = new System.Drawing.Point(127, 297);
-            this.break1Label.Name = "break1Label";
-            this.break1Label.Size = new System.Drawing.Size(47, 13);
-            this.break1Label.TabIndex = 16;
-            this.break1Label.Text = "Break 1:";
+            break1Label.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            break1Label.AutoSize = true;
+            break1Label.BackColor = System.Drawing.Color.Transparent;
+            break1Label.ForeColor = System.Drawing.Color.White;
+            break1Label.Location = new System.Drawing.Point(127, 297);
+            break1Label.Name = "break1Label";
+            break1Label.Size = new System.Drawing.Size(47, 13);
+            break1Label.TabIndex = 16;
+            break1Label.Text = "Break 1:";
             // 
             // b1dashLabel
             // 
@@ -254,15 +262,15 @@
             // 
             // break2Label
             // 
-            this.break2Label.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.break2Label.AutoSize = true;
-            this.break2Label.BackColor = System.Drawing.Color.Transparent;
-            this.break2Label.ForeColor = System.Drawing.Color.White;
-            this.break2Label.Location = new System.Drawing.Point(127, 324);
-            this.break2Label.Name = "break2Label";
-            this.break2Label.Size = new System.Drawing.Size(47, 13);
-            this.break2Label.TabIndex = 22;
-            this.break2Label.Text = "Break 2:";
+            break2Label.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            break2Label.AutoSize = true;
+            break2Label.BackColor = System.Drawing.Color.Transparent;
+            break2Label.ForeColor = System.Drawing.Color.White;
+            break2Label.Location = new System.Drawing.Point(127, 324);
+            break2Label.Name = "break2Label";
+            break2Label.Size = new System.Drawing.Size(47, 13);
+            break2Label.TabIndex = 22;
+            break2Label.Text = "Break 2:";
             // 
             // linTextbox
             // 
@@ -284,15 +292,15 @@
             // 
             // lunchLabel
             // 
-            this.lunchLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.lunchLabel.AutoSize = true;
-            this.lunchLabel.BackColor = System.Drawing.Color.Transparent;
-            this.lunchLabel.ForeColor = System.Drawing.Color.White;
-            this.lunchLabel.Location = new System.Drawing.Point(127, 350);
-            this.lunchLabel.Name = "lunchLabel";
-            this.lunchLabel.Size = new System.Drawing.Size(40, 13);
-            this.lunchLabel.TabIndex = 26;
-            this.lunchLabel.Text = "Lunch:";
+            lunchLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            lunchLabel.AutoSize = true;
+            lunchLabel.BackColor = System.Drawing.Color.Transparent;
+            lunchLabel.ForeColor = System.Drawing.Color.White;
+            lunchLabel.Location = new System.Drawing.Point(127, 350);
+            lunchLabel.Name = "lunchLabel";
+            lunchLabel.Size = new System.Drawing.Size(40, 13);
+            lunchLabel.TabIndex = 26;
+            lunchLabel.Text = "Lunch:";
             // 
             // lunchdashLabel
             // 
@@ -315,24 +323,24 @@
             this.Controls.Add(this.lunchdashLabel);
             this.Controls.Add(this.linTextbox);
             this.Controls.Add(this.loutTextbox);
-            this.Controls.Add(this.lunchLabel);
+            this.Controls.Add(lunchLabel);
             this.Controls.Add(this.b2inTextbox);
             this.Controls.Add(this.b2dashLabel);
             this.Controls.Add(this.b2outTextbox);
-            this.Controls.Add(this.break2Label);
+            this.Controls.Add(break2Label);
             this.Controls.Add(this.b1inTextbox);
             this.Controls.Add(this.b1dashLabel);
             this.Controls.Add(this.b1outTextbox);
-            this.Controls.Add(this.break1Label);
+            this.Controls.Add(break1Label);
             this.Controls.Add(this.endTextbox);
             this.Controls.Add(this.startTextbox);
-            this.Controls.Add(this.jobLabel);
-            this.Controls.Add(this.endLabel);
-            this.Controls.Add(this.startLabel);
+            this.Controls.Add(jobLabel);
+            this.Controls.Add(endLabel);
+            this.Controls.Add(startLabel);
             this.Controls.Add(this.jobsDropdownlist);
             this.Controls.Add(this.updatescheduleButton);
             this.Controls.Add(this.calander);
-            this.Controls.Add(this.employeeLabel);
+            this.Controls.Add(employeeLabel);
             this.Controls.Add(this.employeeDropdownlist);
             this.Controls.Add(this.datagrid);
             this.DoubleBuffered = true;
@@ -347,27 +355,20 @@
         #endregion
 
         private System.Windows.Forms.ComboBox employeeDropdownlist;
-        private System.Windows.Forms.Label employeeLabel;
         private System.Windows.Forms.DateTimePicker calander;
         private System.Windows.Forms.Button updatescheduleButton;
         private System.Windows.Forms.DataGridView datagrid;
         private System.Windows.Forms.ComboBox jobsDropdownlist;
-        private System.Windows.Forms.Label startLabel;
-        private System.Windows.Forms.Label endLabel;
-        private System.Windows.Forms.Label jobLabel;
         private System.Windows.Forms.MaskedTextBox startTextbox;
         private System.Windows.Forms.MaskedTextBox endTextbox;
         private System.Windows.Forms.MaskedTextBox b1outTextbox;
-        private System.Windows.Forms.Label break1Label;
         private System.Windows.Forms.Label b1dashLabel;
         private System.Windows.Forms.MaskedTextBox b1inTextbox;
         private System.Windows.Forms.MaskedTextBox b2inTextbox;
         private System.Windows.Forms.Label b2dashLabel;
         private System.Windows.Forms.MaskedTextBox b2outTextbox;
-        private System.Windows.Forms.Label break2Label;
         private System.Windows.Forms.MaskedTextBox linTextbox;
         private System.Windows.Forms.MaskedTextBox loutTextbox;
-        private System.Windows.Forms.Label lunchLabel;
         private System.Windows.Forms.Label lunchdashLabel;
 
     }

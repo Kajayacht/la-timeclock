@@ -28,24 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.employeeLabel = new System.Windows.Forms.Label();
+            System.Windows.Forms.Label employeeLabel;
+            System.Windows.Forms.Label titleLabel;
             this.employeeDropdownlist = new System.Windows.Forms.ComboBox();
-            this.titleLabel = new System.Windows.Forms.Label();
             this.phoneNumber = new System.Windows.Forms.Label();
+            employeeLabel = new System.Windows.Forms.Label();
+            titleLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // employeeLabel
             // 
-            this.employeeLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.employeeLabel.AutoSize = true;
-            this.employeeLabel.BackColor = System.Drawing.Color.Transparent;
-            this.employeeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.employeeLabel.ForeColor = System.Drawing.Color.White;
-            this.employeeLabel.Location = new System.Drawing.Point(56, 140);
-            this.employeeLabel.Name = "employeeLabel";
-            this.employeeLabel.Size = new System.Drawing.Size(92, 20);
-            this.employeeLabel.TabIndex = 7;
-            this.employeeLabel.Text = "Employee:";
+            employeeLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            employeeLabel.AutoSize = true;
+            employeeLabel.BackColor = System.Drawing.Color.Transparent;
+            employeeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            employeeLabel.ForeColor = System.Drawing.Color.White;
+            employeeLabel.Location = new System.Drawing.Point(56, 140);
+            employeeLabel.Name = "employeeLabel";
+            employeeLabel.Size = new System.Drawing.Size(92, 20);
+            employeeLabel.TabIndex = 7;
+            employeeLabel.Text = "Employee:";
             // 
             // employeeDropdownlist
             // 
@@ -62,16 +64,16 @@
             // 
             // titleLabel
             // 
-            this.titleLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.titleLabel.AutoSize = true;
-            this.titleLabel.BackColor = System.Drawing.Color.Transparent;
-            this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleLabel.ForeColor = System.Drawing.Color.White;
-            this.titleLabel.Location = new System.Drawing.Point(187, 17);
-            this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(99, 20);
-            this.titleLabel.TabIndex = 59;
-            this.titleLabel.Text = "Phonebook";
+            titleLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            titleLabel.AutoSize = true;
+            titleLabel.BackColor = System.Drawing.Color.Transparent;
+            titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            titleLabel.ForeColor = System.Drawing.Color.White;
+            titleLabel.Location = new System.Drawing.Point(187, 17);
+            titleLabel.Name = "titleLabel";
+            titleLabel.Size = new System.Drawing.Size(99, 20);
+            titleLabel.TabIndex = 59;
+            titleLabel.Text = "Phonebook";
             // 
             // phoneNumber
             // 
@@ -92,8 +94,8 @@
             this.BackgroundImage = global::Los_Alamos_Timeclock.Properties.Resources._1287421014661;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.phoneNumber);
-            this.Controls.Add(this.titleLabel);
-            this.Controls.Add(this.employeeLabel);
+            this.Controls.Add(titleLabel);
+            this.Controls.Add(employeeLabel);
             this.Controls.Add(this.employeeDropdownlist);
             this.DoubleBuffered = true;
             this.Name = "Phonebook";
@@ -105,9 +107,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label employeeLabel;
         private System.Windows.Forms.ComboBox employeeDropdownlist;
-        private System.Windows.Forms.Label titleLabel;
         private System.Windows.Forms.Label phoneNumber;
 
     }

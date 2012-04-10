@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.titleLabel = new System.Windows.Forms.Label();
+            System.Windows.Forms.Label titleLabel;
+            System.Windows.Forms.Label appSettingsLabel;
             this.ipaddressLLabel = new System.Windows.Forms.LinkLabel();
             this.portLLabel = new System.Windows.Forms.LinkLabel();
             this.userLLabel = new System.Windows.Forms.LinkLabel();
@@ -40,24 +41,25 @@
             this.applyButton = new System.Windows.Forms.Button();
             this.databaseTextbox = new System.Windows.Forms.TextBox();
             this.databaseLLabel = new System.Windows.Forms.LinkLabel();
-            this.appSettingsLabel = new System.Windows.Forms.Label();
             this.showCurrentEmployeesCheckbox = new System.Windows.Forms.CheckBox();
             this.showPreviousEmployeesCheckbox = new System.Windows.Forms.CheckBox();
             this.saveAppSettings = new System.Windows.Forms.Button();
+            titleLabel = new System.Windows.Forms.Label();
+            appSettingsLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // titleLabel
             // 
-            this.titleLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.titleLabel.AutoSize = true;
-            this.titleLabel.BackColor = System.Drawing.Color.Transparent;
-            this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleLabel.ForeColor = System.Drawing.Color.White;
-            this.titleLabel.Location = new System.Drawing.Point(185, 210);
-            this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(159, 24);
-            this.titleLabel.TabIndex = 0;
-            this.titleLabel.Text = "Database Settings";
+            titleLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            titleLabel.AutoSize = true;
+            titleLabel.BackColor = System.Drawing.Color.Transparent;
+            titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            titleLabel.ForeColor = System.Drawing.Color.White;
+            titleLabel.Location = new System.Drawing.Point(185, 210);
+            titleLabel.Name = "titleLabel";
+            titleLabel.Size = new System.Drawing.Size(159, 24);
+            titleLabel.TabIndex = 0;
+            titleLabel.Text = "Database Settings";
             // 
             // ipaddressLLabel
             // 
@@ -207,16 +209,16 @@
             // 
             // appSettingsLabel
             // 
-            this.appSettingsLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.appSettingsLabel.AutoSize = true;
-            this.appSettingsLabel.BackColor = System.Drawing.Color.Transparent;
-            this.appSettingsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.appSettingsLabel.ForeColor = System.Drawing.Color.White;
-            this.appSettingsLabel.Location = new System.Drawing.Point(183, 26);
-            this.appSettingsLabel.Name = "appSettingsLabel";
-            this.appSettingsLabel.Size = new System.Drawing.Size(174, 24);
-            this.appSettingsLabel.TabIndex = 12;
-            this.appSettingsLabel.Text = "Application Settings";
+            appSettingsLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            appSettingsLabel.AutoSize = true;
+            appSettingsLabel.BackColor = System.Drawing.Color.Transparent;
+            appSettingsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            appSettingsLabel.ForeColor = System.Drawing.Color.White;
+            appSettingsLabel.Location = new System.Drawing.Point(183, 26);
+            appSettingsLabel.Name = "appSettingsLabel";
+            appSettingsLabel.Size = new System.Drawing.Size(174, 24);
+            appSettingsLabel.TabIndex = 12;
+            appSettingsLabel.Text = "Application Settings";
             // 
             // showCurrentEmployeesCheckbox
             // 
@@ -265,7 +267,7 @@
             this.Controls.Add(this.saveAppSettings);
             this.Controls.Add(this.showPreviousEmployeesCheckbox);
             this.Controls.Add(this.showCurrentEmployeesCheckbox);
-            this.Controls.Add(this.appSettingsLabel);
+            this.Controls.Add(appSettingsLabel);
             this.Controls.Add(this.databaseTextbox);
             this.Controls.Add(this.databaseLLabel);
             this.Controls.Add(this.applyButton);
@@ -277,7 +279,7 @@
             this.Controls.Add(this.userLLabel);
             this.Controls.Add(this.portLLabel);
             this.Controls.Add(this.ipaddressLLabel);
-            this.Controls.Add(this.titleLabel);
+            this.Controls.Add(titleLabel);
             this.DoubleBuffered = true;
             this.Name = "Settings";
             this.Size = new System.Drawing.Size(500, 465);
@@ -288,7 +290,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Label titleLabel;
         private System.Windows.Forms.LinkLabel ipaddressLLabel;
         private System.Windows.Forms.LinkLabel portLLabel;
         private System.Windows.Forms.LinkLabel userLLabel;
@@ -300,7 +301,6 @@
         private System.Windows.Forms.Button applyButton;
         private System.Windows.Forms.TextBox databaseTextbox;
         private System.Windows.Forms.LinkLabel databaseLLabel;
-        private System.Windows.Forms.Label appSettingsLabel;
         private System.Windows.Forms.CheckBox showCurrentEmployeesCheckbox;
         private System.Windows.Forms.CheckBox showPreviousEmployeesCheckbox;
         private System.Windows.Forms.Button saveAppSettings;

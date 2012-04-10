@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.passLabel = new System.Windows.Forms.Label();
-            this.userLabel = new System.Windows.Forms.Label();
+            System.Windows.Forms.Label passLabel;
+            System.Windows.Forms.Label userLabel;
             this.userTextbox = new System.Windows.Forms.TextBox();
             this.passTextbox = new System.Windows.Forms.TextBox();
             this.loginButton = new System.Windows.Forms.Button();
@@ -40,6 +40,8 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.clock1 = new Los_Alamos_Timeclock.Clock();
+            passLabel = new System.Windows.Forms.Label();
+            userLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dancingTaco2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dancingTaco1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dancingChile2)).BeginInit();
@@ -50,27 +52,27 @@
             // 
             // passLabel
             // 
-            this.passLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.passLabel.AutoSize = true;
-            this.passLabel.BackColor = System.Drawing.Color.Transparent;
-            this.passLabel.ForeColor = System.Drawing.Color.White;
-            this.passLabel.Location = new System.Drawing.Point(132, 183);
-            this.passLabel.Name = "passLabel";
-            this.passLabel.Size = new System.Drawing.Size(56, 13);
-            this.passLabel.TabIndex = 9;
-            this.passLabel.Text = "Password:";
+            passLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            passLabel.AutoSize = true;
+            passLabel.BackColor = System.Drawing.Color.Transparent;
+            passLabel.ForeColor = System.Drawing.Color.White;
+            passLabel.Location = new System.Drawing.Point(132, 183);
+            passLabel.Name = "passLabel";
+            passLabel.Size = new System.Drawing.Size(56, 13);
+            passLabel.TabIndex = 9;
+            passLabel.Text = "Password:";
             // 
             // userLabel
             // 
-            this.userLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.userLabel.AutoSize = true;
-            this.userLabel.BackColor = System.Drawing.Color.Transparent;
-            this.userLabel.ForeColor = System.Drawing.Color.White;
-            this.userLabel.Location = new System.Drawing.Point(132, 160);
-            this.userLabel.Name = "userLabel";
-            this.userLabel.Size = new System.Drawing.Size(32, 13);
-            this.userLabel.TabIndex = 8;
-            this.userLabel.Text = "User:";
+            userLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            userLabel.AutoSize = true;
+            userLabel.BackColor = System.Drawing.Color.Transparent;
+            userLabel.ForeColor = System.Drawing.Color.White;
+            userLabel.Location = new System.Drawing.Point(132, 160);
+            userLabel.Name = "userLabel";
+            userLabel.Size = new System.Drawing.Size(32, 13);
+            userLabel.TabIndex = 8;
+            userLabel.Text = "User:";
             // 
             // userTextbox
             // 
@@ -205,8 +207,8 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dancingChile2);
             this.Controls.Add(this.clock1);
-            this.Controls.Add(this.passLabel);
-            this.Controls.Add(this.userLabel);
+            this.Controls.Add(passLabel);
+            this.Controls.Add(userLabel);
             this.Controls.Add(this.userTextbox);
             this.Controls.Add(this.passTextbox);
             this.Controls.Add(this.loginButton);
@@ -228,8 +230,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Label passLabel;
-        private System.Windows.Forms.Label userLabel;
         private System.Windows.Forms.Button loginButton;
         public System.Windows.Forms.TextBox userTextbox;
         public System.Windows.Forms.TextBox passTextbox;

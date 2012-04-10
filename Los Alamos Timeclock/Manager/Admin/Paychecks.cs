@@ -33,9 +33,6 @@ along with Los Alamos Timeclock.  If not, see <http://www.gnu.org/licenses/>.
         public Paychecks()
         {
             InitializeComponent();
-            this.MouseMove += new System.Windows.Forms.MouseEventHandler(Main.maininstance.notIdle_event);
-            payTextbox.MouseMove += new System.Windows.Forms.MouseEventHandler(Main.maininstance.notIdle_event);
-            payTextbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(Main.maininstance.notIdle_event);
 
             if (DateTime.Today.DayOfWeek != DayOfWeek.Monday)
             {

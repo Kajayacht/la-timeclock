@@ -16,11 +16,6 @@ namespace Los_Alamos_Timeclock.Manager
         public Employeenotes()
         {
             InitializeComponent();
-            this.MouseMove += new System.Windows.Forms.MouseEventHandler(Main.maininstance.notIdle_event);
-            notesDatagrid.MouseMove +=new MouseEventHandler(Main.maininstance.notIdle_event);
-            notesDatagrid.KeyPress +=new KeyPressEventHandler(Main.maininstance.notIdle_event);
-            noteTextbox.MouseMove += new MouseEventHandler(Main.maininstance.notIdle_event);
-            noteTextbox.KeyPress += new KeyPressEventHandler(Main.maininstance.notIdle_event);
 
             employeeDropdownlist.DisplayMember = "getname";
             employeeDropdownlist.ValueMember = "gid";
