@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 07, 2012 at 09:54 PM
+-- Generation Time: Apr 12, 2012 at 06:32 PM
 -- Server version: 5.0.91
 -- PHP Version: 5.2.6
 
@@ -90,7 +90,7 @@ CREATE TABLE IF NOT EXISTS `Employee` (
   `EReason` varchar(10) default NULL,
   PRIMARY KEY  (`ID`),
   UNIQUE KEY `ID_UNIQUE` (`ID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=17 ;
 
 --
 -- Dumping data for table `Employee`
@@ -106,7 +106,8 @@ INSERT INTO `Employee` (`ID`, `LName`, `MName`, `FName`, `SSN`, `Phone`, `Email`
 (12, 'daf', 'dfa', 'dsaf', 651632132, 2147483647, 'test@yahoo.com', 'asfkaj', 'dsf', 'dalskfja', 'Idaho', 52154, '2012-03-21', NULL, ''),
 (13, 'lkjlk', 'lkj', 'privtest', 546542162, 1854162165, 'a@msn.com', '6516251 sadfa', '', 'sdfa', 'Alabama', 51854, '2012-03-21', NULL, ''),
 (14, 'te''s\\', 'te''s\\', 'te''s\\', 394230938, 2147483647, 'te''s\\', 'te''s\\', 'te''s\\', 'te''s\\', 'Delaware', 12345, '2012-04-05', NULL, ''),
-(15, 'Me', 'M', 'Fire', 421845216, 2147483647, '65154', '51651', '551651', '216551', 'Delaware', 51621, '2012-04-01', '2012-04-07', 'Terminated');
+(15, 'Me', 'M', 'Fire', 421845216, 2147483647, '65154', '51651', '551651', '216551', 'Delaware', 51621, '2012-04-01', '2012-04-07', 'Quit'),
+(16, 'test', 'test', 'Manual Employee', 300000000, 2147483647, 'darasd@asdasd.com', 'test', '', 'test', 'Indiana', 55555, '2012-04-09', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -153,7 +154,9 @@ INSERT INTO `EmployeeNotes` (`ID`, `Manager`, `Date`, `Note`) VALUES
 (15, 'Jennifer Chavez', '2012-04-07 01:58:07', 'Rehired'),
 (15, 'Jennifer Chavez', '2012-04-07 01:58:17', 'TERMINATED: timestamp test\nLast Day: 4/7/2012'),
 (15, 'Jennifer Chavez', '2012-04-07 15:21:47', 'Rehired'),
-(15, 'Jennifer Chavez', '2012-04-07 15:22:24', 'TERMINATED: Testing if termination removes scheduled dates\nLast Day: 4/7/2012');
+(15, 'Jennifer Chavez', '2012-04-07 15:22:24', 'TERMINATED: Testing if termination removes scheduled dates\nLast Day: 4/7/2012'),
+(15, 'Jennifer Chavez', '2012-04-07 22:29:43', 'Rehired'),
+(15, 'Jennifer Chavez', '2012-04-07 22:45:10', 'QUIT: test\nLast Day: 4/7/2012');
 
 -- --------------------------------------------------------
 
@@ -204,7 +207,8 @@ INSERT INTO `Hours Worked` (`ID`, `Date`, `Start`, `End`, `Tips`, `JID`, `B1out`
 (1, '2012-03-23', '09:15:00', '09:08:31', NULL, 'Manager', NULL, NULL, NULL, NULL, NULL, NULL, 'OUT'),
 (11, '2012-03-26', '19:00:00', '19:06:06', '69.00', 'Bartender', NULL, NULL, NULL, NULL, NULL, NULL, 'OUT'),
 (11, '2012-03-26', '19:00:00', '19:06:06', NULL, 'Security', NULL, NULL, NULL, NULL, NULL, NULL, 'OUT'),
-(1, '2012-03-26', '19:15:00', '19:34:22', '9001.00', 'Bartender', '19:13:57', '19:13:58', '19:13:58', '19:13:59', '19:13:55', '19:13:56', 'OUT');
+(1, '2012-03-26', '19:15:00', '19:34:22', '9001.00', 'Bartender', '19:13:57', '19:13:58', '19:13:58', '19:13:59', '19:13:55', '19:13:56', 'OUT'),
+(1, '2012-04-11', '08:30:00', '08:37:54', '10.00', 'Bartender', '08:37:40', '08:37:41', NULL, NULL, '08:37:43', '08:37:44', 'OUT');
 
 -- --------------------------------------------------------
 
@@ -216,6 +220,7 @@ CREATE TABLE IF NOT EXISTS `Jobs` (
   `JID` varchar(50) NOT NULL,
   `JSPay` decimal(10,2) NOT NULL,
   `TippedJob` varchar(5) character set latin1 collate latin1_bin default 'FALSE',
+  `Filename` text,
   PRIMARY KEY  (`JID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -223,13 +228,13 @@ CREATE TABLE IF NOT EXISTS `Jobs` (
 -- Dumping data for table `Jobs`
 --
 
-INSERT INTO `Jobs` (`JID`, `JSPay`, `TippedJob`) VALUES
-('Bartender', '5.00', 'True'),
-('Cook', '8.00', 'False'),
-('Dishwasher', '7.00', 'False'),
-('Manager', '10.00', 'False'),
-('Security', '8.00', 'False'),
-('Server', '3.50', 'True');
+INSERT INTO `Jobs` (`JID`, `JSPay`, `TippedJob`, `Filename`) VALUES
+('Bartender', '5.00', 'True', 'Bartender.bmp'),
+('Cook', '8.00', 'False', 'Cook.bmp'),
+('Dishwasher', '7.00', 'False', 'Dishwasher.bmp'),
+('Manager', '10.00', 'False', 'Manager.bmp'),
+('Security', '8.00', 'False', 'Security.bmp'),
+('Server', '3.50', 'True', 'Server.bmp');
 
 -- --------------------------------------------------------
 
@@ -249,28 +254,8 @@ CREATE TABLE IF NOT EXISTS `Manager` (
 
 INSERT INTO `Manager` (`ID`) VALUES
 (10),
-(11);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `Payrole YTD`
---
-
-CREATE TABLE IF NOT EXISTS `Payrole YTD` (
-  `ID` int(11) NOT NULL,
-  `Total Hours` decimal(10,0) NOT NULL,
-  `Total Income` decimal(10,2) NOT NULL,
-  `Total Taxes` decimal(10,2) NOT NULL,
-  `Total Tips` decimal(10,2) default NULL,
-  PRIMARY KEY  (`ID`),
-  KEY `ID` (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `Payrole YTD`
---
-
+(11),
+(16);
 
 -- --------------------------------------------------------
 
@@ -292,8 +277,9 @@ CREATE TABLE IF NOT EXISTS `Requests` (
 --
 
 INSERT INTO `Requests` (`ID`, `SDate`, `EDate`, `Submitted Date`, `Reason`) VALUES
-(1, '2012-04-07', '2012-04-13', '2012-04-07', 'request test'),
-(10, '2012-04-12', '2012-04-12', '2012-04-07', 'dave''s request');
+(10, '2012-04-12', '2012-04-12', '2012-04-07', 'dave''s request'),
+(1, '2012-04-10', '2012-04-17', '2012-04-08', 'waevst sfdfads f'),
+(16, '2012-04-09', '2012-04-11', '2012-04-09', 'I got shot');
 
 -- --------------------------------------------------------
 
@@ -330,7 +316,7 @@ INSERT INTO `Schedule` (`ID`, `Date`, `Start`, `End`, `JID`) VALUES
 (10, '2012-03-11', '04:15:00', '10:30:00', 'Bartender'),
 (11, '2012-03-13', '10:45:00', '11:00:00', 'Dishwasher'),
 (11, '2012-03-30', '10:00:00', '18:00:00', 'Security'),
-(15, '2012-04-11', '05:45:00', '09:30:00', 'Bartender');
+(1, '2012-04-08', '05:30:00', '14:15:00', 'Manager');
 
 -- --------------------------------------------------------
 
@@ -360,7 +346,8 @@ INSERT INTO `Users` (`ID`, `User`, `Password`) VALUES
 (12, 'datetest', '60671c896665c3fa'),
 (13, 'privtest', '60671c896665c3fa'),
 (14, 'te''s\\', '70bda4a51e33b157'),
-(15, 'fireme', '6e69ec467e82e965');
+(15, 'fireme', '6e69ec467e82e965'),
+(16, 'Manual ', '322335445fbb8aef');
 
 --
 -- Constraints for dumped tables
@@ -397,12 +384,6 @@ ALTER TABLE `Hours Worked`
 --
 ALTER TABLE `Manager`
   ADD CONSTRAINT `MID` FOREIGN KEY (`ID`) REFERENCES `Employee` (`ID`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Constraints for table `Payrole YTD`
---
-ALTER TABLE `Payrole YTD`
-  ADD CONSTRAINT `YTDID` FOREIGN KEY (`ID`) REFERENCES `Employee` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `Schedule`
