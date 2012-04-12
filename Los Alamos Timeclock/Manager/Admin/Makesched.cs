@@ -25,6 +25,21 @@ namespace Los_Alamos_Timeclock.Manager.Admin
         {
             InitializeComponent();
 
+            this.MouseMove += new MouseEventHandler(Main.maininstance.notIdle_event);
+            this.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
+            datagrid.MouseMove += new MouseEventHandler(Main.maininstance.notIdle_event);
+            datagrid.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
+            startHourDropdownlist.MouseMove += new MouseEventHandler(Main.maininstance.notIdle_event);
+            startHourDropdownlist.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
+            startMinDropdownlist.MouseMove += new MouseEventHandler(Main.maininstance.notIdle_event);
+            startMinDropdownlist.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
+            endHourDropdownlist.MouseMove += new MouseEventHandler(Main.maininstance.notIdle_event);
+            endHourDropdownlist.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
+            endMinDropdownlist.MouseMove += new MouseEventHandler(Main.maininstance.notIdle_event);
+            endMinDropdownlist.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
+            jobsDropdownlist.MouseMove += new MouseEventHandler(Main.maininstance.notIdle_event);
+            jobsDropdownlist.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
+
             mon = getmon(DateTime.Today.Date);
             sun = mon.AddDays(6);
             calander.MaxDate = DateTime.Today.AddYears(1);

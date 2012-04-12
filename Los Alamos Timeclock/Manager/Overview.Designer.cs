@@ -29,55 +29,19 @@ namespace Los_Alamos_Timeclock.Manager.Admin
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.Label fromLabel;
             System.Windows.Forms.Label toLabel;
             System.Windows.Forms.Label showLabel;
-            this.requestsDatagridview = new System.Windows.Forms.DataGridView();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.overviewDatagridview = new System.Windows.Forms.DataGridView();
             this.toCalander = new System.Windows.Forms.DateTimePicker();
             this.fromCalander = new System.Windows.Forms.DateTimePicker();
             this.showwhatDropdownlist = new System.Windows.Forms.ComboBox();
             fromLabel = new System.Windows.Forms.Label();
             toLabel = new System.Windows.Forms.Label();
             showLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.requestsDatagridview)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.overviewDatagridview)).BeginInit();
             this.SuspendLayout();
-            // 
-            // requestsDatagridview
-            // 
-            this.requestsDatagridview.AllowUserToAddRows = false;
-            this.requestsDatagridview.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.requestsDatagridview.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.requestsDatagridview.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.requestsDatagridview.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.requestsDatagridview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.requestsDatagridview.Location = new System.Drawing.Point(12, 12);
-            this.requestsDatagridview.Name = "requestsDatagridview";
-            this.requestsDatagridview.ReadOnly = true;
-            this.requestsDatagridview.RowHeadersVisible = false;
-            this.requestsDatagridview.Size = new System.Drawing.Size(522, 304);
-            this.requestsDatagridview.TabIndex = 3;
-            // 
-            // toCalander
-            // 
-            this.toCalander.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.toCalander.Location = new System.Drawing.Point(334, 351);
-            this.toCalander.Name = "toCalander";
-            this.toCalander.Size = new System.Drawing.Size(200, 20);
-            this.toCalander.TabIndex = 2;
-            this.toCalander.ValueChanged += new System.EventHandler(this.toCalander_ValueChanged);
-            // 
-            // fromCalander
-            // 
-            this.fromCalander.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.fromCalander.Location = new System.Drawing.Point(334, 322);
-            this.fromCalander.Name = "fromCalander";
-            this.fromCalander.Size = new System.Drawing.Size(200, 20);
-            this.fromCalander.TabIndex = 1;
-            this.fromCalander.ValueChanged += new System.EventHandler(this.fromCalander_ValueChanged);
             // 
             // fromLabel
             // 
@@ -103,6 +67,55 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             toLabel.TabIndex = 13;
             toLabel.Text = "To:";
             // 
+            // showLabel
+            // 
+            showLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            showLabel.AutoSize = true;
+            showLabel.BackColor = System.Drawing.Color.Transparent;
+            showLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            showLabel.ForeColor = System.Drawing.Color.White;
+            showLabel.Location = new System.Drawing.Point(12, 328);
+            showLabel.Name = "showLabel";
+            showLabel.Size = new System.Drawing.Size(71, 25);
+            showLabel.TabIndex = 15;
+            showLabel.Text = "Show:";
+            // 
+            // overviewDatagridview
+            // 
+            this.overviewDatagridview.AllowUserToAddRows = false;
+            this.overviewDatagridview.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.overviewDatagridview.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.overviewDatagridview.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.overviewDatagridview.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.overviewDatagridview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.overviewDatagridview.Location = new System.Drawing.Point(12, 12);
+            this.overviewDatagridview.Name = "overviewDatagridview";
+            this.overviewDatagridview.ReadOnly = true;
+            this.overviewDatagridview.RowHeadersVisible = false;
+            this.overviewDatagridview.Size = new System.Drawing.Size(522, 304);
+            this.overviewDatagridview.TabIndex = 3;
+            // 
+            // toCalander
+            // 
+            this.toCalander.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.toCalander.Location = new System.Drawing.Point(334, 351);
+            this.toCalander.Name = "toCalander";
+            this.toCalander.Size = new System.Drawing.Size(200, 20);
+            this.toCalander.TabIndex = 2;
+            this.toCalander.ValueChanged += new System.EventHandler(this.toCalander_ValueChanged);
+            // 
+            // fromCalander
+            // 
+            this.fromCalander.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.fromCalander.Location = new System.Drawing.Point(334, 322);
+            this.fromCalander.Name = "fromCalander";
+            this.fromCalander.Size = new System.Drawing.Size(200, 20);
+            this.fromCalander.TabIndex = 1;
+            this.fromCalander.ValueChanged += new System.EventHandler(this.fromCalander_ValueChanged);
+            // 
             // showwhatDropdownlist
             // 
             this.showwhatDropdownlist.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -120,19 +133,6 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             this.showwhatDropdownlist.TabIndex = 0;
             this.showwhatDropdownlist.SelectedIndexChanged += new System.EventHandler(this.showwhatDropdownlist_SelectedIndexChanged);
             // 
-            // showLabel
-            // 
-            showLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            showLabel.AutoSize = true;
-            showLabel.BackColor = System.Drawing.Color.Transparent;
-            showLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            showLabel.ForeColor = System.Drawing.Color.White;
-            showLabel.Location = new System.Drawing.Point(12, 328);
-            showLabel.Name = "showLabel";
-            showLabel.Size = new System.Drawing.Size(71, 25);
-            showLabel.TabIndex = 15;
-            showLabel.Text = "Show:";
-            // 
             // Overview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -146,12 +146,12 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             this.Controls.Add(fromLabel);
             this.Controls.Add(this.fromCalander);
             this.Controls.Add(this.toCalander);
-            this.Controls.Add(this.requestsDatagridview);
+            this.Controls.Add(this.overviewDatagridview);
             this.DoubleBuffered = true;
             this.MinimumSize = new System.Drawing.Size(562, 38);
             this.Name = "Overview";
             this.Text = "Overview";
-            ((System.ComponentModel.ISupportInitialize)(this.requestsDatagridview)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.overviewDatagridview)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -159,7 +159,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
 
         #endregion
 
-        private System.Windows.Forms.DataGridView requestsDatagridview;
+        private System.Windows.Forms.DataGridView overviewDatagridview;
         private System.Windows.Forms.DateTimePicker toCalander;
         private System.Windows.Forms.DateTimePicker fromCalander;
         private System.Windows.Forms.ComboBox showwhatDropdownlist;

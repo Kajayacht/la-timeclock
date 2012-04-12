@@ -20,6 +20,11 @@ namespace Los_Alamos_Timeclock.Manager.Admin
         {
             InitializeComponent();
 
+            this.MouseMove += new MouseEventHandler(Main.maininstance.notIdle_event);
+            this.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
+            overviewDatagridview.MouseMove += new MouseEventHandler(Main.maininstance.notIdle_event);
+            overviewDatagridview.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
+
             toCalander.MinDate = fromCalander.Value;
             showwhatDropdownlist.SelectedIndex = 0;
             filldt();
@@ -124,7 +129,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
 
                 BindingSource bind = new BindingSource();
                 bind.DataSource = dataTable;
-                requestsDatagridview.DataSource = bind;
+                overviewDatagridview.DataSource = bind;
 
                 Main.myConnection.Close();
             }

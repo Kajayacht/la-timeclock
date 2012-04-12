@@ -30,13 +30,13 @@ namespace Los_Alamos_Timeclock.Manager
         private void InitializeComponent()
         {
             System.Windows.Forms.Label employeeLabel;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.Label startLabel;
             System.Windows.Forms.Label endLabel;
             System.Windows.Forms.Label jobLabel;
             System.Windows.Forms.Label break1Label;
             System.Windows.Forms.Label break2Label;
             System.Windows.Forms.Label lunchLabel;
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.employeeDropdownlist = new System.Windows.Forms.ComboBox();
             this.calander = new System.Windows.Forms.DateTimePicker();
             this.updatescheduleButton = new System.Windows.Forms.Button();
@@ -63,17 +63,6 @@ namespace Los_Alamos_Timeclock.Manager
             ((System.ComponentModel.ISupportInitialize)(this.datagrid)).BeginInit();
             this.SuspendLayout();
             // 
-            // employeeDropdownlist
-            // 
-            this.employeeDropdownlist.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.employeeDropdownlist.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.employeeDropdownlist.FormattingEnabled = true;
-            this.employeeDropdownlist.Location = new System.Drawing.Point(79, 267);
-            this.employeeDropdownlist.Name = "employeeDropdownlist";
-            this.employeeDropdownlist.Size = new System.Drawing.Size(190, 21);
-            this.employeeDropdownlist.TabIndex = 0;
-            this.employeeDropdownlist.SelectedIndexChanged += new System.EventHandler(this.employeeDropdownlist_SelectedIndexChanged);
-            // 
             // employeeLabel
             // 
             employeeLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -85,6 +74,89 @@ namespace Los_Alamos_Timeclock.Manager
             employeeLabel.Size = new System.Drawing.Size(56, 13);
             employeeLabel.TabIndex = 3;
             employeeLabel.Text = "Employee:";
+            // 
+            // startLabel
+            // 
+            startLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            startLabel.AutoSize = true;
+            startLabel.BackColor = System.Drawing.Color.Transparent;
+            startLabel.ForeColor = System.Drawing.Color.White;
+            startLabel.Location = new System.Drawing.Point(20, 297);
+            startLabel.Name = "startLabel";
+            startLabel.Size = new System.Drawing.Size(32, 13);
+            startLabel.TabIndex = 11;
+            startLabel.Text = "Start:";
+            // 
+            // endLabel
+            // 
+            endLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            endLabel.AutoSize = true;
+            endLabel.BackColor = System.Drawing.Color.Transparent;
+            endLabel.ForeColor = System.Drawing.Color.White;
+            endLabel.Location = new System.Drawing.Point(20, 324);
+            endLabel.Name = "endLabel";
+            endLabel.Size = new System.Drawing.Size(29, 13);
+            endLabel.TabIndex = 12;
+            endLabel.Text = "End:";
+            // 
+            // jobLabel
+            // 
+            jobLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            jobLabel.AutoSize = true;
+            jobLabel.BackColor = System.Drawing.Color.Transparent;
+            jobLabel.ForeColor = System.Drawing.Color.White;
+            jobLabel.Location = new System.Drawing.Point(20, 373);
+            jobLabel.Name = "jobLabel";
+            jobLabel.Size = new System.Drawing.Size(27, 13);
+            jobLabel.TabIndex = 13;
+            jobLabel.Text = "Job:";
+            // 
+            // break1Label
+            // 
+            break1Label.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            break1Label.AutoSize = true;
+            break1Label.BackColor = System.Drawing.Color.Transparent;
+            break1Label.ForeColor = System.Drawing.Color.White;
+            break1Label.Location = new System.Drawing.Point(127, 297);
+            break1Label.Name = "break1Label";
+            break1Label.Size = new System.Drawing.Size(47, 13);
+            break1Label.TabIndex = 16;
+            break1Label.Text = "Break 1:";
+            // 
+            // break2Label
+            // 
+            break2Label.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            break2Label.AutoSize = true;
+            break2Label.BackColor = System.Drawing.Color.Transparent;
+            break2Label.ForeColor = System.Drawing.Color.White;
+            break2Label.Location = new System.Drawing.Point(127, 324);
+            break2Label.Name = "break2Label";
+            break2Label.Size = new System.Drawing.Size(47, 13);
+            break2Label.TabIndex = 22;
+            break2Label.Text = "Break 2:";
+            // 
+            // lunchLabel
+            // 
+            lunchLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            lunchLabel.AutoSize = true;
+            lunchLabel.BackColor = System.Drawing.Color.Transparent;
+            lunchLabel.ForeColor = System.Drawing.Color.White;
+            lunchLabel.Location = new System.Drawing.Point(127, 350);
+            lunchLabel.Name = "lunchLabel";
+            lunchLabel.Size = new System.Drawing.Size(40, 13);
+            lunchLabel.TabIndex = 26;
+            lunchLabel.Text = "Lunch:";
+            // 
+            // employeeDropdownlist
+            // 
+            this.employeeDropdownlist.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.employeeDropdownlist.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.employeeDropdownlist.FormattingEnabled = true;
+            this.employeeDropdownlist.Location = new System.Drawing.Point(79, 267);
+            this.employeeDropdownlist.Name = "employeeDropdownlist";
+            this.employeeDropdownlist.Size = new System.Drawing.Size(190, 21);
+            this.employeeDropdownlist.TabIndex = 0;
+            this.employeeDropdownlist.SelectedIndexChanged += new System.EventHandler(this.employeeDropdownlist_SelectedIndexChanged);
             // 
             // calander
             // 
@@ -134,42 +206,6 @@ namespace Los_Alamos_Timeclock.Manager
             this.jobsDropdownlist.Size = new System.Drawing.Size(190, 21);
             this.jobsDropdownlist.TabIndex = 10;
             // 
-            // startLabel
-            // 
-            startLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            startLabel.AutoSize = true;
-            startLabel.BackColor = System.Drawing.Color.Transparent;
-            startLabel.ForeColor = System.Drawing.Color.White;
-            startLabel.Location = new System.Drawing.Point(20, 297);
-            startLabel.Name = "startLabel";
-            startLabel.Size = new System.Drawing.Size(32, 13);
-            startLabel.TabIndex = 11;
-            startLabel.Text = "Start:";
-            // 
-            // endLabel
-            // 
-            endLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            endLabel.AutoSize = true;
-            endLabel.BackColor = System.Drawing.Color.Transparent;
-            endLabel.ForeColor = System.Drawing.Color.White;
-            endLabel.Location = new System.Drawing.Point(20, 324);
-            endLabel.Name = "endLabel";
-            endLabel.Size = new System.Drawing.Size(29, 13);
-            endLabel.TabIndex = 12;
-            endLabel.Text = "End:";
-            // 
-            // jobLabel
-            // 
-            jobLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            jobLabel.AutoSize = true;
-            jobLabel.BackColor = System.Drawing.Color.Transparent;
-            jobLabel.ForeColor = System.Drawing.Color.White;
-            jobLabel.Location = new System.Drawing.Point(20, 373);
-            jobLabel.Name = "jobLabel";
-            jobLabel.Size = new System.Drawing.Size(27, 13);
-            jobLabel.TabIndex = 13;
-            jobLabel.Text = "Job:";
-            // 
             // startTextbox
             // 
             this.startTextbox.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -196,18 +232,6 @@ namespace Los_Alamos_Timeclock.Manager
             this.b1outTextbox.Name = "b1outTextbox";
             this.b1outTextbox.Size = new System.Drawing.Size(41, 20);
             this.b1outTextbox.TabIndex = 3;
-            // 
-            // break1Label
-            // 
-            break1Label.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            break1Label.AutoSize = true;
-            break1Label.BackColor = System.Drawing.Color.Transparent;
-            break1Label.ForeColor = System.Drawing.Color.White;
-            break1Label.Location = new System.Drawing.Point(127, 297);
-            break1Label.Name = "break1Label";
-            break1Label.Size = new System.Drawing.Size(47, 13);
-            break1Label.TabIndex = 16;
-            break1Label.Text = "Break 1:";
             // 
             // b1dashLabel
             // 
@@ -260,18 +284,6 @@ namespace Los_Alamos_Timeclock.Manager
             this.b2outTextbox.Size = new System.Drawing.Size(41, 20);
             this.b2outTextbox.TabIndex = 5;
             // 
-            // break2Label
-            // 
-            break2Label.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            break2Label.AutoSize = true;
-            break2Label.BackColor = System.Drawing.Color.Transparent;
-            break2Label.ForeColor = System.Drawing.Color.White;
-            break2Label.Location = new System.Drawing.Point(127, 324);
-            break2Label.Name = "break2Label";
-            break2Label.Size = new System.Drawing.Size(47, 13);
-            break2Label.TabIndex = 22;
-            break2Label.Text = "Break 2:";
-            // 
             // linTextbox
             // 
             this.linTextbox.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -289,18 +301,6 @@ namespace Los_Alamos_Timeclock.Manager
             this.loutTextbox.Name = "loutTextbox";
             this.loutTextbox.Size = new System.Drawing.Size(41, 20);
             this.loutTextbox.TabIndex = 7;
-            // 
-            // lunchLabel
-            // 
-            lunchLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            lunchLabel.AutoSize = true;
-            lunchLabel.BackColor = System.Drawing.Color.Transparent;
-            lunchLabel.ForeColor = System.Drawing.Color.White;
-            lunchLabel.Location = new System.Drawing.Point(127, 350);
-            lunchLabel.Name = "lunchLabel";
-            lunchLabel.Size = new System.Drawing.Size(40, 13);
-            lunchLabel.TabIndex = 26;
-            lunchLabel.Text = "Lunch:";
             // 
             // lunchdashLabel
             // 

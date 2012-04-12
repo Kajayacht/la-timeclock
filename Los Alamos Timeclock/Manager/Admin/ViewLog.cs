@@ -14,6 +14,9 @@ namespace Los_Alamos_Timeclock.Manager.Admin
         public viewLog()
         {
             InitializeComponent();
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(Main.maininstance.notIdle_event);
+            logViewBox.MouseMove += new System.Windows.Forms.MouseEventHandler(Main.maininstance.notIdle_event);
+            logViewBox.KeyDown += new System.Windows.Forms.KeyEventHandler(Main.maininstance.notIdle_event); 
 
             logViewBox.Text = Log.viewLog();
         }

@@ -49,13 +49,6 @@ namespace Los_Alamos_Timeclock
         {
             InitializeComponent();
 
-            //this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.keypress_event); //new System.EventHandler(this.keypress_event);
-            //this.KeyPress += new System.EventHandler(this.keypress_event);
-            //this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.keypress_event);
-            //this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.keypress_event);
-           
-
-
             SetStyle(ControlStyles.OptimizedDoubleBuffer |
                                     ControlStyles.UserPaint |
                                     ControlStyles.AllPaintingInWmPaint, true);
@@ -77,10 +70,6 @@ namespace Los_Alamos_Timeclock
             joblist = getJobs();
             employeeList = getEmployees();
             menu1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.notIdle_event);
-
-            //Main.maininstance.  .maininstance.Click += new System.EventHandler(this.keypress_event);
-            //this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.keypress_event);
-            //this.panel1.Controls[0].Click += keypress_event;
         }
 
         /** Method to return an array of employee's IDs, lastnames, firstnames

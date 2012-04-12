@@ -32,6 +32,25 @@ namespace Los_Alamos_Timeclock
         {
             InitializeComponent();
 
+            this.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
+            this.MouseMove += new MouseEventHandler(Main.maininstance.notIdle_event);
+
+            Al1.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
+            Al1.MouseMove += new MouseEventHandler(Main.maininstance.notIdle_event);
+            Al2.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
+            Al2.MouseMove += new MouseEventHandler(Main.maininstance.notIdle_event);
+            Ac.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
+            Ac.MouseMove += new MouseEventHandler(Main.maininstance.notIdle_event);
+            As.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
+            As.MouseMove += new MouseEventHandler(Main.maininstance.notIdle_event);
+            Az.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
+            Az.MouseMove += new MouseEventHandler(Main.maininstance.notIdle_event);
+            Phone.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
+            Phone.MouseMove += new MouseEventHandler(Main.maininstance.notIdle_event);
+            Email.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
+            Phone.MouseMove += new MouseEventHandler(Main.maininstance.notIdle_event);
+
+
             Phone.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             Main.myConnection.Open();
             Main.maininstance.sqlReader("SELECT * FROM Employee WHERE ID='"+Main.id+"'");

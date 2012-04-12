@@ -17,6 +17,15 @@ namespace Los_Alamos_Timeclock.Manager
         {
             InitializeComponent();
 
+            this.MouseMove += new MouseEventHandler(Main.maininstance.notIdle_event);
+            this.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
+            notesDatagrid.MouseMove += new MouseEventHandler(Main.maininstance.notIdle_event);
+            notesDatagrid.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
+            noteTextbox.MouseMove += new MouseEventHandler(Main.maininstance.notIdle_event);
+            noteTextbox.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
+            employeeDropdownlist.MouseMove += new MouseEventHandler(Main.maininstance.notIdle_event);
+            employeeDropdownlist.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
+
             employeeDropdownlist.DisplayMember = "getname";
             employeeDropdownlist.ValueMember = "gid";
             employeeDropdownlist.DataSource = Main.employeeList;

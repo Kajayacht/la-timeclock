@@ -54,9 +54,6 @@
             this.Name = "ViewLog";
             this.Size = new System.Drawing.Size(500, 400);
             this.ResumeLayout(false);
-            this.MouseMove += new System.Windows.Forms.MouseEventHandler(Main.maininstance.notIdle_event);
-            logViewBox.MouseMove += new System.Windows.Forms.MouseEventHandler(Main.maininstance.notIdle_event);
-            logViewBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(Main.maininstance.notIdle_event);
         }
 
         #endregion

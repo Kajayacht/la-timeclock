@@ -33,10 +33,14 @@ along with Los Alamos Timeclock.  If not, see <http://www.gnu.org/licenses/>.
         public Paychecks()
         {
             InitializeComponent();
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(Main.maininstance.notIdle_event);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(Main.maininstance.notIdle_event);
+            payTextbox.MouseMove += new System.Windows.Forms.MouseEventHandler(Main.maininstance.notIdle_event);
+            payTextbox.KeyDown += new System.Windows.Forms.KeyEventHandler(Main.maininstance.notIdle_event); 
 
             if (DateTime.Today.DayOfWeek != DayOfWeek.Monday)
             {
-                startCalander.Value = getMonday(startCalander.Value);
+                startCalander.Value = getDay(startCalander.Value, DayOfWeek.Monday);
             }
             endCalander.Value = startCalander.Value.AddDays(6);
 
@@ -60,13 +64,13 @@ along with Los Alamos Timeclock.  If not, see <http://www.gnu.org/licenses/>.
             calculatePay();
         }
 
-        public DateTime getMonday(DateTime a)
+        //gets the most recent occurance of day day compared to datetime a
+        public DateTime getDay(DateTime a, DayOfWeek day)
         {
-            while (a.DayOfWeek != DayOfWeek.Monday)
+            while (a.DayOfWeek != day)
             {
                 a = a.AddDays(-1);
             }
-            payTextbox.Text = "";
             return a;
         }
 
@@ -74,11 +78,13 @@ along with Los Alamos Timeclock.  If not, see <http://www.gnu.org/licenses/>.
         {
             string id = "";
             TimeSpan hours = TimeSpan.FromHours(0);
+            Double weekHours = 0;
             Double totalHours = 0;
             Double hourlyRate = 0.00;
             Double pay = 0.00;
             Double totalPay = 0.00;
             Double totalTips = 0.00;
+            DateTime weekDate = startCalander.Value;
             Main.myConnection.Open();
 
 
@@ -96,12 +102,15 @@ along with Los Alamos Timeclock.  If not, see <http://www.gnu.org/licenses/>.
             "ORDER BY d.LName " +
             "LIMIT 0,1000";
 
+
             string output = "";
             MySqlCommand command = new MySqlCommand(c, Main.myConnection);
             Main.reader = command.ExecuteReader();
 
+
             while (Main.reader.Read())
             {
+                //outputs the values and resets them for the next employee
                 if (Main.reader["ID"].ToString() != id)
                 {
                     if (id != "")
@@ -119,12 +128,23 @@ along with Los Alamos Timeclock.  If not, see <http://www.gnu.org/licenses/>.
                     }
                     id = Main.reader["ID"].ToString();
                     output = output + Main.reader["LName"].ToString() + ", " + Main.reader["FName"].ToString() + " " + Main.reader["MName"].ToString() + "\n";
+                    weekDate = startCalander.Value;
                     totalHours = 0;
+                    weekHours = 0;
                     totalPay = 0.00;
                     totalTips = 0.00;
                 }
+
+
                 if (Main.reader["Start"].ToString() != "" && Main.reader["End"].ToString() != "")
                 {
+                    //checks if the date on the selected record is in the same week, if not it resets the weekHours and sets the new weekDate
+                    if (DateTime.Parse(Main.reader["Date"].ToString()) > weekDate.AddDays(6))
+                    {
+                        weekHours = 0;
+                        weekDate = getDay(DateTime.Parse(Main.reader["Date"].ToString()), weekDate.DayOfWeek);
+                    }
+
                     if (Main.maininstance.roundtime(DateTime.Parse(Main.reader["End"].ToString())) < Main.maininstance.roundtime(DateTime.Parse(Main.reader["Start"].ToString())))
                     {
                         hours = Main.maininstance.roundtime(DateTime.Parse(Main.reader["End"].ToString())).AddHours(24).Subtract(Main.maininstance.roundtime(DateTime.Parse(Main.reader["Start"].ToString())));
@@ -157,13 +177,16 @@ along with Los Alamos Timeclock.  If not, see <http://www.gnu.org/licenses/>.
                         hourlyRate = Double.Parse(Main.reader["JPay"].ToString());
                     }
 
-                    if (totalHours > 40)
+
+                    
+                    //if (totalHours > 40)
+                    if(weekHours>40)
                     {
                         hourlyRate *= 1.5;
                         pay = hourlyRate * (hours.Hours + (hours.Minutes / 15 * .25));
-
                     }
-                    else if (totalHours + (hours.Hours + (hours.Minutes / 15) * .25) > 40)
+                    //else if (totalHours + (hours.Hours + (hours.Minutes / 15) * .25) > 40)
+                    else if (weekHours + (hours.Hours + (hours.Minutes / 15) * .25) > 40)
                     {
                         TimeSpan a = TimeSpan.FromHours(40);
                         a = a.Subtract(TimeSpan.FromHours(totalHours));
@@ -182,7 +205,8 @@ along with Los Alamos Timeclock.  If not, see <http://www.gnu.org/licenses/>.
                     }
                     totalPay += pay;
                     pay = 0.00;
-                    totalHours = totalHours + (hours.Hours + (hours.Minutes / 15) * .25);
+                    totalHours += hours.Hours + (hours.Minutes / 15) * .25;
+                    weekHours += hours.Hours + (hours.Minutes / 15) * .25;
                     hours = TimeSpan.FromHours(0);
                 }
             }

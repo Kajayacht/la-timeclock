@@ -20,6 +20,30 @@ namespace Los_Alamos_Timeclock.Manager
         {
             InitializeComponent();
 
+            this.MouseMove+=new MouseEventHandler(Main.maininstance.notIdle_event);
+            this.KeyDown+=new KeyEventHandler(Main.maininstance.notIdle_event);
+            employeeDropdownlist.MouseMove += new MouseEventHandler(Main.maininstance.notIdle_event);
+            employeeDropdownlist.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
+            startTextbox.MouseMove += new MouseEventHandler(Main.maininstance.notIdle_event);
+            startTextbox.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
+            endTextbox.MouseMove += new MouseEventHandler(Main.maininstance.notIdle_event);
+            endTextbox.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
+            b1inTextbox.MouseMove += new MouseEventHandler(Main.maininstance.notIdle_event);
+            b1inTextbox.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
+            b1outTextbox.MouseMove += new MouseEventHandler(Main.maininstance.notIdle_event);
+            b1outTextbox.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
+            b2inTextbox.MouseMove += new MouseEventHandler(Main.maininstance.notIdle_event);
+            b2inTextbox.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
+            b2outTextbox.MouseMove += new MouseEventHandler(Main.maininstance.notIdle_event);
+            b2outTextbox.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
+            linTextbox.MouseMove += new MouseEventHandler(Main.maininstance.notIdle_event);
+            linTextbox.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
+            loutTextbox.MouseMove += new MouseEventHandler(Main.maininstance.notIdle_event);
+            loutTextbox.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
+            jobsDropdownlist.MouseMove += new MouseEventHandler(Main.maininstance.notIdle_event);
+            jobsDropdownlist.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
+
+
             calander.MaxDate = DateTime.Today;
             populateDatagrid();
             jobsDropdownlist.DisplayMember = "getname";

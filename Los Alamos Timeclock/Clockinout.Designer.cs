@@ -166,7 +166,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.jobImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-            this.MouseMove += new System.Windows.Forms.MouseEventHandler(Main.maininstance.notIdle_event);
         }
 
         #endregion

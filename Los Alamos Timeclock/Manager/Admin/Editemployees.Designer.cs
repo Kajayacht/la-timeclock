@@ -785,22 +785,6 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             this.Size = new System.Drawing.Size(500, 1128);
             this.ResumeLayout(false);
             this.PerformLayout();
-
-            MouseMove += new System.Windows.Forms.MouseEventHandler(Main.maininstance.notIdle_event);
-            fNameTextbox.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
-            mNameTextbox.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
-            lNameTextbox.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
-            ssnTextbox.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
-            aLine1Textbox.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
-            aLine2Textbox.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
-            aCityTextbox.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
-            aZipTextbox.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
-            phoneTextbox.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
-            emailTextbox.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
-            payTextbox.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
-            userTextbox.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
-            pass1Textbox.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
-            pass2Textbox.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
         }
 
         #endregion

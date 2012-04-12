@@ -20,6 +20,11 @@ namespace Los_Alamos_Timeclock
         {
             InitializeComponent();
 
+            this.MouseMove+=new MouseEventHandler(Main.maininstance.notIdle_event);
+            this.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
+            scheduleDatagrid.MouseMove+=new MouseEventHandler(Main.maininstance.notIdle_event);
+            scheduleDatagrid.KeyDown+=new KeyEventHandler(Main.maininstance.notIdle_event);
+
             mon = getmon(DateTime.Parse(weekCalander.Value.ToShortDateString()));
             sun = mon.AddDays(6);
             whoDropdownlist.SelectedItem = "Self";

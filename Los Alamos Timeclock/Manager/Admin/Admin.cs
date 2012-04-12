@@ -16,6 +16,7 @@ namespace Los_Alamos_Timeclock
         public Admin()
         {
             InitializeComponent();
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(Main.maininstance.notIdle_event);
 
             if (Main.permissions == "Manager")
             {

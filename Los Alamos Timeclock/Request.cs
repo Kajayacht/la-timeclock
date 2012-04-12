@@ -39,6 +39,16 @@ namespace Los_Alamos_Timeclock
         {
             InitializeComponent();
 
+
+            this.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
+            this.MouseMove += new MouseEventHandler(Main.maininstance.notIdle_event);
+            startCalander.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
+            startCalander.MouseMove += new MouseEventHandler(Main.maininstance.notIdle_event);
+            endCalander.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
+            endCalander.MouseMove += new MouseEventHandler(Main.maininstance.notIdle_event);
+            reasonTextbox.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
+            reasonTextbox.MouseMove += new MouseEventHandler(Main.maininstance.notIdle_event);
+
             startCalander.MinDate = DateTime.Today;
             endCalander.MinDate = DateTime.Today;
             filldt();
