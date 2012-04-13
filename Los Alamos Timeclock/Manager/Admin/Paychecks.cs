@@ -46,6 +46,7 @@ along with Los Alamos Timeclock.  If not, see <http://www.gnu.org/licenses/>.
 
             weekLabel.Text = "Pay for " + startCalander.Value.ToShortDateString() + " - " + endCalander.Value.ToShortDateString();
             calculatePay();
+
         }
 
         private void startCalander_ValueChanged(object sender, EventArgs e)
@@ -99,7 +100,7 @@ along with Los Alamos Timeclock.  If not, see <http://www.gnu.org/licenses/>.
             "WHERE a.Date>='" + startCalander.Value.ToString("yyyy-MM-dd") +
             "' AND a.Date<='" + endCalander.Value.ToString("yyyy-MM-dd") +
             "' AND a.Status='OUT'" +
-            "ORDER BY d.LName " +
+            "ORDER BY d.LName, d.FName " +
             "LIMIT 0,1000";
 
 
@@ -139,7 +140,7 @@ along with Los Alamos Timeclock.  If not, see <http://www.gnu.org/licenses/>.
                 if (Main.reader["Start"].ToString() != "" && Main.reader["End"].ToString() != "")
                 {
                     //checks if the date on the selected record is in the same week, if not it resets the weekHours and sets the new weekDate
-                    if (DateTime.Parse(Main.reader["Date"].ToString()) > weekDate.AddDays(6))
+                    if (DateTime.Parse(Main.reader["Date"].ToString()) > (weekDate.AddDays(6)))
                     {
                         weekHours = 0;
                         weekDate = getDay(DateTime.Parse(Main.reader["Date"].ToString()), weekDate.DayOfWeek);
@@ -180,18 +181,18 @@ along with Los Alamos Timeclock.  If not, see <http://www.gnu.org/licenses/>.
 
                     
                     //if (totalHours > 40)
-                    if(weekHours>40)
+                    if(weekHours>=40)
                     {
-                        hourlyRate *= 1.5;
+                        hourlyRate = hourlyRate* 1.5;
                         pay = hourlyRate * (hours.Hours + (hours.Minutes / 15 * .25));
                     }
                     //else if (totalHours + (hours.Hours + (hours.Minutes / 15) * .25) > 40)
-                    else if (weekHours + (hours.Hours + (hours.Minutes / 15) * .25) > 40)
+                    else if ((weekHours + (hours.Hours + (hours.Minutes / 15) * .25)) > 40)
                     {
                         TimeSpan a = TimeSpan.FromHours(40);
                         a = a.Subtract(TimeSpan.FromHours(totalHours));
                         hours = hours.Subtract(a);
-                        pay = (hourlyRate * (a.Hours + (a.Minutes / 15 * .25))) + ((hourlyRate * 1.5) * (a.Hours + (a.Minutes / 15 * .25)));
+                        pay = (hourlyRate * (a.Hours + (a.Minutes / 15 * .25))) + ((hourlyRate * 1.5) * (hours.Hours + (hours.Minutes / 15 * .25)));
                         hours = hours.Add(a);
                     }
                     else
