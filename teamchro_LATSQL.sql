@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 12, 2012 at 06:32 PM
+-- Generation Time: Apr 13, 2012 at 01:08 AM
 -- Server version: 5.0.91
 -- PHP Version: 5.2.6
 
@@ -38,7 +38,8 @@ CREATE TABLE IF NOT EXISTS `Admin` (
 --
 
 INSERT INTO `Admin` (`ID`) VALUES
-(1);
+(1),
+(16);
 
 -- --------------------------------------------------------
 
@@ -60,7 +61,6 @@ CREATE TABLE IF NOT EXISTS `Employee Jobs` (
 
 INSERT INTO `Employee Jobs` (`ID`, `JID`, `JPay`) VALUES
 (1, 'Manager', '9.99'),
-(5, 'Dishwasher', '7.40'),
 (2, 'Server', '3.75'),
 (10, 'Server', '3.75'),
 (10, 'Cook', '8.10'),
@@ -77,7 +77,7 @@ CREATE TABLE IF NOT EXISTS `Employee` (
   `LName` text NOT NULL,
   `MName` varchar(20) NOT NULL,
   `FName` text NOT NULL,
-  `SSN` int(9) NOT NULL,
+  `SSN` text NOT NULL,
   `Phone` int(10) NOT NULL,
   `Email` text NOT NULL,
   `Address1` text,
@@ -90,24 +90,21 @@ CREATE TABLE IF NOT EXISTS `Employee` (
   `EReason` varchar(10) default NULL,
   PRIMARY KEY  (`ID`),
   UNIQUE KEY `ID_UNIQUE` (`ID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=17 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=18 ;
 
 --
 -- Dumping data for table `Employee`
 --
 
 INSERT INTO `Employee` (`ID`, `LName`, `MName`, `FName`, `SSN`, `Phone`, `Email`, `Address1`, `Address2`, `City`, `State`, `Zip`, `SDate`, `EDate`, `EReason`) VALUES
-(1, 'Chavez', 'L', 'Jennifer', 123845421, 2147483647, 'test@aol.com', 'address1', 'te''s\\', 'Muncie', 'Indiana', 47304, '2012-03-01', NULL, ''),
-(2, 'Chavez', 'D', 'Mando', 214748364, 2147483647, '', '', '', '', 'Nebraska', 0, '2012-03-03', NULL, ''),
-(4, 'Hansen', 'H', 'Chris', 123456789, 1234567890, '', '', '', '', '', 0, '2012-03-03', NULL, ''),
-(5, 'Warrior', 'A', 'The', 123456789, 1234567890, '', NULL, NULL, '', NULL, NULL, '2012-03-03', NULL, ''),
-(10, 'Chappel', 'Earl', 'Dave', 123456792, 2132159499, '', '', '', '', 'Nebraska', 48457, '2012-03-03', NULL, ''),
-(11, 'Dole', 'Joseph', 'Bob', 334434575, 2147483647, 'bob.dole@compuserve.com', '1400 W, Jackson St', 'apartment 24', 'Funkytown', 'Indiana', 47306, '2012-03-03', NULL, ''),
-(12, 'daf', 'dfa', 'dsaf', 651632132, 2147483647, 'test@yahoo.com', 'asfkaj', 'dsf', 'dalskfja', 'Idaho', 52154, '2012-03-21', NULL, ''),
-(13, 'lkjlk', 'lkj', 'privtest', 546542162, 1854162165, 'a@msn.com', '6516251 sadfa', '', 'sdfa', 'Alabama', 51854, '2012-03-21', NULL, ''),
-(14, 'te''s\\', 'te''s\\', 'te''s\\', 394230938, 2147483647, 'te''s\\', 'te''s\\', 'te''s\\', 'te''s\\', 'Delaware', 12345, '2012-04-05', NULL, ''),
-(15, 'Me', 'M', 'Fire', 421845216, 2147483647, '65154', '51651', '551651', '216551', 'Delaware', 51621, '2012-04-01', '2012-04-07', 'Quit'),
-(16, 'test', 'test', 'Manual Employee', 300000000, 2147483647, 'darasd@asdasd.com', 'test', '', 'test', 'Indiana', 55555, '2012-04-09', NULL, NULL);
+(1, 'Example', 'A', 'Admin', '4adlxi9WErm1/if/kaZJpg==', 2147483647, 'test@aol.com', 'address1', 'te''s\\', 'Muncie', 'Indiana', 47304, '2012-03-01', NULL, ''),
+(2, 'Scott', 'V', 'Kevin', 'JsXUt286opjhbgmSo3Ol/g==', 2147483647, '', '', '', '', 'Nebraska', 0, '2012-03-03', NULL, ''),
+(4, 'Hynes', 'A', 'Jordan', 'w6bzPwuNo9bGOhYW5dwGsw==', 1234567890, '', '', '', '', 'Nebraska', 0, '2012-03-03', NULL, ''),
+(10, 'Example', 'M', 'Manager', 'w6bzPwuNo9YWV/ClBxD5qw==', 2132159499, '', '', '', '', 'Nebraska', 48457, '2012-03-03', NULL, ''),
+(11, 'Sneddon', 'Joseph', 'Bob', 'EnDYhZOTtcRpw9Z9lqqoNA==', 2147483647, 'bob.dole@compuserve.com', '1400 W, Jackson St', 'apartment 24', 'Funkytown', 'Indiana', 47306, '2012-03-03', NULL, ''),
+(13, 'Royston', 'A', 'Alyssa', 'iz2ODJSdfwzF3xOG/rchfg==', 1854162165, 'a@msn.com', '6516251 sadfa', '', 'sdfa', 'Alabama', 51854, '2012-03-21', NULL, ''),
+(15, 'Me', 'M', 'Fire', '421845216', 2147483647, '65154', '51651', '551651', '216551', 'Delaware', 51621, '2012-04-01', '2012-04-07', 'Quit'),
+(16, 'Example', 'test', 'Manual Employee', '+m7pXRIyTNQTII6VXsKgOg==', 2147483647, 'darasd@asdasd.com', 'test', '', 'test', 'Indiana', 55555, '2012-04-09', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -133,7 +130,6 @@ INSERT INTO `EmployeeNotes` (`ID`, `Manager`, `Date`, `Note`) VALUES
 (10, 'Jennifer Chavez', '2012-03-22 00:00:00', 'Smoking Crack in the Freezer'),
 (11, 'Jennifer Chavez', '2012-03-22 00:00:00', 'All he says is Bob Dole'),
 (11, 'Jennifer Chavez', '2012-03-22 00:00:00', 'Bob Dole\nBob Dole\nBob Dole'),
-(12, 'Bob Dole', '2012-03-23 00:00:00', 'Has a dumb name'),
 (2, 'Jennifer Chavez', '2012-04-01 00:00:00', 'Mando, Man do'),
 (10, 'Jennifer Chavez', '2012-04-05 00:00:00', '''stringttest'),
 (10, 'Jennifer Chavez', '2012-04-05 00:00:00', 'stringttest2'),
@@ -191,7 +187,6 @@ INSERT INTO `Hours Worked` (`ID`, `Date`, `Start`, `End`, `Tips`, `JID`, `B1out`
 (1, '2012-02-19', '13:00:00', '13:30:15', NULL, 'Server', '13:19:04', '13:19:05', '13:19:06', '13:19:06', '13:19:07', '13:19:08', 'OUT'),
 (2, '2012-02-21', '13:00:00', '13:30:15', NULL, 'Server', '13:19:04', '13:19:05', '13:19:06', '13:19:06', '13:19:07', '13:19:08', 'OUT'),
 (4, '2012-02-21', '13:00:00', '14:47:15', NULL, 'Cook', '13:19:04', '13:19:05', '13:19:06', '13:19:06', '13:19:07', '13:19:08', 'OUT'),
-(5, '2012-02-21', '13:15:00', '13:30:15', NULL, 'Dishwasher', '13:19:04', '13:19:05', '13:19:06', '13:19:06', '13:19:07', '13:19:08', 'OUT'),
 (1, '2012-03-04', '21:55:00', '22:38:00', NULL, 'Bartender', NULL, NULL, NULL, NULL, NULL, NULL, 'OUT'),
 (11, '2012-03-04', '22:01:29', '03:03:09', NULL, 'Bartender', NULL, NULL, NULL, NULL, '23:45:00', '00:15:00', 'OUT'),
 (1, '2012-03-05', '03:02:06', '17:36:44', NULL, 'Bartender', NULL, NULL, NULL, NULL, NULL, NULL, 'OUT'),
@@ -200,7 +195,6 @@ INSERT INTO `Hours Worked` (`ID`, `Date`, `Start`, `End`, `Tips`, `JID`, `B1out`
 (10, '2012-03-12', '01:20:00', '02:34:00', NULL, 'Bartender', NULL, NULL, NULL, NULL, NULL, NULL, 'OUT'),
 (1, '2012-03-12', '03:32:00', '04:32:00', NULL, 'Bartender', NULL, NULL, NULL, NULL, NULL, NULL, 'OUT'),
 (11, '2012-03-12', '00:30:00', '02:00:00', NULL, 'Security', NULL, NULL, NULL, NULL, NULL, NULL, 'OUT'),
-(5, '2012-03-12', '11:20:00', '12:50:00', NULL, 'Cook', NULL, NULL, NULL, NULL, NULL, NULL, 'OUT'),
 (11, '2012-03-13', '10:44:30', '10:19:44', NULL, 'Dishwasher', NULL, NULL, NULL, NULL, NULL, NULL, 'OUT'),
 (1, '2012-03-23', '08:45:00', '09:08:31', NULL, 'Bartender', NULL, NULL, NULL, NULL, NULL, NULL, 'OUT'),
 (1, '2012-03-23', '09:00:00', '09:08:31', NULL, 'Bartender', NULL, NULL, NULL, NULL, NULL, NULL, 'OUT'),
@@ -208,7 +202,14 @@ INSERT INTO `Hours Worked` (`ID`, `Date`, `Start`, `End`, `Tips`, `JID`, `B1out`
 (11, '2012-03-26', '19:00:00', '19:06:06', '69.00', 'Bartender', NULL, NULL, NULL, NULL, NULL, NULL, 'OUT'),
 (11, '2012-03-26', '19:00:00', '19:06:06', NULL, 'Security', NULL, NULL, NULL, NULL, NULL, NULL, 'OUT'),
 (1, '2012-03-26', '19:15:00', '19:34:22', '9001.00', 'Bartender', '19:13:57', '19:13:58', '19:13:58', '19:13:59', '19:13:55', '19:13:56', 'OUT'),
-(1, '2012-04-11', '08:30:00', '08:37:54', '10.00', 'Bartender', '08:37:40', '08:37:41', NULL, NULL, '08:37:43', '08:37:44', 'OUT');
+(16, '2012-04-12', '20:13:57', '21:08:46', NULL, 'Security', NULL, NULL, NULL, NULL, NULL, NULL, 'OUT'),
+(1, '2012-04-12', '00:00:00', '10:00:00', '0.00', 'Bartender', NULL, NULL, NULL, NULL, NULL, NULL, 'OUT'),
+(1, '2012-04-13', '00:00:00', '10:00:00', '5.00', 'Bartender', NULL, NULL, NULL, NULL, NULL, NULL, 'OUT'),
+(1, '2012-04-14', '00:00:00', '10:00:00', '5.00', 'Bartender', NULL, NULL, NULL, NULL, NULL, NULL, 'OUT'),
+(1, '2012-04-15', '00:00:00', '10:00:00', '5.00', 'Bartender', NULL, NULL, NULL, NULL, NULL, NULL, 'OUT'),
+(1, '2012-04-17', '00:00:00', '15:00:00', '5.00', 'Bartender', NULL, NULL, NULL, NULL, NULL, NULL, 'OUT'),
+(1, '2012-04-16', '00:00:00', '10:00:00', '5.00', 'Bartender', NULL, NULL, NULL, NULL, NULL, NULL, 'OUT'),
+(1, '2012-04-18', '00:00:00', '10:00:00', '5.00', 'Bartender', NULL, NULL, NULL, NULL, NULL, NULL, 'OUT');
 
 -- --------------------------------------------------------
 
@@ -254,8 +255,7 @@ CREATE TABLE IF NOT EXISTS `Manager` (
 
 INSERT INTO `Manager` (`ID`) VALUES
 (10),
-(11),
-(16);
+(11);
 
 -- --------------------------------------------------------
 
@@ -316,7 +316,8 @@ INSERT INTO `Schedule` (`ID`, `Date`, `Start`, `End`, `JID`) VALUES
 (10, '2012-03-11', '04:15:00', '10:30:00', 'Bartender'),
 (11, '2012-03-13', '10:45:00', '11:00:00', 'Dishwasher'),
 (11, '2012-03-30', '10:00:00', '18:00:00', 'Security'),
-(1, '2012-04-08', '05:30:00', '14:15:00', 'Manager');
+(1, '2012-04-08', '05:30:00', '14:15:00', 'Manager'),
+(16, '2012-04-12', '20:15:00', '21:00:00', 'Security');
 
 -- --------------------------------------------------------
 
@@ -327,7 +328,7 @@ INSERT INTO `Schedule` (`ID`, `Date`, `Start`, `End`, `JID`) VALUES
 CREATE TABLE IF NOT EXISTS `Users` (
   `ID` int(11) NOT NULL,
   `User` varchar(45) NOT NULL,
-  `Password` varchar(45) NOT NULL,
+  `Password` varchar(84) NOT NULL,
   PRIMARY KEY  (`ID`),
   KEY `ID` (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -337,17 +338,14 @@ CREATE TABLE IF NOT EXISTS `Users` (
 --
 
 INSERT INTO `Users` (`ID`, `User`, `Password`) VALUES
-(1, 'test', '378b243e220ca493'),
-(2, 'user', '29bad1457ee5e49e'),
-(4, 'chris', '1d4189ef56e6d972'),
-(5, 'the', '6cef464025796393'),
-(10, 'dave', '60671c896665c3fa'),
-(11, 'Bobdole', '2485317568797984'),
-(12, 'datetest', '60671c896665c3fa'),
-(13, 'privtest', '60671c896665c3fa'),
-(14, 'te''s\\', '70bda4a51e33b157'),
+(1, 'test', 'W0D0Jklx1fuklSMlgo7E/6BY+YTp1oEX8gg24RNuS4tUbG0zQW5EUjN8YVRJdjNEbG1FbjVsMG5sTjVwQVsz'),
+(2, 'user', 'W0D0Jklx1fuklSMlgo7E/6BY+YTp1oEX8gg24RNuS4tUbG0zQW5EUjN8YVRJdjNEbG1FbjVsMG5sTjVwQVsz'),
+(4, 'chris', 'W0D0Jklx1fuklSMlgo7E/6BY+YTp1oEX8gg24RNuS4tUbG0zQW5EUjN8YVRJdjNEbG1FbjVsMG5sTjVwQVsz'),
+(10, 'dave', 'W0D0Jklx1fuklSMlgo7E/6BY+YTp1oEX8gg24RNuS4tUbG0zQW5EUjN8YVRJdjNEbG1FbjVsMG5sTjVwQVsz'),
+(11, 'Bobdole', 'W0D0Jklx1fuklSMlgo7E/6BY+YTp1oEX8gg24RNuS4tUbG0zQW5EUjN8YVRJdjNEbG1FbjVsMG5sTjVwQVsz'),
+(13, 'privtest', 'W0D0Jklx1fuklSMlgo7E/6BY+YTp1oEX8gg24RNuS4tUbG0zQW5EUjN8YVRJdjNEbG1FbjVsMG5sTjVwQVsz'),
 (15, 'fireme', '6e69ec467e82e965'),
-(16, 'Manual ', '322335445fbb8aef');
+(16, 'Manual ', 'W0D0Jklx1fuklSMlgo7E/6BY+YTp1oEX8gg24RNuS4tUbG0zQW5EUjN8YVRJdjNEbG1FbjVsMG5sTjVwQVsz');
 
 --
 -- Constraints for dumped tables
