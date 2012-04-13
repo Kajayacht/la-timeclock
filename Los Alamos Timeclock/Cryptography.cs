@@ -8,6 +8,7 @@ using System.IO;
 namespace Los_Alamos_Timeclock
 {
     // Based on example found at http://www.codeproject.com/Articles/38796/Simple-Encrypt-and-Decrypt-Technique-and-Computing
+
     public class Cryptography
     {
         private byte[] _keyByte = { };
@@ -66,7 +67,7 @@ namespace Los_Alamos_Timeclock
                 }
                 catch
                 {
-                    Main.maininstance.error("Failure encryption failure");
+                    Main.maininstance.error("ERROR: Encryption failure");
                 }
                 finally
                 {
@@ -90,24 +91,11 @@ namespace Los_Alamos_Timeclock
 	return Decrypt(value, string.Empty); 
 }
 
-/// <summary> 
-/// Decrypt text by key 
-/// </summary> 
-/// <param name="value">encrypted text</param> 
-/// <param name="key">string key</param> 
-/// <returns>plain text</returns> 
 public string Decrypt(string value, string key) 
 { 
 	return Decrypt(value, key, string.Empty); 
 }
 
-/// <summary> 
-/// Decrypt text by key with initialization vector 
-/// </summary> 
-/// <param name="value">encrypted text</param> 
-/// <param name="key"> string key</param> 
-/// <param name="iv">initialization vector</param> 
-/// <returns>encrypted text</returns> 
 public string Decrypt(string value, string key, string iv) 
 { 
 	string decrptValue = string.Empty; 
@@ -147,8 +135,8 @@ public string Decrypt(string value, string key, string iv)
 			} 
 		} 
 		catch 
-		{ 
-			//TODO: write log 
+		{
+            Main.maininstance.error("ERROR: Decryption failure"); 
 		} 
 		finally 
 		{
