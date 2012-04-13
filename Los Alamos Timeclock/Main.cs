@@ -440,7 +440,7 @@ namespace Los_Alamos_Timeclock
         //methods to deal with the timeout timer
 
         //ammount of time to wait before timing out
-        private TimeSpan timeoutTimelimit = TimeSpan.FromMinutes(2);
+        private TimeSpan timeoutTimelimit = TimeSpan.FromSeconds(10); //.FromMinutes(2);
         private DateTime timerCompareTime = DateTime.Now;
         
         //start the timer
@@ -469,6 +469,8 @@ namespace Los_Alamos_Timeclock
             {
                 stopTimer();
                 permissions = "0";
+                Manager.Admin.Editemployees.t.Close();
+                Manager.Admin.Makesched.l.Close();
                 maininstance.menu1.Hide();
                 panel1.Controls.Clear();
                 panel1.Controls.Add(new Login());

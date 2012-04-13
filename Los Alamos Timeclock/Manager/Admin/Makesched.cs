@@ -19,7 +19,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
         Boolean scheduled = false;
         DateTime lastDay;
         Boolean terminated = false;
-
+        public static Overview l = new Overview();
 
         public Makesched()
         {
@@ -300,7 +300,6 @@ namespace Los_Alamos_Timeclock.Manager.Admin
 
         private void showRequests_Click(object sender, EventArgs e)
         {
-            Overview l=new Overview();
             l.Show();
         }
     }

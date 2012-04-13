@@ -15,7 +15,9 @@ namespace Los_Alamos_Timeclock.Manager.Admin
     public partial class Editemployees : UserControl
     {
         public static string id;
+        public static TerminationConsole t = new TerminationConsole();
         Boolean terminated = false;
+
         public Editemployees()
         {
             InitializeComponent();
@@ -337,10 +339,11 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                 }
                 else
                 {
+
                     DialogResult result = MessageBox.Show("Are you sure you want to delete " + fNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + " " + mNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + " " + lNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "? All information related to " + fNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + " " + mNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + " " + lNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + " will also be removed.",
                 "Delete Employee?", MessageBoxButtons.YesNo);
 
-                    if (result == DialogResult.Yes)
+                    if (result == DialogResult.Yes && Main.permissions=="Admin")
                     {
                             Main.maininstance.sqlCommand("DELETE FROM Employee WHERE ID='" + id + "'");
                             Log.writeLog(Main.eName + " deleted employee: \n " + fNameTextbox.Text + " " + mNameTextbox.Text + " " + lNameTextbox.Text + "\n ID= " + id);
@@ -454,7 +457,6 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                     }
                     else
                     {
-                        TerminationConsole t = new TerminationConsole();
                         t.Show();
                     }
                 }
