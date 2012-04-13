@@ -33,6 +33,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             System.Windows.Forms.Label toLabel;
             System.Windows.Forms.Label showLabel;
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Overview));
             this.overviewDatagridview = new System.Windows.Forms.DataGridView();
             this.toCalander = new System.Windows.Forms.DateTimePicker();
             this.fromCalander = new System.Windows.Forms.DateTimePicker();
@@ -148,6 +149,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             this.Controls.Add(this.toCalander);
             this.Controls.Add(this.overviewDatagridview);
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(562, 38);
             this.Name = "Overview";
             this.Text = "Overview";

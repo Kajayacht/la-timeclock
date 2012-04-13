@@ -69,9 +69,7 @@
   <PropertyGroup>
     <SignManifests>true</SignManifests>
   </PropertyGroup>
-  <PropertyGroup>
-    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
-  </PropertyGroup>
+  <PropertyGroup />
   <PropertyGroup>
     <TargetZone>LocalIntranet</TargetZone>
   </PropertyGroup>
@@ -79,7 +77,11 @@
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>icon4.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\icon4.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.VisualBasic" />
@@ -350,6 +352,7 @@
     <None Include="Resources\dancingtaco.gif" />
     <None Include="Resources\dancingChile.gif" />
     <Content Include="Resources\Dishwasher.bmp" />
+    <None Include="Resources\icon4.ico" />
     <Content Include="Resources\Manager.bmp" />
     <Content Include="Resources\Security.bmp" />
     <Content Include="Resources\Server.bmp" />

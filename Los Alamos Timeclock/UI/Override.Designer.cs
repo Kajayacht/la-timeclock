@@ -32,6 +32,7 @@
             System.Windows.Forms.Label userLabel;
             System.Windows.Forms.Label passLabel;
             System.Windows.Forms.Label label4;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Override));
             this.okButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
             this.jobsBox = new System.Windows.Forms.ListBox();
@@ -42,6 +43,42 @@
             passLabel = new System.Windows.Forms.Label();
             label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
+            // 
+            // jobLabel
+            // 
+            jobLabel.AutoSize = true;
+            jobLabel.Location = new System.Drawing.Point(231, 9);
+            jobLabel.Name = "jobLabel";
+            jobLabel.Size = new System.Drawing.Size(27, 13);
+            jobLabel.TabIndex = 3;
+            jobLabel.Text = "Job:";
+            // 
+            // userLabel
+            // 
+            userLabel.AutoSize = true;
+            userLabel.Location = new System.Drawing.Point(30, 30);
+            userLabel.Name = "userLabel";
+            userLabel.Size = new System.Drawing.Size(35, 13);
+            userLabel.TabIndex = 6;
+            userLabel.Text = "User: ";
+            // 
+            // passLabel
+            // 
+            passLabel.AutoSize = true;
+            passLabel.Location = new System.Drawing.Point(6, 56);
+            passLabel.Name = "passLabel";
+            passLabel.Size = new System.Drawing.Size(59, 13);
+            passLabel.TabIndex = 7;
+            passLabel.Text = "Password: ";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new System.Drawing.Point(97, 9);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(106, 13);
+            label4.TabIndex = 8;
+            label4.Text = "Enter Manager Login";
             // 
             // okButton
             // 
@@ -72,15 +109,6 @@
             this.jobsBox.Sorted = true;
             this.jobsBox.TabIndex = 2;
             // 
-            // jobLabel
-            // 
-            jobLabel.AutoSize = true;
-            jobLabel.Location = new System.Drawing.Point(231, 9);
-            jobLabel.Name = "jobLabel";
-            jobLabel.Size = new System.Drawing.Size(27, 13);
-            jobLabel.TabIndex = 3;
-            jobLabel.Text = "Job:";
-            // 
             // userTextbox
             // 
             this.userTextbox.Location = new System.Drawing.Point(71, 30);
@@ -96,33 +124,6 @@
             this.passTextbox.Size = new System.Drawing.Size(157, 20);
             this.passTextbox.TabIndex = 1;
             // 
-            // userLabel
-            // 
-            userLabel.AutoSize = true;
-            userLabel.Location = new System.Drawing.Point(30, 30);
-            userLabel.Name = "userLabel";
-            userLabel.Size = new System.Drawing.Size(35, 13);
-            userLabel.TabIndex = 6;
-            userLabel.Text = "User: ";
-            // 
-            // passLabel
-            // 
-            passLabel.AutoSize = true;
-            passLabel.Location = new System.Drawing.Point(6, 56);
-            passLabel.Name = "passLabel";
-            passLabel.Size = new System.Drawing.Size(59, 13);
-            passLabel.TabIndex = 7;
-            passLabel.Text = "Password: ";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new System.Drawing.Point(97, 9);
-            label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(106, 13);
-            label4.TabIndex = 8;
-            label4.Text = "Enter Manager Login";
-            // 
             // Override
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -137,6 +138,7 @@
             this.Controls.Add(this.jobsBox);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.okButton);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(364, 187);
             this.Name = "Override";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

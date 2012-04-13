@@ -32,6 +32,7 @@ namespace Los_Alamos_Timeclock.UI
             System.Windows.Forms.Label lastDayLabel;
             System.Windows.Forms.Label reasonLabel;
             System.Windows.Forms.Label label1;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TerminationConsole));
             this.lastDayCalander = new System.Windows.Forms.DateTimePicker();
             this.commentsTextbox = new System.Windows.Forms.RichTextBox();
             this.terminateButton = new System.Windows.Forms.Button();
@@ -42,21 +43,6 @@ namespace Los_Alamos_Timeclock.UI
             reasonLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // lastDayCalander
-            // 
-            this.lastDayCalander.Location = new System.Drawing.Point(78, 9);
-            this.lastDayCalander.Name = "lastDayCalander";
-            this.lastDayCalander.Size = new System.Drawing.Size(200, 20);
-            this.lastDayCalander.TabIndex = 0;
-            // 
-            // commentsTextbox
-            // 
-            this.commentsTextbox.Location = new System.Drawing.Point(78, 86);
-            this.commentsTextbox.Name = "commentsTextbox";
-            this.commentsTextbox.Size = new System.Drawing.Size(200, 64);
-            this.commentsTextbox.TabIndex = 3;
-            this.commentsTextbox.Text = "";
             // 
             // lastDayLabel
             // 
@@ -75,6 +61,30 @@ namespace Los_Alamos_Timeclock.UI
             reasonLabel.Size = new System.Drawing.Size(47, 13);
             reasonLabel.TabIndex = 3;
             reasonLabel.Text = "Reason:";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(5, 89);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(59, 13);
+            label1.TabIndex = 7;
+            label1.Text = "Comments:";
+            // 
+            // lastDayCalander
+            // 
+            this.lastDayCalander.Location = new System.Drawing.Point(78, 9);
+            this.lastDayCalander.Name = "lastDayCalander";
+            this.lastDayCalander.Size = new System.Drawing.Size(200, 20);
+            this.lastDayCalander.TabIndex = 0;
+            // 
+            // commentsTextbox
+            // 
+            this.commentsTextbox.Location = new System.Drawing.Point(78, 86);
+            this.commentsTextbox.Name = "commentsTextbox";
+            this.commentsTextbox.Size = new System.Drawing.Size(200, 64);
+            this.commentsTextbox.TabIndex = 3;
+            this.commentsTextbox.Text = "";
             // 
             // terminateButton
             // 
@@ -108,15 +118,6 @@ namespace Los_Alamos_Timeclock.UI
             this.reasonDropdownlist.Size = new System.Drawing.Size(200, 21);
             this.reasonDropdownlist.TabIndex = 1;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(5, 89);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(59, 13);
-            label1.TabIndex = 7;
-            label1.Text = "Comments:";
-            // 
             // removePrivCheckbox
             // 
             this.removePrivCheckbox.AutoSize = true;
@@ -141,6 +142,7 @@ namespace Los_Alamos_Timeclock.UI
             this.Controls.Add(lastDayLabel);
             this.Controls.Add(this.commentsTextbox);
             this.Controls.Add(this.lastDayCalander);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(314, 226);
             this.Name = "TerminationConsole";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
