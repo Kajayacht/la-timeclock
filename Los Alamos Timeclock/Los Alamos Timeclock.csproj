@@ -24,7 +24,9 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>1</ApplicationRevision>
+    <PublisherName>Team Chrono</PublisherName>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>2</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -39,6 +41,8 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -64,6 +68,18 @@
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon4.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.VisualBasic" />
@@ -169,6 +185,12 @@
     <Compile Include="Request.Designer.cs">
       <DependentUpon>Request.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Cleanup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Cleanup.Designer.cs">
+      <DependentUpon>Cleanup.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Override.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -262,6 +284,9 @@
     <EmbeddedResource Include="Request.resx">
       <DependentUpon>Request.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Cleanup.resx">
+      <DependentUpon>Cleanup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Override.resx">
       <DependentUpon>Override.cs</DependentUpon>
     </EmbeddedResource>
@@ -298,6 +323,7 @@
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="Los Alamos Timeclock_TemporaryKey.pfx" />
+    <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -318,6 +344,7 @@
     <None Include="Resources\none.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="icon4.ico" />
     <Content Include="Resources\Bartender.bmp" />
     <Content Include="Resources\Cook.bmp" />
     <None Include="Resources\dancingtaco.gif" />

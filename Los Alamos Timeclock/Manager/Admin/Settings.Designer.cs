@@ -55,11 +55,24 @@
             titleLabel.BackColor = System.Drawing.Color.Transparent;
             titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             titleLabel.ForeColor = System.Drawing.Color.White;
-            titleLabel.Location = new System.Drawing.Point(185, 210);
+            titleLabel.Location = new System.Drawing.Point(171, 315);
             titleLabel.Name = "titleLabel";
             titleLabel.Size = new System.Drawing.Size(159, 24);
             titleLabel.TabIndex = 0;
             titleLabel.Text = "Database Settings";
+            // 
+            // appSettingsLabel
+            // 
+            appSettingsLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            appSettingsLabel.AutoSize = true;
+            appSettingsLabel.BackColor = System.Drawing.Color.Transparent;
+            appSettingsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            appSettingsLabel.ForeColor = System.Drawing.Color.White;
+            appSettingsLabel.Location = new System.Drawing.Point(163, 26);
+            appSettingsLabel.Name = "appSettingsLabel";
+            appSettingsLabel.Size = new System.Drawing.Size(174, 24);
+            appSettingsLabel.TabIndex = 12;
+            appSettingsLabel.Text = "Application Settings";
             // 
             // ipaddressLLabel
             // 
@@ -69,7 +82,7 @@
             this.ipaddressLLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ipaddressLLabel.ForeColor = System.Drawing.Color.White;
             this.ipaddressLLabel.LinkColor = System.Drawing.Color.White;
-            this.ipaddressLLabel.Location = new System.Drawing.Point(92, 262);
+            this.ipaddressLLabel.Location = new System.Drawing.Point(78, 361);
             this.ipaddressLLabel.Name = "ipaddressLLabel";
             this.ipaddressLLabel.Size = new System.Drawing.Size(91, 20);
             this.ipaddressLLabel.TabIndex = 1;
@@ -85,7 +98,7 @@
             this.portLLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.portLLabel.ForeColor = System.Drawing.Color.White;
             this.portLLabel.LinkColor = System.Drawing.Color.White;
-            this.portLLabel.Location = new System.Drawing.Point(141, 297);
+            this.portLLabel.Location = new System.Drawing.Point(127, 396);
             this.portLLabel.Name = "portLLabel";
             this.portLLabel.Size = new System.Drawing.Size(42, 20);
             this.portLLabel.TabIndex = 2;
@@ -102,7 +115,7 @@
             this.userLLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userLLabel.ForeColor = System.Drawing.Color.White;
             this.userLLabel.LinkColor = System.Drawing.Color.White;
-            this.userLLabel.Location = new System.Drawing.Point(134, 358);
+            this.userLLabel.Location = new System.Drawing.Point(120, 457);
             this.userLLabel.Name = "userLLabel";
             this.userLLabel.Size = new System.Drawing.Size(47, 20);
             this.userLLabel.TabIndex = 3;
@@ -119,7 +132,7 @@
             this.passLLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passLLabel.ForeColor = System.Drawing.Color.White;
             this.passLLabel.LinkColor = System.Drawing.Color.White;
-            this.passLLabel.Location = new System.Drawing.Point(99, 390);
+            this.passLLabel.Location = new System.Drawing.Point(85, 489);
             this.passLLabel.Name = "passLLabel";
             this.passLLabel.Size = new System.Drawing.Size(82, 20);
             this.passLLabel.TabIndex = 4;
@@ -132,7 +145,7 @@
             // 
             this.ipaddressTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.ipaddressTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ipaddressTextbox.Location = new System.Drawing.Point(189, 262);
+            this.ipaddressTextbox.Location = new System.Drawing.Point(175, 361);
             this.ipaddressTextbox.Name = "ipaddressTextbox";
             this.ipaddressTextbox.Size = new System.Drawing.Size(153, 26);
             this.ipaddressTextbox.TabIndex = 3;
@@ -142,7 +155,7 @@
             // 
             this.portTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.portTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.portTextbox.Location = new System.Drawing.Point(189, 294);
+            this.portTextbox.Location = new System.Drawing.Point(175, 393);
             this.portTextbox.Name = "portTextbox";
             this.portTextbox.Size = new System.Drawing.Size(153, 26);
             this.portTextbox.TabIndex = 4;
@@ -152,7 +165,7 @@
             // 
             this.userTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.userTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userTextbox.Location = new System.Drawing.Point(187, 358);
+            this.userTextbox.Location = new System.Drawing.Point(173, 457);
             this.userTextbox.Name = "userTextbox";
             this.userTextbox.Size = new System.Drawing.Size(153, 26);
             this.userTextbox.TabIndex = 6;
@@ -162,7 +175,7 @@
             // 
             this.passTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.passTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passTextbox.Location = new System.Drawing.Point(187, 390);
+            this.passTextbox.Location = new System.Drawing.Point(173, 489);
             this.passTextbox.Name = "passTextbox";
             this.passTextbox.PasswordChar = '*';
             this.passTextbox.Size = new System.Drawing.Size(153, 26);
@@ -172,7 +185,7 @@
             // applyButton
             // 
             this.applyButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.applyButton.Location = new System.Drawing.Point(267, 422);
+            this.applyButton.Location = new System.Drawing.Point(253, 521);
             this.applyButton.Name = "applyButton";
             this.applyButton.Size = new System.Drawing.Size(75, 23);
             this.applyButton.TabIndex = 8;
@@ -184,7 +197,7 @@
             // 
             this.databaseTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.databaseTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.databaseTextbox.Location = new System.Drawing.Point(187, 326);
+            this.databaseTextbox.Location = new System.Drawing.Point(173, 425);
             this.databaseTextbox.Name = "databaseTextbox";
             this.databaseTextbox.Size = new System.Drawing.Size(153, 26);
             this.databaseTextbox.TabIndex = 5;
@@ -198,7 +211,7 @@
             this.databaseLLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.databaseLLabel.ForeColor = System.Drawing.Color.White;
             this.databaseLLabel.LinkColor = System.Drawing.Color.White;
-            this.databaseLLabel.Location = new System.Drawing.Point(100, 326);
+            this.databaseLLabel.Location = new System.Drawing.Point(86, 425);
             this.databaseLLabel.Name = "databaseLLabel";
             this.databaseLLabel.Size = new System.Drawing.Size(83, 20);
             this.databaseLLabel.TabIndex = 10;
@@ -207,26 +220,13 @@
             this.databaseLLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.databaseLLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.databaseLLabel_LinkClicked);
             // 
-            // appSettingsLabel
-            // 
-            appSettingsLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            appSettingsLabel.AutoSize = true;
-            appSettingsLabel.BackColor = System.Drawing.Color.Transparent;
-            appSettingsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            appSettingsLabel.ForeColor = System.Drawing.Color.White;
-            appSettingsLabel.Location = new System.Drawing.Point(183, 26);
-            appSettingsLabel.Name = "appSettingsLabel";
-            appSettingsLabel.Size = new System.Drawing.Size(174, 24);
-            appSettingsLabel.TabIndex = 12;
-            appSettingsLabel.Text = "Application Settings";
-            // 
             // showCurrentEmployeesCheckbox
             // 
             this.showCurrentEmployeesCheckbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.showCurrentEmployeesCheckbox.AutoSize = true;
             this.showCurrentEmployeesCheckbox.BackColor = System.Drawing.Color.Transparent;
             this.showCurrentEmployeesCheckbox.ForeColor = System.Drawing.Color.White;
-            this.showCurrentEmployeesCheckbox.Location = new System.Drawing.Point(189, 68);
+            this.showCurrentEmployeesCheckbox.Location = new System.Drawing.Point(175, 68);
             this.showCurrentEmployeesCheckbox.Name = "showCurrentEmployeesCheckbox";
             this.showCurrentEmployeesCheckbox.Size = new System.Drawing.Size(144, 17);
             this.showCurrentEmployeesCheckbox.TabIndex = 0;
@@ -239,7 +239,7 @@
             this.showPreviousEmployeesCheckbox.AutoSize = true;
             this.showPreviousEmployeesCheckbox.BackColor = System.Drawing.Color.Transparent;
             this.showPreviousEmployeesCheckbox.ForeColor = System.Drawing.Color.White;
-            this.showPreviousEmployeesCheckbox.Location = new System.Drawing.Point(189, 102);
+            this.showPreviousEmployeesCheckbox.Location = new System.Drawing.Point(175, 102);
             this.showPreviousEmployeesCheckbox.Name = "showPreviousEmployeesCheckbox";
             this.showPreviousEmployeesCheckbox.Size = new System.Drawing.Size(151, 17);
             this.showPreviousEmployeesCheckbox.TabIndex = 1;
@@ -249,7 +249,7 @@
             // saveAppSettings
             // 
             this.saveAppSettings.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.saveAppSettings.Location = new System.Drawing.Point(258, 125);
+            this.saveAppSettings.Location = new System.Drawing.Point(213, 125);
             this.saveAppSettings.Name = "saveAppSettings";
             this.saveAppSettings.Size = new System.Drawing.Size(75, 23);
             this.saveAppSettings.TabIndex = 2;
@@ -282,7 +282,7 @@
             this.Controls.Add(titleLabel);
             this.DoubleBuffered = true;
             this.Name = "Settings";
-            this.Size = new System.Drawing.Size(500, 465);
+            this.Size = new System.Drawing.Size(500, 575);
             this.ResumeLayout(false);
             this.PerformLayout();
 

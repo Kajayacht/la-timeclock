@@ -1,3 +1,8 @@
+C:\Users\Nate\Dropbox\Visual Studio Projects\Projects\Los Alamos Timeclock\Los Alamos Timeclock\bin\Debug\Los Alamos Timeclock.exe.config
+C:\Users\Nate\Dropbox\Visual Studio Projects\Projects\Los Alamos Timeclock\Los Alamos Timeclock\bin\Debug\Los Alamos Timeclock.exe.manifest
+C:\Users\Nate\Dropbox\Visual Studio Projects\Projects\Los Alamos Timeclock\Los Alamos Timeclock\bin\Debug\Los Alamos Timeclock.application
+C:\Users\Nate\Dropbox\Visual Studio Projects\Projects\Los Alamos Timeclock\Los Alamos Timeclock\bin\Debug\Los Alamos Timeclock.exe
+C:\Users\Nate\Dropbox\Visual Studio Projects\Projects\Los Alamos Timeclock\Los Alamos Timeclock\bin\Debug\Los Alamos Timeclock.pdb
 C:\Users\Nate\Dropbox\Visual Studio Projects\Projects\Los Alamos Timeclock\Los Alamos Timeclock\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\Nate\Dropbox\Visual Studio Projects\Projects\Los Alamos Timeclock\Los Alamos Timeclock\obj\x86\Debug\Los_Alamos_Timeclock.Clockinout.resources
 C:\Users\Nate\Dropbox\Visual Studio Projects\Projects\Los Alamos Timeclock\Los Alamos Timeclock\obj\x86\Debug\Los_Alamos_Timeclock.Contactinfo.resources
@@ -13,6 +18,7 @@ C:\Users\Nate\Dropbox\Visual Studio Projects\Projects\Los Alamos Timeclock\Los A
 C:\Users\Nate\Dropbox\Visual Studio Projects\Projects\Los Alamos Timeclock\Los Alamos Timeclock\obj\x86\Debug\Los_Alamos_Timeclock.Manager.Phonebook.resources
 C:\Users\Nate\Dropbox\Visual Studio Projects\Projects\Los Alamos Timeclock\Los Alamos Timeclock\obj\x86\Debug\Los_Alamos_Timeclock.Manager.Status.resources
 C:\Users\Nate\Dropbox\Visual Studio Projects\Projects\Los Alamos Timeclock\Los Alamos Timeclock\obj\x86\Debug\Los_Alamos_Timeclock.Request.resources
+C:\Users\Nate\Dropbox\Visual Studio Projects\Projects\Los Alamos Timeclock\Los Alamos Timeclock\obj\x86\Debug\Los_Alamos_Timeclock.UI.Cleanup.resources
 C:\Users\Nate\Dropbox\Visual Studio Projects\Projects\Los Alamos Timeclock\Los Alamos Timeclock\obj\x86\Debug\Los_Alamos_Timeclock.Override.resources
 C:\Users\Nate\Dropbox\Visual Studio Projects\Projects\Los Alamos Timeclock\Los Alamos Timeclock\obj\x86\Debug\Los_Alamos_Timeclock.Clock.resources
 C:\Users\Nate\Dropbox\Visual Studio Projects\Projects\Los Alamos Timeclock\Los Alamos Timeclock\obj\x86\Debug\Los_Alamos_Timeclock.Login.resources
@@ -24,3 +30,8 @@ C:\Users\Nate\Dropbox\Visual Studio Projects\Projects\Los Alamos Timeclock\Los A
 C:\Users\Nate\Dropbox\Visual Studio Projects\Projects\Los Alamos Timeclock\Los Alamos Timeclock\obj\x86\Debug\Los_Alamos_Timeclock.UI.TerminationConsole.resources
 C:\Users\Nate\Dropbox\Visual Studio Projects\Projects\Los Alamos Timeclock\Los Alamos Timeclock\obj\x86\Debug\GenerateResource.read.1.tlog
 C:\Users\Nate\Dropbox\Visual Studio Projects\Projects\Los Alamos Timeclock\Los Alamos Timeclock\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Nate\Dropbox\Visual Studio Projects\Projects\Los Alamos Timeclock\Los Alamos Timeclock\obj\x86\Debug\Los Alamos Timeclock.TrustInfo.xml
+C:\Users\Nate\Dropbox\Visual Studio Projects\Projects\Los Alamos Timeclock\Los Alamos Timeclock\obj\x86\Debug\Los Alamos Timeclock.exe.manifest
+C:\Users\Nate\Dropbox\Visual Studio Projects\Projects\Los Alamos Timeclock\Los Alamos Timeclock\obj\x86\Debug\Los Alamos Timeclock.application
+C:\Users\Nate\Dropbox\Visual Studio Projects\Projects\Los Alamos Timeclock\Los Alamos Timeclock\obj\x86\Debug\Los Alamos Timeclock.exe
+C:\Users\Nate\Dropbox\Visual Studio Projects\Projects\Los Alamos Timeclock\Los Alamos Timeclock\obj\x86\Debug\Los Alamos Timeclock.pdb

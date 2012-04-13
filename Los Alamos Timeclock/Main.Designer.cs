@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.menu1 = new Los_Alamos_Timeclock.Menu();
             this.timeoutTimer = new System.Windows.Forms.Timer(this.components);
+            this.menu1 = new Los_Alamos_Timeclock.Menu();
             this.SuspendLayout();
             // 
             // panel1
@@ -43,6 +44,10 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(500, 400);
             this.panel1.TabIndex = 6;
+            // 
+            // timeoutTimer
+            // 
+            this.timeoutTimer.Tick += new System.EventHandler(this.timeoutTimer_Tick);
             // 
             // menu1
             // 
@@ -59,10 +64,6 @@
             this.menu1.Visible = false;
             this.menu1.Load += new System.EventHandler(this.menu1_Load);
             // 
-            // timeoutTimer
-            // 
-            this.timeoutTimer.Tick += new System.EventHandler(this.timeoutTimer_Tick);
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -74,6 +75,7 @@
             this.Controls.Add(this.menu1);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MinimumSize = new System.Drawing.Size(586, 438);
             this.Name = "Main";
@@ -82,7 +84,6 @@
             this.Load += new System.EventHandler(this.Main_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
-
 
         }
 
