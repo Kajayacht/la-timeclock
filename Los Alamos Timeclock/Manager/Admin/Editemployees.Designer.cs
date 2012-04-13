@@ -109,7 +109,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             employeeLabel.BackColor = System.Drawing.Color.Transparent;
             employeeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             employeeLabel.ForeColor = System.Drawing.Color.White;
-            employeeLabel.Location = new System.Drawing.Point(20, 88);
+            employeeLabel.Location = new System.Drawing.Point(29, 88);
             employeeLabel.Name = "employeeLabel";
             employeeLabel.Size = new System.Drawing.Size(92, 20);
             employeeLabel.TabIndex = 5;
@@ -122,7 +122,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             pass1Label.BackColor = System.Drawing.Color.Transparent;
             pass1Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             pass1Label.ForeColor = System.Drawing.Color.White;
-            pass1Label.Location = new System.Drawing.Point(30, 1000);
+            pass1Label.Location = new System.Drawing.Point(39, 973);
             pass1Label.Margin = new System.Windows.Forms.Padding(3);
             pass1Label.Name = "pass1Label";
             pass1Label.Size = new System.Drawing.Size(82, 20);
@@ -136,7 +136,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             userLabel.BackColor = System.Drawing.Color.Transparent;
             userLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             userLabel.ForeColor = System.Drawing.Color.White;
-            userLabel.Location = new System.Drawing.Point(25, 974);
+            userLabel.Location = new System.Drawing.Point(34, 947);
             userLabel.Margin = new System.Windows.Forms.Padding(3);
             userLabel.Name = "userLabel";
             userLabel.Size = new System.Drawing.Size(87, 20);
@@ -150,7 +150,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             loginLabel.BackColor = System.Drawing.Color.Transparent;
             loginLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             loginLabel.ForeColor = System.Drawing.Color.White;
-            loginLabel.Location = new System.Drawing.Point(42, 943);
+            loginLabel.Location = new System.Drawing.Point(51, 916);
             loginLabel.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
             loginLabel.Name = "loginLabel";
             loginLabel.Size = new System.Drawing.Size(70, 25);
@@ -164,7 +164,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             ssnLabel.BackColor = System.Drawing.Color.Transparent;
             ssnLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             ssnLabel.ForeColor = System.Drawing.Color.White;
-            ssnLabel.Location = new System.Drawing.Point(66, 417);
+            ssnLabel.Location = new System.Drawing.Point(75, 390);
             ssnLabel.Margin = new System.Windows.Forms.Padding(3);
             ssnLabel.Name = "ssnLabel";
             ssnLabel.Size = new System.Drawing.Size(46, 20);
@@ -178,7 +178,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             mnameLabel.BackColor = System.Drawing.Color.Transparent;
             mnameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             mnameLabel.ForeColor = System.Drawing.Color.White;
-            mnameLabel.Location = new System.Drawing.Point(53, 365);
+            mnameLabel.Location = new System.Drawing.Point(62, 338);
             mnameLabel.Margin = new System.Windows.Forms.Padding(3);
             mnameLabel.Name = "mnameLabel";
             mnameLabel.Size = new System.Drawing.Size(59, 20);
@@ -192,7 +192,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             azipLabel.BackColor = System.Drawing.Color.Transparent;
             azipLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             azipLabel.ForeColor = System.Drawing.Color.White;
-            azipLabel.Location = new System.Drawing.Point(35, 585);
+            azipLabel.Location = new System.Drawing.Point(44, 558);
             azipLabel.Margin = new System.Windows.Forms.Padding(3);
             azipLabel.Name = "azipLabel";
             azipLabel.Size = new System.Drawing.Size(77, 20);
@@ -206,7 +206,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             astateLabel.BackColor = System.Drawing.Color.Transparent;
             astateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             astateLabel.ForeColor = System.Drawing.Color.White;
-            astateLabel.Location = new System.Drawing.Point(60, 559);
+            astateLabel.Location = new System.Drawing.Point(69, 532);
             astateLabel.Margin = new System.Windows.Forms.Padding(3);
             astateLabel.Name = "astateLabel";
             astateLabel.Size = new System.Drawing.Size(52, 20);
@@ -220,7 +220,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             acityLabel.BackColor = System.Drawing.Color.Transparent;
             acityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             acityLabel.ForeColor = System.Drawing.Color.White;
-            acityLabel.Location = new System.Drawing.Point(73, 533);
+            acityLabel.Location = new System.Drawing.Point(82, 506);
             acityLabel.Margin = new System.Windows.Forms.Padding(3);
             acityLabel.Name = "acityLabel";
             acityLabel.Size = new System.Drawing.Size(39, 20);
@@ -234,7 +234,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             aline2Label.BackColor = System.Drawing.Color.Transparent;
             aline2Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             aline2Label.ForeColor = System.Drawing.Color.White;
-            aline2Label.Location = new System.Drawing.Point(56, 507);
+            aline2Label.Location = new System.Drawing.Point(65, 480);
             aline2Label.Margin = new System.Windows.Forms.Padding(3);
             aline2Label.Name = "aline2Label";
             aline2Label.Size = new System.Drawing.Size(56, 20);
@@ -248,7 +248,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             aline1Label.BackColor = System.Drawing.Color.Transparent;
             aline1Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             aline1Label.ForeColor = System.Drawing.Color.White;
-            aline1Label.Location = new System.Drawing.Point(56, 481);
+            aline1Label.Location = new System.Drawing.Point(65, 454);
             aline1Label.Margin = new System.Windows.Forms.Padding(3);
             aline1Label.Name = "aline1Label";
             aline1Label.Size = new System.Drawing.Size(56, 20);
@@ -262,7 +262,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             addressLabel.BackColor = System.Drawing.Color.Transparent;
             addressLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             addressLabel.ForeColor = System.Drawing.Color.White;
-            addressLabel.Location = new System.Drawing.Point(14, 450);
+            addressLabel.Location = new System.Drawing.Point(23, 423);
             addressLabel.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
             addressLabel.Name = "addressLabel";
             addressLabel.Size = new System.Drawing.Size(98, 25);
@@ -276,7 +276,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             lnameLabel.BackColor = System.Drawing.Color.Transparent;
             lnameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             lnameLabel.ForeColor = System.Drawing.Color.White;
-            lnameLabel.Location = new System.Drawing.Point(68, 391);
+            lnameLabel.Location = new System.Drawing.Point(77, 364);
             lnameLabel.Margin = new System.Windows.Forms.Padding(3);
             lnameLabel.Name = "lnameLabel";
             lnameLabel.Size = new System.Drawing.Size(44, 20);
@@ -290,7 +290,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             fnameLabel.BackColor = System.Drawing.Color.Transparent;
             fnameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fnameLabel.ForeColor = System.Drawing.Color.White;
-            fnameLabel.Location = new System.Drawing.Point(68, 339);
+            fnameLabel.Location = new System.Drawing.Point(77, 312);
             fnameLabel.Margin = new System.Windows.Forms.Padding(3);
             fnameLabel.Name = "fnameLabel";
             fnameLabel.Size = new System.Drawing.Size(44, 20);
@@ -304,7 +304,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             nameLabel.BackColor = System.Drawing.Color.Transparent;
             nameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             nameLabel.ForeColor = System.Drawing.Color.White;
-            nameLabel.Location = new System.Drawing.Point(40, 308);
+            nameLabel.Location = new System.Drawing.Point(49, 281);
             nameLabel.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
             nameLabel.Name = "nameLabel";
             nameLabel.Size = new System.Drawing.Size(72, 25);
@@ -318,7 +318,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             titleLabel.BackColor = System.Drawing.Color.Transparent;
             titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             titleLabel.ForeColor = System.Drawing.Color.White;
-            titleLabel.Location = new System.Drawing.Point(184, 22);
+            titleLabel.Location = new System.Drawing.Point(175, 22);
             titleLabel.Name = "titleLabel";
             titleLabel.Size = new System.Drawing.Size(133, 20);
             titleLabel.TabIndex = 58;
@@ -331,7 +331,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             jobsLabel.BackColor = System.Drawing.Color.Transparent;
             jobsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             jobsLabel.ForeColor = System.Drawing.Color.White;
-            jobsLabel.Location = new System.Drawing.Point(50, 772);
+            jobsLabel.Location = new System.Drawing.Point(59, 745);
             jobsLabel.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
             jobsLabel.Name = "jobsLabel";
             jobsLabel.Size = new System.Drawing.Size(62, 25);
@@ -345,7 +345,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             emailLabel.BackColor = System.Drawing.Color.Transparent;
             emailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             emailLabel.ForeColor = System.Drawing.Color.White;
-            emailLabel.Location = new System.Drawing.Point(60, 675);
+            emailLabel.Location = new System.Drawing.Point(69, 648);
             emailLabel.Margin = new System.Windows.Forms.Padding(3);
             emailLabel.Name = "emailLabel";
             emailLabel.Size = new System.Drawing.Size(52, 20);
@@ -359,7 +359,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             phoneLabel.BackColor = System.Drawing.Color.Transparent;
             phoneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             phoneLabel.ForeColor = System.Drawing.Color.White;
-            phoneLabel.Location = new System.Drawing.Point(57, 649);
+            phoneLabel.Location = new System.Drawing.Point(66, 622);
             phoneLabel.Margin = new System.Windows.Forms.Padding(3);
             phoneLabel.Name = "phoneLabel";
             phoneLabel.Size = new System.Drawing.Size(55, 20);
@@ -373,7 +373,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             contactLabel.BackColor = System.Drawing.Color.Transparent;
             contactLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             contactLabel.ForeColor = System.Drawing.Color.White;
-            contactLabel.Location = new System.Drawing.Point(19, 618);
+            contactLabel.Location = new System.Drawing.Point(28, 591);
             contactLabel.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
             contactLabel.Name = "contactLabel";
             contactLabel.Size = new System.Drawing.Size(93, 25);
@@ -387,7 +387,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             payLabel.BackColor = System.Drawing.Color.Transparent;
             payLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             payLabel.ForeColor = System.Drawing.Color.White;
-            payLabel.Location = new System.Drawing.Point(244, 811);
+            payLabel.Location = new System.Drawing.Point(253, 784);
             payLabel.Name = "payLabel";
             payLabel.Size = new System.Drawing.Size(39, 20);
             payLabel.TabIndex = 71;
@@ -399,7 +399,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             pass2Label.BackColor = System.Drawing.Color.Transparent;
             pass2Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             pass2Label.ForeColor = System.Drawing.Color.White;
-            pass2Label.Location = new System.Drawing.Point(30, 1026);
+            pass2Label.Location = new System.Drawing.Point(39, 999);
             pass2Label.Margin = new System.Windows.Forms.Padding(3);
             pass2Label.Name = "pass2Label";
             pass2Label.Size = new System.Drawing.Size(82, 40);
@@ -413,7 +413,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             privLabel.BackColor = System.Drawing.Color.Transparent;
             privLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             privLabel.ForeColor = System.Drawing.Color.White;
-            privLabel.Location = new System.Drawing.Point(3, 248);
+            privLabel.Location = new System.Drawing.Point(12, 221);
             privLabel.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
             privLabel.Name = "privLabel";
             privLabel.Size = new System.Drawing.Size(116, 25);
@@ -427,7 +427,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             this.employedLabel.BackColor = System.Drawing.Color.Transparent;
             this.employedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.employedLabel.ForeColor = System.Drawing.Color.White;
-            this.employedLabel.Location = new System.Drawing.Point(3, 165);
+            this.employedLabel.Location = new System.Drawing.Point(12, 165);
             this.employedLabel.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
             this.employedLabel.Name = "employedLabel";
             this.employedLabel.Size = new System.Drawing.Size(129, 25);
@@ -440,7 +440,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             this.employeeDropdownlist.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.employeeDropdownlist.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.employeeDropdownlist.FormattingEnabled = true;
-            this.employeeDropdownlist.Location = new System.Drawing.Point(118, 85);
+            this.employeeDropdownlist.Location = new System.Drawing.Point(127, 85);
             this.employeeDropdownlist.Name = "employeeDropdownlist";
             this.employeeDropdownlist.Size = new System.Drawing.Size(190, 28);
             this.employeeDropdownlist.TabIndex = 1;
@@ -450,7 +450,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             // pass1Textbox
             // 
             this.pass1Textbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pass1Textbox.Location = new System.Drawing.Point(118, 1000);
+            this.pass1Textbox.Location = new System.Drawing.Point(127, 973);
             this.pass1Textbox.Name = "pass1Textbox";
             this.pass1Textbox.PasswordChar = '*';
             this.pass1Textbox.Size = new System.Drawing.Size(344, 20);
@@ -459,7 +459,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             // userTextbox
             // 
             this.userTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.userTextbox.Location = new System.Drawing.Point(118, 974);
+            this.userTextbox.Location = new System.Drawing.Point(127, 947);
             this.userTextbox.Name = "userTextbox";
             this.userTextbox.Size = new System.Drawing.Size(344, 20);
             this.userTextbox.TabIndex = 20;
@@ -521,7 +521,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             "West Virginia",
             "Wisconsin",
             "Wyoming"});
-            this.aStateDropdownlist.Location = new System.Drawing.Point(118, 559);
+            this.aStateDropdownlist.Location = new System.Drawing.Point(127, 532);
             this.aStateDropdownlist.Name = "aStateDropdownlist";
             this.aStateDropdownlist.Size = new System.Drawing.Size(344, 21);
             this.aStateDropdownlist.TabIndex = 12;
@@ -529,7 +529,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             // aCityTextbox
             // 
             this.aCityTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.aCityTextbox.Location = new System.Drawing.Point(118, 533);
+            this.aCityTextbox.Location = new System.Drawing.Point(127, 506);
             this.aCityTextbox.Name = "aCityTextbox";
             this.aCityTextbox.Size = new System.Drawing.Size(344, 20);
             this.aCityTextbox.TabIndex = 11;
@@ -537,7 +537,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             // aLine2Textbox
             // 
             this.aLine2Textbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.aLine2Textbox.Location = new System.Drawing.Point(118, 507);
+            this.aLine2Textbox.Location = new System.Drawing.Point(127, 480);
             this.aLine2Textbox.Name = "aLine2Textbox";
             this.aLine2Textbox.Size = new System.Drawing.Size(344, 20);
             this.aLine2Textbox.TabIndex = 10;
@@ -545,7 +545,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             // aLine1Textbox
             // 
             this.aLine1Textbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.aLine1Textbox.Location = new System.Drawing.Point(118, 481);
+            this.aLine1Textbox.Location = new System.Drawing.Point(127, 454);
             this.aLine1Textbox.Name = "aLine1Textbox";
             this.aLine1Textbox.Size = new System.Drawing.Size(344, 20);
             this.aLine1Textbox.TabIndex = 9;
@@ -553,7 +553,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             // lNameTextbox
             // 
             this.lNameTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lNameTextbox.Location = new System.Drawing.Point(118, 391);
+            this.lNameTextbox.Location = new System.Drawing.Point(127, 364);
             this.lNameTextbox.Name = "lNameTextbox";
             this.lNameTextbox.Size = new System.Drawing.Size(344, 20);
             this.lNameTextbox.TabIndex = 7;
@@ -561,7 +561,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             // mNameTextbox
             // 
             this.mNameTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.mNameTextbox.Location = new System.Drawing.Point(118, 365);
+            this.mNameTextbox.Location = new System.Drawing.Point(127, 338);
             this.mNameTextbox.Name = "mNameTextbox";
             this.mNameTextbox.Size = new System.Drawing.Size(344, 20);
             this.mNameTextbox.TabIndex = 6;
@@ -569,7 +569,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             // fNameTextbox
             // 
             this.fNameTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.fNameTextbox.Location = new System.Drawing.Point(118, 339);
+            this.fNameTextbox.Location = new System.Drawing.Point(127, 312);
             this.fNameTextbox.Name = "fNameTextbox";
             this.fNameTextbox.Size = new System.Drawing.Size(344, 20);
             this.fNameTextbox.TabIndex = 5;
@@ -577,7 +577,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             // saveemployeechangesButton
             // 
             this.saveemployeechangesButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.saveemployeechangesButton.Location = new System.Drawing.Point(387, 701);
+            this.saveemployeechangesButton.Location = new System.Drawing.Point(396, 674);
             this.saveemployeechangesButton.Name = "saveemployeechangesButton";
             this.saveemployeechangesButton.Size = new System.Drawing.Size(75, 75);
             this.saveemployeechangesButton.TabIndex = 16;
@@ -588,7 +588,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             // deleteButton
             // 
             this.deleteButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.deleteButton.Location = new System.Drawing.Point(216, 119);
+            this.deleteButton.Location = new System.Drawing.Point(225, 119);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(92, 33);
             this.deleteButton.TabIndex = 3;
@@ -606,7 +606,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             "None",
             "Manager",
             "Admin"});
-            this.privDropdownlist.Location = new System.Drawing.Point(118, 279);
+            this.privDropdownlist.Location = new System.Drawing.Point(127, 252);
             this.privDropdownlist.Name = "privDropdownlist";
             this.privDropdownlist.Size = new System.Drawing.Size(344, 23);
             this.privDropdownlist.TabIndex = 4;
@@ -614,7 +614,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             // changeloginButton
             // 
             this.changeloginButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.changeloginButton.Location = new System.Drawing.Point(118, 1072);
+            this.changeloginButton.Location = new System.Drawing.Point(127, 1045);
             this.changeloginButton.Name = "changeloginButton";
             this.changeloginButton.Size = new System.Drawing.Size(344, 35);
             this.changeloginButton.TabIndex = 23;
@@ -625,7 +625,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             // newemployeeButton
             // 
             this.newemployeeButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.newemployeeButton.Location = new System.Drawing.Point(422, 3);
+            this.newemployeeButton.Location = new System.Drawing.Point(413, 3);
             this.newemployeeButton.Name = "newemployeeButton";
             this.newemployeeButton.Size = new System.Drawing.Size(75, 75);
             this.newemployeeButton.TabIndex = 0;
@@ -636,7 +636,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             // emailTextbox
             // 
             this.emailTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.emailTextbox.Location = new System.Drawing.Point(118, 675);
+            this.emailTextbox.Location = new System.Drawing.Point(127, 648);
             this.emailTextbox.Name = "emailTextbox";
             this.emailTextbox.Size = new System.Drawing.Size(344, 20);
             this.emailTextbox.TabIndex = 15;
@@ -652,7 +652,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             "Manager",
             "Security",
             "Server"});
-            this.jobsBox.Location = new System.Drawing.Point(118, 811);
+            this.jobsBox.Location = new System.Drawing.Point(127, 784);
             this.jobsBox.Name = "jobsBox";
             this.jobsBox.Size = new System.Drawing.Size(120, 108);
             this.jobsBox.TabIndex = 17;
@@ -661,7 +661,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             // pass2Textbox
             // 
             this.pass2Textbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pass2Textbox.Location = new System.Drawing.Point(118, 1046);
+            this.pass2Textbox.Location = new System.Drawing.Point(127, 1019);
             this.pass2Textbox.Name = "pass2Textbox";
             this.pass2Textbox.PasswordChar = '*';
             this.pass2Textbox.Size = new System.Drawing.Size(344, 20);
@@ -671,7 +671,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             // 
             this.payTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.payTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.payTextbox.Location = new System.Drawing.Point(289, 808);
+            this.payTextbox.Location = new System.Drawing.Point(298, 781);
             this.payTextbox.Name = "payTextbox";
             this.payTextbox.Size = new System.Drawing.Size(173, 26);
             this.payTextbox.TabIndex = 18;
@@ -679,7 +679,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             // savepayButton
             // 
             this.savepayButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.savepayButton.Location = new System.Drawing.Point(387, 844);
+            this.savepayButton.Location = new System.Drawing.Point(396, 817);
             this.savepayButton.Name = "savepayButton";
             this.savepayButton.Size = new System.Drawing.Size(75, 75);
             this.savepayButton.TabIndex = 19;
@@ -690,7 +690,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             // ssnTextbox
             // 
             this.ssnTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.ssnTextbox.Location = new System.Drawing.Point(118, 419);
+            this.ssnTextbox.Location = new System.Drawing.Point(127, 392);
             this.ssnTextbox.Mask = "000-00-0000";
             this.ssnTextbox.Name = "ssnTextbox";
             this.ssnTextbox.Size = new System.Drawing.Size(344, 20);
@@ -699,7 +699,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             // phoneTextbox
             // 
             this.phoneTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.phoneTextbox.Location = new System.Drawing.Point(119, 649);
+            this.phoneTextbox.Location = new System.Drawing.Point(128, 622);
             this.phoneTextbox.Mask = "(999) 000-0000";
             this.phoneTextbox.Name = "phoneTextbox";
             this.phoneTextbox.Size = new System.Drawing.Size(343, 20);
@@ -708,7 +708,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             // aZipTextbox
             // 
             this.aZipTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.aZipTextbox.Location = new System.Drawing.Point(118, 585);
+            this.aZipTextbox.Location = new System.Drawing.Point(127, 558);
             this.aZipTextbox.Mask = "00000";
             this.aZipTextbox.Name = "aZipTextbox";
             this.aZipTextbox.Size = new System.Drawing.Size(344, 20);
@@ -717,7 +717,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             // quitorfireButton
             // 
             this.quitorfireButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.quitorfireButton.Location = new System.Drawing.Point(119, 119);
+            this.quitorfireButton.Location = new System.Drawing.Point(128, 119);
             this.quitorfireButton.Name = "quitorfireButton";
             this.quitorfireButton.Size = new System.Drawing.Size(92, 33);
             this.quitorfireButton.TabIndex = 2;
@@ -785,6 +785,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             this.Size = new System.Drawing.Size(500, 1128);
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion

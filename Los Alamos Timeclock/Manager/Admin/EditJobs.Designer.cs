@@ -47,16 +47,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.jobPicturebox)).BeginInit();
             this.SuspendLayout();
             // 
-            // jobsBox
-            // 
-            this.jobsBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.jobsBox.FormattingEnabled = true;
-            this.jobsBox.Location = new System.Drawing.Point(350, 83);
-            this.jobsBox.Name = "jobsBox";
-            this.jobsBox.Size = new System.Drawing.Size(136, 95);
-            this.jobsBox.TabIndex = 0;
-            this.jobsBox.SelectedIndexChanged += new System.EventHandler(this.jobsBox_SelectedIndexChanged);
-            // 
             // nlabel
             // 
             nlabel.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -81,6 +71,28 @@
             plabel.TabIndex = 2;
             plabel.Text = "Starting Pay:";
             // 
+            // imageLabel
+            // 
+            imageLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            imageLabel.AutoSize = true;
+            imageLabel.BackColor = System.Drawing.Color.Transparent;
+            imageLabel.ForeColor = System.Drawing.Color.White;
+            imageLabel.Location = new System.Drawing.Point(198, 161);
+            imageLabel.Name = "imageLabel";
+            imageLabel.Size = new System.Drawing.Size(39, 13);
+            imageLabel.TabIndex = 11;
+            imageLabel.Text = "Image:";
+            // 
+            // jobsBox
+            // 
+            this.jobsBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.jobsBox.FormattingEnabled = true;
+            this.jobsBox.Location = new System.Drawing.Point(350, 83);
+            this.jobsBox.Name = "jobsBox";
+            this.jobsBox.Size = new System.Drawing.Size(136, 95);
+            this.jobsBox.TabIndex = 0;
+            this.jobsBox.SelectedIndexChanged += new System.EventHandler(this.jobsBox_SelectedIndexChanged);
+            // 
             // jobnameTextbox
             // 
             this.jobnameTextbox.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -100,7 +112,7 @@
             // updatejobButton
             // 
             this.updatejobButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.updatejobButton.Location = new System.Drawing.Point(187, 286);
+            this.updatejobButton.Location = new System.Drawing.Point(132, 286);
             this.updatejobButton.Name = "updatejobButton";
             this.updatejobButton.Size = new System.Drawing.Size(75, 75);
             this.updatejobButton.TabIndex = 6;
@@ -111,7 +123,7 @@
             // newjobButton
             // 
             this.newjobButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.newjobButton.Location = new System.Drawing.Point(268, 286);
+            this.newjobButton.Location = new System.Drawing.Point(213, 286);
             this.newjobButton.Name = "newjobButton";
             this.newjobButton.Size = new System.Drawing.Size(75, 75);
             this.newjobButton.TabIndex = 7;
@@ -122,7 +134,7 @@
             // deletejobButton
             // 
             this.deletejobButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.deletejobButton.Location = new System.Drawing.Point(349, 286);
+            this.deletejobButton.Location = new System.Drawing.Point(294, 286);
             this.deletejobButton.Name = "deletejobButton";
             this.deletejobButton.Size = new System.Drawing.Size(75, 75);
             this.deletejobButton.TabIndex = 8;
@@ -162,18 +174,6 @@
             this.filenameTextbox.ReadOnly = true;
             this.filenameTextbox.Size = new System.Drawing.Size(100, 20);
             this.filenameTextbox.TabIndex = 4;
-            // 
-            // imageLabel
-            // 
-            imageLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            imageLabel.AutoSize = true;
-            imageLabel.BackColor = System.Drawing.Color.Transparent;
-            imageLabel.ForeColor = System.Drawing.Color.White;
-            imageLabel.Location = new System.Drawing.Point(198, 161);
-            imageLabel.Name = "imageLabel";
-            imageLabel.Size = new System.Drawing.Size(39, 13);
-            imageLabel.TabIndex = 11;
-            imageLabel.Text = "Image:";
             // 
             // jobPicturebox
             // 

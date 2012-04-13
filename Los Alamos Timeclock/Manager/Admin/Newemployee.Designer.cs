@@ -92,7 +92,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             titleLabel.BackColor = System.Drawing.Color.Transparent;
             titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             titleLabel.ForeColor = System.Drawing.Color.White;
-            titleLabel.Location = new System.Drawing.Point(146, 15);
+            titleLabel.Location = new System.Drawing.Point(155, 15);
             titleLabel.Name = "titleLabel";
             titleLabel.Size = new System.Drawing.Size(190, 29);
             titleLabel.TabIndex = 0;
@@ -105,7 +105,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             nameLabel.BackColor = System.Drawing.Color.Transparent;
             nameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             nameLabel.ForeColor = System.Drawing.Color.White;
-            nameLabel.Location = new System.Drawing.Point(29, 72);
+            nameLabel.Location = new System.Drawing.Point(52, 72);
             nameLabel.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
             nameLabel.Name = "nameLabel";
             nameLabel.Size = new System.Drawing.Size(72, 25);
@@ -119,7 +119,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             fNameLabel.BackColor = System.Drawing.Color.Transparent;
             fNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fNameLabel.ForeColor = System.Drawing.Color.White;
-            fNameLabel.Location = new System.Drawing.Point(57, 103);
+            fNameLabel.Location = new System.Drawing.Point(80, 103);
             fNameLabel.Margin = new System.Windows.Forms.Padding(3);
             fNameLabel.Name = "fNameLabel";
             fNameLabel.Size = new System.Drawing.Size(44, 20);
@@ -133,7 +133,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             lNameLabel.BackColor = System.Drawing.Color.Transparent;
             lNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             lNameLabel.ForeColor = System.Drawing.Color.White;
-            lNameLabel.Location = new System.Drawing.Point(57, 155);
+            lNameLabel.Location = new System.Drawing.Point(80, 155);
             lNameLabel.Margin = new System.Windows.Forms.Padding(3);
             lNameLabel.Name = "lNameLabel";
             lNameLabel.Size = new System.Drawing.Size(44, 20);
@@ -147,7 +147,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             aLine2Label.BackColor = System.Drawing.Color.Transparent;
             aLine2Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             aLine2Label.ForeColor = System.Drawing.Color.White;
-            aLine2Label.Location = new System.Drawing.Point(45, 271);
+            aLine2Label.Location = new System.Drawing.Point(68, 271);
             aLine2Label.Margin = new System.Windows.Forms.Padding(3);
             aLine2Label.Name = "aLine2Label";
             aLine2Label.Size = new System.Drawing.Size(56, 20);
@@ -161,7 +161,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             aLine1Label.BackColor = System.Drawing.Color.Transparent;
             aLine1Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             aLine1Label.ForeColor = System.Drawing.Color.White;
-            aLine1Label.Location = new System.Drawing.Point(45, 245);
+            aLine1Label.Location = new System.Drawing.Point(68, 245);
             aLine1Label.Margin = new System.Windows.Forms.Padding(3);
             aLine1Label.Name = "aLine1Label";
             aLine1Label.Size = new System.Drawing.Size(56, 20);
@@ -175,7 +175,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             addressLabel.BackColor = System.Drawing.Color.Transparent;
             addressLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             addressLabel.ForeColor = System.Drawing.Color.White;
-            addressLabel.Location = new System.Drawing.Point(3, 214);
+            addressLabel.Location = new System.Drawing.Point(26, 214);
             addressLabel.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
             addressLabel.Name = "addressLabel";
             addressLabel.Size = new System.Drawing.Size(98, 25);
@@ -189,7 +189,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             aStateLabel.BackColor = System.Drawing.Color.Transparent;
             aStateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             aStateLabel.ForeColor = System.Drawing.Color.White;
-            aStateLabel.Location = new System.Drawing.Point(49, 323);
+            aStateLabel.Location = new System.Drawing.Point(72, 323);
             aStateLabel.Margin = new System.Windows.Forms.Padding(3);
             aStateLabel.Name = "aStateLabel";
             aStateLabel.Size = new System.Drawing.Size(52, 20);
@@ -203,7 +203,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             aCityLabel.BackColor = System.Drawing.Color.Transparent;
             aCityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             aCityLabel.ForeColor = System.Drawing.Color.White;
-            aCityLabel.Location = new System.Drawing.Point(62, 297);
+            aCityLabel.Location = new System.Drawing.Point(85, 297);
             aCityLabel.Margin = new System.Windows.Forms.Padding(3);
             aCityLabel.Name = "aCityLabel";
             aCityLabel.Size = new System.Drawing.Size(39, 20);
@@ -217,7 +217,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             aZipLabel.BackColor = System.Drawing.Color.Transparent;
             aZipLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             aZipLabel.ForeColor = System.Drawing.Color.White;
-            aZipLabel.Location = new System.Drawing.Point(24, 349);
+            aZipLabel.Location = new System.Drawing.Point(47, 349);
             aZipLabel.Margin = new System.Windows.Forms.Padding(3);
             aZipLabel.Name = "aZipLabel";
             aZipLabel.Size = new System.Drawing.Size(77, 20);
@@ -231,17 +231,128 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             mNameLabel.BackColor = System.Drawing.Color.Transparent;
             mNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             mNameLabel.ForeColor = System.Drawing.Color.White;
-            mNameLabel.Location = new System.Drawing.Point(42, 129);
+            mNameLabel.Location = new System.Drawing.Point(65, 129);
             mNameLabel.Margin = new System.Windows.Forms.Padding(3);
             mNameLabel.Name = "mNameLabel";
             mNameLabel.Size = new System.Drawing.Size(59, 20);
             mNameLabel.TabIndex = 10;
             mNameLabel.Text = "Middle:";
             // 
+            // ssnLabel
+            // 
+            ssnLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            ssnLabel.AutoSize = true;
+            ssnLabel.BackColor = System.Drawing.Color.Transparent;
+            ssnLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            ssnLabel.ForeColor = System.Drawing.Color.White;
+            ssnLabel.Location = new System.Drawing.Point(78, 181);
+            ssnLabel.Margin = new System.Windows.Forms.Padding(3);
+            ssnLabel.Name = "ssnLabel";
+            ssnLabel.Size = new System.Drawing.Size(46, 20);
+            ssnLabel.TabIndex = 20;
+            ssnLabel.Text = "SSN:";
+            // 
+            // loginLabel
+            // 
+            loginLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            loginLabel.AutoSize = true;
+            loginLabel.BackColor = System.Drawing.Color.Transparent;
+            loginLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            loginLabel.ForeColor = System.Drawing.Color.White;
+            loginLabel.Location = new System.Drawing.Point(54, 472);
+            loginLabel.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
+            loginLabel.Name = "loginLabel";
+            loginLabel.Size = new System.Drawing.Size(70, 25);
+            loginLabel.TabIndex = 22;
+            loginLabel.Text = "Login";
+            // 
+            // pass2Label
+            // 
+            pass2Label.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            pass2Label.BackColor = System.Drawing.Color.Transparent;
+            pass2Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            pass2Label.ForeColor = System.Drawing.Color.White;
+            pass2Label.Location = new System.Drawing.Point(41, 553);
+            pass2Label.Margin = new System.Windows.Forms.Padding(3);
+            pass2Label.Name = "pass2Label";
+            pass2Label.Size = new System.Drawing.Size(83, 40);
+            pass2Label.TabIndex = 25;
+            pass2Label.Text = "Confirm Password:";
+            // 
+            // pass1Label
+            // 
+            pass1Label.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            pass1Label.AutoSize = true;
+            pass1Label.BackColor = System.Drawing.Color.Transparent;
+            pass1Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            pass1Label.ForeColor = System.Drawing.Color.White;
+            pass1Label.Location = new System.Drawing.Point(42, 529);
+            pass1Label.Margin = new System.Windows.Forms.Padding(3);
+            pass1Label.Name = "pass1Label";
+            pass1Label.Size = new System.Drawing.Size(82, 20);
+            pass1Label.TabIndex = 24;
+            pass1Label.Text = "Password:";
+            // 
+            // userLabel
+            // 
+            userLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            userLabel.AutoSize = true;
+            userLabel.BackColor = System.Drawing.Color.Transparent;
+            userLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            userLabel.ForeColor = System.Drawing.Color.White;
+            userLabel.Location = new System.Drawing.Point(37, 503);
+            userLabel.Margin = new System.Windows.Forms.Padding(3);
+            userLabel.Name = "userLabel";
+            userLabel.Size = new System.Drawing.Size(87, 20);
+            userLabel.TabIndex = 23;
+            userLabel.Text = "Username:";
+            // 
+            // emailLabel
+            // 
+            emailLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            emailLabel.AutoSize = true;
+            emailLabel.BackColor = System.Drawing.Color.Transparent;
+            emailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            emailLabel.ForeColor = System.Drawing.Color.White;
+            emailLabel.Location = new System.Drawing.Point(72, 439);
+            emailLabel.Margin = new System.Windows.Forms.Padding(3);
+            emailLabel.Name = "emailLabel";
+            emailLabel.Size = new System.Drawing.Size(52, 20);
+            emailLabel.TabIndex = 33;
+            emailLabel.Text = "Email:";
+            // 
+            // phoneLabel
+            // 
+            phoneLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            phoneLabel.AutoSize = true;
+            phoneLabel.BackColor = System.Drawing.Color.Transparent;
+            phoneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            phoneLabel.ForeColor = System.Drawing.Color.White;
+            phoneLabel.Location = new System.Drawing.Point(69, 413);
+            phoneLabel.Margin = new System.Windows.Forms.Padding(3);
+            phoneLabel.Name = "phoneLabel";
+            phoneLabel.Size = new System.Drawing.Size(55, 20);
+            phoneLabel.TabIndex = 32;
+            phoneLabel.Text = "Phone";
+            // 
+            // contactLabel
+            // 
+            contactLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            contactLabel.AutoSize = true;
+            contactLabel.BackColor = System.Drawing.Color.Transparent;
+            contactLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            contactLabel.ForeColor = System.Drawing.Color.White;
+            contactLabel.Location = new System.Drawing.Point(31, 382);
+            contactLabel.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
+            contactLabel.Name = "contactLabel";
+            contactLabel.Size = new System.Drawing.Size(93, 25);
+            contactLabel.TabIndex = 31;
+            contactLabel.Text = "Contact";
+            // 
             // fNameTextbox
             // 
             this.fNameTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.fNameTextbox.Location = new System.Drawing.Point(107, 103);
+            this.fNameTextbox.Location = new System.Drawing.Point(130, 103);
             this.fNameTextbox.Name = "fNameTextbox";
             this.fNameTextbox.Size = new System.Drawing.Size(344, 20);
             this.fNameTextbox.TabIndex = 0;
@@ -249,7 +360,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             // mNameTextbox
             // 
             this.mNameTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.mNameTextbox.Location = new System.Drawing.Point(107, 129);
+            this.mNameTextbox.Location = new System.Drawing.Point(130, 129);
             this.mNameTextbox.Name = "mNameTextbox";
             this.mNameTextbox.Size = new System.Drawing.Size(344, 20);
             this.mNameTextbox.TabIndex = 1;
@@ -257,7 +368,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             // lNameTextbox
             // 
             this.lNameTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lNameTextbox.Location = new System.Drawing.Point(107, 155);
+            this.lNameTextbox.Location = new System.Drawing.Point(130, 155);
             this.lNameTextbox.Name = "lNameTextbox";
             this.lNameTextbox.Size = new System.Drawing.Size(344, 20);
             this.lNameTextbox.TabIndex = 2;
@@ -265,7 +376,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             // aCityTextbox
             // 
             this.aCityTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.aCityTextbox.Location = new System.Drawing.Point(107, 297);
+            this.aCityTextbox.Location = new System.Drawing.Point(130, 297);
             this.aCityTextbox.Name = "aCityTextbox";
             this.aCityTextbox.Size = new System.Drawing.Size(344, 20);
             this.aCityTextbox.TabIndex = 6;
@@ -273,7 +384,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             // aLine2Textbox
             // 
             this.aLine2Textbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.aLine2Textbox.Location = new System.Drawing.Point(107, 271);
+            this.aLine2Textbox.Location = new System.Drawing.Point(130, 271);
             this.aLine2Textbox.Name = "aLine2Textbox";
             this.aLine2Textbox.Size = new System.Drawing.Size(344, 20);
             this.aLine2Textbox.TabIndex = 5;
@@ -281,7 +392,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             // aLine1Textbox
             // 
             this.aLine1Textbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.aLine1Textbox.Location = new System.Drawing.Point(107, 245);
+            this.aLine1Textbox.Location = new System.Drawing.Point(130, 245);
             this.aLine1Textbox.Name = "aLine1Textbox";
             this.aLine1Textbox.Size = new System.Drawing.Size(344, 20);
             this.aLine1Textbox.TabIndex = 4;
@@ -343,43 +454,15 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             "West Virginia",
             "Wisconsin",
             "Wyoming"});
-            this.aStateDropdownlist.Location = new System.Drawing.Point(107, 323);
+            this.aStateDropdownlist.Location = new System.Drawing.Point(130, 323);
             this.aStateDropdownlist.Name = "aStateDropdownlist";
             this.aStateDropdownlist.Size = new System.Drawing.Size(344, 21);
             this.aStateDropdownlist.TabIndex = 7;
             // 
-            // ssnLabel
-            // 
-            ssnLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            ssnLabel.AutoSize = true;
-            ssnLabel.BackColor = System.Drawing.Color.Transparent;
-            ssnLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            ssnLabel.ForeColor = System.Drawing.Color.White;
-            ssnLabel.Location = new System.Drawing.Point(55, 181);
-            ssnLabel.Margin = new System.Windows.Forms.Padding(3);
-            ssnLabel.Name = "ssnLabel";
-            ssnLabel.Size = new System.Drawing.Size(46, 20);
-            ssnLabel.TabIndex = 20;
-            ssnLabel.Text = "SSN:";
-            // 
-            // loginLabel
-            // 
-            loginLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            loginLabel.AutoSize = true;
-            loginLabel.BackColor = System.Drawing.Color.Transparent;
-            loginLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            loginLabel.ForeColor = System.Drawing.Color.White;
-            loginLabel.Location = new System.Drawing.Point(31, 472);
-            loginLabel.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
-            loginLabel.Name = "loginLabel";
-            loginLabel.Size = new System.Drawing.Size(70, 25);
-            loginLabel.TabIndex = 22;
-            loginLabel.Text = "Login";
-            // 
             // pass2Textbox
             // 
             this.pass2Textbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pass2Textbox.Location = new System.Drawing.Point(107, 555);
+            this.pass2Textbox.Location = new System.Drawing.Point(130, 555);
             this.pass2Textbox.Name = "pass2Textbox";
             this.pass2Textbox.PasswordChar = '*';
             this.pass2Textbox.Size = new System.Drawing.Size(344, 20);
@@ -388,7 +471,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             // pass1Textbox
             // 
             this.pass1Textbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pass1Textbox.Location = new System.Drawing.Point(107, 529);
+            this.pass1Textbox.Location = new System.Drawing.Point(130, 529);
             this.pass1Textbox.Name = "pass1Textbox";
             this.pass1Textbox.PasswordChar = '*';
             this.pass1Textbox.Size = new System.Drawing.Size(344, 20);
@@ -397,56 +480,15 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             // userTextbox
             // 
             this.userTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.userTextbox.Location = new System.Drawing.Point(107, 503);
+            this.userTextbox.Location = new System.Drawing.Point(130, 503);
             this.userTextbox.Name = "userTextbox";
             this.userTextbox.Size = new System.Drawing.Size(344, 20);
             this.userTextbox.TabIndex = 11;
             // 
-            // pass2Label
-            // 
-            pass2Label.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            pass2Label.BackColor = System.Drawing.Color.Transparent;
-            pass2Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            pass2Label.ForeColor = System.Drawing.Color.White;
-            pass2Label.Location = new System.Drawing.Point(18, 553);
-            pass2Label.Margin = new System.Windows.Forms.Padding(3);
-            pass2Label.Name = "pass2Label";
-            pass2Label.Size = new System.Drawing.Size(83, 40);
-            pass2Label.TabIndex = 25;
-            pass2Label.Text = "Confirm Password:";
-            // 
-            // pass1Label
-            // 
-            pass1Label.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            pass1Label.AutoSize = true;
-            pass1Label.BackColor = System.Drawing.Color.Transparent;
-            pass1Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            pass1Label.ForeColor = System.Drawing.Color.White;
-            pass1Label.Location = new System.Drawing.Point(19, 529);
-            pass1Label.Margin = new System.Windows.Forms.Padding(3);
-            pass1Label.Name = "pass1Label";
-            pass1Label.Size = new System.Drawing.Size(82, 20);
-            pass1Label.TabIndex = 24;
-            pass1Label.Text = "Password:";
-            // 
-            // userLabel
-            // 
-            userLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            userLabel.AutoSize = true;
-            userLabel.BackColor = System.Drawing.Color.Transparent;
-            userLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            userLabel.ForeColor = System.Drawing.Color.White;
-            userLabel.Location = new System.Drawing.Point(14, 503);
-            userLabel.Margin = new System.Windows.Forms.Padding(3);
-            userLabel.Name = "userLabel";
-            userLabel.Size = new System.Drawing.Size(87, 20);
-            userLabel.TabIndex = 23;
-            userLabel.Text = "Username:";
-            // 
             // saveButton
             // 
             this.saveButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.saveButton.Location = new System.Drawing.Point(295, 606);
+            this.saveButton.Location = new System.Drawing.Point(318, 607);
             this.saveButton.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(75, 75);
@@ -458,7 +500,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             // cancelButton
             // 
             this.cancelButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.cancelButton.Location = new System.Drawing.Point(376, 606);
+            this.cancelButton.Location = new System.Drawing.Point(399, 607);
             this.cancelButton.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 75);
@@ -470,57 +512,15 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             // emailTextbox
             // 
             this.emailTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.emailTextbox.Location = new System.Drawing.Point(107, 439);
+            this.emailTextbox.Location = new System.Drawing.Point(130, 439);
             this.emailTextbox.Name = "emailTextbox";
             this.emailTextbox.Size = new System.Drawing.Size(344, 20);
             this.emailTextbox.TabIndex = 10;
             // 
-            // emailLabel
-            // 
-            emailLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            emailLabel.AutoSize = true;
-            emailLabel.BackColor = System.Drawing.Color.Transparent;
-            emailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            emailLabel.ForeColor = System.Drawing.Color.White;
-            emailLabel.Location = new System.Drawing.Point(49, 439);
-            emailLabel.Margin = new System.Windows.Forms.Padding(3);
-            emailLabel.Name = "emailLabel";
-            emailLabel.Size = new System.Drawing.Size(52, 20);
-            emailLabel.TabIndex = 33;
-            emailLabel.Text = "Email:";
-            // 
-            // phoneLabel
-            // 
-            phoneLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            phoneLabel.AutoSize = true;
-            phoneLabel.BackColor = System.Drawing.Color.Transparent;
-            phoneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            phoneLabel.ForeColor = System.Drawing.Color.White;
-            phoneLabel.Location = new System.Drawing.Point(46, 413);
-            phoneLabel.Margin = new System.Windows.Forms.Padding(3);
-            phoneLabel.Name = "phoneLabel";
-            phoneLabel.Size = new System.Drawing.Size(55, 20);
-            phoneLabel.TabIndex = 32;
-            phoneLabel.Text = "Phone";
-            // 
-            // contactLabel
-            // 
-            contactLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            contactLabel.AutoSize = true;
-            contactLabel.BackColor = System.Drawing.Color.Transparent;
-            contactLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            contactLabel.ForeColor = System.Drawing.Color.White;
-            contactLabel.Location = new System.Drawing.Point(8, 382);
-            contactLabel.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
-            contactLabel.Name = "contactLabel";
-            contactLabel.Size = new System.Drawing.Size(93, 25);
-            contactLabel.TabIndex = 31;
-            contactLabel.Text = "Contact";
-            // 
             // ssnTextbox
             // 
             this.ssnTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.ssnTextbox.Location = new System.Drawing.Point(107, 183);
+            this.ssnTextbox.Location = new System.Drawing.Point(130, 183);
             this.ssnTextbox.Mask = "000-00-0000";
             this.ssnTextbox.Name = "ssnTextbox";
             this.ssnTextbox.Size = new System.Drawing.Size(344, 20);
@@ -529,7 +529,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             // phoneTextbox
             // 
             this.phoneTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.phoneTextbox.Location = new System.Drawing.Point(108, 413);
+            this.phoneTextbox.Location = new System.Drawing.Point(131, 413);
             this.phoneTextbox.Mask = "(999) 000-0000";
             this.phoneTextbox.Name = "phoneTextbox";
             this.phoneTextbox.Size = new System.Drawing.Size(343, 20);
@@ -538,7 +538,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             // aZipTextbox
             // 
             this.aZipTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.aZipTextbox.Location = new System.Drawing.Point(108, 349);
+            this.aZipTextbox.Location = new System.Drawing.Point(131, 349);
             this.aZipTextbox.Mask = "00000";
             this.aZipTextbox.Name = "aZipTextbox";
             this.aZipTextbox.Size = new System.Drawing.Size(344, 20);
