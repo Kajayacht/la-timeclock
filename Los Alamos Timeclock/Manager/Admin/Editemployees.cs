@@ -309,11 +309,11 @@ namespace Los_Alamos_Timeclock.Manager.Admin
 
                         if (rows)
                         {
-                            Main.maininstance.sqlCommand("UPDATE Users SET User='" + userTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "', Password=PASSWORD('" + pass1Textbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "') WHERE ID='" + id.Replace(@"\", @"\\").Replace("'", @"\'") + "'");
+                            Main.maininstance.sqlCommand("UPDATE Users SET User='" + userTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "', Password= '" + Main.maininstance.crypt.ComputeHash(pass1Textbox.Text, "Tlm3AnDR3|aTIv3DlmEn5l0nlN5pA[3", Cryptography.HashName.SHA256) + "' WHERE ID='" + id.Replace(@"\", @"\\").Replace("'", @"\'") + "'");
                         }
                         else
                         {
-                            Main.maininstance.sqlCommand("INSERT INTO Users (`ID`,`User`,`Password`) Values('" + id + "', '" + userTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "', PASSWORD('" + pass1Textbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "'))");
+                            Main.maininstance.sqlCommand("INSERT INTO Users (`ID`,`User`,`Password`) Values('" + id + "', '" + userTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "','" + Main.maininstance.crypt.ComputeHash(pass1Textbox.Text, "Tlm3AnDR3|aTIv3DlmEn5l0nlN5pA[3", Cryptography.HashName.SHA256)+"')");
                         }
                         MessageBox.Show("Login Updated");
                         Log.writeLog(Main.eName + " changed login for " + fNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + " " + mNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + " " + lNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + ": \n" + "User= " + userTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'"));

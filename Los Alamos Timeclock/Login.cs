@@ -28,6 +28,7 @@ namespace Los_Alamos_Timeclock
         {
             try
             {
+
                 Main.myConnection.Open();
                 Main.maininstance.sqlReader("SELECT a.ID,b.FName, b.LName, c.ID AS Admin, d.ID AS Manager " +
                                             "FROM Users a " +
@@ -38,7 +39,7 @@ namespace Los_Alamos_Timeclock
                                             "Left Join Manager d " +
                                             "ON a.ID=d.ID " +
                                             "Where LOWER(a.User)=LOWER('" + userTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "') " +
-                                            "And a.Password=PASSWORD('" + passTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "') " +
+                                            "And a.Password='"+Main.maininstance.crypt.ComputeHash(passTextbox.Text, "Tlm3AnDR3|aTIv3DlmEn5l0nlN5pA[3", Cryptography.HashName.SHA256) +"' "+
                                             "AND (b.EDate>='" + DateTime.Today.AddDays(-1).ToString("yyyy-MM-dd") + "' OR b.EDate is NULL)");
 
                 if (Main.reader.HasRows)
