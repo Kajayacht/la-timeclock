@@ -339,7 +339,6 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                 }
                 else
                 {
-
                     DialogResult result = MessageBox.Show("Are you sure you want to delete " + fNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + " " + mNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + " " + lNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "? All information related to " + fNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + " " + mNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + " " + lNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + " will also be removed.",
                 "Delete Employee?", MessageBoxButtons.YesNo);
 
