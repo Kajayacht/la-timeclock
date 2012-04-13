@@ -67,6 +67,7 @@
     <Compile Include="Contactinfo.Designer.cs">
       <DependentUpon>Contactinfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Cryptography.cs" />
     <Compile Include="Log.cs" />
     <Compile Include="Manager\Admin\Admin.cs">
       <SubType>UserControl</SubType>

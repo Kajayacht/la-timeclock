@@ -50,7 +50,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             {
                 fieldUpdate();
             }
-            ssnTextbox.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+
             phoneTextbox.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             jobsBox.DisplayMember = "getname";
             jobsBox.ValueMember = "getpay";
@@ -81,7 +81,10 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                 fNameTextbox.Text = Main.reader["FName"].ToString();
                 mNameTextbox.Text = Main.reader["MName"].ToString();
                 lNameTextbox.Text = Main.reader["LName"].ToString();
-                ssnTextbox.Text = Main.reader["SSN"].ToString();
+
+
+                ssnTextbox.Text = Main.maininstance.crypt.Decrypt(Main.reader["SSN"].ToString(), "dR.wH0iS", "tlm3L0rd");
+
 
                 if (Main.reader["EDate"].ToString() == "")
                 {
@@ -228,7 +231,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                         Main.maininstance.sqlCommand("DELETE FROM Manager WHERE ID='" + id + "'");
                     }
 
-                    Main.maininstance.sqlCommand("UPDATE Employee SET LName='" + lNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "', MName='" + mNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "', FName='" + fNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "', SSN='" + ssnTextbox.Text + "', Phone='" + phoneTextbox.Text + "', Email='" + emailTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "', Address1='" + aLine1Textbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "', Address2='" + aLine2Textbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "', City='" + aCityTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "', State='" + aStateDropdownlist.Text + "', Zip='" + aZipTextbox.Text + "' WHERE ID='" + id + "'");
+                    Main.maininstance.sqlCommand("UPDATE Employee SET LName='" + lNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "', MName='" + mNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "', FName='" + fNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "', SSN='" + Main.maininstance.crypt.Encrypt(ssnTextbox.Text, "dR.wH0iS", "tlm3L0rd") + "', Phone='" + phoneTextbox.Text + "', Email='" + emailTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "', Address1='" + aLine1Textbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "', Address2='" + aLine2Textbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "', City='" + aCityTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "', State='" + aStateDropdownlist.Text + "', Zip='" + aZipTextbox.Text + "' WHERE ID='" + id + "'");
                     MessageBox.Show("Employee Updated");
                     Log.writeLog(Main.eName + " edited employee: \n" + "LName= " + lNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + " MName= " + mNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + " FName= " + fNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "\n SSN= " + ssnTextbox.Text + "\n Phone= " + phoneTextbox.Text + "\n Email= " + emailTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "\n Address1= " + aLine1Textbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "\n Address2= " + aLine2Textbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "\n City= " + aCityTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "\n State= " + aStateDropdownlist.Text + "\n Zip= " + aZipTextbox.Text + "\n Priv= " + privDropdownlist.Text);
                     Main.employeeList = Main.maininstance.getEmployees();

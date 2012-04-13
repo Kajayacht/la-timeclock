@@ -44,16 +44,18 @@ namespace Los_Alamos_Timeclock
         public static MySqlConnection myConnection = new MySqlConnection();
         public static MySqlDataReader reader;
         public static string permissions = "";
+        public Cryptography crypt = new Cryptography();
 
         public Main()
         {
             InitializeComponent();
+            maininstance = this;
 
             SetStyle(ControlStyles.OptimizedDoubleBuffer |
                                     ControlStyles.UserPaint |
                                     ControlStyles.AllPaintingInWmPaint, true);
             timeoutTimer.Interval = 1000;
-            maininstance = this;
+
             //Starts up with login user controls
             panel1.Controls.Clear();
             panel1.Controls.Add(new Login());
