@@ -42,7 +42,7 @@
             // editemployeesButton
             // 
             this.editemployeesButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.editemployeesButton.Location = new System.Drawing.Point(217, 155);
+            this.editemployeesButton.Location = new System.Drawing.Point(213, 163);
             this.editemployeesButton.Name = "editemployeesButton";
             this.editemployeesButton.Size = new System.Drawing.Size(75, 75);
             this.editemployeesButton.TabIndex = 5;
@@ -53,7 +53,7 @@
             // editscheduleButton
             // 
             this.editscheduleButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.editscheduleButton.Location = new System.Drawing.Point(217, 74);
+            this.editscheduleButton.Location = new System.Drawing.Point(213, 82);
             this.editscheduleButton.Name = "editscheduleButton";
             this.editscheduleButton.Size = new System.Drawing.Size(75, 75);
             this.editscheduleButton.TabIndex = 2;
@@ -64,7 +64,7 @@
             // viewlogButton
             // 
             this.viewlogButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.viewlogButton.Location = new System.Drawing.Point(217, 236);
+            this.viewlogButton.Location = new System.Drawing.Point(213, 244);
             this.viewlogButton.Name = "viewlogButton";
             this.viewlogButton.Size = new System.Drawing.Size(75, 75);
             this.viewlogButton.TabIndex = 8;
@@ -75,7 +75,7 @@
             // calculatepayButton
             // 
             this.calculatepayButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.calculatepayButton.Location = new System.Drawing.Point(136, 236);
+            this.calculatepayButton.Location = new System.Drawing.Point(132, 244);
             this.calculatepayButton.Name = "calculatepayButton";
             this.calculatepayButton.Size = new System.Drawing.Size(75, 75);
             this.calculatepayButton.TabIndex = 7;
@@ -86,7 +86,7 @@
             // editjobsButton
             // 
             this.editjobsButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.editjobsButton.Location = new System.Drawing.Point(298, 155);
+            this.editjobsButton.Location = new System.Drawing.Point(294, 163);
             this.editjobsButton.Name = "editjobsButton";
             this.editjobsButton.Size = new System.Drawing.Size(75, 75);
             this.editjobsButton.TabIndex = 6;
@@ -97,7 +97,7 @@
             // settingsButton
             // 
             this.settingsButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.settingsButton.Location = new System.Drawing.Point(298, 236);
+            this.settingsButton.Location = new System.Drawing.Point(294, 244);
             this.settingsButton.Name = "settingsButton";
             this.settingsButton.Size = new System.Drawing.Size(75, 75);
             this.settingsButton.TabIndex = 9;
@@ -108,7 +108,7 @@
             // statusButton
             // 
             this.statusButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.statusButton.Location = new System.Drawing.Point(136, 74);
+            this.statusButton.Location = new System.Drawing.Point(132, 82);
             this.statusButton.Name = "statusButton";
             this.statusButton.Size = new System.Drawing.Size(75, 75);
             this.statusButton.TabIndex = 1;
@@ -119,7 +119,7 @@
             // employeenotesButton
             // 
             this.employeenotesButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.employeenotesButton.Location = new System.Drawing.Point(298, 74);
+            this.employeenotesButton.Location = new System.Drawing.Point(294, 82);
             this.employeenotesButton.Name = "employeenotesButton";
             this.employeenotesButton.Size = new System.Drawing.Size(75, 75);
             this.employeenotesButton.TabIndex = 3;
@@ -130,7 +130,7 @@
             // phonebookButton
             // 
             this.phonebookButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.phonebookButton.Location = new System.Drawing.Point(136, 155);
+            this.phonebookButton.Location = new System.Drawing.Point(132, 163);
             this.phonebookButton.Name = "phonebookButton";
             this.phonebookButton.Size = new System.Drawing.Size(75, 75);
             this.phonebookButton.TabIndex = 4;
@@ -157,6 +157,7 @@
             this.Name = "Admin";
             this.Size = new System.Drawing.Size(500, 400);
             this.ResumeLayout(false);
+
         }
 
         #endregion

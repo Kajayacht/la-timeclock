@@ -61,12 +61,15 @@ namespace Los_Alamos_Timeclock
             panel1.Controls.Add(new Login());
             panel1.Controls[0].Dock = DockStyle.Fill;
             //Connects to the database
+
+
             Main.myConnection = new MySqlConnection(
                 "SERVER=" + Properties.Settings.Default.IP +
                 ";PORT=" + Properties.Settings.Default.Port +
                 ";DATABASE=" + Properties.Settings.Default.Database +
                 ";UID=" + Properties.Settings.Default.User + ";" +
                 ";PASSWORD=" + Properties.Settings.Default.Password + ";");
+
             connectDB(myConnection);
 
             joblist = getJobs();
