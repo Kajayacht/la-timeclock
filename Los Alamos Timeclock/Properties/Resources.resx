@@ -148,4 +148,16 @@
   <data name="dancingChile" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dancingChile.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="dancingMan" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dancingMan.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dancing_cactus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dancing cactus.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="shakingMoraca" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\shakingMoraca.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="shakingMoraca2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\shakingMoraca2.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

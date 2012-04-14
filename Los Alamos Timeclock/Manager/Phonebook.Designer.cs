@@ -43,24 +43,11 @@
             employeeLabel.BackColor = System.Drawing.Color.Transparent;
             employeeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             employeeLabel.ForeColor = System.Drawing.Color.White;
-            employeeLabel.Location = new System.Drawing.Point(56, 140);
+            employeeLabel.Location = new System.Drawing.Point(106, 168);
             employeeLabel.Name = "employeeLabel";
             employeeLabel.Size = new System.Drawing.Size(92, 20);
             employeeLabel.TabIndex = 7;
             employeeLabel.Text = "Employee:";
-            // 
-            // employeeDropdownlist
-            // 
-            this.employeeDropdownlist.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.employeeDropdownlist.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.employeeDropdownlist.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.employeeDropdownlist.FormattingEnabled = true;
-            this.employeeDropdownlist.Location = new System.Drawing.Point(154, 137);
-            this.employeeDropdownlist.Name = "employeeDropdownlist";
-            this.employeeDropdownlist.Size = new System.Drawing.Size(190, 28);
-            this.employeeDropdownlist.TabIndex = 0;
-            this.employeeDropdownlist.TabStop = false;
-            this.employeeDropdownlist.SelectedIndexChanged += new System.EventHandler(this.employeeDropdownlist_SelectedIndexChanged);
             // 
             // titleLabel
             // 
@@ -69,11 +56,24 @@
             titleLabel.BackColor = System.Drawing.Color.Transparent;
             titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             titleLabel.ForeColor = System.Drawing.Color.White;
-            titleLabel.Location = new System.Drawing.Point(187, 17);
+            titleLabel.Location = new System.Drawing.Point(201, 17);
             titleLabel.Name = "titleLabel";
             titleLabel.Size = new System.Drawing.Size(99, 20);
             titleLabel.TabIndex = 59;
             titleLabel.Text = "Phonebook";
+            // 
+            // employeeDropdownlist
+            // 
+            this.employeeDropdownlist.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.employeeDropdownlist.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.employeeDropdownlist.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.employeeDropdownlist.FormattingEnabled = true;
+            this.employeeDropdownlist.Location = new System.Drawing.Point(204, 165);
+            this.employeeDropdownlist.Name = "employeeDropdownlist";
+            this.employeeDropdownlist.Size = new System.Drawing.Size(190, 28);
+            this.employeeDropdownlist.TabIndex = 0;
+            this.employeeDropdownlist.TabStop = false;
+            this.employeeDropdownlist.SelectedIndexChanged += new System.EventHandler(this.employeeDropdownlist_SelectedIndexChanged);
             // 
             // phoneNumber
             // 
@@ -82,7 +82,7 @@
             this.phoneNumber.BackColor = System.Drawing.Color.Transparent;
             this.phoneNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.phoneNumber.ForeColor = System.Drawing.Color.White;
-            this.phoneNumber.Location = new System.Drawing.Point(83, 189);
+            this.phoneNumber.Location = new System.Drawing.Point(106, 215);
             this.phoneNumber.Name = "phoneNumber";
             this.phoneNumber.Size = new System.Drawing.Size(0, 20);
             this.phoneNumber.TabIndex = 61;

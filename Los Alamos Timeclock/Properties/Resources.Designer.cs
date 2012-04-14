@@ -81,9 +81,23 @@ namespace Los_Alamos_Timeclock.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap dancing_cactus {
+            get {
+                object obj = ResourceManager.GetObject("dancing_cactus", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap dancingChile {
             get {
                 object obj = ResourceManager.GetObject("dancingChile", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap dancingMan {
+            get {
+                object obj = ResourceManager.GetObject("dancingMan", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -126,6 +140,20 @@ namespace Los_Alamos_Timeclock.Properties {
         internal static System.Drawing.Bitmap Server {
             get {
                 object obj = ResourceManager.GetObject("Server", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap shakingMoraca {
+            get {
+                object obj = ResourceManager.GetObject("shakingMoraca", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap shakingMoraca2 {
+            get {
+                object obj = ResourceManager.GetObject("shakingMoraca2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

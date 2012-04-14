@@ -349,8 +349,12 @@
     <Content Include="icon4.ico" />
     <Content Include="Resources\Bartender.bmp" />
     <Content Include="Resources\Cook.bmp" />
+    <None Include="Resources\shakingMoraca2.gif" />
+    <None Include="Resources\shakingMoraca.gif" />
     <None Include="Resources\dancingtaco.gif" />
     <None Include="Resources\dancingChile.gif" />
+    <None Include="Resources\dancing cactus.gif" />
+    <None Include="Resources\dancingMan.gif" />
     <Content Include="Resources\Dishwasher.bmp" />
     <None Include="Resources\icon4.ico" />
     <Content Include="Resources\Manager.bmp" />
