@@ -425,6 +425,32 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             privLabel.TabIndex = 75;
             privLabel.Text = "Privileges";
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            pictureBox1.Image = global::Los_Alamos_Timeclock.Properties.Resources.shakingMoraca;
+            pictureBox1.Location = new System.Drawing.Point(323, 3);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new System.Drawing.Size(43, 60);
+            pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 78;
+            pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            pictureBox2.Image = global::Los_Alamos_Timeclock.Properties.Resources.shakingMoraca;
+            pictureBox2.Location = new System.Drawing.Point(135, 3);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new System.Drawing.Size(43, 60);
+            pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 79;
+            pictureBox2.TabStop = false;
+            // 
             // employedLabel
             // 
             this.employedLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -619,9 +645,9 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             // newemployeeButton
             // 
             this.newemployeeButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.newemployeeButton.Location = new System.Drawing.Point(128, 119);
+            this.newemployeeButton.Location = new System.Drawing.Point(127, 119);
             this.newemployeeButton.Name = "newemployeeButton";
-            this.newemployeeButton.Size = new System.Drawing.Size(169, 33);
+            this.newemployeeButton.Size = new System.Drawing.Size(170, 33);
             this.newemployeeButton.TabIndex = 0;
             this.newemployeeButton.Text = "New Employee";
             this.newemployeeButton.UseVisualStyleBackColor = true;
@@ -718,32 +744,6 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             this.quitorfireButton.Text = "Quit/Fired";
             this.quitorfireButton.UseVisualStyleBackColor = true;
             this.quitorfireButton.Click += new System.EventHandler(this.quitorfireButton_Click);
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            pictureBox1.Image = global::Los_Alamos_Timeclock.Properties.Resources.shakingMoraca;
-            pictureBox1.Location = new System.Drawing.Point(323, 3);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new System.Drawing.Size(43, 60);
-            pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 78;
-            pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            pictureBox2.Image = global::Los_Alamos_Timeclock.Properties.Resources.shakingMoraca;
-            pictureBox2.Location = new System.Drawing.Point(135, 3);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new System.Drawing.Size(43, 60);
-            pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 79;
-            pictureBox2.TabStop = false;
             // 
             // Editemployees
             // 

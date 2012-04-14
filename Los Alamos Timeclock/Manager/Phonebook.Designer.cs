@@ -68,6 +68,32 @@
             titleLabel.TabIndex = 59;
             titleLabel.Text = "Phonebook";
             // 
+            // pictureBox2
+            // 
+            pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            pictureBox2.Image = global::Los_Alamos_Timeclock.Properties.Resources.shakingMoraca2;
+            pictureBox2.Location = new System.Drawing.Point(0, 215);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new System.Drawing.Size(145, 185);
+            pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 62;
+            pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            pictureBox1.Image = global::Los_Alamos_Timeclock.Properties.Resources.shakingMoraca2;
+            pictureBox1.Location = new System.Drawing.Point(355, 215);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new System.Drawing.Size(145, 185);
+            pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 63;
+            pictureBox1.TabStop = false;
+            // 
             // employeeDropdownlist
             // 
             this.employeeDropdownlist.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -92,32 +118,6 @@
             this.phoneNumber.Name = "phoneNumber";
             this.phoneNumber.Size = new System.Drawing.Size(0, 20);
             this.phoneNumber.TabIndex = 61;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            pictureBox2.Image = global::Los_Alamos_Timeclock.Properties.Resources.shakingMoraca2;
-            pictureBox2.Location = new System.Drawing.Point(0, 215);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new System.Drawing.Size(145, 185);
-            pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 62;
-            pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            pictureBox1.Image = global::Los_Alamos_Timeclock.Properties.Resources.shakingMoraca2;
-            pictureBox1.Location = new System.Drawing.Point(355, 215);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new System.Drawing.Size(145, 185);
-            pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 63;
-            pictureBox1.TabStop = false;
             // 
             // Phonebook
             // 
