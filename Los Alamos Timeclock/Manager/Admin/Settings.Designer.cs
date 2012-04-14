@@ -63,7 +63,6 @@
             titleLabel.AutoSize = true;
             titleLabel.BackColor = System.Drawing.Color.Transparent;
             titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            titleLabel.ForeColor = System.Drawing.Color.White;
             titleLabel.Location = new System.Drawing.Point(171, 315);
             titleLabel.Name = "titleLabel";
             titleLabel.Size = new System.Drawing.Size(159, 24);
@@ -76,7 +75,6 @@
             appSettingsLabel.AutoSize = true;
             appSettingsLabel.BackColor = System.Drawing.Color.Transparent;
             appSettingsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            appSettingsLabel.ForeColor = System.Drawing.Color.White;
             appSettingsLabel.Location = new System.Drawing.Point(163, 26);
             appSettingsLabel.Name = "appSettingsLabel";
             appSettingsLabel.Size = new System.Drawing.Size(174, 24);
@@ -89,20 +87,45 @@
             databaseToolsLabel.AutoSize = true;
             databaseToolsLabel.BackColor = System.Drawing.Color.Transparent;
             databaseToolsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            databaseToolsLabel.ForeColor = System.Drawing.Color.White;
             databaseToolsLabel.Location = new System.Drawing.Point(180, 195);
             databaseToolsLabel.Name = "databaseToolsLabel";
             databaseToolsLabel.Size = new System.Drawing.Size(140, 24);
             databaseToolsLabel.TabIndex = 14;
             databaseToolsLabel.Text = "Database Tools";
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            pictureBox1.Image = global::Los_Alamos_Timeclock.Properties.Resources.shakingMoraca2;
+            pictureBox1.Location = new System.Drawing.Point(343, 13);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new System.Drawing.Size(73, 53);
+            pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 73;
+            pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            pictureBox2.Image = global::Los_Alamos_Timeclock.Properties.Resources.shakingMoraca2;
+            pictureBox2.Location = new System.Drawing.Point(84, 13);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new System.Drawing.Size(73, 53);
+            pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 74;
+            pictureBox2.TabStop = false;
+            // 
             // ipaddressLLabel
             // 
+            this.ipaddressLLabel.ActiveLinkColor = System.Drawing.Color.DarkMagenta;
             this.ipaddressLLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.ipaddressLLabel.AutoSize = true;
             this.ipaddressLLabel.BackColor = System.Drawing.Color.Transparent;
             this.ipaddressLLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ipaddressLLabel.ForeColor = System.Drawing.Color.White;
             this.ipaddressLLabel.LinkColor = System.Drawing.Color.White;
             this.ipaddressLLabel.Location = new System.Drawing.Point(78, 361);
             this.ipaddressLLabel.Name = "ipaddressLLabel";
@@ -114,11 +137,11 @@
             // 
             // portLLabel
             // 
+            this.portLLabel.ActiveLinkColor = System.Drawing.Color.DarkMagenta;
             this.portLLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.portLLabel.AutoSize = true;
             this.portLLabel.BackColor = System.Drawing.Color.Transparent;
             this.portLLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.portLLabel.ForeColor = System.Drawing.Color.White;
             this.portLLabel.LinkColor = System.Drawing.Color.White;
             this.portLLabel.Location = new System.Drawing.Point(127, 396);
             this.portLLabel.Name = "portLLabel";
@@ -131,11 +154,11 @@
             // 
             // userLLabel
             // 
+            this.userLLabel.ActiveLinkColor = System.Drawing.Color.DarkMagenta;
             this.userLLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.userLLabel.AutoSize = true;
             this.userLLabel.BackColor = System.Drawing.Color.Transparent;
             this.userLLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userLLabel.ForeColor = System.Drawing.Color.White;
             this.userLLabel.LinkColor = System.Drawing.Color.White;
             this.userLLabel.Location = new System.Drawing.Point(120, 457);
             this.userLLabel.Name = "userLLabel";
@@ -148,11 +171,11 @@
             // 
             // passLLabel
             // 
+            this.passLLabel.ActiveLinkColor = System.Drawing.Color.DarkMagenta;
             this.passLLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.passLLabel.AutoSize = true;
             this.passLLabel.BackColor = System.Drawing.Color.Transparent;
             this.passLLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passLLabel.ForeColor = System.Drawing.Color.White;
             this.passLLabel.LinkColor = System.Drawing.Color.White;
             this.passLLabel.Location = new System.Drawing.Point(85, 489);
             this.passLLabel.Name = "passLLabel";
@@ -207,6 +230,7 @@
             // applyButton
             // 
             this.applyButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.applyButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.applyButton.Location = new System.Drawing.Point(253, 521);
             this.applyButton.Name = "applyButton";
             this.applyButton.Size = new System.Drawing.Size(75, 23);
@@ -227,11 +251,11 @@
             // 
             // databaseLLabel
             // 
+            this.databaseLLabel.ActiveLinkColor = System.Drawing.Color.DarkMagenta;
             this.databaseLLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.databaseLLabel.AutoSize = true;
             this.databaseLLabel.BackColor = System.Drawing.Color.Transparent;
             this.databaseLLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.databaseLLabel.ForeColor = System.Drawing.Color.White;
             this.databaseLLabel.LinkColor = System.Drawing.Color.White;
             this.databaseLLabel.Location = new System.Drawing.Point(86, 425);
             this.databaseLLabel.Name = "databaseLLabel";
@@ -247,7 +271,6 @@
             this.showCurrentEmployeesCheckbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.showCurrentEmployeesCheckbox.AutoSize = true;
             this.showCurrentEmployeesCheckbox.BackColor = System.Drawing.Color.Transparent;
-            this.showCurrentEmployeesCheckbox.ForeColor = System.Drawing.Color.White;
             this.showCurrentEmployeesCheckbox.Location = new System.Drawing.Point(175, 68);
             this.showCurrentEmployeesCheckbox.Name = "showCurrentEmployeesCheckbox";
             this.showCurrentEmployeesCheckbox.Size = new System.Drawing.Size(144, 17);
@@ -260,7 +283,6 @@
             this.showPreviousEmployeesCheckbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.showPreviousEmployeesCheckbox.AutoSize = true;
             this.showPreviousEmployeesCheckbox.BackColor = System.Drawing.Color.Transparent;
-            this.showPreviousEmployeesCheckbox.ForeColor = System.Drawing.Color.White;
             this.showPreviousEmployeesCheckbox.Location = new System.Drawing.Point(175, 102);
             this.showPreviousEmployeesCheckbox.Name = "showPreviousEmployeesCheckbox";
             this.showPreviousEmployeesCheckbox.Size = new System.Drawing.Size(151, 17);
@@ -271,6 +293,7 @@
             // saveAppSettings
             // 
             this.saveAppSettings.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.saveAppSettings.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.saveAppSettings.Location = new System.Drawing.Point(213, 125);
             this.saveAppSettings.Name = "saveAppSettings";
             this.saveAppSettings.Size = new System.Drawing.Size(75, 23);
@@ -282,6 +305,7 @@
             // cleanupEntriesButton
             // 
             this.cleanupEntriesButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cleanupEntriesButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.cleanupEntriesButton.Location = new System.Drawing.Point(190, 226);
             this.cleanupEntriesButton.Name = "cleanupEntriesButton";
             this.cleanupEntriesButton.Size = new System.Drawing.Size(121, 26);
@@ -289,32 +313,6 @@
             this.cleanupEntriesButton.Text = "Cleanup Entries";
             this.cleanupEntriesButton.UseVisualStyleBackColor = true;
             this.cleanupEntriesButton.Click += new System.EventHandler(this.cleanupButton_Click);
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            pictureBox1.Image = global::Los_Alamos_Timeclock.Properties.Resources.shakingMoraca2;
-            pictureBox1.Location = new System.Drawing.Point(343, 13);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new System.Drawing.Size(73, 53);
-            pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 73;
-            pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            pictureBox2.Image = global::Los_Alamos_Timeclock.Properties.Resources.shakingMoraca2;
-            pictureBox2.Location = new System.Drawing.Point(84, 13);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new System.Drawing.Size(73, 53);
-            pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 74;
-            pictureBox2.TabStop = false;
             // 
             // Settings
             // 
@@ -344,6 +342,7 @@
             this.Controls.Add(this.ipaddressLLabel);
             this.Controls.Add(titleLabel);
             this.DoubleBuffered = true;
+            this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Name = "Settings";
             this.Size = new System.Drawing.Size(500, 575);
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();

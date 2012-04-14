@@ -37,7 +37,7 @@ namespace Los_Alamos_Timeclock.Manager
             System.Windows.Forms.Label break2Label;
             System.Windows.Forms.Label lunchLabel;
             System.Windows.Forms.PictureBox pictureBox1;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.employeeDropdownlist = new System.Windows.Forms.ComboBox();
             this.calander = new System.Windows.Forms.DateTimePicker();
             this.updatescheduleButton = new System.Windows.Forms.Button();
@@ -71,7 +71,6 @@ namespace Los_Alamos_Timeclock.Manager
             employeeLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             employeeLabel.AutoSize = true;
             employeeLabel.BackColor = System.Drawing.Color.Transparent;
-            employeeLabel.ForeColor = System.Drawing.Color.White;
             employeeLabel.Location = new System.Drawing.Point(20, 269);
             employeeLabel.Name = "employeeLabel";
             employeeLabel.Size = new System.Drawing.Size(56, 13);
@@ -83,7 +82,6 @@ namespace Los_Alamos_Timeclock.Manager
             startLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             startLabel.AutoSize = true;
             startLabel.BackColor = System.Drawing.Color.Transparent;
-            startLabel.ForeColor = System.Drawing.Color.White;
             startLabel.Location = new System.Drawing.Point(20, 297);
             startLabel.Name = "startLabel";
             startLabel.Size = new System.Drawing.Size(32, 13);
@@ -95,7 +93,6 @@ namespace Los_Alamos_Timeclock.Manager
             endLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             endLabel.AutoSize = true;
             endLabel.BackColor = System.Drawing.Color.Transparent;
-            endLabel.ForeColor = System.Drawing.Color.White;
             endLabel.Location = new System.Drawing.Point(20, 324);
             endLabel.Name = "endLabel";
             endLabel.Size = new System.Drawing.Size(29, 13);
@@ -107,7 +104,6 @@ namespace Los_Alamos_Timeclock.Manager
             jobLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             jobLabel.AutoSize = true;
             jobLabel.BackColor = System.Drawing.Color.Transparent;
-            jobLabel.ForeColor = System.Drawing.Color.White;
             jobLabel.Location = new System.Drawing.Point(20, 373);
             jobLabel.Name = "jobLabel";
             jobLabel.Size = new System.Drawing.Size(27, 13);
@@ -119,7 +115,6 @@ namespace Los_Alamos_Timeclock.Manager
             break1Label.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             break1Label.AutoSize = true;
             break1Label.BackColor = System.Drawing.Color.Transparent;
-            break1Label.ForeColor = System.Drawing.Color.White;
             break1Label.Location = new System.Drawing.Point(127, 297);
             break1Label.Name = "break1Label";
             break1Label.Size = new System.Drawing.Size(47, 13);
@@ -131,7 +126,6 @@ namespace Los_Alamos_Timeclock.Manager
             break2Label.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             break2Label.AutoSize = true;
             break2Label.BackColor = System.Drawing.Color.Transparent;
-            break2Label.ForeColor = System.Drawing.Color.White;
             break2Label.Location = new System.Drawing.Point(127, 324);
             break2Label.Name = "break2Label";
             break2Label.Size = new System.Drawing.Size(47, 13);
@@ -143,7 +137,6 @@ namespace Los_Alamos_Timeclock.Manager
             lunchLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             lunchLabel.AutoSize = true;
             lunchLabel.BackColor = System.Drawing.Color.Transparent;
-            lunchLabel.ForeColor = System.Drawing.Color.White;
             lunchLabel.Location = new System.Drawing.Point(127, 350);
             lunchLabel.Name = "lunchLabel";
             lunchLabel.Size = new System.Drawing.Size(40, 13);
@@ -186,6 +179,7 @@ namespace Los_Alamos_Timeclock.Manager
             // updatescheduleButton
             // 
             this.updatescheduleButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.updatescheduleButton.ForeColor = System.Drawing.Color.Black;
             this.updatescheduleButton.Location = new System.Drawing.Point(378, 294);
             this.updatescheduleButton.Name = "updatescheduleButton";
             this.updatescheduleButton.Size = new System.Drawing.Size(97, 100);
@@ -198,8 +192,8 @@ namespace Los_Alamos_Timeclock.Manager
             // 
             this.datagrid.AllowUserToAddRows = false;
             this.datagrid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            this.datagrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.datagrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.datagrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -257,7 +251,6 @@ namespace Los_Alamos_Timeclock.Manager
             this.b1dashLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.b1dashLabel.AutoSize = true;
             this.b1dashLabel.BackColor = System.Drawing.Color.Transparent;
-            this.b1dashLabel.ForeColor = System.Drawing.Color.White;
             this.b1dashLabel.Location = new System.Drawing.Point(233, 297);
             this.b1dashLabel.Name = "b1dashLabel";
             this.b1dashLabel.Size = new System.Drawing.Size(13, 13);
@@ -289,7 +282,6 @@ namespace Los_Alamos_Timeclock.Manager
             this.b2dashLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.b2dashLabel.AutoSize = true;
             this.b2dashLabel.BackColor = System.Drawing.Color.Transparent;
-            this.b2dashLabel.ForeColor = System.Drawing.Color.White;
             this.b2dashLabel.Location = new System.Drawing.Point(233, 324);
             this.b2dashLabel.Name = "b2dashLabel";
             this.b2dashLabel.Size = new System.Drawing.Size(13, 13);
@@ -331,7 +323,6 @@ namespace Los_Alamos_Timeclock.Manager
             this.lunchdashLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lunchdashLabel.AutoSize = true;
             this.lunchdashLabel.BackColor = System.Drawing.Color.Transparent;
-            this.lunchdashLabel.ForeColor = System.Drawing.Color.White;
             this.lunchdashLabel.Location = new System.Drawing.Point(233, 350);
             this.lunchdashLabel.Name = "lunchdashLabel";
             this.lunchdashLabel.Size = new System.Drawing.Size(13, 13);
@@ -369,6 +360,7 @@ namespace Los_Alamos_Timeclock.Manager
             this.Controls.Add(this.employeeDropdownlist);
             this.Controls.Add(this.datagrid);
             this.DoubleBuffered = true;
+            this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Name = "Status";
             this.Size = new System.Drawing.Size(500, 400);
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();

@@ -55,7 +55,6 @@
             passLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             passLabel.AutoSize = true;
             passLabel.BackColor = System.Drawing.Color.Transparent;
-            passLabel.ForeColor = System.Drawing.Color.White;
             passLabel.Location = new System.Drawing.Point(132, 183);
             passLabel.Name = "passLabel";
             passLabel.Size = new System.Drawing.Size(56, 13);
@@ -67,7 +66,6 @@
             userLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             userLabel.AutoSize = true;
             userLabel.BackColor = System.Drawing.Color.Transparent;
-            userLabel.ForeColor = System.Drawing.Color.White;
             userLabel.Location = new System.Drawing.Point(132, 160);
             userLabel.Name = "userLabel";
             userLabel.Size = new System.Drawing.Size(32, 13);
@@ -96,6 +94,7 @@
             // loginButton
             // 
             this.loginButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.loginButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.loginButton.Location = new System.Drawing.Point(194, 209);
             this.loginButton.MaximumSize = new System.Drawing.Size(200, 100);
             this.loginButton.Name = "loginButton";
@@ -189,7 +188,6 @@
             this.clock1.AutoSize = true;
             this.clock1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.clock1.BackColor = System.Drawing.Color.Transparent;
-            this.clock1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.clock1.Location = new System.Drawing.Point(149, 117);
             this.clock1.Name = "clock1";
             this.clock1.Size = new System.Drawing.Size(194, 37);
@@ -215,6 +213,7 @@
             this.Controls.Add(this.dancingTaco1);
             this.Controls.Add(this.dancingTaco2);
             this.DoubleBuffered = true;
+            this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Name = "Login";
             this.Size = new System.Drawing.Size(500, 400);
             ((System.ComponentModel.ISupportInitialize)(this.dancingTaco2)).EndInit();

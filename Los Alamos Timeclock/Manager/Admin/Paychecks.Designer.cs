@@ -49,12 +49,37 @@
             disclaimerLabel.AutoSize = true;
             disclaimerLabel.BackColor = System.Drawing.Color.Transparent;
             disclaimerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            disclaimerLabel.ForeColor = System.Drawing.Color.White;
             disclaimerLabel.Location = new System.Drawing.Point(146, 369);
             disclaimerLabel.Name = "disclaimerLabel";
             disclaimerLabel.Size = new System.Drawing.Size(235, 20);
             disclaimerLabel.TabIndex = 5;
             disclaimerLabel.Text = "Pay based on current wages";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            pictureBox1.Image = global::Los_Alamos_Timeclock.Properties.Resources.shakingMoraca2;
+            pictureBox1.Location = new System.Drawing.Point(427, 347);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new System.Drawing.Size(73, 53);
+            pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 72;
+            pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            pictureBox2.Image = global::Los_Alamos_Timeclock.Properties.Resources.shakingMoraca2;
+            pictureBox2.Location = new System.Drawing.Point(0, 347);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new System.Drawing.Size(73, 53);
+            pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 73;
+            pictureBox2.TabStop = false;
             // 
             // startCalander
             // 
@@ -71,7 +96,6 @@
             this.weekLabel.AutoSize = true;
             this.weekLabel.BackColor = System.Drawing.Color.Transparent;
             this.weekLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.weekLabel.ForeColor = System.Drawing.Color.White;
             this.weekLabel.Location = new System.Drawing.Point(102, 26);
             this.weekLabel.Name = "weekLabel";
             this.weekLabel.Size = new System.Drawing.Size(299, 25);
@@ -106,38 +130,11 @@
             this.dashLabel.AutoSize = true;
             this.dashLabel.BackColor = System.Drawing.Color.Transparent;
             this.dashLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dashLabel.ForeColor = System.Drawing.Color.White;
             this.dashLabel.Location = new System.Drawing.Point(242, 3);
             this.dashLabel.Name = "dashLabel";
             this.dashLabel.Size = new System.Drawing.Size(15, 20);
             this.dashLabel.TabIndex = 7;
             this.dashLabel.Text = "-";
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            pictureBox1.Image = global::Los_Alamos_Timeclock.Properties.Resources.shakingMoraca2;
-            pictureBox1.Location = new System.Drawing.Point(427, 347);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new System.Drawing.Size(73, 53);
-            pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 72;
-            pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            pictureBox2.Image = global::Los_Alamos_Timeclock.Properties.Resources.shakingMoraca2;
-            pictureBox2.Location = new System.Drawing.Point(0, 347);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new System.Drawing.Size(73, 53);
-            pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 73;
-            pictureBox2.TabStop = false;
             // 
             // Paychecks
             // 
@@ -155,6 +152,7 @@
             this.Controls.Add(this.weekLabel);
             this.Controls.Add(this.startCalander);
             this.DoubleBuffered = true;
+            this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Name = "Paychecks";
             this.Size = new System.Drawing.Size(500, 400);
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();

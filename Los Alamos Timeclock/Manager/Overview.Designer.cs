@@ -49,7 +49,6 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             fromLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             fromLabel.AutoSize = true;
             fromLabel.BackColor = System.Drawing.Color.Transparent;
-            fromLabel.ForeColor = System.Drawing.Color.White;
             fromLabel.Location = new System.Drawing.Point(295, 328);
             fromLabel.Name = "fromLabel";
             fromLabel.Size = new System.Drawing.Size(33, 13);
@@ -61,7 +60,6 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             toLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             toLabel.AutoSize = true;
             toLabel.BackColor = System.Drawing.Color.Transparent;
-            toLabel.ForeColor = System.Drawing.Color.White;
             toLabel.Location = new System.Drawing.Point(305, 357);
             toLabel.Name = "toLabel";
             toLabel.Size = new System.Drawing.Size(23, 13);
@@ -74,7 +72,6 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             showLabel.AutoSize = true;
             showLabel.BackColor = System.Drawing.Color.Transparent;
             showLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            showLabel.ForeColor = System.Drawing.Color.White;
             showLabel.Location = new System.Drawing.Point(12, 328);
             showLabel.Name = "showLabel";
             showLabel.Size = new System.Drawing.Size(71, 25);
@@ -149,6 +146,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             this.Controls.Add(this.toCalander);
             this.Controls.Add(this.overviewDatagridview);
             this.DoubleBuffered = true;
+            this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(562, 38);
             this.Name = "Overview";

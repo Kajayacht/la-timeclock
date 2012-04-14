@@ -43,6 +43,7 @@
             // clockinButton
             // 
             this.clockinButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.clockinButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.clockinButton.Location = new System.Drawing.Point(64, 291);
             this.clockinButton.Name = "clockinButton";
             this.clockinButton.Size = new System.Drawing.Size(75, 75);
@@ -69,7 +70,6 @@
             this.welcome.BackColor = System.Drawing.Color.Transparent;
             this.welcome.Dock = System.Windows.Forms.DockStyle.Top;
             this.welcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.welcome.ForeColor = System.Drawing.Color.White;
             this.welcome.Location = new System.Drawing.Point(0, 0);
             this.welcome.Name = "welcome";
             this.welcome.Size = new System.Drawing.Size(500, 37);
@@ -79,6 +79,7 @@
             // clockoutButton
             // 
             this.clockoutButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.clockoutButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.clockoutButton.Location = new System.Drawing.Point(307, 291);
             this.clockoutButton.Name = "clockoutButton";
             this.clockoutButton.Size = new System.Drawing.Size(75, 75);
@@ -105,6 +106,7 @@
             this.statusMessagebox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.statusMessagebox.BackColor = System.Drawing.Color.Red;
             this.statusMessagebox.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusMessagebox.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.statusMessagebox.Location = new System.Drawing.Point(332, 57);
             this.statusMessagebox.Name = "statusMessagebox";
             this.statusMessagebox.Size = new System.Drawing.Size(150, 30);
@@ -115,6 +117,7 @@
             // BreakButton
             // 
             this.BreakButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.BreakButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.BreakButton.Location = new System.Drawing.Point(145, 291);
             this.BreakButton.Name = "BreakButton";
             this.BreakButton.Size = new System.Drawing.Size(75, 75);
@@ -126,6 +129,7 @@
             // lunchButton
             // 
             this.lunchButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lunchButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lunchButton.Location = new System.Drawing.Point(226, 291);
             this.lunchButton.Name = "lunchButton";
             this.lunchButton.Size = new System.Drawing.Size(75, 75);
@@ -137,6 +141,7 @@
             // managerOverrideButton
             // 
             this.managerOverrideButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.managerOverrideButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.managerOverrideButton.Location = new System.Drawing.Point(388, 291);
             this.managerOverrideButton.Name = "managerOverrideButton";
             this.managerOverrideButton.Size = new System.Drawing.Size(75, 75);
@@ -161,6 +166,7 @@
             this.Controls.Add(this.shiftinfoLabel);
             this.Controls.Add(this.clockinButton);
             this.DoubleBuffered = true;
+            this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Name = "Clockinout";
             this.Size = new System.Drawing.Size(500, 400);
             ((System.ComponentModel.ISupportInitialize)(this.jobImage)).EndInit();

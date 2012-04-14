@@ -31,9 +31,9 @@ namespace Los_Alamos_Timeclock.Manager
         {
             System.Windows.Forms.Label titleLabel;
             System.Windows.Forms.Label employeeLabel;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.PictureBox pictureBox1;
             System.Windows.Forms.PictureBox pictureBox2;
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.employeeDropdownlist = new System.Windows.Forms.ComboBox();
             this.notesDatagrid = new System.Windows.Forms.DataGridView();
             this.noteTextbox = new System.Windows.Forms.RichTextBox();
@@ -42,9 +42,9 @@ namespace Los_Alamos_Timeclock.Manager
             employeeLabel = new System.Windows.Forms.Label();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             pictureBox2 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.notesDatagrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.notesDatagrid)).BeginInit();
             this.SuspendLayout();
             // 
             // titleLabel
@@ -53,7 +53,6 @@ namespace Los_Alamos_Timeclock.Manager
             titleLabel.AutoSize = true;
             titleLabel.BackColor = System.Drawing.Color.Transparent;
             titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            titleLabel.ForeColor = System.Drawing.Color.White;
             titleLabel.Location = new System.Drawing.Point(175, 9);
             titleLabel.Name = "titleLabel";
             titleLabel.Size = new System.Drawing.Size(139, 20);
@@ -66,12 +65,37 @@ namespace Los_Alamos_Timeclock.Manager
             employeeLabel.AutoSize = true;
             employeeLabel.BackColor = System.Drawing.Color.Transparent;
             employeeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            employeeLabel.ForeColor = System.Drawing.Color.White;
             employeeLabel.Location = new System.Drawing.Point(2, 316);
             employeeLabel.Name = "employeeLabel";
             employeeLabel.Size = new System.Drawing.Size(92, 20);
             employeeLabel.TabIndex = 61;
             employeeLabel.Text = "Employee:";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            pictureBox1.Image = global::Los_Alamos_Timeclock.Properties.Resources.shakingMoraca;
+            pictureBox1.Location = new System.Drawing.Point(320, 3);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new System.Drawing.Size(42, 26);
+            pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 73;
+            pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            pictureBox2.Image = global::Los_Alamos_Timeclock.Properties.Resources.shakingMoraca;
+            pictureBox2.Location = new System.Drawing.Point(127, 3);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new System.Drawing.Size(42, 26);
+            pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 74;
+            pictureBox2.TabStop = false;
             // 
             // employeeDropdownlist
             // 
@@ -128,6 +152,7 @@ namespace Los_Alamos_Timeclock.Manager
             // addnoteButton
             // 
             this.addnoteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.addnoteButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.addnoteButton.Location = new System.Drawing.Point(100, 343);
             this.addnoteButton.Name = "addnoteButton";
             this.addnoteButton.Size = new System.Drawing.Size(158, 54);
@@ -135,32 +160,6 @@ namespace Los_Alamos_Timeclock.Manager
             this.addnoteButton.Text = "Add Note";
             this.addnoteButton.UseVisualStyleBackColor = true;
             this.addnoteButton.Click += new System.EventHandler(this.addnoteButton_Click);
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            pictureBox1.Image = global::Los_Alamos_Timeclock.Properties.Resources.shakingMoraca;
-            pictureBox1.Location = new System.Drawing.Point(320, 3);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new System.Drawing.Size(42, 26);
-            pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 73;
-            pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            pictureBox2.Image = global::Los_Alamos_Timeclock.Properties.Resources.shakingMoraca;
-            pictureBox2.Location = new System.Drawing.Point(127, 3);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new System.Drawing.Size(42, 26);
-            pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 74;
-            pictureBox2.TabStop = false;
             // 
             // Employeenotes
             // 
@@ -177,11 +176,12 @@ namespace Los_Alamos_Timeclock.Manager
             this.Controls.Add(this.employeeDropdownlist);
             this.Controls.Add(titleLabel);
             this.DoubleBuffered = true;
+            this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Name = "Employeenotes";
             this.Size = new System.Drawing.Size(500, 400);
-            ((System.ComponentModel.ISupportInitialize)(this.notesDatagrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.notesDatagrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

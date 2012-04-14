@@ -48,7 +48,6 @@
             employeeLabel.AutoSize = true;
             employeeLabel.BackColor = System.Drawing.Color.Transparent;
             employeeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            employeeLabel.ForeColor = System.Drawing.Color.White;
             employeeLabel.Location = new System.Drawing.Point(106, 168);
             employeeLabel.Name = "employeeLabel";
             employeeLabel.Size = new System.Drawing.Size(92, 20);
@@ -61,7 +60,6 @@
             titleLabel.AutoSize = true;
             titleLabel.BackColor = System.Drawing.Color.Transparent;
             titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            titleLabel.ForeColor = System.Drawing.Color.White;
             titleLabel.Location = new System.Drawing.Point(201, 17);
             titleLabel.Name = "titleLabel";
             titleLabel.Size = new System.Drawing.Size(99, 20);
@@ -113,7 +111,6 @@
             this.phoneNumber.AutoSize = true;
             this.phoneNumber.BackColor = System.Drawing.Color.Transparent;
             this.phoneNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.phoneNumber.ForeColor = System.Drawing.Color.White;
             this.phoneNumber.Location = new System.Drawing.Point(106, 215);
             this.phoneNumber.Name = "phoneNumber";
             this.phoneNumber.Size = new System.Drawing.Size(0, 20);
@@ -132,6 +129,7 @@
             this.Controls.Add(this.employeeDropdownlist);
             this.Controls.Add(pictureBox2);
             this.DoubleBuffered = true;
+            this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Name = "Phonebook";
             this.Size = new System.Drawing.Size(500, 400);
             ((System.ComponentModel.ISupportInitialize)(pictureBox2)).EndInit();

@@ -33,7 +33,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             System.Windows.Forms.Label startLabel;
             System.Windows.Forms.Label endLabel;
             System.Windows.Forms.Label jobLabel;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.employeeDropdownlist = new System.Windows.Forms.ComboBox();
             this.calander = new System.Windows.Forms.DateTimePicker();
             this.updatescheduleButon = new System.Windows.Forms.Button();
@@ -58,7 +58,6 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             employeeLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             employeeLabel.AutoSize = true;
             employeeLabel.BackColor = System.Drawing.Color.Transparent;
-            employeeLabel.ForeColor = System.Drawing.Color.White;
             employeeLabel.Location = new System.Drawing.Point(23, 269);
             employeeLabel.Name = "employeeLabel";
             employeeLabel.Size = new System.Drawing.Size(56, 13);
@@ -70,7 +69,6 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             startLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             startLabel.AutoSize = true;
             startLabel.BackColor = System.Drawing.Color.Transparent;
-            startLabel.ForeColor = System.Drawing.Color.White;
             startLabel.Location = new System.Drawing.Point(23, 297);
             startLabel.Name = "startLabel";
             startLabel.Size = new System.Drawing.Size(32, 13);
@@ -82,7 +80,6 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             endLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             endLabel.AutoSize = true;
             endLabel.BackColor = System.Drawing.Color.Transparent;
-            endLabel.ForeColor = System.Drawing.Color.White;
             endLabel.Location = new System.Drawing.Point(23, 324);
             endLabel.Name = "endLabel";
             endLabel.Size = new System.Drawing.Size(29, 13);
@@ -94,7 +91,6 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             jobLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             jobLabel.AutoSize = true;
             jobLabel.BackColor = System.Drawing.Color.Transparent;
-            jobLabel.ForeColor = System.Drawing.Color.White;
             jobLabel.Location = new System.Drawing.Point(23, 368);
             jobLabel.Name = "jobLabel";
             jobLabel.Size = new System.Drawing.Size(27, 13);
@@ -124,6 +120,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             // updatescheduleButon
             // 
             this.updatescheduleButon.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.updatescheduleButon.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.updatescheduleButon.Location = new System.Drawing.Point(278, 293);
             this.updatescheduleButon.Name = "updatescheduleButon";
             this.updatescheduleButon.Size = new System.Drawing.Size(60, 95);
@@ -136,8 +133,8 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             // 
             this.datagrid.AllowUserToAddRows = false;
             this.datagrid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            this.datagrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            this.datagrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.datagrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -163,6 +160,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             // deleteButton
             // 
             this.deleteButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.deleteButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.deleteButton.Location = new System.Drawing.Point(344, 293);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(66, 95);
@@ -289,7 +287,6 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             this.lengthLabel.AutoSize = true;
             this.lengthLabel.BackColor = System.Drawing.Color.Transparent;
             this.lengthLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lengthLabel.ForeColor = System.Drawing.Color.White;
             this.lengthLabel.Location = new System.Drawing.Point(78, 345);
             this.lengthLabel.Name = "lengthLabel";
             this.lengthLabel.Size = new System.Drawing.Size(67, 20);
@@ -299,6 +296,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             // showRequests
             // 
             this.showRequests.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.showRequests.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.showRequests.Location = new System.Drawing.Point(416, 293);
             this.showRequests.Name = "showRequests";
             this.showRequests.Size = new System.Drawing.Size(62, 95);
@@ -330,6 +328,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             this.Controls.Add(this.employeeDropdownlist);
             this.Controls.Add(this.datagrid);
             this.DoubleBuffered = true;
+            this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Name = "Makesched";
             this.Size = new System.Drawing.Size(500, 400);
             ((System.ComponentModel.ISupportInitialize)(this.datagrid)).EndInit();
