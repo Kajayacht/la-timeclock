@@ -37,8 +37,5 @@ namespace Los_Alamos_Timeclock
             Log.createLog();
             Application.Run(new Main());
         }
-
-
-
     }
 }

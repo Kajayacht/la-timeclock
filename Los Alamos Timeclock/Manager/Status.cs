@@ -37,6 +37,7 @@ namespace Los_Alamos_Timeclock.Manager
         {
             InitializeComponent();
 
+            datagrid.CellClick +=new DataGridViewCellEventHandler(datagrid_Cellclick);
             this.MouseMove+=new MouseEventHandler(Main.maininstance.notIdle_event);
             this.KeyDown+=new KeyEventHandler(Main.maininstance.notIdle_event);
             employeeDropdownlist.MouseMove += new MouseEventHandler(Main.maininstance.notIdle_event);
@@ -256,7 +257,7 @@ namespace Los_Alamos_Timeclock.Manager
         {
             string query = "Select " +
                                 "a.Date, " +
-                                "CONCAT(c.LName, ', ',c.FName,' ',c.MName) AS Name, " +
+                                "CONCAT(c.LName, ', ',c.FName) AS Name, " +
                                 "a.Status,a.JID As Job, a.Tips as Tips, a.Start ,b.Start As 'Scheduled Start',  " +
                                 "a.B1out As 'Break 1 OUT', " +
                                 "a.B1in As 'Break 1 IN', " +
@@ -274,7 +275,7 @@ namespace Los_Alamos_Timeclock.Manager
                             "UNION " +
                             "Select " +
                                 "b.Date, " +
-                                "CONCAT(c.LName, ', ',c.FName,' ',c.MName) AS Name, " +
+                                "CONCAT(c.LName, ', ',c.FName) AS Name, " +
                                 "a.Status,a.JID As Job, a.Tips as Tips, a.Start ,b.Start As 'Scheduled Start', " +
                                 "a.B1out As 'Break 1 OUT', " +
                                 "a.B1in As 'Break 1 IN', " +
@@ -292,7 +293,7 @@ namespace Los_Alamos_Timeclock.Manager
                             "UNION " +
                             "Select " +
                                 "b.Date, " +
-                                "CONCAT(c.LName, ', ',c.FName,' ',c.MName) AS Name, " +
+                                "CONCAT(c.LName, ', ',c.FName) AS Name, " +
                                 "a.Status,a.JID As Job, a.Tips as Tips, a.Start ,b.Start As 'Scheduled Start', " +
                                 "a.B1out As 'Break 1 OUT', " +
                                 "a.B1in As 'Break 1 IN', " +
@@ -348,6 +349,15 @@ namespace Los_Alamos_Timeclock.Manager
             else
             {
                 return true;
+            }
+        }
+
+        private void datagrid_Cellclick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                calander.Value = DateTime.Parse(datagrid.Rows[e.RowIndex].Cells[0].Value.ToString());
+                employeeDropdownlist.Text = datagrid.Rows[e.RowIndex].Cells[1].Value.ToString();
             }
         }
     }

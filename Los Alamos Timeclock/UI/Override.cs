@@ -54,7 +54,7 @@ namespace Los_Alamos_Timeclock
                                                     "LEFT JOIN Manager c " +
                                                     "ON a.ID=c.ID " +
                                                     "Where a.User='" + userTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "' " +
-                                                    "And a.Password=PASSWORD('" + passTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "')");
+                                                    "And a.Password='" + Main.maininstance.crypt.ComputeHash(passTextbox.Text, "Tlm3AnDR3|aTIv3DlmEn5l0nlN5pA[3", Cryptography.HashName.SHA256) + "'");
 
                     if (Main.reader.HasRows)
                     {

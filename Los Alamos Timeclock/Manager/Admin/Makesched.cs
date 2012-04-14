@@ -208,8 +208,9 @@ namespace Los_Alamos_Timeclock.Manager.Admin
 
         public void populateDatagrid()
         {
-
-            string query = "SELECT Date, CONCAT(LName, ', ',FName) AS Name, Start, End, JID AS Job FROM Schedule JOIN Employee ON Schedule.ID=Employee.ID Where Date>='" + mon.ToString("yyyy-MM-dd") + "' AND Date<='" + sun.ToString("yyyy-MM-dd") + "' ORDER BY Date, Start";
+            String query = "SELECT Date, CONCAT(LName, ', ',FName) AS Name, Start, End, JID AS Job FROM Schedule JOIN Employee ON Schedule.ID=Employee.ID Where Date>='" + mon.ToString("yyyy-MM-dd") + "' AND Date<='" + sun.ToString("yyyy-MM-dd") + "' ORDER BY Date, Start";
+                
+            
             try
             {
                 Main.myConnection.Open();
