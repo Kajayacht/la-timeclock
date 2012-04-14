@@ -34,7 +34,10 @@ namespace Los_Alamos_Timeclock
         DataTable dataTable;
         Boolean existingEntry = false;
         Boolean updating = false;
-        String existingSDate;
+
+        //string to store the value of the sql record's start date
+        String rStartDate = "";
+        
         public Request()
         {
             InitializeComponent();
@@ -89,6 +92,7 @@ namespace Los_Alamos_Timeclock
             }
         }
 
+
         /** Method to update the fields
          * 
          * @author Nate Rush
@@ -128,8 +132,9 @@ namespace Los_Alamos_Timeclock
                     //true if the date is requested
                     if (Main.reader.HasRows)
                     {
-                        existingSDate = DateTime.Parse(Main.reader["SDate"].ToString()).ToString("yyyy-MM-dd");
 
+                        rStartDate = DateTime.Parse(Main.reader["SDate"].ToString()).ToString("yyyy-MM-dd");
+                        deleteButton.Enabled = true;
                         //if the employee is already editing the entry it won't change the fields
                         if (!existingEntry)
                         {
@@ -158,9 +163,11 @@ namespace Los_Alamos_Timeclock
                     {
                         //no entry, so everything goes back to default
                         existingEntry = false;
-                        existingSDate = "";
+                        rStartDate = "";
+                        reasonTextbox.Text = "";
                         requestButton.Text = "Request";
                         endCalander.MinDate = startCalander.Value;
+                        deleteButton.Enabled = false;
                     }
                 }
                 catch (Exception f)
@@ -183,6 +190,7 @@ namespace Los_Alamos_Timeclock
             endCalander.MinDate = startCalander.Value;
         }
 
+
         private void deleteButton_Click(object sender, EventArgs e)
         {
             //checks to see if a valid entry is selected
@@ -194,16 +202,10 @@ namespace Los_Alamos_Timeclock
                 {
 
                     String delete = "DELETE FROM Requests WHERE ID='" + Main.id +
-                                    "' AND SDate='" + startCalander.Value.ToString("yyyy-MM-dd") +
-                                    "' AND EDate='" + endCalander.Value.ToString("yyyy-MM-dd") + "'";
+                                    "' AND SDate='"+ rStartDate +"'";
                     Main.maininstance.sqlCommand(delete);
                     filldt();
                     updateFields();
-                }
-                else
-                {
-                    //no record is selected so there is nothing to delete
-                    MessageBox.Show("No record selected");
                 }
             }
         }
@@ -217,7 +219,7 @@ namespace Los_Alamos_Timeclock
                                 "SET SDate='"+startCalander.Value.ToString("yyyy-MM-dd")+"', "+
                                 "EDate='"+endCalander.Value.ToString("yyyy-MM-dd")+"', "+
                                 "Reason='" + reasonTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'")+"' "+
-                                "WHERE ID='"+Main.id+"' AND SDate='"+existingSDate+"'";
+                                "WHERE ID='"+Main.id+"' AND SDate='"+rStartDate+"'";
                 Main.maininstance.sqlCommand(update);
                 filldt();
                 updateFields();
