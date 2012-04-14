@@ -383,8 +383,16 @@ namespace Los_Alamos_Timeclock
         {
             c = c + " LIMIT 0,1000";
             MySqlCommand command = new MySqlCommand(c, myConnection);
-            reader = command.ExecuteReader();
-            reader.Read();
+
+            try
+            {
+                reader = command.ExecuteReader();
+                reader.Read();
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("ERROR: Failed to read from database");
+            }
         }
 
         /* Method to round time to the nearest 15 minute interval

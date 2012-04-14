@@ -126,11 +126,11 @@
             this.BackgroundImage = global::Los_Alamos_Timeclock.Properties.Resources._1287421014661;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(pictureBox1);
-            this.Controls.Add(pictureBox2);
             this.Controls.Add(this.phoneNumber);
             this.Controls.Add(titleLabel);
             this.Controls.Add(employeeLabel);
             this.Controls.Add(this.employeeDropdownlist);
+            this.Controls.Add(pictureBox2);
             this.DoubleBuffered = true;
             this.Name = "Phonebook";
             this.Size = new System.Drawing.Size(500, 400);

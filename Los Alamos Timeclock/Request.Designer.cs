@@ -114,6 +114,7 @@ namespace Los_Alamos_Timeclock
             this.endCalander.Name = "endCalander";
             this.endCalander.Size = new System.Drawing.Size(200, 20);
             this.endCalander.TabIndex = 1;
+            this.endCalander.ValueChanged += new System.EventHandler(this.endCalander_ValueChanged);
             // 
             // requestButton
             // 

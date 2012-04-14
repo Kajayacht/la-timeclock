@@ -106,8 +106,24 @@ namespace Los_Alamos_Timeclock
                     Main.myConnection.Open();
                     //checks if the date is already requested by the employee
                     Main.maininstance.sqlReader("SELECT * FROM Requests WHERE ID='" + Main.id +
-                                                "' AND SDate<='" + startCalander.Value.ToString("yyyy-MM-dd") +
-                                                "' AND EDate>='" + startCalander.Value.ToString("yyyy-MM-dd") + "'");
+                                                "' AND "+
+
+                                                //the request is in the middle of an already existing request
+                                                "((SDate<='" + startCalander.Value.ToString("yyyy-MM-dd") +
+                                                "' AND EDate>='" + startCalander.Value.ToString("yyyy-MM-dd") + "') "+
+
+                                                //start date is in the middle of a request
+                                                "OR (SDate<='" + startCalander.Value.ToString("yyyy-MM-dd") +
+                                                "' AND EDate>='" + endCalander.Value.ToString("yyyy-MM-dd") + "')"+
+
+                                                //end date is in the middle of a request
+                                                "OR (SDate<='" + endCalander.Value.ToString("yyyy-MM-dd") +
+                                                "' AND EDate>='" + endCalander.Value.ToString("yyyy-MM-dd") + "')" +
+
+                                                //a request is in the middle of the selected dates
+                                                "OR (SDate>='" + startCalander.Value.ToString("yyyy-MM-dd") +
+                                                "' AND EDate<='" + endCalander.Value.ToString("yyyy-MM-dd") + "')" +
+                                                ")");
 
                     //true if the date is requested
                     if (Main.reader.HasRows)
@@ -120,15 +136,18 @@ namespace Los_Alamos_Timeclock
                             //sets field values to the request's values
                             requestButton.Text = "Update Request";
 
-                            if (startCalander.MinDate > DateTime.Parse(Main.reader["SDate"].ToString()).Date)
+                            if (startCalander.MinDate >= DateTime.Parse(Main.reader["SDate"].ToString()).Date)
                             {
                                 startCalander.MinDate = DateTime.Parse(Main.reader["SDate"].ToString()).Date;
                             }
+                            else
+                            {
+                                startCalander.MinDate = DateTime.Today;
+                                endCalander.MinDate = startCalander.Value;
+                            }
 
-                            startCalander.Value = DateTime.Parse(Main.reader["SDate"].ToString()).Date;
                             endCalander.MinDate = startCalander.Value;
                             //prevents requesting negative days off
-                            endCalander.Value = DateTime.Parse(Main.reader["EDate"].ToString()).Date;
                             reasonTextbox.Text = Main.reader["Reason"].ToString();
                         }
 
@@ -161,6 +180,7 @@ namespace Los_Alamos_Timeclock
         private void startCalander_ValueChanged(object sender, EventArgs e)
         {
             updateFields();
+            endCalander.MinDate = startCalander.Value;
         }
 
         private void deleteButton_Click(object sender, EventArgs e)
@@ -205,16 +225,34 @@ namespace Los_Alamos_Timeclock
             //creates a new entry
             else
             {
-                String insert="INSERT INTO Requests VALUES('"+Main.id+"','"+
-                                    startCalander.Value.ToString("yyyy-MM-dd")+"','"+
-                                    endCalander.Value.ToString("yyyy-MM-dd")+"',"+
-                                    "NOW(),'"+
-                                    reasonTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'")+
-                                        "')";
-                Main.maininstance.sqlCommand(insert);
-                filldt();
-                updateFields();
+                Main.myConnection.Open();
+                Main.maininstance.sqlReader("SELECT * FROM Requests WHERE ID='" + Main.id +
+                                                "' AND SDate<='" + startCalander.Value.ToString("yyyy-MM-dd") +
+                                                "' AND EDate>='" + startCalander.Value.ToString("yyyy-MM-dd") + "'");
+                if (Main.reader.HasRows)
+                {
+                    Main.myConnection.Close();
+                    MessageBox.Show("Request cannot overlap another request");
+                }
+                else
+                {
+                    Main.myConnection.Close();
+                    String insert = "INSERT INTO Requests VALUES('" + Main.id + "','" +
+                                        startCalander.Value.ToString("yyyy-MM-dd") + "','" +
+                                        endCalander.Value.ToString("yyyy-MM-dd") + "'," +
+                                        "NOW(),'" +
+                                        reasonTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") +
+                                            "')";
+                    Main.maininstance.sqlCommand(insert);
+                    filldt();
+                    updateFields();
+                }
             }
+        }
+
+        private void endCalander_ValueChanged(object sender, EventArgs e)
+        {
+            updateFields();
         }
     }
 }
