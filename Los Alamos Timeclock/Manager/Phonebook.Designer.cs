@@ -30,10 +30,16 @@
         {
             System.Windows.Forms.Label employeeLabel;
             System.Windows.Forms.Label titleLabel;
+            System.Windows.Forms.PictureBox pictureBox2;
+            System.Windows.Forms.PictureBox pictureBox1;
             this.employeeDropdownlist = new System.Windows.Forms.ComboBox();
             this.phoneNumber = new System.Windows.Forms.Label();
             employeeLabel = new System.Windows.Forms.Label();
             titleLabel = new System.Windows.Forms.Label();
+            pictureBox2 = new System.Windows.Forms.PictureBox();
+            pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // employeeLabel
@@ -87,12 +93,40 @@
             this.phoneNumber.Size = new System.Drawing.Size(0, 20);
             this.phoneNumber.TabIndex = 61;
             // 
+            // pictureBox2
+            // 
+            pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            pictureBox2.Image = global::Los_Alamos_Timeclock.Properties.Resources.shakingMoraca2;
+            pictureBox2.Location = new System.Drawing.Point(0, 215);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new System.Drawing.Size(145, 185);
+            pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 62;
+            pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            pictureBox1.Image = global::Los_Alamos_Timeclock.Properties.Resources.shakingMoraca2;
+            pictureBox1.Location = new System.Drawing.Point(355, 215);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new System.Drawing.Size(145, 185);
+            pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 63;
+            pictureBox1.TabStop = false;
+            // 
             // Phonebook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Los_Alamos_Timeclock.Properties.Resources._1287421014661;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(pictureBox1);
+            this.Controls.Add(pictureBox2);
             this.Controls.Add(this.phoneNumber);
             this.Controls.Add(titleLabel);
             this.Controls.Add(employeeLabel);
@@ -100,6 +134,8 @@
             this.DoubleBuffered = true;
             this.Name = "Phonebook";
             this.Size = new System.Drawing.Size(500, 400);
+            ((System.ComponentModel.ISupportInitialize)(pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

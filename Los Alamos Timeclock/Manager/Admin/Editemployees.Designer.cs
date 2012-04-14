@@ -52,6 +52,8 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             System.Windows.Forms.Label payLabel;
             System.Windows.Forms.Label pass2Label;
             System.Windows.Forms.Label privLabel;
+            System.Windows.Forms.PictureBox pictureBox1;
+            System.Windows.Forms.PictureBox pictureBox2;
             this.employedLabel = new System.Windows.Forms.Label();
             this.employeeDropdownlist = new System.Windows.Forms.ComboBox();
             this.pass1Textbox = new System.Windows.Forms.TextBox();
@@ -64,7 +66,6 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             this.mNameTextbox = new System.Windows.Forms.TextBox();
             this.fNameTextbox = new System.Windows.Forms.TextBox();
             this.saveemployeechangesButton = new System.Windows.Forms.Button();
-            this.deleteButton = new System.Windows.Forms.Button();
             this.privDropdownlist = new System.Windows.Forms.ComboBox();
             this.changeloginButton = new System.Windows.Forms.Button();
             this.newemployeeButton = new System.Windows.Forms.Button();
@@ -100,6 +101,10 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             payLabel = new System.Windows.Forms.Label();
             pass2Label = new System.Windows.Forms.Label();
             privLabel = new System.Windows.Forms.Label();
+            pictureBox1 = new System.Windows.Forms.PictureBox();
+            pictureBox2 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // employeeLabel
@@ -318,7 +323,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             titleLabel.BackColor = System.Drawing.Color.Transparent;
             titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             titleLabel.ForeColor = System.Drawing.Color.White;
-            titleLabel.Location = new System.Drawing.Point(175, 22);
+            titleLabel.Location = new System.Drawing.Point(184, 22);
             titleLabel.Name = "titleLabel";
             titleLabel.Size = new System.Drawing.Size(133, 20);
             titleLabel.TabIndex = 58;
@@ -442,7 +447,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             this.employeeDropdownlist.FormattingEnabled = true;
             this.employeeDropdownlist.Location = new System.Drawing.Point(127, 85);
             this.employeeDropdownlist.Name = "employeeDropdownlist";
-            this.employeeDropdownlist.Size = new System.Drawing.Size(190, 28);
+            this.employeeDropdownlist.Size = new System.Drawing.Size(344, 28);
             this.employeeDropdownlist.TabIndex = 1;
             this.employeeDropdownlist.TabStop = false;
             this.employeeDropdownlist.SelectedIndexChanged += new System.EventHandler(this.employeeDropdownlist_SelectedIndexChanged);
@@ -585,17 +590,6 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             this.saveemployeechangesButton.UseVisualStyleBackColor = true;
             this.saveemployeechangesButton.Click += new System.EventHandler(this.Saveemployee_Click);
             // 
-            // deleteButton
-            // 
-            this.deleteButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.deleteButton.Location = new System.Drawing.Point(225, 119);
-            this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(92, 33);
-            this.deleteButton.TabIndex = 3;
-            this.deleteButton.Text = "Delete";
-            this.deleteButton.UseVisualStyleBackColor = true;
-            this.deleteButton.Click += new System.EventHandler(this.Delete_Click);
-            // 
             // privDropdownlist
             // 
             this.privDropdownlist.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -625,9 +619,9 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             // newemployeeButton
             // 
             this.newemployeeButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.newemployeeButton.Location = new System.Drawing.Point(413, 3);
+            this.newemployeeButton.Location = new System.Drawing.Point(128, 119);
             this.newemployeeButton.Name = "newemployeeButton";
-            this.newemployeeButton.Size = new System.Drawing.Size(75, 75);
+            this.newemployeeButton.Size = new System.Drawing.Size(169, 33);
             this.newemployeeButton.TabIndex = 0;
             this.newemployeeButton.Text = "New Employee";
             this.newemployeeButton.UseVisualStyleBackColor = true;
@@ -717,13 +711,39 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             // quitorfireButton
             // 
             this.quitorfireButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.quitorfireButton.Location = new System.Drawing.Point(128, 119);
+            this.quitorfireButton.Location = new System.Drawing.Point(303, 119);
             this.quitorfireButton.Name = "quitorfireButton";
-            this.quitorfireButton.Size = new System.Drawing.Size(92, 33);
+            this.quitorfireButton.Size = new System.Drawing.Size(168, 33);
             this.quitorfireButton.TabIndex = 2;
-            this.quitorfireButton.Text = "Quit/Fire";
+            this.quitorfireButton.Text = "Quit/Fired";
             this.quitorfireButton.UseVisualStyleBackColor = true;
             this.quitorfireButton.Click += new System.EventHandler(this.quitorfireButton_Click);
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            pictureBox1.Image = global::Los_Alamos_Timeclock.Properties.Resources.shakingMoraca;
+            pictureBox1.Location = new System.Drawing.Point(323, 3);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new System.Drawing.Size(43, 60);
+            pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 78;
+            pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            pictureBox2.Image = global::Los_Alamos_Timeclock.Properties.Resources.shakingMoraca;
+            pictureBox2.Location = new System.Drawing.Point(135, 3);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new System.Drawing.Size(43, 60);
+            pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 79;
+            pictureBox2.TabStop = false;
             // 
             // Editemployees
             // 
@@ -732,6 +752,8 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             this.AutoScroll = true;
             this.BackgroundImage = global::Los_Alamos_Timeclock.Properties.Resources._1287421014661;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(pictureBox2);
+            this.Controls.Add(pictureBox1);
             this.Controls.Add(this.employedLabel);
             this.Controls.Add(this.quitorfireButton);
             this.Controls.Add(this.aZipTextbox);
@@ -753,7 +775,6 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             this.Controls.Add(jobsLabel);
             this.Controls.Add(this.privDropdownlist);
             this.Controls.Add(titleLabel);
-            this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.saveemployeechangesButton);
             this.Controls.Add(this.pass1Textbox);
             this.Controls.Add(this.userTextbox);
@@ -783,6 +804,8 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             this.DoubleBuffered = true;
             this.Name = "Editemployees";
             this.Size = new System.Drawing.Size(500, 1128);
+            ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -801,7 +824,6 @@ namespace Los_Alamos_Timeclock.Manager.Admin
         private System.Windows.Forms.TextBox mNameTextbox;
         private System.Windows.Forms.TextBox fNameTextbox;
         private System.Windows.Forms.Button saveemployeechangesButton;
-        private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.ComboBox privDropdownlist;
         private System.Windows.Forms.Button changeloginButton;
         private System.Windows.Forms.Button newemployeeButton;

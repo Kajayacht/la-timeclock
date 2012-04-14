@@ -166,6 +166,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.jobImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion

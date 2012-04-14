@@ -31,6 +31,8 @@
             System.Windows.Forms.Label titleLabel;
             System.Windows.Forms.Label appSettingsLabel;
             System.Windows.Forms.Label databaseToolsLabel;
+            System.Windows.Forms.PictureBox pictureBox1;
+            System.Windows.Forms.PictureBox pictureBox2;
             this.ipaddressLLabel = new System.Windows.Forms.LinkLabel();
             this.portLLabel = new System.Windows.Forms.LinkLabel();
             this.userLLabel = new System.Windows.Forms.LinkLabel();
@@ -49,6 +51,10 @@
             titleLabel = new System.Windows.Forms.Label();
             appSettingsLabel = new System.Windows.Forms.Label();
             databaseToolsLabel = new System.Windows.Forms.Label();
+            pictureBox1 = new System.Windows.Forms.PictureBox();
+            pictureBox2 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // titleLabel
@@ -76,6 +82,19 @@
             appSettingsLabel.Size = new System.Drawing.Size(174, 24);
             appSettingsLabel.TabIndex = 12;
             appSettingsLabel.Text = "Application Settings";
+            // 
+            // databaseToolsLabel
+            // 
+            databaseToolsLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            databaseToolsLabel.AutoSize = true;
+            databaseToolsLabel.BackColor = System.Drawing.Color.Transparent;
+            databaseToolsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            databaseToolsLabel.ForeColor = System.Drawing.Color.White;
+            databaseToolsLabel.Location = new System.Drawing.Point(180, 195);
+            databaseToolsLabel.Name = "databaseToolsLabel";
+            databaseToolsLabel.Size = new System.Drawing.Size(140, 24);
+            databaseToolsLabel.TabIndex = 14;
+            databaseToolsLabel.Text = "Database Tools";
             // 
             // ipaddressLLabel
             // 
@@ -271,18 +290,31 @@
             this.cleanupEntriesButton.UseVisualStyleBackColor = true;
             this.cleanupEntriesButton.Click += new System.EventHandler(this.cleanupButton_Click);
             // 
-            // databaseToolsLabel
+            // pictureBox1
             // 
-            databaseToolsLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            databaseToolsLabel.AutoSize = true;
-            databaseToolsLabel.BackColor = System.Drawing.Color.Transparent;
-            databaseToolsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            databaseToolsLabel.ForeColor = System.Drawing.Color.White;
-            databaseToolsLabel.Location = new System.Drawing.Point(180, 195);
-            databaseToolsLabel.Name = "databaseToolsLabel";
-            databaseToolsLabel.Size = new System.Drawing.Size(140, 24);
-            databaseToolsLabel.TabIndex = 14;
-            databaseToolsLabel.Text = "Database Tools";
+            pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            pictureBox1.Image = global::Los_Alamos_Timeclock.Properties.Resources.shakingMoraca2;
+            pictureBox1.Location = new System.Drawing.Point(343, 13);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new System.Drawing.Size(73, 53);
+            pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 73;
+            pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            pictureBox2.Image = global::Los_Alamos_Timeclock.Properties.Resources.shakingMoraca2;
+            pictureBox2.Location = new System.Drawing.Point(84, 13);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new System.Drawing.Size(73, 53);
+            pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 74;
+            pictureBox2.TabStop = false;
             // 
             // Settings
             // 
@@ -291,6 +323,8 @@
             this.AutoScroll = true;
             this.BackgroundImage = global::Los_Alamos_Timeclock.Properties.Resources._1287421014661;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(pictureBox2);
+            this.Controls.Add(pictureBox1);
             this.Controls.Add(databaseToolsLabel);
             this.Controls.Add(this.cleanupEntriesButton);
             this.Controls.Add(this.saveAppSettings);
@@ -312,6 +346,8 @@
             this.DoubleBuffered = true;
             this.Name = "Settings";
             this.Size = new System.Drawing.Size(500, 575);
+            ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

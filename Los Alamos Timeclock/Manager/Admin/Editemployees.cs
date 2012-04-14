@@ -344,34 +344,6 @@ namespace Los_Alamos_Timeclock.Manager.Admin
 
         }
 
-        private void Delete_Click(object sender, EventArgs e)
-        {
-            if (Main.employeeList.Count == 0)
-            {
-                MessageBox.Show("No Employee Selected");
-            }
-            else
-            {
-                if (id == Main.id)
-                {
-                    MessageBox.Show("You cannot delete your own account");
-                }
-                else
-                {
-                    DialogResult result = MessageBox.Show("Are you sure you want to delete " + fNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + " " + mNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + " " + lNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "? All information related to " + fNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + " " + mNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + " " + lNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + " will also be removed.",
-                "Delete Employee?", MessageBoxButtons.YesNo);
-
-                    if (result == DialogResult.Yes && Main.permissions=="Admin")
-                    {
-                            Main.maininstance.sqlCommand("DELETE FROM Employee WHERE ID='" + id + "'");
-                            Log.writeLog(Main.eName + " deleted employee: \n " + fNameTextbox.Text + " " + mNameTextbox.Text + " " + lNameTextbox.Text + "\n ID= " + id);
-                            Main.employeeList = Main.maininstance.getEmployees();
-                            employeeDropdownlist.DataSource = Main.employeeList;
-                    }
-                }
-            }
-        }
-
         private void Jobs_SelectedIndexChanged(object sender, EventArgs e)
         {
             Main.myConnection.Open();

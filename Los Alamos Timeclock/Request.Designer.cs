@@ -44,6 +44,42 @@ namespace Los_Alamos_Timeclock
             ((System.ComponentModel.ISupportInitialize)(this.requestsDatagrid)).BeginInit();
             this.SuspendLayout();
             // 
+            // fromLabel
+            // 
+            fromLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            fromLabel.AutoSize = true;
+            fromLabel.BackColor = System.Drawing.Color.Transparent;
+            fromLabel.ForeColor = System.Drawing.Color.White;
+            fromLabel.Location = new System.Drawing.Point(17, 288);
+            fromLabel.Name = "fromLabel";
+            fromLabel.Size = new System.Drawing.Size(33, 13);
+            fromLabel.TabIndex = 3;
+            fromLabel.Text = "From:";
+            // 
+            // toLabel
+            // 
+            toLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            toLabel.AutoSize = true;
+            toLabel.BackColor = System.Drawing.Color.Transparent;
+            toLabel.ForeColor = System.Drawing.Color.White;
+            toLabel.Location = new System.Drawing.Point(262, 288);
+            toLabel.Name = "toLabel";
+            toLabel.Size = new System.Drawing.Size(23, 13);
+            toLabel.TabIndex = 4;
+            toLabel.Text = "To:";
+            // 
+            // label1
+            // 
+            label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            label1.AutoSize = true;
+            label1.BackColor = System.Drawing.Color.Transparent;
+            label1.ForeColor = System.Drawing.Color.White;
+            label1.Location = new System.Drawing.Point(3, 318);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(47, 13);
+            label1.TabIndex = 8;
+            label1.Text = "Reason:";
+            // 
             // requestsDatagrid
             // 
             this.requestsDatagrid.AllowUserToAddRows = false;
@@ -79,30 +115,6 @@ namespace Los_Alamos_Timeclock
             this.endCalander.Size = new System.Drawing.Size(200, 20);
             this.endCalander.TabIndex = 1;
             // 
-            // fromLabel
-            // 
-            fromLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            fromLabel.AutoSize = true;
-            fromLabel.BackColor = System.Drawing.Color.Transparent;
-            fromLabel.ForeColor = System.Drawing.Color.White;
-            fromLabel.Location = new System.Drawing.Point(17, 288);
-            fromLabel.Name = "fromLabel";
-            fromLabel.Size = new System.Drawing.Size(33, 13);
-            fromLabel.TabIndex = 3;
-            fromLabel.Text = "From:";
-            // 
-            // toLabel
-            // 
-            toLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            toLabel.AutoSize = true;
-            toLabel.BackColor = System.Drawing.Color.Transparent;
-            toLabel.ForeColor = System.Drawing.Color.White;
-            toLabel.Location = new System.Drawing.Point(262, 288);
-            toLabel.Name = "toLabel";
-            toLabel.Size = new System.Drawing.Size(23, 13);
-            toLabel.TabIndex = 4;
-            toLabel.Text = "To:";
-            // 
             // requestButton
             // 
             this.requestButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -133,18 +145,6 @@ namespace Los_Alamos_Timeclock
             this.reasonTextbox.Size = new System.Drawing.Size(273, 67);
             this.reasonTextbox.TabIndex = 2;
             this.reasonTextbox.Text = "";
-            // 
-            // label1
-            // 
-            label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            label1.AutoSize = true;
-            label1.BackColor = System.Drawing.Color.Transparent;
-            label1.ForeColor = System.Drawing.Color.White;
-            label1.Location = new System.Drawing.Point(3, 318);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(47, 13);
-            label1.TabIndex = 8;
-            label1.Text = "Reason:";
             // 
             // Request
             // 

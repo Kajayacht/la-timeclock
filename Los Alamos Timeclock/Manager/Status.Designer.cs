@@ -36,7 +36,8 @@ namespace Los_Alamos_Timeclock.Manager
             System.Windows.Forms.Label break1Label;
             System.Windows.Forms.Label break2Label;
             System.Windows.Forms.Label lunchLabel;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.PictureBox pictureBox1;
             this.employeeDropdownlist = new System.Windows.Forms.ComboBox();
             this.calander = new System.Windows.Forms.DateTimePicker();
             this.updatescheduleButton = new System.Windows.Forms.Button();
@@ -60,7 +61,9 @@ namespace Los_Alamos_Timeclock.Manager
             break1Label = new System.Windows.Forms.Label();
             break2Label = new System.Windows.Forms.Label();
             lunchLabel = new System.Windows.Forms.Label();
+            pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.datagrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // employeeLabel
@@ -172,7 +175,7 @@ namespace Los_Alamos_Timeclock.Manager
             this.updatescheduleButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.updatescheduleButton.Location = new System.Drawing.Point(378, 294);
             this.updatescheduleButton.Name = "updatescheduleButton";
-            this.updatescheduleButton.Size = new System.Drawing.Size(97, 95);
+            this.updatescheduleButton.Size = new System.Drawing.Size(97, 100);
             this.updatescheduleButton.TabIndex = 11;
             this.updatescheduleButton.Text = "Update";
             this.updatescheduleButton.UseVisualStyleBackColor = true;
@@ -182,8 +185,8 @@ namespace Los_Alamos_Timeclock.Manager
             // 
             this.datagrid.AllowUserToAddRows = false;
             this.datagrid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.datagrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.datagrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.datagrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -203,7 +206,7 @@ namespace Los_Alamos_Timeclock.Manager
             this.jobsDropdownlist.FormattingEnabled = true;
             this.jobsDropdownlist.Location = new System.Drawing.Point(79, 373);
             this.jobsDropdownlist.Name = "jobsDropdownlist";
-            this.jobsDropdownlist.Size = new System.Drawing.Size(190, 21);
+            this.jobsDropdownlist.Size = new System.Drawing.Size(214, 21);
             this.jobsDropdownlist.TabIndex = 10;
             // 
             // startTextbox
@@ -314,12 +317,26 @@ namespace Los_Alamos_Timeclock.Manager
             this.lunchdashLabel.TabIndex = 27;
             this.lunchdashLabel.Text = "--";
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            pictureBox1.Image = global::Los_Alamos_Timeclock.Properties.Resources.dancing_cactus;
+            pictureBox1.Location = new System.Drawing.Point(299, 293);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new System.Drawing.Size(73, 101);
+            pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 72;
+            pictureBox1.TabStop = false;
+            // 
             // Status
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Los_Alamos_Timeclock.Properties.Resources._1287421014661;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(pictureBox1);
             this.Controls.Add(this.lunchdashLabel);
             this.Controls.Add(this.linTextbox);
             this.Controls.Add(this.loutTextbox);
@@ -347,6 +364,7 @@ namespace Los_Alamos_Timeclock.Manager
             this.Name = "Status";
             this.Size = new System.Drawing.Size(500, 400);
             ((System.ComponentModel.ISupportInitialize)(this.datagrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

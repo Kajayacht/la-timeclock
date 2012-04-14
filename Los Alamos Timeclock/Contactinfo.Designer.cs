@@ -37,6 +37,8 @@ namespace Los_Alamos_Timeclock
             System.Windows.Forms.Label cityLabel;
             System.Windows.Forms.Label emailLabel;
             System.Windows.Forms.Label phoneLabel;
+            System.Windows.Forms.PictureBox pictureBox1;
+            System.Windows.Forms.PictureBox pictureBox2;
             this.Al1 = new System.Windows.Forms.TextBox();
             this.Al2 = new System.Windows.Forms.TextBox();
             this.Az = new System.Windows.Forms.MaskedTextBox();
@@ -53,15 +55,11 @@ namespace Los_Alamos_Timeclock
             cityLabel = new System.Windows.Forms.Label();
             emailLabel = new System.Windows.Forms.Label();
             phoneLabel = new System.Windows.Forms.Label();
+            pictureBox1 = new System.Windows.Forms.PictureBox();
+            pictureBox2 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox2)).BeginInit();
             this.SuspendLayout();
-            // 
-            // Al1
-            // 
-            this.Al1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Al1.Location = new System.Drawing.Point(98, 93);
-            this.Al1.Name = "Al1";
-            this.Al1.Size = new System.Drawing.Size(361, 20);
-            this.Al1.TabIndex = 0;
             // 
             // line1Label
             // 
@@ -83,19 +81,11 @@ namespace Los_Alamos_Timeclock
             titleLabel.BackColor = System.Drawing.Color.Transparent;
             titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             titleLabel.ForeColor = System.Drawing.Color.White;
-            titleLabel.Location = new System.Drawing.Point(157, 15);
+            titleLabel.Location = new System.Drawing.Point(157, 30);
             titleLabel.Name = "titleLabel";
             titleLabel.Size = new System.Drawing.Size(217, 25);
             titleLabel.TabIndex = 3;
             titleLabel.Text = "Contact Information";
-            // 
-            // Al2
-            // 
-            this.Al2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Al2.Location = new System.Drawing.Point(98, 128);
-            this.Al2.Name = "Al2";
-            this.Al2.Size = new System.Drawing.Size(361, 20);
-            this.Al2.TabIndex = 1;
             // 
             // line2Label
             // 
@@ -109,6 +99,92 @@ namespace Los_Alamos_Timeclock
             line2Label.Size = new System.Drawing.Size(68, 40);
             line2Label.TabIndex = 6;
             line2Label.Text = "Address\r\nLine 2:";
+            // 
+            // zipLabel
+            // 
+            zipLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            zipLabel.AutoSize = true;
+            zipLabel.BackColor = System.Drawing.Color.Transparent;
+            zipLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            zipLabel.ForeColor = System.Drawing.Color.White;
+            zipLabel.Location = new System.Drawing.Point(15, 211);
+            zipLabel.Margin = new System.Windows.Forms.Padding(3);
+            zipLabel.Name = "zipLabel";
+            zipLabel.Size = new System.Drawing.Size(77, 20);
+            zipLabel.TabIndex = 43;
+            zipLabel.Text = "Zip Code:";
+            // 
+            // stateLabel
+            // 
+            stateLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            stateLabel.AutoSize = true;
+            stateLabel.BackColor = System.Drawing.Color.Transparent;
+            stateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            stateLabel.ForeColor = System.Drawing.Color.White;
+            stateLabel.Location = new System.Drawing.Point(40, 185);
+            stateLabel.Margin = new System.Windows.Forms.Padding(3);
+            stateLabel.Name = "stateLabel";
+            stateLabel.Size = new System.Drawing.Size(52, 20);
+            stateLabel.TabIndex = 42;
+            stateLabel.Text = "State:";
+            // 
+            // cityLabel
+            // 
+            cityLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            cityLabel.AutoSize = true;
+            cityLabel.BackColor = System.Drawing.Color.Transparent;
+            cityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            cityLabel.ForeColor = System.Drawing.Color.White;
+            cityLabel.Location = new System.Drawing.Point(53, 159);
+            cityLabel.Margin = new System.Windows.Forms.Padding(3);
+            cityLabel.Name = "cityLabel";
+            cityLabel.Size = new System.Drawing.Size(39, 20);
+            cityLabel.TabIndex = 41;
+            cityLabel.Text = "City:";
+            // 
+            // emailLabel
+            // 
+            emailLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            emailLabel.AutoSize = true;
+            emailLabel.BackColor = System.Drawing.Color.Transparent;
+            emailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            emailLabel.ForeColor = System.Drawing.Color.White;
+            emailLabel.Location = new System.Drawing.Point(40, 285);
+            emailLabel.Margin = new System.Windows.Forms.Padding(3);
+            emailLabel.Name = "emailLabel";
+            emailLabel.Size = new System.Drawing.Size(52, 20);
+            emailLabel.TabIndex = 70;
+            emailLabel.Text = "Email:";
+            // 
+            // phoneLabel
+            // 
+            phoneLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            phoneLabel.AutoSize = true;
+            phoneLabel.BackColor = System.Drawing.Color.Transparent;
+            phoneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            phoneLabel.ForeColor = System.Drawing.Color.White;
+            phoneLabel.Location = new System.Drawing.Point(37, 259);
+            phoneLabel.Margin = new System.Windows.Forms.Padding(3);
+            phoneLabel.Name = "phoneLabel";
+            phoneLabel.Size = new System.Drawing.Size(55, 20);
+            phoneLabel.TabIndex = 69;
+            phoneLabel.Text = "Phone";
+            // 
+            // Al1
+            // 
+            this.Al1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Al1.Location = new System.Drawing.Point(98, 93);
+            this.Al1.Name = "Al1";
+            this.Al1.Size = new System.Drawing.Size(361, 20);
+            this.Al1.TabIndex = 0;
+            // 
+            // Al2
+            // 
+            this.Al2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Al2.Location = new System.Drawing.Point(98, 128);
+            this.Al2.Name = "Al2";
+            this.Al2.Size = new System.Drawing.Size(361, 20);
+            this.Al2.TabIndex = 1;
             // 
             // Az
             // 
@@ -191,48 +267,6 @@ namespace Los_Alamos_Timeclock
             this.Ac.Size = new System.Drawing.Size(361, 20);
             this.Ac.TabIndex = 2;
             // 
-            // zipLabel
-            // 
-            zipLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            zipLabel.AutoSize = true;
-            zipLabel.BackColor = System.Drawing.Color.Transparent;
-            zipLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            zipLabel.ForeColor = System.Drawing.Color.White;
-            zipLabel.Location = new System.Drawing.Point(15, 211);
-            zipLabel.Margin = new System.Windows.Forms.Padding(3);
-            zipLabel.Name = "zipLabel";
-            zipLabel.Size = new System.Drawing.Size(77, 20);
-            zipLabel.TabIndex = 43;
-            zipLabel.Text = "Zip Code:";
-            // 
-            // stateLabel
-            // 
-            stateLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            stateLabel.AutoSize = true;
-            stateLabel.BackColor = System.Drawing.Color.Transparent;
-            stateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            stateLabel.ForeColor = System.Drawing.Color.White;
-            stateLabel.Location = new System.Drawing.Point(40, 185);
-            stateLabel.Margin = new System.Windows.Forms.Padding(3);
-            stateLabel.Name = "stateLabel";
-            stateLabel.Size = new System.Drawing.Size(52, 20);
-            stateLabel.TabIndex = 42;
-            stateLabel.Text = "State:";
-            // 
-            // cityLabel
-            // 
-            cityLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            cityLabel.AutoSize = true;
-            cityLabel.BackColor = System.Drawing.Color.Transparent;
-            cityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            cityLabel.ForeColor = System.Drawing.Color.White;
-            cityLabel.Location = new System.Drawing.Point(53, 159);
-            cityLabel.Margin = new System.Windows.Forms.Padding(3);
-            cityLabel.Name = "cityLabel";
-            cityLabel.Size = new System.Drawing.Size(39, 20);
-            cityLabel.TabIndex = 41;
-            cityLabel.Text = "City:";
-            // 
             // Phone
             // 
             this.Phone.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -250,34 +284,6 @@ namespace Los_Alamos_Timeclock
             this.Email.Size = new System.Drawing.Size(361, 20);
             this.Email.TabIndex = 6;
             // 
-            // emailLabel
-            // 
-            emailLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            emailLabel.AutoSize = true;
-            emailLabel.BackColor = System.Drawing.Color.Transparent;
-            emailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            emailLabel.ForeColor = System.Drawing.Color.White;
-            emailLabel.Location = new System.Drawing.Point(40, 285);
-            emailLabel.Margin = new System.Windows.Forms.Padding(3);
-            emailLabel.Name = "emailLabel";
-            emailLabel.Size = new System.Drawing.Size(52, 20);
-            emailLabel.TabIndex = 70;
-            emailLabel.Text = "Email:";
-            // 
-            // phoneLabel
-            // 
-            phoneLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            phoneLabel.AutoSize = true;
-            phoneLabel.BackColor = System.Drawing.Color.Transparent;
-            phoneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            phoneLabel.ForeColor = System.Drawing.Color.White;
-            phoneLabel.Location = new System.Drawing.Point(37, 259);
-            phoneLabel.Margin = new System.Windows.Forms.Padding(3);
-            phoneLabel.Name = "phoneLabel";
-            phoneLabel.Size = new System.Drawing.Size(55, 20);
-            phoneLabel.TabIndex = 69;
-            phoneLabel.Text = "Phone";
-            // 
             // updateButton
             // 
             this.updateButton.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -289,12 +295,40 @@ namespace Los_Alamos_Timeclock
             this.updateButton.UseVisualStyleBackColor = true;
             this.updateButton.Click += new System.EventHandler(this.Update_Click);
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            pictureBox1.Image = global::Los_Alamos_Timeclock.Properties.Resources.shakingMoraca;
+            pictureBox1.Location = new System.Drawing.Point(380, 15);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new System.Drawing.Size(43, 60);
+            pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 71;
+            pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            pictureBox2.Image = global::Los_Alamos_Timeclock.Properties.Resources.shakingMoraca;
+            pictureBox2.Location = new System.Drawing.Point(108, 15);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new System.Drawing.Size(43, 60);
+            pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 72;
+            pictureBox2.TabStop = false;
+            // 
             // Contactinfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Los_Alamos_Timeclock.Properties.Resources._1287421014661;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(pictureBox2);
+            this.Controls.Add(pictureBox1);
             this.Controls.Add(this.updateButton);
             this.Controls.Add(this.Phone);
             this.Controls.Add(this.Email);
@@ -314,6 +348,8 @@ namespace Los_Alamos_Timeclock
             this.DoubleBuffered = true;
             this.Name = "Contactinfo";
             this.Size = new System.Drawing.Size(500, 400);
+            ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
