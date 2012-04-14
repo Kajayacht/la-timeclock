@@ -11,6 +11,7 @@ using MySql.Data.MySqlClient;
 using Los_Alamos_Timeclock;
 using System.Collections;
 using System.Diagnostics;
+using Los_Alamos_Timeclock.UI;
 
 namespace Los_Alamos_Timeclock
 {
@@ -45,6 +46,7 @@ namespace Los_Alamos_Timeclock
         public static MySqlDataReader reader;
         public static string permissions = "";
         public Cryptography crypt = new Cryptography();
+        public static Cleanup clup=new Cleanup();
 
         public Main()
         {
@@ -476,6 +478,9 @@ namespace Los_Alamos_Timeclock
                 permissions = "0";
                 Manager.Admin.Editemployees.t.Close();
                 Manager.Admin.Makesched.l.Close();
+                Clockinout.o.Close();
+                clup.Close();
+
                 maininstance.menu1.Hide();
                 panel1.Controls.Clear();
                 panel1.Controls.Add(new Login());
@@ -483,9 +488,12 @@ namespace Los_Alamos_Timeclock
                 MessageBox.Show("You have been logged out due to inactivity");
             }
         }
+
+        //event that registers user inputs
         private int mX = 0, mY = 0;
         public virtual void notIdle_event(object sender, EventArgs e)
         {
+            //checks if mouse has moved compared to last run, if it has reset the timer
             if (MousePosition.X != mX && MousePosition.Y != mY)
             {
                 mX = MousePosition.X;

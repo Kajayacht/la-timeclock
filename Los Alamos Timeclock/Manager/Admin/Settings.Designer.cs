@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.Label titleLabel;
             System.Windows.Forms.Label appSettingsLabel;
+            System.Windows.Forms.Label databaseToolsLabel;
             this.ipaddressLLabel = new System.Windows.Forms.LinkLabel();
             this.portLLabel = new System.Windows.Forms.LinkLabel();
             this.userLLabel = new System.Windows.Forms.LinkLabel();
@@ -44,8 +45,10 @@
             this.showCurrentEmployeesCheckbox = new System.Windows.Forms.CheckBox();
             this.showPreviousEmployeesCheckbox = new System.Windows.Forms.CheckBox();
             this.saveAppSettings = new System.Windows.Forms.Button();
+            this.cleanupEntriesButton = new System.Windows.Forms.Button();
             titleLabel = new System.Windows.Forms.Label();
             appSettingsLabel = new System.Windows.Forms.Label();
+            databaseToolsLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // titleLabel
@@ -257,6 +260,30 @@
             this.saveAppSettings.UseVisualStyleBackColor = true;
             this.saveAppSettings.Click += new System.EventHandler(this.saveAppSettings_Click);
             // 
+            // cleanupEntriesButton
+            // 
+            this.cleanupEntriesButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cleanupEntriesButton.Location = new System.Drawing.Point(190, 226);
+            this.cleanupEntriesButton.Name = "cleanupEntriesButton";
+            this.cleanupEntriesButton.Size = new System.Drawing.Size(121, 26);
+            this.cleanupEntriesButton.TabIndex = 13;
+            this.cleanupEntriesButton.Text = "Cleanup Entries";
+            this.cleanupEntriesButton.UseVisualStyleBackColor = true;
+            this.cleanupEntriesButton.Click += new System.EventHandler(this.cleanupButton_Click);
+            // 
+            // databaseToolsLabel
+            // 
+            databaseToolsLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            databaseToolsLabel.AutoSize = true;
+            databaseToolsLabel.BackColor = System.Drawing.Color.Transparent;
+            databaseToolsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            databaseToolsLabel.ForeColor = System.Drawing.Color.White;
+            databaseToolsLabel.Location = new System.Drawing.Point(180, 195);
+            databaseToolsLabel.Name = "databaseToolsLabel";
+            databaseToolsLabel.Size = new System.Drawing.Size(140, 24);
+            databaseToolsLabel.TabIndex = 14;
+            databaseToolsLabel.Text = "Database Tools";
+            // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -264,6 +291,8 @@
             this.AutoScroll = true;
             this.BackgroundImage = global::Los_Alamos_Timeclock.Properties.Resources._1287421014661;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(databaseToolsLabel);
+            this.Controls.Add(this.cleanupEntriesButton);
             this.Controls.Add(this.saveAppSettings);
             this.Controls.Add(this.showPreviousEmployeesCheckbox);
             this.Controls.Add(this.showCurrentEmployeesCheckbox);
@@ -304,6 +333,7 @@
         private System.Windows.Forms.CheckBox showCurrentEmployeesCheckbox;
         private System.Windows.Forms.CheckBox showPreviousEmployeesCheckbox;
         private System.Windows.Forms.Button saveAppSettings;
+        private System.Windows.Forms.Button cleanupEntriesButton;
 
     }
 }

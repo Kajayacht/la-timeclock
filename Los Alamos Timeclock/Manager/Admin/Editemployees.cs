@@ -475,7 +475,15 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                     }
                     else
                     {
-                        t.Show();
+                        if (!t.Visible)
+                        {
+                            t = new TerminationConsole();
+                            t.Show();
+                        }
+                        else
+                        {
+                            t.BringToFront();
+                        }
                     }
                 }
             }

@@ -316,7 +316,15 @@ namespace Los_Alamos_Timeclock.Manager.Admin
 
         private void showRequests_Click(object sender, EventArgs e)
         {
-            l.Show();
+            if (!l.Visible)
+            {
+                l = new Overview();
+                l.Show();
+            }
+            else
+            {
+                l.BringToFront();
+            }
         }
     }
 }

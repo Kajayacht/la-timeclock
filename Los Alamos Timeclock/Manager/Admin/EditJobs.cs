@@ -114,7 +114,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                 if (validate())
                 {
                     MessageBox.Show("Insert successful");
-                    Main.maininstance.sqlCommand("INSERT INTO Jobs Values('" + jobnameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "','" + Decimal.Parse(startingpayTextbox.Text) + "','" + tippedBox.Checked + "','"+filename+")");
+                    Main.maininstance.sqlCommand("INSERT INTO Jobs Values('" + jobnameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "','" + Decimal.Parse(startingpayTextbox.Text) + "','" + tippedBox.Checked + "','"+filename+"')");
                     Log.writeLog(Main.eName + " added job: " + "\n Job= " + jobnameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "\n Starting Pay= " + Decimal.Parse(startingpayTextbox.Text) + "\n Tipped Job= " + tippedBox.Checked);
                     refreshJobs();
                 }

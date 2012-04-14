@@ -33,6 +33,8 @@ namespace Los_Alamos_Timeclock
 
     public partial class Clockinout : UserControl
     {
+        public static Override o = new Override();
+
         public Boolean scheduled = false;
         DateTime startTime, endTime;
         string date;
@@ -286,8 +288,15 @@ namespace Los_Alamos_Timeclock
             }
             else
             {
-                Override o = new Override();
-                o.Show();
+                if (!o.Visible)
+                {
+                    o = new Override();
+                    o.Show();
+                }
+                else
+                {
+                    o.BringToFront();
+                }
             }
         }
     }

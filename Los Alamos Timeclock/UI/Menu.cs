@@ -41,8 +41,10 @@ namespace Los_Alamos_Timeclock
         {
             Main.maininstance.stopTimer();
             Main.permissions = "0";
+            Clockinout.o.Close();
             Manager.Admin.Editemployees.t.Close();
             Manager.Admin.Makesched.l.Close();
+            Main.clup.Close();
             Main.maininstance.menu1.Hide();
             Main.maininstance.panel1.Controls.Clear();
             Main.maininstance.panel1.Controls.Add(new Login());

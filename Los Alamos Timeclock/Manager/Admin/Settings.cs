@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using MySql.Data.MySqlClient;
+using Los_Alamos_Timeclock.UI;
 
 
 
@@ -32,6 +33,7 @@ namespace Los_Alamos_Timeclock
 
     public partial class Settings : UserControl
     {
+
         public Settings()
         {
             InitializeComponent();
@@ -118,7 +120,6 @@ namespace Los_Alamos_Timeclock
             {
                 Main.myConnection.Close();
             }
-
         }
 
         private void saveAppSettings_Click(object sender, EventArgs e)
@@ -134,6 +135,19 @@ namespace Los_Alamos_Timeclock
                 Properties.Settings.Default.Save();
                 Main.employeeList= Main.maininstance.getEmployees();
                 MessageBox.Show("Application Settings Saved");
+            }
+        }
+
+        private void cleanupButton_Click(object sender, EventArgs e)
+        {
+            if (!Main.clup.Visible)
+            {
+                Main.clup = new Cleanup();
+                Main.clup.Show();
+            }
+            else
+            {
+                Main.clup.BringToFront();
             }
         }
     }
