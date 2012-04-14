@@ -41,6 +41,8 @@ namespace Los_Alamos_Timeclock.Manager.Admin
         {
             InitializeComponent();
 
+
+            datagrid.CellClick += new DataGridViewCellEventHandler(datagrid_Cellclick);
             this.MouseMove += new MouseEventHandler(Main.maininstance.notIdle_event);
             this.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
             datagrid.MouseMove += new MouseEventHandler(Main.maininstance.notIdle_event);
@@ -65,12 +67,6 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             employeeDropdownlist.DisplayMember = "getname";
             employeeDropdownlist.ValueMember = "gid";
             employeeDropdownlist.DataSource = Main.employeeList;
-        }
-
-
-        private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
-        {
-            populateDatagrid();
         }
 
         private void update_Click(object sender, EventArgs e)
@@ -133,10 +129,14 @@ namespace Los_Alamos_Timeclock.Manager.Admin
         private void calander_DateChanged(object sender, EventArgs e)
         {
             date = calander.Value.ToString("yyyy-MM-dd");
-            mon = getmon(calander.Value);
-            sun = mon.AddDays(6);
-            populateDatagrid();
-            employeeUpdate();
+
+            if (calander.Value > mon.AddDays(6))
+            {
+                mon = getmon(calander.Value);
+                sun = mon.AddDays(6);
+                populateDatagrid();
+                employeeUpdate();
+            }
         }
         private void employeeDropdownlist_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -146,54 +146,70 @@ namespace Los_Alamos_Timeclock.Manager.Admin
 
         public void employeeUpdate()
         {
-            if (Main.myConnection.State == ConnectionState.Open)
+            try
             {
-                Main.reader.Close();
-                Main.myConnection.Close();
-            }
+                Main.myConnection.Open();
+                Main.maininstance.sqlReader("Select a.*, b.EDate from Schedule a JOIN Employee b ON a.ID=b.ID where a.ID='" + ID + "' AND a.Date='" + date + "'");
 
-            Main.myConnection.Open();
-            Main.maininstance.sqlReader("Select a.*, b.EDate from Schedule a JOIN Employee b ON a.ID=b.ID where a.ID='" + ID + "' AND a.Date='" + date + "'");
-
-            if (Main.reader.HasRows)
-            {
-                if (Main.reader["EDate"].ToString() != "")
+                if (Main.reader.HasRows)
                 {
-                    terminated = true;
-                    lastDay = DateTime.Parse(Main.reader["EDate"].ToString());
+                    if (Main.reader["EDate"].ToString() != "")
+                    {
+                        terminated = true;
+                        lastDay = DateTime.Parse(Main.reader["EDate"].ToString());
+                    }
+                    else
+                    {
+                        terminated = false;
+                    }
+
+                    scheduled = true;
+                    TimeSpan a = TimeSpan.Parse(Main.reader["Start"].ToString());
+                    startHourDropdownlist.Text = a.Hours.ToString();
+
+                    if (a.Minutes == 0)
+                    {
+                        startMinDropdownlist.Text = "00";
+                    }
+                    else
+                    {
+                        startMinDropdownlist.Text = a.Minutes.ToString();
+                    }
+                    a = TimeSpan.Parse(Main.reader["End"].ToString());
+                    endHourDropdownlist.Text = a.Hours.ToString();
+                    if (a.Minutes == 0)
+                    {
+                        endMinDropdownlist.Text = "00";
+                    }
+                    else
+                    {
+                        endMinDropdownlist.Text = a.Minutes.ToString();
+                    }
+                    jobsDropdownlist.Text = Main.reader["JID"].ToString();
                 }
                 else
                 {
-                    terminated = false;
+                    scheduled = false;
+                    startHourDropdownlist.Text = "";
+                    startMinDropdownlist.Text = "";
+                    endHourDropdownlist.Text = "";
+                    endMinDropdownlist.Text = "";
+                    jobsDropdownlist.Text = "";
                 }
-
-                scheduled = true;
-                TimeSpan a = TimeSpan.Parse(Main.reader["Start"].ToString());
-                startHourDropdownlist.Text = a.Hours.ToString();
-                startMinDropdownlist.Text = a.Minutes.ToString();
-                a = TimeSpan.Parse(Main.reader["End"].ToString());
-                endHourDropdownlist.Text = a.Hours.ToString();
-                endMinDropdownlist.Text = a.Minutes.ToString();
-                jobsDropdownlist.Text = Main.reader["JID"].ToString();
+                clength();
+                Main.reader.Close();
+                Main.myConnection.Close();
             }
-            else
+            finally
             {
-                scheduled = false;
-                startHourDropdownlist.Text = "";
-                startMinDropdownlist.Text = "";
-                endHourDropdownlist.Text = "";
-                endMinDropdownlist.Text = "";
-                jobsDropdownlist.Text = "";
+                Main.myConnection.Close();
             }
-            clength();
-            Main.reader.Close();
-            Main.myConnection.Close();
         }
 
         public void populateDatagrid()
         {
 
-            string query = "SELECT Date, CONCAT(LName, ', ',FName,' ',MName) AS Name, Start, End, JID AS Job FROM Schedule JOIN Employee ON Schedule.ID=Employee.ID Where Date>='" + mon.ToString("yyyy-MM-dd") + "' AND Date<='" + sun.ToString("yyyy-MM-dd") + "' ORDER BY Date, Start";
+            string query = "SELECT Date, CONCAT(LName, ', ',FName) AS Name, Start, End, JID AS Job FROM Schedule JOIN Employee ON Schedule.ID=Employee.ID Where Date>='" + mon.ToString("yyyy-MM-dd") + "' AND Date<='" + sun.ToString("yyyy-MM-dd") + "' ORDER BY Date, Start";
             try
             {
                 Main.myConnection.Open();
@@ -324,6 +340,15 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             else
             {
                 l.BringToFront();
+            }
+        }
+
+        private void datagrid_Cellclick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                calander.Value = DateTime.Parse(datagrid.Rows[e.RowIndex].Cells[0].Value.ToString());
+                employeeDropdownlist.Text = datagrid.Rows[e.RowIndex].Cells[1].Value.ToString();
             }
         }
     }

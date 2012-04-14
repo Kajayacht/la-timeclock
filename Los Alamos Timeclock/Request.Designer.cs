@@ -96,7 +96,6 @@ namespace Los_Alamos_Timeclock
             this.requestsDatagrid.RowHeadersVisible = false;
             this.requestsDatagrid.Size = new System.Drawing.Size(500, 264);
             this.requestsDatagrid.TabIndex = 0;
-            this.requestsDatagrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.requestsDatagrid_CellContentClick);
             // 
             // startCalander
             // 

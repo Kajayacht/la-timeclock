@@ -51,6 +51,7 @@ namespace Los_Alamos_Timeclock
             endCalander.MouseMove += new MouseEventHandler(Main.maininstance.notIdle_event);
             reasonTextbox.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
             reasonTextbox.MouseMove += new MouseEventHandler(Main.maininstance.notIdle_event);
+            requestsDatagrid.CellClick +=new DataGridViewCellEventHandler(requestsDatagrid_Cellclick);
 
             startCalander.MinDate = DateTime.Today;
             endCalander.MinDate = DateTime.Today;
@@ -257,10 +258,13 @@ namespace Los_Alamos_Timeclock
             updateFields();
         }
 
-        private void requestsDatagrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void requestsDatagrid_Cellclick(object sender, DataGridViewCellEventArgs e)
         {
-            startCalander.Value = DateTime.Parse(requestsDatagrid.Rows[e.RowIndex].Cells[0].Value.ToString());
-            endCalander.Value = DateTime.Parse(requestsDatagrid.Rows[e.RowIndex].Cells[1].Value.ToString());
+            if (e.RowIndex >= 0)
+            {
+                startCalander.Value = DateTime.Parse(requestsDatagrid.Rows[e.RowIndex].Cells[0].Value.ToString());
+                endCalander.Value = DateTime.Parse(requestsDatagrid.Rows[e.RowIndex].Cells[1].Value.ToString());
+            }
         }
     }
 }
