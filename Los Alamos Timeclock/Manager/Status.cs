@@ -358,6 +358,7 @@ namespace Los_Alamos_Timeclock.Manager
             {
                 calander.Value = DateTime.Parse(datagrid.Rows[e.RowIndex].Cells[0].Value.ToString());
                 employeeDropdownlist.Text = datagrid.Rows[e.RowIndex].Cells[1].Value.ToString();
+                employeeUpdate();
             }
         }
     }
