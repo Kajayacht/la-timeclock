@@ -256,5 +256,11 @@ namespace Los_Alamos_Timeclock
         {
             updateFields();
         }
+
+        private void requestsDatagrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            startCalander.Value = DateTime.Parse(requestsDatagrid.Rows[e.RowIndex].Cells[0].Value.ToString());
+            endCalander.Value = DateTime.Parse(requestsDatagrid.Rows[e.RowIndex].Cells[1].Value.ToString());
+        }
     }
 }
