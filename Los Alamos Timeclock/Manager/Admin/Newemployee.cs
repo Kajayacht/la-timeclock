@@ -111,9 +111,9 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                 {
                     if (myInit == true)
                     {
-                        Main.maininstance.sqlReader("SELECT ID FROM Employee ORDER BY ID DESC LIMIT 1");
-                        int adminid = int.Parse(Main.reader["ID"].ToString());
-                        Main.maininstance.sqlCommand("INSERT INTO Manager Values('" + adminid + "')");
+                       // Main.maininstance.sqlReader("SELECT ID FROM Employee ORDER BY ID DESC LIMIT 1");
+                        
+                        Main.maininstance.sqlCommand("INSERT INTO Admin Values('" + id + "')");
                         Application.Restart();
                     }
                     Main.myConnection.Close();
