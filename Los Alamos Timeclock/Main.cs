@@ -61,6 +61,7 @@ namespace Los_Alamos_Timeclock
             {
                 this.BackgroundImage = Properties.Resources._1287421014661;
             }
+            
 
             maininstance = this;
             colorChanger = new colorSchemeChooser();
@@ -85,6 +86,8 @@ namespace Los_Alamos_Timeclock
                 ";PASSWORD=" + Properties.Settings.Default.Password + ";");
 
             connectDB(myConnection);
+
+            //DBInit.initAdmin(myConnection);
 
             joblist = getJobs();
             employeeList = getEmployees();

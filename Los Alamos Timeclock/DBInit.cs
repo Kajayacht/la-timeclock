@@ -5,13 +5,14 @@ using System.Text;
 using System.Data.SqlClient;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
+using Los_Alamos_Timeclock.Manager.Admin;
 
 namespace Los_Alamos_Timeclock
 {
     class DBInit
     {
         public static MySqlConnection myConnection = new MySqlConnection();
-        public static Override o = new Override();
+        public static initAdmin myinitadmin = new initAdmin();
         public static void main()
         {
             //check if database exists
@@ -89,32 +90,37 @@ namespace Los_Alamos_Timeclock
             //create tables
 
 
-        public static void initAdmin()
+        public static void initAdmin(MySqlConnection myConnection)
         {
             //create initial admin
-            //check if there are no admins
-            string command = "select count(*) from Admin";
+            //check if there are no admins            
             
             myConnection.Open();
-            Main.maininstance.sqlReader(command);
+            Main.maininstance.sqlReader("select count(*) from Admin");
 
             if (int.Parse(Main.reader["count(*)"].ToString()) == 0)
             {
                 //Alert that no admins were found, ask if they want to make one
-                DialogResult result = MessageBox.Show("No Administrators were found in the Database. \r\nDo you want to create one?", , MessageBoxButtons.YesNo);
+                DialogResult result = MessageBox.Show("No Administrators were found in the Database. \r\nDo you want to create one?", "Admin Not Found" , MessageBoxButtons.YesNo);
                  
-                //ask for username and password
+                
                 if (result == DialogResult.Yes)
-                {
-                    myinitadmin = new initAdmin();
-                    myinitadmin.show();
+                {                    
+                    //make a new employee 
+                    Main.maininstance.panel1.Controls.Add(new Newemployee());
+                    //give him admin rights
+                    Main.maininstance.sqlReader("SELECT ID FROM Employee ORDER BY ID DESC LIMIT 1");
+                    int id = int.Parse(Main.reader["ID"].ToString());
+                    Main.maininstance.sqlCommand("INSERT INTO Manager Values('" + id + "')");
                 }
                 //Or exit the program
                 else
                 {
+                    myConnection.Close();
                     Environment.Exit(0);
                 }
             }
+            myConnection.Close();
             
              
             //create admin, notify that they'll have to fill in their info in EditEmployees

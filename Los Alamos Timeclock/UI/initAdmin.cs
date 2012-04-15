@@ -21,12 +21,13 @@ namespace Los_Alamos_Timeclock
     private void Enter_Click(object sender, EventArgs e)
         {
 
-            if (Username.Text != "" && Password.Text != "" && PassConfirm.Text != "" && Password.Text == PassConfirm.Text)
+            if (userTextbox.Text != "" && pass1Textbox.Text != "" && pass2Textbox.Text != "" && pass1Textbox.Text == pass2Textbox.Text)
             {
                 try
                 {
                     Main.myConnection.Open();
-                    MySqlCommand command = new MySqlCommand("INSERT into Users
+
+                    MySqlCommand command = new MySqlCommand("INSERT into Users");
                     command = new MySqlCommand("INSERT INTO Admin Values('" + 1 + "')", Main.myConnection);
                     command.ExecuteNonQuery();
                     
@@ -35,11 +36,7 @@ namespace Los_Alamos_Timeclock
                     {
                         MessageBox.Show(f.ToString());
                     }
-                }
-                catch (Exception f)
-                {
-                    MessageBox.Show(f.ToString());
-                }
+                                
                 finally
                 {
                     Main.myConnection.Close();
