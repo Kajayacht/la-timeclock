@@ -42,6 +42,24 @@
             beforeLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
+            // deleteLabel
+            // 
+            deleteLabel.AutoSize = true;
+            deleteLabel.Location = new System.Drawing.Point(23, 21);
+            deleteLabel.Name = "deleteLabel";
+            deleteLabel.Size = new System.Drawing.Size(41, 13);
+            deleteLabel.TabIndex = 8;
+            deleteLabel.Text = "Delete:";
+            // 
+            // beforeLabel
+            // 
+            beforeLabel.AutoSize = true;
+            beforeLabel.Location = new System.Drawing.Point(167, 21);
+            beforeLabel.Name = "beforeLabel";
+            beforeLabel.Size = new System.Drawing.Size(41, 13);
+            beforeLabel.TabIndex = 9;
+            beforeLabel.Text = "Before:";
+            // 
             // employeesCheckbox
             // 
             this.employeesCheckbox.AutoSize = true;
@@ -103,24 +121,6 @@
             this.submitButton.UseVisualStyleBackColor = true;
             this.submitButton.Click += new System.EventHandler(this.submitButton_Click);
             // 
-            // deleteLabel
-            // 
-            deleteLabel.AutoSize = true;
-            deleteLabel.Location = new System.Drawing.Point(23, 21);
-            deleteLabel.Name = "deleteLabel";
-            deleteLabel.Size = new System.Drawing.Size(41, 13);
-            deleteLabel.TabIndex = 8;
-            deleteLabel.Text = "Delete:";
-            // 
-            // beforeLabel
-            // 
-            beforeLabel.AutoSize = true;
-            beforeLabel.Location = new System.Drawing.Point(167, 21);
-            beforeLabel.Name = "beforeLabel";
-            beforeLabel.Size = new System.Drawing.Size(41, 13);
-            beforeLabel.TabIndex = 9;
-            beforeLabel.Text = "Before:";
-            // 
             // beforeCalander
             // 
             this.beforeCalander.Location = new System.Drawing.Point(214, 18);
@@ -146,6 +146,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(453, 162);
             this.Name = "Cleanup";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cleanup Entries";
             this.ResumeLayout(false);
             this.PerformLayout();

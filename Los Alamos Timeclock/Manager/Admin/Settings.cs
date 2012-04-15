@@ -37,7 +37,6 @@ namespace Los_Alamos_Timeclock
         public Settings()
         {
             InitializeComponent();
-
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(Main.maininstance.notIdle_event);
             ipaddressTextbox.MouseMove += new System.Windows.Forms.MouseEventHandler(Main.maininstance.notIdle_event);
             ipaddressTextbox.KeyDown += new System.Windows.Forms.KeyEventHandler(Main.maininstance.notIdle_event);
@@ -149,6 +148,21 @@ namespace Los_Alamos_Timeclock
             {
                 Main.clup.BringToFront();
             }
+        }
+
+        private void changeColorScheme_Click(object sender, EventArgs e)
+        {
+
+            if (!Main.colorChanger.Visible)
+            {
+                Main.colorChanger = new colorSchemeChooser();
+                Main.colorChanger.Show();
+            }
+            else
+            {
+                Main.colorChanger.BringToFront();
+            }
+
         }
     }
 }

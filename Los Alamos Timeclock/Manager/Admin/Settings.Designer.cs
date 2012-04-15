@@ -48,6 +48,7 @@
             this.showPreviousEmployeesCheckbox = new System.Windows.Forms.CheckBox();
             this.saveAppSettings = new System.Windows.Forms.Button();
             this.cleanupEntriesButton = new System.Windows.Forms.Button();
+            this.changeColorScheme = new System.Windows.Forms.Button();
             titleLabel = new System.Windows.Forms.Label();
             appSettingsLabel = new System.Windows.Forms.Label();
             databaseToolsLabel = new System.Windows.Forms.Label();
@@ -294,9 +295,9 @@
             // 
             this.saveAppSettings.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.saveAppSettings.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.saveAppSettings.Location = new System.Drawing.Point(213, 125);
+            this.saveAppSettings.Location = new System.Drawing.Point(190, 125);
             this.saveAppSettings.Name = "saveAppSettings";
-            this.saveAppSettings.Size = new System.Drawing.Size(75, 23);
+            this.saveAppSettings.Size = new System.Drawing.Size(121, 23);
             this.saveAppSettings.TabIndex = 2;
             this.saveAppSettings.Text = "Save";
             this.saveAppSettings.UseVisualStyleBackColor = true;
@@ -314,6 +315,18 @@
             this.cleanupEntriesButton.UseVisualStyleBackColor = true;
             this.cleanupEntriesButton.Click += new System.EventHandler(this.cleanupButton_Click);
             // 
+            // changeColorScheme
+            // 
+            this.changeColorScheme.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.changeColorScheme.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.changeColorScheme.Location = new System.Drawing.Point(190, 154);
+            this.changeColorScheme.Name = "changeColorScheme";
+            this.changeColorScheme.Size = new System.Drawing.Size(121, 26);
+            this.changeColorScheme.TabIndex = 75;
+            this.changeColorScheme.Text = "Change Color Scheme";
+            this.changeColorScheme.UseVisualStyleBackColor = true;
+            this.changeColorScheme.Click += new System.EventHandler(this.changeColorScheme_Click);
+            // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -321,6 +334,7 @@
             this.AutoScroll = true;
             this.BackgroundImage = global::Los_Alamos_Timeclock.Properties.Resources._1287421014661;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.changeColorScheme);
             this.Controls.Add(pictureBox2);
             this.Controls.Add(pictureBox1);
             this.Controls.Add(databaseToolsLabel);
@@ -369,6 +383,7 @@
         private System.Windows.Forms.CheckBox showPreviousEmployeesCheckbox;
         private System.Windows.Forms.Button saveAppSettings;
         private System.Windows.Forms.Button cleanupEntriesButton;
+        private System.Windows.Forms.Button changeColorScheme;
 
     }
 }

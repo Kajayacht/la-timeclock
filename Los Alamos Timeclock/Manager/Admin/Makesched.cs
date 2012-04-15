@@ -41,7 +41,6 @@ namespace Los_Alamos_Timeclock.Manager.Admin
         {
             InitializeComponent();
 
-
             datagrid.CellClick += new DataGridViewCellEventHandler(datagrid_Cellclick);
             this.MouseMove += new MouseEventHandler(Main.maininstance.notIdle_event);
             this.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);

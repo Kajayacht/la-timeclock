@@ -106,5 +106,98 @@ namespace Los_Alamos_Timeclock.Properties {
                 this["showPreviousEmployees"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("ControlLightLight")]
+        public global::System.Drawing.Color textColor {
+            get {
+                return ((global::System.Drawing.Color)(this["textColor"]));
+            }
+            set {
+                this["textColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Black")]
+        public global::System.Drawing.Color tableTextColor {
+            get {
+                return ((global::System.Drawing.Color)(this["tableTextColor"]));
+            }
+            set {
+                this["tableTextColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("ControlDark")]
+        public global::System.Drawing.Color tableGridColor {
+            get {
+                return ((global::System.Drawing.Color)(this["tableGridColor"]));
+            }
+            set {
+                this["tableGridColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("AppWorkspace")]
+        public global::System.Drawing.Color tableBackgroundColor {
+            get {
+                return ((global::System.Drawing.Color)(this["tableBackgroundColor"]));
+            }
+            set {
+                this["tableBackgroundColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.Drawing.Color backgroundColor {
+            get {
+                return ((global::System.Drawing.Color)(this["backgroundColor"]));
+            }
+            set {
+                this["backgroundColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string backgroundImage {
+            get {
+                return ((string)(this["backgroundImage"]));
+            }
+            set {
+                this["backgroundImage"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.Drawing.Color tablerow1Color {
+            get {
+                return ((global::System.Drawing.Color)(this["tablerow1Color"]));
+            }
+            set {
+                this["tablerow1Color"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.Drawing.Color tablerow2Color {
+            get {
+                return ((global::System.Drawing.Color)(this["tablerow2Color"]));
+            }
+            set {
+                this["tablerow2Color"] = value;
+            }
+        }
     }
 }

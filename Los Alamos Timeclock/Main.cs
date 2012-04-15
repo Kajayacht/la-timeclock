@@ -47,6 +47,7 @@ namespace Los_Alamos_Timeclock
         public static string permissions = "";
         public Cryptography crypt = new Cryptography();
         public static Cleanup clup=new Cleanup();
+        public static colorSchemeChooser colorChanger = new colorSchemeChooser();
 
         public Main()
         {
@@ -455,7 +456,7 @@ namespace Los_Alamos_Timeclock
         //methods to deal with the timeout timer
 
         //ammount of time to wait before timing out
-        private TimeSpan timeoutTimelimit = TimeSpan.FromMinutes(2);
+        private TimeSpan timeoutTimelimit = TimeSpan.FromMinutes(30);
         private DateTime timerCompareTime = DateTime.Now;
         
         //start the timer

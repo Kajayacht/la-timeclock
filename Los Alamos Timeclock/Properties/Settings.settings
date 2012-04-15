@@ -23,5 +23,29 @@
     <Setting Name="showPreviousEmployees" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
+    <Setting Name="textColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">ControlLightLight</Value>
+    </Setting>
+    <Setting Name="tableTextColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">Black</Value>
+    </Setting>
+    <Setting Name="tableGridColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">ControlDark</Value>
+    </Setting>
+    <Setting Name="tableBackgroundColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">AppWorkspace</Value>
+    </Setting>
+    <Setting Name="backgroundColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="backgroundImage" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="tablerow1Color" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="tablerow2Color" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>

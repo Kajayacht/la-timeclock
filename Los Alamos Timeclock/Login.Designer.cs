@@ -188,6 +188,7 @@
             this.clock1.AutoSize = true;
             this.clock1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.clock1.BackColor = System.Drawing.Color.Transparent;
+            this.clock1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.clock1.Location = new System.Drawing.Point(149, 117);
             this.clock1.Name = "clock1";
             this.clock1.Size = new System.Drawing.Size(194, 37);
