@@ -33,7 +33,6 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             InitializeComponent();
             myInit = init;
 
-
             try
             {
                 this.BackgroundImage = Image.FromFile(Properties.Settings.Default.backgroundImage);
@@ -110,11 +109,10 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                 finally
                 {
                     if (myInit == true)
-                    {
-                       // Main.maininstance.sqlReader("SELECT ID FROM Employee ORDER BY ID DESC LIMIT 1");
-                        
+                    {                                              
                         Main.maininstance.sqlCommand("INSERT INTO Admin Values('" + id + "')");
-                        Application.Restart();
+                        MessageBox.Show("Admin created.  The program will now exit.");
+                        Environment.Exit(0);
                     }
                     Main.myConnection.Close();
                 }
