@@ -466,7 +466,7 @@ namespace Los_Alamos_Timeclock
         //methods to deal with the timeout timer
 
         //ammount of time to wait before timing out
-        private TimeSpan timeoutTimelimit = TimeSpan.FromMinutes(30);
+        private TimeSpan timeoutTimelimit = TimeSpan.FromMinutes(2);
         private DateTime timerCompareTime = DateTime.Now;
         
         //start the timer
