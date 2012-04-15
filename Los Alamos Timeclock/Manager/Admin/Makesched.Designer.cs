@@ -40,13 +40,10 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             this.datagrid = new System.Windows.Forms.DataGridView();
             this.jobsDropdownlist = new System.Windows.Forms.ComboBox();
             this.deleteButton = new System.Windows.Forms.Button();
-            this.startHourDropdownlist = new System.Windows.Forms.ComboBox();
-            this.startMinDropdownlist = new System.Windows.Forms.ComboBox();
-            this.endHourDropdownlist = new System.Windows.Forms.ComboBox();
-            this.endMinDropdownlist = new System.Windows.Forms.ComboBox();
             this.lengthLabel = new System.Windows.Forms.Label();
             this.showRequests = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.starttimePicker = new System.Windows.Forms.DateTimePicker();
+            this.endtimePicker = new System.Windows.Forms.DateTimePicker();
             employeeLabel = new System.Windows.Forms.Label();
             startLabel = new System.Windows.Forms.Label();
             endLabel = new System.Windows.Forms.Label();
@@ -125,7 +122,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             this.updatescheduleButon.Location = new System.Drawing.Point(278, 293);
             this.updatescheduleButon.Name = "updatescheduleButon";
             this.updatescheduleButon.Size = new System.Drawing.Size(60, 95);
-            this.updatescheduleButon.TabIndex = 7;
+            this.updatescheduleButon.TabIndex = 5;
             this.updatescheduleButon.Text = "Update";
             this.updatescheduleButon.UseVisualStyleBackColor = true;
             this.updatescheduleButon.Click += new System.EventHandler(this.update_Click);
@@ -160,7 +157,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             this.jobsDropdownlist.Location = new System.Drawing.Point(82, 368);
             this.jobsDropdownlist.Name = "jobsDropdownlist";
             this.jobsDropdownlist.Size = new System.Drawing.Size(190, 21);
-            this.jobsDropdownlist.TabIndex = 6;
+            this.jobsDropdownlist.TabIndex = 4;
             // 
             // deleteButton
             // 
@@ -169,122 +166,10 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             this.deleteButton.Location = new System.Drawing.Point(344, 293);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(66, 95);
-            this.deleteButton.TabIndex = 8;
+            this.deleteButton.TabIndex = 6;
             this.deleteButton.Text = "Delete";
             this.deleteButton.UseVisualStyleBackColor = true;
             this.deleteButton.Click += new System.EventHandler(this.delete_Click);
-            // 
-            // startHourDropdownlist
-            // 
-            this.startHourDropdownlist.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.startHourDropdownlist.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.startHourDropdownlist.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.startHourDropdownlist.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.startHourDropdownlist.FormattingEnabled = true;
-            this.startHourDropdownlist.Items.AddRange(new object[] {
-            "0",
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14",
-            "15",
-            "16",
-            "17",
-            "18",
-            "19",
-            "20",
-            "21",
-            "22",
-            "23"});
-            this.startHourDropdownlist.Location = new System.Drawing.Point(82, 294);
-            this.startHourDropdownlist.Name = "startHourDropdownlist";
-            this.startHourDropdownlist.Size = new System.Drawing.Size(92, 21);
-            this.startHourDropdownlist.TabIndex = 2;
-            this.startHourDropdownlist.SelectedIndexChanged += new System.EventHandler(this.startHour_SelectedIndexChanged);
-            // 
-            // startMinDropdownlist
-            // 
-            this.startMinDropdownlist.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.startMinDropdownlist.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.startMinDropdownlist.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.startMinDropdownlist.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.startMinDropdownlist.FormattingEnabled = true;
-            this.startMinDropdownlist.Items.AddRange(new object[] {
-            "00",
-            "15",
-            "30",
-            "45"});
-            this.startMinDropdownlist.Location = new System.Drawing.Point(180, 294);
-            this.startMinDropdownlist.Name = "startMinDropdownlist";
-            this.startMinDropdownlist.Size = new System.Drawing.Size(92, 21);
-            this.startMinDropdownlist.TabIndex = 3;
-            this.startMinDropdownlist.SelectedIndexChanged += new System.EventHandler(this.startMin_SelectedIndexChanged);
-            // 
-            // endHourDropdownlist
-            // 
-            this.endHourDropdownlist.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.endHourDropdownlist.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.endHourDropdownlist.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.endHourDropdownlist.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.endHourDropdownlist.FormattingEnabled = true;
-            this.endHourDropdownlist.Items.AddRange(new object[] {
-            "0",
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14",
-            "15",
-            "16",
-            "17",
-            "18",
-            "19",
-            "20",
-            "21",
-            "22",
-            "23"});
-            this.endHourDropdownlist.Location = new System.Drawing.Point(82, 321);
-            this.endHourDropdownlist.Name = "endHourDropdownlist";
-            this.endHourDropdownlist.Size = new System.Drawing.Size(92, 21);
-            this.endHourDropdownlist.TabIndex = 4;
-            this.endHourDropdownlist.SelectedIndexChanged += new System.EventHandler(this.endHour_SelectedIndexChanged);
-            // 
-            // endMinDropdownlist
-            // 
-            this.endMinDropdownlist.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.endMinDropdownlist.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.endMinDropdownlist.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.endMinDropdownlist.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.endMinDropdownlist.FormattingEnabled = true;
-            this.endMinDropdownlist.Items.AddRange(new object[] {
-            "00",
-            "15",
-            "30",
-            "45"});
-            this.endMinDropdownlist.Location = new System.Drawing.Point(180, 321);
-            this.endMinDropdownlist.Name = "endMinDropdownlist";
-            this.endMinDropdownlist.Size = new System.Drawing.Size(92, 21);
-            this.endMinDropdownlist.TabIndex = 5;
-            this.endMinDropdownlist.SelectedIndexChanged += new System.EventHandler(this.endMin_SelectedIndexChanged);
             // 
             // lengthLabel
             // 
@@ -305,18 +190,28 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             this.showRequests.Location = new System.Drawing.Point(416, 293);
             this.showRequests.Name = "showRequests";
             this.showRequests.Size = new System.Drawing.Size(62, 95);
-            this.showRequests.TabIndex = 9;
+            this.showRequests.TabIndex = 7;
             this.showRequests.Text = "Show Overview";
             this.showRequests.UseVisualStyleBackColor = true;
             this.showRequests.Click += new System.EventHandler(this.showRequests_Click);
             // 
-            // dateTimePicker1
+            // starttimePicker
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker1.Location = new System.Drawing.Point(0, 324);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(108, 20);
-            this.dateTimePicker1.TabIndex = 18;
+            this.starttimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.starttimePicker.Location = new System.Drawing.Point(82, 297);
+            this.starttimePicker.Name = "starttimePicker";
+            this.starttimePicker.Size = new System.Drawing.Size(108, 20);
+            this.starttimePicker.TabIndex = 2;
+            this.starttimePicker.ValueChanged += new System.EventHandler(this.startTimePicker_ValueChanged);
+            // 
+            // endtimePicker
+            // 
+            this.endtimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.endtimePicker.Location = new System.Drawing.Point(82, 322);
+            this.endtimePicker.Name = "endtimePicker";
+            this.endtimePicker.Size = new System.Drawing.Size(108, 20);
+            this.endtimePicker.TabIndex = 3;
+            this.endtimePicker.ValueChanged += new System.EventHandler(this.endtimePicker_ValueChanged);
             // 
             // Makesched
             // 
@@ -324,16 +219,13 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Los_Alamos_Timeclock.Properties.Resources._1287421014661;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.endtimePicker);
+            this.Controls.Add(this.starttimePicker);
             this.Controls.Add(this.showRequests);
             this.Controls.Add(this.lengthLabel);
-            this.Controls.Add(this.endMinDropdownlist);
-            this.Controls.Add(this.endHourDropdownlist);
-            this.Controls.Add(this.startMinDropdownlist);
             this.Controls.Add(jobLabel);
             this.Controls.Add(endLabel);
             this.Controls.Add(startLabel);
-            this.Controls.Add(this.startHourDropdownlist);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.jobsDropdownlist);
             this.Controls.Add(this.updatescheduleButon);
@@ -360,13 +252,10 @@ namespace Los_Alamos_Timeclock.Manager.Admin
         private System.Windows.Forms.DataGridView datagrid;
         private System.Windows.Forms.ComboBox jobsDropdownlist;
         private System.Windows.Forms.Button deleteButton;
-        private System.Windows.Forms.ComboBox startHourDropdownlist;
-        private System.Windows.Forms.ComboBox startMinDropdownlist;
-        private System.Windows.Forms.ComboBox endHourDropdownlist;
-        private System.Windows.Forms.ComboBox endMinDropdownlist;
         private System.Windows.Forms.Label lengthLabel;
         private System.Windows.Forms.Button showRequests;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker starttimePicker;
+        private DateTimePicker endtimePicker;
 
     }
 }
