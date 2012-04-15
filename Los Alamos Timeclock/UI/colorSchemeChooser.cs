@@ -154,10 +154,10 @@ namespace Los_Alamos_Timeclock.UI
             Properties.Settings.Default.backgroundImage = "";
             filename = "";
             Properties.Settings.Default.textColor = this.ForeColor = textColor = Color.White;
-            Properties.Settings.Default.tableTextColor = datagrid.ForeColor = tabletextColor = Color.Black;
-            Properties.Settings.Default.tableGridColor = datagrid.GridColor = tablegridColor = Color.LightGray;
             Properties.Settings.Default.tablerow1Color = datagrid.DefaultCellStyle.BackColor = row1Color = Color.White;
             Properties.Settings.Default.tablerow2Color = datagrid.AlternatingRowsDefaultCellStyle.BackColor = row2Color = Color.White;
+            Properties.Settings.Default.tableGridColor = datagrid.GridColor = tablegridColor = Color.LightGray;
+            Properties.Settings.Default.tableTextColor = datagrid.DefaultCellStyle.ForeColor = tabletextColor = Color.Black;
             Properties.Settings.Default.tableBackgroundColor = datagrid.BackgroundColor = tablebackgroundColor = Color.DarkGray;
             Properties.Settings.Default.Save();
         }

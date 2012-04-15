@@ -201,7 +201,9 @@
     <Compile Include="UI\colorSchemeChooser.Designer.cs">
       <DependentUpon>colorSchemeChooser.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\initAdmin.cs" />
+    <Compile Include="UI\initAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="UI\initAdmin.Designer.cs">
       <DependentUpon>initAdmin.cs</DependentUpon>
     </Compile>
