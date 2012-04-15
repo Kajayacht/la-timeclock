@@ -72,7 +72,7 @@ namespace Los_Alamos_Timeclock
                             else
                             {
                                 Main.myConnection.Close();
-                                Main.maininstance.sqlCommand("INSERT INTO `Hours Worked` (`ID`, `Date`, `Start`, `JID`,`Status`) VALUES ('" + Main.id + "', '" + DateTime.Today.ToString("yyyy-MM-dd") + "' , '" + Main.maininstance.roundtime(DateTime.Now).ToString("HH:mm:ss") + "', '" + jobsBox.Text + "', 'IN')");
+                                Main.maininstance.sqlCommand("INSERT INTO `Hours Worked` (`ID`, `Date`, `Start`, `JID`,`Status`) VALUES ('" + Main.id + "', '" + DateTime.Today.ToString("yyyy-MM-dd") + "' , '" + DateTime.Now.ToString("HH:mm:ss") + "', '" + jobsBox.Text + "', 'IN')");
                                 Main.maininstance.panel1.Controls.Clear();
                                 Main.maininstance.panel1.Controls.Add(new Clockinout());
                                 Main.maininstance.panel1.Controls[0].Dock = DockStyle.Fill;

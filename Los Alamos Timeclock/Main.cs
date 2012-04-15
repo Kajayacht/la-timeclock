@@ -426,32 +426,25 @@ namespace Los_Alamos_Timeclock
          * @param t                 The current time
          * @return DateTime t       The rounded time
          */
-        public DateTime roundtime(DateTime t)
+        public static DateTime roundtime(DateTime t)
         {
             //Get the current time, then the minutes of it
             TimeSpan a = TimeSpan.ParseExact(t.ToString("HH:mm:ss"), "g", null);
-            int q = 0;
 
-            //Round time to nearest 15 minute interval
-            while (a.Minutes > 15)
-            {
-                a = a.Subtract(TimeSpan.FromMinutes(15));
-                q++;
-            }
+            int q= a.Minutes / 15;
+            a = a.Subtract(TimeSpan.FromMinutes(15*q));
+
             if (a.Minutes >= 8)
             {
-                a = a.Subtract(TimeSpan.FromMinutes(a.Minutes));
-                a = a.Add(TimeSpan.FromMinutes((q * 15) + 15));
+                a = TimeSpan.FromHours(a.Hours).Add(TimeSpan.FromMinutes((q * 15) + 15));
             }
             else
             {
-                a = a.Subtract(TimeSpan.FromMinutes(a.Minutes));
-                a = a.Add(TimeSpan.FromMinutes(q * 15));
+                a = TimeSpan.FromHours(a.Hours).Add(TimeSpan.FromMinutes(q * 15));
             }
-            a = a.Subtract(TimeSpan.FromSeconds(a.Seconds));
 
             //return the time
-            t = DateTime.ParseExact(a.ToString(), "HH:mm:ss", null);
+            t = DateTime.Parse(a.ToString());
             return t;
         }
 

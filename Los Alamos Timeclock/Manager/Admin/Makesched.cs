@@ -41,6 +41,8 @@ namespace Los_Alamos_Timeclock.Manager.Admin
         {
             InitializeComponent();
 
+            dateTimePicker1.ShowUpDown = true;
+
             this.datagrid.DefaultCellStyle.ForeColor = Properties.Settings.Default.tableTextColor;
             this.datagrid.DefaultCellStyle.BackColor = Properties.Settings.Default.tablerow1Color;
             this.datagrid.AlternatingRowsDefaultCellStyle.BackColor = Properties.Settings.Default.tablerow2Color;
@@ -56,6 +58,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                 this.BackgroundImage = Properties.Resources._1287421014661;
             }
 
+            //events that reset the idle timer
             datagrid.CellClick += new DataGridViewCellEventHandler(datagrid_Cellclick);
             this.MouseMove += new MouseEventHandler(Main.maininstance.notIdle_event);
             this.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
@@ -83,6 +86,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             employeeDropdownlist.DataSource = Main.employeeList;
         }
 
+        //inserts/updates records
         private void update_Click(object sender, EventArgs e)
         {
             if (Main.employeeList.Count == 0)
@@ -99,6 +103,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                 {
                     if (validate())
                     {
+                        //if the employee is scheduled, update, otherwise insert
                         if (scheduled)
                         {
                             Main.maininstance.sqlCommand("UPDATE Schedule SET Start='" + startHourDropdownlist.Text + ":" + startMinDropdownlist.Text + "', End='" + endHourDropdownlist.Text + ":" + endMinDropdownlist.Text + "', JID='" + jobsDropdownlist.Text + "' WHERE Date='" + date + "' AND ID='" + ID + "'");
@@ -117,6 +122,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
 
         private void delete_Click(object sender, EventArgs e)
         {
+            //delete record if one exists
             if (Main.employeeList.Count == 0)
             {
                 MessageBox.Show("No Employee Selected");
@@ -144,6 +150,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
         {
             date = calander.Value.ToString("yyyy-MM-dd");
 
+            //checks if it needs to get next week
             if (calander.Value > mon.AddDays(6) || calander.Value < mon)
             {
                 mon = getmon(calander.Value);
@@ -152,12 +159,15 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             }
             employeeUpdate();
         }
+
+        //updates the id when the selected Employee changes
         private void employeeDropdownlist_SelectedIndexChanged(object sender, EventArgs e)
         {
             ID = employeeDropdownlist.SelectedValue.ToString();
             employeeUpdate();
         }
 
+        //checks to see if the employee is scheduled on the selected day, if they are update the fields
         public void employeeUpdate()
         {
             scheduled = false;
@@ -181,8 +191,12 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                     }
 
                     scheduled = true;
+                    updatescheduleButon.Text = "Update";
                     TimeSpan a = TimeSpan.Parse(Main.reader["Start"].ToString());
                     startHourDropdownlist.Text = a.Hours.ToString();
+
+                    DateTime b = DateTime.Parse(Main.reader["Start"].ToString());
+                    dateTimePicker1.Value = b;
 
                     if (a.Minutes == 0)
                     {
@@ -193,6 +207,9 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                         startMinDropdownlist.Text = a.Minutes.ToString();
                     }
                     a = TimeSpan.Parse(Main.reader["End"].ToString());
+
+                    b = DateTime.Parse(Main.reader["End"].ToString());
+
                     endHourDropdownlist.Text = a.Hours.ToString();
                     if (a.Minutes == 0)
                     {
@@ -207,11 +224,12 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                 else
                 {
                     scheduled = false;
-                    startHourDropdownlist.Text = "";
-                    startMinDropdownlist.Text = "";
-                    endHourDropdownlist.Text = "";
-                    endMinDropdownlist.Text = "";
-                    jobsDropdownlist.Text = "";
+                    updatescheduleButon.Text = "Insert";
+                    startHourDropdownlist.SelectedIndex = 0;
+                    startMinDropdownlist.SelectedIndex = 0;
+                    endHourDropdownlist.SelectedIndex = 0;
+                    endMinDropdownlist.SelectedIndex = 0;
+                    jobsDropdownlist.SelectedIndex = 0;
                 }
                 clength();
                 Main.reader.Close();
@@ -225,7 +243,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
 
         public void populateDatagrid()
         {
-            String query = "SELECT Date, CONCAT(LName, ', ',FName) AS Name, Start, End, JID AS Job FROM Schedule JOIN Employee ON Schedule.ID=Employee.ID Where Date>='" + mon.ToString("yyyy-MM-dd") + "' AND Date<='" + sun.ToString("yyyy-MM-dd") + "' ORDER BY Date, Start";
+            String query = "SELECT Date, CONCAT(LName, ', ',FName) AS Name, DATE_FORMAT(Start,'%r') as Start, DATE_FORMAT(End,'%r') as End, JID AS Job FROM Schedule JOIN Employee ON Schedule.ID=Employee.ID Where Date>='" + mon.ToString("yyyy-MM-dd") + "' AND Date<='" + sun.ToString("yyyy-MM-dd") + "' ORDER BY Date, Start";
                 
             
             try
