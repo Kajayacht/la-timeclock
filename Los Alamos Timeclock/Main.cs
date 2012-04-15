@@ -541,6 +541,7 @@ namespace Los_Alamos_Timeclock
         }
 
 
+        //method to change the folder the job images will come from
         public static void changeJobImageFolder()
         {
             FolderBrowserDialog jobFolder = new FolderBrowserDialog();
@@ -552,8 +553,10 @@ namespace Los_Alamos_Timeclock
 
                 byte[] imgbytes;
                 ImageConverter converter = new ImageConverter();
+                //array of files that need to be saved
                 String[] jobs = { "Bartender", "Cook", "Dishwasher", "Manager", "Security", "Server" };
 
+                //saves the default job images into the selected folder
                 for (int i = 0; i < jobs.Length; i++)
                 {
                     try
@@ -561,10 +564,13 @@ namespace Los_Alamos_Timeclock
                         imgbytes = (byte[])converter.ConvertTo(Properties.Resources.ResourceManager.GetObject(jobs[i]), typeof(byte[]));
                         File.WriteAllBytes(jobFolder.SelectedPath + "\\" + jobs[i] + ".bmp", imgbytes);
                     }
-                    catch (Exception e)
+                    catch (IOException)
                     {
-                        MessageBox.Show(e.ToString());
-                        //MessageBox.Show("ERROR: IO Failed to write file");
+                        MessageBox.Show("ERROR: IO Failed to write file");
+                    }
+                    catch(Exception)
+                    {
+                        MessageBox.Show("ERROR: Problem Writing file "+jobs[i]+".bmp");
                     }
                 }
 
