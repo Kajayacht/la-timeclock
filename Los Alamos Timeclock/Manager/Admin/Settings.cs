@@ -174,5 +174,11 @@ namespace Los_Alamos_Timeclock
             }
 
         }
+
+        private void changeJobFolderButton_Click(object sender, EventArgs e)
+        {
+            Main.changeJobImageFolder();
+        }
+
     }
 }

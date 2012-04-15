@@ -49,6 +49,7 @@
             this.saveAppSettings = new System.Windows.Forms.Button();
             this.cleanupEntriesButton = new System.Windows.Forms.Button();
             this.changeColorScheme = new System.Windows.Forms.Button();
+            this.changeJobFolderButton = new System.Windows.Forms.Button();
             titleLabel = new System.Windows.Forms.Label();
             appSettingsLabel = new System.Windows.Forms.Label();
             databaseToolsLabel = new System.Windows.Forms.Label();
@@ -88,7 +89,7 @@
             databaseToolsLabel.AutoSize = true;
             databaseToolsLabel.BackColor = System.Drawing.Color.Transparent;
             databaseToolsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            databaseToolsLabel.Location = new System.Drawing.Point(180, 195);
+            databaseToolsLabel.Location = new System.Drawing.Point(180, 241);
             databaseToolsLabel.Name = "databaseToolsLabel";
             databaseToolsLabel.Size = new System.Drawing.Size(140, 24);
             databaseToolsLabel.TabIndex = 14;
@@ -307,7 +308,7 @@
             // 
             this.cleanupEntriesButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cleanupEntriesButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.cleanupEntriesButton.Location = new System.Drawing.Point(190, 226);
+            this.cleanupEntriesButton.Location = new System.Drawing.Point(190, 272);
             this.cleanupEntriesButton.Name = "cleanupEntriesButton";
             this.cleanupEntriesButton.Size = new System.Drawing.Size(121, 26);
             this.cleanupEntriesButton.TabIndex = 13;
@@ -327,6 +328,18 @@
             this.changeColorScheme.UseVisualStyleBackColor = true;
             this.changeColorScheme.Click += new System.EventHandler(this.changeColorScheme_Click);
             // 
+            // changeJobFolderButton
+            // 
+            this.changeJobFolderButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.changeJobFolderButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.changeJobFolderButton.Location = new System.Drawing.Point(190, 185);
+            this.changeJobFolderButton.Name = "changeJobFolderButton";
+            this.changeJobFolderButton.Size = new System.Drawing.Size(121, 43);
+            this.changeJobFolderButton.TabIndex = 76;
+            this.changeJobFolderButton.Text = "Change Job Image Folder";
+            this.changeJobFolderButton.UseVisualStyleBackColor = true;
+            this.changeJobFolderButton.Click += new System.EventHandler(this.changeJobFolderButton_Click);
+            // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -334,6 +347,7 @@
             this.AutoScroll = true;
             this.BackgroundImage = global::Los_Alamos_Timeclock.Properties.Resources._1287421014661;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.changeJobFolderButton);
             this.Controls.Add(this.changeColorScheme);
             this.Controls.Add(pictureBox2);
             this.Controls.Add(pictureBox1);
@@ -385,6 +399,7 @@
         private System.Windows.Forms.Button saveAppSettings;
         private System.Windows.Forms.Button cleanupEntriesButton;
         private System.Windows.Forms.Button changeColorScheme;
+        private System.Windows.Forms.Button changeJobFolderButton;
 
     }
 }

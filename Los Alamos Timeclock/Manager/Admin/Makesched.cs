@@ -144,13 +144,13 @@ namespace Los_Alamos_Timeclock.Manager.Admin
         {
             date = calander.Value.ToString("yyyy-MM-dd");
 
-            if (calander.Value > mon.AddDays(6))
+            if (calander.Value > mon.AddDays(6) || calander.Value < mon)
             {
                 mon = getmon(calander.Value);
                 sun = mon.AddDays(6);
                 populateDatagrid();
-                employeeUpdate();
             }
+            employeeUpdate();
         }
         private void employeeDropdownlist_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -160,10 +160,13 @@ namespace Los_Alamos_Timeclock.Manager.Admin
 
         public void employeeUpdate()
         {
+            scheduled = false;
+
             try
             {
                 Main.myConnection.Open();
                 Main.maininstance.sqlReader("Select a.*, b.EDate from Schedule a JOIN Employee b ON a.ID=b.ID where a.ID='" + ID + "' AND a.Date='" + date + "'");
+
 
                 if (Main.reader.HasRows)
                 {
