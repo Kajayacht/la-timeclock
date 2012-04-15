@@ -115,6 +115,7 @@
       <DependentUpon>Contactinfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Cryptography.cs" />
+    <Compile Include="DBInit.cs" />
     <Compile Include="Log.cs" />
     <Compile Include="Manager\Admin\Admin.cs">
       <SubType>UserControl</SubType>
@@ -199,6 +200,10 @@
     </Compile>
     <Compile Include="UI\colorSchemeChooser.Designer.cs">
       <DependentUpon>colorSchemeChooser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\initAdmin.cs" />
+    <Compile Include="UI\initAdmin.Designer.cs">
+      <DependentUpon>initAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Override.cs">
       <SubType>Form</SubType>
@@ -298,6 +303,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\colorSchemeChooser.resx">
       <DependentUpon>colorSchemeChooser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\initAdmin.resx">
+      <DependentUpon>initAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Override.resx">
       <DependentUpon>Override.cs</DependentUpon>
