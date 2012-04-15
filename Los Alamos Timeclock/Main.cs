@@ -12,6 +12,9 @@ using Los_Alamos_Timeclock;
 using System.Collections;
 using System.Diagnostics;
 using Los_Alamos_Timeclock.UI;
+using System.IO;
+using System.Reflection;
+using Los_Alamos_Timeclock.Properties;
 
 namespace Los_Alamos_Timeclock
 {
@@ -36,7 +39,6 @@ namespace Los_Alamos_Timeclock
 
     public partial class Main : Form
     {
-
         public static Main maininstance = null;
         public static string id;
         public static string eName;
@@ -51,6 +53,7 @@ namespace Los_Alamos_Timeclock
 
         public Main()
         {
+
             InitializeComponent();
 
             try
@@ -89,6 +92,15 @@ namespace Los_Alamos_Timeclock
             connectDB(myConnection);
 
             DBInit.initAdmin(myConnection);
+
+
+            //sets up the folder for the program to store the job images in if it isn't set
+            if (Properties.Settings.Default.jobImageFolderPath == "")
+            {
+                MessageBox.Show("Job Image folder is not set, please select one");
+                changeJobImageFolder();
+
+            }
 
             joblist = getJobs();
             employeeList = getEmployees();
@@ -142,14 +154,13 @@ namespace Los_Alamos_Timeclock
             //If connection to Database fails
             catch (Exception e)
             {
-                MessageBox.Show(e.ToString());
+                MessageBox.Show("ERROR: Failed to fetch Employee list from database");
 
-                if (Main.myConnection.State == ConnectionState.Open)
-                {
-                    Main.reader.Close();
-                    Main.myConnection.Close();
-                }
                 return employees;
+            }
+            finally
+            {
+                myConnection.Close();
             }
 
         }
@@ -229,14 +240,12 @@ namespace Los_Alamos_Timeclock
             //If connection to Database fails
             catch (Exception e)
             {
-                MessageBox.Show(e.ToString());
-
-                if (Main.myConnection.State == ConnectionState.Open)
-                {
-                    Main.reader.Close();
-                    Main.myConnection.Close();
-                }
+                MessageBox.Show("ERROR: Failed to fetch Job list from database");
                 return joblist;
+            }
+            finally
+            {
+                myConnection.Close();
             }
         }
 
@@ -329,6 +338,7 @@ namespace Los_Alamos_Timeclock
                     Environment.Exit(0);
                 }
             }
+            
         }
 
 
@@ -380,9 +390,9 @@ namespace Los_Alamos_Timeclock
                 command.ExecuteNonQuery();
             }
             //if DB connection error
-            catch (Exception e)
+            catch (Exception)
             {
-                MessageBox.Show(e.ToString());
+                MessageBox.Show("ERROR: Failed to execute SQL command");
             }
             //close the connection
             finally
@@ -529,5 +539,37 @@ namespace Los_Alamos_Timeclock
                 resetTimer();
             }
         }
+
+
+        public static void changeJobImageFolder()
+        {
+            FolderBrowserDialog jobFolder = new FolderBrowserDialog();
+
+            if (jobFolder.ShowDialog() == DialogResult.OK)
+            {
+                Properties.Settings.Default.jobImageFolderPath = jobFolder.SelectedPath;
+                Properties.Settings.Default.Save();
+
+                byte[] imgbytes;
+                ImageConverter converter = new ImageConverter();
+                String[] jobs = { "Bartender", "Cook", "Dishwasher", "Manager", "Security", "Server" };
+
+                for (int i = 0; i < jobs.Length; i++)
+                {
+                    try
+                    {
+                        imgbytes = (byte[])converter.ConvertTo(Properties.Resources.ResourceManager.GetObject(jobs[i]), typeof(byte[]));
+                        File.WriteAllBytes(jobFolder.SelectedPath + "\\" + jobs[i] + ".bmp", imgbytes);
+                    }
+                    catch (Exception e)
+                    {
+                        MessageBox.Show(e.ToString());
+                        //MessageBox.Show("ERROR: IO Failed to write file");
+                    }
+                }
+
+            }
+        }
+
     }
 }

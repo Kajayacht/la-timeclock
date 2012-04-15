@@ -69,8 +69,7 @@ namespace Los_Alamos_Timeclock
                 if (clockedIn)
                 {
                     job = Main.reader["JID"].ToString();
-                    jobImage.ImageLocation = "Graphics\\" + Main.reader["Filename"].ToString();
-                    //jobImage.Image = (Image)Resources.ResourceManager.GetObject(job);
+                    jobImage.ImageLocation = Properties.Settings.Default.jobImageFolderPath + "\\" + Main.reader["Filename"].ToString();
 
 
                     if (Main.reader["B1in"].ToString() == "")
@@ -108,7 +107,7 @@ namespace Los_Alamos_Timeclock
                     if (!clockedIn)
                     {
                         job = Main.reader["JID"].ToString();
-                        jobImage.ImageLocation = "Graphics\\" + Main.reader["Filename"].ToString();
+                        jobImage.ImageLocation = Properties.Settings.Default.jobImageFolderPath + "\\" + Main.reader["Filename"].ToString();
                     }
                     if (startTime > endTime)
                     {

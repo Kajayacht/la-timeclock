@@ -70,7 +70,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             Main.maininstance.sqlReader("SELECT Filename FROM Jobs WHERE JID='"+jobsBox.Text+"'");
             filenameTextbox.Text=Main.reader["Filename"].ToString();
             filename = Main.reader["Filename"].ToString();
-            jobPicturebox.ImageLocation = "Graphics\\" + filename;
+            jobPicturebox.ImageLocation = Properties.Settings.Default.jobImageFolderPath + "\\" + filename;
             Main.myConnection.Close();
         }
 
@@ -152,7 +152,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             OpenFileDialog imageDialog = new OpenFileDialog();
             imageDialog.Filter = "Image Files(*.BMP;*.JPG;*.GIF;*.PNG)|*.BMP;*.JPG;*.GIF;*.PNG|All files (*.*)|*.*";
             imageDialog.FilterIndex = 1;
-            imageDialog.InitialDirectory = Application.StartupPath.ToString()+ "\\Graphics\\";
+            imageDialog.InitialDirectory = Properties.Settings.Default.jobImageFolderPath;
             imageDialog.RestoreDirectory = false;
 
             if (imageDialog.ShowDialog() == DialogResult.OK)
@@ -167,9 +167,9 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                 {
                     try
                     {
-                        System.IO.File.Copy(filepath, "Graphics\\" + filename);
+                        System.IO.File.Copy(filepath, Properties.Settings.Default.jobImageFolderPath + "\\" + filename);
                         filenameTextbox.Text = filename;
-                        jobPicturebox.ImageLocation = "Graphics\\" + filename;
+                        jobPicturebox.ImageLocation = Properties.Settings.Default.jobImageFolderPath + "\\" + filename;
                     }
                     catch (System.IO.FileNotFoundException)
                     {
@@ -177,7 +177,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                     }
                     catch (System.IO.IOException)
                     {
-                        if (System.IO.File.Exists("Graphics\\" + filename))
+                        if (System.IO.File.Exists(Properties.Settings.Default.jobImageFolderPath + "\\" + filename))
                         {
                             MessageBox.Show("A file by that name already exists in " + graphicsDirectory);
                         }
@@ -190,7 +190,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                 else
                 {
                     filenameTextbox.Text = filename;
-                    jobPicturebox.ImageLocation = "Graphics\\" + filename;
+                    jobPicturebox.ImageLocation = Properties.Settings.Default.jobImageFolderPath +"\\" + filename;
                 }
             }
         }

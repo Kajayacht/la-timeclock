@@ -367,19 +367,19 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon4.ico" />
-    <Content Include="Resources\Bartender.bmp" />
-    <Content Include="Resources\Cook.bmp" />
+    <Content Include="Resources\Jobimages\Bartender.bmp" />
+    <Content Include="Resources\Jobimages\Cook.bmp" />
     <None Include="Resources\shakingMoraca2.gif" />
     <None Include="Resources\shakingMoraca.gif" />
     <None Include="Resources\dancingtaco.gif" />
     <None Include="Resources\dancingChile.gif" />
     <None Include="Resources\dancing cactus.gif" />
     <None Include="Resources\dancingMan.gif" />
-    <Content Include="Resources\Dishwasher.bmp" />
+    <Content Include="Resources\Jobimages\Dishwasher.bmp" />
     <None Include="Resources\icon4.ico" />
-    <Content Include="Resources\Manager.bmp" />
-    <Content Include="Resources\Security.bmp" />
-    <Content Include="Resources\Server.bmp" />
+    <Content Include="Resources\Jobimages\Manager.bmp" />
+    <Content Include="Resources\Jobimages\Security.bmp" />
+    <Content Include="Resources\Jobimages\Server.bmp" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
