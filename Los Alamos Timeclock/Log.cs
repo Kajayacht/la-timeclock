@@ -52,19 +52,29 @@ namespace Los_Alamos_Timeclock
          */
         public static void writeLog(String logMessage)
         {
+            //Get the previous log so we can prepend to it
+            String previousLog = viewLog();
+            //Prepare the message to be written
+            String entry = "\r\nLog Entry : " + DateTime.Now.ToLongTimeString() + " " + DateTime.Now.ToLongDateString() + "\r\n:\r\n: " + logMessage + "\r\n -------------------------------";
+            String log = entry + previousLog;
+            //delete the old log file
+            File.Delete(Directory.GetCurrentDirectory() + "/log.txt");
+
             try
             {
                 //open the file
                 
                 StreamWriter w = File.AppendText(Directory.GetCurrentDirectory()+ "/log.txt");
                 
-                //write the header, date/time, and the logmessage
+                /*write the header, date/time, and the logmessage
                 w.Write("\r\nLog Entry : ");
                 w.WriteLine("{0} {1}", DateTime.Now.ToLongTimeString(),
                     DateTime.Now.ToLongDateString());
                 w.WriteLine("  :");
                 w.WriteLine("  :{0}", logMessage);
                 w.WriteLine("-------------------------------");
+                 */
+                w.Write(log);
                 // Update the underlying file.
                 w.Flush();
                 // Close the writer and underlying file.
@@ -107,10 +117,10 @@ namespace Los_Alamos_Timeclock
             
         }
 
-        //clear log file? work in progress, although not much work has been done
+        //Delete the log file
         public static void clearLog()
         {
-
+            File.Delete(Directory.GetCurrentDirectory() + "/log.txt");
         }
 
     }
