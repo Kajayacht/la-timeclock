@@ -37,7 +37,7 @@ namespace Los_Alamos_Timeclock.Manager
             System.Windows.Forms.Label break2Label;
             System.Windows.Forms.Label lunchLabel;
             System.Windows.Forms.PictureBox pictureBox1;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.employeeDropdownlist = new System.Windows.Forms.ComboBox();
             this.calander = new System.Windows.Forms.DateTimePicker();
             this.updatescheduleButton = new System.Windows.Forms.Button();
@@ -54,6 +54,7 @@ namespace Los_Alamos_Timeclock.Manager
             this.linTextbox = new System.Windows.Forms.MaskedTextBox();
             this.loutTextbox = new System.Windows.Forms.MaskedTextBox();
             this.lunchdashLabel = new System.Windows.Forms.Label();
+            this.starttimePicker = new Los_Alamos_Timeclock.nullableDTpicker();
             employeeLabel = new System.Windows.Forms.Label();
             startLabel = new System.Windows.Forms.Label();
             endLabel = new System.Windows.Forms.Label();
@@ -192,8 +193,8 @@ namespace Los_Alamos_Timeclock.Manager
             // 
             this.datagrid.AllowUserToAddRows = false;
             this.datagrid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            this.datagrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.datagrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.datagrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -330,12 +331,24 @@ namespace Los_Alamos_Timeclock.Manager
             this.lunchdashLabel.TabIndex = 27;
             this.lunchdashLabel.Text = "--";
             // 
+            // starttimePicker
+            // 
+            this.starttimePicker.CustomFormat = "hh:mm tt";
+            this.starttimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.starttimePicker.Location = new System.Drawing.Point(162, 164);
+            this.starttimePicker.Name = "starttimePicker";
+            this.starttimePicker.Size = new System.Drawing.Size(84, 20);
+            this.starttimePicker.TabIndex = 73;
+            this.starttimePicker.Value = new System.DateTime(2012, 4, 15, 17, 13, 54, 93);
+            this.starttimePicker.ValueChanged += new System.EventHandler(this.starttimePicker_ValueChanged);
+            // 
             // Status
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Los_Alamos_Timeclock.Properties.Resources._1287421014661;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.starttimePicker);
             this.Controls.Add(pictureBox1);
             this.Controls.Add(this.lunchdashLabel);
             this.Controls.Add(this.linTextbox);
@@ -390,6 +403,7 @@ namespace Los_Alamos_Timeclock.Manager
         private System.Windows.Forms.MaskedTextBox linTextbox;
         private System.Windows.Forms.MaskedTextBox loutTextbox;
         private System.Windows.Forms.Label lunchdashLabel;
+        private nullableDTpicker starttimePicker;
 
     }
 }

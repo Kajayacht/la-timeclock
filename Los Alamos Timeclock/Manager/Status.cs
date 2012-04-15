@@ -37,6 +37,8 @@ namespace Los_Alamos_Timeclock.Manager
         {
             InitializeComponent();
 
+            starttimePicker.ShowUpDown = true;
+
             this.datagrid.DefaultCellStyle.ForeColor = Properties.Settings.Default.tableTextColor;
             this.datagrid.DefaultCellStyle.BackColor = Properties.Settings.Default.tablerow1Color;
             this.datagrid.AlternatingRowsDefaultCellStyle.BackColor = Properties.Settings.Default.tablerow2Color;
@@ -97,6 +99,7 @@ namespace Los_Alamos_Timeclock.Manager
 
         private void update_Click(object sender, EventArgs e)
         {
+            
             if (Main.employeeList.Count == 0)
             {
                 MessageBox.Show("No Employee Selected");
@@ -375,6 +378,11 @@ namespace Los_Alamos_Timeclock.Manager
                 employeeDropdownlist.Text = datagrid.Rows[e.RowIndex].Cells[1].Value.ToString();
                 employeeUpdate();
             }
+        }
+
+        private void starttimePicker_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -102,11 +102,13 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                         if (scheduled)
                         {
                             Main.maininstance.sqlCommand("UPDATE Schedule SET Start='" + starttimePicker.Value.TimeOfDay.ToString() + "', End='" + endtimePicker.Value.TimeOfDay.ToString() + "', JID='" + jobsDropdownlist.Text + "' WHERE Date='" + date + "' AND ID='" + ID + "'");
+                            MessageBox.Show("Record Updated");
                         }
                         else
                         {
                             Main.maininstance.sqlCommand("INSERT INTO Schedule (`ID`, `Date`, `Start`, `End`, `JID`) VALUES ('" + ID + "', '" + date + "', '" + starttimePicker.Value.TimeOfDay.ToString() + "', '" + endtimePicker.Value.TimeOfDay.ToString() + "', '" + jobsDropdownlist.Text + "')");
                             scheduled = true;
+                            MessageBox.Show("Record Inserted");
                         }
                         Log.writeLog(Main.eName + " changed the schedule for " + employeeDropdownlist.Text + "\n Date= " + date + "\n Start= " + starttimePicker.Value.TimeOfDay.ToString() + "\n End= " + endtimePicker.Value.TimeOfDay.ToString() + "\n Job= " + jobsDropdownlist.Text);
                         populateDatagrid();
@@ -133,6 +135,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                         Main.maininstance.sqlCommand("DELETE FROM Schedule WHERE ID='" + ID + "' AND Date='" + date + "'");
                         Log.writeLog(Main.eName + " deleted " + employeeDropdownlist.Text + " from the schedule for: " + "\n Date= " + date + "\n Start= " + starttimePicker.Value.TimeOfDay.ToString() + "\n End= " + endtimePicker.Value.TimeOfDay.ToString() + "\n Job= " + jobsDropdownlist.Text);
                         scheduled = false;
+                        MessageBox.Show("Record deleted");
                     }
                     else
                     {

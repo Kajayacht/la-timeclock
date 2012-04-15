@@ -183,6 +183,9 @@
     <Compile Include="Manager\Status.Designer.cs">
       <DependentUpon>Status.cs</DependentUpon>
     </Compile>
+    <Compile Include="nullableDTpicker.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Request.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -360,23 +363,17 @@
     <Content Include="icon4.ico" />
     <Content Include="Resources\Bartender.bmp" />
     <Content Include="Resources\Cook.bmp" />
-    <Content Include="Resources\Dishwasher.bmp" />
-    <Content Include="Resources\Jobimages\Bartender.bmp" />
-    <Content Include="Resources\Jobimages\Cook.bmp" />
-    <Content Include="Resources\Manager.bmp" />
-    <Content Include="Resources\Security.bmp" />
-    <Content Include="Resources\Server.bmp" />
     <None Include="Resources\shakingMoraca2.gif" />
     <None Include="Resources\shakingMoraca.gif" />
     <None Include="Resources\dancingtaco.gif" />
     <None Include="Resources\dancingChile.gif" />
     <None Include="Resources\dancing cactus.gif" />
     <None Include="Resources\dancingMan.gif" />
-    <Content Include="Resources\Jobimages\Dishwasher.bmp" />
+    <Content Include="Resources\Dishwasher.bmp" />
     <None Include="Resources\icon4.ico" />
-    <Content Include="Resources\Jobimages\Manager.bmp" />
-    <Content Include="Resources\Jobimages\Security.bmp" />
-    <Content Include="Resources\Jobimages\Server.bmp" />
+    <Content Include="Resources\Manager.bmp" />
+    <Content Include="Resources\Security.bmp" />
+    <Content Include="Resources\Server.bmp" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
