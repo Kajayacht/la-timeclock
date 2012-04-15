@@ -169,6 +169,7 @@ namespace Los_Alamos_Timeclock.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("White")]
         public global::System.Drawing.Color tablerow1Color {
             get {
                 return ((global::System.Drawing.Color)(this["tablerow1Color"]));
@@ -180,12 +181,25 @@ namespace Los_Alamos_Timeclock.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("White")]
         public global::System.Drawing.Color tablerow2Color {
             get {
                 return ((global::System.Drawing.Color)(this["tablerow2Color"]));
             }
             set {
                 this["tablerow2Color"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string jobImageFolderPath {
+            get {
+                return ((string)(this["jobImageFolderPath"]));
+            }
+            set {
+                this["jobImageFolderPath"] = value;
             }
         }
     }

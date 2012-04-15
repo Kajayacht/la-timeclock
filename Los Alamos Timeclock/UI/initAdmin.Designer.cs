@@ -82,15 +82,6 @@
             nameLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // pass2Textbox
-            // 
-            this.pass2Textbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pass2Textbox.Location = new System.Drawing.Point(100, 522);
-            this.pass2Textbox.Name = "pass2Textbox";
-            this.pass2Textbox.PasswordChar = '*';
-            this.pass2Textbox.Size = new System.Drawing.Size(344, 20);
-            this.pass2Textbox.TabIndex = 79;
-            // 
             // pass2Label
             // 
             pass2Label.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -102,34 +93,6 @@
             pass2Label.Size = new System.Drawing.Size(82, 40);
             pass2Label.TabIndex = 86;
             pass2Label.Text = "Confirm Password:";
-            // 
-            // changeloginButton
-            // 
-            this.changeloginButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.changeloginButton.ForeColor = System.Drawing.Color.Black;
-            this.changeloginButton.Location = new System.Drawing.Point(101, 557);
-            this.changeloginButton.Name = "changeloginButton";
-            this.changeloginButton.Size = new System.Drawing.Size(344, 35);
-            this.changeloginButton.TabIndex = 80;
-            this.changeloginButton.Text = "Change Login";
-            this.changeloginButton.UseVisualStyleBackColor = true;
-            // 
-            // pass1Textbox
-            // 
-            this.pass1Textbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pass1Textbox.Location = new System.Drawing.Point(100, 476);
-            this.pass1Textbox.Name = "pass1Textbox";
-            this.pass1Textbox.PasswordChar = '*';
-            this.pass1Textbox.Size = new System.Drawing.Size(344, 20);
-            this.pass1Textbox.TabIndex = 78;
-            // 
-            // userTextbox
-            // 
-            this.userTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.userTextbox.Location = new System.Drawing.Point(100, 450);
-            this.userTextbox.Name = "userTextbox";
-            this.userTextbox.Size = new System.Drawing.Size(344, 20);
-            this.userTextbox.TabIndex = 77;
             // 
             // pass1Label
             // 
@@ -169,41 +132,6 @@
             loginLabel.Size = new System.Drawing.Size(70, 25);
             loginLabel.TabIndex = 81;
             loginLabel.Text = "Login";
-            // 
-            // aZipTextbox
-            // 
-            this.aZipTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.aZipTextbox.Location = new System.Drawing.Point(100, 296);
-            this.aZipTextbox.Mask = "00000";
-            this.aZipTextbox.Name = "aZipTextbox";
-            this.aZipTextbox.Size = new System.Drawing.Size(344, 20);
-            this.aZipTextbox.TabIndex = 95;
-            // 
-            // phoneTextbox
-            // 
-            this.phoneTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.phoneTextbox.Location = new System.Drawing.Point(101, 360);
-            this.phoneTextbox.Mask = "(999) 000-0000";
-            this.phoneTextbox.Name = "phoneTextbox";
-            this.phoneTextbox.Size = new System.Drawing.Size(343, 20);
-            this.phoneTextbox.TabIndex = 96;
-            // 
-            // ssnTextbox
-            // 
-            this.ssnTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.ssnTextbox.Location = new System.Drawing.Point(100, 130);
-            this.ssnTextbox.Mask = "000-00-0000";
-            this.ssnTextbox.Name = "ssnTextbox";
-            this.ssnTextbox.Size = new System.Drawing.Size(344, 20);
-            this.ssnTextbox.TabIndex = 90;
-            // 
-            // emailTextbox
-            // 
-            this.emailTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.emailTextbox.Location = new System.Drawing.Point(100, 386);
-            this.emailTextbox.Name = "emailTextbox";
-            this.emailTextbox.Size = new System.Drawing.Size(344, 20);
-            this.emailTextbox.TabIndex = 97;
             // 
             // emailLabel
             // 
@@ -256,116 +184,6 @@
             ssnLabel.Size = new System.Drawing.Size(46, 20);
             ssnLabel.TabIndex = 108;
             ssnLabel.Text = "SSN:";
-            // 
-            // aStateDropdownlist
-            // 
-            this.aStateDropdownlist.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.aStateDropdownlist.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.aStateDropdownlist.FormattingEnabled = true;
-            this.aStateDropdownlist.Items.AddRange(new object[] {
-            "Alabama",
-            "Alaska",
-            "Arizona",
-            "Arkansas",
-            "California",
-            "Colorado",
-            "Connecticut",
-            "Delaware",
-            "District of Columbia",
-            "Florida",
-            "Georgia",
-            "Hawaii",
-            "Idaho",
-            "Illinois",
-            "Indiana",
-            "Iowa",
-            "Kansas",
-            "Kentucky",
-            "Louisiana",
-            "Maine",
-            "Maryland",
-            "Massachusetts",
-            "Michigan",
-            "Minnesota",
-            "Mississippi",
-            "Missouri",
-            "Montana",
-            "Nebraska",
-            "Nevada",
-            "New Hampshire",
-            "New Jersey",
-            "New Mexico",
-            "New York",
-            "North Carolina",
-            "North Dakota",
-            "Ohio",
-            "Oklahoma",
-            "Oregon",
-            "Pennsylvania",
-            "Rhode Island",
-            "South Carolina",
-            "South Dakota",
-            "Tennessee",
-            "Texas",
-            "Utah",
-            "Vermont",
-            "Virginia",
-            "Washington",
-            "West Virginia",
-            "Wisconsin",
-            "Wyoming"});
-            this.aStateDropdownlist.Location = new System.Drawing.Point(100, 270);
-            this.aStateDropdownlist.Name = "aStateDropdownlist";
-            this.aStateDropdownlist.Size = new System.Drawing.Size(344, 21);
-            this.aStateDropdownlist.TabIndex = 94;
-            // 
-            // aCityTextbox
-            // 
-            this.aCityTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.aCityTextbox.Location = new System.Drawing.Point(100, 244);
-            this.aCityTextbox.Name = "aCityTextbox";
-            this.aCityTextbox.Size = new System.Drawing.Size(344, 20);
-            this.aCityTextbox.TabIndex = 93;
-            // 
-            // aLine2Textbox
-            // 
-            this.aLine2Textbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.aLine2Textbox.Location = new System.Drawing.Point(100, 218);
-            this.aLine2Textbox.Name = "aLine2Textbox";
-            this.aLine2Textbox.Size = new System.Drawing.Size(344, 20);
-            this.aLine2Textbox.TabIndex = 92;
-            // 
-            // aLine1Textbox
-            // 
-            this.aLine1Textbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.aLine1Textbox.Location = new System.Drawing.Point(100, 192);
-            this.aLine1Textbox.Name = "aLine1Textbox";
-            this.aLine1Textbox.Size = new System.Drawing.Size(344, 20);
-            this.aLine1Textbox.TabIndex = 91;
-            // 
-            // lNameTextbox
-            // 
-            this.lNameTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lNameTextbox.Location = new System.Drawing.Point(100, 102);
-            this.lNameTextbox.Name = "lNameTextbox";
-            this.lNameTextbox.Size = new System.Drawing.Size(344, 20);
-            this.lNameTextbox.TabIndex = 89;
-            // 
-            // mNameTextbox
-            // 
-            this.mNameTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.mNameTextbox.Location = new System.Drawing.Point(100, 76);
-            this.mNameTextbox.Name = "mNameTextbox";
-            this.mNameTextbox.Size = new System.Drawing.Size(344, 20);
-            this.mNameTextbox.TabIndex = 88;
-            // 
-            // fNameTextbox
-            // 
-            this.fNameTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.fNameTextbox.Location = new System.Drawing.Point(100, 50);
-            this.fNameTextbox.Name = "fNameTextbox";
-            this.fNameTextbox.Size = new System.Drawing.Size(344, 20);
-            this.fNameTextbox.TabIndex = 87;
             // 
             // mnameLabel
             // 
@@ -497,6 +315,188 @@
             nameLabel.TabIndex = 98;
             nameLabel.Text = "Name";
             // 
+            // pass2Textbox
+            // 
+            this.pass2Textbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pass2Textbox.Location = new System.Drawing.Point(100, 522);
+            this.pass2Textbox.Name = "pass2Textbox";
+            this.pass2Textbox.PasswordChar = '*';
+            this.pass2Textbox.Size = new System.Drawing.Size(344, 20);
+            this.pass2Textbox.TabIndex = 13;
+            // 
+            // changeloginButton
+            // 
+            this.changeloginButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.changeloginButton.ForeColor = System.Drawing.Color.Black;
+            this.changeloginButton.Location = new System.Drawing.Point(101, 557);
+            this.changeloginButton.Name = "changeloginButton";
+            this.changeloginButton.Size = new System.Drawing.Size(344, 35);
+            this.changeloginButton.TabIndex = 14;
+            this.changeloginButton.Text = "Change Login";
+            this.changeloginButton.UseVisualStyleBackColor = true;
+            // 
+            // pass1Textbox
+            // 
+            this.pass1Textbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pass1Textbox.Location = new System.Drawing.Point(100, 476);
+            this.pass1Textbox.Name = "pass1Textbox";
+            this.pass1Textbox.PasswordChar = '*';
+            this.pass1Textbox.Size = new System.Drawing.Size(344, 20);
+            this.pass1Textbox.TabIndex = 12;
+            // 
+            // userTextbox
+            // 
+            this.userTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.userTextbox.Location = new System.Drawing.Point(100, 450);
+            this.userTextbox.Name = "userTextbox";
+            this.userTextbox.Size = new System.Drawing.Size(344, 20);
+            this.userTextbox.TabIndex = 11;
+            // 
+            // aZipTextbox
+            // 
+            this.aZipTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.aZipTextbox.Location = new System.Drawing.Point(100, 296);
+            this.aZipTextbox.Mask = "00000";
+            this.aZipTextbox.Name = "aZipTextbox";
+            this.aZipTextbox.Size = new System.Drawing.Size(344, 20);
+            this.aZipTextbox.TabIndex = 8;
+            // 
+            // phoneTextbox
+            // 
+            this.phoneTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.phoneTextbox.Location = new System.Drawing.Point(101, 360);
+            this.phoneTextbox.Mask = "(999) 000-0000";
+            this.phoneTextbox.Name = "phoneTextbox";
+            this.phoneTextbox.Size = new System.Drawing.Size(343, 20);
+            this.phoneTextbox.TabIndex = 9;
+            // 
+            // ssnTextbox
+            // 
+            this.ssnTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ssnTextbox.Location = new System.Drawing.Point(100, 130);
+            this.ssnTextbox.Mask = "000-00-0000";
+            this.ssnTextbox.Name = "ssnTextbox";
+            this.ssnTextbox.Size = new System.Drawing.Size(344, 20);
+            this.ssnTextbox.TabIndex = 3;
+            // 
+            // emailTextbox
+            // 
+            this.emailTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.emailTextbox.Location = new System.Drawing.Point(100, 386);
+            this.emailTextbox.Name = "emailTextbox";
+            this.emailTextbox.Size = new System.Drawing.Size(344, 20);
+            this.emailTextbox.TabIndex = 10;
+            // 
+            // aStateDropdownlist
+            // 
+            this.aStateDropdownlist.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.aStateDropdownlist.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.aStateDropdownlist.FormattingEnabled = true;
+            this.aStateDropdownlist.Items.AddRange(new object[] {
+            "Alabama",
+            "Alaska",
+            "Arizona",
+            "Arkansas",
+            "California",
+            "Colorado",
+            "Connecticut",
+            "Delaware",
+            "District of Columbia",
+            "Florida",
+            "Georgia",
+            "Hawaii",
+            "Idaho",
+            "Illinois",
+            "Indiana",
+            "Iowa",
+            "Kansas",
+            "Kentucky",
+            "Louisiana",
+            "Maine",
+            "Maryland",
+            "Massachusetts",
+            "Michigan",
+            "Minnesota",
+            "Mississippi",
+            "Missouri",
+            "Montana",
+            "Nebraska",
+            "Nevada",
+            "New Hampshire",
+            "New Jersey",
+            "New Mexico",
+            "New York",
+            "North Carolina",
+            "North Dakota",
+            "Ohio",
+            "Oklahoma",
+            "Oregon",
+            "Pennsylvania",
+            "Rhode Island",
+            "South Carolina",
+            "South Dakota",
+            "Tennessee",
+            "Texas",
+            "Utah",
+            "Vermont",
+            "Virginia",
+            "Washington",
+            "West Virginia",
+            "Wisconsin",
+            "Wyoming"});
+            this.aStateDropdownlist.Location = new System.Drawing.Point(100, 270);
+            this.aStateDropdownlist.Name = "aStateDropdownlist";
+            this.aStateDropdownlist.Size = new System.Drawing.Size(344, 21);
+            this.aStateDropdownlist.TabIndex = 7;
+            // 
+            // aCityTextbox
+            // 
+            this.aCityTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.aCityTextbox.Location = new System.Drawing.Point(100, 244);
+            this.aCityTextbox.Name = "aCityTextbox";
+            this.aCityTextbox.Size = new System.Drawing.Size(344, 20);
+            this.aCityTextbox.TabIndex = 6;
+            // 
+            // aLine2Textbox
+            // 
+            this.aLine2Textbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.aLine2Textbox.Location = new System.Drawing.Point(100, 218);
+            this.aLine2Textbox.Name = "aLine2Textbox";
+            this.aLine2Textbox.Size = new System.Drawing.Size(344, 20);
+            this.aLine2Textbox.TabIndex = 5;
+            // 
+            // aLine1Textbox
+            // 
+            this.aLine1Textbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.aLine1Textbox.Location = new System.Drawing.Point(100, 192);
+            this.aLine1Textbox.Name = "aLine1Textbox";
+            this.aLine1Textbox.Size = new System.Drawing.Size(344, 20);
+            this.aLine1Textbox.TabIndex = 4;
+            // 
+            // lNameTextbox
+            // 
+            this.lNameTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lNameTextbox.Location = new System.Drawing.Point(100, 102);
+            this.lNameTextbox.Name = "lNameTextbox";
+            this.lNameTextbox.Size = new System.Drawing.Size(344, 20);
+            this.lNameTextbox.TabIndex = 2;
+            // 
+            // mNameTextbox
+            // 
+            this.mNameTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.mNameTextbox.Location = new System.Drawing.Point(100, 76);
+            this.mNameTextbox.Name = "mNameTextbox";
+            this.mNameTextbox.Size = new System.Drawing.Size(344, 20);
+            this.mNameTextbox.TabIndex = 1;
+            // 
+            // fNameTextbox
+            // 
+            this.fNameTextbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.fNameTextbox.Location = new System.Drawing.Point(100, 50);
+            this.fNameTextbox.Name = "fNameTextbox";
+            this.fNameTextbox.Size = new System.Drawing.Size(344, 20);
+            this.fNameTextbox.TabIndex = 0;
+            // 
             // initAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -536,6 +536,7 @@
             this.Controls.Add(userLabel);
             this.Controls.Add(loginLabel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(543, 648);
             this.Name = "initAdmin";
             this.Text = "New Admin";
             this.ResumeLayout(false);
