@@ -94,7 +94,7 @@ namespace Los_Alamos_Timeclock
         {
             //create initial admin
             //check if there are no admins            
-            
+            Main.maininstance.connectDB(myConnection);
             myConnection.Open();
             Main.maininstance.sqlReader("select count(*) from Admin");
 
@@ -105,20 +105,26 @@ namespace Los_Alamos_Timeclock
                  
                 
                 if (result == DialogResult.Yes)
-                {                    
+                {
+                    bool init = true;
+                    
                     //make a new employee 
-                    Main.maininstance.panel1.Controls.Add(new Newemployee());
+                    
+                    Main.maininstance.menu1.Show();
+                    Main.maininstance.panel1.Controls.Clear();
+                    Main.maininstance.panel1.Controls.Add(new Newemployee(init));
+                    Main.maininstance.panel1.Controls[0].Dock = DockStyle.Fill;
+
+                    //Main.maininstance.Controls.Add(new Newemployee());
                     //give him admin rights
-                    Main.maininstance.sqlReader("SELECT ID FROM Employee ORDER BY ID DESC LIMIT 1");
-                    int id = int.Parse(Main.reader["ID"].ToString());
-                    Main.maininstance.sqlCommand("INSERT INTO Manager Values('" + id + "')");
+                
                 }
                 //Or exit the program
                 else
                 {
                     myConnection.Close();
                     Environment.Exit(0);
-                }
+                }                                
             }
             myConnection.Close();
             

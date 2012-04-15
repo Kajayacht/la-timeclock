@@ -306,7 +306,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
         private void Newemployee_Click(object sender, EventArgs e)
         {
             Main.maininstance.panel1.Controls.Clear();
-            Main.maininstance.panel1.Controls.Add(new Newemployee());
+            Main.maininstance.panel1.Controls.Add(new Newemployee(false));
             Main.maininstance.panel1.Controls[0].Dock = DockStyle.Fill;
         }
 

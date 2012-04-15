@@ -75,6 +75,7 @@ namespace Los_Alamos_Timeclock
             panel1.Controls.Clear();
             panel1.Controls.Add(new Login());
             panel1.Controls[0].Dock = DockStyle.Fill;
+            
             //Connects to the database
 
 
@@ -87,7 +88,7 @@ namespace Los_Alamos_Timeclock
 
             connectDB(myConnection);
 
-            //DBInit.initAdmin(myConnection);
+            DBInit.initAdmin(myConnection);
 
             joblist = getJobs();
             employeeList = getEmployees();

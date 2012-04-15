@@ -26,11 +26,13 @@ namespace Los_Alamos_Timeclock.Manager.Admin
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
      */
+        public static bool myInit;
 
-
-        public Newemployee()
+        public Newemployee(bool init)
         {
             InitializeComponent();
+            myInit = init;
+
 
             try
             {
@@ -107,6 +109,13 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                 }
                 finally
                 {
+                    if (myInit == true)
+                    {
+                        Main.maininstance.sqlReader("SELECT ID FROM Employee ORDER BY ID DESC LIMIT 1");
+                        int adminid = int.Parse(Main.reader["ID"].ToString());
+                        Main.maininstance.sqlCommand("INSERT INTO Manager Values('" + adminid + "')");
+                        Application.Restart();
+                    }
                     Main.myConnection.Close();
                 }
             }
