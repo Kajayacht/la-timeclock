@@ -37,7 +37,10 @@ namespace Los_Alamos_Timeclock.Manager
             System.Windows.Forms.Label break2Label;
             System.Windows.Forms.Label lunchLabel;
             System.Windows.Forms.PictureBox pictureBox1;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.Label b1dashLabel;
+            System.Windows.Forms.Label b2dashLabel;
+            System.Windows.Forms.Label lunchdashLabel;
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.employeeDropdownlist = new System.Windows.Forms.ComboBox();
             this.calander = new System.Windows.Forms.DateTimePicker();
             this.updatescheduleButton = new System.Windows.Forms.Button();
@@ -46,14 +49,18 @@ namespace Los_Alamos_Timeclock.Manager
             this.startTextbox = new System.Windows.Forms.MaskedTextBox();
             this.endTextbox = new System.Windows.Forms.MaskedTextBox();
             this.b1outTextbox = new System.Windows.Forms.MaskedTextBox();
-            this.b1dashLabel = new System.Windows.Forms.Label();
             this.b1inTextbox = new System.Windows.Forms.MaskedTextBox();
             this.b2inTextbox = new System.Windows.Forms.MaskedTextBox();
-            this.b2dashLabel = new System.Windows.Forms.Label();
             this.b2outTextbox = new System.Windows.Forms.MaskedTextBox();
             this.linTextbox = new System.Windows.Forms.MaskedTextBox();
             this.loutTextbox = new System.Windows.Forms.MaskedTextBox();
-            this.lunchdashLabel = new System.Windows.Forms.Label();
+            this.lunchintimePicker = new Los_Alamos_Timeclock.nullableDTpicker();
+            this.lunchouttimePicker = new Los_Alamos_Timeclock.nullableDTpicker();
+            this.break2intimePicker = new Los_Alamos_Timeclock.nullableDTpicker();
+            this.break1intimePicker = new Los_Alamos_Timeclock.nullableDTpicker();
+            this.break2outtimePicker = new Los_Alamos_Timeclock.nullableDTpicker();
+            this.break1outtimePicker = new Los_Alamos_Timeclock.nullableDTpicker();
+            this.endtimePicker = new Los_Alamos_Timeclock.nullableDTpicker();
             this.starttimePicker = new Los_Alamos_Timeclock.nullableDTpicker();
             employeeLabel = new System.Windows.Forms.Label();
             startLabel = new System.Windows.Forms.Label();
@@ -63,6 +70,9 @@ namespace Los_Alamos_Timeclock.Manager
             break2Label = new System.Windows.Forms.Label();
             lunchLabel = new System.Windows.Forms.Label();
             pictureBox1 = new System.Windows.Forms.PictureBox();
+            b1dashLabel = new System.Windows.Forms.Label();
+            b2dashLabel = new System.Windows.Forms.Label();
+            lunchdashLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datagrid)).BeginInit();
             this.SuspendLayout();
@@ -150,12 +160,45 @@ namespace Los_Alamos_Timeclock.Manager
             pictureBox1.BackColor = System.Drawing.Color.Transparent;
             pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             pictureBox1.Image = global::Los_Alamos_Timeclock.Properties.Resources.dancing_cactus;
-            pictureBox1.Location = new System.Drawing.Point(299, 293);
+            pictureBox1.Location = new System.Drawing.Point(321, 293);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new System.Drawing.Size(73, 101);
             pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 72;
             pictureBox1.TabStop = false;
+            // 
+            // b1dashLabel
+            // 
+            b1dashLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            b1dashLabel.AutoSize = true;
+            b1dashLabel.BackColor = System.Drawing.Color.Transparent;
+            b1dashLabel.Location = new System.Drawing.Point(233, 297);
+            b1dashLabel.Name = "b1dashLabel";
+            b1dashLabel.Size = new System.Drawing.Size(13, 13);
+            b1dashLabel.TabIndex = 20;
+            b1dashLabel.Text = "--";
+            // 
+            // b2dashLabel
+            // 
+            b2dashLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            b2dashLabel.AutoSize = true;
+            b2dashLabel.BackColor = System.Drawing.Color.Transparent;
+            b2dashLabel.Location = new System.Drawing.Point(233, 324);
+            b2dashLabel.Name = "b2dashLabel";
+            b2dashLabel.Size = new System.Drawing.Size(13, 13);
+            b2dashLabel.TabIndex = 24;
+            b2dashLabel.Text = "--";
+            // 
+            // lunchdashLabel
+            // 
+            lunchdashLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            lunchdashLabel.AutoSize = true;
+            lunchdashLabel.BackColor = System.Drawing.Color.Transparent;
+            lunchdashLabel.Location = new System.Drawing.Point(233, 350);
+            lunchdashLabel.Name = "lunchdashLabel";
+            lunchdashLabel.Size = new System.Drawing.Size(13, 13);
+            lunchdashLabel.TabIndex = 27;
+            lunchdashLabel.Text = "--";
             // 
             // employeeDropdownlist
             // 
@@ -171,7 +214,7 @@ namespace Los_Alamos_Timeclock.Manager
             // calander
             // 
             this.calander.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.calander.Location = new System.Drawing.Point(275, 267);
+            this.calander.Location = new System.Drawing.Point(297, 267);
             this.calander.Name = "calander";
             this.calander.Size = new System.Drawing.Size(200, 20);
             this.calander.TabIndex = 1;
@@ -181,7 +224,7 @@ namespace Los_Alamos_Timeclock.Manager
             // 
             this.updatescheduleButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.updatescheduleButton.ForeColor = System.Drawing.Color.Black;
-            this.updatescheduleButton.Location = new System.Drawing.Point(378, 294);
+            this.updatescheduleButton.Location = new System.Drawing.Point(400, 294);
             this.updatescheduleButton.Name = "updatescheduleButton";
             this.updatescheduleButton.Size = new System.Drawing.Size(97, 100);
             this.updatescheduleButton.TabIndex = 11;
@@ -193,8 +236,8 @@ namespace Los_Alamos_Timeclock.Manager
             // 
             this.datagrid.AllowUserToAddRows = false;
             this.datagrid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.datagrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            this.datagrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.datagrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -249,17 +292,6 @@ namespace Los_Alamos_Timeclock.Manager
             this.b1outTextbox.TabIndex = 3;
             this.b1outTextbox.ValidatingType = typeof(System.DateTime);
             // 
-            // b1dashLabel
-            // 
-            this.b1dashLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.b1dashLabel.AutoSize = true;
-            this.b1dashLabel.BackColor = System.Drawing.Color.Transparent;
-            this.b1dashLabel.Location = new System.Drawing.Point(233, 297);
-            this.b1dashLabel.Name = "b1dashLabel";
-            this.b1dashLabel.Size = new System.Drawing.Size(13, 13);
-            this.b1dashLabel.TabIndex = 20;
-            this.b1dashLabel.Text = "--";
-            // 
             // b1inTextbox
             // 
             this.b1inTextbox.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -278,17 +310,6 @@ namespace Los_Alamos_Timeclock.Manager
             this.b2inTextbox.Size = new System.Drawing.Size(41, 20);
             this.b2inTextbox.TabIndex = 6;
             this.b2inTextbox.ValidatingType = typeof(System.DateTime);
-            // 
-            // b2dashLabel
-            // 
-            this.b2dashLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.b2dashLabel.AutoSize = true;
-            this.b2dashLabel.BackColor = System.Drawing.Color.Transparent;
-            this.b2dashLabel.Location = new System.Drawing.Point(233, 324);
-            this.b2dashLabel.Name = "b2dashLabel";
-            this.b2dashLabel.Size = new System.Drawing.Size(13, 13);
-            this.b2dashLabel.TabIndex = 24;
-            this.b2dashLabel.Text = "--";
             // 
             // b2outTextbox
             // 
@@ -320,27 +341,93 @@ namespace Los_Alamos_Timeclock.Manager
             this.loutTextbox.TabIndex = 7;
             this.loutTextbox.ValidatingType = typeof(System.DateTime);
             // 
-            // lunchdashLabel
+            // lunchintimePicker
             // 
-            this.lunchdashLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.lunchdashLabel.AutoSize = true;
-            this.lunchdashLabel.BackColor = System.Drawing.Color.Transparent;
-            this.lunchdashLabel.Location = new System.Drawing.Point(233, 350);
-            this.lunchdashLabel.Name = "lunchdashLabel";
-            this.lunchdashLabel.Size = new System.Drawing.Size(13, 13);
-            this.lunchdashLabel.TabIndex = 27;
-            this.lunchdashLabel.Text = "--";
+            this.lunchintimePicker.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.lunchintimePicker.CustomFormat = "hh:mm tt";
+            this.lunchintimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.lunchintimePicker.Location = new System.Drawing.Point(309, 188);
+            this.lunchintimePicker.Name = "lunchintimePicker";
+            this.lunchintimePicker.Size = new System.Drawing.Size(67, 20);
+            this.lunchintimePicker.TabIndex = 80;
+            this.lunchintimePicker.Value = new System.DateTime(2012, 4, 15, 17, 13, 54, 93);
+            // 
+            // lunchouttimePicker
+            // 
+            this.lunchouttimePicker.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.lunchouttimePicker.CustomFormat = "hh:mm tt";
+            this.lunchouttimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.lunchouttimePicker.Location = new System.Drawing.Point(236, 188);
+            this.lunchouttimePicker.Name = "lunchouttimePicker";
+            this.lunchouttimePicker.Size = new System.Drawing.Size(67, 20);
+            this.lunchouttimePicker.TabIndex = 79;
+            this.lunchouttimePicker.Value = new System.DateTime(2012, 4, 15, 17, 13, 54, 93);
+            // 
+            // break2intimePicker
+            // 
+            this.break2intimePicker.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.break2intimePicker.CustomFormat = "hh:mm tt";
+            this.break2intimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.break2intimePicker.Location = new System.Drawing.Point(309, 162);
+            this.break2intimePicker.Name = "break2intimePicker";
+            this.break2intimePicker.Size = new System.Drawing.Size(67, 20);
+            this.break2intimePicker.TabIndex = 78;
+            this.break2intimePicker.Value = new System.DateTime(2012, 4, 15, 17, 13, 54, 93);
+            // 
+            // break1intimePicker
+            // 
+            this.break1intimePicker.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.break1intimePicker.CustomFormat = "hh:mm tt";
+            this.break1intimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.break1intimePicker.Location = new System.Drawing.Point(309, 136);
+            this.break1intimePicker.Name = "break1intimePicker";
+            this.break1intimePicker.Size = new System.Drawing.Size(67, 20);
+            this.break1intimePicker.TabIndex = 77;
+            this.break1intimePicker.Value = new System.DateTime(2012, 4, 15, 17, 13, 54, 93);
+            // 
+            // break2outtimePicker
+            // 
+            this.break2outtimePicker.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.break2outtimePicker.CustomFormat = "hh:mm tt";
+            this.break2outtimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.break2outtimePicker.Location = new System.Drawing.Point(236, 162);
+            this.break2outtimePicker.Name = "break2outtimePicker";
+            this.break2outtimePicker.Size = new System.Drawing.Size(67, 20);
+            this.break2outtimePicker.TabIndex = 76;
+            this.break2outtimePicker.Value = new System.DateTime(2012, 4, 15, 17, 13, 54, 93);
+            // 
+            // break1outtimePicker
+            // 
+            this.break1outtimePicker.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.break1outtimePicker.CustomFormat = "hh:mm tt";
+            this.break1outtimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.break1outtimePicker.Location = new System.Drawing.Point(236, 136);
+            this.break1outtimePicker.Name = "break1outtimePicker";
+            this.break1outtimePicker.Size = new System.Drawing.Size(67, 20);
+            this.break1outtimePicker.TabIndex = 75;
+            this.break1outtimePicker.Value = new System.DateTime(2012, 4, 15, 17, 13, 54, 93);
+            // 
+            // endtimePicker
+            // 
+            this.endtimePicker.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.endtimePicker.CustomFormat = "hh:mm tt";
+            this.endtimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.endtimePicker.Location = new System.Drawing.Point(130, 162);
+            this.endtimePicker.Name = "endtimePicker";
+            this.endtimePicker.Size = new System.Drawing.Size(67, 20);
+            this.endtimePicker.TabIndex = 74;
+            this.endtimePicker.Value = new System.DateTime(2012, 4, 15, 17, 13, 54, 93);
             // 
             // starttimePicker
             // 
+            this.starttimePicker.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.starttimePicker.CustomFormat = "hh:mm tt";
             this.starttimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.starttimePicker.Location = new System.Drawing.Point(162, 164);
+            this.starttimePicker.Location = new System.Drawing.Point(130, 136);
             this.starttimePicker.Name = "starttimePicker";
-            this.starttimePicker.Size = new System.Drawing.Size(84, 20);
+            this.starttimePicker.Size = new System.Drawing.Size(67, 20);
             this.starttimePicker.TabIndex = 73;
             this.starttimePicker.Value = new System.DateTime(2012, 4, 15, 17, 13, 54, 93);
-            this.starttimePicker.ValueChanged += new System.EventHandler(this.starttimePicker_ValueChanged);
             // 
             // Status
             // 
@@ -348,18 +435,25 @@ namespace Los_Alamos_Timeclock.Manager
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Los_Alamos_Timeclock.Properties.Resources._1287421014661;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.lunchintimePicker);
+            this.Controls.Add(this.lunchouttimePicker);
+            this.Controls.Add(this.break2intimePicker);
+            this.Controls.Add(this.break1intimePicker);
+            this.Controls.Add(this.break2outtimePicker);
+            this.Controls.Add(this.break1outtimePicker);
+            this.Controls.Add(this.endtimePicker);
             this.Controls.Add(this.starttimePicker);
             this.Controls.Add(pictureBox1);
-            this.Controls.Add(this.lunchdashLabel);
+            this.Controls.Add(lunchdashLabel);
             this.Controls.Add(this.linTextbox);
             this.Controls.Add(this.loutTextbox);
             this.Controls.Add(lunchLabel);
             this.Controls.Add(this.b2inTextbox);
-            this.Controls.Add(this.b2dashLabel);
+            this.Controls.Add(b2dashLabel);
             this.Controls.Add(this.b2outTextbox);
             this.Controls.Add(break2Label);
             this.Controls.Add(this.b1inTextbox);
-            this.Controls.Add(this.b1dashLabel);
+            this.Controls.Add(b1dashLabel);
             this.Controls.Add(this.b1outTextbox);
             this.Controls.Add(break1Label);
             this.Controls.Add(this.endTextbox);
@@ -395,15 +489,19 @@ namespace Los_Alamos_Timeclock.Manager
         private System.Windows.Forms.MaskedTextBox startTextbox;
         private System.Windows.Forms.MaskedTextBox endTextbox;
         private System.Windows.Forms.MaskedTextBox b1outTextbox;
-        private System.Windows.Forms.Label b1dashLabel;
         private System.Windows.Forms.MaskedTextBox b1inTextbox;
         private System.Windows.Forms.MaskedTextBox b2inTextbox;
-        private System.Windows.Forms.Label b2dashLabel;
         private System.Windows.Forms.MaskedTextBox b2outTextbox;
         private System.Windows.Forms.MaskedTextBox linTextbox;
         private System.Windows.Forms.MaskedTextBox loutTextbox;
-        private System.Windows.Forms.Label lunchdashLabel;
         private nullableDTpicker starttimePicker;
+        private nullableDTpicker endtimePicker;
+        private nullableDTpicker break2outtimePicker;
+        private nullableDTpicker break1outtimePicker;
+        private nullableDTpicker break2intimePicker;
+        private nullableDTpicker break1intimePicker;
+        private nullableDTpicker lunchintimePicker;
+        private nullableDTpicker lunchouttimePicker;
 
     }
 }

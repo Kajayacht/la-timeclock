@@ -38,6 +38,14 @@ namespace Los_Alamos_Timeclock.Manager
             InitializeComponent();
 
             starttimePicker.ShowUpDown = true;
+            endtimePicker.ShowUpDown = true;
+            break1intimePicker.ShowUpDown = true;
+            break1outtimePicker.ShowUpDown = true;
+            break2intimePicker.ShowUpDown = true;
+            break2outtimePicker.ShowUpDown = true;
+            lunchintimePicker.ShowUpDown = true;
+            lunchouttimePicker.ShowUpDown = true;
+
 
             this.datagrid.DefaultCellStyle.ForeColor = Properties.Settings.Default.tableTextColor;
             this.datagrid.DefaultCellStyle.BackColor = Properties.Settings.Default.tablerow1Color;
@@ -245,6 +253,10 @@ namespace Los_Alamos_Timeclock.Manager
             Main.maininstance.sqlReader("Select * from `Hours Worked` where ID='" + id + "' AND Date='" + date + "'");
             if (Main.reader.HasRows)
             {
+                starttimePicker.Value = DateTime.Parse(Main.reader["Start"].ToString());
+                
+
+
 
                 startTextbox.Text = Main.reader["Start"].ToString();
                 endTextbox.Text = Main.reader["End"].ToString();
@@ -257,6 +269,11 @@ namespace Los_Alamos_Timeclock.Manager
             }
             else
             {
+
+
+
+
+
                 startTextbox.Text = "";
                 endTextbox.Text = "";
                 b1outTextbox.Text = "";
@@ -276,14 +293,14 @@ namespace Los_Alamos_Timeclock.Manager
             string query = "Select " +
                                 "a.Date, " +
                                 "CONCAT(c.LName, ', ',c.FName) AS Name, " +
-                                "a.Status,a.JID As Job, a.Tips as Tips, DATE_FORMAT(a.Start,'%r') AS Start , DATE_FORMAT(b.Start,'%r') AS 'Scheduled Start',  " +
-                                "DATE_FORMAT(a.B1out,'%r') As 'Break 1 OUT', " +
-                                "DATE_FORMAT(a.B1in,'%r') As 'Break 1 IN', " +
-                                "DATE_FORMAT(a.B2out,'%r') As 'Break 2 OUT', " +
-                                "DATE_FORMAT(a.B2in,'%r') As 'Break 2 IN', " +
-                                "DATE_FORMAT(a.Lout,'%r') As 'Lunch OUT', " +
-                                "DATE_FORMAT(a.Lin,'%r') As 'Lunch IN', " +
-                                "DATE_FORMAT(a.End,'%r') AS End, DATE_FORMAT(b.End,'%r') AS 'Scheduled End'  " +
+                                "a.Status,a.JID As Job, a.Tips as Tips, DATE_FORMAT(a.Start, '%h:%i %p' ) AS Start , DATE_FORMAT(b.Start, '%h:%i %p' ) AS 'Scheduled Start',  " +
+                                "DATE_FORMAT(a.B1out, '%h:%i %p' ) As 'Break 1 OUT', " +
+                                "DATE_FORMAT(a.B1in, '%h:%i %p' ) As 'Break 1 IN', " +
+                                "DATE_FORMAT(a.B2out, '%h:%i %p' ) As 'Break 2 OUT', " +
+                                "DATE_FORMAT(a.B2in, '%h:%i %p' ) As 'Break 2 IN', " +
+                                "DATE_FORMAT(a.Lout, '%h:%i %p' ) As 'Lunch OUT', " +
+                                "DATE_FORMAT(a.Lin, '%h:%i %p' ) As 'Lunch IN', " +
+                                "DATE_FORMAT(a.End, '%h:%i %p' ) AS End, DATE_FORMAT(b.End, '%h:%i %p') AS 'Scheduled End'  " +
                             "FROM `Hours Worked` a " +
                                 "LEFT JOIN Schedule b  " +
                                     "ON a.ID=b.ID AND a.Date=b.Date " +
@@ -294,14 +311,14 @@ namespace Los_Alamos_Timeclock.Manager
                             "Select " +
                                 "b.Date, " +
                                 "CONCAT(c.LName, ', ',c.FName) AS Name, " +
-                                "a.Status,a.JID As Job, a.Tips as Tips, DATE_FORMAT(a.Start,'%r') AS Start , DATE_FORMAT(b.Start,'%r') AS 'Scheduled Start',  " +
-                                "DATE_FORMAT(a.B1out,'%r') As 'Break 1 OUT', " +
-                                "DATE_FORMAT(a.B1in,'%r') As 'Break 1 IN', " +
-                                "DATE_FORMAT(a.B2out,'%r') As 'Break 2 OUT', " +
-                                "DATE_FORMAT(a.B2in,'%r') As 'Break 2 IN', " +
-                                "DATE_FORMAT(a.Lout,'%r') As 'Lunch OUT', " +
-                                "DATE_FORMAT(a.Lin,'%r') As 'Lunch IN', " +
-                                "DATE_FORMAT(a.End,'%r') AS End, DATE_FORMAT(b.End,'%r') AS 'Scheduled End'  " +
+                                "a.Status,a.JID As Job, a.Tips as Tips, DATE_FORMAT(a.Start, '%h:%i %p' ) AS Start , DATE_FORMAT(b.Start, '%h:%i %p' ) AS 'Scheduled Start',  " +
+                                "DATE_FORMAT(a.B1out, '%h:%i %p' ) As 'Break 1 OUT', " +
+                                "DATE_FORMAT(a.B1in, '%h:%i %p' ) As 'Break 1 IN', " +
+                                "DATE_FORMAT(a.B2out, '%h:%i %p' ) As 'Break 2 OUT', " +
+                                "DATE_FORMAT(a.B2in, '%h:%i %p' ) As 'Break 2 IN', " +
+                                "DATE_FORMAT(a.Lout, '%h:%i %p' ) As 'Lunch OUT', " +
+                                "DATE_FORMAT(a.Lin, '%h:%i %p' ) As 'Lunch IN', " +
+                                "DATE_FORMAT(a.End, '%h:%i %p' ) AS End, DATE_FORMAT(b.End, '%h:%i %p') AS 'Scheduled End'  " +
                             "FROM `Hours Worked` a " +
                                 "RIGHT JOIN Schedule b  " +
                                     "ON a.ID=b.ID AND a.Date=b.Date " +
@@ -312,14 +329,14 @@ namespace Los_Alamos_Timeclock.Manager
                             "Select " +
                                 "b.Date, " +
                                 "CONCAT(c.LName, ', ',c.FName) AS Name, " +
-                                "a.Status,a.JID As Job, a.Tips as Tips, DATE_FORMAT(a.Start,'%r') AS Start , DATE_FORMAT(b.Start,'%r') AS 'Scheduled Start',  " +
-                                "DATE_FORMAT(a.B1out,'%r') As 'Break 1 OUT', " +
-                                "DATE_FORMAT(a.B1in,'%r') As 'Break 1 IN', " +
-                                "DATE_FORMAT(a.B2out,'%r') As 'Break 2 OUT', " +
-                                "DATE_FORMAT(a.B2in,'%r') As 'Break 2 IN', " +
-                                "DATE_FORMAT(a.Lout,'%r') As 'Lunch OUT', " +
-                                "DATE_FORMAT(a.Lin,'%r') As 'Lunch IN', " +
-                                "DATE_FORMAT(a.End,'%r') AS End, DATE_FORMAT(b.End,'%r') AS 'Scheduled End'  " +
+                                "a.Status,a.JID As Job, a.Tips as Tips, DATE_FORMAT(a.Start, '%h:%i %p' ) AS Start , DATE_FORMAT(b.Start, '%h:%i %p' ) AS 'Scheduled Start',  " +
+                                "DATE_FORMAT(a.B1out, '%h:%i %p' ) As 'Break 1 OUT', " +
+                                "DATE_FORMAT(a.B1in, '%h:%i %p' ) As 'Break 1 IN', " +
+                                "DATE_FORMAT(a.B2out, '%h:%i %p' ) As 'Break 2 OUT', " +
+                                "DATE_FORMAT(a.B2in, '%h:%i %p' ) As 'Break 2 IN', " +
+                                "DATE_FORMAT(a.Lout, '%h:%i %p' ) As 'Lunch OUT', " +
+                                "DATE_FORMAT(a.Lin, '%h:%i %p' ) As 'Lunch IN', " +
+                                "DATE_FORMAT(a.End, '%h:%i %p' ) AS End, DATE_FORMAT(b.End, '%h:%i %p') AS 'Scheduled End'  " +
                             "FROM `Hours Worked` a " +
                                 "RIGHT JOIN Schedule b  " +
                                     "ON a.ID=b.ID AND a.Date=b.Date " +
@@ -378,11 +395,6 @@ namespace Los_Alamos_Timeclock.Manager
                 employeeDropdownlist.Text = datagrid.Rows[e.RowIndex].Cells[1].Value.ToString();
                 employeeUpdate();
             }
-        }
-
-        private void starttimePicker_ValueChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

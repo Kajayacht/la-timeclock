@@ -73,11 +73,11 @@ namespace Los_Alamos_Timeclock
             string query = "";
             if (whoDropdownlist.Text == "Self")
             {
-                query = "SELECT Date, LName AS Last, FName AS First, Start, End, JID AS Job FROM Schedule JOIN Employee ON Schedule.ID=Employee.ID Where Schedule.ID='" + Main.id + "' AND Date>='" + mon.ToString("yyyy-MM-dd") + "' AND Date<='" + sun.ToString("yyyy-MM-dd") + "' ORDER BY Date, Start";
+                query = "SELECT Date, LName AS Last, FName AS First, DATE_FORMAT(Start, '%h:%i %p') as Start, DATE_FORMAT(End, '%h:%i %p') as End, JID AS Job FROM Schedule JOIN Employee ON Schedule.ID=Employee.ID Where Schedule.ID='" + Main.id + "' AND Date>='" + mon.ToString("yyyy-MM-dd") + "' AND Date<='" + sun.ToString("yyyy-MM-dd") + "' ORDER BY Date, Start";
             }
             else
             {
-                query = "SELECT Date, LName AS Last, FName AS First, Start, End, JID AS Job FROM Schedule JOIN Employee ON Schedule.ID=Employee.ID Where Date>='" + mon.ToString("yyyy-MM-dd") + "' AND Date<='" + sun.ToString("yyyy-MM-dd") + "' ORDER BY Date, Start";
+                query = "SELECT Date, LName AS Last, FName AS First, DATE_FORMAT(Start, '%h:%i %p') as Start, DATE_FORMAT(End, '%h:%i %p') as End, JID AS Job FROM Schedule JOIN Employee ON Schedule.ID=Employee.ID Where Date>='" + mon.ToString("yyyy-MM-dd") + "' AND Date<='" + sun.ToString("yyyy-MM-dd") + "' ORDER BY Date, Start";
             }
 
             try

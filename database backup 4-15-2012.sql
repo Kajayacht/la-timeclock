@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 13, 2012 at 01:08 AM
+-- Generation Time: Apr 15, 2012 at 04:42 PM
 -- Server version: 5.0.91
 -- PHP Version: 5.2.6
 
@@ -103,8 +103,7 @@ INSERT INTO `Employee` (`ID`, `LName`, `MName`, `FName`, `SSN`, `Phone`, `Email`
 (10, 'Example', 'M', 'Manager', 'w6bzPwuNo9YWV/ClBxD5qw==', 2132159499, '', '', '', '', 'Nebraska', 48457, '2012-03-03', NULL, ''),
 (11, 'Sneddon', 'Joseph', 'Bob', 'EnDYhZOTtcRpw9Z9lqqoNA==', 2147483647, 'bob.dole@compuserve.com', '1400 W, Jackson St', 'apartment 24', 'Funkytown', 'Indiana', 47306, '2012-03-03', NULL, ''),
 (13, 'Royston', 'A', 'Alyssa', 'iz2ODJSdfwzF3xOG/rchfg==', 1854162165, 'a@msn.com', '6516251 sadfa', '', 'sdfa', 'Alabama', 51854, '2012-03-21', NULL, ''),
-(15, 'Me', 'M', 'Fire', '421845216', 2147483647, '65154', '51651', '551651', '216551', 'Delaware', 51621, '2012-04-01', '2012-04-07', 'Quit'),
-(16, 'Example', 'test', 'Manual Employee', '+m7pXRIyTNQTII6VXsKgOg==', 2147483647, 'darasd@asdasd.com', 'test', '', 'test', 'Indiana', 55555, '2012-04-09', NULL, NULL);
+(16, 'Example', 'test', 'Employee', '+m7pXRIyTNQTII6VXsKgOg==', 2147483647, 'darasd@asdasd.com', 'test', '', 'test', 'Indiana', 55555, '2012-04-09', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -136,23 +135,12 @@ INSERT INTO `EmployeeNotes` (`ID`, `Manager`, `Date`, `Note`) VALUES
 (10, 'Jennifer Chavez', '2012-04-05 00:00:00', 'note''s test\\ 2'),
 (10, 'Jennifer Chavez', '2012-04-05 00:00:00', 'te''s\\'),
 (10, 'Jennifer Chavez', '2012-04-06 00:00:00', 'newtest'),
-(15, 'Jennifer Chavez', '2012-04-07 00:00:00', 'QUIT: test\nLast Day: 4/7/2012\nPerformed by: Jennifer Chavez'),
-(15, 'Jennifer Chavez', '2012-04-07 00:00:00', 'QUIT: test\nLast Day: 4/7/2012\nPerformed by: Jennifer Chavez'),
-(15, 'Jennifer Chavez', '2012-04-07 00:00:00', 'TERMINATED: Termination Test\nLast Day: 4/7/2012\nPerformed by: Jennifer Chavez'),
-(15, 'Jennifer Chavez', '2012-04-07 00:00:00', 'QUIT: Another Test\nLast Day: 4/14/2012\nPerformed by: Jennifer Chavez'),
-(15, 'SYSTEM', '2012-04-07 00:00:00', 'QUIT: test\nLast Day: 4/7/2012\nPerformed by: Jennifer Chavez'),
-(15, 'Jennifer Chavez', '2012-04-07 00:00:00', 'Rehired'),
-(15, 'Jennifer Chavez', '2012-04-07 01:54:33', 'timetest'),
-(15, 'Jennifer Chavez', '2012-04-07 00:00:00', 'Rehired'),
-(15, 'Jennifer Chavez', '2012-04-07 00:00:00', 'Rehired'),
-(15, 'Jennifer Chavez', '2012-04-07 01:55:13', 'QUIT: test\nLast Day: 4/7/2012'),
-(15, 'Jennifer Chavez', '2012-04-07 01:57:49', 'Timestamp Test'),
-(15, 'Jennifer Chavez', '2012-04-07 01:58:07', 'Rehired'),
-(15, 'Jennifer Chavez', '2012-04-07 01:58:17', 'TERMINATED: timestamp test\nLast Day: 4/7/2012'),
-(15, 'Jennifer Chavez', '2012-04-07 15:21:47', 'Rehired'),
-(15, 'Jennifer Chavez', '2012-04-07 15:22:24', 'TERMINATED: Testing if termination removes scheduled dates\nLast Day: 4/7/2012'),
-(15, 'Jennifer Chavez', '2012-04-07 22:29:43', 'Rehired'),
-(15, 'Jennifer Chavez', '2012-04-07 22:45:10', 'QUIT: test\nLast Day: 4/7/2012');
+(1, 'Admin Example', '2012-04-14 21:20:19', 'test'),
+(1, 'Admin Example', '2012-04-14 21:20:20', 'test'),
+(1, 'Admin Example', '2012-04-14 21:20:22', 'test'),
+(1, 'Admin Example', '2012-04-14 21:20:23', 'test'),
+(1, 'Admin Example', '2012-04-14 21:20:23', 'test'),
+(2, 'Admin Example', '2012-04-15 11:26:48', 'Was seen taking an unauthorized smoking break.');
 
 -- --------------------------------------------------------
 
@@ -183,10 +171,6 @@ CREATE TABLE IF NOT EXISTS `Hours Worked` (
 --
 
 INSERT INTO `Hours Worked` (`ID`, `Date`, `Start`, `End`, `Tips`, `JID`, `B1out`, `B1in`, `B2out`, `B2in`, `Lout`, `Lin`, `Status`) VALUES
-(1, '2012-02-18', '21:15:00', '21:19:41', NULL, 'Manager', '21:19:21', '21:19:23', '21:19:26', '21:19:27', '21:19:37', '21:19:37', 'OUT'),
-(1, '2012-02-19', '13:00:00', '13:30:15', NULL, 'Server', '13:19:04', '13:19:05', '13:19:06', '13:19:06', '13:19:07', '13:19:08', 'OUT'),
-(2, '2012-02-21', '13:00:00', '13:30:15', NULL, 'Server', '13:19:04', '13:19:05', '13:19:06', '13:19:06', '13:19:07', '13:19:08', 'OUT'),
-(4, '2012-02-21', '13:00:00', '14:47:15', NULL, 'Cook', '13:19:04', '13:19:05', '13:19:06', '13:19:06', '13:19:07', '13:19:08', 'OUT'),
 (1, '2012-03-04', '21:55:00', '22:38:00', NULL, 'Bartender', NULL, NULL, NULL, NULL, NULL, NULL, 'OUT'),
 (11, '2012-03-04', '22:01:29', '03:03:09', NULL, 'Bartender', NULL, NULL, NULL, NULL, '23:45:00', '00:15:00', 'OUT'),
 (1, '2012-03-05', '03:02:06', '17:36:44', NULL, 'Bartender', NULL, NULL, NULL, NULL, NULL, NULL, 'OUT'),
@@ -206,10 +190,12 @@ INSERT INTO `Hours Worked` (`ID`, `Date`, `Start`, `End`, `Tips`, `JID`, `B1out`
 (1, '2012-04-12', '00:00:00', '10:00:00', '0.00', 'Bartender', NULL, NULL, NULL, NULL, NULL, NULL, 'OUT'),
 (1, '2012-04-13', '00:00:00', '10:00:00', '5.00', 'Bartender', NULL, NULL, NULL, NULL, NULL, NULL, 'OUT'),
 (1, '2012-04-14', '00:00:00', '10:00:00', '5.00', 'Bartender', NULL, NULL, NULL, NULL, NULL, NULL, 'OUT'),
-(1, '2012-04-15', '00:00:00', '10:00:00', '5.00', 'Bartender', NULL, NULL, NULL, NULL, NULL, NULL, 'OUT'),
+(1, '2012-04-15', '00:00:00', '10:23:00', '5.00', 'Bartender', NULL, NULL, NULL, NULL, NULL, NULL, 'OUT'),
 (1, '2012-04-17', '00:00:00', '15:00:00', '5.00', 'Bartender', NULL, NULL, NULL, NULL, NULL, NULL, 'OUT'),
 (1, '2012-04-16', '00:00:00', '10:00:00', '5.00', 'Bartender', NULL, NULL, NULL, NULL, NULL, NULL, 'OUT'),
-(1, '2012-04-18', '00:00:00', '10:00:00', '5.00', 'Bartender', NULL, NULL, NULL, NULL, NULL, NULL, 'OUT');
+(1, '2012-04-18', '00:00:00', '10:00:00', '5.00', 'Bartender', NULL, NULL, NULL, NULL, NULL, NULL, 'OUT'),
+(10, '2012-04-14', '04:00:00', '09:00:00', NULL, 'Bartender', NULL, NULL, NULL, NULL, NULL, NULL, 'OUT'),
+(11, '2012-04-15', '12:13:00', '12:14:00', '15.04', 'Bartender', NULL, NULL, NULL, NULL, NULL, NULL, 'OUT');
 
 -- --------------------------------------------------------
 
@@ -235,7 +221,7 @@ INSERT INTO `Jobs` (`JID`, `JSPay`, `TippedJob`, `Filename`) VALUES
 ('Dishwasher', '7.00', 'False', 'Dishwasher.bmp'),
 ('Manager', '10.00', 'False', 'Manager.bmp'),
 ('Security', '8.00', 'False', 'Security.bmp'),
-('Server', '3.50', 'True', 'Server.bmp');
+('Server', '3.60', 'True', 'Server.bmp');
 
 -- --------------------------------------------------------
 
@@ -278,8 +264,8 @@ CREATE TABLE IF NOT EXISTS `Requests` (
 
 INSERT INTO `Requests` (`ID`, `SDate`, `EDate`, `Submitted Date`, `Reason`) VALUES
 (10, '2012-04-12', '2012-04-12', '2012-04-07', 'dave''s request'),
-(1, '2012-04-10', '2012-04-17', '2012-04-08', 'waevst sfdfads f'),
-(16, '2012-04-09', '2012-04-11', '2012-04-09', 'I got shot');
+(16, '2012-04-09', '2012-04-11', '2012-04-09', 'I got shot'),
+(1, '2012-04-20', '2012-04-28', '2012-04-14', 'test');
 
 -- --------------------------------------------------------
 
@@ -317,7 +303,12 @@ INSERT INTO `Schedule` (`ID`, `Date`, `Start`, `End`, `JID`) VALUES
 (11, '2012-03-13', '10:45:00', '11:00:00', 'Dishwasher'),
 (11, '2012-03-30', '10:00:00', '18:00:00', 'Security'),
 (1, '2012-04-08', '05:30:00', '14:15:00', 'Manager'),
-(16, '2012-04-12', '20:15:00', '21:00:00', 'Security');
+(1, '2012-04-13', '02:00:00', '10:00:00', 'Bartender'),
+(1, '2012-04-10', '12:00:00', '16:30:00', 'Bartender'),
+(1, '2012-04-16', '05:15:00', '06:30:00', 'Bartender'),
+(1, '2012-04-18', '05:15:00', '06:30:00', 'Bartender'),
+(1, '2012-04-19', '05:15:00', '06:45:00', 'Bartender'),
+(16, '2012-04-18', '02:15:00', '05:30:00', 'Security');
 
 -- --------------------------------------------------------
 
@@ -344,7 +335,6 @@ INSERT INTO `Users` (`ID`, `User`, `Password`) VALUES
 (10, 'dave', 'W0D0Jklx1fuklSMlgo7E/6BY+YTp1oEX8gg24RNuS4tUbG0zQW5EUjN8YVRJdjNEbG1FbjVsMG5sTjVwQVsz'),
 (11, 'Bobdole', 'W0D0Jklx1fuklSMlgo7E/6BY+YTp1oEX8gg24RNuS4tUbG0zQW5EUjN8YVRJdjNEbG1FbjVsMG5sTjVwQVsz'),
 (13, 'privtest', 'W0D0Jklx1fuklSMlgo7E/6BY+YTp1oEX8gg24RNuS4tUbG0zQW5EUjN8YVRJdjNEbG1FbjVsMG5sTjVwQVsz'),
-(15, 'fireme', '6e69ec467e82e965'),
 (16, 'Manual ', 'W0D0Jklx1fuklSMlgo7E/6BY+YTp1oEX8gg24RNuS4tUbG0zQW5EUjN8YVRJdjNEbG1FbjVsMG5sTjVwQVsz');
 
 --
@@ -355,14 +345,14 @@ INSERT INTO `Users` (`ID`, `User`, `Password`) VALUES
 -- Constraints for table `Admin`
 --
 ALTER TABLE `Admin`
-  ADD CONSTRAINT `AID` FOREIGN KEY (`ID`) REFERENCES `Employee` (`ID`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `AID` FOREIGN KEY (`ID`) REFERENCES `Employee` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `Employee Jobs`
 --
 ALTER TABLE `Employee Jobs`
-  ADD CONSTRAINT `EJID` FOREIGN KEY (`ID`) REFERENCES `Employee` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `EJJID` FOREIGN KEY (`JID`) REFERENCES `Jobs` (`JID`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `EJJID` FOREIGN KEY (`JID`) REFERENCES `Jobs` (`JID`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `EJID` FOREIGN KEY (`ID`) REFERENCES `Employee` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `EmployeeNotes`
@@ -381,18 +371,23 @@ ALTER TABLE `Hours Worked`
 -- Constraints for table `Manager`
 --
 ALTER TABLE `Manager`
-  ADD CONSTRAINT `MID` FOREIGN KEY (`ID`) REFERENCES `Employee` (`ID`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `MID` FOREIGN KEY (`ID`) REFERENCES `Employee` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `Requests`
+--
+ALTER TABLE `Requests`
+  ADD CONSTRAINT `Rid` FOREIGN KEY (`ID`) REFERENCES `Employee` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `Schedule`
 --
 ALTER TABLE `Schedule`
-  ADD CONSTRAINT `SID` FOREIGN KEY (`ID`) REFERENCES `Employee` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `SJID` FOREIGN KEY (`JID`) REFERENCES `Jobs` (`JID`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `SJID` FOREIGN KEY (`JID`) REFERENCES `Jobs` (`JID`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `SID` FOREIGN KEY (`ID`) REFERENCES `Employee` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `Users`
 --
 ALTER TABLE `Users`
   ADD CONSTRAINT `ID` FOREIGN KEY (`ID`) REFERENCES `Employee` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE;
-

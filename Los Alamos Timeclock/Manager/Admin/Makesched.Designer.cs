@@ -33,7 +33,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             System.Windows.Forms.Label startLabel;
             System.Windows.Forms.Label endLabel;
             System.Windows.Forms.Label jobLabel;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.employeeDropdownlist = new System.Windows.Forms.ComboBox();
             this.calander = new System.Windows.Forms.DateTimePicker();
             this.updatescheduleButon = new System.Windows.Forms.Button();
@@ -131,8 +131,8 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             // 
             this.datagrid.AllowUserToAddRows = false;
             this.datagrid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.datagrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            this.datagrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.datagrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -197,21 +197,23 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             // 
             // starttimePicker
             // 
+            this.starttimePicker.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.starttimePicker.CustomFormat = "hh:mm tt";
             this.starttimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.starttimePicker.Location = new System.Drawing.Point(82, 297);
             this.starttimePicker.Name = "starttimePicker";
-            this.starttimePicker.Size = new System.Drawing.Size(108, 20);
+            this.starttimePicker.Size = new System.Drawing.Size(78, 20);
             this.starttimePicker.TabIndex = 2;
             this.starttimePicker.ValueChanged += new System.EventHandler(this.startTimePicker_ValueChanged);
             // 
             // endtimePicker
             // 
+            this.endtimePicker.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.endtimePicker.CustomFormat = "hh:mm tt";
             this.endtimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.endtimePicker.Location = new System.Drawing.Point(82, 322);
             this.endtimePicker.Name = "endtimePicker";
-            this.endtimePicker.Size = new System.Drawing.Size(108, 20);
+            this.endtimePicker.Size = new System.Drawing.Size(78, 20);
             this.endtimePicker.TabIndex = 3;
             this.endtimePicker.ValueChanged += new System.EventHandler(this.endtimePicker_ValueChanged);
             // 
