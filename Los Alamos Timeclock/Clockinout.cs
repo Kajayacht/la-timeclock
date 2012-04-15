@@ -259,14 +259,27 @@ namespace Los_Alamos_Timeclock
                 {
                     double temp;
                     //ask for tips gotten
-                    string tips = Microsoft.VisualBasic.Interaction.InputBox("Enter the total Tips you received", "");
-                    if (double.TryParse(tips, out temp) == true)
+                    string tips = Microsoft.VisualBasic.Interaction.InputBox("Enter the total Tips you received", "");                                        
+                                                          
+
+                    if (double.TryParse(tips, out temp) == true  )
                     {
-                        //run update statement with the tips                
-                        Main.maininstance.sqlCommand("UPDATE `Hours Worked` SET End='" + DateTime.Now.ToString("HH:mm:ss") + "', Tips='" + tips + "', Status='OUT' WHERE ID='" + Main.id + "' AND Date='" + date + "'");
-                        status = "OUT";
-                        clockedIn = false;
-                        supdate();
+                        //Check that the tips entered is only two decimal places
+                        double doubletips = double.Parse(tips);
+                        bool CountDecimalPlaces = doubletips * 100.0 == (int)(doubletips * 100);
+
+                        if (CountDecimalPlaces == true)
+                        {
+                            //run update statement with the tips                
+                            Main.maininstance.sqlCommand("UPDATE `Hours Worked` SET End='" + DateTime.Now.ToString("HH:mm:ss") + "', Tips='" + tips + "', Status='OUT' WHERE ID='" + Main.id + "' AND Date='" + date + "'");
+                            status = "OUT";
+                            clockedIn = false;
+                            supdate();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Invalid input: Amount entered had more than 2 decimal places");
+                        }
                     }
                     else
                     {
