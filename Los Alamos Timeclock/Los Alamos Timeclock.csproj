@@ -27,7 +27,7 @@
     <ProductName>Los Alamos Timeclock</ProductName>
     <PublisherName>Team Chrono</PublisherName>
     <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>4</ApplicationRevision>
+    <ApplicationRevision>5</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -194,6 +194,12 @@
     <Compile Include="UI\Cleanup.Designer.cs">
       <DependentUpon>Cleanup.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\colorSchemeChooser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\colorSchemeChooser.Designer.cs">
+      <DependentUpon>colorSchemeChooser.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Override.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -289,6 +295,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Cleanup.resx">
       <DependentUpon>Cleanup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\colorSchemeChooser.resx">
+      <DependentUpon>colorSchemeChooser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Override.resx">
       <DependentUpon>Override.cs</DependentUpon>
