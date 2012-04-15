@@ -47,7 +47,7 @@ namespace Los_Alamos_Timeclock
         public static string permissions = "";
         public Cryptography crypt = new Cryptography();
         public static Cleanup clup=new Cleanup();
-        public static colorSchemeChooser colorChanger= new colorSchemeChooser();
+        public static colorSchemeChooser colorChanger;
 
         public Main()
         {
@@ -63,6 +63,7 @@ namespace Los_Alamos_Timeclock
             }
 
             maininstance = this;
+            colorChanger = new colorSchemeChooser();
 
             SetStyle(ControlStyles.OptimizedDoubleBuffer |
                                     ControlStyles.UserPaint |
