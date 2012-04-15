@@ -37,7 +37,7 @@ namespace Los_Alamos_Timeclock.Manager
             System.Windows.Forms.Label break2Label;
             System.Windows.Forms.Label lunchLabel;
             System.Windows.Forms.PictureBox pictureBox1;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.employeeDropdownlist = new System.Windows.Forms.ComboBox();
             this.calander = new System.Windows.Forms.DateTimePicker();
             this.updatescheduleButton = new System.Windows.Forms.Button();
@@ -192,8 +192,8 @@ namespace Los_Alamos_Timeclock.Manager
             // 
             this.datagrid.AllowUserToAddRows = false;
             this.datagrid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.datagrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            this.datagrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.datagrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -267,7 +267,6 @@ namespace Los_Alamos_Timeclock.Manager
             this.b1inTextbox.Name = "b1inTextbox";
             this.b1inTextbox.Size = new System.Drawing.Size(41, 20);
             this.b1inTextbox.TabIndex = 4;
-            this.b1inTextbox.ValidatingType = typeof(System.DateTime);
             // 
             // b2inTextbox
             // 

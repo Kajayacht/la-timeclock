@@ -74,7 +74,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             {
                 case "Schedule":
                     {
-                        query = "SELECT Date, CONCAT(LName, ', ',FName,' ',MName) AS Name, Start, End, JID AS Job FROM Schedule JOIN Employee ON Schedule.ID=Employee.ID Where Date>='" + fromCalander.Value.ToString("yyyy-MM-dd") + "' AND Date<='" + toCalander.Value.ToString("yyyy-MM-dd") + "' ORDER BY Date, Start";
+                        query = "SELECT Date, CONCAT(LName, ', ',FName,' ',MName) AS Name, DATE_FORMAT(Start,'%r'), DATE_FORMAT(End,'%r'), JID AS Job FROM Schedule JOIN Employee ON Schedule.ID=Employee.ID Where Date>='" + fromCalander.Value.ToString("yyyy-MM-dd") + "' AND Date<='" + toCalander.Value.ToString("yyyy-MM-dd") + "' ORDER BY Date, Start";
                         break;
                     }
                 case "Employee Notes":
@@ -87,14 +87,14 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                         query = "Select " +
                                 "a.Date, " +
                                 "CONCAT(c.LName, ', ',c.FName,' ',c.MName) AS Name, " +
-                                "a.Status,a.JID As Job, a.Tips as Tips, a.Start ,b.Start As 'Scheduled Start',  " +
-                                "a.B1out As 'Break 1 OUT', " +
-                                "a.B1in As 'Break 1 IN', " +
-                                "a.B2out As 'Break 2 OUT', " +
-                                "a.B2in As 'Break 2 IN', " +
-                                "a.Lout As 'Lunch OUT', " +
-                                "a.Lin As 'Lunch IN', " +
-                                "a.End, b.End AS 'Scheduled End'  " +
+                                "a.Status,a.JID As Job, a.Tips as Tips, DATE_FORMAT(a.Start,'%r') AS Start , DATE_FORMAT(b.Start,'%r') AS 'Scheduled Start',  " +
+                                "DATE_FORMAT(a.B1out,'%r') As 'Break 1 OUT', " +
+                                "DATE_FORMAT(a.B1in,'%r') As 'Break 1 IN', " +
+                                "DATE_FORMAT(a.B2out,'%r') As 'Break 2 OUT', " +
+                                "DATE_FORMAT(a.B2in,'%r') As 'Break 2 IN', " +
+                                "DATE_FORMAT(a.Lout,'%r') As 'Lunch OUT', " +
+                                "DATE_FORMAT(a.Lin,'%r') As 'Lunch IN', " +
+                                "DATE_FORMAT(a.End,'%r') AS End, DATE_FORMAT(b.End,'%r') AS 'Scheduled End'  " +
                             "FROM `Hours Worked` a " +
                                 "LEFT JOIN Schedule b  " +
                                     "ON a.ID=b.ID AND a.Date=b.Date " +
@@ -105,14 +105,14 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                             "Select " +
                                 "b.Date, " +
                                 "CONCAT(c.LName, ', ',c.FName,' ',c.MName) AS Name, " +
-                                "a.Status,a.JID As Job, a.Tips as Tips, a.Start ,b.Start As 'Scheduled Start', " +
-                                "a.B1out As 'Break 1 OUT', " +
-                                "a.B1in As 'Break 1 IN', " +
-                                "a.B2out As 'Break 2 OUT', " +
-                                "a.B2in As 'Break 2 IN', " +
-                                "a.Lout As 'Lunch OUT', " +
-                                "a.Lin As 'Lunch IN', " +
-                                "a.End, b.End AS 'Scheduled End'  " +
+                                "a.Status,a.JID As Job, a.Tips as Tips, DATE_FORMAT(a.Start,'%r') AS Start , DATE_FORMAT(b.Start,'%r') AS 'Scheduled Start',  " +
+                                "DATE_FORMAT(a.B1out,'%r') As 'Break 1 OUT', " +
+                                "DATE_FORMAT(a.B1in,'%r') As 'Break 1 IN', " +
+                                "DATE_FORMAT(a.B2out,'%r') As 'Break 2 OUT', " +
+                                "DATE_FORMAT(a.B2in,'%r') As 'Break 2 IN', " +
+                                "DATE_FORMAT(a.Lout,'%r') As 'Lunch OUT', " +
+                                "DATE_FORMAT(a.Lin,'%r') As 'Lunch IN', " +
+                                "DATE_FORMAT(a.End,'%r') AS End, DATE_FORMAT(b.End,'%r') AS 'Scheduled End'  " +
                             "FROM `Hours Worked` a " +
                                 "RIGHT JOIN Schedule b  " +
                                     "ON a.ID=b.ID AND a.Date=b.Date " +
@@ -123,14 +123,14 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                             "Select " +
                                 "b.Date, " +
                                 "CONCAT(c.LName, ', ',c.FName,' ',c.MName) AS Name, " +
-                                "a.Status,a.JID As Job, a.Tips as Tips, a.Start ,b.Start As 'Scheduled Start', " +
-                                "a.B1out As 'Break 1 OUT', " +
-                                "a.B1in As 'Break 1 IN', " +
-                                "a.B2out As 'Break 2 OUT', " +
-                                "a.B2in As 'Break 2 IN', " +
-                                "a.Lout As 'Lunch OUT', " +
-                                "a.Lin As 'Lunch IN', " +
-                                "a.End, b.End AS 'Scheduled End'  " +
+                                "a.Status,a.JID As Job, a.Tips as Tips, DATE_FORMAT(a.Start,'%r') AS Start , DATE_FORMAT(b.Start,'%r') AS 'Scheduled Start',  " +
+                                "DATE_FORMAT(a.B1out,'%r') As 'Break 1 OUT', " +
+                                "DATE_FORMAT(a.B1in,'%r') As 'Break 1 IN', " +
+                                "DATE_FORMAT(a.B2out,'%r') As 'Break 2 OUT', " +
+                                "DATE_FORMAT(a.B2in,'%r') As 'Break 2 IN', " +
+                                "DATE_FORMAT(a.Lout,'%r') As 'Lunch OUT', " +
+                                "DATE_FORMAT(a.Lin,'%r') As 'Lunch IN', " +
+                                "DATE_FORMAT(a.End,'%r') AS End, DATE_FORMAT(b.End,'%r') AS 'Scheduled End'  " +
                             "FROM `Hours Worked` a " +
                                 "RIGHT JOIN Schedule b  " +
                                     "ON a.ID=b.ID AND a.Date=b.Date " +
