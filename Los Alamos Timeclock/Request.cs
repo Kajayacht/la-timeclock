@@ -42,6 +42,19 @@ namespace Los_Alamos_Timeclock
         {
             InitializeComponent();
 
+            this.requestsDatagrid.DefaultCellStyle.ForeColor = Properties.Settings.Default.tableTextColor;
+            this.requestsDatagrid.DefaultCellStyle.BackColor = Properties.Settings.Default.tablerow1Color;
+            this.requestsDatagrid.AlternatingRowsDefaultCellStyle.BackColor = Properties.Settings.Default.tablerow2Color;
+            this.requestsDatagrid.GridColor = Properties.Settings.Default.tableGridColor;
+
+            try
+            {
+                this.BackgroundImage = Image.FromFile(Properties.Settings.Default.backgroundImage);
+            }
+            catch (Exception)
+            {
+                this.BackgroundImage = Properties.Resources._1287421014661;
+            }
 
             this.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
             this.MouseMove += new MouseEventHandler(Main.maininstance.notIdle_event);

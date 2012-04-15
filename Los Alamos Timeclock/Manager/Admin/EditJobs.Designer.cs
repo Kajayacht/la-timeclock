@@ -115,10 +115,14 @@
             // jobsBox
             // 
             this.jobsBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.jobsBox.BackColor = global::Los_Alamos_Timeclock.Properties.Settings.Default.tableBackgroundColor;
+            this.jobsBox.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::Los_Alamos_Timeclock.Properties.Settings.Default, "tableBackgroundColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.jobsBox.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::Los_Alamos_Timeclock.Properties.Settings.Default, "tableTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.jobsBox.ForeColor = global::Los_Alamos_Timeclock.Properties.Settings.Default.tableTextColor;
             this.jobsBox.FormattingEnabled = true;
             this.jobsBox.Location = new System.Drawing.Point(350, 83);
             this.jobsBox.Name = "jobsBox";
-            this.jobsBox.Size = new System.Drawing.Size(136, 95);
+            this.jobsBox.Size = new System.Drawing.Size(136, 147);
             this.jobsBox.TabIndex = 0;
             this.jobsBox.SelectedIndexChanged += new System.EventHandler(this.jobsBox_SelectedIndexChanged);
             // 
@@ -210,9 +214,13 @@
             // jobPicturebox
             // 
             this.jobPicturebox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.jobPicturebox.BackColor = global::Los_Alamos_Timeclock.Properties.Settings.Default.tableBackgroundColor;
+            this.jobPicturebox.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::Los_Alamos_Timeclock.Properties.Settings.Default, "tableTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.jobPicturebox.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::Los_Alamos_Timeclock.Properties.Settings.Default, "tableBackgroundColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.jobPicturebox.ForeColor = global::Los_Alamos_Timeclock.Properties.Settings.Default.tableTextColor;
             this.jobPicturebox.Location = new System.Drawing.Point(15, 83);
             this.jobPicturebox.Name = "jobPicturebox";
-            this.jobPicturebox.Size = new System.Drawing.Size(150, 150);
+            this.jobPicturebox.Size = new System.Drawing.Size(150, 147);
             this.jobPicturebox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.jobPicturebox.TabIndex = 12;
             this.jobPicturebox.TabStop = false;
@@ -238,8 +246,9 @@
             this.Controls.Add(plabel);
             this.Controls.Add(nlabel);
             this.Controls.Add(this.jobsBox);
+            this.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::Los_Alamos_Timeclock.Properties.Settings.Default, "textColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.DoubleBuffered = true;
-            this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ForeColor = global::Los_Alamos_Timeclock.Properties.Settings.Default.textColor;
             this.Name = "EditJobs";
             this.Size = new System.Drawing.Size(500, 400);
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();

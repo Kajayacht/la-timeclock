@@ -37,6 +37,16 @@ namespace Los_Alamos_Timeclock
         public Settings()
         {
             InitializeComponent();
+
+            try
+            {
+                this.BackgroundImage = Image.FromFile(Properties.Settings.Default.backgroundImage);
+            }
+            catch (Exception)
+            {
+                this.BackgroundImage = Properties.Resources._1287421014661;
+            }
+
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(Main.maininstance.notIdle_event);
             ipaddressTextbox.MouseMove += new System.Windows.Forms.MouseEventHandler(Main.maininstance.notIdle_event);
             ipaddressTextbox.KeyDown += new System.Windows.Forms.KeyEventHandler(Main.maininstance.notIdle_event);

@@ -355,8 +355,9 @@
             this.Controls.Add(this.portLLabel);
             this.Controls.Add(this.ipaddressLLabel);
             this.Controls.Add(titleLabel);
+            this.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::Los_Alamos_Timeclock.Properties.Settings.Default, "textColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.DoubleBuffered = true;
-            this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ForeColor = global::Los_Alamos_Timeclock.Properties.Settings.Default.textColor;
             this.Name = "Settings";
             this.Size = new System.Drawing.Size(500, 575);
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();

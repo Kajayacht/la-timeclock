@@ -31,6 +31,7 @@ namespace Los_Alamos_Timeclock
 
 
 
+
     public partial class Clockinout : UserControl
     {
         public static Override o = new Override();
@@ -47,6 +48,15 @@ namespace Los_Alamos_Timeclock
         public Clockinout()
         {
             InitializeComponent();
+            try
+            {
+                this.BackgroundImage = Image.FromFile(Properties.Settings.Default.backgroundImage);
+            }
+            catch (Exception)
+            {
+                this.BackgroundImage = Properties.Resources._1287421014661;
+            }
+
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(Main.maininstance.notIdle_event);
             try
             {

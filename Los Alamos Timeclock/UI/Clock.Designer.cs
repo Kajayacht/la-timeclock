@@ -37,8 +37,9 @@
             // 
             this.Bigclock.AutoSize = true;
             this.Bigclock.BackColor = System.Drawing.Color.Transparent;
+            this.Bigclock.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::Los_Alamos_Timeclock.Properties.Settings.Default, "textColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.Bigclock.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Bigclock.ForeColor = System.Drawing.Color.White;
+            this.Bigclock.ForeColor = global::Los_Alamos_Timeclock.Properties.Settings.Default.textColor;
             this.Bigclock.Location = new System.Drawing.Point(-7, 0);
             this.Bigclock.Name = "Bigclock";
             this.Bigclock.Size = new System.Drawing.Size(198, 37);

@@ -36,6 +36,10 @@
             this.logViewBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.logViewBox.BackColor = global::Los_Alamos_Timeclock.Properties.Settings.Default.tableBackgroundColor;
+            this.logViewBox.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::Los_Alamos_Timeclock.Properties.Settings.Default, "tableTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.logViewBox.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::Los_Alamos_Timeclock.Properties.Settings.Default, "tableBackgroundColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.logViewBox.ForeColor = global::Los_Alamos_Timeclock.Properties.Settings.Default.tableTextColor;
             this.logViewBox.Location = new System.Drawing.Point(40, 25);
             this.logViewBox.Name = "logViewBox";
             this.logViewBox.ReadOnly = true;
@@ -43,7 +47,7 @@
             this.logViewBox.TabIndex = 1;
             this.logViewBox.Text = "";
             // 
-            // ViewLog
+            // viewLog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -51,9 +55,10 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.logViewBox);
             this.DoubleBuffered = true;
-            this.Name = "ViewLog";
+            this.Name = "viewLog";
             this.Size = new System.Drawing.Size(500, 400);
             this.ResumeLayout(false);
+
         }
 
         #endregion

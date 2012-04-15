@@ -32,6 +32,16 @@ namespace Los_Alamos_Timeclock
         public Login()
         {
             InitializeComponent();
+
+            try
+            {
+                this.BackgroundImage = Image.FromFile(Properties.Settings.Default.backgroundImage);
+            }
+            catch (Exception)
+            {
+                this.BackgroundImage = Properties.Resources._1287421014661;
+            }
+
             passTextbox.KeyPress += new KeyPressEventHandler(passwordreturn_event);
         }
 

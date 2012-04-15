@@ -35,9 +35,6 @@
     <Setting Name="tableBackgroundColor" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">AppWorkspace</Value>
     </Setting>
-    <Setting Name="backgroundColor" Type="System.Drawing.Color" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
     <Setting Name="backgroundImage" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>

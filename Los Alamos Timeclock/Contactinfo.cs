@@ -32,6 +32,15 @@ namespace Los_Alamos_Timeclock
         {
             InitializeComponent();
 
+            try
+            {
+                this.BackgroundImage = Image.FromFile(Properties.Settings.Default.backgroundImage);
+            }
+            catch (Exception)
+            {
+                this.BackgroundImage = Properties.Resources._1287421014661;
+            }
+
             this.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
             this.MouseMove += new MouseEventHandler(Main.maininstance.notIdle_event);
 

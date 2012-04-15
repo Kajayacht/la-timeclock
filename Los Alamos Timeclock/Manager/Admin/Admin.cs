@@ -33,6 +33,15 @@ namespace Los_Alamos_Timeclock
             InitializeComponent();
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(Main.maininstance.notIdle_event);
 
+            try
+            {
+                this.BackgroundImage = Image.FromFile(Properties.Settings.Default.backgroundImage);
+            }
+            catch (Exception)
+            {
+                this.BackgroundImage = Properties.Resources._1287421014661;
+            }
+
             if (Main.permissions == "Manager")
             {
                 editemployeesButton.BackColor = Color.Gray;

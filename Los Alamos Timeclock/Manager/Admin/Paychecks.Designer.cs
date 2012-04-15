@@ -107,6 +107,10 @@
             this.payTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.payTextbox.BackColor = global::Los_Alamos_Timeclock.Properties.Settings.Default.tableBackgroundColor;
+            this.payTextbox.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::Los_Alamos_Timeclock.Properties.Settings.Default, "tableBackgroundColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.payTextbox.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::Los_Alamos_Timeclock.Properties.Settings.Default, "tableTextColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.payTextbox.ForeColor = global::Los_Alamos_Timeclock.Properties.Settings.Default.tableTextColor;
             this.payTextbox.Location = new System.Drawing.Point(55, 78);
             this.payTextbox.Name = "payTextbox";
             this.payTextbox.ReadOnly = true;
@@ -151,8 +155,9 @@
             this.Controls.Add(this.payTextbox);
             this.Controls.Add(this.weekLabel);
             this.Controls.Add(this.startCalander);
+            this.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::Los_Alamos_Timeclock.Properties.Settings.Default, "textColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.DoubleBuffered = true;
-            this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ForeColor = global::Los_Alamos_Timeclock.Properties.Settings.Default.textColor;
             this.Name = "Paychecks";
             this.Size = new System.Drawing.Size(500, 400);
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();

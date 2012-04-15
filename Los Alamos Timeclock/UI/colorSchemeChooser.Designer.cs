@@ -34,7 +34,6 @@
             System.Windows.Forms.Button tablegridColorButton;
             System.Windows.Forms.Button tablebackgroundColorButton;
             System.Windows.Forms.Button backgroundImageButton;
-            System.Windows.Forms.Button backgroundColorButton;
             System.Windows.Forms.Button applyButton;
             System.Windows.Forms.Button restoreDefaultButton;
             System.Windows.Forms.Button row1colorButton;
@@ -50,7 +49,6 @@
             tablegridColorButton = new System.Windows.Forms.Button();
             tablebackgroundColorButton = new System.Windows.Forms.Button();
             backgroundImageButton = new System.Windows.Forms.Button();
-            backgroundColorButton = new System.Windows.Forms.Button();
             applyButton = new System.Windows.Forms.Button();
             restoreDefaultButton = new System.Windows.Forms.Button();
             row1colorButton = new System.Windows.Forms.Button();
@@ -124,21 +122,10 @@
             backgroundImageButton.UseVisualStyleBackColor = true;
             backgroundImageButton.Click += new System.EventHandler(this.backgroundImageButton_Click);
             // 
-            // backgroundColorButton
-            // 
-            backgroundColorButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            backgroundColorButton.Location = new System.Drawing.Point(16, 331);
-            backgroundColorButton.Name = "backgroundColorButton";
-            backgroundColorButton.Size = new System.Drawing.Size(127, 34);
-            backgroundColorButton.TabIndex = 14;
-            backgroundColorButton.Text = "Background Color";
-            backgroundColorButton.UseVisualStyleBackColor = true;
-            backgroundColorButton.Click += new System.EventHandler(this.backgroundColorButton_Click);
-            // 
             // applyButton
             // 
             applyButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            applyButton.Location = new System.Drawing.Point(285, 371);
+            applyButton.Location = new System.Drawing.Point(282, 331);
             applyButton.Name = "applyButton";
             applyButton.Size = new System.Drawing.Size(127, 52);
             applyButton.TabIndex = 15;
@@ -149,7 +136,7 @@
             // restoreDefaultButton
             // 
             restoreDefaultButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            restoreDefaultButton.Location = new System.Drawing.Point(152, 371);
+            restoreDefaultButton.Location = new System.Drawing.Point(149, 331);
             restoreDefaultButton.Name = "restoreDefaultButton";
             restoreDefaultButton.Size = new System.Drawing.Size(127, 52);
             restoreDefaultButton.TabIndex = 16;
@@ -191,7 +178,7 @@
             this.datagrid.Location = new System.Drawing.Point(149, 51);
             this.datagrid.Name = "datagrid";
             this.datagrid.RowHeadersVisible = false;
-            this.datagrid.Size = new System.Drawing.Size(260, 314);
+            this.datagrid.Size = new System.Drawing.Size(260, 274);
             this.datagrid.TabIndex = 7;
             // 
             // Column1
@@ -205,12 +192,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Los_Alamos_Timeclock.Properties.Resources._1287421014661;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(424, 437);
+            this.ClientSize = new System.Drawing.Size(424, 396);
             this.Controls.Add(row2colorButton);
             this.Controls.Add(row1colorButton);
             this.Controls.Add(restoreDefaultButton);
             this.Controls.Add(applyButton);
-            this.Controls.Add(backgroundColorButton);
             this.Controls.Add(backgroundImageButton);
             this.Controls.Add(tablebackgroundColorButton);
             this.Controls.Add(tablegridColorButton);
@@ -221,7 +207,7 @@
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(440, 475);
+            this.MinimumSize = new System.Drawing.Size(440, 434);
             this.Name = "colorSchemeChooser";
             this.Text = "Change Color Scheme";
             ((System.ComponentModel.ISupportInitialize)(this.datagrid)).EndInit();

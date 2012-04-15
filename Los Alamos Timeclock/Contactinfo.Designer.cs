@@ -338,8 +338,9 @@ namespace Los_Alamos_Timeclock
             this.Controls.Add(this.Al1);
             this.Controls.Add(line1Label);
             this.Controls.Add(titleLabel);
+            this.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::Los_Alamos_Timeclock.Properties.Settings.Default, "textColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.DoubleBuffered = true;
-            this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ForeColor = global::Los_Alamos_Timeclock.Properties.Settings.Default.textColor;
             this.Name = "Contactinfo";
             this.Size = new System.Drawing.Size(500, 400);
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();

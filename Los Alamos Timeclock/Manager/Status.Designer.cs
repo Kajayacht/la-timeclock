@@ -198,7 +198,9 @@ namespace Los_Alamos_Timeclock.Manager
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.datagrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.datagrid.BackgroundColor = global::Los_Alamos_Timeclock.Properties.Settings.Default.tableBackgroundColor;
             this.datagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.datagrid.DataBindings.Add(new System.Windows.Forms.Binding("BackgroundColor", global::Los_Alamos_Timeclock.Properties.Settings.Default, "tableBackgroundColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.datagrid.Location = new System.Drawing.Point(0, 0);
             this.datagrid.Name = "datagrid";
             this.datagrid.ReadOnly = true;
@@ -359,8 +361,9 @@ namespace Los_Alamos_Timeclock.Manager
             this.Controls.Add(employeeLabel);
             this.Controls.Add(this.employeeDropdownlist);
             this.Controls.Add(this.datagrid);
+            this.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::Los_Alamos_Timeclock.Properties.Settings.Default, "textColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.DoubleBuffered = true;
-            this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ForeColor = global::Los_Alamos_Timeclock.Properties.Settings.Default.textColor;
             this.Name = "Status";
             this.Size = new System.Drawing.Size(500, 400);
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();

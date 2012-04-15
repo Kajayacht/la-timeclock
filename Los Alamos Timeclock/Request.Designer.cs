@@ -89,7 +89,9 @@ namespace Los_Alamos_Timeclock
             | System.Windows.Forms.AnchorStyles.Right)));
             this.requestsDatagrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.requestsDatagrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.requestsDatagrid.BackgroundColor = global::Los_Alamos_Timeclock.Properties.Settings.Default.tableBackgroundColor;
             this.requestsDatagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.requestsDatagrid.DataBindings.Add(new System.Windows.Forms.Binding("BackgroundColor", global::Los_Alamos_Timeclock.Properties.Settings.Default, "tableBackgroundColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.requestsDatagrid.Location = new System.Drawing.Point(0, 0);
             this.requestsDatagrid.Name = "requestsDatagrid";
             this.requestsDatagrid.ReadOnly = true;
@@ -119,6 +121,7 @@ namespace Los_Alamos_Timeclock
             // requestButton
             // 
             this.requestButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.requestButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.requestButton.Location = new System.Drawing.Point(335, 318);
             this.requestButton.Name = "requestButton";
             this.requestButton.Size = new System.Drawing.Size(75, 67);
@@ -130,6 +133,7 @@ namespace Los_Alamos_Timeclock
             // deleteButton
             // 
             this.deleteButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.deleteButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.deleteButton.Location = new System.Drawing.Point(416, 318);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(75, 67);
@@ -141,6 +145,7 @@ namespace Los_Alamos_Timeclock
             // reasonTextbox
             // 
             this.reasonTextbox.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.reasonTextbox.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.reasonTextbox.Location = new System.Drawing.Point(56, 318);
             this.reasonTextbox.Name = "reasonTextbox";
             this.reasonTextbox.Size = new System.Drawing.Size(273, 67);
@@ -162,7 +167,9 @@ namespace Los_Alamos_Timeclock
             this.Controls.Add(this.endCalander);
             this.Controls.Add(this.startCalander);
             this.Controls.Add(this.requestsDatagrid);
+            this.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::Los_Alamos_Timeclock.Properties.Settings.Default, "textColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.DoubleBuffered = true;
+            this.ForeColor = global::Los_Alamos_Timeclock.Properties.Settings.Default.textColor;
             this.Name = "Request";
             this.Size = new System.Drawing.Size(500, 400);
             ((System.ComponentModel.ISupportInitialize)(this.requestsDatagrid)).EndInit();

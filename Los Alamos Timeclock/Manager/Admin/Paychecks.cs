@@ -32,6 +32,16 @@ namespace Los_Alamos_Timeclock.Manager.Admin
         public Paychecks()
         {
             InitializeComponent();
+
+            try
+            {
+                this.BackgroundImage = Image.FromFile(Properties.Settings.Default.backgroundImage);
+            }
+            catch (Exception)
+            {
+                this.BackgroundImage = Properties.Resources._1287421014661;
+            }
+
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(Main.maininstance.notIdle_event);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(Main.maininstance.notIdle_event);
             payTextbox.MouseMove += new System.Windows.Forms.MouseEventHandler(Main.maininstance.notIdle_event);

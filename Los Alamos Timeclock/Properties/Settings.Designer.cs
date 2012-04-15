@@ -157,17 +157,6 @@ namespace Los_Alamos_Timeclock.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::System.Drawing.Color backgroundColor {
-            get {
-                return ((global::System.Drawing.Color)(this["backgroundColor"]));
-            }
-            set {
-                this["backgroundColor"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string backgroundImage {
             get {

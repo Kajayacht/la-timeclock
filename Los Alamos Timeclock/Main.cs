@@ -47,11 +47,21 @@ namespace Los_Alamos_Timeclock
         public static string permissions = "";
         public Cryptography crypt = new Cryptography();
         public static Cleanup clup=new Cleanup();
-        public static colorSchemeChooser colorChanger = new colorSchemeChooser();
+        public static colorSchemeChooser colorChanger= new colorSchemeChooser();
 
         public Main()
         {
             InitializeComponent();
+
+            try
+            {
+                this.BackgroundImage = Image.FromFile(Properties.Settings.Default.backgroundImage);
+            }
+            catch (Exception)
+            {
+                this.BackgroundImage = Properties.Resources._1287421014661;
+            }
+
             maininstance = this;
 
             SetStyle(ControlStyles.OptimizedDoubleBuffer |

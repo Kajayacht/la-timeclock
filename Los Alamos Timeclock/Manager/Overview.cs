@@ -36,6 +36,20 @@ namespace Los_Alamos_Timeclock.Manager.Admin
         {
             InitializeComponent();
 
+            this.overviewDatagridview.DefaultCellStyle.ForeColor = Properties.Settings.Default.tableTextColor;
+            this.overviewDatagridview.DefaultCellStyle.BackColor = Properties.Settings.Default.tablerow1Color;
+            this.overviewDatagridview.AlternatingRowsDefaultCellStyle.BackColor = Properties.Settings.Default.tablerow2Color;
+            this.overviewDatagridview.GridColor = Properties.Settings.Default.tableGridColor;
+
+            try
+            {
+                this.BackgroundImage = Image.FromFile(Properties.Settings.Default.backgroundImage);
+            }
+            catch (Exception)
+            {
+                this.BackgroundImage = Properties.Resources._1287421014661;
+            }
+
             this.MouseMove += new MouseEventHandler(Main.maininstance.notIdle_event);
             this.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
             overviewDatagridview.MouseMove += new MouseEventHandler(Main.maininstance.notIdle_event);

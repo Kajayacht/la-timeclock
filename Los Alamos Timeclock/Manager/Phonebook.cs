@@ -33,6 +33,15 @@ namespace Los_Alamos_Timeclock.Manager
         {
             InitializeComponent();
 
+            try
+            {
+                this.BackgroundImage = Image.FromFile(Properties.Settings.Default.backgroundImage);
+            }
+            catch (Exception)
+            {
+                this.BackgroundImage = Properties.Resources._1287421014661;
+            }
+
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(Main.maininstance.notIdle_event);
             employeeDropdownlist.MouseMove += new System.Windows.Forms.MouseEventHandler(Main.maininstance.notIdle_event);
             employeeDropdownlist.KeyPress += new System.Windows.Forms.KeyPressEventHandler(Main.maininstance.notIdle_event);

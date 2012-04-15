@@ -43,7 +43,9 @@ namespace Los_Alamos_Timeclock
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.scheduleDatagrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.scheduleDatagrid.BackgroundColor = global::Los_Alamos_Timeclock.Properties.Settings.Default.tableBackgroundColor;
             this.scheduleDatagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.scheduleDatagrid.DataBindings.Add(new System.Windows.Forms.Binding("BackgroundColor", global::Los_Alamos_Timeclock.Properties.Settings.Default, "tableBackgroundColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.scheduleDatagrid.Location = new System.Drawing.Point(0, 28);
             this.scheduleDatagrid.Margin = new System.Windows.Forms.Padding(0);
             this.scheduleDatagrid.Name = "scheduleDatagrid";
@@ -84,7 +86,9 @@ namespace Los_Alamos_Timeclock
             this.Controls.Add(this.whoDropdownlist);
             this.Controls.Add(this.weekCalander);
             this.Controls.Add(this.scheduleDatagrid);
+            this.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::Los_Alamos_Timeclock.Properties.Settings.Default, "textColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.DoubleBuffered = true;
+            this.ForeColor = global::Los_Alamos_Timeclock.Properties.Settings.Default.textColor;
             this.Name = "Schedule";
             this.Size = new System.Drawing.Size(500, 400);
             ((System.ComponentModel.ISupportInitialize)(this.scheduleDatagrid)).EndInit();

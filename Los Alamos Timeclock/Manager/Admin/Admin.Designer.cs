@@ -74,6 +74,7 @@
             // editemployeesButton
             // 
             this.editemployeesButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.editemployeesButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.editemployeesButton.Location = new System.Drawing.Point(213, 163);
             this.editemployeesButton.Name = "editemployeesButton";
             this.editemployeesButton.Size = new System.Drawing.Size(75, 75);
@@ -85,6 +86,7 @@
             // editscheduleButton
             // 
             this.editscheduleButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.editscheduleButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.editscheduleButton.Location = new System.Drawing.Point(213, 82);
             this.editscheduleButton.Name = "editscheduleButton";
             this.editscheduleButton.Size = new System.Drawing.Size(75, 75);
@@ -96,6 +98,7 @@
             // viewlogButton
             // 
             this.viewlogButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.viewlogButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.viewlogButton.Location = new System.Drawing.Point(213, 244);
             this.viewlogButton.Name = "viewlogButton";
             this.viewlogButton.Size = new System.Drawing.Size(75, 75);
@@ -107,6 +110,7 @@
             // calculatepayButton
             // 
             this.calculatepayButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.calculatepayButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.calculatepayButton.Location = new System.Drawing.Point(132, 244);
             this.calculatepayButton.Name = "calculatepayButton";
             this.calculatepayButton.Size = new System.Drawing.Size(75, 75);
@@ -118,6 +122,7 @@
             // editjobsButton
             // 
             this.editjobsButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.editjobsButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.editjobsButton.Location = new System.Drawing.Point(294, 163);
             this.editjobsButton.Name = "editjobsButton";
             this.editjobsButton.Size = new System.Drawing.Size(75, 75);
@@ -129,6 +134,7 @@
             // settingsButton
             // 
             this.settingsButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.settingsButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.settingsButton.Location = new System.Drawing.Point(294, 244);
             this.settingsButton.Name = "settingsButton";
             this.settingsButton.Size = new System.Drawing.Size(75, 75);
@@ -140,6 +146,7 @@
             // statusButton
             // 
             this.statusButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.statusButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.statusButton.Location = new System.Drawing.Point(132, 82);
             this.statusButton.Name = "statusButton";
             this.statusButton.Size = new System.Drawing.Size(75, 75);
@@ -151,6 +158,7 @@
             // employeenotesButton
             // 
             this.employeenotesButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.employeenotesButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.employeenotesButton.Location = new System.Drawing.Point(294, 82);
             this.employeenotesButton.Name = "employeenotesButton";
             this.employeenotesButton.Size = new System.Drawing.Size(75, 75);
@@ -162,6 +170,7 @@
             // phonebookButton
             // 
             this.phonebookButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.phonebookButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.phonebookButton.Location = new System.Drawing.Point(132, 163);
             this.phonebookButton.Name = "phonebookButton";
             this.phonebookButton.Size = new System.Drawing.Size(75, 75);
@@ -187,7 +196,9 @@
             this.Controls.Add(this.viewlogButton);
             this.Controls.Add(this.editscheduleButton);
             this.Controls.Add(this.editemployeesButton);
+            this.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::Los_Alamos_Timeclock.Properties.Settings.Default, "textColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.DoubleBuffered = true;
+            this.ForeColor = global::Los_Alamos_Timeclock.Properties.Settings.Default.textColor;
             this.Name = "Admin";
             this.Size = new System.Drawing.Size(500, 400);
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();

@@ -33,7 +33,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             System.Windows.Forms.Label startLabel;
             System.Windows.Forms.Label endLabel;
             System.Windows.Forms.Label jobLabel;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.employeeDropdownlist = new System.Windows.Forms.ComboBox();
             this.calander = new System.Windows.Forms.DateTimePicker();
             this.updatescheduleButon = new System.Windows.Forms.Button();
@@ -133,13 +133,17 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             // 
             this.datagrid.AllowUserToAddRows = false;
             this.datagrid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            this.datagrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.datagrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.datagrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.datagrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.datagrid.BackgroundColor = global::Los_Alamos_Timeclock.Properties.Settings.Default.tableBackgroundColor;
             this.datagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.datagrid.DataBindings.Add(new System.Windows.Forms.Binding("GridColor", global::Los_Alamos_Timeclock.Properties.Settings.Default, "tableGridColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.datagrid.DataBindings.Add(new System.Windows.Forms.Binding("BackgroundColor", global::Los_Alamos_Timeclock.Properties.Settings.Default, "tableBackgroundColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.datagrid.GridColor = global::Los_Alamos_Timeclock.Properties.Settings.Default.tableGridColor;
             this.datagrid.Location = new System.Drawing.Point(0, 0);
             this.datagrid.Name = "datagrid";
             this.datagrid.ReadOnly = true;
@@ -327,8 +331,9 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             this.Controls.Add(employeeLabel);
             this.Controls.Add(this.employeeDropdownlist);
             this.Controls.Add(this.datagrid);
+            this.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::Los_Alamos_Timeclock.Properties.Settings.Default, "textColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.DoubleBuffered = true;
-            this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ForeColor = global::Los_Alamos_Timeclock.Properties.Settings.Default.textColor;
             this.Name = "Makesched";
             this.Size = new System.Drawing.Size(500, 400);
             ((System.ComponentModel.ISupportInitialize)(this.datagrid)).EndInit();

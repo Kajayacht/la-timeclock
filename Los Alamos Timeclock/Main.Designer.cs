@@ -39,7 +39,9 @@
             // 
             this.panel1.BackgroundImage = global::Los_Alamos_Timeclock.Properties.Resources._1287421014661;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::Los_Alamos_Timeclock.Properties.Settings.Default, "textColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.ForeColor = global::Los_Alamos_Timeclock.Properties.Settings.Default.textColor;
             this.panel1.Location = new System.Drawing.Point(70, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(500, 400);

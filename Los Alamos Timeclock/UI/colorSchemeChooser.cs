@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Los_Alamos_Timeclock.Properties;
 
 namespace Los_Alamos_Timeclock.UI
 {
@@ -15,19 +16,35 @@ namespace Los_Alamos_Timeclock.UI
         public Color tabletextColor = Properties.Settings.Default.tableTextColor;
         public Color tablegridColor = Properties.Settings.Default.tableGridColor;
         public Color tablebackgroundColor = Properties.Settings.Default.tableBackgroundColor;
-
-        public Color row1Color;
-        public Color row2Color;
+        public Color row1Color=Properties.Settings.Default.tablerow1Color;
+        public Color row2Color = Properties.Settings.Default.tablerow1Color;
+        String filename = Properties.Settings.Default.backgroundImage;
 
         public colorSchemeChooser()
         {
             InitializeComponent();
-            this.BackgroundImage = Image.FromFile(Properties.Settings.Default.backgroundImage);
+
+            this.MouseMove +=new MouseEventHandler(Main.maininstance.notIdle_event);
+            this.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
+            datagrid.MouseMove += new MouseEventHandler(Main.maininstance.notIdle_event);
+            datagrid.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
+
+            try
+            {
+                this.BackgroundImage = Image.FromFile(Properties.Settings.Default.backgroundImage);
+            }
+            catch (Exception)
+            {
+                this.BackgroundImage = Properties.Resources._1287421014661;
+            }
+
             this.ForeColor = Properties.Settings.Default.textColor;
-            datagrid.ForeColor = Properties.Settings.Default.tableTextColor;
-            datagrid.BackgroundColor = Properties.Settings.Default.tableBackgroundColor;
-            datagrid.DefaultCellStyle.BackColor = Properties.Settings.Default.tablerow1Color;
-            datagrid.AlternatingRowsDefaultCellStyle.BackColor = Properties.Settings.Default.tablerow2Color;
+            this.datagrid.BackgroundColor = Properties.Settings.Default.tableBackgroundColor;
+            this.datagrid.GridColor = Properties.Settings.Default.tableGridColor;
+            this.datagrid.DefaultCellStyle.ForeColor = Properties.Settings.Default.tableTextColor;
+            this.datagrid.DefaultCellStyle.BackColor = Properties.Settings.Default.tablerow1Color;
+            this.datagrid.AlternatingRowsDefaultCellStyle.BackColor = Properties.Settings.Default.tablerow2Color;
+
 
             datagrid.Rows.Add("Sample Text");
             datagrid.Rows.Add("Sample Text");
@@ -43,7 +60,8 @@ namespace Los_Alamos_Timeclock.UI
             colorPicker.Color = textColor;
             colorPicker.ShowDialog();
             textColor = colorPicker.Color;
-            this.ForeColor = textColor;  
+            this.ForeColor = textColor;
+            datagrid.ForeColor = tabletextColor;
         }
 
         private void tabletextColorButton_Click(object sender, EventArgs e)
@@ -86,7 +104,7 @@ namespace Los_Alamos_Timeclock.UI
             datagrid.DefaultCellStyle.BackColor = row2Color;
         }
 
-        String filename = "";
+
         private void backgroundImageButton_Click(object sender, EventArgs e)
         {
             OpenFileDialog imageDialog = new OpenFileDialog();
@@ -97,46 +115,24 @@ namespace Los_Alamos_Timeclock.UI
 
             if (imageDialog.ShowDialog() == DialogResult.OK)
             {
-                filename = System.IO.Path.GetFileName(imageDialog.FileName);
                 String filepath = System.IO.Path.GetFullPath(imageDialog.FileName);
-                String directory = System.IO.Path.GetDirectoryName(imageDialog.FileName);
-                String graphicsDirectory = System.IO.Path.GetFullPath("Graphics");
 
-                //checks if the file is already in the directory
-                if (directory.ToLower() != graphicsDirectory.ToLower())
+                try
                 {
-                    try
-                    {
-                        System.IO.File.Copy(filepath, "Graphics\\" + filename);
-                        this.BackgroundImage = Image.FromFile("Graphics\\" + filename);
-                    }
-                    catch (System.IO.FileNotFoundException)
-                    {
-                        MessageBox.Show("File not found");
-                    }
-                    catch (System.IO.IOException)
-                    {
-                        if (System.IO.File.Exists("Graphics\\" + filename))
-                        {
-                            MessageBox.Show("ERROR: A file by that name already exists in " + graphicsDirectory);
-                        }
-                        else
-                        {
-                            MessageBox.Show("ERROR: IO Error");
-                        }
-                    }
+                    this.BackgroundImage = Image.FromFile(imageDialog.FileName);
+                    filename = filepath;
                 }
-                else
+                catch (System.IO.FileNotFoundException)
                 {
-                    this.BackgroundImage = Image.FromFile(Properties.Settings.Default.backgroundImage);
+                    MessageBox.Show("File not found");
+                }
+                catch (System.IO.IOException)
+                {
+
+                    MessageBox.Show("ERROR: IO Error");
                 }
             }
 
-
-        }
-
-        private void backgroundColorButton_Click(object sender, EventArgs e)
-        {
 
         }
 
@@ -148,18 +144,22 @@ namespace Los_Alamos_Timeclock.UI
             Properties.Settings.Default.tablerow1Color = row1Color;
             Properties.Settings.Default.tablerow2Color = row2Color;
             Properties.Settings.Default.tableBackgroundColor = tablebackgroundColor;
-            Properties.Settings.Default.backgroundImage = "Graphics\\" + filename;
+            Properties.Settings.Default.backgroundImage = filename;
             Properties.Settings.Default.Save();
         }
 
         private void restoreDefaultButton_Click(object sender, EventArgs e)
         {
-            this.ForeColor= textColor = Color.White;
-            datagrid.ForeColor= tabletextColor = Color.Black;
-            datagrid.GridColor= tablegridColor = Color.LightGray;
-            datagrid.DefaultCellStyle.BackColor= row1Color = Color.White;
-            datagrid.AlternatingRowsDefaultCellStyle.BackColor= row2Color = Color.White;
-            datagrid.BackgroundColor= tablebackgroundColor = Color.DarkGray;
+            this.BackgroundImage = Resources._1287421014661;
+            Properties.Settings.Default.backgroundImage = "";
+            filename = "";
+            Properties.Settings.Default.textColor = this.ForeColor = textColor = Color.White;
+            Properties.Settings.Default.tableTextColor = datagrid.ForeColor = tabletextColor = Color.Black;
+            Properties.Settings.Default.tableGridColor = datagrid.GridColor = tablegridColor = Color.LightGray;
+            Properties.Settings.Default.tablerow1Color = datagrid.DefaultCellStyle.BackColor = row1Color = Color.White;
+            Properties.Settings.Default.tablerow2Color = datagrid.AlternatingRowsDefaultCellStyle.BackColor = row2Color = Color.White;
+            Properties.Settings.Default.tableBackgroundColor = datagrid.BackgroundColor = tablebackgroundColor = Color.DarkGray;
+            Properties.Settings.Default.Save();
         }
     }
 }

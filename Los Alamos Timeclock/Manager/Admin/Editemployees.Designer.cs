@@ -782,8 +782,9 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             this.Controls.Add(nameLabel);
             this.Controls.Add(employeeLabel);
             this.Controls.Add(this.employeeDropdownlist);
+            this.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::Los_Alamos_Timeclock.Properties.Settings.Default, "textColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.DoubleBuffered = true;
-            this.ForeColor = System.Drawing.Color.White;
+            this.ForeColor = global::Los_Alamos_Timeclock.Properties.Settings.Default.textColor;
             this.Name = "Editemployees";
             this.Size = new System.Drawing.Size(500, 1128);
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();

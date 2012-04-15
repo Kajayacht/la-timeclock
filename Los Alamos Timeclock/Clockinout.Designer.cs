@@ -58,7 +58,6 @@
             this.shiftinfoLabel.AutoSize = true;
             this.shiftinfoLabel.BackColor = System.Drawing.Color.Transparent;
             this.shiftinfoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.shiftinfoLabel.ForeColor = System.Drawing.Color.Transparent;
             this.shiftinfoLabel.Location = new System.Drawing.Point(3, 90);
             this.shiftinfoLabel.Name = "shiftinfoLabel";
             this.shiftinfoLabel.Size = new System.Drawing.Size(77, 29);
@@ -165,8 +164,9 @@
             this.Controls.Add(this.welcome);
             this.Controls.Add(this.shiftinfoLabel);
             this.Controls.Add(this.clockinButton);
+            this.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::Los_Alamos_Timeclock.Properties.Settings.Default, "textColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.DoubleBuffered = true;
-            this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ForeColor = global::Los_Alamos_Timeclock.Properties.Settings.Default.textColor;
             this.Name = "Clockinout";
             this.Size = new System.Drawing.Size(500, 400);
             ((System.ComponentModel.ISupportInitialize)(this.jobImage)).EndInit();

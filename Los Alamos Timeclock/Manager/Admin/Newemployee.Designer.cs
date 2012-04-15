@@ -603,8 +603,9 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             this.Controls.Add(fNameLabel);
             this.Controls.Add(nameLabel);
             this.Controls.Add(titleLabel);
+            this.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::Los_Alamos_Timeclock.Properties.Settings.Default, "textColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.DoubleBuffered = true;
-            this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ForeColor = global::Los_Alamos_Timeclock.Properties.Settings.Default.textColor;
             this.Name = "Newemployee";
             this.Size = new System.Drawing.Size(500, 702);
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();
