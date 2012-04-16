@@ -6,16 +6,43 @@ using System.Data.SqlClient;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
 using Los_Alamos_Timeclock.Manager.Admin;
+using System.IO;
 
 namespace Los_Alamos_Timeclock
 {
     class DBInit
     {
+        public static string line;
 
         public static void initTables(MySqlConnection myConnection)
         {
-            //build the tables if the do not exist
+            //Get the SQL file
+            try
+            {
+                // Create an instance of StreamReader to read from a file.
+                // The using statement also closes the StreamReader.
+                using (StreamReader r = new StreamReader(@"teamchro_LATSQL-1.sql"))
+                {                    
+                    //Create a string from the text file and return it
+                    line = r.ReadToEnd();
+                    r.Close();                    
+                }
+            }
 
+            catch
+            {
+                // Let the user know what went wrong.
+
+                MessageBox.Show("The file could not be read:");
+            }
+
+            Main.maininstance.connectDB(myConnection);
+            //myConnection.Open();
+
+            //build the tables if the do not exist
+            Main.maininstance.sqlCommand(line);
+            
+            myConnection.Close();
         }
 
         public static void initAdmin(MySqlConnection myConnection)
@@ -42,7 +69,7 @@ namespace Los_Alamos_Timeclock
                     Main.maininstance.panel1.Controls.Clear();
                     Main.maininstance.panel1.Controls.Add(new Newemployee(init));
                     Main.maininstance.panel1.Controls[0].Dock = DockStyle.Fill;
-     
+
                     //give him admin rights
 
                 }

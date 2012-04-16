@@ -27,7 +27,7 @@
     <ProductName>Los Alamos Timeclock</ProductName>
     <PublisherName>Team Chrono</PublisherName>
     <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>7</ApplicationRevision>
+    <ApplicationRevision>5</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -363,6 +363,9 @@
     <Content Include="icon4.ico" />
     <Content Include="Resources\Bartender.bmp" />
     <Content Include="Resources\Cook.bmp" />
+    <Content Include="teamchro_LATSQL-1.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Resources\shakingMoraca2.gif" />
     <None Include="Resources\shakingMoraca.gif" />
     <None Include="Resources\dancingtaco.gif" />

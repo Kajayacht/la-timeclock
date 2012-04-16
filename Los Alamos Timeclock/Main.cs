@@ -91,6 +91,7 @@ namespace Los_Alamos_Timeclock
 
             connectDB(myConnection);
 
+            DBInit.initTables(myConnection);
             DBInit.initAdmin(myConnection);
 
 
@@ -390,9 +391,9 @@ namespace Los_Alamos_Timeclock
                 command.ExecuteNonQuery();
             }
             //if DB connection error
-            catch (Exception)
+            catch (Exception e)
             {
-                MessageBox.Show("ERROR: Failed to execute SQL command");
+                MessageBox.Show("ERROR: Failed to execute SQL command" + e.ToString());
             }
             //close the connection
             finally
