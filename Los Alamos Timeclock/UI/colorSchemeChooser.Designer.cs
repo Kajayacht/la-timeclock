@@ -74,7 +74,7 @@
             textColorButton.Name = "textColorButton";
             textColorButton.Size = new System.Drawing.Size(127, 34);
             textColorButton.TabIndex = 9;
-            textColorButton.Text = "Text Color";
+            textColorButton.Text = "Background Text Color";
             textColorButton.UseVisualStyleBackColor = true;
             textColorButton.Click += new System.EventHandler(this.textColorButton_Click);
             // 
