@@ -87,19 +87,36 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                     else
                     {
                         Main.maininstance.sqlReader("SELECT MAX(ID) FROM Employee");
-                        id = Convert.ToInt32(Main.reader["MAX(ID)"]) + 1;
-                        Main.reader.Close();
+                        if (Main.reader["MAX(ID)"].ToString() == "")
+                        {
+                            id = 0;
+                        }
+                        else
+                        {
+                            id = Convert.ToInt32(Main.reader["MAX(ID)"].ToString()) + 1;
+                        }
                         Main.myConnection.Close();
 
                         Main.maininstance.sqlCommand("INSERT INTO Employee (`ID`, `LName`, `MName`, `FName`, `SSN`, `Phone`, `Email`, `Address1`, `Address2`,`City`, `State`, `Zip`,`SDate`) VALUES ('" + id + "', '" + lNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "', '" + mNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "', '" + fNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "', '" + Main.maininstance.crypt.Encrypt(ssnTextbox.Text, "dR.wH0iS", "tlm3L0rd") + "', '" + phoneTextbox.Text + "', '" + emailTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "', '" + aLine1Textbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "', '" + aLine2Textbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "','" + aCityTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "', '" + aStateDropdownlist.Text + "', '" + aZipTextbox.Text + "', '" + DateTime.Today.ToString("yyyy-MM-dd") + "')");
                         Main.maininstance.sqlCommand("INSERT INTO Users (`ID`, `User`, `Password`) VALUES ('" + id + "', '" + userTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "', '" + Main.maininstance.crypt.ComputeHash(pass1Textbox.Text, "Tlm3AnDR3|aTIv3DlmEn5l0nlN5pA[3", Cryptography.HashName.SHA256) + "')");
-                        Log.writeLog(Main.eName + " added employee: \n" + "LName= " + lNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + " MName= " + mNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + " FName= " + fNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "\n SSN= " + Main.maininstance.crypt.Encrypt(ssnTextbox.Text, "dR.wH0iS", "tlm3L0rd") + "\n Phone= " + phoneTextbox.Text + "\n Email= " + emailTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "\n Address1= " + aLine1Textbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "\n Address2= " + aLine2Textbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "\n City= " + aCityTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "\n State= " + aStateDropdownlist.Text + "\n Zip= " + aZipTextbox.Text + "\n ID= " + id + " User= " + userTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'"));
 
-                        Main.employeeList = Main.maininstance.getEmployees();
+                        if (!myInit)
+                        {
+                            Log.writeLog("SYSTEM added employee: \n" + "LName= " + lNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + " MName= " + mNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + " FName= " + fNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "\n SSN= " + Main.maininstance.crypt.Encrypt(ssnTextbox.Text, "dR.wH0iS", "tlm3L0rd") + "\n Phone= " + phoneTextbox.Text + "\n Email= " + emailTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "\n Address1= " + aLine1Textbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "\n Address2= " + aLine2Textbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "\n City= " + aCityTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "\n State= " + aStateDropdownlist.Text + "\n Zip= " + aZipTextbox.Text + "\n ID= " + id + " User= " + userTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'"));
+                        }
+                        else
+                        {
+                            Log.writeLog(Main.eName + " added employee: \n" + "LName= " + lNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + " MName= " + mNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + " FName= " + fNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "\n SSN= " + Main.maininstance.crypt.Encrypt(ssnTextbox.Text, "dR.wH0iS", "tlm3L0rd") + "\n Phone= " + phoneTextbox.Text + "\n Email= " + emailTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "\n Address1= " + aLine1Textbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "\n Address2= " + aLine2Textbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "\n City= " + aCityTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "\n State= " + aStateDropdownlist.Text + "\n Zip= " + aZipTextbox.Text + "\n ID= " + id + " User= " + userTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'"));
 
-                        Main.maininstance.panel1.Controls.Clear();
-                        Main.maininstance.panel1.Controls.Add(new Editemployees());
-                        Main.maininstance.panel1.Controls[0].Dock = DockStyle.Fill;
+                        }
+
+                        if (!myInit)
+                        {
+                            Main.employeeList = Main.maininstance.getEmployees();
+                            Main.maininstance.panel1.Controls.Clear();
+                            Main.maininstance.panel1.Controls.Add(new Editemployees());
+                            Main.maininstance.panel1.Controls[0].Dock = DockStyle.Fill;
+                        }
                     }
                 }
                 catch (Exception f)
@@ -108,13 +125,13 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                 }
                 finally
                 {
+                    Main.myConnection.Close();
                     if (myInit == true)
-                    {                                              
+                    {                 
                         Main.maininstance.sqlCommand("INSERT INTO Admin Values('" + id + "')");
                         MessageBox.Show("Admin created.  The program will now exit.");
                         Environment.Exit(0);
                     }
-                    Main.myConnection.Close();
                 }
             }
         }
