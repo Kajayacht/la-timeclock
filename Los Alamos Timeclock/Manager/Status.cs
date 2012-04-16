@@ -126,10 +126,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                     {
 
 
-                        String startTime = "'" + starttimePicker.Value.TimeOfDay.ToString() + "'", b1_Out, b1_In, b2_Out, b2_In, l_Out, l_In, endTime,tips;
+                        String startTime = "'" + starttimePicker.Value.TimeOfDay.ToString() + "'", b1_Out, b1_In, b2_Out, b2_In, l_Out, l_In, endTime, tips;
 
 
-                        if (tipsTextbox.Value <= 0 ||tipsTextbox.Value.ToString()=="")
+                        if (tipsTextbox.Value <= 0 || tipsTextbox.Value.ToString() == "")
                         {
                             tips = "NULL";
                         }
@@ -230,7 +230,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                                                         "SET " +
                                                         "Start=" + startTime + ", " +
                                                         "End=" + endTime + ", " +
-                                                        "Tips="+tips+", "+
+                                                        "Tips=" + tips + ", " +
                                                         "B1out=" + b1_Out + ", " +
                                                         "B1in=" + b1_In + ", " +
                                                         "B2out=" + b2_Out + ", " +
@@ -246,7 +246,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                         else
                         {
                             Main.maininstance.sqlCommand("INSERT INTO `Hours Worked`(`ID` ,`Date` ,`Start` ,`End` , `Tips` ,`JID` ,`B1out` ,`B1in` ,`B2out` ,`B2in` ,`Lout` ,`Lin` ,`Status`)" +
-                                                        "VALUES('" + id + "','" + date + "'," + startTime + "," + endTime + ", "+ tips + " ,'" + jobsDropdownlist.Text + "'," + b1_Out + "," + b1_In + "," + b2_Out + "," + b2_In + "," + l_Out + "," + l_In + "," + state + ")");
+                                                        "VALUES('" + id + "','" + date + "'," + startTime + "," + endTime + ", " + tips + " ,'" + jobsDropdownlist.Text + "'," + b1_Out + "," + b1_In + "," + b2_Out + "," + b2_In + "," + l_Out + "," + l_In + "," + state + ")");
                             MessageBox.Show("Insert Successful");
                             Log.writeLog(Main.eName + " inserted into the Hours Worked for " + employeeDropdownlist.Text + "\n Date= " + date + "\n Job= " + jobsDropdownlist.Text + "\n Start= " + starttimePicker.Value.TimeOfDay.ToString() + "\n End= " + endtimePicker.Value.TimeOfDay.ToString() + "\n Break 1= " + break1outtimePicker.Value.TimeOfDay.ToString() + "-" + break1intimePicker.Value.TimeOfDay.ToString() + "\n Break 2= " + break2outtimePicker.Value.TimeOfDay.ToString() + "-" + break2intimePicker.Value.TimeOfDay.ToString() + "\n Lunch= " + lunchouttimePicker.Value.TimeOfDay.ToString() + "-" + lunchintimePicker.Value.TimeOfDay.ToString());
                         }
@@ -480,8 +480,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                 return false;
             }
             else if (endtimePicker.Value != DateTime.MinValue && (
-                (break1outtimePicker.Value != DateTime.MinValue && break1intimePicker.Value == DateTime.MinValue) ||
-                (break2outtimePicker.Value != DateTime.MinValue && break2intimePicker.Value == DateTime.MinValue) ||
+                (break1outtimePicker.Value != DateTime.MinValue && break1intimePicker.Value == DateTime.MinValue)
+                ||
+                (break2outtimePicker.Value != DateTime.MinValue && break2intimePicker.Value == DateTime.MinValue)
+                ||
                 (lunchouttimePicker.Value != DateTime.MinValue && lunchintimePicker.Value == DateTime.MinValue)
                 ))
             {
@@ -489,30 +491,39 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                 return false;
             }
             else if (
-                !((break1outtimePicker.Value != DateTime.MinValue && break1intimePicker.Value == DateTime.MinValue) ^
-                (break2outtimePicker.Value != DateTime.MinValue && break2intimePicker.Value == DateTime.MinValue) ^
+                (break1outtimePicker.Value == DateTime.MinValue && break1intimePicker.Value != DateTime.MinValue)
+                ||
+                (break2outtimePicker.Value == DateTime.MinValue && break2intimePicker.Value != DateTime.MinValue)
+                ||
+                (lunchouttimePicker.Value == DateTime.MinValue && lunchintimePicker.Value != DateTime.MinValue)
+                )
+            {
+                MessageBox.Show("Cannot have a break/lunch end without a start");
+                return false;
+            }
+
+            else if (
+                (!(((break1outtimePicker.Value != DateTime.MinValue && break1intimePicker.Value == DateTime.MinValue) ^
+                (break2outtimePicker.Value != DateTime.MinValue && break2intimePicker.Value == DateTime.MinValue)) ^
                 (lunchouttimePicker.Value != DateTime.MinValue && lunchintimePicker.Value == DateTime.MinValue))
                 &&
                 !((break1outtimePicker.Value != DateTime.MinValue && break1intimePicker.Value != DateTime.MinValue) &&
                 (break2outtimePicker.Value != DateTime.MinValue && break2intimePicker.Value != DateTime.MinValue) &&
-                (lunchouttimePicker.Value != DateTime.MinValue && lunchintimePicker.Value != DateTime.MinValue)) 
+                (lunchouttimePicker.Value != DateTime.MinValue && lunchintimePicker.Value != DateTime.MinValue))
+                &&
+                !((break1outtimePicker.Value == DateTime.MinValue && break1intimePicker.Value == DateTime.MinValue) &&
+                (break2outtimePicker.Value == DateTime.MinValue && break2intimePicker.Value == DateTime.MinValue) &&
+                (lunchouttimePicker.Value == DateTime.MinValue && lunchintimePicker.Value == DateTime.MinValue))
+                )
                 ||
-                ((break1outtimePicker.Value != DateTime.MinValue && break1intimePicker.Value == DateTime.MinValue) &&
-                (break2outtimePicker.Value != DateTime.MinValue && break2intimePicker.Value == DateTime.MinValue) &&
+                (((break1outtimePicker.Value != DateTime.MinValue && break1intimePicker.Value == DateTime.MinValue) &&
+                (break2outtimePicker.Value != DateTime.MinValue && break2intimePicker.Value == DateTime.MinValue)) &&
                 (lunchouttimePicker.Value != DateTime.MinValue && lunchintimePicker.Value == DateTime.MinValue))
+
+
                 )
             {
                 MessageBox.Show("Cannot have more than 1 break/lunch open at a time");
-                return false;
-            }
-            else if ((break1outtimePicker.Value == DateTime.MinValue &&
-                break1intimePicker.Value != DateTime.MinValue) ||
-                (break2outtimePicker.Value == DateTime.MinValue &&
-                break2intimePicker.Value != DateTime.MinValue) ||
-                (lunchouttimePicker.Value == DateTime.MinValue &&
-                lunchintimePicker.Value != DateTime.MinValue))
-            {
-                MessageBox.Show("Cannot have a break/lunch end without a start");
                 return false;
             }
             else
