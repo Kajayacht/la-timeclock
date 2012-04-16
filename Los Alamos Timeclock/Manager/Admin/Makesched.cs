@@ -51,6 +51,8 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             this.datagrid.AlternatingRowsDefaultCellStyle.BackColor = Properties.Settings.Default.tablerow2Color;
             this.datagrid.GridColor = Properties.Settings.Default.tableGridColor;
 
+            
+
 
             try
             {
@@ -67,6 +69,10 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             this.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
             datagrid.MouseMove += new MouseEventHandler(Main.maininstance.notIdle_event);
             datagrid.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
+            starttimePicker.MouseMove += new MouseEventHandler(Main.maininstance.notIdle_event);
+            starttimePicker.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
+            endtimePicker.MouseMove += new MouseEventHandler(Main.maininstance.notIdle_event);
+            endtimePicker.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
             jobsDropdownlist.MouseMove += new MouseEventHandler(Main.maininstance.notIdle_event);
             jobsDropdownlist.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
 
@@ -224,7 +230,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
 
         public void populateDatagrid()
         {
-            String query = "SELECT Date, CONCAT(LName, ', ',FName) AS Name, DATE_FORMAT(Start,'%r') as Start, DATE_FORMAT(End,'%r') as End, JID AS Job FROM Schedule JOIN Employee ON Schedule.ID=Employee.ID Where Date>='" + mon.ToString("yyyy-MM-dd") + "' AND Date<='" + sun.ToString("yyyy-MM-dd") + "' ORDER BY Date, Start";
+            String query = "SELECT Date, CONCAT(LName, ', ',FName) AS Name, DATE_FORMAT(Start, '%h:%i %p' ) as Start, DATE_FORMAT(End, '%h:%i %p' ) as End, JID AS Job FROM Schedule JOIN Employee ON Schedule.ID=Employee.ID Where Date>='" + mon.ToString("yyyy-MM-dd") + "' AND Date<='" + sun.ToString("yyyy-MM-dd") + "' ORDER BY Date, Start";
                 
             
             try

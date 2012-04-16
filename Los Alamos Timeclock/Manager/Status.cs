@@ -119,6 +119,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                         if (answer == DialogResult.Yes)
                         {
                             Main.maininstance.sqlCommand("DELETE FROM `Hours Worked` WHERE ID='" + id + "' AND Date='" + date + "'");
+                            Log.writeLog(Main.eName + " deleted " + employeeDropdownlist.Text + "'s shift on " + date);
                         }
                     }
                     else
