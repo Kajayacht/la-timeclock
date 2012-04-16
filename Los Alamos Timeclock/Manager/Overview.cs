@@ -90,10 +90,10 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                                 "a.Status,a.JID As Job, a.Tips as Tips, DATE_FORMAT(a.Start, '%h:%i %p' ) AS Start , DATE_FORMAT(b.Start, '%h:%i %p' ) AS 'Scheduled Start',  " +
                                 "DATE_FORMAT(a.B1out, '%h:%i %p' ) As 'Break 1 OUT', " +
                                 "DATE_FORMAT(a.B1in, '%h:%i %p' ) As 'Break 1 IN', " +
-                                "DATE_FORMAT(a.B2out, '%h:%i %p' ) As 'Break 2 OUT', " +
-                                "DATE_FORMAT(a.B2in, '%h:%i %p' ) As 'Break 2 IN', " +
                                 "DATE_FORMAT(a.Lout, '%h:%i %p' ) As 'Lunch OUT', " +
                                 "DATE_FORMAT(a.Lin, '%h:%i %p' ) As 'Lunch IN', " +
+                                "DATE_FORMAT(a.B2out, '%h:%i %p' ) As 'Break 2 OUT', " +
+                                "DATE_FORMAT(a.B2in, '%h:%i %p' ) As 'Break 2 IN', " +
                                 "DATE_FORMAT(a.End, '%h:%i %p' ) AS End, DATE_FORMAT(b.End, '%h:%i %p') AS 'Scheduled End'  " +
                             "FROM `Hours Worked` a " +
                                 "LEFT JOIN Schedule b  " +
@@ -108,10 +108,10 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                                 "a.Status,a.JID As Job, a.Tips as Tips, DATE_FORMAT(a.Start, '%h:%i %p' ) AS Start , DATE_FORMAT(b.Start, '%h:%i %p' ) AS 'Scheduled Start',  " +
                                 "DATE_FORMAT(a.B1out, '%h:%i %p' ) As 'Break 1 OUT', " +
                                 "DATE_FORMAT(a.B1in, '%h:%i %p' ) As 'Break 1 IN', " +
-                                "DATE_FORMAT(a.B2out, '%h:%i %p' ) As 'Break 2 OUT', " +
-                                "DATE_FORMAT(a.B2in, '%h:%i %p' ) As 'Break 2 IN', " +
                                 "DATE_FORMAT(a.Lout, '%h:%i %p' ) As 'Lunch OUT', " +
                                 "DATE_FORMAT(a.Lin, '%h:%i %p' ) As 'Lunch IN', " +
+                                "DATE_FORMAT(a.B2out, '%h:%i %p' ) As 'Break 2 OUT', " +
+                                "DATE_FORMAT(a.B2in, '%h:%i %p' ) As 'Break 2 IN', " +
                                 "DATE_FORMAT(a.End, '%h:%i %p' ) AS End, DATE_FORMAT(b.End, '%h:%i %p') AS 'Scheduled End'  " +
                             "FROM `Hours Worked` a " +
                                 "RIGHT JOIN Schedule b  " +
@@ -126,10 +126,10 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                                 "a.Status,a.JID As Job, a.Tips as Tips, DATE_FORMAT(a.Start, '%h:%i %p' ) AS Start , DATE_FORMAT(b.Start, '%h:%i %p' ) AS 'Scheduled Start',  " +
                                 "DATE_FORMAT(a.B1out, '%h:%i %p' ) As 'Break 1 OUT', " +
                                 "DATE_FORMAT(a.B1in, '%h:%i %p' ) As 'Break 1 IN', " +
-                                "DATE_FORMAT(a.B2out, '%h:%i %p' ) As 'Break 2 OUT', " +
-                                "DATE_FORMAT(a.B2in, '%h:%i %p' ) As 'Break 2 IN', " +
                                 "DATE_FORMAT(a.Lout, '%h:%i %p' ) As 'Lunch OUT', " +
                                 "DATE_FORMAT(a.Lin, '%h:%i %p' ) As 'Lunch IN', " +
+                                "DATE_FORMAT(a.B2out, '%h:%i %p' ) As 'Break 2 OUT', " +
+                                "DATE_FORMAT(a.B2in, '%h:%i %p' ) As 'Break 2 IN', " +
                                 "DATE_FORMAT(a.End, '%h:%i %p' ) AS End, DATE_FORMAT(b.End, '%h:%i %p') AS 'Scheduled End'  " +
                             "FROM `Hours Worked` a " +
                                 "RIGHT JOIN Schedule b  " +

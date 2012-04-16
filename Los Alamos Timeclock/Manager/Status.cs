@@ -270,7 +270,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
             employeeUpdate();
         }
 
-        public void employeeUpdate()
+        private void employeeUpdate()
         {
             Main.myConnection.Open();
             Main.maininstance.sqlReader("Select * from `Hours Worked` where ID='" + id + "' AND Date='" + date + "'");
@@ -369,7 +369,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
             Main.myConnection.Close();
         }
 
-        public void populateDatagrid()
+        private void populateDatagrid()
         {
             string query = "Select " +
                                 "a.Date, " +
@@ -377,10 +377,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                                 "a.Status,a.JID As Job, a.Tips as Tips, DATE_FORMAT(a.Start, '%h:%i %p' ) AS Start , DATE_FORMAT(b.Start, '%h:%i %p' ) AS 'Scheduled Start',  " +
                                 "DATE_FORMAT(a.B1out, '%h:%i %p' ) As 'Break 1 OUT', " +
                                 "DATE_FORMAT(a.B1in, '%h:%i %p' ) As 'Break 1 IN', " +
-                                "DATE_FORMAT(a.B2out, '%h:%i %p' ) As 'Break 2 OUT', " +
-                                "DATE_FORMAT(a.B2in, '%h:%i %p' ) As 'Break 2 IN', " +
                                 "DATE_FORMAT(a.Lout, '%h:%i %p' ) As 'Lunch OUT', " +
                                 "DATE_FORMAT(a.Lin, '%h:%i %p' ) As 'Lunch IN', " +
+                                "DATE_FORMAT(a.B2out, '%h:%i %p' ) As 'Break 2 OUT', " +
+                                "DATE_FORMAT(a.B2in, '%h:%i %p' ) As 'Break 2 IN', " +
                                 "DATE_FORMAT(a.End, '%h:%i %p' ) AS End, DATE_FORMAT(b.End, '%h:%i %p') AS 'Scheduled End'  " +
                             "FROM `Hours Worked` a " +
                                 "LEFT JOIN Schedule b  " +
@@ -395,10 +395,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                                 "a.Status,a.JID As Job, a.Tips as Tips, DATE_FORMAT(a.Start, '%h:%i %p' ) AS Start , DATE_FORMAT(b.Start, '%h:%i %p' ) AS 'Scheduled Start',  " +
                                 "DATE_FORMAT(a.B1out, '%h:%i %p' ) As 'Break 1 OUT', " +
                                 "DATE_FORMAT(a.B1in, '%h:%i %p' ) As 'Break 1 IN', " +
-                                "DATE_FORMAT(a.B2out, '%h:%i %p' ) As 'Break 2 OUT', " +
-                                "DATE_FORMAT(a.B2in, '%h:%i %p' ) As 'Break 2 IN', " +
                                 "DATE_FORMAT(a.Lout, '%h:%i %p' ) As 'Lunch OUT', " +
                                 "DATE_FORMAT(a.Lin, '%h:%i %p' ) As 'Lunch IN', " +
+                                "DATE_FORMAT(a.B2out, '%h:%i %p' ) As 'Break 2 OUT', " +
+                                "DATE_FORMAT(a.B2in, '%h:%i %p' ) As 'Break 2 IN', " +
                                 "DATE_FORMAT(a.End, '%h:%i %p' ) AS End, DATE_FORMAT(b.End, '%h:%i %p') AS 'Scheduled End'  " +
                             "FROM `Hours Worked` a " +
                                 "RIGHT JOIN Schedule b  " +
@@ -413,10 +413,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                                 "a.Status,a.JID As Job, a.Tips as Tips, DATE_FORMAT(a.Start, '%h:%i %p' ) AS Start , DATE_FORMAT(b.Start, '%h:%i %p' ) AS 'Scheduled Start',  " +
                                 "DATE_FORMAT(a.B1out, '%h:%i %p' ) As 'Break 1 OUT', " +
                                 "DATE_FORMAT(a.B1in, '%h:%i %p' ) As 'Break 1 IN', " +
-                                "DATE_FORMAT(a.B2out, '%h:%i %p' ) As 'Break 2 OUT', " +
-                                "DATE_FORMAT(a.B2in, '%h:%i %p' ) As 'Break 2 IN', " +
                                 "DATE_FORMAT(a.Lout, '%h:%i %p' ) As 'Lunch OUT', " +
                                 "DATE_FORMAT(a.Lin, '%h:%i %p' ) As 'Lunch IN', " +
+                                "DATE_FORMAT(a.B2out, '%h:%i %p' ) As 'Break 2 OUT', " +
+                                "DATE_FORMAT(a.B2in, '%h:%i %p' ) As 'Break 2 IN', " +
                                 "DATE_FORMAT(a.End, '%h:%i %p' ) AS End, DATE_FORMAT(b.End, '%h:%i %p') AS 'Scheduled End'  " +
                             "FROM `Hours Worked` a " +
                                 "RIGHT JOIN Schedule b  " +
@@ -452,9 +452,85 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
             }
         }
 
-
-        public Boolean validate()
+        //validates that breaks/lunches have valid length and start/end
+        private Boolean validTimespan(DateTime a, DateTime b)
         {
+            DateTime start=starttimePicker.Value;
+            DateTime end = endtimePicker.Value;
+
+            if (b == DateTime.MinValue)
+            {
+                return true;
+            }
+            else
+            {
+                if (end < start)
+                {
+                    end.AddDays(1);
+                }
+
+                if (b < a)
+                {
+                    b.AddDays(1);
+                }
+
+                if (b.Subtract(a) > TimeSpan.FromHours(9))
+                {
+                    MessageBox.Show("Break/Lunch too long");
+                    return false;
+                }
+                else if (a < start)
+                {
+                    MessageBox.Show("Break/Lunch cannot have a start time before the shift begins");
+                    return false;
+                }
+                else if (b > end && end!=DateTime.MinValue)
+                {
+                    MessageBox.Show("Break/Lunch cannot have a end time after the shift ends");
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+        }
+
+
+        private Boolean validate()
+        {
+            int count = 0;
+
+            DateTime start = starttimePicker.Value;
+            DateTime end = endtimePicker.Value;
+
+            if (end < start)
+            {
+                end = end.AddDays(1);
+            }
+
+            if (end.Subtract(start) > TimeSpan.FromHours(8).Add(TimeSpan.FromMinutes(30)))
+            {
+                DialogResult answer = MessageBox.Show("Shift length is " + end.Subtract(start) + ", are you sure?","Confirm Long Shift",MessageBoxButtons.YesNo);
+                if (answer == DialogResult.No)
+                {
+                    return false;
+                }
+            }
+
+            if (break1outtimePicker.Value != DateTime.MinValue && break1intimePicker.Value == DateTime.MinValue)
+            {
+                count++;
+            }
+            if (break2outtimePicker.Value != DateTime.MinValue && break2intimePicker.Value == DateTime.MinValue)
+            {
+                count++;
+            }
+
+            if (lunchouttimePicker.Value != DateTime.MinValue && lunchintimePicker.Value == DateTime.MinValue)
+            {
+                count++;
+            }
 
 
             if (starttimePicker.Value == DateTime.MinValue &&
@@ -502,28 +578,22 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                 return false;
             }
 
-            else if (
-                (!(((break1outtimePicker.Value != DateTime.MinValue && break1intimePicker.Value == DateTime.MinValue) ^
-                (break2outtimePicker.Value != DateTime.MinValue && break2intimePicker.Value == DateTime.MinValue)) ^
-                (lunchouttimePicker.Value != DateTime.MinValue && lunchintimePicker.Value == DateTime.MinValue))
-                &&
-                !((break1outtimePicker.Value != DateTime.MinValue && break1intimePicker.Value != DateTime.MinValue) &&
-                (break2outtimePicker.Value != DateTime.MinValue && break2intimePicker.Value != DateTime.MinValue) &&
-                (lunchouttimePicker.Value != DateTime.MinValue && lunchintimePicker.Value != DateTime.MinValue))
-                &&
-                !((break1outtimePicker.Value == DateTime.MinValue && break1intimePicker.Value == DateTime.MinValue) &&
-                (break2outtimePicker.Value == DateTime.MinValue && break2intimePicker.Value == DateTime.MinValue) &&
-                (lunchouttimePicker.Value == DateTime.MinValue && lunchintimePicker.Value == DateTime.MinValue))
-                )
-                ||
-                (((break1outtimePicker.Value != DateTime.MinValue && break1intimePicker.Value == DateTime.MinValue) &&
-                (break2outtimePicker.Value != DateTime.MinValue && break2intimePicker.Value == DateTime.MinValue)) &&
-                (lunchouttimePicker.Value != DateTime.MinValue && lunchintimePicker.Value == DateTime.MinValue))
-
-
-                )
+            else if
+               (count>1)
             {
                 MessageBox.Show("Cannot have more than 1 break/lunch open at a time");
+                return false;
+            }
+            else if (!validTimespan(break1outtimePicker.Value, break1intimePicker.Value))
+            {
+                return false;
+            }
+            else if (!validTimespan(lunchouttimePicker.Value, lunchintimePicker.Value))
+            {
+                return false;
+            }
+            else if (!validTimespan(break2outtimePicker.Value, break2intimePicker.Value))
+            {
                 return false;
             }
             else
