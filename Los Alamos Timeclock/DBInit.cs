@@ -6,40 +6,42 @@ using System.Data.SqlClient;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
 using Los_Alamos_Timeclock.Manager.Admin;
+using System.IO;
 
 namespace Los_Alamos_Timeclock
 {
     class DBInit
     {
+        public static string line;
 
         public static void initTables(MySqlConnection myConnection)
         {
+            //Get the SQL file
+            try
+            {
+                // Create an instance of StreamReader to read from a file.
+                // The using statement also closes the StreamReader.
+                using (StreamReader r = new StreamReader(@"teamchro_LATSQL-1.sql"))
+                {                    
+                    //Create a string from the text file and return it
+                    line = r.ReadToEnd();
+                    r.Close();                    
+                }
+            }
+
+            catch
+            {
+                // Let the user know what went wrong.
+
+                MessageBox.Show("The file could not be read:");
+            }
+
             Main.maininstance.connectDB(myConnection);
-            myConnection.Open();
+            //myConnection.Open();
 
             //build the tables if the do not exist
-
-            //Employee
-            Main.maininstance.sqlCommand("CREATE TABLE if not exists `Employee` (  `ID` int(11) NOT NULL auto_increment,  `LName` text NOT NULL,  `MName` varchar(20) NOT NULL,  `FName` text NOT NULL,  `SSN` text NOT NULL,  `Phone` int(10) NOT NULL,  `Email` text NOT NULL,  `Address1` text,  `Address2` text,  `City` text NOT NULL,  `State` text,  `Zip` int(11) default NULL,  `SDate` date NOT NULL,  `EDate` date default NULL,  `EReason` varchar(10) default NULL,  PRIMARY KEY  (`ID`),  UNIQUE KEY `ID_UNIQUE` (`ID`)) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;");
-            //Admin
-            Main.maininstance.sqlCommand("CREATE TABLE if not exists `Admin` (  `ID` int(11) NOT NULL,  PRIMARY KEY  (`ID`),  KEY `AID` (`ID`),  CONSTRAINT `AID` FOREIGN KEY (`ID`) REFERENCES `Employee` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE) ENGINE=InnoDB DEFAULT CHARSET=latin1;");
-            //Jobs
-            Main.maininstance.sqlCommand("CREATE TABLE if not exists `Jobs` (  `JID` varchar(50) NOT NULL, `JSPay` decimal(10,2) NOT NULL, `TippedJob` varchar(5) character set latin1 collate latin1_bin default 'FALSE',  `Filename` text,  PRIMARY KEY  (`JID`)) ENGINE=InnoDB DEFAULT CHARSET=latin1;");
-            //Employee Jobs         
-            Main.maininstance.sqlCommand("CREATE TABLE if not exists `Employee Jobs` (  `ID` int(11) NOT NULL,  `JID` varchar(50) NOT NULL,  `JPay` decimal(3,2) NOT NULL,  KEY `EJID` (`ID`),  KEY `EJJID` (`JID`),  CONSTRAINT `EJJID` FOREIGN KEY (`JID`) REFERENCES `Jobs` (`JID`) ON DELETE CASCADE ON UPDATE CASCADE,  CONSTRAINT `EJID` FOREIGN KEY (`ID`) REFERENCES `Employee` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE) ENGINE=InnoDB DEFAULT CHARSET=latin1;");
-            //EmployeeNotes
-            Main.maininstance.sqlCommand("CREATE TABLE if not exists `EmployeeNotes` (  `ID` int(11) NOT NULL,  `Manager` varchar(50) NOT NULL,  `Date` datetime NOT NULL,  `Note` text NOT NULL,  KEY `NoteEID` (`ID`),  CONSTRAINT `ENID` FOREIGN KEY (`ID`) REFERENCES `Employee` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE) ENGINE=InnoDB DEFAULT CHARSET=latin1;");
-            //Hours Worked            
-            Main.maininstance.sqlCommand("CREATE TABLE if not exists `Hours Worked` (  `ID` int(11) NOT NULL,  `Date` date NOT NULL,  `Start` time default NULL,  `End` time default NULL,  `Tips` decimal(10,2) default NULL,  `JID` varchar(50) NOT NULL,  `B1out` time default NULL,  `B1in` time default NULL,  `B2out` time default NULL,  `B2in` time default NULL,  `Lout` time default NULL,  `Lin` time default NULL,  `Status` varchar(20) default NULL,  KEY `HWID` (`ID`),  KEY `HWJID` (`JID`),  CONSTRAINT `HWJID` FOREIGN KEY (`JID`) REFERENCES `Jobs` (`JID`) ON DELETE CASCADE ON UPDATE CASCADE, CONSTRAINT `HWID` FOREIGN KEY (`ID`) REFERENCES `Employee` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE) ENGINE=InnoDB DEFAULT CHARSET=latin1;");
-            //Manager
-            Main.maininstance.sqlCommand("CREATE TABLE if not exists `Manager` (  `ID` int(11) NOT NULL,  PRIMARY KEY  (`ID`),  KEY `MID` (`ID`), CONSTRAINT `MID` FOREIGN KEY (`ID`) REFERENCES `Employee` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE) ENGINE=InnoDB DEFAULT CHARSET=latin1;");
-            //Requests
-            Main.maininstance.sqlCommand("CREATE TABLE if not exists `Requests` (  `ID` int(11) NOT NULL,  `SDate` date NOT NULL,  `EDate` date NOT NULL,  `Submitted Date` date default NULL,  `Reason` text,  KEY `RID` (`ID`),  CONSTRAINT `Rid` FOREIGN KEY (`ID`) REFERENCES `Employee` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE) ENGINE=InnoDB DEFAULT CHARSET=latin1;");
-            //Schedule
-            Main.maininstance.sqlCommand("CREATE TABLE if not exists `Schedule` (  `ID` int(11) NOT NULL,  `Date` date NOT NULL,  `Start` time NOT NULL,  `End` time NOT NULL,  `JID` varchar(50) NOT NULL,  KEY `SID` (`ID`),  KEY `SJID` (`JID`),  CONSTRAINT `SJID` FOREIGN KEY (`JID`) REFERENCES `Jobs` (`JID`) ON DELETE CASCADE ON UPDATE CASCADE,  CONSTRAINT `SID` FOREIGN KEY (`ID`) REFERENCES `Employee` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE) ENGINE=InnoDB DEFAULT CHARSET=latin1;");
-            //Users
-            Main.maininstance.sqlCommand("CREATE TABLE if not exists `Users` (  `ID` int(11) NOT NULL,  `User` varchar(45) NOT NULL,  `Password` varchar(84) NOT NULL,  PRIMARY KEY  (`ID`),  KEY `ID` (`ID`),  CONSTRAINT `ID` FOREIGN KEY (`ID`) REFERENCES `Employee` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE) ENGINE=InnoDB DEFAULT CHARSET=latin1;");
-
+            Main.maininstance.sqlCommand(line);
+            
             myConnection.Close();
         }
 

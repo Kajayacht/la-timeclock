@@ -366,6 +366,9 @@
     <Content Include="Resources\Manager.bmp" />
     <Content Include="Resources\Security.bmp" />
     <Content Include="Resources\Server.bmp" />
+    <Content Include="teamchro_LATSQL-1.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Resources\shakingMoraca2.gif" />
     <None Include="Resources\shakingMoraca.gif" />
     <None Include="Resources\dancingtaco.gif" />
