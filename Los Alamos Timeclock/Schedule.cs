@@ -36,11 +36,13 @@ namespace Los_Alamos_Timeclock
         {
             InitializeComponent();
 
+            //set datagrid colors
             this.scheduleDatagrid.DefaultCellStyle.ForeColor = Properties.Settings.Default.tableTextColor;
             this.scheduleDatagrid.DefaultCellStyle.BackColor = Properties.Settings.Default.tablerow1Color;
             this.scheduleDatagrid.AlternatingRowsDefaultCellStyle.BackColor = Properties.Settings.Default.tablerow2Color;
             this.scheduleDatagrid.GridColor = Properties.Settings.Default.tableGridColor;
 
+            //set background
             try
             {
                 this.BackgroundImage = Image.FromFile(Properties.Settings.Default.backgroundImage);
@@ -50,27 +52,29 @@ namespace Los_Alamos_Timeclock
                 this.BackgroundImage = Properties.Resources._1287421014661;
             }
 
+            //events to reset the idle timer
             this.MouseMove+=new MouseEventHandler(Main.maininstance.notIdle_event);
             this.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
             scheduleDatagrid.MouseMove+=new MouseEventHandler(Main.maininstance.notIdle_event);
             scheduleDatagrid.KeyDown+=new KeyEventHandler(Main.maininstance.notIdle_event);
 
-            mon = getmon(DateTime.Parse(weekCalander.Value.ToShortDateString()));
+            //get this week's span
+            mon = Manager.Admin.Paychecks.getDay(weekCalander.Value, DayOfWeek.Monday);
             sun = mon.AddDays(6);
+            //by default you only see your own schedule
             whoDropdownlist.SelectedItem = "Self";
+            //set the calander to monday's date
             weekCalander.Value = mon.Date;
 
-            if (Main.myConnection.State == ConnectionState.Open)
-            {
-                Main.reader.Close();
-                Main.myConnection.Close();
-            }
+            //fill the datatable
             filldt();
         }
 
-        public void filldt()
+        //method to fill the datatable
+        private void filldt()
         {
             string query = "";
+            //either gets the user's schedule or everyone's
             if (whoDropdownlist.Text == "Self")
             {
                 query = "SELECT Date, LName AS Last, FName AS First, DATE_FORMAT(Start, '%h:%i %p') as Start, DATE_FORMAT(End, '%h:%i %p') as End, JID AS Job FROM Schedule JOIN Employee ON Schedule.ID=Employee.ID Where Schedule.ID='" + Main.id + "' AND Date>='" + mon.ToString("yyyy-MM-dd") + "' AND Date<='" + sun.ToString("yyyy-MM-dd") + "' ORDER BY Date, Start";
@@ -82,6 +86,7 @@ namespace Los_Alamos_Timeclock
 
             try
             {
+                //fills the datatable with the query results
                 Main.myConnection.Open();
                 mySqlDataAdapter = new MySqlDataAdapter(query, Main.myConnection);
                 mySqlCommandBuilder = new MySqlCommandBuilder(mySqlDataAdapter);
@@ -105,31 +110,16 @@ namespace Los_Alamos_Timeclock
             }
         }
 
-
-
-        public DataRowCollection Rows
-        {
-            get { return dataTable.Rows; }
-        }
-
+        //updates the datatable to the selected week
         private void date_ValueChanged(object sender, EventArgs e)
         {
             if (weekCalander.Value.DayOfWeek != DayOfWeek.Monday)
             {
-                weekCalander.Value = getmon(weekCalander.Value.Date);
+                weekCalander.Value = Manager.Admin.Paychecks.getDay(weekCalander.Value, DayOfWeek.Monday);
             }
             mon = weekCalander.Value;
             sun = mon.AddDays(6);
             filldt();
-        }
-
-        public DateTime getmon(DateTime a)
-        {
-            while (a.DayOfWeek != DayOfWeek.Monday)
-            {
-                a = a.AddDays(-1);
-            }
-            return a;
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

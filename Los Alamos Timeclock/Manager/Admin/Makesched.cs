@@ -75,7 +75,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
             jobsDropdownlist.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
 
             //finds what day is monday, so it knows what timeframe to show (Monday-Sunday)
-            mon = getmon(DateTime.Today.Date);
+            mon = Manager.Admin.Paychecks.getDay(DateTime.Today.Date, DayOfWeek.Monday);
             sun = mon.AddDays(6);
             calander.MaxDate = DateTime.Today.AddYears(1);
             //initialize the datagrid, jobsdropdownlist, and employeedropdownlist
@@ -160,7 +160,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
             //checks if it needs to get next week
             if (calander.Value > mon.AddDays(6) || calander.Value < mon)
             {
-                mon = getmon(calander.Value);
+                mon = Manager.Admin.Paychecks.getDay(calander.Value, DayOfWeek.Monday);
                 sun = mon.AddDays(6);
                 populateDatagrid();
             }
@@ -301,16 +301,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                 del = false;
                 return true;
             }
-        }
-
-        //method to get the last monday, so the program knows when the week begins/ends
-        private DateTime getmon(DateTime a)
-        {
-            while (a.DayOfWeek != DayOfWeek.Monday)
-            {
-                a = a.AddDays(-1);
-            }
-            return a;
         }
 
         //Method to show the overview so the user can look at requests, previous schedule, hours worked, and employee notes

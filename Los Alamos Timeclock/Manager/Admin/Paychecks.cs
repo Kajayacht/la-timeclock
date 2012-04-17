@@ -81,7 +81,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
         }
 
         //gets the most recent occurance of a specified 'day', 'day' compared to datetime a
-        private DateTime getDay(DateTime a, DayOfWeek day)
+        public static DateTime getDay(DateTime a, DayOfWeek day)
         {
             while (a.DayOfWeek != day)
             {
