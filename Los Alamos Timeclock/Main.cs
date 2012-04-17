@@ -354,11 +354,11 @@ namespace Los_Alamos_Timeclock
         public void changeConnection()
         {
             //Get input from user
-            string server = Microsoft.VisualBasic.Interaction.InputBox("Enter Database IP", "", Properties.Settings.Default.IP);
-            string port = Microsoft.VisualBasic.Interaction.InputBox("Enter Database Port", "", Properties.Settings.Default.Port);
+            string server = Microsoft.VisualBasic.Interaction.InputBox("Enter Database IP (localhost for WAMP)", "", Properties.Settings.Default.IP);
+            string port = Microsoft.VisualBasic.Interaction.InputBox("Enter Database Port (Default 3306)", "", Properties.Settings.Default.Port);
             string database = Microsoft.VisualBasic.Interaction.InputBox("Enter Database Name", "", Properties.Settings.Default.Database);
-            string uid = Microsoft.VisualBasic.Interaction.InputBox("Enter Database User", "", Properties.Settings.Default.User);
-            string password = Microsoft.VisualBasic.Interaction.InputBox("Enter Database User Password", "", Properties.Settings.Default.Password);
+            string uid = Microsoft.VisualBasic.Interaction.InputBox("Enter Database User (root for WAMP default)", "", Properties.Settings.Default.User);
+            string password = Microsoft.VisualBasic.Interaction.InputBox("Enter Database User Password (leave empty for WAMP default)", "", Properties.Settings.Default.Password);
 
             //Populate the default settings with the new connection info
             Properties.Settings.Default.IP = server;

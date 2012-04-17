@@ -38,6 +38,7 @@ namespace Los_Alamos_Timeclock
         {
             InitializeComponent();
 
+            //sets the background image
             try
             {
                 this.BackgroundImage = Image.FromFile(Properties.Settings.Default.backgroundImage);
@@ -47,6 +48,7 @@ namespace Los_Alamos_Timeclock
                 this.BackgroundImage = Properties.Resources._1287421014661;
             }
 
+            //events that reset the idle timer
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(Main.maininstance.notIdle_event);
             ipaddressTextbox.MouseMove += new System.Windows.Forms.MouseEventHandler(Main.maininstance.notIdle_event);
             ipaddressTextbox.KeyDown += new System.Windows.Forms.KeyEventHandler(Main.maininstance.notIdle_event);
@@ -59,6 +61,7 @@ namespace Los_Alamos_Timeclock
             passTextbox.MouseMove += new System.Windows.Forms.MouseEventHandler(Main.maininstance.notIdle_event);
             passTextbox.KeyDown += new System.Windows.Forms.KeyEventHandler(Main.maininstance.notIdle_event);
 
+            //fills the information
             try
             {
                 ipaddressTextbox.Text = Properties.Settings.Default.IP;
@@ -71,28 +74,29 @@ namespace Los_Alamos_Timeclock
             }
             catch
             {
-                MessageBox.Show("Failed to get config file");
+                MessageBox.Show("ERROR: Failed to retrieve settings from config file");
             }
         }
 
+        //messageboxes to explain each item
         private void ipLLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            MessageBox.Show("The IP Addresss is the numeric representation of the database's location on the internet, use localhost if the database is located on this computer.");
+            MessageBox.Show("The IP Addresss is the numeric representation of the database's location on the internet, use the word localhost if using WAMP or if the database is located on this computer.");
         }
 
         private void portLLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            MessageBox.Show("The Port is what path the program will take to reach the database once it reaches the IP address. Default 3306");
+            MessageBox.Show("The Port is what path the program will take to reach the database once it reaches the IP address. Default is 3306");
         }
 
         private void userLLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            MessageBox.Show("User is the username that is used to login to the database server.");
+            MessageBox.Show("User is the username that is used to login to the database server. WAMP's default username is root");
         }
 
         private void passLLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            MessageBox.Show("Password is the password that is used to login to the database server.");
+            MessageBox.Show("Password is the password that is used to login to the database server in conjunction with the User. WAMP's default setting has no password");
         }
 
         private void databaseLLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -100,6 +104,7 @@ namespace Los_Alamos_Timeclock
             MessageBox.Show("This is the name of the database that the program will store it's information in.");
         }
 
+        //tries to apply and save the new connection information
         private void Apply_Click(object sender, EventArgs e)
         {
 
@@ -110,6 +115,7 @@ namespace Los_Alamos_Timeclock
 				";UID="+userTextbox.Text+";" +
 				";PASSWORD="+passTextbox.Text+";");
 
+            //tries to connect to the database, if successful, it will alert the user and update the settings
             try
             {
                 Main.myConnection.Open();
@@ -123,7 +129,7 @@ namespace Los_Alamos_Timeclock
             }
             catch (Exception)
             {
-                MessageBox.Show("Connection Failed");
+                MessageBox.Show("ERROR: Failed to connect using new settings, restoring previous settings");
             }
             finally
             {
@@ -131,6 +137,7 @@ namespace Los_Alamos_Timeclock
             }
         }
 
+        //Save the application settings
         private void saveAppSettings_Click(object sender, EventArgs e)
         {
             if (!showPreviousEmployeesCheckbox.Checked && !showCurrentEmployeesCheckbox.Checked)
@@ -147,6 +154,7 @@ namespace Los_Alamos_Timeclock
             }
         }
 
+        //runs the cleanup utility, giving the user the options to cleanup old employees, schedules, and hours worked
         private void cleanupButton_Click(object sender, EventArgs e)
         {
             if (!Main.clup.Visible)
@@ -160,6 +168,7 @@ namespace Los_Alamos_Timeclock
             }
         }
 
+        //starts the colorSchemeChooser, allowing the user to select their own custom colors
         private void changeColorScheme_Click(object sender, EventArgs e)
         {
 
@@ -175,6 +184,7 @@ namespace Los_Alamos_Timeclock
 
         }
 
+        //allows the user to change the folder that the program stores it's information in
         private void changeJobFolderButton_Click(object sender, EventArgs e)
         {
             Main.changeFolder();
