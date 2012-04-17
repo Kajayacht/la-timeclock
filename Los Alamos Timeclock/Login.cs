@@ -33,6 +33,7 @@ namespace Los_Alamos_Timeclock
         {
             InitializeComponent();
 
+            //sets the background
             try
             {
                 this.BackgroundImage = Image.FromFile(Properties.Settings.Default.backgroundImage);
@@ -42,21 +43,25 @@ namespace Los_Alamos_Timeclock
                 this.BackgroundImage = Properties.Resources._1287421014661;
             }
 
+            //event to check if the user hits enter
             passTextbox.KeyPress += new KeyPressEventHandler(passwordreturn_event);
         }
 
-        private void B_login_Click(object sender, EventArgs e)
+        //employee clicked the login button
+        private void login_Click(object sender, EventArgs e)
         {
             startLogin();
         }
 
 
+        //login process
         private void startLogin()
         {
             try
             {
 
                 Main.myConnection.Open();
+                //checks if the username and pass were valid, and the linked employee's last day isn't less than today minus one day
                 Main.maininstance.sqlReader("SELECT a.ID,b.FName, b.LName, c.ID AS Admin, d.ID AS Manager " +
                                             "FROM Users a " +
                                             "Join Employee b " +
@@ -68,11 +73,13 @@ namespace Los_Alamos_Timeclock
                                             "Where LOWER(a.User)=LOWER('" + userTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "') " +
                                             "And a.Password='"+Main.maininstance.crypt.ComputeHash(passTextbox.Text, "Tlm3AnDR3|aTIv3DlmEn5l0nlN5pA[3", Cryptography.HashName.SHA256) +"' "+
                                             "AND (b.EDate>='" + DateTime.Today.AddDays(-1).ToString("yyyy-MM-dd") + "' OR b.EDate is NULL)");
-
+                //the employee exists
                 if (Main.reader.HasRows)
                 {
+                    //set main's id to the reader's id
                     Main.id = Main.reader["ID"].ToString();
 
+                    //sets the user's powers
                     if (Main.reader["Admin"].ToString() != "")
                     {
                         Main.permissions = "Admin";
@@ -85,14 +92,17 @@ namespace Los_Alamos_Timeclock
                     {
                         Main.permissions = "None";
                     }
+                    //sends the name to main
                     Main.eName = Main.reader["FName"].ToString() + " " + Main.reader["LName"].ToString();
                     Main.myConnection.Close();
 
+                    //open the clockinout screen
                     Main.maininstance.menu1.Show();
                     Main.maininstance.panel1.Controls.Clear();
                     Main.maininstance.panel1.Controls.Add(new Clockinout());
                     Main.maininstance.panel1.Controls[0].Dock = DockStyle.Fill;
 
+                    //start the idle timer
                     Main.maininstance.startTimer();
                 }
                 else
@@ -112,11 +122,12 @@ namespace Los_Alamos_Timeclock
             }
         }
 
-        private void clock1_Load(object sender, EventArgs e)
+        private void clock_Load(object sender, EventArgs e)
         {
             clock1.timer1.Start();
         }
 
+        //if the user hit enter in the password field, then try to submit
         private void passwordreturn_event(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == '\r')

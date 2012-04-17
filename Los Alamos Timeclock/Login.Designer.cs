@@ -102,7 +102,7 @@
             this.loginButton.TabIndex = 2;
             this.loginButton.Text = "Login";
             this.loginButton.UseVisualStyleBackColor = true;
-            this.loginButton.Click += new System.EventHandler(this.B_login_Click);
+            this.loginButton.Click += new System.EventHandler(this.login_Click);
             // 
             // dancingTaco2
             // 
@@ -193,7 +193,7 @@
             this.clock1.Name = "clock1";
             this.clock1.Size = new System.Drawing.Size(194, 37);
             this.clock1.TabIndex = 10;
-            this.clock1.Load += new System.EventHandler(this.clock1_Load);
+            this.clock1.Load += new System.EventHandler(this.clock_Load);
             // 
             // Login
             // 
