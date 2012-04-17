@@ -14,20 +14,20 @@ namespace Los_Alamos_Timeclock.Manager.Admin
     public partial class Makesched : UserControl
     {
 
-            /*
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
+        /*
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
 
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
 
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-     */
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
 
         DateTime mon, sun;
         String date = DateTime.Today.ToString("yyyy-MM-dd");
@@ -43,17 +43,15 @@ namespace Los_Alamos_Timeclock.Manager.Admin
         {
             InitializeComponent();
 
-            starttimePicker.ShowUpDown = true;
-            endtimePicker.ShowUpDown = true;
-
+            //sets the datagrid's style to what is set in the program settings
             this.datagrid.DefaultCellStyle.ForeColor = Properties.Settings.Default.tableTextColor;
             this.datagrid.DefaultCellStyle.BackColor = Properties.Settings.Default.tablerow1Color;
             this.datagrid.AlternatingRowsDefaultCellStyle.BackColor = Properties.Settings.Default.tablerow2Color;
             this.datagrid.GridColor = Properties.Settings.Default.tableGridColor;
 
-            
 
 
+            //tries to set the background, otherwise uses default
             try
             {
                 this.BackgroundImage = Image.FromFile(Properties.Settings.Default.backgroundImage);
@@ -76,9 +74,11 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             jobsDropdownlist.MouseMove += new MouseEventHandler(Main.maininstance.notIdle_event);
             jobsDropdownlist.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
 
+            //finds what day is monday, so it knows what timeframe to show (Monday-Sunday)
             mon = getmon(DateTime.Today.Date);
             sun = mon.AddDays(6);
             calander.MaxDate = DateTime.Today.AddYears(1);
+            //initialize the datagrid, jobsdropdownlist, and employeedropdownlist
             populateDatagrid();
             jobsDropdownlist.DisplayMember = "getname";
             jobsDropdownlist.DataSource = Main.joblist;
@@ -123,10 +123,10 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             }
         }
 
+        //delete record if one exists
         private void delete_Click(object sender, EventArgs e)
         {
-            //delete record if one exists
-            
+
             if (Main.employeeList.Count == 0)
             {
                 MessageBox.Show("No Employee Selected");
@@ -152,6 +152,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             }
         }
 
+        //updates the table if the week is different after the date changed
         private void calander_DateChanged(object sender, EventArgs e)
         {
             date = calander.Value.ToString("yyyy-MM-dd");
@@ -174,20 +175,21 @@ namespace Los_Alamos_Timeclock.Manager.Admin
         }
 
         //checks to see if the employee is scheduled on the selected day, if they are update the fields
-        public void employeeUpdate()
+        private void employeeUpdate()
         {
             scheduled = false;
 
             try
             {
                 Main.myConnection.Open();
+                //check if the selected employee is scheduled on the selected date
                 Main.maininstance.sqlReader("Select a.*, b.EDate from Schedule a JOIN Employee b ON a.ID=b.ID where a.ID='" + ID + "' AND a.Date='" + date + "'");
-
 
                 if (Main.reader.HasRows)
                 {
                     if (Main.reader["EDate"].ToString() != "")
                     {
+                        //if the employee has a last date, they are registered as terminated, and cannnot be scheduled after their last day
                         terminated = true;
                         lastDay = DateTime.Parse(Main.reader["EDate"].ToString());
                     }
@@ -197,12 +199,12 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                     }
 
                     scheduled = true;
+                    //change the update button's text to update instead of insert
                     updatescheduleButon.Text = "Update";
 
-
+                    //sets the datetimepicker's values to the values of the database
                     DateTime b = DateTime.Parse(Main.reader["Start"].ToString());
                     starttimePicker.Value = b;
-
 
                     TimeSpan a = TimeSpan.Parse(Main.reader["End"].ToString());
 
@@ -218,8 +220,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                     starttimePicker.Value = DateTime.Today;
                     endtimePicker.Value = DateTime.Today;
                 }
-                clength();
-                Main.reader.Close();
+                changeLength();
                 Main.myConnection.Close();
             }
             finally
@@ -228,35 +229,30 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             }
         }
 
-        public void populateDatagrid()
+        //method to fill the datagrid
+        private void populateDatagrid()
         {
+            //gets all scheduled shifts in the selected week
             String query = "SELECT Date, CONCAT(LName, ', ',FName) AS Name, DATE_FORMAT(Start, '%h:%i %p' ) as Start, DATE_FORMAT(End, '%h:%i %p' ) as End, JID AS Job FROM Schedule JOIN Employee ON Schedule.ID=Employee.ID Where Date>='" + mon.ToString("yyyy-MM-dd") + "' AND Date<='" + sun.ToString("yyyy-MM-dd") + "' ORDER BY Date, Start";
-                
-            
+
             try
             {
                 Main.myConnection.Open();
                 MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter(query, Main.myConnection);
                 MySqlCommandBuilder mySqlCommandBuilder = new MySqlCommandBuilder(mySqlDataAdapter);
 
-                try
-                {
-                    DataTable dataTable = new DataTable();
-                    mySqlDataAdapter.Fill(dataTable);
+                DataTable dataTable = new DataTable();
+                mySqlDataAdapter.Fill(dataTable);
 
-                    BindingSource bind = new BindingSource();
-                    bind.DataSource = dataTable;
-                    datagrid.DataSource = bind;
-                }
-                catch (Exception e)
-                {
-                    MessageBox.Show(e.ToString());
-                }
+                BindingSource bind = new BindingSource();
+                bind.DataSource = dataTable;
+                datagrid.DataSource = bind;
+
                 Main.myConnection.Close();
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                MessageBox.Show(e.ToString());
+                MessageBox.Show("ERROR: Failed to retrieve table information from the database");
             }
             finally
             {
@@ -264,31 +260,32 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             }
         }
 
-        public void clength()
+        //method to update the shift lenght it shows the user
+        private void changeLength()
         {
-
-                    DateTime s = starttimePicker.Value;
-                    DateTime e = endtimePicker.Value;
-                    if (e < s)
-                    {
-                        e=e.AddDays(1);
-                    }
-                    length = e.Subtract(s);
-                    lengthLabel.Text = "Length: "+length.ToString();
-
+            DateTime s = starttimePicker.Value;
+            DateTime e = endtimePicker.Value;
+            //if the end time is less than the start time, it assumes the end is past midnight and adds another day to the end time
+            if (e < s)
+            {
+                e = e.AddDays(1);
+            }
+            length = e.Subtract(s);
+            lengthLabel.Text = "Length: " + length.ToString();
         }
 
-        public Boolean validate()
+        //method to validate the form has acceptable inputs
+        private Boolean validate()
         {
 
-            if (jobsDropdownlist.Text=="")
+            if (jobsDropdownlist.Text == "")
             {
                 MessageBox.Show("Job cannot be blank");
                 return false;
             }
-            else if(length>TimeSpan.FromHours(8).Add(TimeSpan.FromMinutes(30))&&!del)
+            else if (length > TimeSpan.FromHours(8).Add(TimeSpan.FromMinutes(30)) && !del)
             {
-                DialogResult answer= MessageBox.Show("Shift is length is " + length.ToString() + ", are you sure?", "Confirm Long Shift", MessageBoxButtons.YesNo);
+                DialogResult answer = MessageBox.Show("Shift is length is " + length.ToString() + ", are you sure?", "Confirm Long Shift", MessageBoxButtons.YesNo);
 
                 if (answer == DialogResult.Yes)
                 {
@@ -306,7 +303,8 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             }
         }
 
-        public DateTime getmon(DateTime a)
+        //method to get the last monday, so the program knows when the week begins/ends
+        private DateTime getmon(DateTime a)
         {
             while (a.DayOfWeek != DayOfWeek.Monday)
             {
@@ -315,6 +313,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             return a;
         }
 
+        //Method to show the overview so the user can look at requests, previous schedule, hours worked, and employee notes
         private void showRequests_Click(object sender, EventArgs e)
         {
             if (!l.Visible)
@@ -328,6 +327,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             }
         }
 
+        //when the datagrid is clicked it updates the fields to the information stored in that field
         private void datagrid_Cellclick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -338,16 +338,17 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             }
         }
 
+        //methods to update the shown length and round the start/end time to the nearest 15 min
         private void startTimePicker_ValueChanged(object sender, EventArgs e)
         {
             starttimePicker.Value = Main.roundtime(starttimePicker.Value);
-            clength();
+            changeLength();
         }
 
         private void endtimePicker_ValueChanged(object sender, EventArgs e)
         {
             endtimePicker.Value = Main.roundtime(endtimePicker.Value);
-            clength();
+            changeLength();
         }
     }
 }

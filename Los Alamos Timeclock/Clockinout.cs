@@ -249,11 +249,19 @@ namespace Los_Alamos_Timeclock
         {
             if (status == "IN")
             {   
-                //find out whther the job is tipped or not                
-                Main.myConnection.Open();
-                Main.maininstance.sqlReader("Select TippedJob From Jobs WHERE JID='" + job+ "'");
-                Boolean tipped = Boolean.Parse(Main.reader["TippedJob"].ToString());
-                Main.myConnection.Close();
+                //find out whether the job is tipped or not 
+                Boolean tipped = false;
+                try
+                {
+                    Main.myConnection.Open();
+                    Main.maininstance.sqlReader("Select TippedJob From Jobs WHERE JID='" + job + "'");
+                    tipped = Boolean.Parse(Main.reader["TippedJob"].ToString());
+                }
+                finally
+                {
+                    Main.myConnection.Close();
+                }
+
                 //if tipped job
                 if (tipped == true)
                 {

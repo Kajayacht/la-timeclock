@@ -98,162 +98,169 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
         private void update_Click(object sender, EventArgs e)
         {
+            try
+            {
 
-            if (Main.employeeList.Count == 0)
-            {
-                MessageBox.Show("No Employee Selected");
-            }
-            else
-            {
-                if (validate())
+                if (Main.employeeList.Count == 0)
                 {
-                    Main.myConnection.Open();
-                    Main.maininstance.sqlReader("SELECT * FROM `Hours Worked` WHERE ID='" + id + "' AND Date='" + date + "'");
-                    Boolean working = Main.reader.HasRows;
-                    Main.myConnection.Close();
-
-                    if (allEmpty && working)
+                    MessageBox.Show("No Employee Selected");
+                }
+                else
+                {
+                    if (validate())
                     {
-                        DialogResult answer = MessageBox.Show("Are you sure you wish to delete this shift?", "Delete Shift?", MessageBoxButtons.YesNo);
+                        Main.myConnection.Open();
+                        Main.maininstance.sqlReader("SELECT * FROM `Hours Worked` WHERE ID='" + id + "' AND Date='" + date + "'");
+                        Boolean working = Main.reader.HasRows;
+                        Main.myConnection.Close();
 
-                        if (answer == DialogResult.Yes)
+                        if (allEmpty && working)
                         {
-                            Main.maininstance.sqlCommand("DELETE FROM `Hours Worked` WHERE ID='" + id + "' AND Date='" + date + "'");
-                            Log.writeLog(Main.eName + " deleted " + employeeDropdownlist.Text + "'s shift on " + date);
-                        }
-                    }
-                    else
-                    {
+                            DialogResult answer = MessageBox.Show("Are you sure you wish to delete this shift?", "Delete Shift?", MessageBoxButtons.YesNo);
 
-
-                        String startTime = "'" + starttimePicker.Value.TimeOfDay.ToString() + "'", b1_Out, b1_In, b2_Out, b2_In, l_Out, l_In, endTime, tips;
-
-
-                        if (tipsTextbox.Value <= 0 || tipsTextbox.Value.ToString() == "")
-                        {
-                            tips = "NULL";
-                        }
-                        else
-                        {
-                            tips = "'" + tipsTextbox.Value + "'";
-                        }
-
-                        if (break1outtimePicker.Value == DateTime.MinValue)
-                        {
-                            b1_Out = "NULL";
-                            b1_In = "NULL";
-                        }
-                        else
-                        {
-                            b1_Out = "'" + break1outtimePicker.Value.TimeOfDay.ToString() + "'";
-
-                            if (break1intimePicker.Value == DateTime.MinValue)
+                            if (answer == DialogResult.Yes)
                             {
+                                Main.maininstance.sqlCommand("DELETE FROM `Hours Worked` WHERE ID='" + id + "' AND Date='" + date + "'");
+                                Log.writeLog(Main.eName + " deleted " + employeeDropdownlist.Text + "'s shift on " + date);
+                            }
+                        }
+                        else
+                        {
+
+
+                            String startTime = "'" + starttimePicker.Value.TimeOfDay.ToString() + "'", b1_Out, b1_In, b2_Out, b2_In, l_Out, l_In, endTime, tips;
+
+
+                            if (tipsTextbox.Value <= 0 || tipsTextbox.Value.ToString() == "")
+                            {
+                                tips = "NULL";
+                            }
+                            else
+                            {
+                                tips = "'" + tipsTextbox.Value + "'";
+                            }
+
+                            if (break1outtimePicker.Value == DateTime.MinValue)
+                            {
+                                b1_Out = "NULL";
                                 b1_In = "NULL";
                             }
                             else
                             {
-                                b1_In = "'" + break1intimePicker.Value.TimeOfDay.ToString() + "'";
+                                b1_Out = "'" + break1outtimePicker.Value.TimeOfDay.ToString() + "'";
+
+                                if (break1intimePicker.Value == DateTime.MinValue)
+                                {
+                                    b1_In = "NULL";
+                                }
+                                else
+                                {
+                                    b1_In = "'" + break1intimePicker.Value.TimeOfDay.ToString() + "'";
+                                }
                             }
-                        }
 
-                        if (break2outtimePicker.Value == DateTime.MinValue)
-                        {
-                            b2_Out = "NULL";
-                            b2_In = "NULL";
-                        }
-                        else
-                        {
-                            b2_Out = "'" + break2outtimePicker.Value.TimeOfDay.ToString() + "'";
-
-                            if (break2intimePicker.Value == DateTime.MinValue)
+                            if (break2outtimePicker.Value == DateTime.MinValue)
                             {
+                                b2_Out = "NULL";
                                 b2_In = "NULL";
                             }
                             else
                             {
-                                b2_In = "'" + break2intimePicker.Value.TimeOfDay.ToString() + "'";
+                                b2_Out = "'" + break2outtimePicker.Value.TimeOfDay.ToString() + "'";
+
+                                if (break2intimePicker.Value == DateTime.MinValue)
+                                {
+                                    b2_In = "NULL";
+                                }
+                                else
+                                {
+                                    b2_In = "'" + break2intimePicker.Value.TimeOfDay.ToString() + "'";
+                                }
                             }
-                        }
 
-                        if (lunchouttimePicker.Value == DateTime.MinValue)
-                        {
-                            l_Out = "NULL";
-                            l_In = "NULL";
-                        }
-                        else
-                        {
-                            l_Out = "'" + lunchouttimePicker.Value.TimeOfDay.ToString() + "'";
-
-                            if (lunchintimePicker.Value == DateTime.MinValue)
+                            if (lunchouttimePicker.Value == DateTime.MinValue)
                             {
+                                l_Out = "NULL";
                                 l_In = "NULL";
                             }
                             else
                             {
-                                l_In = "'" + lunchintimePicker.Value.TimeOfDay.ToString() + "'";
+                                l_Out = "'" + lunchouttimePicker.Value.TimeOfDay.ToString() + "'";
+
+                                if (lunchintimePicker.Value == DateTime.MinValue)
+                                {
+                                    l_In = "NULL";
+                                }
+                                else
+                                {
+                                    l_In = "'" + lunchintimePicker.Value.TimeOfDay.ToString() + "'";
+                                }
                             }
-                        }
 
-                        if (endtimePicker.Value == DateTime.MinValue)
-                        {
-                            endTime = "NULL";
-                        }
-                        else
-                        {
-                            endTime = "'" + endtimePicker.Value.TimeOfDay.ToString() + "'";
-                        }
-
-
-                        //determines if the employee is in, on break, on lunch, or out
-                        string state = "'OUT'";
-                        if (endTime == "NULL")
-                        {
-                            if ((b1_Out != "NULL" && b1_In == "NULL") || (b2_Out != "NULL" && b2_In == "NULL"))
+                            if (endtimePicker.Value == DateTime.MinValue)
                             {
-                                state = "'BREAK'";
-                            }
-                            else if (l_Out != "NULL" && l_In == "NULL")
-                            {
-                                state = "'LUNCH'";
+                                endTime = "NULL";
                             }
                             else
                             {
-                                state = "'IN'";
+                                endTime = "'" + endtimePicker.Value.TimeOfDay.ToString() + "'";
+                            }
+
+
+                            //determines if the employee is in, on break, on lunch, or out
+                            string state = "'OUT'";
+                            if (endTime == "NULL")
+                            {
+                                if ((b1_Out != "NULL" && b1_In == "NULL") || (b2_Out != "NULL" && b2_In == "NULL"))
+                                {
+                                    state = "'BREAK'";
+                                }
+                                else if (l_Out != "NULL" && l_In == "NULL")
+                                {
+                                    state = "'LUNCH'";
+                                }
+                                else
+                                {
+                                    state = "'IN'";
+                                }
+                            }
+
+
+                            if (working)
+                            {
+                                Main.maininstance.sqlCommand("UPDATE `Hours Worked` " +
+                                                            "SET " +
+                                                            "Start=" + startTime + ", " +
+                                                            "End=" + endTime + ", " +
+                                                            "Tips=" + tips + ", " +
+                                                            "B1out=" + b1_Out + ", " +
+                                                            "B1in=" + b1_In + ", " +
+                                                            "B2out=" + b2_Out + ", " +
+                                                            "B2in=" + b2_In + ", " +
+                                                            "Lout=" + l_Out + ", " +
+                                                            "Lin=" + l_In + ", " +
+                                                            "JID='" + jobsDropdownlist.Text + "', " +
+                                                            "Status=" + state + " " +
+                                                            "WHERE Date='" + date + "' AND ID='" + id + "'");
+                                MessageBox.Show("Update Successful");
+                                Log.writeLog(Main.eName + " changed the Hours Worked for " + employeeDropdownlist.Text + "\n Date= " + date + "\n Job= " + jobsDropdownlist.Text + "\n Start= " + starttimePicker.Value.TimeOfDay.ToString() + "\n End= " + endtimePicker.Value.TimeOfDay.ToString() + "\n Break 1= " + break1outtimePicker.Value.TimeOfDay.ToString() + "-" + break1intimePicker.Value.TimeOfDay.ToString() + "\n Break 2= " + break2outtimePicker.Value.TimeOfDay.ToString() + "-" + break2intimePicker.Value.TimeOfDay.ToString() + "\n Lunch= " + lunchouttimePicker.Value.TimeOfDay.ToString() + "-" + lunchintimePicker.Value.TimeOfDay.ToString());
+                            }
+                            else
+                            {
+                                Main.maininstance.sqlCommand("INSERT INTO `Hours Worked`(`ID` ,`Date` ,`Start` ,`End` , `Tips` ,`JID` ,`B1out` ,`B1in` ,`B2out` ,`B2in` ,`Lout` ,`Lin` ,`Status`)" +
+                                                            "VALUES('" + id + "','" + date + "'," + startTime + "," + endTime + ", " + tips + " ,'" + jobsDropdownlist.Text + "'," + b1_Out + "," + b1_In + "," + b2_Out + "," + b2_In + "," + l_Out + "," + l_In + "," + state + ")");
+                                MessageBox.Show("Insert Successful");
+                                Log.writeLog(Main.eName + " inserted into the Hours Worked for " + employeeDropdownlist.Text + "\n Date= " + date + "\n Job= " + jobsDropdownlist.Text + "\n Start= " + starttimePicker.Value.TimeOfDay.ToString() + "\n End= " + endtimePicker.Value.TimeOfDay.ToString() + "\n Break 1= " + break1outtimePicker.Value.TimeOfDay.ToString() + "-" + break1intimePicker.Value.TimeOfDay.ToString() + "\n Break 2= " + break2outtimePicker.Value.TimeOfDay.ToString() + "-" + break2intimePicker.Value.TimeOfDay.ToString() + "\n Lunch= " + lunchouttimePicker.Value.TimeOfDay.ToString() + "-" + lunchintimePicker.Value.TimeOfDay.ToString());
                             }
                         }
 
-
-                        if (working)
-                        {
-                            Main.maininstance.sqlCommand("UPDATE `Hours Worked` " +
-                                                        "SET " +
-                                                        "Start=" + startTime + ", " +
-                                                        "End=" + endTime + ", " +
-                                                        "Tips=" + tips + ", " +
-                                                        "B1out=" + b1_Out + ", " +
-                                                        "B1in=" + b1_In + ", " +
-                                                        "B2out=" + b2_Out + ", " +
-                                                        "B2in=" + b2_In + ", " +
-                                                        "Lout=" + l_Out + ", " +
-                                                        "Lin=" + l_In + ", " +
-                                                        "JID='" + jobsDropdownlist.Text + "', " +
-                                                        "Status=" + state + " " +
-                                                        "WHERE Date='" + date + "' AND ID='" + id + "'");
-                            MessageBox.Show("Update Successful");
-                            Log.writeLog(Main.eName + " changed the Hours Worked for " + employeeDropdownlist.Text + "\n Date= " + date + "\n Job= " + jobsDropdownlist.Text + "\n Start= " + starttimePicker.Value.TimeOfDay.ToString() + "\n End= " + endtimePicker.Value.TimeOfDay.ToString() + "\n Break 1= " + break1outtimePicker.Value.TimeOfDay.ToString() + "-" + break1intimePicker.Value.TimeOfDay.ToString() + "\n Break 2= " + break2outtimePicker.Value.TimeOfDay.ToString() + "-" + break2intimePicker.Value.TimeOfDay.ToString() + "\n Lunch= " + lunchouttimePicker.Value.TimeOfDay.ToString() + "-" + lunchintimePicker.Value.TimeOfDay.ToString());
-                        }
-                        else
-                        {
-                            Main.maininstance.sqlCommand("INSERT INTO `Hours Worked`(`ID` ,`Date` ,`Start` ,`End` , `Tips` ,`JID` ,`B1out` ,`B1in` ,`B2out` ,`B2in` ,`Lout` ,`Lin` ,`Status`)" +
-                                                        "VALUES('" + id + "','" + date + "'," + startTime + "," + endTime + ", " + tips + " ,'" + jobsDropdownlist.Text + "'," + b1_Out + "," + b1_In + "," + b2_Out + "," + b2_In + "," + l_Out + "," + l_In + "," + state + ")");
-                            MessageBox.Show("Insert Successful");
-                            Log.writeLog(Main.eName + " inserted into the Hours Worked for " + employeeDropdownlist.Text + "\n Date= " + date + "\n Job= " + jobsDropdownlist.Text + "\n Start= " + starttimePicker.Value.TimeOfDay.ToString() + "\n End= " + endtimePicker.Value.TimeOfDay.ToString() + "\n Break 1= " + break1outtimePicker.Value.TimeOfDay.ToString() + "-" + break1intimePicker.Value.TimeOfDay.ToString() + "\n Break 2= " + break2outtimePicker.Value.TimeOfDay.ToString() + "-" + break2intimePicker.Value.TimeOfDay.ToString() + "\n Lunch= " + lunchouttimePicker.Value.TimeOfDay.ToString() + "-" + lunchintimePicker.Value.TimeOfDay.ToString());
-                        }
+                        populateDatagrid();
                     }
-
-                    populateDatagrid();
                 }
+            }
+            finally
+            {
+                Main.myConnection.Close();
             }
         }
 
@@ -272,101 +279,108 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
         private void employeeUpdate()
         {
-            Main.myConnection.Open();
-            Main.maininstance.sqlReader("Select * from `Hours Worked` where ID='" + id + "' AND Date='" + date + "'");
-            if (Main.reader.HasRows)
+            try
             {
-
-
-                DateTime parsedTime;
-                starttimePicker.Value = DateTime.Parse(Main.reader["Start"].ToString());
-
-                if (Main.reader["Tips"].ToString() != "")
+                Main.myConnection.Open();
+                Main.maininstance.sqlReader("Select * from `Hours Worked` where ID='" + id + "' AND Date='" + date + "'");
+                if (Main.reader.HasRows)
                 {
-                    tipsTextbox.Value = Decimal.Parse(Main.reader["Tips"].ToString());
-                }
 
-                if (DateTime.TryParse(Main.reader["End"].ToString(), out parsedTime))
-                {
-                    endtimePicker.Value = parsedTime;
-                }
-                else
-                {
-                    endtimePicker.Value = DateTime.MinValue;
-                }
 
-                if (DateTime.TryParse(Main.reader["B1out"].ToString(), out parsedTime))
-                {
-                    break1outtimePicker.Value = parsedTime;
+                    DateTime parsedTime;
+                    starttimePicker.Value = DateTime.Parse(Main.reader["Start"].ToString());
 
-                    if (DateTime.TryParse(Main.reader["B1in"].ToString(), out parsedTime))
+                    if (Main.reader["Tips"].ToString() != "")
                     {
-                        break1intimePicker.Value = parsedTime;
+                        tipsTextbox.Value = Decimal.Parse(Main.reader["Tips"].ToString());
+                    }
+
+                    if (DateTime.TryParse(Main.reader["End"].ToString(), out parsedTime))
+                    {
+                        endtimePicker.Value = parsedTime;
                     }
                     else
                     {
+                        endtimePicker.Value = DateTime.MinValue;
+                    }
+
+                    if (DateTime.TryParse(Main.reader["B1out"].ToString(), out parsedTime))
+                    {
+                        break1outtimePicker.Value = parsedTime;
+
+                        if (DateTime.TryParse(Main.reader["B1in"].ToString(), out parsedTime))
+                        {
+                            break1intimePicker.Value = parsedTime;
+                        }
+                        else
+                        {
+                            break1intimePicker.Value = DateTime.MinValue;
+                        }
+
+                    }
+                    else
+                    {
+                        break1outtimePicker.Value = DateTime.MinValue;
                         break1intimePicker.Value = DateTime.MinValue;
                     }
 
-                }
-                else
-                {
-                    break1outtimePicker.Value = DateTime.MinValue;
-                    break1intimePicker.Value = DateTime.MinValue;
-                }
-
-                if (DateTime.TryParse(Main.reader["B2out"].ToString(), out parsedTime))
-                {
-                    break2outtimePicker.Value = parsedTime;
-
-                    if (DateTime.TryParse(Main.reader["B2in"].ToString(), out parsedTime))
+                    if (DateTime.TryParse(Main.reader["B2out"].ToString(), out parsedTime))
                     {
-                        break2intimePicker.Value = parsedTime;
+                        break2outtimePicker.Value = parsedTime;
+
+                        if (DateTime.TryParse(Main.reader["B2in"].ToString(), out parsedTime))
+                        {
+                            break2intimePicker.Value = parsedTime;
+                        }
+                        else
+                        {
+                            break2intimePicker.Value = DateTime.MinValue;
+                        }
                     }
                     else
                     {
+                        break2outtimePicker.Value = DateTime.MinValue;
                         break2intimePicker.Value = DateTime.MinValue;
                     }
-                }
-                else
-                {
-                    break2outtimePicker.Value = DateTime.MinValue;
-                    break2intimePicker.Value = DateTime.MinValue;
-                }
 
-                if (DateTime.TryParse(Main.reader["Lout"].ToString(), out parsedTime))
-                {
-                    lunchouttimePicker.Value = parsedTime;
-
-                    if (DateTime.TryParse(Main.reader["Lin"].ToString(), out parsedTime))
+                    if (DateTime.TryParse(Main.reader["Lout"].ToString(), out parsedTime))
                     {
-                        lunchintimePicker.Value = parsedTime;
+                        lunchouttimePicker.Value = parsedTime;
+
+                        if (DateTime.TryParse(Main.reader["Lin"].ToString(), out parsedTime))
+                        {
+                            lunchintimePicker.Value = parsedTime;
+                        }
+                        else
+                        {
+                            lunchintimePicker.Value = DateTime.MinValue;
+                        }
+
                     }
                     else
                     {
+                        lunchouttimePicker.Value = DateTime.MinValue;
                         lunchintimePicker.Value = DateTime.MinValue;
                     }
-
                 }
                 else
                 {
-                    lunchouttimePicker.Value = DateTime.MinValue;
+                    starttimePicker.Value = DateTime.MinValue;
+                    endtimePicker.Value = DateTime.MinValue;
+                    break1intimePicker.Value = DateTime.MinValue;
+                    break1outtimePicker.Value = DateTime.MinValue;
+                    break2intimePicker.Value = DateTime.MinValue;
+                    break2outtimePicker.Value = DateTime.MinValue;
                     lunchintimePicker.Value = DateTime.MinValue;
+                    lunchouttimePicker.Value = DateTime.MinValue;
                 }
+                Main.reader.Close();
+                Main.myConnection.Close();
             }
-            else
+            finally
             {
-                starttimePicker.Value = DateTime.MinValue;
-                endtimePicker.Value = DateTime.MinValue;
-                break1intimePicker.Value = DateTime.MinValue;
-                break1outtimePicker.Value = DateTime.MinValue;
-                break2intimePicker.Value = DateTime.MinValue;
-                break2outtimePicker.Value = DateTime.MinValue;
-                lunchintimePicker.Value = DateTime.MinValue;
-                lunchouttimePicker.Value = DateTime.MinValue;
+                Main.myConnection.Close();
             }
-            Main.reader.Close();
-            Main.myConnection.Close();
         }
 
         private void populateDatagrid()
@@ -455,7 +469,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
         //validates that breaks/lunches have valid length and start/end
         private Boolean validTimespan(DateTime a, DateTime b)
         {
-            DateTime start=starttimePicker.Value;
+            DateTime start = starttimePicker.Value;
             DateTime end = endtimePicker.Value;
 
             if (b == DateTime.MinValue)
@@ -484,7 +498,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                     MessageBox.Show("Break/Lunch cannot have a start time before the shift begins");
                     return false;
                 }
-                else if (b > end && end!=DateTime.MinValue)
+                else if (b > end && end != DateTime.MinValue)
                 {
                     MessageBox.Show("Break/Lunch cannot have a end time after the shift ends");
                     return false;
@@ -511,7 +525,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
             if (end.Subtract(start) > TimeSpan.FromHours(8).Add(TimeSpan.FromMinutes(30)))
             {
-                DialogResult answer = MessageBox.Show("Shift length is " + end.Subtract(start) + ", are you sure?","Confirm Long Shift",MessageBoxButtons.YesNo);
+                DialogResult answer = MessageBox.Show("Shift length is " + end.Subtract(start) + ", are you sure?", "Confirm Long Shift", MessageBoxButtons.YesNo);
                 if (answer == DialogResult.No)
                 {
                     return false;
@@ -579,7 +593,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
             }
 
             else if
-               (count>1)
+               (count > 1)
             {
                 MessageBox.Show("Cannot have more than 1 break/lunch open at a time");
                 return false;

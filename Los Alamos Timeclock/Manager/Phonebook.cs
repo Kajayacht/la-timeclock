@@ -73,7 +73,6 @@ namespace Los_Alamos_Timeclock.Manager
             }
             finally
             {
-                Main.reader.Close();
                 Main.myConnection.Close();
             }
         }

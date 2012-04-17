@@ -241,27 +241,35 @@ namespace Los_Alamos_Timeclock
             //creates a new entry
             else
             {
-                Main.myConnection.Open();
-                Main.maininstance.sqlReader("SELECT * FROM Requests WHERE ID='" + Main.id +
-                                                "' AND SDate<='" + startCalander.Value.ToString("yyyy-MM-dd") +
-                                                "' AND EDate>='" + startCalander.Value.ToString("yyyy-MM-dd") + "'");
-                if (Main.reader.HasRows)
+                try
                 {
-                    Main.myConnection.Close();
-                    MessageBox.Show("Request cannot overlap another request");
+
+                    Main.myConnection.Open();
+                    Main.maininstance.sqlReader("SELECT * FROM Requests WHERE ID='" + Main.id +
+                                                    "' AND SDate<='" + startCalander.Value.ToString("yyyy-MM-dd") +
+                                                    "' AND EDate>='" + startCalander.Value.ToString("yyyy-MM-dd") + "'");
+                    if (Main.reader.HasRows)
+                    {
+                        Main.myConnection.Close();
+                        MessageBox.Show("Request cannot overlap another request");
+                    }
+                    else
+                    {
+                        Main.myConnection.Close();
+                        String insert = "INSERT INTO Requests VALUES('" + Main.id + "','" +
+                                            startCalander.Value.ToString("yyyy-MM-dd") + "','" +
+                                            endCalander.Value.ToString("yyyy-MM-dd") + "'," +
+                                            "NOW(),'" +
+                                            reasonTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") +
+                                                "')";
+                        Main.maininstance.sqlCommand(insert);
+                        filldt();
+                        updateFields();
+                    }
                 }
-                else
+                finally
                 {
                     Main.myConnection.Close();
-                    String insert = "INSERT INTO Requests VALUES('" + Main.id + "','" +
-                                        startCalander.Value.ToString("yyyy-MM-dd") + "','" +
-                                        endCalander.Value.ToString("yyyy-MM-dd") + "'," +
-                                        "NOW(),'" +
-                                        reasonTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") +
-                                            "')";
-                    Main.maininstance.sqlCommand(insert);
-                    filldt();
-                    updateFields();
                 }
             }
         }

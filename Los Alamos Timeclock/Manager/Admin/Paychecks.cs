@@ -33,6 +33,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
         {
             InitializeComponent();
 
+            //sets the background image to the user's image, or the default
             try
             {
                 this.BackgroundImage = Image.FromFile(Properties.Settings.Default.backgroundImage);
@@ -42,22 +43,27 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                 this.BackgroundImage = Properties.Resources._1287421014661;
             }
 
+            //events that reset the idle time
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(Main.maininstance.notIdle_event);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(Main.maininstance.notIdle_event);
             payTextbox.MouseMove += new System.Windows.Forms.MouseEventHandler(Main.maininstance.notIdle_event);
             payTextbox.KeyDown += new System.Windows.Forms.KeyEventHandler(Main.maininstance.notIdle_event); 
 
+            //sets the start calander's date to monday, and the end to sunday
             if (DateTime.Today.DayOfWeek != DayOfWeek.Monday)
             {
                 startCalander.Value = getDay(startCalander.Value, DayOfWeek.Monday);
             }
             endCalander.Value = startCalander.Value.AddDays(6);
 
+            //labels the timespan for the pay period
             weekLabel.Text = "Pay for " + startCalander.Value.ToShortDateString() + " - " + endCalander.Value.ToShortDateString();
+            //calculate pay
             calculatePay();
 
         }
 
+        //update the timespan label and pay whenever either of the dates are changed
         private void startCalander_ValueChanged(object sender, EventArgs e)
         {
             endCalander.MinDate = startCalander.Value;
@@ -74,8 +80,8 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             calculatePay();
         }
 
-        //gets the most recent occurance of day day compared to datetime a
-        public DateTime getDay(DateTime a, DayOfWeek day)
+        //gets the most recent occurance of a specified 'day', 'day' compared to datetime a
+        private DateTime getDay(DateTime a, DayOfWeek day)
         {
             while (a.DayOfWeek != day)
             {
@@ -84,8 +90,10 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             return a;
         }
 
-        public void calculatePay()
+        //method to calculate pay
+        private void calculatePay()
         {
+            //variables to be used
             string id = "";
             TimeSpan hours = TimeSpan.FromHours(0);
             Double weekHours = 0;
@@ -95,149 +103,158 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             Double totalPay = 0.00;
             Double totalTips = 0.00;
             DateTime weekDate = startCalander.Value;
-            Main.myConnection.Open();
 
-
-            String c = "SELECT d.LName, d.FName, d.MName, a.*,b.JSPay, c.JPay " +
-            "FROM `Hours Worked` a " +
-            "LEFT OUTER JOIN `Jobs` b " +
-            "ON a.JID=b.JID " +
-            "LEFT OUTER JOIN `Employee Jobs` c " +
-            "ON b.JID=c.JID AND a.ID = c.ID " +
-            "JOIN `Employee` d " +
-            "ON a.ID=d.ID " +
-            "WHERE a.Date>='" + startCalander.Value.ToString("yyyy-MM-dd") +
-            "' AND a.Date<='" + endCalander.Value.ToString("yyyy-MM-dd") +
-            "' AND a.Status='OUT'" +
-            "ORDER BY d.LName, d.FName " +
-            "LIMIT 0,1000";
-
-
-            string output = "";
-            MySqlCommand command = new MySqlCommand(c, Main.myConnection);
-            Main.reader = command.ExecuteReader();
-
-
-            while (Main.reader.Read())
+            try
             {
-                //outputs the values and resets them for the next employee
-                if (Main.reader["ID"].ToString() != id)
-                {
-                    if (id != "")
-                    {
-                        output = output + "\tTotal Hours: \t" + totalHours + "\n" +
-                                          "\tGross Pay: \t$" + String.Format("{0:0.00}", Math.Round(totalPay, 2)) + "\n";
-                        if (totalTips > 0)
-                        {
-                            output = output + "\tTotal Tips: \t$" + String.Format("{0:0.00}", Math.Round(totalTips, 2)) + "\n\tTotal Pay: \t$" + String.Format("{0:0.00}", Math.Round(totalPay + totalTips, 2)) + "\n\n";
-                        }
-                        else
-                        {
-                            output = output + "\tTotal Pay: \t$" + String.Format("{0:0.00}", Math.Round(totalPay, 2)) + "\n\n";
-                        }
-                    }
-                    id = Main.reader["ID"].ToString();
-                    output = output + Main.reader["LName"].ToString() + ", " + Main.reader["FName"].ToString() + " " + Main.reader["MName"].ToString() + "\n";
-                    weekDate = startCalander.Value;
-                    totalHours = 0;
-                    weekHours = 0;
-                    totalPay = 0.00;
-                    totalTips = 0.00;
-                }
+                Main.myConnection.Open();
 
+                //select all shifts between the two selected dates
+                String c = "SELECT d.LName, d.FName, d.MName, a.*,b.JSPay, c.JPay " +
+                "FROM `Hours Worked` a " +
+                "LEFT OUTER JOIN `Jobs` b " +
+                "ON a.JID=b.JID " +
+                "LEFT OUTER JOIN `Employee Jobs` c " +
+                "ON b.JID=c.JID AND a.ID = c.ID " +
+                "JOIN `Employee` d " +
+                "ON a.ID=d.ID " +
+                "WHERE a.Date>='" + startCalander.Value.ToString("yyyy-MM-dd") +
+                "' AND a.Date<='" + endCalander.Value.ToString("yyyy-MM-dd") +
+                "' AND a.Status='OUT'" +
+                "ORDER BY d.LName, d.FName " +
+                "LIMIT 0,1000";
 
-                if (Main.reader["Start"].ToString() != "" && Main.reader["End"].ToString() != "")
+                //output is what will be printed, it starts empty and concatanates the information
+                string output = "";
+                MySqlCommand command = new MySqlCommand(c, Main.myConnection);
+                Main.reader = command.ExecuteReader();
+
+                //while it reads
+                while (Main.reader.Read())
                 {
-                    //checks if the date on the selected record is in the same week, if not it resets the weekHours and sets the new weekDate
-                    if (DateTime.Parse(Main.reader["Date"].ToString()) > (weekDate.AddDays(6)))
+                    //checks to see if the id is different than the current id
+                    if (Main.reader["ID"].ToString() != id)
                     {
+                        //if id isn't empty, then there was an employee before this one, and it needs to output that employee's totals
+                        if (id != "")
+                        {
+                            output = output + "\tTotal Hours: \t" + totalHours + "\n" +
+                                              "\tGross Pay: \t$" + String.Format("{0:0.00}", Math.Round(totalPay, 2)) + "\n";
+                            //if the employee has tips, output an extra line, otherwise just total it
+                            if (totalTips > 0)
+                            {
+                                output = output + "\tTotal Tips: \t$" + String.Format("{0:0.00}", Math.Round(totalTips, 2)) + "\n\tTotal Pay: \t$" + String.Format("{0:0.00}", Math.Round(totalPay + totalTips, 2)) + "\n\n";
+                            }
+                            else
+                            {
+                                output = output + "\tTotal Pay: \t$" + String.Format("{0:0.00}", Math.Round(totalPay, 2)) + "\n\n";
+                            }
+                        }
+                        //updates the id and resets all the values
+                        id = Main.reader["ID"].ToString();
+                        output = output + Main.reader["LName"].ToString() + ", " + Main.reader["FName"].ToString() + " " + Main.reader["MName"].ToString() + "\n";
+                        weekDate = startCalander.Value;
+                        totalHours = 0;
                         weekHours = 0;
-                        weekDate = getDay(DateTime.Parse(Main.reader["Date"].ToString()), weekDate.DayOfWeek);
+                        totalPay = 0.00;
+                        totalTips = 0.00;
                     }
 
-                    if (Main.roundtime(DateTime.Parse(Main.reader["End"].ToString())) < Main.roundtime(DateTime.Parse(Main.reader["Start"].ToString())))
-                    {
-                        hours = Main.roundtime(DateTime.Parse(Main.reader["End"].ToString())).AddHours(24).Subtract(Main.roundtime(DateTime.Parse(Main.reader["Start"].ToString())));
-                    }
-                    else
-                    {
-                        hours = Main.roundtime(DateTime.Parse(Main.reader["End"].ToString())).Subtract(Main.roundtime(DateTime.Parse(Main.reader["Start"].ToString())));
-                    }
 
-                    if (Main.reader["Lout"].ToString() != "" && Main.reader["Lin"].ToString() != "")
+                    if (Main.reader["Start"].ToString() != "" && Main.reader["End"].ToString() != "")
                     {
-
-                        if (Main.roundtime(DateTime.Parse(Main.reader["Lin"].ToString())) < Main.roundtime(DateTime.Parse(Main.reader["Lout"].ToString())))
+                        //checks if the date on the selected record is in the same week, if not it resets the weekHours and sets the new weekDate
+                        if (DateTime.Parse(Main.reader["Date"].ToString()) > (weekDate.AddDays(6)))
                         {
-                            hours = hours.Subtract(roundTime((DateTime.Parse(Main.reader["Lin"].ToString()).AddHours(24)).Subtract(DateTime.Parse(Main.reader["Lout"].ToString()))));
+                            weekHours = 0;
+                            weekDate = getDay(DateTime.Parse(Main.reader["Date"].ToString()), weekDate.DayOfWeek);
+                        }
+
+                        if (Main.roundtime(DateTime.Parse(Main.reader["End"].ToString())) < Main.roundtime(DateTime.Parse(Main.reader["Start"].ToString())))
+                        {
+                            hours = Main.roundtime(DateTime.Parse(Main.reader["End"].ToString())).AddHours(24).Subtract(Main.roundtime(DateTime.Parse(Main.reader["Start"].ToString())));
                         }
                         else
                         {
-                            hours = hours.Subtract(roundTime(DateTime.Parse(Main.reader["Lin"].ToString()).Subtract(DateTime.Parse(Main.reader["Lout"].ToString()))));
+                            hours = Main.roundtime(DateTime.Parse(Main.reader["End"].ToString())).Subtract(Main.roundtime(DateTime.Parse(Main.reader["Start"].ToString())));
                         }
-                    }
+
+                        if (Main.reader["Lout"].ToString() != "" && Main.reader["Lin"].ToString() != "")
+                        {
+
+                            if (Main.roundtime(DateTime.Parse(Main.reader["Lin"].ToString())) < Main.roundtime(DateTime.Parse(Main.reader["Lout"].ToString())))
+                            {
+                                hours = hours.Subtract(roundTime((DateTime.Parse(Main.reader["Lin"].ToString()).AddHours(24)).Subtract(DateTime.Parse(Main.reader["Lout"].ToString()))));
+                            }
+                            else
+                            {
+                                hours = hours.Subtract(roundTime(DateTime.Parse(Main.reader["Lin"].ToString()).Subtract(DateTime.Parse(Main.reader["Lout"].ToString()))));
+                            }
+                        }
 
 
-                    if (Main.reader["JPay"].ToString() == "")
-                    {
-                        hourlyRate = Double.Parse(Main.reader["JSPay"].ToString());
-                    }
-                    else
-                    {
-                        hourlyRate = Double.Parse(Main.reader["JPay"].ToString());
-                    }
+                        if (Main.reader["JPay"].ToString() == "")
+                        {
+                            hourlyRate = Double.Parse(Main.reader["JSPay"].ToString());
+                        }
+                        else
+                        {
+                            hourlyRate = Double.Parse(Main.reader["JPay"].ToString());
+                        }
 
 
-                    
-                    //if (totalHours > 40)
-                    if(weekHours>=40)
-                    {
-                        hourlyRate = hourlyRate* 1.5;
-                        pay = hourlyRate * (hours.Hours + (hours.Minutes / 15 * .25));
-                    }
-                    //else if (totalHours + (hours.Hours + (hours.Minutes / 15) * .25) > 40)
-                    else if ((weekHours + (hours.Hours + (hours.Minutes / 15) * .25)) > 40)
-                    {
-                        TimeSpan a = TimeSpan.FromHours(40);
-                        a = a.Subtract(TimeSpan.FromHours(totalHours));
-                        hours = hours.Subtract(a);
-                        pay = (hourlyRate * (a.Hours + (a.Minutes / 15 * .25))) + ((hourlyRate * 1.5) * (hours.Hours + (hours.Minutes / 15 * .25)));
-                        hours = hours.Add(a);
-                    }
-                    else
-                    {
-                        pay = hourlyRate * (hours.Hours + (hours.Minutes / 15 * .25));
-                    }
 
-                    if (Main.reader["Tips"].ToString() != "")
-                    {
-                        totalTips += Double.Parse(Main.reader["Tips"].ToString());
+                        //if (totalHours > 40)
+                        if (weekHours >= 40)
+                        {
+                            hourlyRate = hourlyRate * 1.5;
+                            pay = hourlyRate * (hours.Hours + (hours.Minutes / 15 * .25));
+                        }
+                        //else if (totalHours + (hours.Hours + (hours.Minutes / 15) * .25) > 40)
+                        else if ((weekHours + (hours.Hours + (hours.Minutes / 15) * .25)) > 40)
+                        {
+                            TimeSpan a = TimeSpan.FromHours(40);
+                            a = a.Subtract(TimeSpan.FromHours(totalHours));
+                            hours = hours.Subtract(a);
+                            pay = (hourlyRate * (a.Hours + (a.Minutes / 15 * .25))) + ((hourlyRate * 1.5) * (hours.Hours + (hours.Minutes / 15 * .25)));
+                            hours = hours.Add(a);
+                        }
+                        else
+                        {
+                            pay = hourlyRate * (hours.Hours + (hours.Minutes / 15 * .25));
+                        }
+
+                        if (Main.reader["Tips"].ToString() != "")
+                        {
+                            totalTips += Double.Parse(Main.reader["Tips"].ToString());
+                        }
+                        totalPay += pay;
+                        pay = 0.00;
+                        totalHours += hours.Hours + (hours.Minutes / 15) * .25;
+                        weekHours += hours.Hours + (hours.Minutes / 15) * .25;
+                        hours = TimeSpan.FromHours(0);
                     }
-                    totalPay += pay;
-                    pay = 0.00;
-                    totalHours += hours.Hours + (hours.Minutes / 15) * .25;
-                    weekHours += hours.Hours + (hours.Minutes / 15) * .25;
-                    hours = TimeSpan.FromHours(0);
                 }
+                if (id != "")
+                {
+                    output = output + "\tTotal Hours: \t" + totalHours + "\n" +
+                                      "\tGross Pay: \t$" + String.Format("{0:0.00}", Math.Round(totalPay, 2)) + "\n";
+                    if (totalTips > 0)
+                    {
+                        output = output + "\tTotal Tips: \t$" + String.Format("{0:0.00}", Math.Round(totalTips, 2)) + "\n\tTotal Pay: \t$" + String.Format("{0:0.00}", Math.Round(totalPay + totalTips, 2)) + "\n\n";
+                    }
+                    else
+                    {
+                        output = output + "\tTotal Pay: \t$" + String.Format("{0:0.00}", Math.Round(totalPay, 2)) + "\n\n";
+                    }
+                }
+                id = "";
+                payTextbox.Text = output;
+
             }
-            if (id != "")
+            finally
             {
-                output = output + "\tTotal Hours: \t" + totalHours + "\n" +
-                                  "\tGross Pay: \t$" + String.Format("{0:0.00}", Math.Round(totalPay, 2)) + "\n";
-                if (totalTips > 0)
-                {
-                    output = output + "\tTotal Tips: \t$" + String.Format("{0:0.00}", Math.Round(totalTips, 2)) + "\n\tTotal Pay: \t$" + String.Format("{0:0.00}", Math.Round(totalPay + totalTips, 2)) + "\n\n";
-                }
-                else
-                {
-                    output = output + "\tTotal Pay: \t$" + String.Format("{0:0.00}", Math.Round(totalPay, 2)) + "\n\n";
-                }
+                Main.myConnection.Close();
             }
-            id = "";
-            payTextbox.Text = output;
-
-
-            Main.myConnection.Close();
         }
 
         public TimeSpan roundTime(TimeSpan a)

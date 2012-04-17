@@ -338,6 +338,10 @@ namespace Los_Alamos_Timeclock
                     Environment.Exit(0);
                 }
             }
+            finally
+            {
+                myConnection.Close();
+            }
             
         }
 

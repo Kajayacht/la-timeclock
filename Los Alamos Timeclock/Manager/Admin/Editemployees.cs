@@ -15,20 +15,20 @@ namespace Los_Alamos_Timeclock.Manager.Admin
     public partial class Editemployees : UserControl
     {
 
-            /*
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
+        /*
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
 
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
 
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-     */
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
 
         public static string id;
         public static TerminationConsole t = new TerminationConsole();
@@ -38,6 +38,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
         {
             InitializeComponent();
 
+            //sets the background image if it's settings
             try
             {
                 this.BackgroundImage = Image.FromFile(Properties.Settings.Default.backgroundImage);
@@ -47,6 +48,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                 this.BackgroundImage = Properties.Resources._1287421014661;
             }
 
+            //event handlers to reset the idle timer
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(Main.maininstance.notIdle_event);
             fNameTextbox.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
             mNameTextbox.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
@@ -63,31 +65,33 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             pass1Textbox.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
             pass2Textbox.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
 
-            if (Main.myConnection.State == ConnectionState.Open)
-            {
-                Main.reader.Close();
-                Main.myConnection.Close();
-            }
+            //sets the items in the employee drop down list to main's employee list
             employeeDropdownlist.DisplayMember = "getname";
             employeeDropdownlist.ValueMember = "gid";
             employeeDropdownlist.DataSource = Main.employeeList;
+            //if the employee list isn't empty, get the employee's info
             if (Main.employeeList.Count > 0)
             {
                 fieldUpdate();
             }
 
             phoneTextbox.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+
+            //sets the jobBox's contents to main's joblist
             jobsBox.DisplayMember = "getname";
             jobsBox.ValueMember = "getpay";
             jobsBox.DataSource = Main.joblist;
         }
 
+        //method for if the user changes the selected employee
         private void employeeDropdownlist_SelectedIndexChanged(object sender, EventArgs e)
         {
             id = employeeDropdownlist.SelectedValue.ToString();
             fieldUpdate();
         }
 
+
+        //method to update the fields whenever the selected employee is changed/altered
         public void fieldUpdate()
         {
             try
@@ -158,6 +162,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             {
                 Main.myConnection.Close();
             }
+
             if (terminated)
             {
                 quitorfireButton.Text = "Rehire";
@@ -169,6 +174,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
 
         }
 
+        //method to save the employee
         private void Saveemployee_Click(object sender, EventArgs e)
         {
             if (Main.employeeList.Count == 0)
@@ -179,92 +185,102 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             {
                 if (validateinfo())
                 {
-                    Boolean a = false, m = false;
-                    Main.myConnection.Open();
-                    Main.maininstance.sqlReader("SELECT a.ID, b.ID AS Manager, c.ID as Admin " +
-                                                "FROM Employee a " +
-                                                "LEFT JOIN Manager b " +
-                                                "ON b.ID=a.ID " +
-                                                "LEFT JOIN Admin c " +
-                                                "ON c.ID=a.ID " +
-                                                "WHERE a.ID='" + id + "'"
-                                                );
-                    if (Main.reader["Manager"].ToString() != "")
+                    try
                     {
-                        m = true;
-                    }
-                    else if (Main.reader["Admin"].ToString() != "")
-                    {
-                        a = true;
-                    }
-                    Main.reader.Close();
-                    Main.myConnection.Close();
+                        Boolean a = false, m = false;
 
-                    if (privDropdownlist.Text == "Admin")
-                    {
+                        Main.myConnection.Open();
+                        Main.maininstance.sqlReader("SELECT a.ID, b.ID AS Manager, c.ID as Admin " +
+                                                    "FROM Employee a " +
+                                                    "LEFT JOIN Manager b " +
+                                                    "ON b.ID=a.ID " +
+                                                    "LEFT JOIN Admin c " +
+                                                    "ON c.ID=a.ID " +
+                                                    "WHERE a.ID='" + id + "'"
+                                                    );
+                        if (Main.reader["Manager"].ToString() != "")
+                        {
+                            m = true;
+                        }
+                        else if (Main.reader["Admin"].ToString() != "")
+                        {
+                            a = true;
+                        }
+                        Main.reader.Close();
+                        Main.myConnection.Close();
 
-                        if (m)
+                        if (privDropdownlist.Text == "Admin")
                         {
-                            Main.maininstance.sqlCommand("DELETE FROM Manager WHERE ID='" + id + "'");
+
+                            if (m)
+                            {
+                                Main.maininstance.sqlCommand("DELETE FROM Manager WHERE ID='" + id + "'");
+                            }
+                            if (!a)
+                            {
+                                try
+                                {
+                                    Main.myConnection.Open();
+                                    MySqlCommand command = new MySqlCommand("INSERT INTO Admin Values('" + id + "')", Main.myConnection);
+                                    command.ExecuteNonQuery();
+                                }
+                                catch (Exception f)
+                                {
+                                    MessageBox.Show(f.ToString());
+                                }
+                                finally
+                                {
+                                    Main.myConnection.Close();
+                                }
+                            }
                         }
-                        if (!a)
+                        else if (privDropdownlist.Text == "Manager")
                         {
-                            try
+                            if (a)
                             {
-                                Main.myConnection.Open();
-                                MySqlCommand command = new MySqlCommand("INSERT INTO Admin Values('" + id + "')", Main.myConnection);
-                                command.ExecuteNonQuery();
+                                Main.maininstance.sqlCommand("DELETE FROM Admin WHERE ID='" + id + "'");
                             }
-                            catch (Exception f)
+                            if (!m)
                             {
-                                MessageBox.Show(f.ToString());
-                            }
-                            finally
-                            {
-                                Main.myConnection.Close();
+
+                                try
+                                {
+                                    Main.myConnection.Open();
+                                    MySqlCommand command = new MySqlCommand("INSERT INTO Manager Values('" + id + "')", Main.myConnection);
+                                    command.ExecuteNonQuery();
+                                }
+                                catch (Exception f)
+                                {
+                                    MessageBox.Show(f.ToString());
+                                }
+                                finally
+                                {
+                                    Main.myConnection.Close();
+                                }
                             }
                         }
-                    }
-                    else if (privDropdownlist.Text == "Manager")
-                    {
-                        if (a)
+                        else if (privDropdownlist.Text == "None")
                         {
                             Main.maininstance.sqlCommand("DELETE FROM Admin WHERE ID='" + id + "'");
+                            Main.maininstance.sqlCommand("DELETE FROM Manager WHERE ID='" + id + "'");
                         }
-                        if (!m)
-                        {
 
-                            try
-                            {
-                                Main.myConnection.Open();
-                                MySqlCommand command = new MySqlCommand("INSERT INTO Manager Values('" + id + "')", Main.myConnection);
-                                command.ExecuteNonQuery();
-                            }
-                            catch (Exception f)
-                            {
-                                MessageBox.Show(f.ToString());
-                            }
-                            finally
-                            {
-                                Main.myConnection.Close();
-                            }
-                        }
+                        Main.maininstance.sqlCommand("UPDATE Employee SET LName='" + lNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "', MName='" + mNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "', FName='" + fNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "', SSN='" + Main.maininstance.crypt.Encrypt(ssnTextbox.Text, "dR.wH0iS", "tlm3L0rd") + "', Phone='" + phoneTextbox.Text + "', Email='" + emailTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "', Address1='" + aLine1Textbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "', Address2='" + aLine2Textbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "', City='" + aCityTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "', State='" + aStateDropdownlist.Text + "', Zip='" + aZipTextbox.Text + "' WHERE ID='" + id + "'");
+                        MessageBox.Show("Employee Updated");
+                        Log.writeLog(Main.eName + " edited employee: \n" + "LName= " + lNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + " MName= " + mNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + " FName= " + fNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "\n SSN= " + Main.maininstance.crypt.Encrypt(ssnTextbox.Text, "dR.wH0iS", "tlm3L0rd") + "\n Phone= " + phoneTextbox.Text + "\n Email= " + emailTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "\n Address1= " + aLine1Textbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "\n Address2= " + aLine2Textbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "\n City= " + aCityTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "\n State= " + aStateDropdownlist.Text + "\n Zip= " + aZipTextbox.Text + "\n Priv= " + privDropdownlist.Text);
+                        Main.employeeList = Main.maininstance.getEmployees();
+                        employeeDropdownlist.DataSource = Main.employeeList;
                     }
-                    else if (privDropdownlist.Text == "None")
+
+                    finally
                     {
-                        Main.maininstance.sqlCommand("DELETE FROM Admin WHERE ID='" + id + "'");
-                        Main.maininstance.sqlCommand("DELETE FROM Manager WHERE ID='" + id + "'");
+                        Main.myConnection.Close();
                     }
-
-                    Main.maininstance.sqlCommand("UPDATE Employee SET LName='" + lNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "', MName='" + mNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "', FName='" + fNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "', SSN='" + Main.maininstance.crypt.Encrypt(ssnTextbox.Text, "dR.wH0iS", "tlm3L0rd") + "', Phone='" + phoneTextbox.Text + "', Email='" + emailTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "', Address1='" + aLine1Textbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "', Address2='" + aLine2Textbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "', City='" + aCityTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "', State='" + aStateDropdownlist.Text + "', Zip='" + aZipTextbox.Text + "' WHERE ID='" + id + "'");
-                    MessageBox.Show("Employee Updated");
-                    Log.writeLog(Main.eName + " edited employee: \n" + "LName= " + lNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + " MName= " + mNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + " FName= " + fNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "\n SSN= " + Main.maininstance.crypt.Encrypt(ssnTextbox.Text, "dR.wH0iS", "tlm3L0rd") + "\n Phone= " + phoneTextbox.Text + "\n Email= " + emailTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "\n Address1= " + aLine1Textbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "\n Address2= " + aLine2Textbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "\n City= " + aCityTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "\n State= " + aStateDropdownlist.Text + "\n Zip= " + aZipTextbox.Text + "\n Priv= " + privDropdownlist.Text);
-                    Main.employeeList = Main.maininstance.getEmployees();
-                    employeeDropdownlist.DataSource = Main.employeeList;
                 }
             }
         }
 
+        //method to validate that all the information entered is valid, returns true if it is, otherwise false
         public Boolean validateinfo()
         {
             if (id == Main.id && Main.permissions != privDropdownlist.Text)
@@ -303,6 +319,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             }
         }
 
+        //method to take the user to the new employee screen to add a new employee
         private void Newemployee_Click(object sender, EventArgs e)
         {
             Main.maininstance.panel1.Controls.Clear();
@@ -310,6 +327,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             Main.maininstance.panel1.Controls[0].Dock = DockStyle.Fill;
         }
 
+        //method to change the login information for the selected user
         private void Changelogin_Click(object sender, EventArgs e)
         {
             if (Main.employeeList.Count == 0)
@@ -318,58 +336,74 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             }
             else
             {
-                if (pass1Textbox.Text == pass2Textbox.Text && userTextbox.Text != "")
+                try
                 {
-                    Main.myConnection.Open();
-                    Main.maininstance.sqlReader("Select * FROM Users WHERE Lower(User)=Lower('" + userTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "') AND ID!='" + id + "'");
-                    Boolean rows = Main.reader.HasRows;
-                    Main.reader.Close();
-                    if (!rows)
+                    if (pass1Textbox.Text == pass2Textbox.Text && userTextbox.Text != "")
                     {
-
-                        Main.maininstance.sqlReader("Select * FROM Users WHERE ID='" + id + "'");
-                        rows = Main.reader.HasRows;
+                        Main.myConnection.Open();
+                        Main.maininstance.sqlReader("Select * FROM Users WHERE Lower(User)=Lower('" + userTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "') AND ID!='" + id + "'");
+                        Boolean rows = Main.reader.HasRows;
                         Main.reader.Close();
-                        Main.myConnection.Close();
-
-                        if (rows)
+                        if (!rows)
                         {
-                            Main.maininstance.sqlCommand("UPDATE Users SET User='" + userTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "', Password= '" + Main.maininstance.crypt.ComputeHash(pass1Textbox.Text, "Tlm3AnDR3|aTIv3DlmEn5l0nlN5pA[3", Cryptography.HashName.SHA256) + "' WHERE ID='" + id.Replace(@"\", @"\\").Replace("'", @"\'") + "'");
+
+                            Main.maininstance.sqlReader("Select * FROM Users WHERE ID='" + id + "'");
+                            rows = Main.reader.HasRows;
+                            Main.reader.Close();
+                            Main.myConnection.Close();
+
+                            if (rows)
+                            {
+                                Main.maininstance.sqlCommand("UPDATE Users SET User='" + userTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "', Password= '" + Main.maininstance.crypt.ComputeHash(pass1Textbox.Text, "Tlm3AnDR3|aTIv3DlmEn5l0nlN5pA[3", Cryptography.HashName.SHA256) + "' WHERE ID='" + id.Replace(@"\", @"\\").Replace("'", @"\'") + "'");
+                            }
+                            else
+                            {
+                                Main.maininstance.sqlCommand("INSERT INTO Users (`ID`,`User`,`Password`) Values('" + id + "', '" + userTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "','" + Main.maininstance.crypt.ComputeHash(pass1Textbox.Text, "Tlm3AnDR3|aTIv3DlmEn5l0nlN5pA[3", Cryptography.HashName.SHA256) + "')");
+                            }
+                            MessageBox.Show("Login Updated");
+                            Log.writeLog(Main.eName + " changed login for " + fNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + " " + mNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + " " + lNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + ": \n" + "User= " + userTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'"));
                         }
                         else
                         {
-                            Main.maininstance.sqlCommand("INSERT INTO Users (`ID`,`User`,`Password`) Values('" + id + "', '" + userTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "','" + Main.maininstance.crypt.ComputeHash(pass1Textbox.Text, "Tlm3AnDR3|aTIv3DlmEn5l0nlN5pA[3", Cryptography.HashName.SHA256)+"')");
+                            MessageBox.Show("Username already exists");
+                            Main.myConnection.Close();
                         }
-                        MessageBox.Show("Login Updated");
-                        Log.writeLog(Main.eName + " changed login for " + fNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + " " + mNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + " " + lNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + ": \n" + "User= " + userTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'"));
-                    }
-                    else
-                    {
-                        MessageBox.Show("Username already exists");
-                        Main.myConnection.Close();
                     }
                 }
+                finally
+                {
+                    Main.myConnection.Close();
+                }
             }
-
         }
 
+        //method that updates the job information when the user changes the selected job
         private void Jobs_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Main.myConnection.Open();
-            Main.maininstance.sqlReader("SELECT JPay FROM `Employee Jobs` WHERE ID='" + id + "' AND JID='" + jobsBox.Text + "'");
-            if (!Main.reader.HasRows)
+            try
             {
-                payTextbox.Text = jobsBox.SelectedValue.ToString();
+                Main.myConnection.Open();
+
+                //if the user has an entry in the database with custom pay, use that
+                //otherwise use the default pay
+                Main.maininstance.sqlReader("SELECT JPay FROM `Employee Jobs` WHERE ID='" + id + "' AND JID='" + jobsBox.Text + "'");
+                if (!Main.reader.HasRows)
+                {
+                    payTextbox.Text = jobsBox.SelectedValue.ToString();
+                }
+                else
+                {
+                    payTextbox.Text = Main.reader["JPay"].ToString();
+                }
             }
-            else
+            finally
             {
-                payTextbox.Text = Main.reader["JPay"].ToString();
+                Main.myConnection.Close();
             }
 
-            Main.reader.Close();
-            Main.myConnection.Close();
         }
 
+        //method to save pay changes
         private void Savepay_Click(object sender, EventArgs e)
         {
             if (Main.employeeList.Count == 0)
@@ -423,6 +457,8 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             }
         }
 
+
+        //method that fires whenever the quit/fire/rehire button is clicked
         private void quitorfireButton_Click(object sender, EventArgs e)
         {
             if (Main.employeeList.Count == 0)
@@ -431,9 +467,11 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             }
             else
             {
+                //if the employee was already terminated it will rehire the employee
                 if (terminated)
                 {
-                    DialogResult result = MessageBox.Show("Are you sure you want to rehire " + 
+                    //asks if the user is sure they want to fire them
+                    DialogResult result = MessageBox.Show("Are you sure you want to rehire " +
                                                             fNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + " " +
                                                             mNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + " " +
                                                             lNameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "?",
@@ -448,8 +486,10 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                         employeeDropdownlist.DataSource = Main.employeeList;
                     }
                 }
+                    //else quit/fire the employee through the termination console
                 else
                 {
+                    //if the user id is the same as the employee to be fired it tells them they can't fire themselves
                     if (id == Main.id)
                     {
                         MessageBox.Show("You cannot terminate yourself");

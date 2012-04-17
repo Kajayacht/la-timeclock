@@ -86,7 +86,6 @@ namespace Los_Alamos_Timeclock
                         Main.permissions = "None";
                     }
                     Main.eName = Main.reader["FName"].ToString() + " " + Main.reader["LName"].ToString();
-                    Main.reader.Close();
                     Main.myConnection.Close();
 
                     Main.maininstance.menu1.Show();
@@ -109,7 +108,6 @@ namespace Los_Alamos_Timeclock
             }
             finally
             {
-                Main.reader.Close();
                 Main.myConnection.Close();
             }
         }
