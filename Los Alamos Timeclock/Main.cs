@@ -99,7 +99,7 @@ namespace Los_Alamos_Timeclock
             if (Properties.Settings.Default.jobImageFolderPath == "")
             {
                 MessageBox.Show("Job Image folder is not set, please select one");
-                changeJobImageFolder();
+                changeFolder();
             }
 
             joblist = getJobs();
@@ -535,13 +535,18 @@ namespace Los_Alamos_Timeclock
 
 
         //method to change the folder the job images will come from
-        public static void changeJobImageFolder()
+        public static void changeFolder()
         {
             FolderBrowserDialog jobFolder = new FolderBrowserDialog();
 
             if (jobFolder.ShowDialog() == DialogResult.OK)
             {
-                Properties.Settings.Default.jobImageFolderPath = jobFolder.SelectedPath;
+                if (System.IO.Directory.Exists(jobFolder.SelectedPath + "\\Los Alamos Timeclock")==false)
+                {
+                    System.IO.Directory.CreateDirectory(jobFolder.SelectedPath+"\\Los Alamos Timeclock\\images");
+                }
+
+                Properties.Settings.Default.jobImageFolderPath = jobFolder.SelectedPath + "\\Los Alamos Timeclock";
                 Properties.Settings.Default.Save();
 
                 byte[] imgbytes;
@@ -555,11 +560,11 @@ namespace Los_Alamos_Timeclock
                     try
                     {
                         imgbytes = (byte[])converter.ConvertTo(Properties.Resources.ResourceManager.GetObject(jobs[i]), typeof(byte[]));
-                        File.WriteAllBytes(jobFolder.SelectedPath + "\\" + jobs[i] + ".bmp", imgbytes);
+                        File.WriteAllBytes(Properties.Settings.Default.jobImageFolderPath + "\\images\\" + jobs[i] + ".bmp", imgbytes);
                     }
-                    catch (IOException)
+                    catch (IOException e)
                     {
-                        MessageBox.Show("ERROR: IO Failed to write file");
+                        MessageBox.Show("ERROR: IO Failed to write file\n"+e.ToString());
                     }
                     catch(Exception)
                     {
