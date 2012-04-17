@@ -100,7 +100,6 @@ namespace Los_Alamos_Timeclock
             {
                 MessageBox.Show("Job Image folder is not set, please select one");
                 changeJobImageFolder();
-
             }
 
             joblist = getJobs();
@@ -325,7 +324,7 @@ namespace Los_Alamos_Timeclock
            //If connection fails, give user the option to reenter settings or exit the program
             catch
             {
-                DialogResult result = MessageBox.Show("Failed to connect to database, make sure MYSQL is running or change settings. \n Do you Want to change connection settings?",
+                DialogResult result = MessageBox.Show("Failed to connect to database, make sure MYSQL is running or change settings. \n Do you want to change connection settings?",
                     "Database Error", MessageBoxButtons.YesNo);
 
                 //Change DB connection settings
