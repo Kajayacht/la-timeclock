@@ -48,6 +48,12 @@ namespace Los_Alamos_Timeclock
         public Clockinout()
         {
             InitializeComponent();
+
+            //events to reset the idle timer
+            this.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
+            this.MouseMove += new MouseEventHandler(Main.maininstance.notIdle_event);
+
+
             try
             {
                 this.BackgroundImage = Image.FromFile(Properties.Settings.Default.backgroundImage);
@@ -60,32 +66,38 @@ namespace Los_Alamos_Timeclock
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(Main.maininstance.notIdle_event);
             try
             {
+                //sets the welcome message
                 welcome.Text = "Welcome " + Main.eName + "!";
 
-
+                //checks if the employee is already clocked in
                 Main.myConnection.Open();
                 Main.maininstance.sqlReader("Select a.*,b.Filename From `Hours Worked` a JOIN Jobs b ON a.JID=b.JID WHERE ID='" + Main.id + "' AND Status!='OUT'");
                 clockedIn = Main.reader.HasRows;
                 if (clockedIn)
                 {
+                    //sets values to the shift the employee is clocked in for
                     job = Main.reader["JID"].ToString();
+                    //sets the image
                     jobImage.ImageLocation = Properties.Settings.Default.jobImageFolderPath + "\\images\\" + Main.reader["Filename"].ToString();
-
-
+                    
+                    //checks to see what break the employee is currently on/can go on
                     if (Main.reader["B1in"].ToString() == "")
                     {
+                        //break 1
                         n = 1;
                     }
                     else if (Main.reader["B2in"].ToString() == "")
                     {
+                        //break 2
                         n = 2;
                     }
 
+                    //checks to see if the employee's lunch hasn't been registered yet
                     if (Main.reader["Lout"].ToString() == "")
                     {
                         lunch = true;
                     }
-
+                    //sets the values to the shift values
                     date = Main.reader["Date"].ToString();
                     date = DateTime.Parse(date).ToString("yyyy-MM-dd");
                     status = Main.reader["Status"].ToString();
@@ -96,10 +108,12 @@ namespace Los_Alamos_Timeclock
                     date = DateTime.Today.ToString("yyyy-MM-dd");
                 }
                 Main.reader.Close();
+
+                //checks if the employee is scheduled and updates the information
                 Main.maininstance.sqlReader("Select a.FName, b.Date, b.Start, b.End, b.JID, c.Filename from Employee a JOIN Schedule b ON a.ID=b.ID JOIN Jobs c ON c.JID=b.JID Where a.ID='" + Main.id + "' AND b.Date='" + date + "'");
 
                 scheduled = Main.reader.HasRows;
-
+                //scheduled
                 if (Main.reader.HasRows)
                 {
                     startTime = DateTime.ParseExact(Main.reader["Start"].ToString(), "HH:mm:ss", null);
@@ -123,23 +137,20 @@ namespace Los_Alamos_Timeclock
                         "Job:  " + job + "\n" +
                         "Length: " + endTime.Subtract(startTime).ToString();
                 }
+                    //already clocked in
                 else if (clockedIn)
                 {
                     shiftinfoLabel.Text = 
                         "Today's Schedule:\n"+
                         "Job:  " + job;
                 }
+                    //not scheduled or clocked in
                 else
                 {
                     jobImage.Image = (Image)Resources.ResourceManager.GetObject("none");
                     shiftinfoLabel.Text =
                         "You are not Scheduled\n" +
                         "Please see a manager";
-                    Main.myConnection.Close();
-                }
-
-                if (Main.myConnection.State == ConnectionState.Open)
-                {
                     Main.myConnection.Close();
                 }
             }
@@ -154,6 +165,7 @@ namespace Los_Alamos_Timeclock
             supdate();
         }
 
+        //updates the status bar above the job image
         public void supdate()
         {
             if (status == "IN")
@@ -178,10 +190,13 @@ namespace Los_Alamos_Timeclock
             }
         }
 
+        //inital clockin for the employee
         private void clockin_Click(object sender, EventArgs e)
         {
+            //if the employee is scheduled
             if (scheduled)
             {
+                //if the employee's rounded time isn't equal to the current time, they are either late or early, if late then they need an override
                 if (startTime == Main.roundtime(DateTime.Now) && status != "IN" && status != "BREAK" && status != "LUNCH")
                 {
                     Main.maininstance.sqlCommand("INSERT INTO `Hours Worked` (`ID`, `Date`, `Start`, `JID`,`Status`) VALUES ('" + Main.id + "', '" + DateTime.Today.ToString("yyyy-MM-dd") + "' , '" + DateTime.Now.ToString("HH:mm:ss") + "', '" + job + "', 'IN')");
@@ -199,6 +214,7 @@ namespace Los_Alamos_Timeclock
             }
         }
 
+        //clock the employee in/out of a lunch
         private void Break_Click(object sender, EventArgs e)
         {
 
@@ -224,7 +240,7 @@ namespace Los_Alamos_Timeclock
             n = n % 3;
         }
 
-
+        //clock the employee in/out of a break
         private void Lunch_Click(object sender, EventArgs e)
         {
             if (status == "LUNCH")
@@ -310,7 +326,8 @@ namespace Los_Alamos_Timeclock
             }
         }
 
-        private void Manager_Click(object sender, EventArgs e)
+        //if the override is clicked, open an override window if the employee isn't clocked in
+        private void Override_Click(object sender, EventArgs e)
         {
             if (clockedIn)
             {

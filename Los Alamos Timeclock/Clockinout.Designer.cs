@@ -147,7 +147,7 @@
             this.managerOverrideButton.TabIndex = 4;
             this.managerOverrideButton.Text = "Manager Override";
             this.managerOverrideButton.UseVisualStyleBackColor = true;
-            this.managerOverrideButton.Click += new System.EventHandler(this.Manager_Click);
+            this.managerOverrideButton.Click += new System.EventHandler(this.Override_Click);
             // 
             // Clockinout
             // 

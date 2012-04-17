@@ -33,15 +33,16 @@ namespace Los_Alamos_Timeclock
         public Override()
         {
             InitializeComponent();
-
+            //initializes the jobs box
             jobsBox.DisplayMember = "getname";
             jobsBox.DataSource = Main.joblist;
 
         }
-
+        
+        //happens when the user hits ok
         private void ok_Click(object sender, EventArgs e)
         {
-
+            //checks if the user is an admin/manager
             if (userTextbox.Text != "" && passTextbox.Text != "")
             {
                 try
@@ -55,20 +56,23 @@ namespace Los_Alamos_Timeclock
                                                     "ON a.ID=c.ID " +
                                                     "Where a.User='" + userTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "' " +
                                                     "And a.Password='" + Main.maininstance.crypt.ComputeHash(passTextbox.Text, "Tlm3AnDR3|aTIv3DlmEn5l0nlN5pA[3", Cryptography.HashName.SHA256) + "'");
-
+                    //user is an admin or manager
                     if (Main.reader.HasRows)
                     {
                         if (Main.reader["Admin"].ToString() != "" || Main.reader["Manager"].ToString() != "")
                         {
                             Main.reader.Close();
+                            //checks if the employee is clocked in
                             Main.maininstance.sqlReader("SELECT * FROM `Hours Worked` WHERE ID='"+Main.id+"' and Date='"+DateTime.Today.Date.ToString("yyyy-MM-dd")+"'");
                             
+                            //employee is clocked in, so edit them through the schedule
                             if (Main.reader.HasRows)
                             {
                                 Main.myConnection.Close();
                                 MessageBox.Show("Employee has already been clocked in for today, change in status instead");
                                 this.Close();
                             }
+                                //else override
                             else
                             {
                                 Main.myConnection.Close();
@@ -80,6 +84,7 @@ namespace Los_Alamos_Timeclock
                                 this.Close();
                             }
                         }
+                            //not an admin
                         else
                         {
                             MessageBox.Show("Incorrect Login");
