@@ -74,7 +74,7 @@ namespace Los_Alamos_Timeclock
             this.whoDropdownlist.Name = "whoDropdownlist";
             this.whoDropdownlist.Size = new System.Drawing.Size(121, 21);
             this.whoDropdownlist.TabIndex = 1;
-            this.whoDropdownlist.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.whoDropdownlist.SelectedIndexChanged += new System.EventHandler(this.selfall_DropDownListChanged);
             // 
             // Schedule
             // 

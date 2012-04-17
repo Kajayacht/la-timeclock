@@ -122,7 +122,7 @@ namespace Los_Alamos_Timeclock
             filldt();
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void selfall_DropDownListChanged(object sender, EventArgs e)
         {
             filldt();
         }

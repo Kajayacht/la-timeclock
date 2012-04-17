@@ -56,6 +56,7 @@ namespace Los_Alamos_Timeclock
 
             InitializeComponent();
 
+            //sets background
             try
             {
                 this.BackgroundImage = Image.FromFile(Properties.Settings.Default.backgroundImage);
@@ -65,7 +66,7 @@ namespace Los_Alamos_Timeclock
                 this.BackgroundImage = Properties.Resources._1287421014661;
             }
             
-
+            //defines the main instance and color chooser so it can be used when needed
             maininstance = this;
             colorChanger = new colorSchemeChooser();
 
