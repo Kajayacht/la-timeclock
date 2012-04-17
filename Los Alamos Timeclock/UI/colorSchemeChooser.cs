@@ -24,11 +24,13 @@ namespace Los_Alamos_Timeclock.UI
         {
             InitializeComponent();
 
+            //events to reset the idle timer
             this.MouseMove +=new MouseEventHandler(Main.maininstance.notIdle_event);
             this.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
             datagrid.MouseMove += new MouseEventHandler(Main.maininstance.notIdle_event);
             datagrid.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
 
+            //sets the background image
             try
             {
                 this.BackgroundImage = Image.FromFile(Properties.Settings.Default.backgroundImage);
@@ -38,6 +40,7 @@ namespace Los_Alamos_Timeclock.UI
                 this.BackgroundImage = Properties.Resources._1287421014661;
             }
 
+            //sets the shown items to the current color scheme
             this.ForeColor = Properties.Settings.Default.textColor;
             this.datagrid.BackgroundColor = Properties.Settings.Default.tableBackgroundColor;
             this.datagrid.GridColor = Properties.Settings.Default.tableGridColor;
@@ -45,7 +48,7 @@ namespace Los_Alamos_Timeclock.UI
             this.datagrid.DefaultCellStyle.BackColor = Properties.Settings.Default.tablerow1Color;
             this.datagrid.AlternatingRowsDefaultCellStyle.BackColor = Properties.Settings.Default.tablerow2Color;
 
-
+            //sample text for the user to see in the datagrid
             datagrid.Rows.Add("Sample Text");
             datagrid.Rows.Add("Sample Text");
             datagrid.Rows.Add("Sample Text");
@@ -55,6 +58,7 @@ namespace Los_Alamos_Timeclock.UI
             datagrid.Rows.Add("Sample Text");
         }
 
+        //changes the textcolor
         private void textColorButton_Click(object sender, EventArgs e)
         {
             colorPicker.Color = textColor;
@@ -64,6 +68,7 @@ namespace Los_Alamos_Timeclock.UI
             datagrid.ForeColor = tabletextColor;
         }
 
+        //changes the table text color
         private void tabletextColorButton_Click(object sender, EventArgs e)
         {
             colorPicker.Color = tabletextColor;
@@ -72,6 +77,7 @@ namespace Los_Alamos_Timeclock.UI
             datagrid.DefaultCellStyle.ForeColor = tabletextColor;
         }
 
+        //changes the table grid line color
         private void tablegridColorButton_Click(object sender, EventArgs e)
         {
             colorPicker.Color = tablegridColor;
@@ -80,6 +86,7 @@ namespace Los_Alamos_Timeclock.UI
             datagrid.GridColor = tablegridColor;
         }
 
+        //changes the table background color
         private void tablebackgroundColorButton_Click(object sender, EventArgs e)
         {
             colorPicker.Color = tablebackgroundColor;
@@ -88,6 +95,7 @@ namespace Los_Alamos_Timeclock.UI
             datagrid.BackgroundColor = tablebackgroundColor;
         }
 
+        //changes the table's 1st row color
         private void row1colorButton_Click(object sender, EventArgs e)
         {
             colorPicker.Color = row1Color;
@@ -96,6 +104,7 @@ namespace Los_Alamos_Timeclock.UI
             datagrid.AlternatingRowsDefaultCellStyle.BackColor = row1Color;
         }
 
+        //changes the table's 2nd row color
         private void row2colorButton_Click(object sender, EventArgs e)
         {
             colorPicker.Color = row2Color;
@@ -104,13 +113,13 @@ namespace Los_Alamos_Timeclock.UI
             datagrid.DefaultCellStyle.BackColor = row2Color;
         }
 
-
+        //prompts the user to select an image file for the background
         private void backgroundImageButton_Click(object sender, EventArgs e)
         {
             OpenFileDialog imageDialog = new OpenFileDialog();
             imageDialog.Filter = "Image Files(*.BMP;*.JPG;*.GIF;*.PNG)|*.BMP;*.JPG;*.GIF;*.PNG|All files (*.*)|*.*";
             imageDialog.FilterIndex = 1;
-            imageDialog.InitialDirectory = Application.StartupPath.ToString() + "\\Graphics\\";
+            imageDialog.InitialDirectory = Properties.Settings.Default.jobImageFolderPath + "\\images\\";
             imageDialog.RestoreDirectory = false;
 
             if (imageDialog.ShowDialog() == DialogResult.OK)
@@ -136,6 +145,7 @@ namespace Los_Alamos_Timeclock.UI
 
         }
 
+        //saves all the new settings the user has selected
         private void applyButton_Click(object sender, EventArgs e)
         {
             Properties.Settings.Default.textColor = textColor;
@@ -148,6 +158,7 @@ namespace Los_Alamos_Timeclock.UI
             Properties.Settings.Default.Save();
         }
 
+        //resets all settings to the default settings
         private void restoreDefaultButton_Click(object sender, EventArgs e)
         {
             this.BackgroundImage = Resources._1287421014661;
