@@ -37,11 +37,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
         {
             InitializeComponent();
 
+            //sets the datagrid's colors
             this.datagrid.DefaultCellStyle.ForeColor = Properties.Settings.Default.tableTextColor;
             this.datagrid.DefaultCellStyle.BackColor = Properties.Settings.Default.tablerow1Color;
             this.datagrid.AlternatingRowsDefaultCellStyle.BackColor = Properties.Settings.Default.tablerow2Color;
             this.datagrid.GridColor = Properties.Settings.Default.tableGridColor;
 
+            //sets the background image
             try
             {
                 this.BackgroundImage = Image.FromFile(Properties.Settings.Default.backgroundImage);
@@ -51,6 +53,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                 this.BackgroundImage = Properties.Resources._1287421014661;
             }
 
+            //events to reset the idle timer/ change values based on the datagrid click
             datagrid.CellClick += new DataGridViewCellEventHandler(datagrid_Cellclick);
             this.MouseMove += new MouseEventHandler(Main.maininstance.notIdle_event);
             this.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
@@ -75,8 +78,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
             lunchouttimePicker.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
             jobsDropdownlist.MouseMove += new MouseEventHandler(Main.maininstance.notIdle_event);
             jobsDropdownlist.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
+            datagrid.MouseMove += new MouseEventHandler(Main.maininstance.notIdle_event);
+            datagrid.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
 
-
+            //initializes the datagrid, employee list, job list, and calander
             calander.MaxDate = DateTime.Today;
             populateDatagrid();
             jobsDropdownlist.DisplayMember = "getname";
@@ -84,23 +89,25 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
             employeeDropdownlist.DisplayMember = "getname";
             employeeDropdownlist.ValueMember = "gid";
             employeeDropdownlist.DataSource = Main.employeeList;
+            //id is set to whatever the currently selected employee's id is
             if (Main.employeeList.Count > 0)
             {
                 id = employeeDropdownlist.SelectedValue.ToString();
             }
         }
 
-
+        //updates the datagrid with new information when the date changes
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
         {
             populateDatagrid();
         }
 
+        //updates the shift
         private void update_Click(object sender, EventArgs e)
         {
             try
             {
-
+                //if there is a selected employee, then update
                 if (Main.employeeList.Count == 0)
                 {
                     MessageBox.Show("No Employee Selected");
@@ -114,6 +121,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                         Boolean working = Main.reader.HasRows;
                         Main.myConnection.Close();
 
+                        //if all of the fields are empty, it will delete the shift
                         if (allEmpty && working)
                         {
                             DialogResult answer = MessageBox.Show("Are you sure you wish to delete this shift?", "Delete Shift?", MessageBoxButtons.YesNo);
@@ -126,11 +134,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                         }
                         else
                         {
-
-
+                            
                             String startTime = "'" + starttimePicker.Value.TimeOfDay.ToString() + "'", b1_Out, b1_In, b2_Out, b2_In, l_Out, l_In, endTime, tips;
-
-
+                            
+                            //generates values to put into the sql string that will be executed
                             if (tipsTextbox.Value <= 0 || tipsTextbox.Value.ToString() == "")
                             {
                                 tips = "NULL";
@@ -225,7 +232,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                                 }
                             }
 
-
+                            //if the shift exists, update, else insert
                             if (working)
                             {
                                 Main.maininstance.sqlCommand("UPDATE `Hours Worked` " +
@@ -253,7 +260,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                                 Log.writeLog(Main.eName + " inserted into the Hours Worked for " + employeeDropdownlist.Text + "\n Date= " + date + "\n Job= " + jobsDropdownlist.Text + "\n Start= " + starttimePicker.Value.TimeOfDay.ToString() + "\n End= " + endtimePicker.Value.TimeOfDay.ToString() + "\n Break 1= " + break1outtimePicker.Value.TimeOfDay.ToString() + "-" + break1intimePicker.Value.TimeOfDay.ToString() + "\n Break 2= " + break2outtimePicker.Value.TimeOfDay.ToString() + "-" + break2intimePicker.Value.TimeOfDay.ToString() + "\n Lunch= " + lunchouttimePicker.Value.TimeOfDay.ToString() + "-" + lunchintimePicker.Value.TimeOfDay.ToString());
                             }
                         }
-
+                        //reload the datagrid
                         populateDatagrid();
                     }
                 }
@@ -264,6 +271,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
             }
         }
 
+        //update the information shown whenever the date or selected employee
         private void calander_DateChanged(object sender, EventArgs e)
         {
             date = calander.Value.ToString("yyyy-MM-dd");
@@ -277,6 +285,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
             employeeUpdate();
         }
 
+
+        //determines if an employee worked a shift on selected date and fills in values accordingly
         private void employeeUpdate()
         {
             try
@@ -383,6 +393,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
             }
         }
 
+        //fills the datagrid with information about what time the employee is scheduled, arrived, went on break/lunch, was scheduled to leave, and what time they did leave
         private void populateDatagrid()
         {
             string query = "Select " +
@@ -439,6 +450,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                                     "ON c.ID=b.ID " +
                             "WHERE a.Status!='OUT'";
 
+            //puts the sql query's results into the datagrid
             try
             {
                 Main.myConnection.Open();
@@ -510,14 +522,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
             }
         }
 
-
+        //method to validate that all the information selected is valid
         private Boolean validate()
         {
             int count = 0;
 
             DateTime start = starttimePicker.Value;
             DateTime end = endtimePicker.Value;
-
+            //if end< start, end is a day after start, past midnight
             if (end < start)
             {
                 end = end.AddDays(1);
@@ -532,6 +544,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                 }
             }
 
+            //counts how many breaks are curently open for the input, >1 will return false
             if (break1outtimePicker.Value != DateTime.MinValue && break1intimePicker.Value == DateTime.MinValue)
             {
                 count++;
@@ -546,7 +559,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                 count++;
             }
 
-
+            //checks for any problems with the form
             if (starttimePicker.Value == DateTime.MinValue &&
                 break1outtimePicker.Value == DateTime.MinValue &&
                 break1intimePicker.Value == DateTime.MinValue &&
@@ -612,10 +625,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
             }
             else
             {
+                //returns true if the user entered in valid information
                 return true;
             }
         }
 
+        //updates the fields to whatever row the user clicks
         private void datagrid_Cellclick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
