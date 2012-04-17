@@ -49,8 +49,8 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             jobnameTextbox.KeyDown += new System.Windows.Forms.KeyEventHandler(Main.maininstance.notIdle_event);
             filenameTextbox.MouseMove += new System.Windows.Forms.MouseEventHandler(Main.maininstance.notIdle_event);
             filenameTextbox.KeyDown += new System.Windows.Forms.KeyEventHandler(Main.maininstance.notIdle_event);
-            startingpayTextbox.MouseMove += new System.Windows.Forms.MouseEventHandler(Main.maininstance.notIdle_event);
-            startingpayTextbox.KeyDown += new System.Windows.Forms.KeyEventHandler(Main.maininstance.notIdle_event); 
+            payChooser.MouseMove += new System.Windows.Forms.MouseEventHandler(Main.maininstance.notIdle_event);
+            payChooser.KeyDown += new System.Windows.Forms.KeyEventHandler(Main.maininstance.notIdle_event); 
 
             jobsBox.DisplayMember = "getname";
             jobsBox.DataSource = Main.joblist;
@@ -62,21 +62,30 @@ namespace Los_Alamos_Timeclock.Manager.Admin
         {
             jobnameTextbox.Text = jobsBox.Text;
             jobsBox.ValueMember = "getpay";
-            startingpayTextbox.Text = jobsBox.SelectedValue.ToString();
+            payChooser.Value = Decimal.Parse(jobsBox.SelectedValue.ToString());
             jobsBox.ValueMember = "getTipped";
             tippedBox.Checked = Boolean.Parse(jobsBox.SelectedValue.ToString());
 
-            Main.myConnection.Open();
-            Main.maininstance.sqlReader("SELECT Filename FROM Jobs WHERE JID='"+jobsBox.Text+"'");
-            filenameTextbox.Text=Main.reader["Filename"].ToString();
-            filename = Main.reader["Filename"].ToString();
-            jobPicturebox.ImageLocation = Properties.Settings.Default.jobImageFolderPath + "\\images\\" + filename;
-            Main.myConnection.Close();
+            try
+            {
+                Main.myConnection.Open();
+                Main.maininstance.sqlReader("SELECT Filename FROM Jobs WHERE JID='" + jobsBox.Text + "'");
+                filenameTextbox.Text = Main.reader["Filename"].ToString();
+                filename = Main.reader["Filename"].ToString();
+                jobPicturebox.ImageLocation = Properties.Settings.Default.jobImageFolderPath + "\\images\\" + filename;
+                Main.myConnection.Close();
+            }
+            catch (Exception)
+            {
+            }
+            finally
+            {
+                Main.myConnection.Close();
+            }
         }
 
         public Boolean validate()
         {
-            Decimal a;
             Main.myConnection.Open();
             Main.maininstance.sqlReader("SELECT * FROM Jobs WHERE JID='"+jobnameTextbox.Text+"'");
             Boolean hasrows = Main.reader.HasRows;
@@ -86,11 +95,6 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             if (hasrows && jobnameTextbox.Text != jobsBox.Text)
             {
                 MessageBox.Show("A job with the name of " + jobnameTextbox.Text + " already exists");
-                return false;
-            }
-            else if (!Decimal.TryParse(startingpayTextbox.Text, out a))
-            {
-                MessageBox.Show("Invalid starting pay");
                 return false;
             }
             else
@@ -103,15 +107,16 @@ namespace Los_Alamos_Timeclock.Manager.Admin
         {
             Main.joblist = Main.maininstance.getJobs();
             jobsBox.DataSource = Main.joblist;
+            jobsBox.DisplayMember = "getname";
         }
 
         private void updateJob_Click(object sender, EventArgs e)
         {
             if (validate())
             {
-                Main.maininstance.sqlCommand("UPDATE Jobs SET JID='" + jobnameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "',JSPay='" + Decimal.Parse(startingpayTextbox.Text) + "',TippedJob='" + tippedBox.Checked + "', Filename='"+filename+"' WHERE JID='" + jobsBox.Text + "'");
+                Main.maininstance.sqlCommand("UPDATE Jobs SET JID='" + jobnameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "',JSPay='" + payChooser.Value + "',TippedJob='" + tippedBox.Checked + "', Filename='" + filename + "' WHERE JID='" + jobsBox.Text + "'");
                 MessageBox.Show("Update successful");
-                Log.writeLog(Main.eName + " updated job: " + "\n Job= " + jobnameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "\n Starting Pay= " + Decimal.Parse(startingpayTextbox.Text) + "\n Tipped Job= " + tippedBox.Checked+"\n Image= "+filename);
+                Log.writeLog(Main.eName + " updated job: " + "\n Job= " + jobnameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "\n Starting Pay= " + payChooser.Value + "\n Tipped Job= " + tippedBox.Checked + "\n Image= " + filename);
                 refreshJobs();
             }
         }
@@ -123,8 +128,8 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                 if (validate())
                 {
                     MessageBox.Show("Insert successful");
-                    Main.maininstance.sqlCommand("INSERT INTO Jobs Values('" + jobnameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "','" + Decimal.Parse(startingpayTextbox.Text) + "','" + tippedBox.Checked + "','"+filename+"')");
-                    Log.writeLog(Main.eName + " added job: " + "\n Job= " + jobnameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "\n Starting Pay= " + Decimal.Parse(startingpayTextbox.Text) + "\n Tipped Job= " + tippedBox.Checked);
+                    Main.maininstance.sqlCommand("INSERT INTO Jobs Values('" + jobnameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "','" + payChooser.Value + "','" + tippedBox.Checked + "','" + filename + "')");
+                    Log.writeLog(Main.eName + " added job: " + "\n Job= " + jobnameTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "\n Starting Pay= " + payChooser.Value + "\n Tipped Job= " + tippedBox.Checked);
                     refreshJobs();
                 }
             }
@@ -160,10 +165,9 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                 filename = System.IO.Path.GetFileName(imageDialog.FileName);
                 String filepath = System.IO.Path.GetFullPath(imageDialog.FileName);
                 String directory = System.IO.Path.GetDirectoryName(imageDialog.FileName);
-                String graphicsDirectory = System.IO.Path.GetFullPath("Graphics");
 
                 //checks if the file is already in the directory
-                if (directory.ToLower() != graphicsDirectory.ToLower())
+                if (directory.ToLower() != (Properties.Settings.Default.jobImageFolderPath + "\\images").ToLower())
                 {
                     try
                     {
@@ -179,7 +183,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                     {
                         if (System.IO.File.Exists(Properties.Settings.Default.jobImageFolderPath + "\\images\\" + filename))
                         {
-                            MessageBox.Show("A file by that name already exists in " + graphicsDirectory);
+                            MessageBox.Show("A file by that name already exists in " + Properties.Settings.Default.jobImageFolderPath + "\\images\\");
                         }
                         else
                         {

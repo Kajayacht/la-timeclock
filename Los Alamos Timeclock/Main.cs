@@ -98,7 +98,7 @@ namespace Los_Alamos_Timeclock
             //sets up the folder for the program to store the job images in if it isn't set
             if (Properties.Settings.Default.jobImageFolderPath == "")
             {
-                MessageBox.Show("Job Image folder is not set, please select one");
+                MessageBox.Show("Where would you like Los Alamos Timeclock to store it's images/log?");
                 changeFolder();
             }
 
@@ -152,7 +152,7 @@ namespace Los_Alamos_Timeclock
 
             }
             //If connection to Database fails
-            catch (Exception e)
+            catch (Exception)
             {
                 MessageBox.Show("ERROR: Failed to fetch Employee list from database");
 
@@ -238,7 +238,7 @@ namespace Los_Alamos_Timeclock
                 return joblist;
             }
             //If connection to Database fails
-            catch (Exception e)
+            catch (Exception)
             {
                 MessageBox.Show("ERROR: Failed to fetch Job list from database");
                 return joblist;
@@ -534,7 +534,7 @@ namespace Los_Alamos_Timeclock
         }
 
 
-        //method to change the folder the job images will come from
+        //method to change the folder the program stores the log/images in
         public static void changeFolder()
         {
             FolderBrowserDialog jobFolder = new FolderBrowserDialog();

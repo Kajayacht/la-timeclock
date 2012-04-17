@@ -35,7 +35,6 @@
             System.Windows.Forms.PictureBox pictureBox2;
             this.jobsBox = new System.Windows.Forms.ListBox();
             this.jobnameTextbox = new System.Windows.Forms.TextBox();
-            this.startingpayTextbox = new System.Windows.Forms.TextBox();
             this.updatejobButton = new System.Windows.Forms.Button();
             this.newjobButton = new System.Windows.Forms.Button();
             this.deletejobButton = new System.Windows.Forms.Button();
@@ -43,6 +42,7 @@
             this.selectImageButton = new System.Windows.Forms.Button();
             this.filenameTextbox = new System.Windows.Forms.TextBox();
             this.jobPicturebox = new System.Windows.Forms.PictureBox();
+            this.payChooser = new System.Windows.Forms.NumericUpDown();
             nlabel = new System.Windows.Forms.Label();
             plabel = new System.Windows.Forms.Label();
             imageLabel = new System.Windows.Forms.Label();
@@ -51,6 +51,7 @@
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.jobPicturebox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.payChooser)).BeginInit();
             this.SuspendLayout();
             // 
             // nlabel
@@ -133,14 +134,6 @@
             this.jobnameTextbox.Name = "jobnameTextbox";
             this.jobnameTextbox.Size = new System.Drawing.Size(100, 20);
             this.jobnameTextbox.TabIndex = 1;
-            // 
-            // startingpayTextbox
-            // 
-            this.startingpayTextbox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.startingpayTextbox.Location = new System.Drawing.Point(243, 109);
-            this.startingpayTextbox.Name = "startingpayTextbox";
-            this.startingpayTextbox.Size = new System.Drawing.Size(100, 20);
-            this.startingpayTextbox.TabIndex = 2;
             // 
             // updatejobButton
             // 
@@ -225,12 +218,26 @@
             this.jobPicturebox.TabIndex = 12;
             this.jobPicturebox.TabStop = false;
             // 
+            // payChooser
+            // 
+            this.payChooser.DecimalPlaces = 2;
+            this.payChooser.Location = new System.Drawing.Point(243, 110);
+            this.payChooser.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.payChooser.Name = "payChooser";
+            this.payChooser.Size = new System.Drawing.Size(101, 20);
+            this.payChooser.TabIndex = 2;
+            // 
             // EditJobs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Los_Alamos_Timeclock.Properties.Resources._1287421014661;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.payChooser);
             this.Controls.Add(pictureBox2);
             this.Controls.Add(pictureBox1);
             this.Controls.Add(this.jobPicturebox);
@@ -241,7 +248,6 @@
             this.Controls.Add(this.deletejobButton);
             this.Controls.Add(this.newjobButton);
             this.Controls.Add(this.updatejobButton);
-            this.Controls.Add(this.startingpayTextbox);
             this.Controls.Add(this.jobnameTextbox);
             this.Controls.Add(plabel);
             this.Controls.Add(nlabel);
@@ -254,6 +260,7 @@
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.jobPicturebox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.payChooser)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -263,7 +270,6 @@
 
         private System.Windows.Forms.ListBox jobsBox;
         private System.Windows.Forms.TextBox jobnameTextbox;
-        private System.Windows.Forms.TextBox startingpayTextbox;
         private System.Windows.Forms.Button updatejobButton;
         private System.Windows.Forms.Button newjobButton;
         private System.Windows.Forms.Button deletejobButton;
@@ -271,5 +277,6 @@
         private System.Windows.Forms.Button selectImageButton;
         private System.Windows.Forms.TextBox filenameTextbox;
         private System.Windows.Forms.PictureBox jobPicturebox;
+        private System.Windows.Forms.NumericUpDown payChooser;
     }
 }

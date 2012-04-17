@@ -34,10 +34,10 @@ namespace Los_Alamos_Timeclock
         //create file (if not exist)
         public static void createLog()
         {
-            string filepath = Directory.GetCurrentDirectory() + "/log.txt";
+            string filepath = Properties.Settings.Default.jobImageFolderPath + "/log.txt";
             if (File.Exists(filepath) == false)
             {
-                StreamWriter w = new StreamWriter(Directory.GetCurrentDirectory() + "/log.txt");
+                StreamWriter w = new StreamWriter(Properties.Settings.Default.jobImageFolderPath + "/log.txt");
                 // Update the underlying file.
                 w.Flush();
                 // Close the writer and underlying file.
@@ -58,13 +58,13 @@ namespace Los_Alamos_Timeclock
             String entry = "\r\nLog Entry : " + DateTime.Now.ToLongTimeString() + " " + DateTime.Now.ToLongDateString() + "\r\n:\r\n: " + logMessage + "\r\n -------------------------------";
             String log = entry + previousLog;
             //delete the old log file
-            File.Delete(Directory.GetCurrentDirectory() + "/log.txt");
+            File.Delete(Properties.Settings.Default.jobImageFolderPath + "/log.txt");
 
             try
             {
                 //open the file
                 
-                StreamWriter w = File.AppendText(Directory.GetCurrentDirectory()+ "/log.txt");
+                StreamWriter w = File.AppendText(Properties.Settings.Default.jobImageFolderPath+ "/log.txt");
                 
                 /*write the header, date/time, and the logmessage
                 w.Write("\r\nLog Entry : ");
@@ -98,7 +98,7 @@ namespace Los_Alamos_Timeclock
             {
                 // Create an instance of StreamReader to read from a file.
                 // The using statement also closes the StreamReader.
-                using (StreamReader r = new StreamReader(Directory.GetCurrentDirectory() + "/log.txt"))
+                using (StreamReader r = new StreamReader(Properties.Settings.Default.jobImageFolderPath + "/log.txt"))
                 {
                     
                     //Create a string from the text file and return it
@@ -120,7 +120,7 @@ namespace Los_Alamos_Timeclock
         //Delete the log file
         public static void clearLog()
         {
-            File.Delete(Directory.GetCurrentDirectory() + "/log.txt");
+            File.Delete(Properties.Settings.Default.jobImageFolderPath + "/log.txt");
         }
 
     }
