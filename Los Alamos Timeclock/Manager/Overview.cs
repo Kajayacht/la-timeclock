@@ -36,11 +36,13 @@ namespace Los_Alamos_Timeclock.Manager.Admin
         {
             InitializeComponent();
 
+            //sets the datagrid's custom colors
             this.overviewDatagridview.DefaultCellStyle.ForeColor = Properties.Settings.Default.tableTextColor;
             this.overviewDatagridview.DefaultCellStyle.BackColor = Properties.Settings.Default.tablerow1Color;
             this.overviewDatagridview.AlternatingRowsDefaultCellStyle.BackColor = Properties.Settings.Default.tablerow2Color;
             this.overviewDatagridview.GridColor = Properties.Settings.Default.tableGridColor;
 
+            //sets background image
             try
             {
                 this.BackgroundImage = Image.FromFile(Properties.Settings.Default.backgroundImage);
@@ -50,13 +52,16 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                 this.BackgroundImage = Properties.Resources._1287421014661;
             }
 
+            //events to reset the idle timer
             this.MouseMove += new MouseEventHandler(Main.maininstance.notIdle_event);
             this.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
             overviewDatagridview.MouseMove += new MouseEventHandler(Main.maininstance.notIdle_event);
             overviewDatagridview.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
 
+            //sets it so the to calander can't have a date before the from calander
             toCalander.MinDate = fromCalander.Value;
             showwhatDropdownlist.SelectedIndex = 0;
+            //fills the datatable
             filldt();
         }
 
@@ -67,7 +72,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
 
         public void filldt()
         {
-            //query for the database
+            //query for the database, changes by what is selected in the dropdown menu
             String query = "";
 
             switch (showwhatDropdownlist.Text)
@@ -148,6 +153,8 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                         break;
                     }
             }
+
+            //tries to run the query and fill the datatable
             try
             {
                 Main.myConnection.Open();
@@ -165,7 +172,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.ToString());
+                MessageBox.Show("ERROR: Failed to retrieve table information from the database");
             }
             finally
             {
@@ -173,6 +180,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             }
         }
 
+        //update the datatable whenever the calander values or dropdownlist change
         private void fromCalander_ValueChanged(object sender, EventArgs e)
         {
             toCalander.MinDate = fromCalander.Value;

@@ -189,6 +189,5 @@ namespace Los_Alamos_Timeclock
         {
             Main.changeFolder();
         }
-
     }
 }

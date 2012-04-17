@@ -193,7 +193,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             this.showRequests.TabIndex = 7;
             this.showRequests.Text = "Show Overview";
             this.showRequests.UseVisualStyleBackColor = true;
-            this.showRequests.Click += new System.EventHandler(this.showRequests_Click);
+            this.showRequests.Click += new System.EventHandler(this.showOverview_Click);
             // 
             // starttimePicker
             // 

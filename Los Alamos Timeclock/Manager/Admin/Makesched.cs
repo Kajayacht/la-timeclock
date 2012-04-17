@@ -314,7 +314,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
         }
 
         //Method to show the overview so the user can look at requests, previous schedule, hours worked, and employee notes
-        private void showRequests_Click(object sender, EventArgs e)
+        private void showOverview_Click(object sender, EventArgs e)
         {
             if (!l.Visible)
             {
