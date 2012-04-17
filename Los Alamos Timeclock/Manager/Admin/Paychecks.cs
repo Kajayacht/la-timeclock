@@ -169,6 +169,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                             weekDate = getDay(DateTime.Parse(Main.reader["Date"].ToString()), weekDate.DayOfWeek);
                         }
 
+                        //if the end time is before the begin time, add a day so it will calculate correctly
                         if (Main.roundtime(DateTime.Parse(Main.reader["End"].ToString())) < Main.roundtime(DateTime.Parse(Main.reader["Start"].ToString())))
                         {
                             hours = Main.roundtime(DateTime.Parse(Main.reader["End"].ToString())).AddHours(24).Subtract(Main.roundtime(DateTime.Parse(Main.reader["Start"].ToString())));
@@ -178,9 +179,13 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                             hours = Main.roundtime(DateTime.Parse(Main.reader["End"].ToString())).Subtract(Main.roundtime(DateTime.Parse(Main.reader["Start"].ToString())));
                         }
 
+
                         if (Main.reader["Lout"].ToString() != "" && Main.reader["Lin"].ToString() != "")
                         {
+                            DateTime lunchOut = DateTime.Parse(Main.reader["Lout"].ToString());
+                            DateTime lunchIn = DateTime.Parse(Main.reader["Lin"].ToString());
 
+                            //if the person got back from their lunch after midnight and left before, add a day to the in time
                             if (Main.roundtime(DateTime.Parse(Main.reader["Lin"].ToString())) < Main.roundtime(DateTime.Parse(Main.reader["Lout"].ToString())))
                             {
                                 hours = hours.Subtract(roundTime((DateTime.Parse(Main.reader["Lin"].ToString()).AddHours(24)).Subtract(DateTime.Parse(Main.reader["Lout"].ToString()))));
@@ -191,7 +196,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                             }
                         }
 
-
+                        //if the employee has no custom pay, use the job's starting pay
                         if (Main.reader["JPay"].ToString() == "")
                         {
                             hourlyRate = Double.Parse(Main.reader["JSPay"].ToString());
@@ -201,15 +206,12 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                             hourlyRate = Double.Parse(Main.reader["JPay"].ToString());
                         }
 
-
-
-                        //if (totalHours > 40)
+                        //statements to calculate the shift's pay ammount, calculates overtime if the employee worked more than 40 hours in a week
                         if (weekHours >= 40)
                         {
                             hourlyRate = hourlyRate * 1.5;
                             pay = hourlyRate * (hours.Hours + (hours.Minutes / 15 * .25));
                         }
-                        //else if (totalHours + (hours.Hours + (hours.Minutes / 15) * .25) > 40)
                         else if ((weekHours + (hours.Hours + (hours.Minutes / 15) * .25)) > 40)
                         {
                             TimeSpan a = TimeSpan.FromHours(40);
@@ -223,10 +225,13 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                             pay = hourlyRate * (hours.Hours + (hours.Minutes / 15 * .25));
                         }
 
+                        //adds the employee's tips if they're not empty
                         if (Main.reader["Tips"].ToString() != "")
                         {
                             totalTips += Double.Parse(Main.reader["Tips"].ToString());
                         }
+
+                        //adds to the employee's total pay and resets the values for the next run through
                         totalPay += pay;
                         pay = 0.00;
                         totalHours += hours.Hours + (hours.Minutes / 15) * .25;
@@ -234,6 +239,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                         hours = TimeSpan.FromHours(0);
                     }
                 }
+                //outputs the final employee's information
                 if (id != "")
                 {
                     output = output + "\tTotal Hours: \t" + totalHours + "\n" +
@@ -257,6 +263,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
             }
         }
 
+        //rounds timespans to 15 minute intervals
         public TimeSpan roundTime(TimeSpan a)
         {
             int q = 0;
