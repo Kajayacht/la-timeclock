@@ -492,12 +492,18 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
             {
                 if (end < start)
                 {
-                    end.AddDays(1);
+                    end=end.AddDays(1);
                 }
+
 
                 if (b < a)
                 {
                     b.AddDays(1);
+                }
+                else if (a<start && a.AddDays(1) < end)
+                {
+                    a=a.AddDays(1);
+                    b=b.AddDays(1);
                 }
 
                 if (b.Subtract(a) > TimeSpan.FromHours(9))
