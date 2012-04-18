@@ -79,7 +79,15 @@ namespace Los_Alamos_Timeclock
             panel1.Controls.Clear();
             panel1.Controls.Add(new Login());
             panel1.Controls[0].Dock = DockStyle.Fill;
-            
+
+
+            //sets up the folder for the program to store the job images in if it isn't set
+            if (Properties.Settings.Default.jobImageFolderPath == "")
+            {
+                MessageBox.Show("Where would you like Los Alamos Timeclock to store it's images/log?");
+                changeFolder();
+            }
+
             //Connects to the database
 
 
@@ -94,14 +102,6 @@ namespace Los_Alamos_Timeclock
 
             DBInit.initTables(myConnection);
             DBInit.initAdmin(myConnection);
-
-
-            //sets up the folder for the program to store the job images in if it isn't set
-            if (Properties.Settings.Default.jobImageFolderPath == "")
-            {
-                MessageBox.Show("Where would you like Los Alamos Timeclock to store it's images/log?");
-                changeFolder();
-            }
 
             joblist = getJobs();
             employeeList = getEmployees();

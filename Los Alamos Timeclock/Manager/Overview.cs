@@ -105,7 +105,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                                     "ON a.ID=b.ID AND a.Date=b.Date " +
                                 "JOIN Employee c " +
                                     "ON c.ID=a.ID " +
-                            "WHERE a.Date>='" + fromCalander.Value.ToString("yyyy-MM-dd") + "' AND a.Date<='" + toCalander.Value.ToString("yyyy-MM-dd") + "' " +
+                            "WHERE a.Date='" + fromCalander.Value.ToString("yyyy-MM-dd") + "' OR( a.Date>='" + fromCalander.Value.ToString("yyyy-MM-dd") + "' AND a.Date<='" + toCalander.Value.ToString("yyyy-MM-dd") + "') " +
                             "UNION " +
                             "Select " +
                                 "b.Date, " +
@@ -123,7 +123,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                                     "ON a.ID=b.ID AND a.Date=b.Date " +
                                 "JOIN Employee c " +
                                     "ON c.ID=b.ID " +
-                            "WHERE a.Date>='" + fromCalander.Value.ToString("yyyy-MM-dd") + "' AND a.Date<='" + toCalander.Value.ToString("yyyy-MM-dd") + "' " +
+                            "WHERE a.Date='" + fromCalander.Value.ToString("yyyy-MM-dd") + "' OR( a.Date>='" + fromCalander.Value.ToString("yyyy-MM-dd") + "' AND a.Date<='" + toCalander.Value.ToString("yyyy-MM-dd") + "') " +
                             "UNION " +
                             "Select " +
                                 "b.Date, " +

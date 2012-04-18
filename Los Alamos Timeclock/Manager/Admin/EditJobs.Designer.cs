@@ -220,6 +220,7 @@
             // 
             // payChooser
             // 
+            this.payChooser.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.payChooser.DecimalPlaces = 2;
             this.payChooser.Location = new System.Drawing.Point(243, 110);
             this.payChooser.Maximum = new decimal(new int[] {
