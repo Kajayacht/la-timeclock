@@ -126,6 +126,9 @@ namespace Los_Alamos_Timeclock
                 Properties.Settings.Default.User = userTextbox.Text;
                 Properties.Settings.Default.Password = passTextbox.Text;
                 Properties.Settings.Default.Save();
+
+                DBInit.initTables(Main.myConnection);
+                DBInit.initAdmin(Main.myConnection);
             }
             catch (Exception)
             {

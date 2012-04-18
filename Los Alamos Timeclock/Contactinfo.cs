@@ -57,7 +57,6 @@ namespace Los_Alamos_Timeclock
             Phone.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
             Phone.MouseMove += new MouseEventHandler(Main.maininstance.notIdle_event);
             Email.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
-            Phone.MouseMove += new MouseEventHandler(Main.maininstance.notIdle_event);
 
 
             Phone.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;

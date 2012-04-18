@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 16, 2012 at 12:35 PM
+-- Generation Time: Apr 17, 2012 at 08:54 PM
 -- Server version: 5.0.91
 -- PHP Version: 5.2.6
 
@@ -16,7 +16,7 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `teamchro_testing`
+-- Database: `teamchro_LATSQL`
 --
 
 -- --------------------------------------------------------
@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS `Employee` (
   `MName` varchar(20) NOT NULL,
   `FName` text NOT NULL,
   `SSN` text NOT NULL,
-  `Phone` int(10) NOT NULL,
+  `Phone` text NOT NULL,
   `Email` text NOT NULL,
   `Address1` text,
   `Address2` text,

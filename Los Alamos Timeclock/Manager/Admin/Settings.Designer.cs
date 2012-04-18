@@ -195,7 +195,7 @@
             this.ipaddressTextbox.Location = new System.Drawing.Point(175, 361);
             this.ipaddressTextbox.Name = "ipaddressTextbox";
             this.ipaddressTextbox.Size = new System.Drawing.Size(153, 26);
-            this.ipaddressTextbox.TabIndex = 3;
+            this.ipaddressTextbox.TabIndex = 6;
             this.ipaddressTextbox.Text = "184.154.225.11";
             // 
             // portTextbox
@@ -205,7 +205,7 @@
             this.portTextbox.Location = new System.Drawing.Point(175, 393);
             this.portTextbox.Name = "portTextbox";
             this.portTextbox.Size = new System.Drawing.Size(153, 26);
-            this.portTextbox.TabIndex = 4;
+            this.portTextbox.TabIndex = 7;
             this.portTextbox.Text = "3306";
             // 
             // userTextbox
@@ -215,7 +215,7 @@
             this.userTextbox.Location = new System.Drawing.Point(173, 457);
             this.userTextbox.Name = "userTextbox";
             this.userTextbox.Size = new System.Drawing.Size(153, 26);
-            this.userTextbox.TabIndex = 6;
+            this.userTextbox.TabIndex = 9;
             this.userTextbox.Text = "teamchro_user";
             // 
             // passTextbox
@@ -226,7 +226,7 @@
             this.passTextbox.Name = "passTextbox";
             this.passTextbox.PasswordChar = '*';
             this.passTextbox.Size = new System.Drawing.Size(153, 26);
-            this.passTextbox.TabIndex = 7;
+            this.passTextbox.TabIndex = 10;
             this.passTextbox.Text = "chrono";
             // 
             // applyButton
@@ -236,7 +236,7 @@
             this.applyButton.Location = new System.Drawing.Point(253, 521);
             this.applyButton.Name = "applyButton";
             this.applyButton.Size = new System.Drawing.Size(75, 23);
-            this.applyButton.TabIndex = 8;
+            this.applyButton.TabIndex = 11;
             this.applyButton.Text = "Apply";
             this.applyButton.UseVisualStyleBackColor = true;
             this.applyButton.Click += new System.EventHandler(this.Apply_Click);
@@ -248,7 +248,7 @@
             this.databaseTextbox.Location = new System.Drawing.Point(173, 425);
             this.databaseTextbox.Name = "databaseTextbox";
             this.databaseTextbox.Size = new System.Drawing.Size(153, 26);
-            this.databaseTextbox.TabIndex = 5;
+            this.databaseTextbox.TabIndex = 8;
             this.databaseTextbox.Text = "teamchro_LATSQL";
             // 
             // databaseLLabel
@@ -311,7 +311,7 @@
             this.cleanupEntriesButton.Location = new System.Drawing.Point(190, 272);
             this.cleanupEntriesButton.Name = "cleanupEntriesButton";
             this.cleanupEntriesButton.Size = new System.Drawing.Size(121, 26);
-            this.cleanupEntriesButton.TabIndex = 13;
+            this.cleanupEntriesButton.TabIndex = 5;
             this.cleanupEntriesButton.Text = "Cleanup Entries";
             this.cleanupEntriesButton.UseVisualStyleBackColor = true;
             this.cleanupEntriesButton.Click += new System.EventHandler(this.cleanupButton_Click);
@@ -323,7 +323,7 @@
             this.changeColorScheme.Location = new System.Drawing.Point(190, 154);
             this.changeColorScheme.Name = "changeColorScheme";
             this.changeColorScheme.Size = new System.Drawing.Size(121, 26);
-            this.changeColorScheme.TabIndex = 75;
+            this.changeColorScheme.TabIndex = 3;
             this.changeColorScheme.Text = "Change Color Scheme";
             this.changeColorScheme.UseVisualStyleBackColor = true;
             this.changeColorScheme.Click += new System.EventHandler(this.changeColorScheme_Click);
@@ -335,7 +335,7 @@
             this.changeJobFolderButton.Location = new System.Drawing.Point(190, 185);
             this.changeJobFolderButton.Name = "changeJobFolderButton";
             this.changeJobFolderButton.Size = new System.Drawing.Size(121, 43);
-            this.changeJobFolderButton.TabIndex = 76;
+            this.changeJobFolderButton.TabIndex = 4;
             this.changeJobFolderButton.Text = "Change Job Image Folder";
             this.changeJobFolderButton.UseVisualStyleBackColor = true;
             this.changeJobFolderButton.Click += new System.EventHandler(this.changeJobFolderButton_Click);

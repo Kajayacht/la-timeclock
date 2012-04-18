@@ -65,7 +65,7 @@ namespace Los_Alamos_Timeclock.Manager
                 Main.myConnection.Open();
                 Main.maininstance.sqlReader("SELECT Phone FROM Employee WHERE ID='"+id+"'");
 
-                phoneNumber.Text = "Phone: " + String.Format("{0:(###) ###-####}", int.Parse(Main.reader["Phone"].ToString()));
+                phoneNumber.Text = "Phone: " + String.Format("{0:(###) ###-####}", Int64.Parse(Main.reader["Phone"].ToString()));
             }
             catch (Exception e)
             {
