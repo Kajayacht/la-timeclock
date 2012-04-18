@@ -119,16 +119,15 @@ namespace Los_Alamos_Timeclock
             try
             {
                 Main.myConnection.Open();
-                MessageBox.Show("Connection Successful");
+                MessageBox.Show("Connection Successful, the program will now exit");
                 Properties.Settings.Default.IP = ipaddressTextbox.Text;
                 Properties.Settings.Default.Port = portTextbox.Text;
                 Properties.Settings.Default.Database = databaseTextbox.Text;
                 Properties.Settings.Default.User = userTextbox.Text;
                 Properties.Settings.Default.Password = passTextbox.Text;
                 Properties.Settings.Default.Save();
-
-                DBInit.initTables(Main.myConnection);
-                DBInit.initAdmin(Main.myConnection);
+                Environment.Exit(0);
+                
             }
             catch (Exception)
             {

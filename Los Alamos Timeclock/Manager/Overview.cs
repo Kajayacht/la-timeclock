@@ -170,7 +170,7 @@ namespace Los_Alamos_Timeclock.Manager.Admin
 
                 Main.myConnection.Close();
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 MessageBox.Show("ERROR: Failed to retrieve table information from the database");
             }

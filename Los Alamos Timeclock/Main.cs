@@ -318,12 +318,13 @@ namespace Los_Alamos_Timeclock
         {
             try
             {
+                myConnection.Close();
                 myConnection.Open();
                 myConnection.Close();
             }
 
            //If connection fails, give user the option to reenter settings or exit the program
-            catch
+            catch(Exception)
             {
                 DialogResult result = MessageBox.Show("Failed to connect to database, make sure MYSQL is running or change settings. \n Do you want to change connection settings?",
                     "Database Error", MessageBoxButtons.YesNo);
@@ -395,9 +396,9 @@ namespace Los_Alamos_Timeclock
                 command.ExecuteNonQuery();
             }
             //if DB connection error
-            catch (Exception e)
+            catch (Exception)
             {
-                MessageBox.Show("ERROR: Failed to execute SQL command" + e.ToString());
+                MessageBox.Show("ERROR: Failed to execute SQL command");
             }
             //close the connection
             finally
@@ -567,9 +568,9 @@ namespace Los_Alamos_Timeclock
                         imgbytes = (byte[])converter.ConvertTo(Properties.Resources.ResourceManager.GetObject(jobs[i]), typeof(byte[]));
                         File.WriteAllBytes(Properties.Settings.Default.jobImageFolderPath + "\\images\\" + jobs[i] + ".bmp", imgbytes);
                     }
-                    catch (IOException e)
+                    catch (IOException)
                     {
-                        MessageBox.Show("ERROR: IO Failed to write file\n"+e.ToString());
+                        MessageBox.Show("ERROR: IO Failed to write file");
                     }
                     catch(Exception)
                     {

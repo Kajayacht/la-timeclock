@@ -18,7 +18,7 @@ namespace Los_Alamos_Timeclock
         {
             //Get the SQL file
 
-            MySqlCommand command = new MySqlCommand("SELECT * FROM Schedule", myConnection);
+            MySqlCommand command = new MySqlCommand("SELECT * FROM Admin", myConnection);
             try
             {
                 Main.myConnection.Open();

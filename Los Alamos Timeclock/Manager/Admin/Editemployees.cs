@@ -154,9 +154,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                 pass1Textbox.Text = "";
                 pass2Textbox.Text = "";
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                MessageBox.Show(e.ToString());
+                MessageBox.Show("ERROR: Failed to update fields");
             }
             finally
             {

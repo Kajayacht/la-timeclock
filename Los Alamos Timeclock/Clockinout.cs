@@ -154,9 +154,9 @@ namespace Los_Alamos_Timeclock
                     Main.myConnection.Close();
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                MessageBox.Show(e.ToString());
+                MessageBox.Show("ERROR: Failed to access user information");
             }
             finally
             {

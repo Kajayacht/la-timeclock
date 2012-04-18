@@ -91,9 +91,9 @@ namespace Los_Alamos_Timeclock.Manager
                 bind.DataSource = dataTable;
                 notesDatagrid.DataSource = bind;
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                MessageBox.Show(e.ToString());
+                MessageBox.Show("ERROR: Failed to pulll notes from the database");
             }
             finally
             {

@@ -466,15 +466,15 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                     bind.DataSource = dataTable;
                     datagrid.DataSource = bind;
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
-                    MessageBox.Show(e.ToString());
+                    MessageBox.Show("ERROR: Failed to bind datagrid to database");
                 }
                 Main.myConnection.Close();
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                MessageBox.Show(e.ToString());
+                MessageBox.Show("ERROR: Failed to connect datagrid to database");
             }
         }
 

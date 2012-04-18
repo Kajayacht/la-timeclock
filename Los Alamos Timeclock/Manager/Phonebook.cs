@@ -67,9 +67,9 @@ namespace Los_Alamos_Timeclock.Manager
 
                 phoneNumber.Text = "Phone: " + String.Format("{0:(###) ###-####}", Int64.Parse(Main.reader["Phone"].ToString()));
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                MessageBox.Show(e.ToString());
+                MessageBox.Show("ERROR: Failed to failed to pull phone number from the database");
             }
             finally
             {
