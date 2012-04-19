@@ -27,6 +27,8 @@ namespace Los_Alamos_Timeclock
     along with Los Alamos Timeclock.  If not, see <http://www.gnu.org/licenses/>.
      */
 
+    /* Class to handle allowing employees to make requests for days off */
+
     public partial class Request : UserControl
     {
         MySqlDataAdapter mySqlDataAdapter;
@@ -38,6 +40,7 @@ namespace Los_Alamos_Timeclock
         //string to store the value of the sql record's start date
         String rStartDate = "";
         
+        /* Initialize the UI */
         public Request()
         {
             InitializeComponent();
@@ -47,6 +50,7 @@ namespace Los_Alamos_Timeclock
             this.requestsDatagrid.AlternatingRowsDefaultCellStyle.BackColor = Properties.Settings.Default.tablerow2Color;
             this.requestsDatagrid.GridColor = Properties.Settings.Default.tableGridColor;
 
+            //Load the background color
             try
             {
                 this.BackgroundImage = Image.FromFile(Properties.Settings.Default.backgroundImage);
@@ -56,6 +60,7 @@ namespace Los_Alamos_Timeclock
                 this.BackgroundImage = Properties.Resources._1287421014661;
             }
 
+            //Idle event handlers
             this.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
             this.MouseMove += new MouseEventHandler(Main.maininstance.notIdle_event);
             startCalander.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
@@ -66,6 +71,7 @@ namespace Los_Alamos_Timeclock
             reasonTextbox.MouseMove += new MouseEventHandler(Main.maininstance.notIdle_event);
             requestsDatagrid.CellClick +=new DataGridViewCellEventHandler(requestsDatagrid_Cellclick);
 
+            //Get the defualt dates
             startCalander.MinDate = DateTime.Today;
             endCalander.MinDate = DateTime.Today;
             filldt();
