@@ -10,10 +10,7 @@ using MySql.Data.MySqlClient;
 
 namespace Los_Alamos_Timeclock.Manager
 {
-    public partial class Employeenotes : UserControl
-    {
-
-            /*
+    /*
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
@@ -28,9 +25,14 @@ namespace Los_Alamos_Timeclock.Manager
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
      */
 
+    /* Class to handle recording notes about employees */
+    public partial class Employeenotes : UserControl
+    {
+        
         string id;
         public Employeenotes()
         {
+            //Build the UI of the modual
             InitializeComponent();
 
             this.notesDatagrid.DefaultCellStyle.ForeColor = Properties.Settings.Default.tableTextColor;
@@ -38,6 +40,7 @@ namespace Los_Alamos_Timeclock.Manager
             this.notesDatagrid.AlternatingRowsDefaultCellStyle.BackColor = Properties.Settings.Default.tablerow2Color;
             this.notesDatagrid.GridColor = Properties.Settings.Default.tableGridColor;
 
+            //Set the background image of the UI
             try
             {
                 this.BackgroundImage = Image.FromFile(Properties.Settings.Default.backgroundImage);
@@ -46,7 +49,8 @@ namespace Los_Alamos_Timeclock.Manager
             {
                 this.BackgroundImage = Properties.Resources._1287421014661;
             }
-
+           
+            //Initialize the idle event handlers
             this.MouseMove += new MouseEventHandler(Main.maininstance.notIdle_event);
             this.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
             notesDatagrid.MouseMove += new MouseEventHandler(Main.maininstance.notIdle_event);
@@ -56,20 +60,23 @@ namespace Los_Alamos_Timeclock.Manager
             employeeDropdownlist.MouseMove += new MouseEventHandler(Main.maininstance.notIdle_event);
             employeeDropdownlist.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
 
+            //Populate the UI elements with the employee info
             employeeDropdownlist.DisplayMember = "getname";
             employeeDropdownlist.ValueMember = "gid";
             employeeDropdownlist.DataSource = Main.employeeList;
         }
 
+        /* Module to handle changing the information based on which employee is selected */
         private void employeeDropdownlist_SelectedIndexChanged(object sender, EventArgs e)
         {
             id = employeeDropdownlist.SelectedValue.ToString();
             fillNotesDatagrid();
         }
 
-
+        /* Module to handle populating the notes area of the UI */
         public void fillNotesDatagrid()
         {
+            //Query to be executed
             string query = 
                 "SELECT a.Date, a.Note, a.Manager " +
                 "FROM EmployeeNotes a "+
@@ -78,12 +85,14 @@ namespace Los_Alamos_Timeclock.Manager
                 "WHERE b.ID='" + id + "' "+
                 "ORDER BY a.Date DESC";
 
+            //Open the SQL connection and execute the query
             try
             {
                 Main.myConnection.Open();
                 MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter(query, Main.myConnection);
                 MySqlCommandBuilder mySqlCommandBuilder = new MySqlCommandBuilder(mySqlDataAdapter);
 
+                //Populate the table
                 DataTable dataTable = new DataTable();
                 mySqlDataAdapter.Fill(dataTable);
 
@@ -101,18 +110,23 @@ namespace Los_Alamos_Timeclock.Manager
             }
         }
 
+        /* Method to handle adding a note to an employee */
         private void addnoteButton_Click(object sender, EventArgs e)
         {
+            //If no employee is selected
             if (Main.employeeList.Count == 0)
             {
                 MessageBox.Show("No Employee Selected");
             }
             else
             {
+                //If there is note text in the note field
                 if (noteTextbox.Text == "")
                 {
                     MessageBox.Show("Note Cannot be empty");
                 }
+
+                //A valid input, so add it to the database
                 else
                 {
                     Main.maininstance.sqlCommand("INSERT INTO EmployeeNotes VALUES('" + id + "','" + Main.eName + "', NOW() ,'" + noteTextbox.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "')");

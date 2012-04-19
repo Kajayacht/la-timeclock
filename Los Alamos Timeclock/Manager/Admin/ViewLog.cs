@@ -9,10 +9,7 @@ using System.Windows.Forms;
 
 namespace Los_Alamos_Timeclock.Manager.Admin
 {
-    public partial class viewLog : UserControl
-    {
-
-            /*
+    /*
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
@@ -27,10 +24,15 @@ namespace Los_Alamos_Timeclock.Manager.Admin
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
      */
 
+    /* Class to allow the user to view the file log.txt from within the program */
+
+    public partial class viewLog : UserControl
+    {            
         public viewLog()
         {
             InitializeComponent();
 
+            //Load the background image
             try
             {
                 this.BackgroundImage = Image.FromFile(Properties.Settings.Default.backgroundImage);
@@ -40,10 +42,12 @@ namespace Los_Alamos_Timeclock.Manager.Admin
                 this.BackgroundImage = Properties.Resources._1287421014661;
             }
 
+            //Set idle event handlers
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(Main.maininstance.notIdle_event);
             logViewBox.MouseMove += new System.Windows.Forms.MouseEventHandler(Main.maininstance.notIdle_event);
             logViewBox.KeyDown += new System.Windows.Forms.KeyEventHandler(Main.maininstance.notIdle_event); 
 
+            //Set logViewBox's text to the return of Log.viewLog()
             logViewBox.Text = Log.viewLog();
         }
     }

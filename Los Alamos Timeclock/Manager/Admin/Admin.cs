@@ -28,8 +28,13 @@ namespace Los_Alamos_Timeclock
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
      */
 
+        /** The class to give access to administrative tasks in the program
+         * 
+         */
+
         public Admin()
         {
+            //Setup the user interface
             InitializeComponent();
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(Main.maininstance.notIdle_event);
 
@@ -42,6 +47,7 @@ namespace Los_Alamos_Timeclock
                 this.BackgroundImage = Properties.Resources._1287421014661;
             }
 
+            //If current user is a Manager, exclude the options they aren't allowed to do
             if (Main.permissions == "Manager")
             {
                 editemployeesButton.BackColor = Color.Gray;
@@ -53,8 +59,11 @@ namespace Los_Alamos_Timeclock
             }
         }
 
+        /* Event handler for the edit employees button */
+
         private void editemployees_Click(object sender, EventArgs e)
         {
+            //Only available to Admin users
             if (Main.permissions == "Admin")
             {
                 Main.maininstance.panel1.Controls.Clear();
@@ -63,8 +72,11 @@ namespace Los_Alamos_Timeclock
             }
         }
 
+        /* Event handler for the calculate pay button */
+
         private void paychecks_Click(object sender, EventArgs e)
         {
+            //Only available to Admin users
             if (Main.permissions == "Admin")
             {
                 Main.maininstance.panel1.Controls.Clear();
@@ -73,8 +85,11 @@ namespace Los_Alamos_Timeclock
             }
         }
 
+        /* Event handler for the settings button */
+
         private void settings_Click(object sender, EventArgs e)
         {
+            //Only available to Admin users
             if (Main.permissions == "Admin")
             {
                 Main.maininstance.panel1.Controls.Clear();
@@ -83,6 +98,8 @@ namespace Los_Alamos_Timeclock
             }
         }
 
+        /* Event handler for the edit schedule button */
+
         private void editschedule_Click(object sender, EventArgs e)
         {
             Main.maininstance.panel1.Controls.Clear();
@@ -90,8 +107,11 @@ namespace Los_Alamos_Timeclock
             Main.maininstance.panel1.Controls[0].Dock = DockStyle.Fill;
         }
 
+        /* Event handler for the edit jobs button */
+
         private void editjobs_Click(object sender, EventArgs e)
         {
+            //Only available to admin users
             if (Main.permissions == "Admin")
             {
                 Main.maininstance.panel1.Controls.Clear();
@@ -100,8 +120,11 @@ namespace Los_Alamos_Timeclock
             }
         }
 
+        /* Event handler for the view log button */
+
         private void viewlog_Click(object sender, EventArgs e)
         {
+            //Only available to admin users
             if (Main.permissions == "Admin")
             {
                 Main.maininstance.panel1.Controls.Clear();
@@ -110,6 +133,8 @@ namespace Los_Alamos_Timeclock
             }
         }
 
+        /* Event handler for the status button */
+
         private void status_Click(object sender, EventArgs e)
         {
             Main.maininstance.panel1.Controls.Clear();
@@ -117,12 +142,16 @@ namespace Los_Alamos_Timeclock
             Main.maininstance.panel1.Controls[0].Dock = DockStyle.Fill;
         }
 
+        /* Event handler for the phone book button */
+
         private void phonebook_Click(object sender, EventArgs e)
         {
             Main.maininstance.panel1.Controls.Clear();
             Main.maininstance.panel1.Controls.Add(new Phonebook());
             Main.maininstance.panel1.Controls[0].Dock = DockStyle.Fill;
         }
+
+        /* Event handler for the employee notes button */
 
         private void employeenotes_Click(object sender, EventArgs e)
         {

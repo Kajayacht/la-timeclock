@@ -31,7 +31,8 @@ namespace Los_Alamos_Timeclock
 
     class Log
     {
-        //create file (if not exist)
+        /* Method to create the file log.txt if it doesn't exist */
+
         public static void createLog()
         {
             string filepath = Properties.Settings.Default.jobImageFolderPath + "/log.txt";
@@ -62,18 +63,8 @@ namespace Los_Alamos_Timeclock
 
             try
             {
-                //open the file
-                
+                //open the file                
                 StreamWriter w = File.AppendText(Properties.Settings.Default.jobImageFolderPath+ "/log.txt");
-                
-                /*write the header, date/time, and the logmessage
-                w.Write("\r\nLog Entry : ");
-                w.WriteLine("{0} {1}", DateTime.Now.ToLongTimeString(),
-                    DateTime.Now.ToLongDateString());
-                w.WriteLine("  :");
-                w.WriteLine("  :{0}", logMessage);
-                w.WriteLine("-------------------------------");
-                 */
                 w.Write(log);
                 // Update the underlying file.
                 w.Flush();
@@ -113,11 +104,11 @@ namespace Los_Alamos_Timeclock
                 // Let the user know what went wrong.
 
                 return "The file could not be read:";
-            }
-            
+            }            
         }
 
-        //Delete the log file
+        /* Method to delete the log.txt file */
+
         public static void clearLog()
         {
             File.Delete(Properties.Settings.Default.jobImageFolderPath + "/log.txt");
