@@ -26,12 +26,16 @@ namespace Los_Alamos_Timeclock
     along with Los Alamos Timeclock.  If not, see <http://www.gnu.org/licenses/>.
      */
 
+    /* Class to allow the user to update their contact information */
+
     public partial class Contactinfo : UserControl
     {
+        /* Initialize the UI */
         public Contactinfo()
         {
             InitializeComponent();
 
+            //Set the background image
             try
             {
                 this.BackgroundImage = Image.FromFile(Properties.Settings.Default.backgroundImage);
@@ -41,9 +45,9 @@ namespace Los_Alamos_Timeclock
                 this.BackgroundImage = Properties.Resources._1287421014661;
             }
 
+            //Event handlers for idle timer
             this.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
             this.MouseMove += new MouseEventHandler(Main.maininstance.notIdle_event);
-
             Al1.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
             Al1.MouseMove += new MouseEventHandler(Main.maininstance.notIdle_event);
             Al2.KeyDown += new KeyEventHandler(Main.maininstance.notIdle_event);
@@ -60,6 +64,8 @@ namespace Los_Alamos_Timeclock
 
 
             Phone.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            
+            //Get the info of the person stored in the database
             Main.myConnection.Open();
             Main.maininstance.sqlReader("SELECT * FROM Employee WHERE ID='"+Main.id+"'");
             Al1.Text = Main.reader["Address1"].ToString();
@@ -72,42 +78,52 @@ namespace Los_Alamos_Timeclock
             Main.myConnection.Close();
         }
 
+        /* Event handler for the update button */
         private void Update_Click(object sender, EventArgs e)
         {
+            //If information is valid
             if (validateinfo())
             {
+                //Update the info
                 Main.maininstance.sqlCommand("UPDATE Employee SET Address1='" + Al1.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "', Address2='" + Al2.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "', City='" + Ac.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "', State='" + As.Text + "', Zip='" + Az.Text + "', Email='" + Email.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "', Phone='" + Phone.Text.Replace(@"\", @"\\").Replace("'", @"\'") + "'  WHERE ID='" + Main.id + "'");
                 MessageBox.Show("Update Successful");
             }
         }
 
+        /* Method to validate that the information entered is proper */
         public Boolean validateinfo()
         {
+            //Addresss can't be empty
             if (Al1.Text == "")
             {
                 MessageBox.Show("Address cannot be empty");
                 return false;
             }
+            //City can't be empty
             else if (Ac.Text == "")
             {
                 MessageBox.Show("City cannot be empty");
                 return false;
             }
+            //State can't be empty
             else if (As.Text == "")
             {
                 MessageBox.Show("State cannot be empty");
                 return false;
             }
+            //Zip code can't be empty
             else if (Az.Text == "")
             {
                 MessageBox.Show("Zip code cannot be empty");
                 return false;
             }
+            //Phone number can't be empty
             else if (Phone.Text == "")
             {
                 MessageBox.Show("Phone Number cannot be empty");
                 return false;
             }
+            //Everything's good
             else
             {
                 return true;
