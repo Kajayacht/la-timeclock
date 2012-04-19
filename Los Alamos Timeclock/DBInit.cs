@@ -10,14 +10,19 @@ using System.IO;
 
 namespace Los_Alamos_Timeclock
 {
+    /* Class used to initialize the database for use with the program */
     class DBInit
     {
         public static string line;
 
+        /* Method to create the database tables needed to use with the program
+         * 
+         * @param myConnection      The Database connection info for the database 
+         * 
+         */
         public static void initTables(MySqlConnection myConnection)
         {
-            //Get the SQL file
-
+            //Check that the database has information in it
             MySqlCommand command = new MySqlCommand("SELECT * FROM Admin", myConnection);
             try
             {
@@ -26,6 +31,8 @@ namespace Los_Alamos_Timeclock
                 Main.reader.Read();
                 Main.myConnection.Close();
             }
+
+            //If the above fails, then the database needs to be initialized
             catch (Exception)
             {
                 try
@@ -52,34 +59,34 @@ namespace Los_Alamos_Timeclock
 
         }
 
+        /* Method to bypass user restrictions and create and the initial administrator
+         * 
+         * @param myConnection      The database that the user will be created on
+         * 
+         */
         public static void initAdmin(MySqlConnection myConnection)
-        {
-            //create initial admin
+        {           
             //check if there are no admins            
             Main.maininstance.connectDB(myConnection);
             myConnection.Open();
             Main.maininstance.sqlReader("select count(*) from Admin");
 
+            //If the Admin table is empty (no admins exist)
             if (int.Parse(Main.reader["count(*)"].ToString()) == 0)
             {
                 Main.myConnection.Close();
                 //Alert that no admins were found, ask if they want to make one
                 DialogResult result = MessageBox.Show("No Administrators were found in the Database. \r\nDo you want to create one?", "Admin Not Found", MessageBoxButtons.YesNo);
 
-
+                //If yes
                 if (result == DialogResult.Yes)
                 {
-                    bool init = true;
-
-                    //make a new employee 
-
+                    //make a new employee with a parameter that will bypass privaledges usually needed to make an admin
+                    bool init = true;                    
                     Main.maininstance.menu1.Show();
                     Main.maininstance.panel1.Controls.Clear();
                     Main.maininstance.panel1.Controls.Add(new Newemployee(init));
-                    Main.maininstance.panel1.Controls[0].Dock = DockStyle.Fill;
-
-                    //give him admin rights
-
+                    Main.maininstance.panel1.Controls[0].Dock = DockStyle.Fill;                    
                 }
                 //Or exit the program
                 else
