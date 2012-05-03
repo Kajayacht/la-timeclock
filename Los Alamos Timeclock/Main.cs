@@ -317,10 +317,8 @@ namespace Los_Alamos_Timeclock
         public void connectDB(MySqlConnection myConnection)
         {
             try
-            {
-                myConnection.Close();
-                myConnection.Open();
-                myConnection.Close();
+            {            
+                myConnection.Open();            
             }
 
            //If connection fails, give user the option to reenter settings or exit the program
